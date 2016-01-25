@@ -119,22 +119,31 @@ namespace Interfaz_Presentadores.Modulo12
             string mesFecha;
             string anoFecha;
             string fechaCompleta;
-            string fechaCortada = fechaE.Substring(0, 24);
-            string formato = "ddd MMM dd yyyy hh:mm:ss";
-            DateTime fechaEntrada = DateTime.ParseExact(fechaCortada, formato, CultureInfo.InvariantCulture);
+            string fechaCortada;
+            if (fechaE.Length == 24)
+            {
+                fechaCortada = fechaE.Substring(0, 24);
 
-            diaFecha = fechaEntrada.Day.ToString();
-            if (int.Parse(diaFecha) < 10)
-                diaFecha = "0" + diaFecha.ToString();
+                string formato = "ddd MMM dd yyyy hh:mm:ss";
+                DateTime fechaEntrada = DateTime.ParseExact(fechaCortada, formato, CultureInfo.InvariantCulture);
 
-            mesFecha = fechaEntrada.Month.ToString();
-            if (int.Parse(mesFecha) < 10)
-                mesFecha = "0" + mesFecha.ToString();
+                diaFecha = fechaEntrada.Day.ToString();
+                if (int.Parse(diaFecha) < 10)
+                    diaFecha = "0" + diaFecha.ToString();
 
-            anoFecha = fechaEntrada.Year.ToString();
-            fechaCompleta = mesFecha + "/" + diaFecha + "/" + anoFecha;
+                mesFecha = fechaEntrada.Month.ToString();
+                if (int.Parse(mesFecha) < 10)
+                    mesFecha = "0" + mesFecha.ToString();
 
-            return DateTime.ParseExact(fechaCompleta, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                anoFecha = fechaEntrada.Year.ToString();
+                fechaCompleta = mesFecha + "/" + diaFecha + "/" + anoFecha;
+
+                return DateTime.ParseExact(fechaCompleta, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                return DateTime.ParseExact(fechaE,"MM/dd/yyyy",CultureInfo.InvariantCulture);
+            }
         }
 
         public void obtenerCompetencia(int elIdCompetencia) 
@@ -267,8 +276,9 @@ namespace Interfaz_Presentadores.Modulo12
                 laListaDeInputs.Add(M12_RecursoInterfazPresentador.orgTodas);
             if (vista.orgCompBool == false)
                 laListaDeInputs.Add(vista.organizacionComp.SelectedItem.Text);
-            //laListaDeInputs.Add(vista.longitudComp);
-            //laListaDeInputs.Add(vista.latitudComp);
+            
+            laListaDeInputs.Add(vista.longitudComp);
+            laListaDeInputs.Add(vista.latitudComp);
 
             if (vista.inicioComp != "" || vista.finComp != "")
             {
