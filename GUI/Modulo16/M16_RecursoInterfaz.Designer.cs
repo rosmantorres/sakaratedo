@@ -493,6 +493,24 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;script type=&apos;text/javascript&apos;&gt;$(&apos;#modal-info2&apos;).modal(&apos;toggle&apos;);&lt;/script&gt;.
+        /// </summary>
+        internal static string Script_Dos {
+            get {
+                return ResourceManager.GetString("Script_Dos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;script type=&apos;text/javascript&apos;&gt;$(&apos;#modal-info3&apos;).modal(&apos;toggle&apos;);&lt;/script&gt;.
+        /// </summary>
+        internal static string Script_Tres {
+            get {
+                return ResourceManager.GetString("Script_Tres", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Test().
         /// </summary>
         internal static string Test {

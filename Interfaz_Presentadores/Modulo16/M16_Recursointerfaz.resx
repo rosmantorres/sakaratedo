@@ -636,4 +636,10 @@
   <data name="TITULO_ID_MATRICULA" xml:space="preserve">
     <value>&lt;h3&gt;Id Matricula&lt;/h3&gt;</value>
   </data>
+  <data name="ABRE_LABEL_PRECIO_FINAL" xml:space="preserve">
+    <value>&lt;label id='labelprecio' &gt;</value>
+  </data>
+  <data name="TITULO_PRECIO_FINAL" xml:space="preserve">
+    <value>&lt;h3&gt;Precio final: &lt;/h3&gt;</value>
+  </data>
 </root>

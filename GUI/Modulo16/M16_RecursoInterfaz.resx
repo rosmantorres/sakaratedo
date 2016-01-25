@@ -294,4 +294,10 @@
   <data name="MENSAJE_MATRICULA_SOLVENTE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;No posee Matriculas por Pagar. Usted se encuentra Solvente con la Administracion&lt;/div&gt;</value>
   </data>
+  <data name="Script_Dos" xml:space="preserve">
+    <value>&lt;script type='text/javascript'&gt;$('#modal-info2').modal('toggle');&lt;/script&gt;</value>
+  </data>
+  <data name="Script_Tres" xml:space="preserve">
+    <value>&lt;script type='text/javascript'&gt;$('#modal-info3').modal('toggle');&lt;/script&gt;</value>
+  </data>
 </root>

@@ -519,7 +519,8 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public void ejecutarScriptImplemento()
         {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info1').modal('toggle');</script>   ", false);
+            // Llamada para llenar el modal de Implemento
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), M16_RecursoInterfaz.Test, M16_RecursoInterfaz.Script, false);
         }
 
         /// <summary>
@@ -527,7 +528,8 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public void ejecutarScriptEvento()
         {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info2').modal('toggle');</script>   ", false);
+            // Llamada para llenar el modal de Evento
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), M16_RecursoInterfaz.Test, M16_RecursoInterfaz.Script_Dos, false);
         }
 
         /// <summary>
@@ -535,7 +537,8 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public void ejecutarScriptMensualidad()
         {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info3').modal('toggle');</script>   ", false);
+            // Llamada para llenar el modal de la Mensualidad
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), M16_RecursoInterfaz.Test, M16_RecursoInterfaz.Script_Tres, false);
         }
     }
 }
