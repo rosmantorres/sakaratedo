@@ -427,8 +427,8 @@ namespace DatosSKD.DAO.Modulo16
                         {
                             //Me creo el evento
                             FabricaEntidades fabrica = new FabricaEntidades();
-                            DominioSKD.Entidades.Modulo9.Evento elEvento 
-                                = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
+                            DominioSKD.Entidades.Modulo9.Evento elEvento
+                                = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
                             elEvento.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
                             elEvento.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                             elEvento.Costo = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());

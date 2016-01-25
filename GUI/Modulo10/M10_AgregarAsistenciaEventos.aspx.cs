@@ -1,7 +1,6 @@
 ﻿using DominioSKD;
 using Interfaz_Contratos.Modulo10;
 using Interfaz_Presentadores.Modulo10;
-using LogicaNegociosSKD.Modulo10;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -141,26 +140,7 @@ namespace templateApp.GUI.Modulo10
 
         protected void calendar_DayRender(object sender, DayRenderEventArgs e)
         {
-            e.Day.IsSelectable = false;
-            if (e.Day.IsSelected)
-                e.Cell.BackColor = Color.Red;
-            #region Horarios de Eventos y Competencias
-            foreach (Entidad horario in horariosEventos)
-            {
-                if (e.Day.IsSelected)
-                    e.Cell.BackColor = Color.Red;
-                else if (e.Day.Date == ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaInicio)
-                {
-                    e.Cell.BackColor = Color.Blue;
-                    DateTime date1 = e.Day.Date.Date;
-                    DateTime date2 = DateTime.Now.Date;
-                    if (date1 >= date2)
-                    {
-                        e.Day.IsSelectable = true;
-                    }
-                }
-            }
-            #endregion
+            presentador.RenderCalendario(e, horariosEventos);
         }
 
         protected void calendar_SelectionChanged(object sender, EventArgs e)

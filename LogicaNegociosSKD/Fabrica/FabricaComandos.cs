@@ -375,6 +375,16 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoModificarResultadoKumite(listaEntidad);
         }
+
+        public static Comando<List<Entidad>> ObtenerComandoTodasLasFechasAscensosM10()
+        {
+            return new ComandoTodasLasFechasEventoAscensoM10();
+        }
+
+        public static Comando<List<Entidad>> ObtenerComandoAscensosPorFechaM10(string fecha)
+        {
+            return new ComandoAscensosPorFechaM10(fecha);
+        }
         #endregion
 
         #region Modulo 12

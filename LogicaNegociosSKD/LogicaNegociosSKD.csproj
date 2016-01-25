@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAscensosPorFechaM10.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoTodasLasFechasEventoAscensoM10.cs" />
     <Compile Include="Comandos\Modulo14\ComandoCambiarStatusPlanilla.cs" />
     <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
@@ -193,20 +195,17 @@
     <Compile Include="Comandos\Modulo9\ComandoModificarEvento.cs" />
     <Compile Include="Comandos\Modulo9\ComandoModificarEventoConTipo.cs" />
     <Compile Include="Comandos\Modulo9\ComandoConsultarListaTipoEventos.cs" />
-    <Compile Include="Comandos\Modulo9\Logica2daEntrega.cs" />
     <Compile Include="Comandos\Modulo9\RecursosComandosModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosComandosModulo9.resx</DependentUpon>
     </Compile>
     <Compile Include="Fabrica\FabricaComandos.cs" />
-    <Compile Include="Modulo10\LogicaAsistencia.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo10.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo11\LogicaResultado.cs" />
     <Compile Include="Modulo11\RecursosLogicaModulo11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,11 +251,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo8.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo9\RecursosLogicaModulo9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo9.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -338,10 +332,6 @@
     <EmbeddedResource Include="Modulo8\RecursosLogicaModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo8.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo9\RecursosLogicaModulo9.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

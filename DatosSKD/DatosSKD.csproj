@@ -134,13 +134,11 @@
     <Compile Include="InterfazDAO\Modulo3\IDaoOrganizacion.cs" />
     <Compile Include="InterfazDAO\Modulo5\IDaoCinta.cs" />
     <Compile Include="InterfazDAO\Modulo9\IDaoEvento.cs" />
-    <Compile Include="Modulo10\BDAsistencia.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo10.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo11\BDResultado.cs" />
     <Compile Include="Modulo11\RecursosBDModulo11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -193,12 +191,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo8.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo9\BDEvento.cs" />
-    <Compile Include="Modulo9\RecursosBDModulo9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo9.resx</DependentUpon>
     </Compile>
     <Compile Include="Parametro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -280,10 +272,6 @@
     <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo8.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo9\RecursosBDModulo9.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\RecursoGeneralDAO.resx">
       <Generator>ResXFileCodeGenerator</Generator>
