@@ -331,7 +331,7 @@
   <script>
       $(document).ready(function () {
           $("#input_fecha_ini").datepicker('update', document.getElementById("fechaIni").value);
-          $("#input_fecha_fin").datepicker('update', document.getElementById("fechaFin").value);
+          $("#input_fecha_fin").datepicker('update', document.getElementById("fechaFin").value); 
           $('#input_fecha_ini').datepicker('setEndDate', document.getElementById("fechaFin").value);
           $('#input_fecha_fin').datepicker('setStartDate', document.getElementById("fechaIni").value);
           $("#input_fecha_fin").datepicker({

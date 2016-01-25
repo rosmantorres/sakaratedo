@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LogicaNegociosSKD;
-using LogicaNegociosSKD.Modulo14;
 using DominioSKD;
 using templateApp.GUI.Master;
 using Interfaz_Contratos.Modulo14;

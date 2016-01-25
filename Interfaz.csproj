@@ -39,8 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CKEditor.NET">
-      <HintPath>packages\CKEditor.NET.dll</HintPath>
+    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -185,7 +186,6 @@
     <Content Include="build\less\timeline.less" />
     <Content Include="build\less\users-list.less" />
     <Content Include="build\less\variables.less" />
-    <Content Include="CKEditor.NET.dll" />
     <Content Include="dist\css\inicio.css" />
     <Content Include="dist\img\AvatarSKD.jpg" />
     <Content Include="dist\img\Dojo1.jpg" />
@@ -228,6 +228,7 @@
     <Content Include="GUI\Modulo14\M14_DisenoPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaCreada.aspx" />
     <Content Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx" />
+    <Content Include="GUI\Modulo14\M14_MostrarFacturaDisenoPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_MostrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_RegistrarPlanilla.aspx" />
     <Content Include="GUI\Modulo14\M14_SolicitarPlanilla.aspx" />
@@ -246,6 +247,7 @@
     <Content Include="GUI\Modulo15\web_15_AgregarImplemento.aspx" />
     <Content Include="GUI\Modulo15\web_15_ConsultarImplemento.aspx" />
     <Content Include="GUI\Modulo15\web_15_ModificarImplemento.aspx" />
+    <Content Include="GUI\Modulo16\JS\ValidacionesJS.js" />
     <Content Include="GUI\Modulo16\M16_ConsultarEvento.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarMensualidad.aspx" />
     <Content Include="GUI\Modulo16\M16_ConsultarProducto.aspx" />
@@ -1600,7 +1602,11 @@
     <Compile Include="GUI\Modulo11\M11_ModificarResultadoCompetencia.aspx.designer.cs">
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo11\M11_RecursosInterfaz.Designer.cs" />
+    <Compile Include="GUI\Modulo11\M11_RecursoInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M11_RecursoInterfaz.resx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.cs">
       <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1710,6 +1716,12 @@
     </Compile>
     <Compile Include="GUI\Modulo14\M14_ModificarPlanillaSolicitada.aspx.designer.cs">
       <DependentUpon>M14_ModificarPlanillaSolicitada.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_MostrarFacturaDisenoPlanilla.aspx.cs">
+      <DependentUpon>M14_MostrarFacturaDisenoPlanilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo14\M14_MostrarFacturaDisenoPlanilla.aspx.designer.cs">
+      <DependentUpon>M14_MostrarFacturaDisenoPlanilla.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo14\M14_MostrarPlanilla.aspx.cs">
       <DependentUpon>M14_MostrarPlanilla.aspx</DependentUpon>
@@ -2185,7 +2197,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M10_RecursosInterfaz.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Modulo11\M11_RecursosInterfaz.resx" />
+    <EmbeddedResource Include="GUI\Modulo11\M11_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M11_RecursoInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo12\M12_RecursoInterfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M12_RecursoInterfaz.Designer.cs</LastGenOutput>

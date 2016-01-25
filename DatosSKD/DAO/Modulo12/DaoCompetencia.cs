@@ -208,9 +208,20 @@ namespace DatosSKD.DAO.Modulo12
                         elParametro = new Parametro(RecursosDAOModulo12.ParamFechaFin, SqlDbType.DateTime,
                             laCompetencia.FechaFin.ToString(), false);
                         parametros.Add(elParametro);
-                        elParametro = new Parametro(RecursosDAOModulo12.ParamNombreOrganizacion, SqlDbType.VarChar,
-                            laCompetencia.Organizacion.Nombre, false);
-                        parametros.Add(elParametro);
+
+                        if (laCompetencia.OrganizacionTodas == false)
+                        {
+                            elParametro = new Parametro(RecursosDAOModulo12.ParamNombreOrganizacion, SqlDbType.VarChar,
+                                laCompetencia.Organizacion.Nombre, false);
+                            parametros.Add(elParametro);
+                        }
+                        else
+                        {
+                            elParametro = new Parametro(RecursosDAOModulo12.ParamNombreOrganizacion, SqlDbType.VarChar,
+                                "Todas", false);
+                            parametros.Add(elParametro);
+                        }
+
                         elParametro = new Parametro(RecursosDAOModulo12.ParamNombreCiudad, SqlDbType.VarChar,
                             laCompetencia.Ubicacion.Ciudad, false);
                         parametros.Add(elParametro);

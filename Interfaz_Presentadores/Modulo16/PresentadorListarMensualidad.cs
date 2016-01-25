@@ -62,6 +62,12 @@ namespace Interfaz_Presentadores.Modulo16
                 //Invocamos el comando
                 ListaMatricula com = (ListaMatricula)comandoListarMensualidades.Ejecutar();
 
+                // Si la lista retorna vacia, retorna un mensaje al usuario
+                if (com.ListaMatriculas.Count == 0)
+                {
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_LISTA_VACIA_MATRIC, false);
+                }
+
                 //Obtenemos cada factura para ponerla en la tabla
                 foreach (Entidad aux in com.ListaMatriculas)
                 {
@@ -116,17 +122,17 @@ namespace Interfaz_Presentadores.Modulo16
                     //Celda que tendra los botones de Detallar y Agregar a Carrito
                     celda = new TableCell();
                     Button boton = new Button();
-                    boton.ID = "Matricula-" + item.Id.ToString();
+                    boton.ID = M16_Recursointerfaz.REFERENCIA_MATRICULA + item.Id.ToString();
                     boton.Command += DetalleMatricula_Mat;
-                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.CssClass = M16_Recursointerfaz.BOTON_INFORMACION;
                     boton.CommandName = item.Id.ToString();                 
                     celda.Controls.Add(boton);
 
                     //Boton de Agregar a Carrito
                     boton = new Button();
-                    boton.ID = "Agregar-" + item.Id.ToString();
+                    boton.ID = M16_Recursointerfaz.REFERENCIA_AGREGAR + item.Id.ToString();
                     boton.Click += AgregarCarrito;
-                    boton.CssClass = "btn btn-success glyphicon glyphicon-shopping-cart";
+                    boton.CssClass = M16_Recursointerfaz.BOTON_AGREGAR; 
                     celda.Controls.Add(boton);                         
 
                     //Agrego la celda a la fila
@@ -218,11 +224,11 @@ namespace Interfaz_Presentadores.Modulo16
                     Matricula resultados = DetalleMatricula(matricula);
 
                     // Variables para imprimir en el modal
-                    vista.LiteralDetallesMensualidades.Text = "</br>" + "<h3>Id Matricula</h3>" + "<label id='aux1' >" + resultados.Id + "</label>" +
-                                                                      "<h3>Identificador</h3>" + "<label id='aux2' >" + resultados.Identificador + "</label>" +
-                                                                      "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>" +
-                                                                      "<h3>Ultima Fecha de Pago</h3>" + "<label id='aux4' >" + resultados.UltimaFechaPago + "</label>" +
-                                                                      "<h3>Nombre del Dojo al que pertenece</h3>" + "<label id='aux4' >" + resultados.Dojo_Matricula.Nombre_dojo + "</label>" ;
+                    vista.LiteralDetallesMensualidades.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_ID_MATRICULA + M16_Recursointerfaz.ABRE_LABEL_AUX1 + resultados.Id + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_IDENTIFICADOR + M16_Recursointerfaz.ABRE_LABEL_AUX2 + resultados.Identificador + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_COSTO + M16_Recursointerfaz.ABRE_LABEL_AUX3 + resultados.Costo + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_FECHA_PAGO + M16_Recursointerfaz.ABRE_LABEL_AUX4 + resultados.UltimaFechaPago + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_DOJO_PERTENECE + M16_Recursointerfaz.ABRE_LABEL_AUX5 + resultados.Dojo_Matricula.Nombre_dojo + M16_Recursointerfaz.CIERRE_LABEL;
 
                     //Escribo en el logger la salida a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -292,9 +298,78 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="matricula">La mensualidad que se ha de mostrar en detalle</param>
         public Matricula DetalleMatricula(Entidad matricula)
         {
-            Comando<Entidad> DetalleMatricula = FabricaComandos.CrearComandoDetallarMatricula(matricula);
-            Matricula laMatricula = (Matricula)DetalleMatricula.Ejecutar();
-            return laMatricula;
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Casteamos
+                Comando<Entidad> DetalleMatricula = FabricaComandos.CrearComandoDetallarMatricula(matricula);
+                Matricula laMatricula = (Matricula)DetalleMatricula.Ejecutar();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                // Retornamos la Matricula
+                return laMatricula;
+            }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+
+            #endregion
         }
 
         #endregion
