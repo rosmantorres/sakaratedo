@@ -32,6 +32,10 @@ namespace Interfaz_Presentadores.Modulo12
             this.vista = laVista;
         }
 
+
+        /// <summary>
+        /// Metodo para consultar las variables del url
+        /// </summary>
         public void ObtenerVariablesURL()
         {
             String modificarString = HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.strCompMod];
@@ -54,6 +58,9 @@ namespace Interfaz_Presentadores.Modulo12
 
         }
 
+        /// <summary>
+        /// Metodo para llenar los comboboxes organizaciones y cintas
+        /// </summary>
         public void LlenarCombos()
         {
             try
@@ -114,6 +121,10 @@ namespace Interfaz_Presentadores.Modulo12
                 vista.alerta = M12_RecursoInterfazPresentador.alertaHtml + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
             }
         }
+
+        /// <summary>
+        /// Metodo para modificar fechas
+        /// </summary>
         protected DateTime convertirFecha(string fechaE)
         {
             string diaFecha;
@@ -147,6 +158,9 @@ namespace Interfaz_Presentadores.Modulo12
             }
         }
 
+        /// <summary>
+        /// Metodo para detallar competencia
+        /// </summary>
         public void obtenerCompetencia(int elIdCompetencia) 
         {
             LlenarCombos();
@@ -262,6 +276,9 @@ namespace Interfaz_Presentadores.Modulo12
         
         }
 
+        /// <summary>
+        /// Metodo para modificar competencia
+        /// </summary>
         public void ModificarCompetencia() 
         {
             List<String> laListaDeInputs = new List<String>();
