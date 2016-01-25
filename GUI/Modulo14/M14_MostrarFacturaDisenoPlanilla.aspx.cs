@@ -33,21 +33,91 @@ namespace templateApp.GUI.Modulo14
             }
         }
 
+        public string alertaClase
+        {
+            set
+            {
+                this.alerta.Attributes["class"] = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                this.alerta.Attributes["role"] = value;
+            }
+        }
+        public string alert
+        {
+            set
+            {
+                this.alerta.InnerHtml = value;
+            }
+        }
+
         public M14_MostrarFacturaDisenoPlanilla()
         {
             presentador = new PresentadorM14MostrarFacturaPlanilla(this);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idCompra = Convert.ToInt32(Request.QueryString["idComp"]);
-            Compra compra = new Compra();
-            compra.Com_id = idCompra;
-            Compra resultado =presentador.DetalleFactura1(compra);
-            string completo = ConstruirDiseno(resultado);
-            Imprimir(completo);
-             //Imprimir(Request.QueryString[RecursoInterfazModulo14.QueryIdPlan]);
-            //Imprimir(RecursoInterfazModulo14.ProbarDiseno);
-            Response.Redirect("~/GUI/Modulo16/M16_ListarFacturas.aspx");
+            try
+            {
+                int idCompra = Convert.ToInt32(Request.QueryString["idComp"]);
+                Compra compra = new Compra();
+                compra.Com_id = idCompra;
+                Compra resultado = presentador.DetalleFactura1(compra);
+                string completo = ConstruirDiseno(resultado);
+                Imprimir(completo);
+                //Imprimir(Request.QueryString[RecursoInterfazModulo14.QueryIdPlan]);
+                //Imprimir(RecursoInterfazModulo14.ProbarDiseno);
+                Response.Redirect("~/GUI/Modulo16/M16_ListarFacturas.aspx");
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Alerta(ex.Message);
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Alerta(ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Alerta(ex.Message);
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Alerta(ex.Message);
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Alerta(ex.Message);
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Alerta(ex.Message);
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Alerta(ex.Message);
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Alerta(ex.Message);
+            }
 
         }
 
@@ -85,9 +155,14 @@ namespace templateApp.GUI.Modulo14
             }
             catch (Exception ex)
             {
-                
+                Alerta(ex.Message);
             }
         
+        }
+
+        public void Alerta(string msj)
+        {
+            presentador.Alerta(msj);
         }
 
         public string ConstruirDiseno(Compra compra)

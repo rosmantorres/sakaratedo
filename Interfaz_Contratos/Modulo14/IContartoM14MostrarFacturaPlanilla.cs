@@ -9,5 +9,8 @@ namespace Interfaz_Contratos.Modulo14
     public interface IContartoM14MostrarFacturaPlanilla
     {
         string Texto { set; get; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alert { set; }
     }
 }
