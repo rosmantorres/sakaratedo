@@ -625,6 +625,6 @@ namespace templateApp.GUI.Modulo16 {
             get {
                 return ResourceManager.GetString("VARIABLE_ROL", resourceCulture);
             }
-        }
+        }        
     }
 }
