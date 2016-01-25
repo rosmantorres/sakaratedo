@@ -79,14 +79,14 @@ namespace templateApp.GUI.Modulo16
         protected void Page_Load(object sender, EventArgs e)
         {
             //Carga la Barra lateral del modulo indicado
-            ((SKD)Page.Master).IdModulo = "16";
+            ((SKD)Page.Master).IdModulo = M16_RecursoInterfaz.Modulo16;
 
             //Inicio el presentador
             this.IniciarPresentador();
 
             //Obtengo la matricula de la Persona pasandole el ID del session sino hubo ningun error previo
             if (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] == null)
-                presentador.consultarFacturas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                presentador.consultarFacturas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), Server, Response);
 
             //Nos indica si se pudo listar
             String accion = Request.QueryString[M16_RecursoInterfaz.VARIABLE_ACCION];
@@ -191,6 +191,13 @@ namespace templateApp.GUI.Modulo16
                             alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
                             alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CANTIDAD_INVALIDA_MENSAJE;
                             break;
+
+                        case "14":
+                            //Si devuelve la lista vacia de las Facturas
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_SUCESS;
+                            alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                            alert.InnerHtml = M16_RecursoInterfaz.MENSAJE_SIN_FACTURAS;
+                            break;
                     }
                     break;
             }
@@ -202,7 +209,7 @@ namespace templateApp.GUI.Modulo16
         /// </summary>
         public void ejecutarScript()
         {
-            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Test()", "<script type='text/javascript'>$('#modal-info1').modal('toggle');</script>   ", false);
+            ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), M16_RecursoInterfaz.Test, M16_RecursoInterfaz.Script, false);
         }
         #endregion
     }

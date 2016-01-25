@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo9 {
     
     
-    public partial class prueba {
+    public partial class M9_AgregarEvento {
         
         /// <summary>
         /// alert control.
@@ -56,15 +56,6 @@ namespace templateApp.GUI.Modulo9 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList comboTipoEvento;
-        
-        /// <summary>
-        /// otroEvento control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox otroEvento;
         
         /// <summary>
         /// costoEvento control.

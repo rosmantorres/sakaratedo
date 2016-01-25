@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
-using LogicaNegociosSKD.Modulo12;
 using System.Text.RegularExpressions;
 using System.Globalization;
 using Interfaz_Contratos.Modulo12;
@@ -15,8 +14,8 @@ namespace templateApp.GUI.Modulo12
 {
     public partial class M12_ModificarCompetencias : System.Web.UI.Page, IContratoModificarCompetencias
     {
-        public string laLatitud;
-        public string laLongitud;
+        public  string laLatitud;
+        public  string laLongitud;
 
         private PresentadorModificarCompetencias presentador;
 
@@ -183,14 +182,18 @@ namespace templateApp.GUI.Modulo12
 
         string IContratoModificarCompetencias.latitudComp
         {
-            get { return laLatitud; }
-            set { laLatitud = value; }
+            get { return txtLAT.Value; }
+            set { txtLAT.Value = value;
+            laLatitud = value;
+            }
         }
 
         string IContratoModificarCompetencias.longitudComp
         {
-            get { return laLongitud; }
-            set { laLongitud = value; }
+            get { return txtLONG.Value; }
+            set { txtLONG.Value = value;
+            laLongitud = value;
+            }
         }
 
         DropDownList IContratoModificarCompetencias.categIniComp

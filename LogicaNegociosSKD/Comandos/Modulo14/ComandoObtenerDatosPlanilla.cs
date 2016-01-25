@@ -19,6 +19,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPlanilla; }
             set { idPlanilla = value; }
         }
+        /// <summary>
+        /// Método que devuelve una lista de sting con los datos que posee 
+        /// una planilla
+        /// </summary>
+        /// <param name="idPlanilla">iD de la planilla de la cual se desean 
+        /// saber sus datos</param>
+        /// <returns>Regresa la lista con dichos datos</returns>
        public override List<String> Ejecutar()
         {
             List<String> datos;

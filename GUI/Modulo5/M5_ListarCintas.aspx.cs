@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +7,6 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using DominioSKD;
-using LogicaNegociosSKD.Modulo5;
-using LogicaNegociosSKD.Modulo3;
 using Interfaz_Contratos.Modulo5;
 using Interfaz_Presentadores.Modulo5;
 

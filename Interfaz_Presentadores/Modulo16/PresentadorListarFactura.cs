@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using Interfaz_Contratos.Modulo16;
 using DominioSKD.Entidades.Modulo16;
@@ -16,6 +17,9 @@ using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo16;
 using Interfaz_Presentadores.Master;
 using DominioSKD.Entidades.Modulo1;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
 
 namespace Interfaz_Presentadores.Modulo16
 {
@@ -23,6 +27,8 @@ namespace Interfaz_Presentadores.Modulo16
     {
        #region Atributos
         private IContratoListarFactura vista;
+        private HttpServerUtility server;
+        private HttpResponse Response;
         #endregion
 
        #region Constructores
@@ -41,7 +47,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <summary>
         /// metodo para consultar la lista de las Facturas
         /// </summary>
-        public void consultarFacturas(int persona)
+        public void consultarFacturas(int persona, HttpServerUtility server, HttpResponse response)
         {
             try
             {
@@ -49,7 +55,8 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+                this.server = server;
+                this.Response = response;
                 //Instancio el comando para listar el evento
                 Comando<Entidad> comandoListarFacturas = FabricaComandos.CrearComandoConsultarTodasFacturas();
 
@@ -60,6 +67,12 @@ namespace Interfaz_Presentadores.Modulo16
 
                 // Invocamos el Comando
                 ListaCompra com = (ListaCompra)comandoListarFacturas.Ejecutar();
+
+                // Si la lista retorna vacia, retorna un mensaje al usuario
+                if (com.ListaCompras.Count == 0)
+                {
+                    HttpContext.Current.Response.Redirect(M16_Recursointerfaz.EXCEPCION_LISTA_VACIA_FACTURA, false);
+                }
 
                 //Obtenemos cada factura para ponerla en la tabla
                 foreach (Entidad aux in com.ListaCompras)
@@ -87,19 +100,20 @@ namespace Interfaz_Presentadores.Modulo16
                     //Celda que tendra los botones de Detallar e Imprimir
                     celda = new TableCell();
                     Button boton = new Button();
-                    boton.ID = "Matricula-" + item.Com_id.ToString();
+                    boton.ID = M16_Recursointerfaz.REFERENCIA_MATRICULA + item.Com_id.ToString();
                     // El DetalleFactura_Fact llama al metodo encargado de llamar al comando.
                     boton.Command += DetalleFactura_Fact;
-                    boton.CssClass = "btn btn-primary glyphicon glyphicon-info-sign";
+                    boton.CssClass = M16_Recursointerfaz.BOTON_INFORMACION;
                     boton.CommandName = item.Com_id.ToString();                 
                     celda.Controls.Add(boton);
 
-                    //Boton que imprime la factura de Modulo15
+                    //Boton que imprime la factura de Modulo15 en .PDF
                     boton = new Button();
-                    boton.ID = "Imprimir-" + item.Com_id.ToString();
-                   // boton.Click += ImprimirFactura; // Aqui debes llamar a tu metodo para imprimir
-                    boton.CssClass = "btn btn-success glyphicon glyphicon-print";
-                    celda.Controls.Add(boton);   
+                    boton.ID = M16_Recursointerfaz.REFERENCIA_IMPRIMIR + item.Com_id.ToString();
+                    boton.Command += DetalleFactura_Fact1;
+                    boton.CssClass = M16_Recursointerfaz.BOTON_IMPRIMIR;
+                    boton.CommandName = item.Com_id.ToString();  
+                    celda.Controls.Add(boton); 
 
                     //Agrego la celda a la fila
                     fila.Cells.Add(celda);
@@ -170,10 +184,10 @@ namespace Interfaz_Presentadores.Modulo16
         }
         #endregion
 
-       #region Metodos para el detalle de la Factura
+       #region Metodos para el detalle de la Factura en el Modal (Modulo16)
 
         /// <summary>
-        /// Metodo del presentador que pinta el detalle en el modal
+        /// Metodo del presentador que pinta el detalle en el modal de la Factura
         /// </summary>
         /// <param name="evento">La Mensualidad que se ha de mostrar en detalle</param>
         public void DetalleFactura_Fact(object sender, CommandEventArgs e)
@@ -312,9 +326,9 @@ namespace Interfaz_Presentadores.Modulo16
                 }
 
                 // Variables para imprimir en el modal
-                vista.LiteralDetallesFacturas.Text = "</br>" + "<h3>Nro. Factura</h3>" + "<label id='aux1' >" + resultados.Com_id + "</label>" +
-                                                            "<h3>Fecha de Pago</h3>" + "<label id='aux2' >" + resultados.Com_fecha_compra + "</label>" +
-                                                            "<h3>Total</h3>" + "<label id='aux3' >" + resultados.Monto + "</label>";
+                vista.LiteralDetallesFacturas.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_NUM_FACTURA + M16_Recursointerfaz.ABRE_LABEL_AUX1 + resultados.Com_id + M16_Recursointerfaz.CIERRE_LABEL +
+                                                     M16_Recursointerfaz.TITULO_FECHA_PAGO_FACTURA + M16_Recursointerfaz.ABRE_LABEL_AUX2 + resultados.Com_fecha_compra + M16_Recursointerfaz.CIERRE_LABEL +
+                                                     M16_Recursointerfaz.TITULO_TOTAL + M16_Recursointerfaz.ABRE_LABEL_AUX3 + resultados.Monto + M16_Recursointerfaz.CIERRE_LABEL;
 
 
 
@@ -389,14 +403,101 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public Compra DetalleFactura(Entidad compra)
         {
-            Comando<Entidad> DetalleFactura = FabricaComandos.CrearComandoDetallarFactura(compra);
-            Compra laFactura = (Compra)DetalleFactura.Ejecutar();
-            return laFactura;
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+                //Casteamos
+                Comando<Entidad> DetalleFactura = FabricaComandos.CrearComandoDetallarFactura(compra);
+                Compra laFactura = (Compra)DetalleFactura.Ejecutar();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                // Retornamos la Factura
+                return laFactura;
+            }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+
+
+            #endregion
+        }
+       #endregion
+
+       #region Metodos para Imprimir la Factura (Modulo14)
+
+        public void DetalleFactura_Fact1(object sender, CommandEventArgs e)
+        {
+
+            //Escribo en el logger la entrada a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            string id = e.CommandName;
+            Compra compra = new Compra();
+            compra.Com_id = int.Parse(id);
+
+            //Casteamos
+            HttpContext.Current.Response.Redirect("~/GUI/Modulo14/M14_MostrarFacturaDisenoPlanilla.aspx?idComp=" + compra.Com_id.ToString());
         }
 
         #endregion
-
 
     }
 }

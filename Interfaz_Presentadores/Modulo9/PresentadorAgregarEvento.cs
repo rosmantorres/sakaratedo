@@ -31,11 +31,11 @@ namespace Interfaz_Presentadores.Modulo9
             {
                 if (errorMalicioso.Equals(M9_RecursoInterfazPresentador.strErrorMalicioso))
                 {
-                //    vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
-                  //  vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
-                   // vista.alerta = M9_RecursoInterfazPresentador.alertaHtml +
-                     //   M9_RecursoInterfazPresentador.inputMalicioso +
-                   //     M9_RecursoInterfazPresentador.alertaHtmlFinal;
+                    vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
+                    vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
+                    vista.alerta = M9_RecursoInterfazPresentador.alertaHtml +
+                    M9_RecursoInterfazPresentador.inputMalicioso +
+                    M9_RecursoInterfazPresentador.alertaHtmlFinal;
                 }
             }
         }
@@ -104,13 +104,9 @@ namespace Interfaz_Presentadores.Modulo9
                         elTipoEvento.Id = vista.iComboTipoEvento.SelectedIndex;
                         elEvento.TipoEvento = elTipoEvento;
                         elHorario.FechaInicio = Convert.ToDateTime(vista.iHoraInicio);
-                        elHorario.FechaFin = Convert.ToDateTime(vista.iHoraFin);
-                        String inicio = vista.iHoraInicio;
-                        String fin = vista.iHoraFin;
-                        string[] cadena = inicio.Split(':');
-                        elHorario.HoraInicio = int.Parse(cadena[0]);
-                        cadena = fin.Split(':');
-                        elHorario.HoraFin = int.Parse(cadena[0]);
+                        elHorario.FechaFin = Convert.ToDateTime(vista.iHoraFin); 
+                        elHorario.HoraInicioS = vista.iHoraInicio;
+                        elHorario.HoraFinS = vista.iHoraFin;
                         elEvento.Horario = elHorario;
                         Persona persona = new Persona();
                         //    String idPersona = Session[RecursosInterfazMaster.sessionUsuarioID].ToString();

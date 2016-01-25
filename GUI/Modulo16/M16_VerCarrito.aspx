@@ -233,7 +233,7 @@
                      
                             <asp:Literal runat="server" ID="precioFinal" ></asp:Literal>
                             <h3>Seleccione tipo de pago</h3>
-                                <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()" >
+                                <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()">
                                 <option value="-1">Seleccione</option>
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
@@ -253,7 +253,7 @@
 		    </div>
             </div>
             <br />
-        <h4 class="modal-title">Monto a debitar:</h4>
+        <h4 class="modal-title">Monto a debitar (solamente use comas para los decimales y no se use puntos para las unidades de mil)</h4>
         <div class="form-group">
 	        <div id="div_uario" class="col-sm-10 col-md-10 col-lg-10">
 		        <input id="Monto" type="text" placeholder="Ingrese el monto" class="form-control" name="Text2" runat="server"/>
@@ -322,32 +322,17 @@
          <div class="form-group">
 		    <div class="box-footer">
                 <br />			
-                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" disabled="true" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
+                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
         </div>
-					</div>
-				</div>
+					</div>                      
+                    </div>
 			</div>
 		</div>
        </div>
-
-     </form>      
-
-<!--VALIDACION PARA EL MODAL DE PAGO-->
-    <script type="text/javascript">
-        debugger;
-
-        //Funcion que activa el boton si el valor seleccionado es diferente de -1, sino, lo desactiva
-        function example() {
-            if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
-
-                $('#<%=BotonPagar.ClientID %>').attr("disabled", true);
-            }
-            else
-                $('#<%=BotonPagar.ClientID %>').attr("disabled", false);
-        }
-
-    </script>
+         <script src="JS/ValidacionesJS.js"></script>
+     </form>
+    
 </asp:Content>

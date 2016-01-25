@@ -142,11 +142,38 @@ namespace templateApp.GUI.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string idAlertAgregar {
+            get {
+                return ResourceManager.GetString("idAlertAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 9.
         /// </summary>
         internal static string idModulo {
             get {
                 return ResourceManager.GetString("idModulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento agregado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertAgregar {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento modificado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertModificar {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertModificar", resourceCulture);
             }
         }
         
