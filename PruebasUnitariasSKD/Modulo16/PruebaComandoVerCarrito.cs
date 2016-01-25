@@ -49,8 +49,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            //Las fabricas
-
+            //La fabrica
             fabrica = new FabricaEntidades();          
 
             //Las Personas
@@ -64,7 +63,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.persona4.Id = 14;
 
             //Implemento
-            this.implemento = new Implemento();
+            this.implemento = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
 
@@ -74,7 +73,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.evento.Costo = 0;
 
             //Matricula
-            this.matricula = new Matricula();
+            this.matricula = (Matricula)FabricaEntidades.ObtenerMatricula();
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
 
@@ -269,7 +268,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula = null;
             this.Carrito = null;
             this.evento = null;
-            fabrica = null;       
+            this.fabrica = null;       
         }
     }
 }

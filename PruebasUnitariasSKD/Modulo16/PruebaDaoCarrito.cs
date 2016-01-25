@@ -58,24 +58,24 @@ namespace PruebasUnitariasSKD.Modulo16
             fabricaentidades = new FabricaEntidades();
 
             //La persona
-            this.persona = new Persona();
+            this.persona = FabricaEntidades.ObtenerPersona();
             this.persona.Id = 11;
-            this.persona2 = new Persona();
+            this.persona2 = FabricaEntidades.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = new Persona();
+            this.persona3 = FabricaEntidades.ObtenerPersona();
             this.persona3.Id = 13;
-            this.persona4 = new Persona();
+            this.persona4 = FabricaEntidades.ObtenerPersona();
             this.persona4.Id = 14;
-            this.persona5 = new Persona();
+            this.persona5 = FabricaEntidades.ObtenerPersona();
             this.persona5.Id = 15;
-            this.persona6 = new Persona();
+            this.persona6 = FabricaEntidades.ObtenerPersona();
             this.persona6.Id = 16;
 
             //Dos implementos distintos
-            this.implemento = new Implemento();
+            this.implemento = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
-            this.implemento2 = new Implemento();
+            this.implemento2 = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento2.Id = 2;
             this.implemento2.Precio_Implemento = 3000;
 
@@ -89,7 +89,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.evento2.Costo = 2000;
 
             //Dos matriculas distintas
-            this.matricula = new Matricula();
+            this.matricula = (Matricula)FabricaEntidades.ObtenerMatricula();
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
             this.matricula2 = new Matricula();
