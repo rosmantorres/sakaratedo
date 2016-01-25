@@ -665,6 +665,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_ConsultarMensualidad.aspx?accion=4&amp;mensaje=14.
+        /// </summary>
+        internal static string EXCEPCION_LISTA_VACIA_MATRIC {
+            get {
+                return ResourceManager.GetString("EXCEPCION_LISTA_VACIA_MATRIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_ConsultarProducto.aspx?accion=4&amp;mensaje=14.
         /// </summary>
         internal static string EXCEPCION_LISTA_VACIA_PROD {
@@ -1358,6 +1367,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Matricula-.
+        /// </summary>
+        internal static string REFERENCIA_MATRICULA {
+            get {
+                return ResourceManager.GetString("REFERENCIA_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Producto-.
         /// </summary>
         internal static string REFERENCIA_PRODUCTO {
@@ -1462,6 +1480,42 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string TITULO_DESCRIPCIONES {
             get {
                 return ResourceManager.GetString("TITULO_DESCRIPCIONES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Nombre del Dojo al que pertenece&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_DOJO_PERTENECE {
+            get {
+                return ResourceManager.GetString("TITULO_DOJO_PERTENECE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Ultima Fecha de Pago&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_FECHA_PAGO {
+            get {
+                return ResourceManager.GetString("TITULO_FECHA_PAGO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Id Matricula&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_ID_MATRICULA {
+            get {
+                return ResourceManager.GetString("TITULO_ID_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Identificador&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_IDENTIFICADOR {
+            get {
+                return ResourceManager.GetString("TITULO_IDENTIFICADOR", resourceCulture);
             }
         }
         
