@@ -38,42 +38,105 @@ namespace Interfaz_Presentadores.Modulo14
         /// </summary>
         public void LlenarEventosCombo()
         {
-
-            Comando<List<Entidad>> comboEvento = FabricaComandos.ObtenerComandoEventosSolicitud();
-            ((ComandoEventosSolicitud)comboEvento).IDPersona = vista.IDUsuario;
-            List<Entidad> listEventos = comboEvento.Ejecutar();
-            Dictionary<string, string> options = new Dictionary<string, string>();
-
-            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listEventos)
+            try
             {
-                options.Add(item.ID.ToString(), item.NombreEvento);
+                Comando<List<Entidad>> comboEvento = FabricaComandos.ObtenerComandoEventosSolicitud();
+                ((ComandoEventosSolicitud)comboEvento).IDPersona = vista.IDUsuario;
+                List<Entidad> listEventos = comboEvento.Ejecutar();
+                Dictionary<string, string> options = new Dictionary<string, string>();
+
+                foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listEventos)
+                {
+                    options.Add(item.ID.ToString(), item.NombreEvento);
+                }
+
+                vista.EventoCombo.DataSource = options;
+                vista.EventoCombo.DataTextField = "value";
+                vista.EventoCombo.DataValueField = "key";
+                vista.EventoCombo.DataBind();
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
             }
 
-            vista.EventoCombo.DataSource = options;
-            vista.EventoCombo.DataTextField = "value";
-            vista.EventoCombo.DataValueField = "key";
-            vista.EventoCombo.DataBind();
         }
         /// <summary>
         /// Llenar el combox con las competencias .
         /// </summary>
         public void LLenarCompetenciaCombo()
         {
-        
-            Comando<List<Entidad>> comboCompetencia = FabricaComandos.ObtenerComandoCompetenciasSolicitud();
-            ((ComandoCompetenciasSolicitud)comboCompetencia).IDPersona = vista.IDUsuario;
-            List<Entidad> listCompetencias = comboCompetencia.Ejecutar();
-            Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listCompetencias)
+            try
             {
-                options.Add(item.ID.ToString(), item.NombreEvento);
+                Comando<List<Entidad>> comboCompetencia = FabricaComandos.ObtenerComandoCompetenciasSolicitud();
+                ((ComandoCompetenciasSolicitud)comboCompetencia).IDPersona = vista.IDUsuario;
+                List<Entidad> listCompetencias = comboCompetencia.Ejecutar();
+                Dictionary<string, string> options = new Dictionary<string, string>();
+
+                foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listCompetencias)
+                {
+                    options.Add(item.ID.ToString(), item.NombreEvento);
+                }
+
+                vista.CompetenciaCombo.DataSource = options;
+                vista.CompetenciaCombo.DataTextField = "value";
+                vista.CompetenciaCombo.DataValueField = "key";
+                vista.CompetenciaCombo.DataBind();
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
             }
 
-            vista.CompetenciaCombo.DataSource = options;
-            vista.CompetenciaCombo.DataTextField = "value";
-            vista.CompetenciaCombo.DataValueField = "key";
-            vista.CompetenciaCombo.DataBind();
         }
         /// <summary>
         /// Cargar la pagina de modificar la planilla solicitada.
@@ -198,40 +261,71 @@ namespace Interfaz_Presentadores.Modulo14
             Entidad solicitud = FabricaEntidades.ObtenerSolicitudP();
             ((DominioSKD.Entidades.Modulo14.SolicitudP)solicitud).ID =
                 Int32.Parse(vista.solicitudId);
-          
-            Comando<Entidad> comandoModificarSolicitudID = FabricaComandos.ObtenerComandoModificarSolicitudID();
-         
-              bool resultado = false;
-         
-                      if (vista.ComboEventoVisible == true)
-                         {
 
-                             Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
-                                       vista.Motivo, Int32.Parse(vista.EventoCombo.SelectedValue));
-                             comandoModificarSolicitudID.LaEntidad = laSolicitud;
-                             comandoModificarSolicitudID.Ejecutar();
-                             resultado = true;
-                           }
-                       if (vista.ComboCompetenciaVisible == true)
-                        {
+            bool resultado = false;
+            try
+            {
+                Comando<Entidad> comandoModificarSolicitudID = FabricaComandos.ObtenerComandoModificarSolicitudID();
 
-                            Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
-                                          vista.Motivo, Int32.Parse(vista.CompetenciaCombo.SelectedValue));
-                            comandoModificarSolicitudID.LaEntidad =laSolicitud;
-                            comandoModificarSolicitudID.Ejecutar();
-                            resultado = true;
-                        }
-                       if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
-                         {
-                             Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
-                                            vista.Motivo, IDIns);
-                            comandoModificarSolicitudID.LaEntidad =laSolicitud;
-                            comandoModificarSolicitudID.Ejecutar();
-                            resultado = true;
-                           }
+
+                if (vista.ComboEventoVisible == true)
+                {
+
+                    Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
+                              vista.Motivo, Int32.Parse(vista.EventoCombo.SelectedValue));
+                    comandoModificarSolicitudID.LaEntidad = laSolicitud;
+                    comandoModificarSolicitudID.Ejecutar();
+                    resultado = true;
+                }
+                if (vista.ComboCompetenciaVisible == true)
+                {
+
+                    Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
+                                  vista.Motivo, Int32.Parse(vista.CompetenciaCombo.SelectedValue));
+                    comandoModificarSolicitudID.LaEntidad = laSolicitud;
+                    comandoModificarSolicitudID.Ejecutar();
+                    resultado = true;
+                }
+                if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
+                {
+                    Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(Int32.Parse(vista.solicitudId), vista.FechaRetiro, vista.FechaReincorporacion,
+                                   vista.Motivo, IDIns);
+                    comandoModificarSolicitudID.LaEntidad = laSolicitud;
+                    comandoModificarSolicitudID.Ejecutar();
+                    resultado = true;
+                }
+                
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
+            }
 
             return resultado;
-
         }
     }
 }
