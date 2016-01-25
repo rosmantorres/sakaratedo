@@ -103,7 +103,7 @@ namespace templateApp.GUI.Modulo4
         protected void btn_agregarDojo_Click(object sender, EventArgs e)
         {
             _presentador.AgregarDojo_Click();
-           // Response.Redirect("M4_ListarDojos.aspx?success=1");
+           Response.Redirect("M4_ListarDojos.aspx?success=1");
         }
     }
 }
