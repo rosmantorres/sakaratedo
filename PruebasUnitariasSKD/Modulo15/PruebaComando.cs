@@ -8,12 +8,16 @@ using DominioSKD.Entidades.Modulo15;
 using ExcepcionesSKD.Modulo15.ExcepcionComando;
 namespace PruebasUnitariasSKD.Modulo15
 {
+    /// <summary>
+    /// Pruebas encargadas de supervisar el correcto funcionamiento de todos los comandos provenientes del inventario
+    /// </summary>
     [TestFixture]
     class PruebaComando
     {
         private Implemento implemento;
         private Implemento implemento2;
         private Dojo dojo;
+        private Dojo dojo2;
         ComandoAgregarImplemento cai;
         ComandoEliminarImplemento cei;
         ComandoConsultarTodosImplementos ccti;
@@ -33,11 +37,9 @@ namespace PruebasUnitariasSKD.Modulo15
             ccti = new ComandoConsultarTodosImplementos();
             ccti2 = new ComandoConsultarTodosImplementos2();
             cmi = new ComandoModificarImplemento();
-            cixi = new ComandoImplementoXId();
-            cud = new ComandoUsuarioDojo();
+            cdi = new ComandoDojoId();
             implemento = new Implemento();
             implemento2 = new Implemento();
-            usuario = new Usuario(1, "Rosman", "Torres");
             dojo = new Dojo(1);
             implemento.Nombre_Implemento = "Guantes Karate-DO";
             implemento.Tipo_Implemento = "Guantes";
@@ -57,8 +59,6 @@ namespace PruebasUnitariasSKD.Modulo15
             ccti.LaEntidad = dojo;
             ccti2.LaEntidad = dojo;
             cmi.LaEntidad = implemento;
-            cixi.LaEntidad = implemento;
-            cud.LaEntidad = usuario;
         }
         [TearDown]
         public void Reset()
@@ -77,6 +77,7 @@ namespace PruebasUnitariasSKD.Modulo15
 
         }
         #endregion
+
         #region M15_ComandoConsultarTodosImplementos
         [Test]
         public void M15_ComandoConsultarTodosImplementos()
@@ -168,6 +169,28 @@ namespace PruebasUnitariasSKD.Modulo15
         {
             cmi.LaEntidad = null;
             cmi.Ejecutar();
+
+        }
+        #endregion
+
+        #region M15_ComandoDojoId
+        [Test]
+        public void M15_ComandoDojoId()
+        {
+            cdi.LaEntidad= dojo;
+            dojo2 = (Dojo)cdi.Ejecutar();
+            Assert.AreEqual(dojo.Id_dojo, dojo2.Id_dojo);
+
+        }
+        #endregion
+
+        #region M15_ComandoDojoIdNulo
+        [Test]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        public void M15_ComandoDojoIdNulo()
+        {
+            cdi.LaEntidad = null;
+            cdi.Ejecutar();
 
         }
         #endregion

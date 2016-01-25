@@ -8,15 +8,18 @@ using DatosSKD.Fabrica;
 using ExcepcionesSKD.Modulo15.ExcepcionDao;
 namespace PruebasUnitariasSKD.Modulo15
 {
+    /// <summary>
+    /// Pruebas encargadas de supervisar el correcto funcionamiento de todos los metodos de DAO provenientes del inventario
+    /// </summary>
     class PruebaDAO
     {
         private Implemento implemento;
         private Dojo dojo;
+        private Dojo dojo2;
         private Implemento implemento2;
         private Implemento implemento3;
         private List<Entidad> lista;
         private List<Entidad> lista2;
-        private String usuario;
         [SetUp]
         public void Init()
         {
@@ -156,7 +159,7 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_ListarInventarioDatos()
+        #region M15_ListarInventarioDatos
         [Test]
         public void M15_ListarInventarioDatos()
         {
@@ -167,7 +170,7 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_ListaInventarioDatosNulo()
+        #region M15_ListaInventarioDatosNulo
         [Test]
         [ExpectedException(typeof(ExcepcionListarInventarioDatos))]
         public void M15_ListaInventarioDatosNulo()
@@ -177,7 +180,7 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_ListarInventarioDatos2()
+        #region M15_ListarInventarioDatos2
         [Test]
         public void M15_ListarInventarioDatos2()
         {
@@ -188,7 +191,7 @@ namespace PruebasUnitariasSKD.Modulo15
         }
         #endregion
 
-        #region M15_ListaInventarioDatos2Nulo()
+        #region M15_ListaInventarioDatos2Nulo
         [Test]
         [ExpectedException(typeof(ExcepcionlistaInventarioDatos2))]
         public void M15_ListarInventarioDatos2Nulo()
@@ -197,5 +200,24 @@ namespace PruebasUnitariasSKD.Modulo15
 
         }
         #endregion
+
+        #region M15_DetallarDojo
+        [Test]
+        public void M15_DetallarDojo()
+        {
+            dojo2 = (Dojo)FabricaDAOSqlServer.ObtenerDAOImplemento().DetallarDojo(dojo);
+            Assert.AreEqual(dojo.Id_dojo, dojo2.Id_dojo);
+        }
+        #endregion 
+
+        #region M15_DetallarDojoNulo
+        [Test]
+        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        public void M15_DetallarDojoNulo()
+        {
+            dojo = null;
+            FabricaDAOSqlServer.ObtenerDAOImplemento().DetallarDojo(dojo);
+        }
+        #endregion 
     }
 }
