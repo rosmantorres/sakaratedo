@@ -11,6 +11,8 @@
     <AssemblyName>Interfaz_Contratos</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,10 +31,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,6 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo7\IContratoDetallarHorarioPractica.cs" />
+    <Compile Include="Modulo7\IContratoDetallarMatricula.cs" />
+    <Compile Include="Modulo7\IContratoConsultarPerfil.cs" />
+    <Compile Include="Modulo7\IContratoDetallarCinta.cs" />
+    <Compile Include="Modulo7\IContratoDetallarCompetencia.cs" />
+    <Compile Include="Modulo7\IContratoDetallarEvento.cs" />
+    <Compile Include="Modulo7\IContratoListarCintasObtenidas.cs" />
+    <Compile Include="Modulo7\IContratoListarEventosInscritos.cs" />
+    <Compile Include="Modulo7\IContratoListarHorarioPractica.cs" />
+    <Compile Include="Modulo7\IContratoListarMatriculasPagas.cs" />
+    <Compile Include="Modulo7\IContratoListarEventosPagos.cs" />
+    <Compile Include="Modulo7\IContratoListarEventosAsistidos.cs" />
+    <Compile Include="Modulo14\IContartoM14MostrarFacturaPlanilla.cs" />
     <Compile Include="Modulo15\IContratoAgregarImplemento.cs" />
     <Compile Include="Modulo15\IContratoConsultarImplemento.cs" />
     <Compile Include="Modulo15\IContratoModificarImplemento.cs" />
@@ -103,7 +120,6 @@
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
-    <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

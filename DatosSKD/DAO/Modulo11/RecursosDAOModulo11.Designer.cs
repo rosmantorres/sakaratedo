@@ -457,6 +457,24 @@ namespace DatosSKD.DAO.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @_fechafin.
+        /// </summary>
+        internal static string ParametroFechaFin {
+            get {
+                return ResourceManager.GetString("ParametroFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_fechaInicio.
+        /// </summary>
+        internal static string ParametroFechaInicio {
+            get {
+                return ResourceManager.GetString("ParametroFechaInicio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @_idCategoria.
         /// </summary>
         internal static string ParametroIdCategoria {
@@ -592,6 +610,15 @@ namespace DatosSKD.DAO.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M11_ConsultarAscensosRangoFecha.
+        /// </summary>
+        internal static string ProcedimientoAscensosPorFechaM10 {
+            get {
+                return ResourceManager.GetString("ProcedimientoAscensosPorFechaM10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M11_CategoriasCompetenciaEspecialidad.
         /// </summary>
         internal static string ProcedimientoCategoriasCompetenciaEspecialidad {
@@ -705,6 +732,24 @@ namespace DatosSKD.DAO.Modulo11 {
         internal static string ProcedimientoPersonasEnCategoriaAscenso {
             get {
                 return ResourceManager.GetString("ProcedimientoPersonasEnCategoriaAscenso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_TodasLasFechasAscensos.
+        /// </summary>
+        internal static string ProcedimientoTodasLasFechasAscensosM10 {
+            get {
+                return ResourceManager.GetString("ProcedimientoTodasLasFechasAscensosM10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
     }

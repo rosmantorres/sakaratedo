@@ -8,4 +8,6 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <div id="alerta" runat="server">
+    </div>
 </asp:Content>

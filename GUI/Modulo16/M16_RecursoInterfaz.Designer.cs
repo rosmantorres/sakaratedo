@@ -214,6 +214,15 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_VerCarrito.aspx?accion=4&amp;mensaje=10.
+        /// </summary>
+        internal static string EXCEPTION_ITEM_INVALIDO_LINK {
+            get {
+                return ResourceManager.GetString("EXCEPTION_ITEM_INVALIDO_LINK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al intentar procesar un item no acorde al indicado, intente su operacion de nuevo mas tarde&lt;/div&gt;.
         /// </summary>
         internal static string EXCEPTION_ITEM_INVALIDO_MENSAJE {
@@ -616,6 +625,6 @@ namespace templateApp.GUI.Modulo16 {
             get {
                 return ResourceManager.GetString("VARIABLE_ROL", resourceCulture);
             }
-        }
+        }        
     }
 }

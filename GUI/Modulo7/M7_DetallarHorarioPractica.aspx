@@ -42,33 +42,34 @@
                   <div class="panel-body">
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <br />
-                        <h4>Nombre Clase:</h4>
-                        <asp:Label runat="server" name="nombre_evento" id="nombre_evento" Font-Size="Large"></asp:Label>
+                         
+                        <%--<asp:Label runat="server" name="nombre_evento" id="nombre_evento" Font-Size="Large"></asp:Label>--%>
+                         <h4 id="nombre_evento1" runat="server" name="nombre_evento">&nbsp;Nombre: </h4>
                      </div>
                      <br/>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Descripcion :</h4>
-                        <asp:Label runat="server" name="descripcion_evento" id="descripcion_evento" Font-Size="Large"></asp:Label>
+                        <%--<asp:Label runat="server" name="descripcion_evento" id="descripcion_evento" Font-Size="Large"></asp:Label>--%>
+                         <h4 id="descripcion_evento1" runat="server" name="descripcion_evento">&nbsp;Descripcion: </h4>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Estado :</h4>
-                        <asp:Label runat="server" name="estado_evento" id="estado_evento" Font-Size="Large"></asp:Label>
-                        <br />
-                     </div>
-                     <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Hora de Inicio :</h4>
-                        <asp:Label runat="server" name="horaInicio_evento" id="horaInicio_evento" Font-Size="Large"></asp:Label>
+                        <%--<asp:Label runat="server" name="estado_evento" id="estado_evento" Font-Size="Large"></asp:Label>--%>
+                         <h4 id="estado_evento1" runat="server" name="estado_evento">&nbsp;Estado: </h4>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Hora que Finaliza :</h4>
-                        <asp:Label runat="server" name="horaFin_evento" id="horaFin_evento" Font-Size="Large"></asp:Label>
+                        <%--<asp:Label runat="server" name="horaInicio_evento" id="horaInicio_evento" Font-Size="Large"></asp:Label>--%>
+                          <h4 id="horaInicio_evento1" runat="server" name="horaInicio_evento">&nbsp;Hora de Inicio: </h4>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4>Dirección :</h4>
-                        <asp:Label runat="server" name="direccion_evento" id="direccion_evento" Font-Size="Large"></asp:Label>
+                        <%--<asp:Label runat="server" name="horaFin_evento" id="horaFin_evento" Font-Size="Large"></asp:Label>--%>
+                          <h4 id="horaFin_evento1" runat="server" name="horaFin_evento">&nbsp;Hora que Finaliza: </h4>
+                        <br />
+                     </div>
+                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
+                        <%--<asp:Label runat="server" name="direccion_evento" id="direccion_evento" Font-Size="Large"></asp:Label>--%>
+                          <h4 id="direccion_evento1" runat="server" name="direccion_evento">&nbsp;Direccion: </h4>
                         <br />
                      </div>
                       <div class="panel-group col-sm-10 col-md-10 col-lg-10">
