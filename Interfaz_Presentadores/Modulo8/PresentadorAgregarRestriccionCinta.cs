@@ -44,7 +44,7 @@ namespace Interfaz_Presentadores.Modulo8
         
         public string generarDescripcion()
         {
-          string Descripcion = this.vista.descripcion_rest_cinta = ("Cinta: " + vista.comboRestCinta.SelectedValue.ToString()
+          string Descripcion = ("Cinta: " + vista.comboRestCinta.SelectedItem.ToString()
                                      + " Puntaje Minimo: " + vista.puntaje_min.ToString()
                                      + " Tiempo Minimo: " + vista.tiempo_Min.ToString()
                                      + " Tiempo Maximo: " + vista.tiempo_Max.ToString()
@@ -106,7 +106,7 @@ namespace Interfaz_Presentadores.Modulo8
 
         }
 
-        public void agregarRest()
+        public Boolean agregarRest()
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
 
@@ -121,7 +121,8 @@ namespace Interfaz_Presentadores.Modulo8
 
             FabricaComandos _fabrica = new FabricaComandos();
             Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionCinta(laRestCinta);
-            bool resultado = _comando.Ejecutar();   
+            bool resultado = _comando.Ejecutar();
+            return resultado;
         }
 
         public void Alerta(string msj)
