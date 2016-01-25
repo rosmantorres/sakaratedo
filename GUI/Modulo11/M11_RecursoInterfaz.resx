@@ -688,4 +688,49 @@
   <data name="Value" xml:space="preserve">
     <value>Value</value>
   </data>
+  <data name="CategoriaEvento" xml:space="preserve">
+    <value>M11_categoria</value>
+  </data>
+  <data name="EspecialidadEvento" xml:space="preserve">
+    <value>M11_especialidad</value>
+  </data>
+  <data name="IdEvento" xml:space="preserve">
+    <value>M11_IdEvento</value>
+  </data>
+  <data name="TipoEvento" xml:space="preserve">
+    <value>M11_tipo</value>
+  </data>
+  <data name="especialidadAmbos" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="especialidadKata" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="especialidadKumite" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ResultadoModificadoError" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=4</value>
+  </data>
+  <data name="ResultadoModificadoExito" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=2</value>
+  </data>
+  <data name="ResultadoAmbosModificadoError" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=10</value>
+  </data>
+  <data name="ResultadoAmbosModificadoExito" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=9</value>
+  </data>
+  <data name="ResultadoKataModificadoError" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=6</value>
+  </data>
+  <data name="ResultadoKataModificadoExito" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=5</value>
+  </data>
+  <data name="ResultadoKumiteModificadoError" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=8</value>
+  </data>
+  <data name="ResultadoKumiteModificadoExito" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=7</value>
+  </data>
 </root>

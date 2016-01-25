@@ -799,4 +799,19 @@
   <data name="FormatoFechas" xml:space="preserve">
     <value>{0:dd/MM/yyyy}</value>
   </data>
+  <data name="VentanaListarResultadoCompetencia" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx</value>
+  </data>
+  <data name="especialidadAmbos" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="especialidadKata" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="especialidadKataKumite" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="especialidadKumite" xml:space="preserve">
+    <value>2</value>
+  </data>
 </root>

@@ -169,6 +169,15 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M11_categoria.
+        /// </summary>
+        internal static string CategoriaEvento {
+            get {
+                return ResourceManager.GetString("CategoriaEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;/td&gt;.
         /// </summary>
         internal static string CerrarTD {
@@ -196,11 +205,56 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string especialidadAmbos {
+            get {
+                return ResourceManager.GetString("especialidadAmbos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_especialidad.
+        /// </summary>
+        internal static string EspecialidadEvento {
+            get {
+                return ResourceManager.GetString("EspecialidadEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string especialidadKata {
+            get {
+                return ResourceManager.GetString("especialidadKata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string especialidadKumite {
+            get {
+                return ResourceManager.GetString("especialidadKumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Evento.
         /// </summary>
         internal static string Evento {
             get {
                 return ResourceManager.GetString("Evento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_IdEvento.
+        /// </summary>
+        internal static string IdEvento {
+            get {
+                return ResourceManager.GetString("IdEvento", resourceCulture);
             }
         }
         
@@ -868,6 +922,78 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=10.
+        /// </summary>
+        internal static string ResultadoAmbosModificadoError {
+            get {
+                return ResourceManager.GetString("ResultadoAmbosModificadoError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=9.
+        /// </summary>
+        internal static string ResultadoAmbosModificadoExito {
+            get {
+                return ResourceManager.GetString("ResultadoAmbosModificadoExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=6.
+        /// </summary>
+        internal static string ResultadoKataModificadoError {
+            get {
+                return ResourceManager.GetString("ResultadoKataModificadoError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=5.
+        /// </summary>
+        internal static string ResultadoKataModificadoExito {
+            get {
+                return ResourceManager.GetString("ResultadoKataModificadoExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=8.
+        /// </summary>
+        internal static string ResultadoKumiteModificadoError {
+            get {
+                return ResourceManager.GetString("ResultadoKumiteModificadoError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=7.
+        /// </summary>
+        internal static string ResultadoKumiteModificadoExito {
+            get {
+                return ResourceManager.GetString("ResultadoKumiteModificadoExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=4.
+        /// </summary>
+        internal static string ResultadoModificadoError {
+            get {
+                return ResourceManager.GetString("ResultadoModificadoError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=2.
+        /// </summary>
+        internal static string ResultadoModificadoExito {
+            get {
+                return ResourceManager.GetString("ResultadoModificadoExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;select id=&quot;combo&quot; class=&quot;form-control&quot; style=&quot;width:25%&quot;&gt;
         ///                            &lt;option selected value=&quot;Seleccionar&quot;&gt;Seleccionar:&lt;/option&gt;
         ///                            &lt;option value=&quot;Aprobado&quot;&gt;Aprobado&lt;/option&gt;
@@ -988,6 +1114,15 @@ namespace templateApp.GUI.Modulo11 {
         internal static string Tipo {
             get {
                 return ResourceManager.GetString("Tipo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_tipo.
+        /// </summary>
+        internal static string TipoEvento {
+            get {
+                return ResourceManager.GetString("TipoEvento", resourceCulture);
             }
         }
         

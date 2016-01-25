@@ -367,6 +367,42 @@ namespace Interfaz_Presentadores.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 3.
+        /// </summary>
+        internal static string especialidadAmbos {
+            get {
+                return ResourceManager.GetString("especialidadAmbos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string especialidadKata {
+            get {
+                return ResourceManager.GetString("especialidadKata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 4.
+        /// </summary>
+        internal static string especialidadKataKumite {
+            get {
+                return ResourceManager.GetString("especialidadKataKumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string especialidadKumite {
+            get {
+                return ResourceManager.GetString("especialidadKumite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Evento.
         /// </summary>
         internal static string Evento {
@@ -1348,6 +1384,15 @@ namespace Interfaz_Presentadores.Modulo11 {
         internal static string Value {
             get {
                 return ResourceManager.GetString("Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx.
+        /// </summary>
+        internal static string VentanaListarResultadoCompetencia {
+            get {
+                return ResourceManager.GetString("VentanaListarResultadoCompetencia", resourceCulture);
             }
         }
     }
