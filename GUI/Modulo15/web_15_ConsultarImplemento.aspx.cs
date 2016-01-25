@@ -103,6 +103,11 @@ namespace templateApp.GUI.Modulo15
                     {
                         eliminar = Request.QueryString["idImplemento"];
                         presentador.eliminarImplemento(eliminar, ((Dojo)dojo).Dojo_Id);
+                        this.alert.Attributes["class"] = "alert alert-success alert-dismissible";
+                        this.alert.Attributes["role"] = "alert";
+                        this.alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Se elimino con exito</div>";
+                    
+
                     }
                     listaImplementos = presentador.cargarListaImplementos(dojo);
 
