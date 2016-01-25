@@ -154,24 +154,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod6.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo7\M7_PruebaLogicaEventosPagos.cs" />
-    <Compile Include="Modulo7\M7_PruebaLogicaCintas.cs" />
-    <Compile Include="Modulo7\M7_PruebaLogicaEventosInscritos.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDCinta.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDCompetencia.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDDojo.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDEvento.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDHorario.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDOrganizacion.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDMatricula.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDPersona.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDTipoEvento.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDUbicacion.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaEventosAsistidos.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaEventosPagos.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaHorarioPractica.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaMatriculasPagas.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaOrganizacionYDojo.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoConsultarPerfil.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCinta.cs" />
     <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCompetencia.cs" />

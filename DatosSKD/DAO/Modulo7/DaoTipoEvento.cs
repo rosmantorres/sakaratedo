@@ -45,10 +45,6 @@ namespace DatosSKD.DAO.Modulo7
         /// <returns>Retorna objeto de tipo Entidad con la informacion detallada del tipo de evento</returns>
         public Entidad ConsultarXId(Entidad parametro)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-            BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
             TipoEventoM7 idTipoEvento = (TipoEventoM7)parametro;
@@ -58,12 +54,11 @@ namespace DatosSKD.DAO.Modulo7
             {
                 if (idTipoEvento.Id > 0)
                 {
-                    conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     tipoEvento = (TipoEventoM7)FabricaEntidades.ObtenerTipoEventoM7();
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdTipoEvento, SqlDbType.Int, idTipoEvento.Id.ToString(), false);
                     parametros.Add(parametroQuery);
-                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = this.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultarTipoEventoXId, parametros);
 
                     foreach (DataRow row in dt.Rows)
@@ -81,35 +76,27 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (SqlException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,RecursoGeneralBD.Mensaje, ex);
             }
             catch (NumeroEnteroInvalidoException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (FormatException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (ExceptionSKDConexionBD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
 
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return tipoEvento;
         }
 

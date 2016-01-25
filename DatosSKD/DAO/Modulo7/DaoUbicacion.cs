@@ -45,9 +45,6 @@ namespace DatosSKD.DAO.Modulo7
         /// <returns>Retorna objeto de tipo Entidad con la informacion detallada de la ubicacion</returns>
         public Entidad ConsultarXId(Entidad parametro)
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-            RecursosDAOModulo7.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            BDConexion conexion;
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
             UbicacionM7 idUbicacion = (UbicacionM7)parametro;
@@ -57,13 +54,12 @@ namespace DatosSKD.DAO.Modulo7
             {
                 if (idUbicacion.Id > 0)
                 {
-                    conexion = new BDConexion();
                     parametros = new List<Parametro>();
                     ubicacion = (UbicacionM7)FabricaEntidades.ObtenerUbicacionM7(); 
                     parametroQuery = new Parametro(RecursosDAOModulo7.ParamIdUbicacion, SqlDbType.Int, idUbicacion.Id.ToString(), false);
                     parametros.Add(parametroQuery);
 
-                    DataTable dt = conexion.EjecutarStoredProcedureTuplas(
+                    DataTable dt = this.EjecutarStoredProcedureTuplas(
                                    RecursosDAOModulo7.ConsultaUbicacionXId, parametros);
 
                     foreach (DataRow row in dt.Rows)
@@ -82,35 +78,28 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (SqlException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (NumeroEnteroInvalidoException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (FormatException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new NumeroEnteroInvalidoException(RecursosDAOModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosDAOModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (ExceptionSKDConexionBD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExceptionSKD("No se pudo completar la operacion", ex);
             }
 
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                RecursosDAOModulo7.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             return ubicacion;
         }
 

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using NUnit.Framework;
 using DatosSKD.Fabrica;
 using DatosSKD.DAO.Modulo7;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD.Modulo7;
-using DominioSKD.Entidades.Modulo5;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo7;
 
