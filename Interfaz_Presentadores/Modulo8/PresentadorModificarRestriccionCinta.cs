@@ -29,6 +29,7 @@ namespace Interfaz_Presentadores.Modulo8
         public DominioSKD.Entidades.Modulo8.RestriccionCinta meterParametrosVistaEnObjeto(DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccion)
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta retriccionCinta = laRestriccion;
+            retriccionCinta.IdRestriccionCinta = int.Parse(vista.id_restriccion);
             retriccionCinta.PuntosMinimos = int.Parse(vista.puntaje_min);
             retriccionCinta.TiempoDocente = int.Parse(vista.horas_docen);
             retriccionCinta.TiempoMinimo = int.Parse(vista.tiempo_Min);
@@ -48,7 +49,7 @@ namespace Interfaz_Presentadores.Modulo8
 
         }
 
-        public void agregarRest()
+        public void ModificarRest()
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
 
@@ -62,7 +63,7 @@ namespace Interfaz_Presentadores.Modulo8
 
 
             FabricaComandos _fabrica = new FabricaComandos();
-            Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionCinta(laRestCinta);
+            Comando<bool> _comando = _fabrica.CrearComandoModificarRestriccionCinta(laRestCinta);
             bool resultado = _comando.Ejecutar();
         }
 

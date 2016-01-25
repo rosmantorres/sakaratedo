@@ -50,13 +50,14 @@
                 </div>
 				<div class="icon-addon addon-lg">
 					
-					<input type="number" placeholder="Tiempo Mínimo" class="form-control" id="tiempo_minimo" runat="server">
-                    <input style="margin-top:5%" type="number" placeholder="Puntaje Mínimo" class="form-control" id="puntaje_minimo" runat="server">
-                    <input style="margin-top:5%" type="number" placeholder="Horas doncentes mínimas" class="form-control" id="horas_docentes" runat="server">
+                    
+					<input type="number" placeholder="Tiempo Mínimo" class="form-control" id="tiempo_minimo" runat="server" name ="tiempo_minimo" min="1" max="12">
+                    <input style="margin-top:5%" type="number" placeholder="Puntaje Mínimo" class="form-control" id="puntaje_minimo" runat="server" name="punto_minimo" min="0" max="4000">
+                    <input style="margin-top:5%" type="number" placeholder="Horas doncentes mínimas" class="form-control" id="horas_docentes" runat="server" name="hora_docente" min="0" max="1200">
 					
                     <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesAvanceCinta.aspx">Cancelar</a>
                     
-                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary"  type="submit" runat="server" Text = "Modificar"   ></asp:Button>
+                    <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Modificar"   ></asp:Button>
 				
 				</div>	
 			

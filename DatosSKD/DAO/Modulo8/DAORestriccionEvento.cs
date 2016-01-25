@@ -404,13 +404,13 @@ namespace DatosSKD.DAO.Modulo8
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    int IdRestEvento = int.Parse(RecursosDAORestriccionEvento.AliasIdRestriccionEvento.ToString());
-                    String Descripcion = RecursosDAORestriccionEvento.AliasResDescripcion.ToString();
-                    int EdadMinima = int.Parse(RecursosDAORestriccionEvento.AliasEdadMin.ToString());
-                    int EdadMaxima = int.Parse(RecursosDAORestriccionEvento.AliasEdadMax.ToString());
-                    String Sexo = RecursosDAORestriccionEvento.AliasSexo.ToString();
-                    int IdEvento = int.Parse(RecursosDAORestriccionEvento.AliasIdEvento.ToString());
-                    String NombreEvento = RecursosDAORestriccionEvento.AliasNombreEve.ToString();
+                    int IdRestEvento = int.Parse(row[RecursosDAORestriccionEvento.AliasIdRestriccionEvento].ToString());
+                    String Descripcion = row[RecursosDAORestriccionEvento.AliasResDescripcion].ToString();
+                    int EdadMinima = int.Parse(row[RecursosDAORestriccionEvento.AliasEdadMin].ToString());
+                    int EdadMaxima = int.Parse(row[RecursosDAORestriccionEvento.AliasEdadMax].ToString());
+                    String Sexo = row[RecursosDAORestriccionEvento.AliasSexo].ToString();
+                    int IdEvento = int.Parse(row[RecursosDAORestriccionEvento.AliasIdEvento].ToString());
+                    String NombreEvento = row[RecursosDAORestriccionEvento.AliasNombreEve].ToString();
 
                     Entidad laRestriccionEvento = fabricaEntidad.ObtenerRestriccionEvento(IdRestEvento, Descripcion, EdadMinima, EdadMaxima, Sexo, IdEvento, NombreEvento);
                     laListaRestriccionesEvento.Add(laRestriccionEvento);

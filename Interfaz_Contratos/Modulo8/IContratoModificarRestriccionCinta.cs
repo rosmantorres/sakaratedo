@@ -11,6 +11,7 @@ namespace Interfaz_Contratos.Modulo8
 {
     public interface IContratoModificarRestriccionCinta
     {
+        string id_restriccion { get; set; }
         string tiempo_Min { get; set; }
         string horas_docen { get; set; }
         string puntaje_min { get; set; }

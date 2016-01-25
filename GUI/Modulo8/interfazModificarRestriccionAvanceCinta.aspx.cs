@@ -19,6 +19,18 @@ namespace templateApp.GUI.Modulo8
         private PresentadorModificarRestriccionCinta _presentador;
 
         #region Implementacion de Contrato
+
+        public string id_restriccion
+        {
+            get
+            {
+                return Request.QueryString["idPlan"];
+            }
+            set
+            {
+                this.tiempo_minimo.Value = Request.QueryString["idPlan"]; 
+            }
+        }
         
         public string tiempo_Min
         {
@@ -104,6 +116,13 @@ namespace templateApp.GUI.Modulo8
                 ((SKD)Page.Master).IdModulo = "8";
                 
             }
+        }
+
+
+        protected void btnaceptar_Click(object sender, EventArgs e)
+        {
+            _presentador.ModificarRest();
+
         }
         
     }

@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
+using DatosSKD.DAO.Modulo8;
+using ExcepcionesSKD;
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
-    public class ComandoModificarRestriccionCinta : Comando<Boolean>
+    public class ComandoConsultarRestriccionEvento : Comando<List<DominioSKD.Entidad>>
     {
 
         private Entidad parametro;
@@ -19,36 +21,29 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             set { parametro = value; }
         }
 
-        public ComandoModificarRestriccionCinta(Entidad nuevaEntidad)
-            : base()
+        public override List<DominioSKD.Entidad> Ejecutar()
         {
-            this.LaEntidad = nuevaEntidad;
-        }
+            List<DominioSKD.Entidad> resultado = new List<Entidad>(); ;
 
-        public override Boolean Ejecutar()
-        {
-            Boolean resultado = false;
-            
             DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
-            
-            IDaoRestriccionCinta daoRestriccionCinta = fabricaDAO.ObtenerDAORestriccionCinta();
+
 
             try
             {
+                IDaoRestriccionEvento daoRestriccionEvento = fabricaDAO.ObtenerDAORestriccionEvento();
+                resultado = daoRestriccionEvento.ConsultarEventosConRestriccion();
 
-                resultado = daoRestriccionCinta.ModificarRestriccionCinta(this.LaEntidad);
-            
             }
             catch (Exception ex)
             {
-                
+
                 throw ex;
-            
+
             }
-            
+
             return resultado;
 
         }
-     
+
     }
 }
