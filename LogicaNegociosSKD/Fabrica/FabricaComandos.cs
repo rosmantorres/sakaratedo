@@ -138,6 +138,17 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarListaCompetenciaRestriccionCompetencia();
         }
+
+        public static Comando<Boolean> CrearComandoModificarRestriccionCompetencia()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCompetencia();
+        }
+
+        public static Comando<List<Entidad>> CrearComandoConsultarTodosRestriccionCompetencia()
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarTodosRestriccionCompetencia();
+        }
+
         #endregion
 
         #region Comandos Restriccion Avance de Cinta
