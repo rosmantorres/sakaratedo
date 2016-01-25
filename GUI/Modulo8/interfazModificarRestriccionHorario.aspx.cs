@@ -118,7 +118,7 @@ namespace templateApp.GUI.Modulo8
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
             _presentador.ModificarRest();
-
+            Response.Redirect("../Modulo8/interfazRestriccionesHorario.aspx");
         }
     }
 }
