@@ -225,3 +225,5 @@ LogicaNegociosSKD/LogicaNegociosSKD.csproj
 Interfaz_Contratos/Interfaz_Contratos.csproj
 Interfaz.csproj
 DatosSKD/DatosSKD.csproj
+*.csproj
+*.config
