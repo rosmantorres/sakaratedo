@@ -89,6 +89,7 @@
     <Compile Include="Comandos\Modulo4\ComandoDetallarDojo.cs" />
     <Compile Include="Comandos\Modulo4\ComandoEliminarDojo.cs" />
     <Compile Include="Comandos\Modulo4\ComandoListarDojos.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoModificarDojo.cs" />
     <Compile Include="Comandos\Modulo4\RecursosComandoModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -113,15 +113,6 @@ namespace templateApp.GUI.Modulo4
 
         }
 
-       /* protected void llenarModalInfo(int elIdDojo)
-        {
-            Competencia laCompetencia = new Competencia();
-            LogicaDojo logica = new LogicaDojo();
-            laCompetencia = logica.detalleDojoXId(elIdDojo);
-
-
-
-        
-        }*/
+       
     }
 }

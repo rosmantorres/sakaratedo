@@ -64,6 +64,7 @@
     <Compile Include="Modulo4\IContratoDetalleDojo.cs" />
     <Compile Include="Modulo4\IContratoListarDojos.cs" />
     <Compile Include="Modulo4\IContratoAgregarDojo.cs" />
+    <Compile Include="Modulo4\IContratoModificarDojo.cs" />
     <Compile Include="Modulo5\IContratoCrearCinta.cs" />
     <Compile Include="Modulo5\IContratoListarCintas.cs" />
     <Compile Include="Modulo5\IContratoModificarCinta.cs" />

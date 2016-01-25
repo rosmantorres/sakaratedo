@@ -457,6 +457,15 @@ namespace DatosSKD.DAO.Modulo4 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a M4_ModificarDojo.
+        /// </summary>
+        internal static string ModificarDojo {
+            get {
+                return ResourceManager.GetString("ModificarDojo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Direccion.
         /// </summary>
         internal static string ParametroDireccion {
@@ -615,6 +624,15 @@ namespace DatosSKD.DAO.Modulo4 {
         internal static string ParamIdOrganizacion {
             get {
                 return ResourceManager.GetString("ParamIdOrganizacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a @idUbicacionDojo.
+        /// </summary>
+        internal static string ParamIdUbicacion {
+            get {
+                return ResourceManager.GetString("ParamIdUbicacion", resourceCulture);
             }
         }
         

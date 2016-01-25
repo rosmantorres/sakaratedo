@@ -59,6 +59,10 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoDetallarDojo();
         }
+        public static Comando<bool> CrearComandoModificarDojo()
+        {
+            return new ComandoModificarDojo();
+        }
         #endregion
 
         #region Modulo 5

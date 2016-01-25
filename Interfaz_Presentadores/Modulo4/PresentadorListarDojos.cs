@@ -51,7 +51,12 @@ namespace Interfaz_Presentadores.Modulo4
                     vista.alertaRol = "alert";
                     vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Dojo modificado exitosamente</div>";
                 }
-
+                if (vista.Success.Equals("4"))
+                {
+                    vista.alertaClase = "alert alert-danger alert-dismissible";
+                    vista.alertaRol = "alert";
+                    vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Dojo NO se ha modificado exitosamente</div>";
+                }
             }
 
 

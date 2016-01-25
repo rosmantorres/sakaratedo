@@ -132,7 +132,110 @@ namespace DatosSKD.DAO.Modulo4
             
             return false;
         }
-        public bool Modificar(Entidad parametro) { return true; }
+        public bool Modificar(Entidad parametro)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                DominioSKD.Dojo elDojo = (DominioSKD.Dojo)FabricaEntidades.ObtenerDojo_M4();
+                elDojo = (DominioSKD.Dojo)parametro;
+
+                    ///Se listan todos los parametros para crear el nuevo dojo
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro elParametro = new Parametro(RecursosDAOModulo4.ParamIdDojo, SqlDbType.Int, elDojo.Id.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroRifDojo, SqlDbType.VarChar, elDojo.Rif_dojo, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroNombreDojo, SqlDbType.VarChar, elDojo.Nombre_dojo, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroTelefonoDojo, SqlDbType.Int,
+                        elDojo.Telefono_dojo.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroEmailDojo, SqlDbType.VarChar,
+                        elDojo.Email_dojo, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroLogoDojo, SqlDbType.VarChar,
+                        elDojo.Logo_dojo, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroStatusDojo, SqlDbType.Bit,
+                        elDojo.Status_dojo.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroNombreEstado, SqlDbType.VarChar,
+                        elDojo.Ubicacion.Estado, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroNombreCiudad, SqlDbType.VarChar,
+                        elDojo.Ubicacion.Ciudad, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroLatitud, SqlDbType.VarChar,
+                        elDojo.Ubicacion.Latitud, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroLongitud, SqlDbType.VarChar,
+                        elDojo.Ubicacion.Longitud, false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAOModulo4.ParametroDireccion, SqlDbType.VarChar,
+                        elDojo.Ubicacion.Direccion, false);
+                    parametros.Add(elParametro);
+
+                    //elParametro = new Parametro(RecursosDAOModulo4.ParamIdOrganizacion, SqlDbType.Int, elDojo.Organizacion.Id.ToString(), false);
+                    //parametros.Add(elParametro);
+
+                    BDConexion laConexion = new BDConexion();
+                    laConexion.EjecutarStoredProcedure(RecursosDAOModulo4.ModificarDojo, parametros);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    return true;
+                
+            }
+            catch (SqlException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo4.FormatoIncorrectoException(RecursosDAOModulo4.Codigo_Error_Formato,
+                     RecursosDAOModulo4.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.Modulo4.DojoInexistenteException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                //throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return false;
+        }
         public Entidad ConsultarXId(Entidad parametro)
         {
             BDConexion laConexion;
@@ -179,6 +282,7 @@ namespace DatosSKD.DAO.Modulo4
                             ubi.Id = int.Parse(row[RecursosDAOModulo4.AliasIdUbicacion].ToString());
                             ubi.Ciudad = row[RecursosDAOModulo4.AliasNombreCiudad].ToString();
                             ubi.Estado = row[RecursosDAOModulo4.AliasNombreEstado].ToString();
+                            ubi.Direccion = row[RecursosDAOModulo4.AliasNombreDireccion].ToString();
                             elDojo.Ubicacion = ubi;
 
 
@@ -415,8 +519,8 @@ namespace DatosSKD.DAO.Modulo4
                 {
                     foreach (DataRow row in dt.Rows)
                     {
-
-                        if (String.Equals(elDojo.Rif_dojo, row[RecursosDAOModulo4.ParametroRifDojo].ToString()))
+                        string data =  row[RecursosDAOModulo4.ParametroRifDojo].ToString();
+                        if (String.Equals(elDojo.Rif_dojo,data))
                         {
                             retorno = true;
                             break;

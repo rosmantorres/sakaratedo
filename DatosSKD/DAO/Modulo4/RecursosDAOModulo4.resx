@@ -315,4 +315,10 @@
   <data name="BuscarIdOrganizacion" xml:space="preserve">
     <value>M4_BuscarIdOrganizacion</value>
   </data>
+  <data name="ModificarDojo" xml:space="preserve">
+    <value>M4_ModificarDojo</value>
+  </data>
+  <data name="ParamIdUbicacion" xml:space="preserve">
+    <value>@idUbicacionDojo</value>
+  </data>
 </root>

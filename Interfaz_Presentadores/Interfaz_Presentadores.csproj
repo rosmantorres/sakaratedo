@@ -94,6 +94,7 @@
     <Compile Include="Modulo4\PresentadorAgregarDojo.cs" />
     <Compile Include="Modulo4\PresentadorDetallarDojo.cs" />
     <Compile Include="Modulo4\PresentadorListarDojos.cs" />
+    <Compile Include="Modulo4\PresentadorModificarDojo.cs" />
     <Compile Include="Modulo5\PresentadorCrearCintas.cs" />
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
