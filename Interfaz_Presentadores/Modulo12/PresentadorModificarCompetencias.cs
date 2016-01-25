@@ -335,6 +335,9 @@ namespace Interfaz_Presentadores.Modulo12
 
             if (Validaciones.ValidarCamposVacios(laListaDeInputs))
             {
+              Regex rex = new Regex(M12_RecursoInterfazPresentador.expresionNombre);
+              if (rex.IsMatch(vista.nombreComp))
+              {
                 try
                 {
                     String modificarString = 
@@ -425,6 +428,15 @@ namespace Interfaz_Presentadores.Modulo12
                     vista.alerta = M12_RecursoInterfazPresentador.alertaHtml
                         + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
                 }
+              }
+              else
+              {
+                  vista.alertaClase = M12_RecursoInterfazPresentador.alertaError;
+                  vista.alertaRol = M12_RecursoInterfazPresentador.tipoAlerta;
+                  vista.alerta = M12_RecursoInterfazPresentador.alertaHtml
+                  + M12_RecursoInterfazPresentador.nombreInvalido
+                  + M12_RecursoInterfazPresentador.alertaHtmlFinal;
+              }
             }
             else
             {
