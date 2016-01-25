@@ -187,6 +187,10 @@
       <Project>{355ee1d1-efbd-44ed-9333-984e675ddd6d}</Project>
       <Name>Interfaz</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Interfaz_Contratos\Interfaz_Contratos.csproj">
+      <Project>{688be1ea-7c38-424e-a86a-14ba0fa85f20}</Project>
+      <Name>Interfaz_Contratos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaz_Presentadores\Interfaz_Presentadores.csproj">
       <Project>{f31464f0-9be3-4fe9-9a30-34d5891cc4ea}</Project>
       <Name>Interfaz_Presentadores</Name>
