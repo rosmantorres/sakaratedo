@@ -585,15 +585,28 @@ namespace Interfaz_Presentadores.Modulo16
                 String pagofinal = null;
                 bool respuesta = false;
 
-                //Obtengo el monto con el que pago la transaccion
-                float montoPago = float.Parse(laVista.MontoPago.Value);
+                //Monto que el usuario inserta
+                float montoPago = 0;
 
-                //Disparo una excepcion si el pago insertado es a/o es 0
-                if (montoPago <= 0)
+                //Verifico si el monto ingresado no tiene puntos
+                if (!laVista.MontoPago.Value.Contains('.'))
+                {
+                    //Obtengo el monto con el que pago la transaccion
+                    montoPago = float.Parse(laVista.MontoPago.Value);
+
+                    //Disparo una excepcion si el pago insertado es menor a 0 o es 0
+                    if (montoPago <= 0)
+                        throw new MontoInvalidoException(
+                            M16_Recursointerfaz.CODIGO_EXCEPCION_MONTO_INVALIDO,
+                            M16_Recursointerfaz.MENSAJE_EXCEPCION_MONTO_INVALIDO,
+                            new MontoInvalidoException());
+                }
+                else
                     throw new MontoInvalidoException(
                         M16_Recursointerfaz.CODIGO_EXCEPCION_MONTO_INVALIDO,
                         M16_Recursointerfaz.MENSAJE_EXCEPCION_MONTO_INVALIDO,
                         new MontoInvalidoException());
+                
 
                 //Obtengo el Valor del combobox y le añado su correspondiente tipo de pago
                 switch (tipoPago)
@@ -621,7 +634,7 @@ namespace Interfaz_Presentadores.Modulo16
                 List<String> datosPago = new List<String>();
                 datosPago.Add(laVista.Datospago.Value);
 
-                //Si es un tipo de pago valido
+                //Si los datos del tipo de pago seleccionado son numeros
                 if (Validaciones.ValidarExpresionRegular(datosPago, expresionRegular))
                 {                    
                     //Instancio la entidad pago y asigno sus datos
