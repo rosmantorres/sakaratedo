@@ -60,6 +60,7 @@ namespace templateApp.GUI.Modulo8
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
             ((SKD)Page.Master).IdModulo = "8.1";
 
             if (!IsPostBack)

@@ -1,9 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazRestriccionesHorario.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazRestriccionesHorario" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
 </asp:Content>
-
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
 
     <%--Breadcrumbs--%>
@@ -25,23 +22,16 @@
 	<%--Fin_Breadcrumbs--%>
 
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
 
-    <%--Titulo--%>
-     Gestión de Restricciones de Horarios
-    <%--Fin_Titulo--%>
+    Gestión de Restricciones de Horarios
 
 </asp:Content>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
     
     Restricciones de Horarios
-	
-	
 
 </asp:Content>
-
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 	
 	<div id="alerta" runat="server">
