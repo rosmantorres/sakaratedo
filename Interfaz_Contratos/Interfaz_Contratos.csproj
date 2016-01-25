@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo14\IContartoM14MostrarFacturaPlanilla.cs" />
     <Compile Include="Modulo15\IContratoAgregarImplemento.cs" />
     <Compile Include="Modulo15\IContratoConsultarImplemento.cs" />
     <Compile Include="Modulo15\IContratoModificarImplemento.cs" />
