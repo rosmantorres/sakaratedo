@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -19,8 +20,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOTipoEvento
     {
         #region Atributos
-        private TipoEvento idTipoEvento;
-        private FabricaEntidades fabricaEntidades;
+        private TipoEventoM7 idTipoEvento;
         private FabricaDAOSqlServer fabricaSql;
         private DaoTipoEvento baseDeDatosTipoEvento;
         #endregion
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             fabricaSql = new FabricaDAOSqlServer();
             baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
-            fabricaEntidades = new FabricaEntidades();
-            idTipoEvento = new TipoEvento(); //se sustituye con fabrica
+            idTipoEvento = (TipoEventoM7)FabricaEntidades.ObtenerTipoEventoM7();
             idTipoEvento.Id = 2;
         }
 
@@ -46,7 +45,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idTipoEvento = null;
-            fabricaEntidades = null;
             fabricaSql = null;
             baseDeDatosTipoEvento = null;
         }
@@ -58,7 +56,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarTipoEventoXId()
         {
-            TipoEvento tipoEvento = (TipoEvento)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
+            TipoEventoM7 tipoEvento = (TipoEventoM7)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
             Assert.AreEqual("Seminario", tipoEvento.Nombre);
         }
 
@@ -68,7 +66,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarTipoEventoXIdNoNulo()
         {
-            TipoEvento tipoEvento = (TipoEvento)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
+            TipoEventoM7 tipoEvento = (TipoEventoM7)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
             Assert.IsNotNull(tipoEvento);
         }
 
@@ -80,7 +78,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void DetallarTipoEventoNumeroEnteroException()
         {
             idTipoEvento.Id = -1;
-            TipoEvento tipoEvento = (TipoEvento)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
+            TipoEventoM7 tipoEvento = (TipoEventoM7)baseDeDatosTipoEvento.ConsultarXId(idTipoEvento);
         }
     }
 }

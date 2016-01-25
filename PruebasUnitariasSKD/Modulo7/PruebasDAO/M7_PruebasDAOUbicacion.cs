@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -19,8 +20,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOUbicacion
     {
         #region Atributos
-        private Ubicacion idUbicacion;
-        private FabricaEntidades fabricaEntidades;
+        private UbicacionM7 idUbicacion;
         private FabricaDAOSqlServer fabricaSql;
         private DaoUbicacion baseDeDatosUbicacion;
         #endregion
@@ -32,10 +32,9 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [SetUp]
         public void Init()
         {
-            idUbicacion = new Ubicacion();          
+            idUbicacion = (UbicacionM7)FabricaEntidades.ObtenerUbicacionM7();        
             fabricaSql = new FabricaDAOSqlServer();
             baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
-            fabricaEntidades = new FabricaEntidades();//se debe sustituir por fabrica
             idUbicacion.Id = 6;
         }
 
@@ -46,7 +45,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idUbicacion = null;
-            fabricaEntidades = null;
             fabricaSql = null;
             baseDeDatosUbicacion = null;
         }
@@ -58,7 +56,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarUbicacionXId()
         {
-            Ubicacion ubicacion = (Ubicacion)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
+            UbicacionM7 ubicacion = (UbicacionM7)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
             Assert.AreEqual("Caracas", ubicacion.Ciudad);
         }
 
@@ -68,7 +66,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarUbicacionXIdNoNula()
         {
-            Ubicacion ubicacion = (Ubicacion)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
+            UbicacionM7 ubicacion = (UbicacionM7)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
             Assert.IsNotNull(ubicacion);
         }
 
@@ -80,7 +78,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void DetallarUbicacionNumeroEnteroException()
         {
             idUbicacion.Id = -1;
-            Ubicacion ubicacion = (Ubicacion)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
+            UbicacionM7 ubicacion = (UbicacionM7)baseDeDatosUbicacion.ConsultarXId(idUbicacion);
         }
     }
 }

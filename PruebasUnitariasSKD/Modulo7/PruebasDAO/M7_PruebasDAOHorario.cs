@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DominioSKD.Entidades.Modulo7;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
 {
@@ -19,8 +20,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     public class M7_PruebasDAOHorario
     {
         #region Atributos
-        private Horario idHorario;
-        private FabricaEntidades fabricaEntidades;
+        private HorarioM7 idHorario;
         private FabricaDAOSqlServer fabricaSql;
         private DaoHorario baseDeDatosHorario;
         #endregion
@@ -34,8 +34,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             fabricaSql = new FabricaDAOSqlServer();
             baseDeDatosHorario = fabricaSql.ObtenerDaoHorarioM7();
-            fabricaEntidades = new FabricaEntidades();
-            idHorario = new Horario(); //se sustituye por fabrica
+            idHorario = (HorarioM7)FabricaEntidades.ObtenerHorarioM7();
             idHorario.Id = 6;
         }
 
@@ -46,7 +45,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idHorario = null;
-            fabricaEntidades = null;
             fabricaSql = null;
             baseDeDatosHorario = null;
         }
@@ -58,7 +56,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarHorarioXId()
         {
-            Horario horario = (Horario)baseDeDatosHorario.ConsultarXId(idHorario);
+            HorarioM7 horario = (HorarioM7)baseDeDatosHorario.ConsultarXId(idHorario);
             Assert.AreEqual("03/10/2015", horario.FechaFin.ToString("MM/dd/yyyy"));
         }
 
@@ -68,7 +66,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaDetallarHorarioXIdNoNulo()
         {
-            Horario horario = (Horario)baseDeDatosHorario.ConsultarXId(idHorario);
+            HorarioM7 horario = (HorarioM7)baseDeDatosHorario.ConsultarXId(idHorario);
             Assert.IsNotNull(horario);
         }
         /// <summary>
@@ -80,7 +78,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void PruebaDetallarHorarioNumeroEnteroException()
         {
             idHorario.Id = -1;
-            Horario horario = (Horario)baseDeDatosHorario.ConsultarXId(idHorario);
+            HorarioM7 horario = (HorarioM7)baseDeDatosHorario.ConsultarXId(idHorario);
         }
     }
 }

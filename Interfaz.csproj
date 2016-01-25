@@ -281,9 +281,9 @@
     <Content Include="GUI\Modulo7\M7_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetenciaInscrita.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoInscrito.aspx" />
-    <Content Include="GUI\Modulo7\js\daterange.js" />
-    <Content Include="GUI\Modulo7\js\jquery-ui.js" />
-    <Content Include="GUI\Modulo7\js\jquery.ui.datepicker-es.js" />
+    <Content Include="GUI\Modulo7\css\js\daterange.js" />
+    <Content Include="GUI\Modulo7\css\js\jquery-ui.js" />
+    <Content Include="GUI\Modulo7\css\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_DetalleCinta.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoPago.aspx" />
