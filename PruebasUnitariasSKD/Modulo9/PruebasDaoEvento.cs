@@ -18,9 +18,7 @@ namespace PruebasUnitariasSKD.Modulo9
     [TestFixture]
     class PruebasDaoEvento
     {
-        
         #region Pruebas Unitarias
-
         /// <summary>
         /// Prueba que verifica si se inserta en BD
         /// </summary>
@@ -140,7 +138,6 @@ namespace PruebasUnitariasSKD.Modulo9
         /// <summary>
         /// Prueba que verifica si se el evento consultado existe
         /// </summary>
-
         [Test]
         public void PruebaConsultarEvento()
         {

@@ -480,82 +480,6 @@ namespace Interfaz_Presentadores.Modulo16
        #endregion
 
        #region Metodos para Imprimir la Factura (Modulo14)
-        public Compra DetalleFactura1(Entidad compra)
-        {
-            try
-            {
-                //Escribo en el logger la entrada a este metodo
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
-                    System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-                //Casteamos
-                Comando<Entidad> DetalleFactura = FabricaComandos.CrearComandoDetallarFactura(compra);
-                Compra laFactura = (Compra)DetalleFactura.Ejecutar();
-
-                //Escribo en el logger la salida a este metodo
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-                // Retornamos la Factura
-                return laFactura;
-            }
-
-            #region Catches
-            catch (PersonaNoValidaException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (LoggerException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-
-            }
-            catch (ArgumentNullException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (FormatException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-
-            }
-            catch (OverflowException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-
-            }
-            catch (ParametroInvalidoException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExceptionSKDConexionBD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-
-            }
-            catch (ExceptionSKD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-
-
-            #endregion
-        }
 
         public void DetalleFactura_Fact1(object sender, CommandEventArgs e)
         {
@@ -570,64 +494,7 @@ namespace Interfaz_Presentadores.Modulo16
             compra.Com_id = int.Parse(id);
 
             //Casteamos
-            Compra resultados = DetalleFactura1(compra);
-            imprimir_Click(resultados);
-        }
-
-        public void imprimir_Click(Compra compra)
-        {
-            string cadenaFinal = ConstruirDiseno(compra);
-            HttpContext.Current.Response.Redirect("~/GUI/Modulo14/M14_MostrarFacturaDisenoPlanilla.aspx?idPlan=" + cadenaFinal, false);
-        }
-
-        public string ConstruirDiseno(Compra compra)
-        {
-            string encabezado = "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td><strong>Nro de Factura</strong></td><td>";
-            string numeroFact = encabezado + compra.Com_id + "</td><td><strong>Fecha de Pago</strong></td><td>";
-            string finEncabezado = numeroFact + compra.Com_fecha_compra + "</td></tr></tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
-            string formasPago = finEncabezado + "<p><strong>Formas de Pago</strong></p>";
-            string pago = "";
-            foreach (Pago pag in compra.Listapago)
-            {
-                pago += "<p>" + pag.TipoPago + "</p>";
-            }
-            string finPago = formasPago + pago;
-            string encabezadoDetallePro = finPago + "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>&nbsp;Detalles de los productos</strong></td></tr></tbody></table><p>&nbsp;</p>";
-            string productos = encabezadoDetallePro + "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td><strong>Nombre</strong></td><td><strong>Precio unitario</strong></td><td><strong>Cantidad</strong></td><td><strong>Subtotal</strong></td></tr>";
-            string detalle = "";
-            foreach (DetalleFacturaProducto detaPro in compra.Listainventario)
-            {
-                detalle += "<tr><td>" + detaPro.Producto.Nombre_Implemento;
-                detalle += "</td><td>" + detaPro.Producto.Precio_Implemento;
-                detalle += "</td><td>" + detaPro.Cantidad_producto;
-                detalle += "</td><td>" + detaPro.Subtotal + "</td></tr>";
-            }
-            string finEncabezadoDetallePro = productos + detalle + "</tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
-            string encabezadoDetalleEven = "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>&nbsp;Detalles de los eventos</strong></td></tr></tbody></table><p>&nbsp;</p>";
-            string evento = encabezadoDetalleEven + "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td><strong>Nombre</strong></td><td><strong>Precio Unitario</strong></td><td><strong>Cantidad</strong></td><td><strong>Subtotal</strong></td></tr>";
-            string detalleEve = "";
-            foreach (DetalleFacturaEvento eve in compra.Listaevento)
-            {
-                detalleEve += "<tr><td>" + eve.Evento.Nombre;
-                detalleEve += "</td><td>" + eve.Evento.Costo;
-                detalleEve += "</td><td>" + eve.Cantidad_evento;
-                detalleEve += "</td><td>" + eve.Subtotal + "</td></tr>";
-            }
-
-            string finEncabezadoDetalleEve = evento + detalleEve + "</tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
-            string encabezadoDetalleMatri = "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<strong>Detalles de las matriculas</strong></td></tr></tbody></table><p>&nbsp;</p>";
-            string matricula = encabezadoDetalleMatri + "<table align='left' border='1' cellpadding='1' cellspacing='1' style='width:700px'><tbody><tr><td><strong>Nombre</strong></td><td><strong>Precio Unitario</strong></td><td><strong>Cantidad</strong></td><td><strong>Subtotal</strong></td></tr>";
-            string detalleMatri = "";
-            foreach (DetalleFacturaMatricula matri in compra.Listamatricula)
-            {
-                detalleMatri += "<tr><td>" + matri.Matricula.Identificador;
-                detalleMatri += "</td><td>" + matri.Matricula.Costo;
-                detalleMatri += "</td><td>" + matri.Cantidad_matricula;
-                detalleMatri += "</td><td>" + matri.Subtotal + "</td></tr>";
-            }
-            string finEncabezadoDetalleMatri = matricula + detalleMatri + "</tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
-            string total = finEncabezadoDetalleMatri + "<p><strong>Total:</strong>" + compra.Monto + "</p>";
-            return total;
+            HttpContext.Current.Response.Redirect("~/GUI/Modulo14/M14_MostrarFacturaDisenoPlanilla.aspx?idComp=" + compra.Com_id.ToString());
         }
 
         #endregion

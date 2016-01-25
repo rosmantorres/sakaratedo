@@ -9,6 +9,7 @@ using log4net;
 using log4net.Config;
 using LogicaNegociosSKD.Comandos;
 using LogicaNegociosSKD.Fabrica;
+using DominioSKD.Fabrica;
 
 
 namespace PruebasUnitariasSKD.Modulo9
@@ -21,103 +22,36 @@ namespace PruebasUnitariasSKD.Modulo9
         [Test]
         public void PruebaListarTiposEventos()
         {
-            LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaTipoEventos comando = (LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaTipoEventos)FabricaComandos.ObtenerComandoConsultarTipoEventos();
-        
-                
+            LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaTipoEventos comando = (LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaTipoEventos)FabricaComandos.ObtenerComandoConsultarTipoEventos();  
             List<Entidad> listaEvento = comando.Ejecutar();
             foreach (Entidad a in listaEvento)
             {
                 DominioSKD.Entidades.Modulo9.TipoEvento tipo = (DominioSKD.Entidades.Modulo9.TipoEvento)a;
                 Console.Out.WriteLine(tipo.Id);
                 Console.Out.WriteLine(tipo.Nombre);
-
-
             }
             Assert.Greater(listaEvento.Count, 0);
         }
-        /*[Test]
-        public void PruebaValidarCaracteres()
-        {
-            String cadenaPrueba = "Caracas es La mejor Ciudad del Mundo";
-            LogicaEvento logicaEvento = new LogicaEvento();
-            Boolean auxiliar = logicaEvento.ValidarCaracteres(cadenaPrueba);
-            Assert.IsTrue(auxiliar);
-        }
 
-        [Test]
-        public void PruebaValidarCosto()
-        {
-            float numeroPrueba = 85269;
-            LogicaEvento logicaEvento = new LogicaEvento();
-            Boolean auxiliar = logicaEvento.ValidarCosto(numeroPrueba);
-            Assert.IsTrue(auxiliar);
-        }
-
-        [Test]
-        public void PruebaConvertirFecha()
-        {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            String prueba = "05/06/2015";
-            DateTime resultado = logicaEvento.ConvertirFecha(prueba);
-            Console.Out.WriteLine(resultado.Day);
-            Console.Out.WriteLine(resultado.Month);
-            Console.Out.WriteLine(resultado.Year);
-            Assert.AreEqual(resultado.Year, 2015);
-        }
-
-        [Test]
-
-        public void PruebaValidarFormatoFecha()
-        {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            String prueba = "05-06-2015";
-            Boolean resultado = logicaEvento.ValidarFormatoFecha(prueba);
-            Assert.IsTrue(resultado);
-        }
-
-        [Test]
-
-        public void PruebaValidarFechaFinMayor()
-        {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            String fecha1 = "05/06/2015";
-            String fecha2 = "07/06/2015";
-            Boolean resultado = logicaEvento.ValidarFechaFinMayor(fecha1, fecha2);
-            Assert.IsTrue(resultado);
-        }
-
-        [Test]
-
-        public void PruebaCrearEvento()
-        {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            Boolean resultado = logicaEvento.CrearEvento(elEvento);
-            Assert.IsTrue(resultado);
-
-        }
-
-        [Test]
-
-        public void PruebaCrearEventoConTipo()
-        {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            elEvento.TipoEvento.Nombre = "PRuebas Unitarias desde Logica";
-            Boolean resultado = logicaEvento.CrearEventoConTipo(elEvento);
-            Assert.IsTrue(resultado);
-
-        }
+        /// <summary>
+        /// Prueba que permite listar los eventos que estan en BD
+        /// </summary>
 
         [Test]
 
         public void PruebaListarEventos()
         {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            List<Evento> listaEventos = logicaEvento.ListarEventos(elEvento.Persona.ID);
-            Console.Out.WriteLine("El tamaño de la lista es" + " " + listaEventos.Count);
+            FabricaEntidades fabricaEntidades = new FabricaEntidades();
+            DominioSKD.Entidades.Modulo9.Evento parametro = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidades.ObtenerEvento();
+            parametro.Id = 36;
+            LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaEventos comando = (LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaEventos)FabricaComandos.ObtenerComandoConsultarListaEventos(parametro);
+            List<Entidad> listaEvento = comando.Ejecutar();
+            Console.Out.WriteLine("El tamaño de la lista es" + " " + listaEvento.Count);
             Console.Out.WriteLine(" ");
 
-            foreach (Evento evento in listaEventos)
+            foreach (Entidad entidad in listaEvento)
             {
+                DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)entidad;
                 Console.Out.WriteLine("Nombre de Evento:" + " " + evento.Nombre);
                 Console.Out.WriteLine("Descripcion de Evento:" + " " + evento.Descripcion);
                 Console.Out.WriteLine("Costo de Evento:" + " " + evento.Costo);
@@ -130,72 +64,94 @@ namespace PruebasUnitariasSKD.Modulo9
                 Console.Out.WriteLine(" ");
 
             }
-            Assert.Greater(listaEventos.Count, 0);
+            Assert.Greater(listaEvento.Count, 0);
         }
 
-        [Test]
+        /// <summary>
+        /// Prueba que permite verificar la creacion de un evento
+        /// </summary>
 
+        [Test]
+        public void PruebaCrearEvento()
+        {
+            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+            DateTime fechaInicio = new DateTime(2008, 5, 1, 8, 30, 52);
+            DateTime fechaFin = new DateTime(2009, 5, 1, 1, 1, 1);
+            DominioSKD.Entidades.Modulo9.Horario horario = (DominioSKD.Entidades.Modulo9.Horario)fabricaEntidad.ObtenerHorario();
+            horario.FechaInicio = fechaInicio;
+            horario.FechaFin = fechaFin;
+            horario.HoraInicioS = "10:30";
+            horario.HoraFinS = "11:00";
+            horario.Id = 1;
+            DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)fabricaEntidad.ObtenerTipoEvento();
+            tipoEvento.Id = 1;
+            tipoEvento.Nombre = "Prueba Unitaria en Dao";
+            Persona persona = new Persona();
+            persona.ID = 36;
+            DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+            elEvento.Nombre = "Prueba Unitaria Dao Crear";
+            elEvento.Descripcion = "Pruebas Unitarias de DAO Crear";
+            elEvento.Costo = 55;
+            elEvento.Estado = true;
+            elEvento.Horario = horario;
+            elEvento.TipoEvento = tipoEvento;
+            elEvento.Persona = persona;
+            LogicaNegociosSKD.Comandos.Modulo9.ComandoAgregarEvento comando = (LogicaNegociosSKD.Comandos.Modulo9.ComandoAgregarEvento)FabricaComandos.ObtenerComandoAgregarEvento(elEvento);
+            Boolean auxiliar = comando.Ejecutar();
+            Console.Out.WriteLine(auxiliar);
+            Assert.True(auxiliar);
+        }
+
+        /// <summary>
+        /// Prueba que permite verificar si esta retornando los datos correctos de BD
+        /// </summary>
+        [Test]
         public void PruebaConsultarEvento()
         {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            Evento evento = logicaEvento.ConsultarEvento("1");
-            Console.Out.WriteLine("Nombre de Evento:" + " " + evento.Nombre);
-            Console.Out.WriteLine("Descripcion de Evento:" + " " + evento.Descripcion);
-            Console.Out.WriteLine("Costo de Evento:" + " " + evento.Costo);
-            Console.Out.WriteLine("Estado de Evento:" + " " + evento.Estado);
-            Console.Out.WriteLine("Fecha Inicio de Evento:" + " " + evento.Horario.FechaInicio);
-            Console.Out.WriteLine("Fecha Fin de Evento:" + " " + evento.Horario.FechaFin);
-            Console.Out.WriteLine("Tipo de Evento:" + " " + evento.TipoEvento.Nombre);
-            Console.Out.WriteLine("Hora inicio de Evento:" + " " + evento.Horario.HoraInicio);
-            Console.Out.WriteLine("Hora fin de Evento:" + " " + evento.Horario.HoraFin);
-            Console.Out.WriteLine(" ");
-            Assert.AreEqual(evento.Nombre, "Clase Regular");
+            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+            DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+            evento.Id = 1;
+            LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarEvento comando = (LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarEvento)FabricaComandos.ObtenerComandoConsultarEvento(evento);
+            Entidad axuiliar = comando.Ejecutar();
+            Console.Out.WriteLine(axuiliar.Id);
+            Assert.AreEqual(axuiliar.Id, 1);
         }
 
-        [Test]
-        public void PruebaConsultarTipoEventos()
-        {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            List<TipoEvento> tipos = logicaEvento.ConsultarTiposEventos();
-            foreach (TipoEvento tipo in tipos)
-            {
-                Console.Out.WriteLine("Id Tipo de Evento:" + " " + tipo.Id);
-                Console.Out.WriteLine("Nombre:" + " " + tipo.Nombre);
-
-                Console.Out.WriteLine(" ");
-
-            }
-            Assert.Greater(tipos.Count, 0);
-
-        }
-
+        /// <summary>
+        /// Prueba que permite verificar si esta modificando eventos en BD
+        /// </summary>
         [Test]
         public void PruebaModificarEvento()
         {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            elEvento.Id_evento = 4;
-            elEvento.Nombre = "PRobando el Modificar desde Logica";
-            elEvento.Descripcion = "PRobando el Modificar desde Logica";
-            elEvento.Estado = false;
-            Boolean auxiliar = logicaEvento.ModificarEvento(elEvento);
+            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+            DateTime fechaInicio = new DateTime(2008, 5, 1, 8, 30, 52);
+            DateTime fechaFin = new DateTime(2009, 5, 1, 1, 1, 1);
+            DominioSKD.Entidades.Modulo9.Horario horario = (DominioSKD.Entidades.Modulo9.Horario)fabricaEntidad.ObtenerHorario();
+            horario.FechaInicio = fechaInicio;
+            horario.FechaFin = fechaFin;
+            horario.HoraInicioS = "10:30";
+            horario.HoraFinS = "11:00";
+            horario.Id = 1;
+            DominioSKD.Entidades.Modulo9.TipoEvento tipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)fabricaEntidad.ObtenerTipoEvento();
+            tipoEvento.Id = 1;
+            tipoEvento.Nombre = "Prueba Unitaria en Comandos";
+            Persona persona = new Persona();
+            persona.ID = 36;
+            DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidad.ObtenerEvento();
+            elEvento.Id = 4;
+            elEvento.Nombre = "Prueba Unitaria Comando Modificar";
+            elEvento.Descripcion = "Pruebas Unitarias de Comando Modificar";
+            elEvento.Costo = 55;
+            elEvento.Estado = true;
+            elEvento.Horario = horario;
+            elEvento.TipoEvento = tipoEvento;
+            elEvento.Persona = persona;
+            LogicaNegociosSKD.Comandos.Modulo9.ComandoModificarEvento comando = (LogicaNegociosSKD.Comandos.Modulo9.ComandoModificarEvento)FabricaComandos.ObtenerComandoModificarEvento(elEvento);
+            Boolean auxiliar = comando.Ejecutar();
+            Console.Out.WriteLine(auxiliar);
             Assert.True(auxiliar);
-
-
         }
 
-        [Test]
-        public void PruebaModificarEventoConTipo()
-        {
-            LogicaEvento logicaEvento = new LogicaEvento();
-            elEvento.Id_evento = 4;
-            elEvento.Nombre = "PRobando el Modificar desde Logica";
-            elEvento.Descripcion = "PRobando el Modificar desde Logica";
-            elEvento.Estado = false;
-            elEvento.TipoEvento.Nombre = "PRuebas Unitarias desde Logica";
-            Boolean auxiliar = logicaEvento.ModificarEvento(elEvento);
-            Assert.True(auxiliar);
-
-
-        }*/
+       
     }
 }
