@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using DominioSKD;
-using LogicaNegociosSKD;
-using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
@@ -62,7 +56,6 @@ namespace templateApp.GUI.Modulo7
             String detalleString = Request.QueryString["eventDetalle"];
 
             #region Llenar Data Table con Matriculas
-            LogicaMatriculasPagas logMatricula = new LogicaMatriculasPagas();
 
             try
             {

@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using DominioSKD;
-using LogicaNegociosSKD;
-using LogicaNegociosSKD.Modulo7;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using Interfaz_Presentadores.Modulo7;
