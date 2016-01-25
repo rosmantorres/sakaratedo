@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Modulo11\PresentadorListaResultado.cs" />
     <Compile Include="Modulo11\PresentadorModificarResultado.cs" />
+    <Compile Include="Modulo14\PresentadorM14MostrarFacturaPlanilla.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
