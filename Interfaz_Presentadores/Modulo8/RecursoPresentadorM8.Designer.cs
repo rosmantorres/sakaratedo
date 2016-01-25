@@ -261,6 +261,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;interfazModificarRestriccionEvento.aspx?idPlan=.
+        /// </summary>
+        internal static string BotonModificarRegistroEvento {
+            get {
+                return ResourceManager.GetString("BotonModificarRegistroEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada.aspx?idSol=.
         /// </summary>
         internal static string BotonModificarSolicitud {
@@ -338,15 +347,6 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string Nombre {
             get {
                 return ResourceManager.GetString("Nombre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &amp;tipo=.
-        /// </summary>
-        internal static string Tipo {
-            get {
-                return ResourceManager.GetString("Tipo", resourceCulture);
             }
         }
     }

@@ -524,3 +524,133 @@
 2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - Metodo: Void LlenarInformacion(System.Collections.Generic.List`1[DominioSKD.Entidad])
 2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarInformacion(List`1 lista) in c:\Users\Cesar\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 39
 2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - InnerException: 
+2016-01-24 18:00:36,426 ERROR PresentadorConsultarRestriccionesCinta - *******************************************************
+2016-01-24 18:00:36,431 ERROR PresentadorConsultarRestriccionesCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-24 18:00:36,434 ERROR PresentadorConsultarRestriccionesCinta - Origen: LogicaNegociosSKD
+2016-01-24 18:00:36,434 ERROR PresentadorConsultarRestriccionesCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] Ejecutar()
+2016-01-24 18:00:36,435 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Istvan\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 40
+   at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Istvan\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 82
+2016-01-24 18:00:36,437 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Istvan\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:2c75b9df-b23a-4c1e-a214-17562333e9ef
+Error Number:2812,State:62,Class:16
+2016-01-24 18:04:57,790 ERROR PresentadorConsultarRestriccionesCinta - *******************************************************
+2016-01-24 18:04:57,795 ERROR PresentadorConsultarRestriccionesCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-24 18:04:57,798 ERROR PresentadorConsultarRestriccionesCinta - Origen: LogicaNegociosSKD
+2016-01-24 18:04:57,798 ERROR PresentadorConsultarRestriccionesCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] Ejecutar()
+2016-01-24 18:04:57,798 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Istvan\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 40
+   at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Istvan\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 82
+2016-01-24 18:04:57,801 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Istvan\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:45581c59-8be3-49db-8409-ccc9cc0ba8a8
+Error Number:2812,State:62,Class:16
+2016-01-24 18:06:33,659 ERROR PresentadorConsultarRestriccionesCinta - *******************************************************
+2016-01-24 18:06:33,664 ERROR PresentadorConsultarRestriccionesCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-24 18:06:33,667 ERROR PresentadorConsultarRestriccionesCinta - Origen: LogicaNegociosSKD
+2016-01-24 18:06:33,668 ERROR PresentadorConsultarRestriccionesCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] Ejecutar()
+2016-01-24 18:06:33,668 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Istvan\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 40
+   at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Istvan\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 82
+2016-01-24 18:06:33,671 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Istvan\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:c31faaa4-f788-4e2a-8441-e319ac449bc7
+Error Number:2812,State:62,Class:16
+2016-01-24 18:08:48,021 ERROR PresentadorConsultarRestriccionesCinta - *******************************************************
+2016-01-24 18:08:48,027 ERROR PresentadorConsultarRestriccionesCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-24 18:08:48,031 ERROR PresentadorConsultarRestriccionesCinta - Origen: LogicaNegociosSKD
+2016-01-24 18:08:48,032 ERROR PresentadorConsultarRestriccionesCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] Ejecutar()
+2016-01-24 18:08:48,032 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Istvan\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 40
+   at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Istvan\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 82
+2016-01-24 18:08:48,037 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Istvan\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:e43576d6-ad2b-4244-9eb4-32ab2ed791aa
+Error Number:2812,State:62,Class:16
+2016-01-24 18:10:41,283 ERROR PresentadorConsultarRestriccionesCinta - *******************************************************
+2016-01-24 18:10:41,289 ERROR PresentadorConsultarRestriccionesCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-24 18:10:41,293 ERROR PresentadorConsultarRestriccionesCinta - Origen: LogicaNegociosSKD
+2016-01-24 18:10:41,293 ERROR PresentadorConsultarRestriccionesCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] Ejecutar()
+2016-01-24 18:10:41,293 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Istvan\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 40
+   at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Istvan\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 82
+2016-01-24 18:10:41,297 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Istvan\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:10e9c91d-0b59-46f6-8376-bab754416f09
+Error Number:2812,State:62,Class:16
