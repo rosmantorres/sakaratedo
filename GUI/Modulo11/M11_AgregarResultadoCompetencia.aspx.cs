@@ -102,13 +102,13 @@ namespace templateApp.GUI.Modulo11
             }
             Session["M11_tipo"] = tipo;
             Session["M11_IdEvento"] = ((DropDownList)sender).SelectedItem.Value;
-            if (tipo.Equals(M11_RecursosInterfaz.Evento))
+            if (tipo.Equals(M11_RecursoInterfaz.Evento))
             {
                 lEspecialidad.Visible = false;
                 comboEspecialidad.Visible = false;
                 llenarComboCategoria(LogicaResultado.listaCategoriasEvento(Session["M11_IdEvento"].ToString()));
             }
-            else if (tipo.Equals(M11_RecursosInterfaz.Competencia))
+            else if (tipo.Equals(M11_RecursoInterfaz.Competencia))
             {
                 lEspecialidad.Visible = true;
                 comboEspecialidad.Visible = true;
@@ -138,7 +138,7 @@ namespace templateApp.GUI.Modulo11
             dataTable3.Text = " ";
             Session["M11_categoria"] = ((DropDownList)sender).SelectedItem.Value;
 
-            if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Evento))
+            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
             {
                 #region Carga de tabla de Atletas que compiten en un Evento Ascenso
                 Evento evento = new Evento();
@@ -152,12 +152,12 @@ namespace templateApp.GUI.Modulo11
                     List<Inscripcion> inscripciones = LogicaResultado.listaInscritosExamenAscenso(evento);
                     foreach (Inscripcion inscripcion in inscripciones)
                     {
-                        this.dataTable.Text += M11_RecursosInterfaz.AbrirTR;
-                        this.dataTable.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                        this.dataTable.Text += M11_RecursosInterfaz.AbrirTD;
-                        this.dataTable.Text += M11_RecursosInterfaz.Seleccionar;
-                        this.dataTable.Text += M11_RecursosInterfaz.CerrarTD;
-                        this.dataTable.Text += M11_RecursosInterfaz.CerrarTR;
+                        this.dataTable.Text += M11_RecursoInterfaz.AbrirTR;
+                        this.dataTable.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                        this.dataTable.Text += M11_RecursoInterfaz.AbrirTD;
+                        this.dataTable.Text += M11_RecursoInterfaz.Seleccionar;
+                        this.dataTable.Text += M11_RecursoInterfaz.CerrarTD;
+                        this.dataTable.Text += M11_RecursoInterfaz.CerrarTR;
                     }
                 }
                 catch (Exception ex)
@@ -167,7 +167,7 @@ namespace templateApp.GUI.Modulo11
                 #endregion
 
             }
-            else if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
+            else if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 Competencia competencia = new Competencia();
                 competencia.Id_competencia = Convert.ToInt32(Session["M11_IdEvento"].ToString());
@@ -186,18 +186,18 @@ namespace templateApp.GUI.Modulo11
                         List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                         foreach (Inscripcion inscripcion in inscripciones)
                         {
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTR;
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.SeleccionarCombo1;
-                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.SeleccionarCombo2;
-                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.SeleccionarCombo3;
-                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTR;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTR;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo1;
+                            this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo2;
+                            this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo3;
+                            this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.CerrarTR;
                         }
                     }
                     catch (Exception ex)
@@ -223,16 +223,16 @@ namespace templateApp.GUI.Modulo11
                             List<ResultadoKumite> listaKumite = crearRandomPeleas(inscripciones, rango);
                             foreach (ResultadoKumite resultado in listaKumite)
                             {
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTR;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.SeleccionarCombo1;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.SeleccionarCombo2;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTR;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.SeleccionarCombo1;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.SeleccionarCombo2;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
                             }
                         }
                     }
@@ -254,18 +254,18 @@ namespace templateApp.GUI.Modulo11
                         List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                         foreach (Inscripcion inscripcion in inscripciones)
                         {
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTR;
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.SeleccionarCombo1;
-                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.SeleccionarCombo2;
-                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.SeleccionarCombo3;
-                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable2.Text += M11_RecursosInterfaz.CerrarTR;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTR;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo1;
+                            this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo2;
+                            this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo3;
+                            this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable2.Text += M11_RecursoInterfaz.CerrarTR;
                         }
                     }
                     catch (Exception ex)
@@ -284,16 +284,16 @@ namespace templateApp.GUI.Modulo11
                             List<ResultadoKumite> listaKumite = crearRandomPeleas(inscripciones, rango);
                             foreach (ResultadoKumite resultado in listaKumite)
                             {
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTR;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.SeleccionarCombo1;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.SeleccionarCombo2;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTR;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.SeleccionarCombo1;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.SeleccionarCombo2;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
                             }
                         }
                     }
@@ -308,7 +308,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bAgregar_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Evento))
+            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
             {
                 #region Agregar Examen de Ascenso
                 Evento evento = new Evento();
@@ -361,7 +361,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bAgregarKata_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
+            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 if (Session["M11_especialidad"].ToString().Equals("1"))
                 {
@@ -412,7 +412,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bAgregarKumite_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
+            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 if (Session["M11_especialidad"].ToString().Equals("2"))
                 {
@@ -468,7 +468,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bAgregarAmbos_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
+            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 if (Session["M11_especialidad"].ToString().Equals("3"))
                 {
@@ -525,7 +525,7 @@ namespace templateApp.GUI.Modulo11
         protected void bSiguiente_Click(object sender, EventArgs e)
         {
             alert.Visible = false;
-            if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
+            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) / 2;
                 Competencia competencia = new Competencia();
@@ -654,7 +654,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bSiguienteAmbos_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
+            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) / 2;
                 Competencia competencia = new Competencia();
@@ -753,11 +753,11 @@ namespace templateApp.GUI.Modulo11
             List<valores> listaEventos = new List<valores>();
             foreach (Evento evento in listaE)
             {
-                listaEventos.Add(new valores(evento.Id_evento, evento.Nombre, M11_RecursosInterfaz.Evento));
+                listaEventos.Add(new valores(evento.Id_evento, evento.Nombre, M11_RecursoInterfaz.Evento));
             }
             foreach (Competencia competencia in listaC)
             {
-                listaEventos.Add(new valores(competencia.Id_competencia, competencia.Nombre, M11_RecursosInterfaz.Competencia));
+                listaEventos.Add(new valores(competencia.Id_competencia, competencia.Nombre, M11_RecursoInterfaz.Competencia));
             }
             return listaEventos;
         }
@@ -770,7 +770,7 @@ namespace templateApp.GUI.Modulo11
                 string nombre = " ";
                 if (categoria.Id_categoria.Equals(0))
                 {
-                    nombre = M11_RecursosInterfaz.SeleccionarCategoria;
+                    nombre = M11_RecursoInterfaz.SeleccionarCategoria;
                 }
                 else
                 {
@@ -779,8 +779,8 @@ namespace templateApp.GUI.Modulo11
                 listaCategoria.Add(categoria.Id_categoria, nombre);
             }
             comboCategoria.DataSource = listaCategoria;
-            comboCategoria.DataTextField = M11_RecursosInterfaz.Value;
-            comboCategoria.DataValueField = M11_RecursosInterfaz.Key;
+            comboCategoria.DataTextField = M11_RecursoInterfaz.Value;
+            comboCategoria.DataValueField = M11_RecursoInterfaz.Key;
             comboCategoria.DataBind();
         }
 
@@ -796,8 +796,8 @@ namespace templateApp.GUI.Modulo11
                 listaEventos.Add(competencia.Id_competencia, competencia.Nombre);
             }
             comboEventos.DataSource = listaEventos;
-            comboEventos.DataTextField = M11_RecursosInterfaz.Value;
-            comboEventos.DataValueField = M11_RecursosInterfaz.Key;
+            comboEventos.DataTextField = M11_RecursoInterfaz.Value;
+            comboEventos.DataValueField = M11_RecursoInterfaz.Key;
             comboEventos.DataBind();
         }
 
@@ -809,7 +809,7 @@ namespace templateApp.GUI.Modulo11
                 string nuevo = "";
                 if (especialidad.Equals("0"))
                 {
-                    nuevo = M11_RecursosInterfaz.SeleccionarEspecialidad;
+                    nuevo = M11_RecursoInterfaz.SeleccionarEspecialidad;
                 }
                 else if (especialidad.Equals("1"))
                 {
@@ -826,21 +826,21 @@ namespace templateApp.GUI.Modulo11
                 listaEspecialidad.Add(Convert.ToInt32(especialidad), nuevo);
             }
             comboEspecialidad.DataSource = listaEspecialidad;
-            comboEspecialidad.DataTextField = M11_RecursosInterfaz.Value;
-            comboEspecialidad.DataValueField = M11_RecursosInterfaz.Key;
+            comboEspecialidad.DataTextField = M11_RecursoInterfaz.Value;
+            comboEspecialidad.DataValueField = M11_RecursoInterfaz.Key;
             comboEspecialidad.DataBind();
         }
 
         private string buscarAprobado(valorEvento valor)
         {
             string aprobado = "";
-            if (valor.resultado.Equals(M11_RecursosInterfaz.Aprobado))
+            if (valor.resultado.Equals(M11_RecursoInterfaz.Aprobado))
             {
-                aprobado = M11_RecursosInterfaz.valorSi;
+                aprobado = M11_RecursoInterfaz.valorSi;
             }
-            else if (valor.resultado.Equals(M11_RecursosInterfaz.NoAprobado))
+            else if (valor.resultado.Equals(M11_RecursoInterfaz.NoAprobado))
             {
-                aprobado = M11_RecursosInterfaz.valorNo;
+                aprobado = M11_RecursoInterfaz.valorNo;
             }
             return aprobado;
         }
@@ -927,16 +927,16 @@ namespace templateApp.GUI.Modulo11
         {
             foreach (ResultadoKumite resultado in listaKumite)
             {
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTR;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.SeleccionarCombo1;
-                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.SeleccionarCombo2;
-                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTR;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.SeleccionarCombo1;
+                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.SeleccionarCombo2;
+                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
             }
         }
 
@@ -990,83 +990,83 @@ namespace templateApp.GUI.Modulo11
             {
                 case 1:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo1;
+                        resultado = M11_RecursoInterfaz.r1Combo1;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo1;
+                        resultado = M11_RecursoInterfaz.r2Combo1;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo1;
+                        resultado = M11_RecursoInterfaz.r3Combo1;
                     break;
                 case 2:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo2;
+                        resultado = M11_RecursoInterfaz.r1Combo2;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo2;
+                        resultado = M11_RecursoInterfaz.r2Combo2;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo2;
+                        resultado = M11_RecursoInterfaz.r3Combo2;
                     break;
                 case 3:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo3;
+                        resultado = M11_RecursoInterfaz.r1Combo3;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo3;
+                        resultado = M11_RecursoInterfaz.r2Combo3;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo3;
+                        resultado = M11_RecursoInterfaz.r3Combo3;
                     break;
                 case 4:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo4;
+                        resultado = M11_RecursoInterfaz.r1Combo4;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo4;
+                        resultado = M11_RecursoInterfaz.r2Combo4;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo4;
+                        resultado = M11_RecursoInterfaz.r3Combo4;
                     break;
                 case 5:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo5;
+                        resultado = M11_RecursoInterfaz.r1Combo5;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo5;
+                        resultado = M11_RecursoInterfaz.r2Combo5;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo5;
+                        resultado = M11_RecursoInterfaz.r3Combo5;
                     break;
                 case 6:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo6;
+                        resultado = M11_RecursoInterfaz.r1Combo6;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo6;
+                        resultado = M11_RecursoInterfaz.r2Combo6;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo6;
+                        resultado = M11_RecursoInterfaz.r3Combo6;
                     break;
                 case 7:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo7;
+                        resultado = M11_RecursoInterfaz.r1Combo7;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo7;
+                        resultado = M11_RecursoInterfaz.r2Combo7;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo7;
+                        resultado = M11_RecursoInterfaz.r3Combo7;
                     break;
                 case 8:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo8;
+                        resultado = M11_RecursoInterfaz.r1Combo8;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo8;
+                        resultado = M11_RecursoInterfaz.r2Combo8;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo8;
+                        resultado = M11_RecursoInterfaz.r3Combo8;
                     break;
                 case 9:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo9;
+                        resultado = M11_RecursoInterfaz.r1Combo9;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo9;
+                        resultado = M11_RecursoInterfaz.r2Combo9;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo9;
+                        resultado = M11_RecursoInterfaz.r3Combo9;
                     break;
                 case 10:
                     if (combo.Equals(1))
-                        resultado = M11_RecursosInterfaz.r1Combo10;
+                        resultado = M11_RecursoInterfaz.r1Combo10;
                     else if (combo.Equals(2))
-                        resultado = M11_RecursosInterfaz.r2Combo10;
+                        resultado = M11_RecursoInterfaz.r2Combo10;
                     else if (combo.Equals(3))
-                        resultado = M11_RecursosInterfaz.r3Combo10;
+                        resultado = M11_RecursoInterfaz.r3Combo10;
                     break;
             }
             return resultado;
@@ -1077,16 +1077,16 @@ namespace templateApp.GUI.Modulo11
             this.dataTable3.Text = " ";
             foreach (valorKataKumite resultado in valores)
             {
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTR;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre1 + resultado.nombre + M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTR;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre1 + resultado.nombre + M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
                 this.dataTable3.Text += resultadosComboTablas(Convert.ToInt32(resultado.resultado1), 1);
-                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre2 + resultado.resultado2 + M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre2 + resultado.resultado2 + M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
                 this.dataTable3.Text += resultadosComboTablas(Convert.ToInt32(resultado.resultado3), 2);
-                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
+                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
             }
         }
 
@@ -1095,16 +1095,16 @@ namespace templateApp.GUI.Modulo11
             this.dataTable3.Text = " ";
             foreach (ResultadoKumite resultado in valores)
             {
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTR;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTR;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
                 this.dataTable3.Text += resultadosComboTablas(resultado.Puntaje1, 1);
-                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
                 this.dataTable3.Text += resultadosComboTablas(resultado.Puntaje2, 2);
-                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
+                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
             }
         }
 

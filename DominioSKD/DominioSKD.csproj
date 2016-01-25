@@ -57,6 +57,8 @@
     <Compile Include="Entidades\Modulo11\ResultadoAscenso.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKata.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKumite.cs" />
+    <Compile Include="Entidades\Modulo11\ValorEvento.cs" />
+    <Compile Include="Entidades\Modulo11\ValorKataKumite.cs" />
     <Compile Include="Entidades\Modulo12\Categoria.cs" />
     <Compile Include="Cinta.cs" />
     <Compile Include="Correo.cs" />

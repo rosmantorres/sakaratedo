@@ -268,7 +268,7 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error, los montos permitidos para pagar su compra solo pueden ser mayores a cero&lt;/div&gt;.
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error, los montos permitidos para pagar su compra solo pueden ser mayores a cero y sin contener puntos&lt;/div&gt;.
         /// </summary>
         internal static string EXCEPTION_MONTO_INVALIDO_MENSAJE {
             get {
@@ -403,11 +403,29 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;No posee Matriculas por Pagar. Usted se encuentra Solvente con la Administracion&lt;/div&gt;.
+        /// </summary>
+        internal static string MENSAJE_MATRICULA_SOLVENTE {
+            get {
+                return ResourceManager.GetString("MENSAJE_MATRICULA_SOLVENTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saliendo del metodo.
         /// </summary>
         internal static string MENSAJE_SALIDA_LOGGER {
             get {
                 return ResourceManager.GetString("MENSAJE_SALIDA_LOGGER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Usted no Posee Facturas Asociadas.&lt;/div&gt;.
+        /// </summary>
+        internal static string MENSAJE_SIN_FACTURAS {
+            get {
+                return ResourceManager.GetString("MENSAJE_SIN_FACTURAS", resourceCulture);
             }
         }
         
@@ -480,6 +498,24 @@ namespace templateApp.GUI.Modulo16 {
         internal static string Script {
             get {
                 return ResourceManager.GetString("Script", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;script type=&apos;text/javascript&apos;&gt;$(&apos;#modal-info2&apos;).modal(&apos;toggle&apos;);&lt;/script&gt;.
+        /// </summary>
+        internal static string Script_Dos {
+            get {
+                return ResourceManager.GetString("Script_Dos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;script type=&apos;text/javascript&apos;&gt;$(&apos;#modal-info3&apos;).modal(&apos;toggle&apos;);&lt;/script&gt;.
+        /// </summary>
+        internal static string Script_Tres {
+            get {
+                return ResourceManager.GetString("Script_Tres", resourceCulture);
             }
         }
         
