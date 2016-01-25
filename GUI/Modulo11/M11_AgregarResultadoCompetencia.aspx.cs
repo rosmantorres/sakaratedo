@@ -1,6 +1,6 @@
 ﻿using DominioSKD;
-using LogicaNegociosSKD.Modulo10;
-using LogicaNegociosSKD.Modulo11;
+using Interfaz_Contratos.Modulo11;
+using Interfaz_Presentadores.Modulo11;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,6 +13,7 @@ using System.Web.UI.WebControls;
 
 namespace templateApp.GUI.Modulo11
 {
+    #region struct
     struct valores
     {
         public int id;
@@ -38,104 +39,258 @@ namespace templateApp.GUI.Modulo11
         public string resultado2;
         public string resultado3;
     }
-    public partial class M11_AgregarResultadoCompetencia : System.Web.UI.Page
+    #endregion
+    public partial class M11_AgregarResultadoCompetencia : System.Web.UI.Page, IContratoAgregarResultadoCompetencia
     {
-        List<Horario> horariosEventos = new List<Horario>();
+        List<Entidad> horariosEventos = new List<Entidad>();
+        PresentadorAgregarResultado presentador;
+
+        public M11_AgregarResultadoCompetencia()
+        {
+            presentador = new PresentadorAgregarResultado(this);
+        }
+
+        #region Contrato
+        public Calendar Fecha
+        {
+            get
+            {
+                return this.calendar;
+            }
+            set
+            {
+                this.calendar = value;
+            }
+        }
+
+        public DropDownList ComboEvento
+        {
+            get
+            {
+                return comboEventos;
+            }
+            set
+            {
+                comboEventos = value;
+            }
+        }
+
+        public DropDownList ComboEspecialidad
+        {
+            get
+            {
+                return comboEspecialidad;
+            }
+            set
+            {
+                comboEspecialidad = value;
+            }
+        }
+
+        public DropDownList ComboCategoria
+        {
+            get
+            {
+                return comboCategoria;
+            }
+            set
+            {
+                comboCategoria = value;
+            }
+        }
+
+        public Literal TablaAscenso
+        {
+            get
+            {
+                return this.dataTable;
+            }
+            set
+            {
+                this.dataTable = value;
+            }
+        }
+
+        public Literal TablaKata
+        {
+            get
+            {
+                return this.dataTable2;
+            }
+            set
+            {
+                this.dataTable2 = value;
+            }
+        }
+
+        public Literal TablaKumite
+        {
+            get
+            {
+                return this.dataTable3;
+            }
+            set
+            {
+                dataTable3 = value;
+            }
+        }
+
+        public ListBox Posiciones
+        {
+            get
+            {
+                return this.listaGanadores;
+            }
+            set
+            {
+                this.listaGanadores = value;
+            }
+        }
+
+        public string alertaClase
+        {
+            set { alert.Attributes[M11_RecursoInterfaz.alertClase] = value; }
+        }
+
+        public string alertaRol
+        {
+            set { alert.Attributes[M11_RecursoInterfaz.alertRole] = value; }
+        }
+
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+
+        public LinkButton Boton
+        {
+            get
+            {
+                return this.bAgregar;
+            }
+            set
+            {
+                this.bAgregar = value;
+            }
+        }
+
+        public LinkButton BotonKata
+        {
+            get
+            {
+                return this.bAgregarKata;
+            }
+            set
+            {
+                bAgregarKata = value;
+            }
+        }
+
+        public LinkButton BotonKumite
+        {
+            get
+            {
+                return this.bAgregarKumite;
+            }
+            set
+            {
+                bAgregarKumite = value;
+            }
+        }
+
+        public LinkButton BotonAmbos
+        {
+            get
+            {
+                return this.bAgregarAmbos;
+            }
+            set
+            {
+                this.bAgregarAmbos = value;
+            }
+        }
+
+        public LinkButton BotonSiguiente
+        {
+            get
+            {
+                return this.bSiguiente;
+            }
+            set
+            {
+                this.bSiguiente = value;
+            }
+        }
+
+        public LinkButton BotonSiguienteAmbos
+        {
+            get
+            {
+                return this.bSiguienteAmbos;
+            }
+            set
+            {
+                this.bSiguienteAmbos = value;
+            }
+        }
+
+        public bool LEspecialidad
+        {
+            get
+            {
+                return lEspecialidad.Visible;
+            }
+            set
+            {
+                lEspecialidad.Visible = value;
+            }
+        }
+
+        public bool LPosicion
+        {
+            get
+            {
+                return this.lPosicion.Visible;
+            }
+            set
+            {
+                this.lPosicion.Visible = value;
+            }
+        }
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "11";
-            horariosEventos = horarioEventos(LogicaResultado.ListarHorariosEventosAscensos(), LogicaAsistencia.ListarHorariosCompetencias());
+            horariosEventos = presentador.horarioEventos();
         }
 
         protected void calendar_DayRender(object sender, DayRenderEventArgs e)
         {
-            e.Day.IsSelectable = false;
-            if (e.Day.IsSelected)
-                e.Cell.BackColor = Color.Red;
-
-            #region Horarios de Eventos y Competencias
-            foreach (Horario horario in horariosEventos)
-            {
-                if (e.Day.IsSelected)
-                    e.Cell.BackColor = Color.Red;
-                else if (e.Day.Date == horario.FechaInicio)
-                {
-                    e.Cell.BackColor = Color.Blue;
-                    DateTime date1 = e.Day.Date.Date;
-                    DateTime date2 = DateTime.Now.Date;
-                    if (date1 >= date2)
-                    {
-                        e.Day.IsSelectable = true;
-                    }
-                }
-            }
-            #endregion
+            presentador.RenderCalendario(e, horariosEventos);
         }
 
         protected void calendar_SelectionChanged(object sender, EventArgs e)
         {
-            comboEventos.Items.Clear();
-            comboEspecialidad.Items.Clear();
-            comboCategoria.Items.Clear();
-            Session["M11_fecha"] = ((Calendar)sender).SelectedDate.ToString();
-            List<Evento> listaE = LogicaResultado.EventosPorFechaAscenso(((Calendar)sender).SelectedDate.ToString(), ((Calendar)sender).SelectedDate.ToString());
-            List<Competencia> listaC = LogicaAsistencia.competenciasPorFecha(((Calendar)sender).SelectedDate.ToString());
-            llenarComboEventoCompetencia(listaE, listaC);
+            Session[M11_RecursoInterfaz.FechaEvento] = ((Calendar)sender).SelectedDate.ToString();
+            presentador.SeleccionandoElCalendario(Session[M11_RecursoInterfaz.FechaEvento].ToString());
         }
 
         protected void comboEventos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataTable.Text = " ";
-            comboEspecialidad.Items.Clear();
-            comboCategoria.Items.Clear();
-            dataTable2.Text = " ";
-            dataTable3.Text = " ";
-            List<valores> listaEventos = diccionarioEventos();
-            string tipo = "";
-
-            foreach (valores valores in listaEventos)
-            {
-                if ((Convert.ToInt32(((DropDownList)sender).SelectedItem.Value).Equals(valores.id)) && (((DropDownList)sender).SelectedItem.Text.Equals(valores.nombre)))
-                {
-                    tipo = valores.tipo;
-                }
-            }
-            Session["M11_tipo"] = tipo;
-            Session["M11_IdEvento"] = ((DropDownList)sender).SelectedItem.Value;
-            if (tipo.Equals(M11_RecursoInterfaz.Evento))
-            {
-                lEspecialidad.Visible = false;
-                comboEspecialidad.Visible = false;
-                llenarComboCategoria(LogicaResultado.listaCategoriasEvento(Session["M11_IdEvento"].ToString()));
-            }
-            else if (tipo.Equals(M11_RecursoInterfaz.Competencia))
-            {
-                lEspecialidad.Visible = true;
-                comboEspecialidad.Visible = true;
-                lPosicion.Visible = true;
-                listaGanadores.Visible = true;
-                llenarComboEspecialidad(LogicaResultado.listaEspecialidadesCompetencia(Session["M11_IdEvento"].ToString()));
-            }
+            Session[M11_RecursoInterfaz.TipoEvento] = presentador.diccionarioEventos(Session[M11_RecursoInterfaz.FechaEvento].ToString(), sender);
+            Session[M11_RecursoInterfaz.IdEvento] = ((DropDownList)sender).SelectedItem.Value;
+            presentador.LlenarComboCategoria_o_LlenarComboEspecialidad(Session[M11_RecursoInterfaz.IdEvento].ToString(), Session[M11_RecursoInterfaz.TipoEvento].ToString());
         }
 
         protected void comboEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataTable.Text = " ";
-            comboCategoria.Items.Clear();
-            dataTable2.Text = " ";
-            dataTable3.Text = " ";
-            Session["M11_especialidad"] = ((DropDownList)sender).SelectedItem.Value;
-            Competencia competencia = new Competencia();
-            competencia.Id_competencia = Convert.ToInt32(Session["M11_IdEvento"].ToString());
-            competencia.TipoCompetencia = Session["M11_especialidad"].ToString();
-            llenarComboCategoria(LogicaResultado.listaCategoriasCompetencia(competencia));
+            Session[M11_RecursoInterfaz.EspecialidadEvento] = ((DropDownList)sender).SelectedItem.Value;
+            presentador.LLenarComboCategoria_DespuesDeEspecialidad(Session[M11_RecursoInterfaz.IdEvento].ToString(), Session[M11_RecursoInterfaz.EspecialidadEvento].ToString());
         }
 
         protected void comboCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataTable.Text = " ";
-            dataTable2.Text = " ";
-            dataTable3.Text = " ";
             Session["M11_categoria"] = ((DropDownList)sender).SelectedItem.Value;
 
             if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
@@ -149,8 +304,8 @@ namespace templateApp.GUI.Modulo11
 
                 try
                 {
-                    List<Inscripcion> inscripciones = LogicaResultado.listaInscritosExamenAscenso(evento);
-                    foreach (Inscripcion inscripcion in inscripciones)
+                    //List<Inscripcion> inscripciones = LogicaResultado.listaInscritosExamenAscenso(evento);
+                    /*foreach (Inscripcion inscripcion in inscripciones)
                     {
                         this.dataTable.Text += M11_RecursoInterfaz.AbrirTR;
                         this.dataTable.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
@@ -158,7 +313,7 @@ namespace templateApp.GUI.Modulo11
                         this.dataTable.Text += M11_RecursoInterfaz.Seleccionar;
                         this.dataTable.Text += M11_RecursoInterfaz.CerrarTD;
                         this.dataTable.Text += M11_RecursoInterfaz.CerrarTR;
-                    }
+                    }*/
                 }
                 catch (Exception ex)
                 {
@@ -183,8 +338,8 @@ namespace templateApp.GUI.Modulo11
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kata
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
-                        foreach (Inscripcion inscripcion in inscripciones)
+                        //List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*foreach (Inscripcion inscripcion in inscripciones)
                         {
                             this.dataTable2.Text += M11_RecursoInterfaz.AbrirTR;
                             this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
@@ -198,7 +353,7 @@ namespace templateApp.GUI.Modulo11
                             this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo3;
                             this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
                             this.dataTable2.Text += M11_RecursoInterfaz.CerrarTR;
-                        }
+                        }*/
                     }
                     catch (Exception ex)
                     {
@@ -215,8 +370,8 @@ namespace templateApp.GUI.Modulo11
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kumite
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
-                        if ((inscripciones.Count != 1) && (inscripciones.Count != 0))
+                        //List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*if ((inscripciones.Count != 1) && (inscripciones.Count != 0))
                         {
                             int rango = buscarNumeroPermitido(inscripciones) / 2;
                             Session["M11_Rango"] = rango;
@@ -234,7 +389,7 @@ namespace templateApp.GUI.Modulo11
                                 this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
                                 this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
                             }
-                        }
+                        }*/
                     }
                     catch (Exception ex)
                     {
@@ -251,7 +406,7 @@ namespace templateApp.GUI.Modulo11
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kata
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                         foreach (Inscripcion inscripcion in inscripciones)
                         {
                             this.dataTable2.Text += M11_RecursoInterfaz.AbrirTR;
@@ -266,7 +421,7 @@ namespace templateApp.GUI.Modulo11
                             this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo3;
                             this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
                             this.dataTable2.Text += M11_RecursoInterfaz.CerrarTR;
-                        }
+                        }*/
                     }
                     catch (Exception ex)
                     {
@@ -276,7 +431,7 @@ namespace templateApp.GUI.Modulo11
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kumite
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                         if ((inscripciones.Count != 1) && (inscripciones.Count != 0))
                         {
                             int rango = buscarNumeroPermitido(inscripciones) / 2;
@@ -295,7 +450,7 @@ namespace templateApp.GUI.Modulo11
                                 this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
                                 this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
                             }
-                        }
+                        }*/
                     }
                     catch (Exception ex)
                     {
@@ -308,7 +463,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bAgregar_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
+            /*if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
             {
                 #region Agregar Examen de Ascenso
                 Evento evento = new Evento();
@@ -351,7 +506,7 @@ namespace templateApp.GUI.Modulo11
                     throw ex;
                 }
                 #endregion
-            }
+            }*/
         }
 
         protected void bCancelar_Click(object sender, EventArgs e)
@@ -374,7 +529,7 @@ namespace templateApp.GUI.Modulo11
                     competencia.Categoria = categoria;
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                         List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue.Value);
                         List<ResultadoKata> listaResultado = new List<ResultadoKata>();
 
@@ -399,7 +554,7 @@ namespace templateApp.GUI.Modulo11
                             Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=5");
                         }
                         else
-                            Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=6");
+                            Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=6");*/
                     }
                     catch (Exception ex)
                     {
@@ -427,7 +582,7 @@ namespace templateApp.GUI.Modulo11
                         competencia.Categoria = categoria;
                         try
                         {
-                            List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                            /*List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                             List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
                             List<ResultadoKumite> listaKumite = new List<ResultadoKumite>();
 
@@ -454,7 +609,7 @@ namespace templateApp.GUI.Modulo11
                                 Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=13");
                             }
                             else
-                                Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=14");
+                                Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=14");*/
                         }
                         catch (Exception ex)
                         {
@@ -468,7 +623,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bAgregarAmbos_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
+            /*if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 if (Session["M11_especialidad"].ToString().Equals("3"))
                 {
@@ -519,12 +674,12 @@ namespace templateApp.GUI.Modulo11
                         #endregion
                     }
                 }
-            }
+            }*/
         }
 
         protected void bSiguiente_Click(object sender, EventArgs e)
         {
-            alert.Visible = false;
+            /*alert.Visible = false;
             if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) / 2;
@@ -649,12 +804,12 @@ namespace templateApp.GUI.Modulo11
                     }
                     #endregion
                 }
-            }
+            }*/
         }
 
         protected void bSiguienteAmbos_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
+            /*if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) / 2;
                 Competencia competencia = new Competencia();
@@ -725,41 +880,7 @@ namespace templateApp.GUI.Modulo11
             }
             bSiguienteAmbos.Visible = false;
             bSiguiente.Visible = true;
-            this.dataTable2.Text = " ";
-        }
-
-        private List<Horario> horarioEventos(List<Horario> eventos, List<Horario> competencias)
-        {
-            List<Horario> listaEventos = new List<Horario>();
-            foreach (Horario horario in eventos)
-            {
-                listaEventos.Add(horario);
-            }
-            foreach (Horario horario in competencias)
-            {
-                if (!listaEventos.Contains(horario))
-                {
-                    listaEventos.Add(horario);
-                }
-            }
-            return listaEventos;
-        }
-
-        private List<valores> diccionarioEventos()
-        {
-            List<Evento> listaE = LogicaAsistencia.EventosPorFecha(Session["M11_fecha"].ToString(), Session["M11_fecha"].ToString());
-            List<Competencia> listaC = LogicaAsistencia.competenciasPorFecha(Session["M11_fecha"].ToString());
-
-            List<valores> listaEventos = new List<valores>();
-            foreach (Evento evento in listaE)
-            {
-                listaEventos.Add(new valores(evento.Id_evento, evento.Nombre, M11_RecursoInterfaz.Evento));
-            }
-            foreach (Competencia competencia in listaC)
-            {
-                listaEventos.Add(new valores(competencia.Id_competencia, competencia.Nombre, M11_RecursoInterfaz.Competencia));
-            }
-            return listaEventos;
+            this.dataTable2.Text = " ";*/
         }
 
         private void llenarComboCategoria(List<Categoria> lista)
@@ -782,53 +903,6 @@ namespace templateApp.GUI.Modulo11
             comboCategoria.DataTextField = M11_RecursoInterfaz.Value;
             comboCategoria.DataValueField = M11_RecursoInterfaz.Key;
             comboCategoria.DataBind();
-        }
-
-        private void llenarComboEventoCompetencia(List<Evento> eventos, List<Competencia> competencias)
-        {
-            Dictionary<int, string> listaEventos = new Dictionary<int, string>();
-            foreach (Evento evento in eventos)
-            {
-                listaEventos.Add(evento.Id_evento, evento.Nombre);
-            }
-            foreach (Competencia competencia in competencias)
-            {
-                listaEventos.Add(competencia.Id_competencia, competencia.Nombre);
-            }
-            comboEventos.DataSource = listaEventos;
-            comboEventos.DataTextField = M11_RecursoInterfaz.Value;
-            comboEventos.DataValueField = M11_RecursoInterfaz.Key;
-            comboEventos.DataBind();
-        }
-
-        private void llenarComboEspecialidad(List<string> lista)
-        {
-            Dictionary<int, string> listaEspecialidad = new Dictionary<int, string>();
-            foreach (string especialidad in lista)
-            {
-                string nuevo = "";
-                if (especialidad.Equals("0"))
-                {
-                    nuevo = M11_RecursoInterfaz.SeleccionarEspecialidad;
-                }
-                else if (especialidad.Equals("1"))
-                {
-                    nuevo = "Kata";
-                }
-                else if (especialidad.Equals("2"))
-                {
-                    nuevo = "Kumite";
-                }
-                else if (especialidad.Equals("3"))
-                {
-                    nuevo = "Kata y Kumite";
-                }
-                listaEspecialidad.Add(Convert.ToInt32(especialidad), nuevo);
-            }
-            comboEspecialidad.DataSource = listaEspecialidad;
-            comboEspecialidad.DataTextField = M11_RecursoInterfaz.Value;
-            comboEspecialidad.DataValueField = M11_RecursoInterfaz.Key;
-            comboEspecialidad.DataBind();
         }
 
         private string buscarAprobado(valorEvento valor)
@@ -912,7 +986,7 @@ namespace templateApp.GUI.Modulo11
                 empate = inscripcionesEnCurso(listaKumite, lista);
                 if (empate.Equals(false))
                 {
-                    LogicaResultado.agregarResultadoKumite(listaKumite);
+                    //LogicaResultado.agregarResultadoKumite(listaKumite);
                 }
                 dataTable3.Text = "";
             }
@@ -1124,5 +1198,6 @@ namespace templateApp.GUI.Modulo11
             }
             return aprobado;
         }
+
     }
 }

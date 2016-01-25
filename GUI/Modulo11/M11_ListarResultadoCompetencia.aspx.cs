@@ -1,7 +1,6 @@
 ﻿using DominioSKD;
 using Interfaz_Contratos.Modulo11;
 using Interfaz_Presentadores.Modulo11;
-using LogicaNegociosSKD.Modulo11;
 using System;
 using System.Collections.Generic;
 using System.Linq;

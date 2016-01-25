@@ -239,17 +239,17 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 9
-        public  Entidad ObtenerEvento()
+        public static Entidad ObtenerEvento()
         {
             return new DominioSKD.Entidades.Modulo9.Evento();
         }
 
-        public  Entidad ObtenerHorario()
+        public static Entidad ObtenerHorario()
         {
             return new DominioSKD.Entidades.Modulo9.Horario();
         }
 
-        public  Entidad ObtenerTipoEvento()
+        public static Entidad ObtenerTipoEvento()
         {
             return new DominioSKD.Entidades.Modulo9.TipoEvento();
         }
