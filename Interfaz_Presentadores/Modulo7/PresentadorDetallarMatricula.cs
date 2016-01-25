@@ -45,22 +45,35 @@ namespace Interfaz_Presentadores.Modulo7
                fabricaComandos = new FabricaComandos();
                 ComandoConsultarDetallarMatricula comandoDetallarMatricula =(ComandoConsultarDetallarMatricula)fabricaComandos.ObtenerComandoConsultarDetallarMatricula();
                 comandoDetallarMatricula.LaEntidad = idMatricula;
-                //comandoDetallarMatricula.IdPersona = (PersonaM7)idPersona;
+                comandoDetallarMatricula.IdPersona = (PersonaM7)idPersona;
                 MatriculaM7 matricula = (MatriculaM7)comandoDetallarMatricula.Ejecutar();
                 String estadoFinal;
                 vista.identificadorMatricula = matricula.Identificador;
-                vista.fechaCreacionMatricula = matricula.FechaCreacion.ToString("MM/dd/yyyy");
-                vista.fechaPagoMatricula = matricula.UltimaFechaPago.ToString("MM/dd/yyyy");
-                estadoFinal = matricula.Status.ToString();
 
                 if (matricula.Status.Equals(true))
+                {
+                    vista.estadoMatricula = M7_RecursosPresentador.AliasMatriculaActiva;
+                }
+                else
+                {
+                    vista.estadoMatricula = M7_RecursosPresentador.AliasMatriculaInactiva;
+                }
+
+                /*if (matricula.Status.Equals(true))
+
                 {
                     estadoFinal = "Activa";
                 }
                 else
                 {
                     estadoFinal = "No Activa";
-                }
+                }*/
+                
+                vista.fechaCreacionMatricula = matricula.FechaCreacion.ToString("MM/dd/yyyy");
+                vista.fechaPagoMatricula = matricula.UltimaFechaPago.ToString("MM/dd/yyyy");
+                estadoFinal = matricula.Status.ToString();
+
+             
             }
             catch (NumeroEnteroInvalidoException)
             {

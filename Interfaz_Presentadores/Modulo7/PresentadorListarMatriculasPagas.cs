@@ -51,18 +51,19 @@ namespace Interfaz_Presentadores.Modulo7
                         Boolean estadoMatricula = e2.Current;
                         float montoPago = e3.Current;
                         String estadoFinal;
-
-                        if (estadoMatricula == true)
-                        {
-                            estadoFinal = "Activa";
-                        }
-                        else
-                        {
-                            estadoFinal = "No Activa";
-                        }
-
+                        
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.Identificador.ToString() + M7_RecursosPresentador.CerrarTD;
+
+                        if (estadoMatricula.Equals(true))
+                        {
+                              estadoFinal = "Activa";
+                        }
+                          else
+                        {
+                             estadoFinal = "No Activa";
+                        }
+                
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + estadoFinal.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.FechaCreacion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.UltimaFechaPago.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
