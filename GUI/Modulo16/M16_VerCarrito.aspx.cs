@@ -458,7 +458,7 @@ namespace templateApp.GUI.Modulo16
             catch (ItemInvalidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-               
+                HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_ITEM_INVALIDO_LINK, false);
             }
             catch(OpcionPagoNoValidoException e)
             {
