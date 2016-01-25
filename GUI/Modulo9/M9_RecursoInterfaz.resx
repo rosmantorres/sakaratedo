@@ -150,4 +150,13 @@
   <data name="idModulo" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="idAlertAgregar" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="innerHtmlAlertAgregar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento agregado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="innerHtmlAlertModificar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento modificado exitosamente&lt;/div&gt;</value>
+  </data>
 </root>
