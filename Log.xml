@@ -524,6 +524,7 @@
 2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - Metodo: Void LlenarInformacion(System.Collections.Generic.List`1[DominioSKD.Entidad])
 2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarInformacion(List`1 lista) in c:\Users\Cesar\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 39
 2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - InnerException: 
+<<<<<<< Updated upstream
 2016-01-24 18:00:36,426 ERROR PresentadorConsultarRestriccionesCinta - *******************************************************
 2016-01-24 18:00:36,431 ERROR PresentadorConsultarRestriccionesCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
 2016-01-24 18:00:36,434 ERROR PresentadorConsultarRestriccionesCinta - Origen: LogicaNegociosSKD
@@ -531,6 +532,79 @@
 2016-01-24 18:00:36,435 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Istvan\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 40
    at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Istvan\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 82
 2016-01-24 18:00:36,437 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+=======
+2016-01-24 23:46:54,399 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,424 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,424 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,424 INFO  DaoPlanilla - Metodo: ConsultarPlanillasCreadas
+2016-01-24 23:46:54,538 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,538 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,538 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,538 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,639 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,639 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,639 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,639 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,657 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,657 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,657 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,657 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,674 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,674 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,674 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,674 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,684 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,684 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,684 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,684 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,741 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,741 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,741 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,741 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,754 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,754 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,754 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,754 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,795 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,795 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,795 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,795 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,849 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,849 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,849 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,849 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,866 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,866 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,866 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,866 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:54,964 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:54,964 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:54,964 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:54,964 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:55,033 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:55,033 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:55,033 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:55,033 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:55,095 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:55,095 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:55,095 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:55,095 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:55,171 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:55,172 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:55,172 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:55,172 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:46:55,195 INFO  DaoPlanilla - *******************************************************
+2016-01-24 23:46:55,195 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-24 23:46:55,195 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-24 23:46:55,195 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-24 23:49:14,305 ERROR ComandoConsultarCintaTodas - *******************************************************
+2016-01-24 23:49:14,305 ERROR ComandoConsultarCintaTodas - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-24 23:49:14,886 ERROR ComandoConsultarCintaTodas - Origen: DatosSKD
+2016-01-24 23:49:14,886 ERROR ComandoConsultarCintaTodas - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarCintaTodas()
+2016-01-24 23:49:14,886 ERROR ComandoConsultarCintaTodas - StackTrace:    at DatosSKD.DAO.Modulo8.DAORestriccionCinta.ConsultarCintaTodas() in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionCinta.cs:line 309
+   at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas.Ejecutar() in c:\Users\sesm\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarCintaTodas.cs:line 32
+2016-01-24 23:49:14,963 ERROR ComandoConsultarCintaTodas - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Cintas'.
+>>>>>>> Stashed changes
    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -547,6 +621,7 @@
    at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+<<<<<<< Updated upstream
    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Istvan\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
 ClientConnectionId:2c75b9df-b23a-4c1e-a214-17562333e9ef
 Error Number:2812,State:62,Class:16
@@ -557,6 +632,18 @@ Error Number:2812,State:62,Class:16
 2016-01-24 18:04:57,798 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Istvan\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 40
    at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Istvan\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 82
 2016-01-24 18:04:57,801 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+=======
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:9e0f841b-b817-40b3-8364-e81304ca18c8
+Error Number:2812,State:62,Class:16
+2016-01-24 23:49:14,983 ERROR PresentadorAgregarRestriccionEvento - *******************************************************
+2016-01-24 23:49:14,984 ERROR PresentadorAgregarRestriccionEvento - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-24 23:49:14,984 ERROR PresentadorAgregarRestriccionEvento - Origen: DatosSKD
+2016-01-24 23:49:14,984 ERROR PresentadorAgregarRestriccionEvento - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarCintaTodas()
+2016-01-24 23:49:15,116 ERROR PresentadorAgregarRestriccionEvento - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas.Ejecutar() in c:\Users\sesm\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarCintaTodas.cs:line 39
+   at Interfaz_Presentadores.Modulo8.PresentadorAgregarRestriccionEvento.LlenarComboCinta() in c:\Users\sesm\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorAgregarRestriccionEvento.cs:line 50
+2016-01-24 23:49:15,117 ERROR PresentadorAgregarRestriccionEvento - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Cintas'.
+>>>>>>> Stashed changes
    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -573,6 +660,7 @@ Error Number:2812,State:62,Class:16
    at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+<<<<<<< Updated upstream
    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Istvan\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
 ClientConnectionId:45581c59-8be3-49db-8409-ccc9cc0ba8a8
 Error Number:2812,State:62,Class:16
@@ -654,3 +742,72 @@ Error Number:2812,State:62,Class:16
    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Istvan\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
 ClientConnectionId:10e9c91d-0b59-46f6-8376-bab754416f09
 Error Number:2812,State:62,Class:16
+=======
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:9e0f841b-b817-40b3-8364-e81304ca18c8
+Error Number:2812,State:62,Class:16
+2016-01-25 00:31:49,823 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:49,842 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:49,842 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:49,842 INFO  DaoPlanilla - Metodo: ConsultarPlanillasCreadas
+2016-01-25 00:31:50,005 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,005 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,005 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,005 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,292 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,292 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,292 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,292 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,326 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,326 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,326 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,326 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,353 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,353 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,353 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,353 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,397 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,397 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,397 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,397 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,420 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,420 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,420 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,420 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,444 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,444 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,444 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,444 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,463 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,463 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,463 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,463 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,479 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,479 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,479 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,479 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,487 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,487 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,487 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,487 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,494 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,494 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,494 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,494 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,506 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,506 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,506 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,506 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,516 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,516 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,516 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,516 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,535 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,535 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,535 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,535 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+2016-01-25 00:31:50,545 INFO  DaoPlanilla - *******************************************************
+2016-01-25 00:31:50,545 INFO  DaoPlanilla - Clase: DaoPlanilla
+2016-01-25 00:31:50,545 INFO  DaoPlanilla - Mensaje: Entrada en el Método
+2016-01-25 00:31:50,545 INFO  DaoPlanilla - Metodo: ObtenerDatosPlanillaID1
+>>>>>>> Stashed changes

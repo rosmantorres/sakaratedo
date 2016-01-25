@@ -135,7 +135,10 @@
     <Compile Include="Modulo5\RecursoPresentadorM5.Designer.cs" />
     <Compile Include="Modulo8\PresentadorAgregarRestriccionEvento.cs" />
     <Compile Include="Modulo8\PresentadorConsultarRestriccionesCinta.cs" />
+
     <Compile Include="Modulo8\PresentadorConsultarRestriccionesEvento.cs" />
+    <Compile Include="Modulo8\PresentadorConsultarTodosRestriccionCompetencia.cs" />
+    <Compile Include="Modulo8\PresentadorModificarRestriccionCompetencia.cs" />
     <Compile Include="Modulo8\RecursoPresentadorM8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -173,6 +176,7 @@
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />
     <Folder Include="Modulo9\" />
+    <Folder Include="Modulo8\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Modulo10\M10_RecursosPresentador.resx">
