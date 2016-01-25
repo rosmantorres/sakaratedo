@@ -32,7 +32,7 @@ namespace Interfaz_Presentadores.Modulo8
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta retriccionCinta = laRestriccion;
             retriccionCinta.Id = int.Parse(vista.comboRestCinta.SelectedValue);
-            retriccionCinta.Descripcion = vista.descripcion_rest_cinta.ToString();
+            retriccionCinta.Descripcion = generarDescripcion();
             retriccionCinta.PuntosMinimos = int.Parse(vista.puntaje_min);
             retriccionCinta.TiempoDocente = int.Parse(vista.horas_docen);
             retriccionCinta.TiempoMinimo = int.Parse(vista.tiempo_Min);
@@ -42,14 +42,14 @@ namespace Interfaz_Presentadores.Modulo8
             
         }
         
-        public void generarDescripcion()
+        public string generarDescripcion()
         {
-           /* this.vista.descripcion = ("Edad Min: " + vista.edadMinima.SelectedValue.ToString()
-                                     + " Edad Max: " + vista.edadMaxima.SelectedValue.ToString()
-                                     + " Rango Min: " + vista.rangoMinimo.SelectedValue.ToString()
-                                     + " Rango Max: " + vista.rangoMaximo.SelectedValue.ToString()
-                                     + " Sexo: " + vista.sexo.SelectedValue.ToString()
-                                     + " Modalidad: " + vista.sexo.SelectedValue.ToString());*/
+          string Descripcion = this.vista.descripcion_rest_cinta = ("Cinta: " + vista.comboRestCinta.SelectedValue.ToString()
+                                     + " Puntaje Minimo: " + vista.puntaje_min.ToString()
+                                     + " Tiempo Minimo: " + vista.tiempo_Min.ToString()
+                                     + " Tiempo Maximo: " + vista.tiempo_Max.ToString()
+                                     + " Horas Docentes: " + vista.horas_docen.ToString());
+           return Descripcion;
 
         }
 
@@ -110,12 +110,13 @@ namespace Interfaz_Presentadores.Modulo8
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
 
-            laRestCinta.Descripcion = this.vista.descripcion_rest_cinta;
+            laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
+            /*laRestCinta.Descripcion = this.vista.descripcion_rest_cinta;
             laRestCinta.Id = Int32.Parse(this.vista.comboRestCinta.SelectedValue);
             laRestCinta.PuntosMinimos = Int32.Parse(this.vista.puntaje_min);
             laRestCinta.TiempoDocente = Int32.Parse(this.vista.horas_docen);
             laRestCinta.TiempoMaximo = Int32.Parse(this.vista.tiempo_Max);
-            laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);
+            laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);*/
 
 
             FabricaComandos _fabrica = new FabricaComandos();
