@@ -6,12 +6,14 @@ using Interfaz_Presentadores.Modulo7;
 using System;
 using System.Collections.Generic;
 using System.Web.UI;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace templateApp.GUI.Modulo7
 {
     public partial class M7_DetalleCompetenciaInscrita : System.Web.UI.Page, IContratoDetallarCompetencia
     {
-        private Competencia idCompetencia;
+        private CompetenciaM7 idCompetencia;
         private PresentadorDetallarCompetencia presentador;
 
         /// <summary>
@@ -180,7 +182,7 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            idCompetencia = new Competencia();//cambiar por fabrica
+                            idCompetencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
                             idCompetencia.Id = int.Parse(detalleStringCompetencia);
                             presentador.CargarDatos(idCompetencia);
                         }
