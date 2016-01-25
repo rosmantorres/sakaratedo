@@ -30,7 +30,6 @@ namespace Interfaz_Presentadores.Modulo12
             this.vista = laVista;
         }
 
-
         /// <summary>
         /// Metodo para consultar las variables del url
         /// </summary>
@@ -171,14 +170,18 @@ namespace Interfaz_Presentadores.Modulo12
 
             laListaDeInputs.Add(vista.latitudComp);
             laListaDeInputs.Add(vista.longitudComp);
-            //laListaDeInputs.Add(txtLAT.Value);
-            //laListaDeInputs.Add(txtLONG.Value);
 
             if (vista.inicioComp != "" || vista.finComp != "")
-            { 
+            {
                 laListaDeInputs.Add(convertirFecha(vista.inicioComp).ToString());
                 laListaDeInputs.Add(convertirFecha(vista.finComp).ToString());
             }
+            else
+            { 
+                laListaDeInputs.Add(vista.inicioComp.ToString());
+                laListaDeInputs.Add(vista.finComp.ToString());
+            }
+            
 
             laListaDeInputs.Add(vista.edadIniComp);
             laListaDeInputs.Add(vista.edadFinComp);
@@ -262,13 +265,8 @@ namespace Interfaz_Presentadores.Modulo12
                     //UBICACION
                     laCompetencia.Ubicacion = 
                         (DominioSKD.Entidades.Modulo12.Ubicacion)FabricaEntidades.ObtenerUbicacion();
-
                     laCompetencia.Ubicacion.Latitud = this.vista.latitudComp;
                     laCompetencia.Ubicacion.Longitud = this.vista.longitudComp;
-
-                    //laCompetencia.Ubicacion.Latitud = this.txtLAT.Value;
-                    //laCompetencia.Ubicacion.Longitud = this.txtLONG.Value;
-
                     laCompetencia.Ubicacion.Ciudad = "Caracas";
                     laCompetencia.Ubicacion.Estado = "Distrito Capital";
                     laCompetencia.Ubicacion.Direccion = "";
@@ -278,7 +276,6 @@ namespace Interfaz_Presentadores.Modulo12
 
                     //AGREGAR EN LOGICA OBJETO COMPETENCIA
                     comandoAgregarCompetencia = FabricaComandos.ObtenerComandoAgregarCompetencia(laCompetencia);
-
                     if (comandoAgregarCompetencia.Ejecutar() == true)
                         HttpContext.Current.Response.Redirect(M12_RecursoInterfazPresentador.agregarExito);
 

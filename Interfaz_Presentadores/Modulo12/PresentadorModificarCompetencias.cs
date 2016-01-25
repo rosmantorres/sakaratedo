@@ -132,7 +132,7 @@ namespace Interfaz_Presentadores.Modulo12
             string anoFecha;
             string fechaCompleta;
             string fechaCortada;
-            if (fechaE.Length == 24)
+            if (fechaE.Length >= 24)
             {
                 fechaCortada = fechaE.Substring(0, 24);
 
@@ -304,6 +304,11 @@ namespace Interfaz_Presentadores.Modulo12
                 laListaDeInputs.Add(convertirFecha(vista.inicioComp).ToString());
                 laListaDeInputs.Add(convertirFecha(vista.finComp).ToString());
             }
+            else
+            {
+                laListaDeInputs.Add(vista.inicioComp.ToString());
+                laListaDeInputs.Add(vista.finComp.ToString());
+            }
 
             laListaDeInputs.Add(vista.edadIniComp);
             laListaDeInputs.Add(vista.edadFinComp);
@@ -380,8 +385,12 @@ namespace Interfaz_Presentadores.Modulo12
                         laCompetencia.Categoria.Sexo = vista.cateSexoFComp;
 
                     //FECHAS INI-FIN
-                    laCompetencia.FechaInicio = Convert.ToDateTime(vista.inicioComp);
-                    laCompetencia.FechaFin = Convert.ToDateTime(vista.finComp);
+
+                    laCompetencia.FechaInicio = convertirFecha(vista.inicioComp);
+                    laCompetencia.FechaFin = convertirFecha(vista.finComp);
+
+                    //laCompetencia.FechaInicio = Convert.ToDateTime(vista.inicioComp);
+                    //laCompetencia.FechaFin = Convert.ToDateTime(vista.finComp);
 
                     //STATUS
                     if (vista.statusIniciarCompBool == true)
