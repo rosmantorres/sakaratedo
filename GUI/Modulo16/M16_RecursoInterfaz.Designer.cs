@@ -403,6 +403,15 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;No posee Matriculas por Pagar. Usted se encuentra Solvente con la Administracion&lt;/div&gt;.
+        /// </summary>
+        internal static string MENSAJE_MATRICULA_SOLVENTE {
+            get {
+                return ResourceManager.GetString("MENSAJE_MATRICULA_SOLVENTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saliendo del metodo.
         /// </summary>
         internal static string MENSAJE_SALIDA_LOGGER {
