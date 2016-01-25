@@ -30,13 +30,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\log4net.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -140,24 +156,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod6.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo7\M7_PruebaLogicaEventosPagos.cs" />
-    <Compile Include="Modulo7\M7_PruebaLogicaCintas.cs" />
-    <Compile Include="Modulo7\M7_PruebaLogicaEventosInscritos.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDCinta.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDCompetencia.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDDojo.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDEvento.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDHorario.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDOrganizacion.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDMatricula.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDPersona.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDTipoEvento.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDUbicacion.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaEventosAsistidos.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaEventosPagos.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaHorarioPractica.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaMatriculasPagas.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaOrganizacionYDojo.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoConsultarPerfil.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCinta.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCompetencia.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarHorarioPractica.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarMatricula.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarEvento.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosInscritos.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoHorarioPractica.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoMatriculasPagas.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosPagos.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosAsistidos.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoListarCintas.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOCinta.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOCompetencia.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAODojo.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOEvento.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOHorario.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOMatricula.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOOrganizacion.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOPersona.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOTipoEvento.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOUbicacion.cs" />
     <Compile Include="Modulo7\RecursosPU_Mod7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -220,6 +240,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo15\RecursosPU_Mod15.resx" />
     <EmbeddedResource Include="Modulo16\RecursosPU_Mod16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod16.Designer.cs</LastGenOutput>
@@ -269,6 +290,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
