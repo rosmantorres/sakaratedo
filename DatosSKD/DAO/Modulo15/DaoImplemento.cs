@@ -28,7 +28,7 @@ namespace DatosSKD.DAO.Modulo15
 
         #region IDaoImplemento
 
-        #region Metodos para ConsultarXId (Listar Productos por id )
+        #region Metodos para ConsultarXId (Listar Productos por id Modulo16)
         /// <summary>
         /// Metodo que retorma una lista de productos existentes
         /// </summary>
@@ -142,7 +142,7 @@ namespace DatosSKD.DAO.Modulo15
         }
         #endregion
 
-        #region Metodo para DetallarImplemento (Detallar Implemento)
+        #region Metodo para DetallarImplemento (Detallar Implemento Modulo16)
         /// <summary>
         /// Metodo que retorma una entidad de tipo implemento
         /// </summary>
