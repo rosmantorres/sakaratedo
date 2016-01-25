@@ -194,12 +194,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo8.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo9\BDEvento.cs" />
-    <Compile Include="Modulo9\RecursosBDModulo9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo9.resx</DependentUpon>
-    </Compile>
     <Compile Include="Parametro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DAO\RecursoGeneralDAO.Designer.cs">
@@ -280,10 +274,6 @@
     <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo8.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo9\RecursosBDModulo9.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\RecursoGeneralDAO.resx">
       <Generator>ResXFileCodeGenerator</Generator>
