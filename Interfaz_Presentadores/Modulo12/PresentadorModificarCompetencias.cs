@@ -21,6 +21,7 @@ namespace Interfaz_Presentadores.Modulo12
     public class PresentadorModificarCompetencias
     {
         private IContratoModificarCompetencias vista;
+        int elIdComp;
 
         /// <summary>
         /// Constructor del presentador
@@ -154,6 +155,7 @@ namespace Interfaz_Presentadores.Modulo12
                 Entidad entidad = FabricaEntidades.ObtenerCompetencia();
 
                 entidad.Id = elIdCompetencia;
+                elIdComp = entidad.Id;
                 Comando<Entidad> comandoObtenerCompetenciaXID =
                     FabricaComandos.ObtenerComandoDetallarCompetencia(entidad);
 
@@ -313,13 +315,17 @@ namespace Interfaz_Presentadores.Modulo12
             {
                 try
                 {
+                    String modificarString = 
+                        HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.strCompMod];
+
                     Comando<bool> comandoModificarCompetencia;
 
                     DominioSKD.Entidades.Modulo12.Competencia laCompetencia =
-                        (DominioSKD.Entidades.Modulo12.Competencia)FabricaEntidades.ObtenerCompetencia();
+                        (DominioSKD.Entidades.Modulo12.Competencia)FabricaEntidades.ObtenerCompetencia(int.Parse(modificarString),vista.nombreComp,"",false,"");
 
                     //ARMAR OBJETO COMPETENCIA---->
                     //NOMBRE
+                    //laCompetencia.Id = elIdComp;
                     laCompetencia.Nombre = vista.nombreComp;
 
                     //TIPO COMPETENCIA
