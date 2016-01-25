@@ -1,6 +1,4 @@
 ﻿using DominioSKD;
-using LogicaNegociosSKD.Modulo10;
-using LogicaNegociosSKD.Modulo11;
 using System;
 using System.Collections.Generic;
 using System.Linq;
