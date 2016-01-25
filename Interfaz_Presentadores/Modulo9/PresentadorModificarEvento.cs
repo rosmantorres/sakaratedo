@@ -85,8 +85,8 @@ namespace Interfaz_Presentadores.Modulo9
 
             try
             {
-                FabricaEntidades fabricaEntidades = new FabricaEntidades();
-                DominioSKD.Entidades.Modulo9.Evento entidad = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidades.ObtenerEvento();
+                //FabricaEntidades fabricaEntidades = new FabricaEntidades();
+                DominioSKD.Entidades.Modulo9.Evento entidad = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
                 entidad.Id = idEvento;
                 Comando<Entidad> comandoDetallarEvento = FabricaComandos.ObtenerComandoConsultarEvento(entidad);
                 DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)comandoDetallarEvento.Ejecutar();
@@ -134,9 +134,9 @@ namespace Interfaz_Presentadores.Modulo9
                         int index = vista.iComboTipoEvento.SelectedIndex + 1;
                         Comando<bool> comandoModificarEvento;
                         FabricaEntidades laFabrica = new FabricaEntidades();
-                        DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)laFabrica.ObtenerEvento();
-                        DominioSKD.Entidades.Modulo9.TipoEvento elTipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)laFabrica.ObtenerTipoEvento();
-                        DominioSKD.Entidades.Modulo9.Horario elHorario = (DominioSKD.Entidades.Modulo9.Horario)laFabrica.ObtenerHorario();
+                        DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
+                        DominioSKD.Entidades.Modulo9.TipoEvento elTipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)FabricaEntidades.ObtenerTipoEvento();
+                        DominioSKD.Entidades.Modulo9.Horario elHorario = (DominioSKD.Entidades.Modulo9.Horario)FabricaEntidades.ObtenerHorario();
                         elEvento.Nombre = vista.iNombreEvento;
                         elEvento.Costo = float.Parse(vista.iCostoEvento);
                         elTipoEvento.Nombre = vista.iComboTipoEvento.SelectedItem.Text;

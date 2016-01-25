@@ -33,8 +33,8 @@ namespace Interfaz_Presentadores.Modulo9
         {
             try
             {
-                FabricaEntidades fabricaEntidades = new FabricaEntidades();
-                DominioSKD.Entidades.Modulo9.Evento entidad = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidades.ObtenerEvento();
+                //FabricaEntidades fabricaEntidades = new FabricaEntidades();
+                DominioSKD.Entidades.Modulo9.Evento entidad = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
                 entidad.Id = iD;
                 Comando<Entidad> comandoDetallarEvento = FabricaComandos.ObtenerComandoConsultarEvento(entidad);
                 DominioSKD.Entidades.Modulo9.Evento evento = (DominioSKD.Entidades.Modulo9.Evento)comandoDetallarEvento.Ejecutar();

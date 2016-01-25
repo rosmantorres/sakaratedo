@@ -98,10 +98,10 @@ namespace Interfaz_Presentadores.Modulo9
                             int size = vista.iComboTipoEvento.Items.Count;
                             int index = vista.iComboTipoEvento.SelectedIndex + 1;
                             Comando<bool> comandoAgregarEvento;
-                            FabricaEntidades laFabrica = new FabricaEntidades();
-                            DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)laFabrica.ObtenerEvento();
-                            DominioSKD.Entidades.Modulo9.TipoEvento elTipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)laFabrica.ObtenerTipoEvento();
-                            DominioSKD.Entidades.Modulo9.Horario elHorario = (DominioSKD.Entidades.Modulo9.Horario)laFabrica.ObtenerHorario();
+                            //FabricaEntidades laFabrica = new FabricaEntidades();
+                            DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
+                            DominioSKD.Entidades.Modulo9.TipoEvento elTipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)FabricaEntidades.ObtenerTipoEvento();
+                            DominioSKD.Entidades.Modulo9.Horario elHorario = (DominioSKD.Entidades.Modulo9.Horario)FabricaEntidades.ObtenerHorario();
                             elEvento.Nombre = vista.iNombreEvento;
                             elEvento.Costo = float.Parse(vista.iCostoEvento);
                             elTipoEvento.Nombre = vista.iComboTipoEvento.SelectedItem.Text;

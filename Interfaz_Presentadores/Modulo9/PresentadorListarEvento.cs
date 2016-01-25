@@ -62,8 +62,8 @@ namespace Interfaz_Presentadores.Modulo9
         {
             try
             {
-                FabricaEntidades fabricaEntidades = new FabricaEntidades();
-                DominioSKD.Entidades.Modulo9.Evento a = (DominioSKD.Entidades.Modulo9.Evento)fabricaEntidades.ObtenerEvento();
+               // FabricaEntidades fabricaEntidades = new FabricaEntidades();
+                DominioSKD.Entidades.Modulo9.Evento a = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
                 a.Id = int.Parse(idPersona);
                 LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaEventos comandoListarEventos = (LogicaNegociosSKD.Comandos.Modulo9.ComandoConsultarListaEventos)FabricaComandos.ObtenerComandoConsultarListaEventos(a);
                 List<Entidad> listaEventos = comandoListarEventos.Ejecutar();
