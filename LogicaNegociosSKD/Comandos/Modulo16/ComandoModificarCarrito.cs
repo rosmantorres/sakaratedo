@@ -200,8 +200,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
             catch (Exception e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                throw new ExceptionSKDConexionBD(RecursosLogicaModulo16.CODIGO_EXCEPCION_GENERICO,
-                    RecursosLogicaModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+                throw e;
             }
         }
     }

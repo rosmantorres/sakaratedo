@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaNegociosSKD.Modulo14;
 using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo14;
 using Interfaz_Presentadores.Modulo14;

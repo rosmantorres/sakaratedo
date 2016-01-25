@@ -21,7 +21,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             set { idPlanilla = value; }
             get { return idPlanilla; }
         }
-
+        /// <summary>
+        /// Método que cambia el status de una planilla
+        /// </summary>
+        /// <param name="idPlanilla">Id de la planilla a modificar</param>
+        /// <returns>Retorna True se se realizo la modificación con éxito.
+        /// De lo contrario devuelve False</returns>
         public override Boolean Ejecutar()
         {
             try

@@ -14,10 +14,10 @@ using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
-using DominioSKD.Fabrica;
+using ExcepcionesSKD.Modulo16;
 
 namespace PruebasUnitariasSKD.Modulo16
-{/*
+{
     /// <summary>
     /// Prueba unitaria que trabaja sobre el DAO de Carrito
     /// </summary>
@@ -43,6 +43,8 @@ namespace PruebasUnitariasSKD.Modulo16
         private DominioSKD.Entidades.Modulo9.Evento evento;
         private DominioSKD.Entidades.Modulo9.Evento evento2; 
         FabricaEntidades fabricaentidades;
+        private Entidad pago;
+        private List<String> datoPago;       
         #endregion
 
         /// <summary>
@@ -53,26 +55,27 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             //Obtengo el DAO           
             this.daoPrueba = FabricaDAOSqlServer.ObtenerdaoCarrito();
+            fabricaentidades = new FabricaEntidades();
 
             //La persona
-            this.persona = new Persona();
+            this.persona = FabricaEntidades.ObtenerPersona();
             this.persona.Id = 11;
-            this.persona2 = new Persona();
+            this.persona2 = FabricaEntidades.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = new Persona();
+            this.persona3 = FabricaEntidades.ObtenerPersona();
             this.persona3.Id = 13;
-            this.persona4 = new Persona();
+            this.persona4 = FabricaEntidades.ObtenerPersona();
             this.persona4.Id = 14;
-            this.persona5 = new Persona();
+            this.persona5 = FabricaEntidades.ObtenerPersona();
             this.persona5.Id = 15;
-            this.persona6 = new Persona();
+            this.persona6 = FabricaEntidades.ObtenerPersona();
             this.persona6.Id = 16;
 
             //Dos implementos distintos
-            this.implemento = new Implemento();
+            this.implemento = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
-            this.implemento2 = new Implemento();
+            this.implemento2 = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento2.Id = 2;
             this.implemento2.Precio_Implemento = 3000;
 
@@ -86,12 +89,12 @@ namespace PruebasUnitariasSKD.Modulo16
             this.evento2.Costo = 2000;
 
             //Dos matriculas distintas
-            this.matricula = new Matricula();
+            this.matricula = (Matricula)FabricaEntidades.ObtenerMatricula();
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
             this.matricula2 = new Matricula();
             this.matricula2.Id = 2;
-            this.matricula2.Costo = 4500;
+            this.matricula2.Costo = 4500;                   
         }
 
         /// <summary>
@@ -186,16 +189,17 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaEliminarImplemento()
         {
-            //Elimino un implemento al carrito de una persona
-            Assert.IsTrue(this.daoPrueba.eliminarItem(1, this.implemento, this.persona));
+            //Agregamos dos implementos diferentes de prueba
+            this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 10);
+            this.daoPrueba.agregarItem(this.persona, this.implemento2, 1, 30);
 
-            //Elimino un implemento al carrito de una persona
-            Assert.IsTrue(this.daoPrueba.eliminarItem(1, this.implemento2, this.persona));
-
-            //Elimino un implemento al carrito de una persona
-            Assert.IsTrue(this.daoPrueba.eliminarItem(3, this.implemento, this.persona));
-
-
+            //Elimino los implementos
+            Assert.IsTrue(this.daoPrueba.eliminarItem(1, this.implemento, this.persona));            
+            Assert.IsTrue(this.daoPrueba.eliminarItem(1, this.implemento2, this.persona));            
+            
+            //Intento eliminar los eventos anteriores que ya no existen
+            Assert.IsFalse(this.daoPrueba.eliminarItem(1, this.implemento, this.persona));
+            Assert.IsFalse(this.daoPrueba.eliminarItem(1, this.implemento2, this.persona));    
         }
 
         /// <summary>
@@ -204,16 +208,17 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaEliminarEvento()
         {
+            //Agregamos dos eventos diferentes de prueba
+            this.daoPrueba.agregarItem(this.persona2, this.evento, 2, 10);
+            this.daoPrueba.agregarItem(this.persona2, this.evento2, 2, 10);
 
-            //Elimino un evento al carrito de una persona
-            Assert.IsTrue(this.daoPrueba.eliminarItem(3, this.implemento, this.persona2));
+            //Elimino los eventos
+            Assert.IsTrue(this.daoPrueba.eliminarItem(3, this.evento, this.persona2));
+            Assert.IsTrue(this.daoPrueba.eliminarItem(3, this.evento2, this.persona2));
 
-            //Elimino un evento al carrito de una persona
-            Assert.IsTrue(this.daoPrueba.eliminarItem(3, this.implemento2, this.persona2));
-
-            //Elimino un evento al carrito de una persona
-            Assert.IsTrue(this.daoPrueba.eliminarItem(2, this.implemento, this.persona2));
-
+            //Intento eliminar los eventos anteriores que ya no existen
+            Assert.IsFalse(this.daoPrueba.eliminarItem(3, this.evento, this.persona2));
+            Assert.IsFalse(this.daoPrueba.eliminarItem(3, this.evento2, this.persona2));
         }
 
         /// <summary>
@@ -222,18 +227,17 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void PruebaEliminarMatricula()
         {
+            //Agregamos dos matriculas diferentes de prueba
+            this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 10);
+            this.daoPrueba.agregarItem(this.persona3, this.matricula2, 3, 30);
 
-            //Elimino una matricula al carrito de una persona
-            Assert.IsTrue(this.daoPrueba.eliminarItem(2, this.implemento, this.persona3));
+            //Elimino las matriculas
+            Assert.IsTrue(this.daoPrueba.eliminarItem(2, this.matricula, this.persona3));            
+            Assert.IsTrue(this.daoPrueba.eliminarItem(2, this.matricula2, this.persona3));
 
-            //Elimino una matricula al carrito de una persona
-            Assert.IsTrue(this.daoPrueba.eliminarItem(2, this.implemento2, this.persona3));
-
-            //Elimino una matricula al carrito de una persona
-            Assert.IsTrue(this.daoPrueba.eliminarItem(1, this.implemento, this.persona3));
-
-
-        }
+            //Intento eliminar las matriculas anteriores que ya no existen
+            Assert.IsFalse(this.daoPrueba.eliminarItem(2, this.matricula, this.persona3));
+            Assert.IsFalse(this.daoPrueba.eliminarItem(2, this.matricula2, this.persona3));     }
         #endregion
 
         #region ModificarCarrito
@@ -279,7 +283,7 @@ namespace PruebasUnitariasSKD.Modulo16
         public void PruebaModificarCarritosExceso()
         {
             /*Agrego Modifico un carrito en el que solo hay implementos poniendole una cantidad inexistente 
-            en en el stock
+            en en el stock*/
             this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 20);
             Assert.IsFalse(this.daoPrueba.ModificarCarrito(this.persona, this.implemento, 1, 8000));
 
@@ -287,7 +291,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.daoPrueba.eliminarItem(1, this.implemento, this.persona);
 
             /*Modifico un carrito en hay implementos, eventos y matriculas, poniendole al implemento una cantidad
-            inexistente en el stock
+            inexistente en el stock */
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
             this.daoPrueba.agregarItem(this.persona3, this.evento, 2, 10);
             this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 20);
@@ -309,23 +313,79 @@ namespace PruebasUnitariasSKD.Modulo16
         public void RegistrarPagosNormales()
         {
             /*Agregamos y Registramos el pago en un carrito 
-            donde solo hay Implementos y su cantidad se puede satisfacer
+            donde solo hay Implementos y su cantidad se puede satisfacer*/
             this.daoPrueba.agregarItem(this.persona, this.implemento, 1, 20);
-            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona, "Tarjeta"));
 
-            //Agregamos y Registramos el pago en un carrito donde solo hay eventos
+            //Insertamos pagos de prueba
+            this.datoPago = new List<String>();
+            this.datoPago.Add("123456789");
+            this.pago = FabricaEntidades.ObtenerPago(45000, "Tarjeta", this.datoPago);
+
+            //Pagamos
+            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona, this.pago));
+
+            //Insertamos pagos de prueba
+            this.datoPago = new List<String>();
+            this.datoPago.Add("123456789");
+            this.pago = FabricaEntidades.ObtenerPago(45000, "Tarjeta", this.datoPago);
+
+            //Pagamos
+            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona, this.pago));            
+
+            //Intentamos registrar el pago de un carrito que ya no existe
+            Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona, this.pago));
+
+            /*Agregamos y Registramos el pago en un carrito donde solo hay eventos*/
             this.daoPrueba.agregarItem(this.persona2, this.evento, 2, 10);
-            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona2, "Deposito"));
 
-            //Agregamos y Registramos el pago en un carrito donde solo hay matriculas
+            //Insertamos pagos de prueba
+            this.datoPago = new List<String>();
+            this.datoPago.Add("123456789");
+            this.pago = FabricaEntidades.ObtenerPago(0, "Tarjeta", this.datoPago);
+
+            //Pagamos
+            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona2, this.pago));
+
+            //Intentamos registrar el pago de un carrito que ya no existe
+            Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona2, this.pago));
+
+            /*Agregamos y Registramos el pago en un carrito donde solo hay matriculas*/
             this.daoPrueba.agregarItem(this.persona4, this.matricula, 3, 1);
-            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona4, "Transferencia"));
 
-            //Agregamos y Registramos el pago de un carrito donde hay Implementos, eventos y matirculas
+            //Insertamos pagos de prueba
+            this.datoPago = new List<String>();
+            this.datoPago.Add("123456789");
+            this.pago = FabricaEntidades.ObtenerPago(2500, "Tarjeta", this.datoPago);
+
+            //Pagamos            
+            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona4, this.pago));
+
+            //Insertamos pagos de prueba
+            this.datoPago = new List<String>();
+            this.datoPago.Add("123456789");
+            this.pago = FabricaEntidades.ObtenerPago(2500, "Tarjeta", this.datoPago);
+
+            //Pagamos            
+            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona4, this.pago));
+
+            //Intentamos registrar el pago de un carrito que ya no existe
+            Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona4, this.pago));
+
+            /*Agregamos y Registramos el pago de un carrito donde hay Implementos, eventos y matriculas*/
             this.daoPrueba.agregarItem(this.persona3, this.implemento, 1, 20);
             this.daoPrueba.agregarItem(this.persona3, this.evento, 2, 10);
             this.daoPrueba.agregarItem(this.persona3, this.matricula, 3, 20);
-            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona3, "Tarjeta"));
+
+            //Insertamos pagos de prueba
+            this.datoPago = new List<String>();
+            this.datoPago.Add("123456789");
+            this.pago = FabricaEntidades.ObtenerPago(1900000, "Tarjeta", this.datoPago);
+
+            //Pagamos
+            Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona3, this.pago));
+
+            //Intentamos registrar el pago de un carrito que no existe
+            Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona3, this.pago));
         }
 
 
@@ -347,7 +407,14 @@ namespace PruebasUnitariasSKD.Modulo16
             this.daoPrueba.agregarItem(this.persona5, this.implemento, 1, 10);
             this.daoPrueba.agregarItem(this.persona5, this.implemento, 1, 10);
             this.daoPrueba.agregarItem(this.persona5, this.implemento, 1, 10);
-            Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona5, "Deposito"));
+
+            //Insertamos pagos de prueba
+            this.datoPago = new List<String>();
+            this.datoPago.Add("123456789");
+            this.pago = FabricaEntidades.ObtenerPago(1900000, "Tarjeta", this.datoPago);
+
+            //Intentamos pagar pero no existe tal cantidad
+            Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona5, this.pago));
 
             //Limpio los datos
             this.daoPrueba.eliminarItem(1, this.implemento, this.persona5);
@@ -365,7 +432,14 @@ namespace PruebasUnitariasSKD.Modulo16
             this.daoPrueba.agregarItem(this.persona6, this.implemento, 1, 10);
             this.daoPrueba.agregarItem(this.persona6, this.evento, 2, 20);
             this.daoPrueba.agregarItem(this.persona6, this.matricula, 3, 1);
-            Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona6, "Transferencia"));
+
+            //Insertamos pagos de prueba
+            this.datoPago = new List<String>();
+            this.datoPago.Add("123456789");
+            this.pago = FabricaEntidades.ObtenerPago(1900000, "Tarjeta", this.datoPago);
+
+            //Pagamos
+            Assert.IsFalse(this.daoPrueba.RegistrarPago(this.persona6, this.pago));
 
             //Limpio los datos
             this.daoPrueba.eliminarItem(1, this.implemento, this.persona6);
@@ -432,7 +506,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.EventosCarrito.ElementAt(0).Value, 6);
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(3, this.implemento, this.persona2);
+            this.daoPrueba.eliminarItem(3, this.evento, this.persona2);
         }
 
         /// <summary>
@@ -462,7 +536,7 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.MatriculasCarrito.ElementAt(0).Value, 1);
 
             //Limpio los datos
-            this.daoPrueba.eliminarItem(2, this.implemento, this.persona3);
+            this.daoPrueba.eliminarItem(2, this.matricula, this.persona3);
         }
 
         /// <summary>
@@ -483,7 +557,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.MatriculasCarrito = this.daoPrueba.getMatricula(this.persona4);
 
             /*Revisamos que hayan Implementos, Eventos y matriculas, ademas,
-              que efectivamente haya solo uno agregado de cada uno de ellos
+              que efectivamente haya solo uno agregado de cada uno de ellos*/
             Assert.IsTrue(this.ImplementosCarrito.Count == 1);
             Assert.IsTrue(this.EventosCarrito.Count == 1);
             Assert.IsTrue(this.MatriculasCarrito.Count == 1);
@@ -525,14 +599,17 @@ namespace PruebasUnitariasSKD.Modulo16
             this.persona5 = null;
             this.persona6 = null;
             this.implemento = null;
-            this.implemento2 = null;            
+            this.implemento2 = null;
             this.matricula = null;
             this.matricula2 = null;
             this.ImplementosCarrito = null;
             this.EventosCarrito = null;
             this.MatriculasCarrito = null;
             this.evento = null;
-            this.evento2 = null;     
+            this.evento2 = null;
+            this.fabricaentidades = null;
+            this.pago = null;
+            this.datoPago = null;
         }
-    }*/
+    }
 }

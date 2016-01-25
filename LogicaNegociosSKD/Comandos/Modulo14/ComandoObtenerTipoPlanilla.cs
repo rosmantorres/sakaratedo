@@ -13,6 +13,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
   public class ComandoObtenerTipoPlanilla : Comando<List<Entidad>>
     {
+        /// <summary>Para obtener el tipo de planilla</summary>
+        /// <returns>Regresa una lista con los tipos de planillas</returns>
+        /// 
       public override List<Entidad> Ejecutar()
         {
             List<Entidad> listaTipoPlanilla = new List<Entidad>();

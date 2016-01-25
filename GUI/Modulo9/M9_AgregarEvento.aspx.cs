@@ -13,10 +13,10 @@ using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo9
 {
-    public partial class prueba : System.Web.UI.Page, IContratoAgregarEvento
+    public partial class M9_AgregarEvento : System.Web.UI.Page, IContratoAgregarEvento
     {
         private PresentadorAgregarEvento presentador;
-        public prueba()
+        public M9_AgregarEvento()
         {
             presentador = new PresentadorAgregarEvento(this);
             

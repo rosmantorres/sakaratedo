@@ -72,7 +72,7 @@ namespace PruebasUnitariasSKD.Modulo14
         [Test]
         public void PruebaObtenerIdTipoPlanilla()
         {
-            Assert.AreEqual(daoplanilla.ObtenerIdTipoPlanilla("RETIRO"), 12);
+            Assert.AreEqual(daoplanilla.ObtenerIdTipoPlanilla("RETIRO"), 1);
         }
         [Test]
         public void PruebaObtenerDatosPlanillaID()
@@ -82,12 +82,12 @@ namespace PruebasUnitariasSKD.Modulo14
          [Test]
           public void PruebaEliminarDatosPlanillaBD()
          {
-             Assert.IsTrue(daoplanilla.EliminarDatosPlanillaBD(55));
+             Assert.IsTrue(daoplanilla.EliminarDatosPlanillaBD(91));
 
          }
         public void PruebaRegistrarDatosPlanillaIdBD()
         {
-            Assert.IsTrue(daoplanilla.RegistrarDatosPlanillaIdBD(16,"DOJO"));
+            Assert.IsTrue(daoplanilla.RegistrarDatosPlanillaIdBD(90,"Matricula"));
         }
         
    }
