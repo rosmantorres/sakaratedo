@@ -209,9 +209,6 @@
   <data name="ParamColorCinta" xml:space="preserve">
     <value>@colorCinta</value>
   </data>
-  <data name="ParamEliminarCinta" xml:space="preserve">
-    <value>@id_cinta</value>
-  </data>
   <data name="ParamIdCinta" xml:space="preserve">
     <value>@id_cinta</value>
   </data>
@@ -220,6 +217,9 @@
   </data>
   <data name="ParamIdOrgCinta" xml:space="preserve">
     <value>@idOrganizacion</value>
+  </data>
+  <data name="ParamModificarCinta" xml:space="preserve">
+    <value>@idcinta</value>
   </data>
   <data name="ParamNomOrg" xml:space="preserve">
     <value>@nombreOrganizacion</value>

@@ -19,7 +19,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return nombreTipo; }
             set { nombreTipo = value; }
         }
-
+        /// <summary>
+        /// Método que registra un nuevo tipo de planilla
+        /// </summary>
+        /// <param name="nombreTipo">El nuevo tipo de planilla</param>
         public override Boolean Ejecutar()
         {
             Boolean result = true;

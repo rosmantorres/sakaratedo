@@ -9,19 +9,32 @@ namespace Interfaz_Contratos.Modulo11
 {
     public interface IContratoModificarResultadoCompetencia
     {
-        TextBox fechaEvento { set; }
+        TextBox Fecha { get;  set; }
 
-        TextBox nombreEvento { set; }
+        TextBox Nombre { get;  set; }
 
-        DropDownList comboEspecialidad { get; set; }
+        DropDownList ComboEspecialidad { get; set; }
 
-        DropDownList comboCategoria { get; set; }
+        DropDownList ComboCategoria { get; set; }
 
-        Literal dataTable { get; set; }
+        Literal TablaAscenso { get; set; }
 
-        Literal dataTable1 { get; set; }
+        Literal TablaKata { get; set; }
 
-        Literal dataTable2 { get; set; }
+        Literal TablaKumite { get; set; }
 
+        bool LEspecialidad { get; set; }
+
+        LinkButton Boton { get; set; }
+
+        LinkButton BotonKata { get; set; }
+
+        LinkButton BotonKumite { get; set; }
+
+        LinkButton BotonAmbos { get; set; }
+
+        HiddenField Resultado1 { get; set; }
+
+        HiddenField Resultado2 { get; set; }
     }
 }

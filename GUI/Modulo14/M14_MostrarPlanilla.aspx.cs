@@ -17,7 +17,6 @@ namespace templateApp.GUI.Modulo14
 {
     public partial class M14_MostrarPlanilla : System.Web.UI.Page, IContratoM14MostrarPlanilla
     {
-        private LogicaNegociosSKD.Modulo14.LogicaDiseño logica = new LogicaNegociosSKD.Modulo14.LogicaDiseño();
         private int idSolicitud;
         private int idPlanilla;
         private int idIns;
@@ -127,45 +126,6 @@ namespace templateApp.GUI.Modulo14
             this.informacion.Text = contenido;
         }
 
-       /* public void MostrarInformacion()
-        {
-             try
-             {
-            DominioSKD.Diseño diseño = logica.ConsultarDiseño(idPlanilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]), idIns, idSolicitud);
-            contenido = diseño.Contenido;
-            this.informacion.Text = contenido;
-            }
-             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 throw ex;
-             }
-             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 throw ex;
-             }
-             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 throw ex;
-             }
-             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 throw ex;
-             }
-             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 throw ex;
-             }
-             catch (Exception ex)
-             {
-                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                 //throw ex;
-             }
-        }*/
 
         protected void imprimir_Click(object sender, EventArgs e)
         {

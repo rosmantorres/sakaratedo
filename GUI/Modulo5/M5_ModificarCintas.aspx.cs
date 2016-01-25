@@ -5,8 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
-using LogicaNegociosSKD.Modulo5;
-using LogicaNegociosSKD.Modulo3;
 using Interfaz_Presentadores.Modulo5;
 using Interfaz_Contratos.Modulo5;
 
@@ -23,10 +21,10 @@ namespace templateApp.GUI.Modulo5
 
 
             ((SKD)Page.Master).IdModulo = "5";
-
+            this.presentador = new PresentadorModificarCinta(this);
             if (!IsPostBack)
             {
-                this.presentador = new PresentadorModificarCinta(this);
+               
                 this.presentador.llenarCombo();
                 this.ListOrg.DataSource = options;
                 this.ListOrg.DataTextField = "value";
@@ -49,7 +47,7 @@ namespace templateApp.GUI.Modulo5
 
         public string obtenerNombreOrganizacion()
         {
-            return this.ListOrg.Text;
+            return this.ListOrg.SelectedItem.Text;
         }
 
         public string obtenerColorCinta()
@@ -72,13 +70,24 @@ namespace templateApp.GUI.Modulo5
             return this.signi.Value;
         }
 
-        public string obtenerOrden()
+        public int obtenerOrden()
         {
-            return this.ord.Value;
+            return Int32.Parse(this.ord.Value);
         }
-        public string obtenerIdCInta()
+        public int obtenerIdCInta()
         {
-            return this.Request.QueryString["idCinta"];
+            return Int32.Parse(Request.QueryString["idCinta"]);
+        }
+        public void alertaModificarFallidoOrden(ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Message + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void Respuesta()
+        {
+            this.Response.Redirect(RecursoInterfazMod5.agregarExito);
         }
         #endregion
 

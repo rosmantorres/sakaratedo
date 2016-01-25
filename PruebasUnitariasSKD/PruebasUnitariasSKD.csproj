@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
@@ -70,10 +74,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod13.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo14\PruebaBDDiseno.cs" />
-    <Compile Include="Modulo14\PruebaBDPlanilla.cs" />
-    <Compile Include="Modulo14\PruebaLogicaDiseno.cs" />
-    <Compile Include="Modulo14\PruebaLogicaPlanilla.cs" />
+    <Compile Include="Modulo14\PruebaComando.cs" />
+    <Compile Include="Modulo14\PruebaDaoDatos.cs" />
+    <Compile Include="Modulo14\PruebaDaoDiseno.cs" />
+    <Compile Include="Modulo14\PruebaDaoPlanilla.cs" />
+    <Compile Include="Modulo14\PruebaDaoSolicitud.cs" />
     <Compile Include="Modulo14\RecursosPU_Mod14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,6 +118,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo3\PUComandoOrganizacion.cs" />
     <Compile Include="Modulo3\PUDaoOrganizacion.cs" />
     <Compile Include="Modulo3\RecursosPU_Mod3.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -124,6 +130,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo5\PUComandoCinta.cs" />
     <Compile Include="Modulo5\PUDaoCintas.cs" />
     <Compile Include="Modulo5\RecursosPU_Mod5.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -163,6 +170,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo9\PruebasComandosM9.cs" />
+    <Compile Include="Modulo9\PruebasDaoEvento.cs" />
     <Compile Include="Modulo9\RecursosPU_Mod9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -17,7 +17,8 @@ using DatosSKD.DAO.Modulo10;
 using DatosSKD.InterfazDAO.Modulo11;
 using DatosSKD.DAO.Modulo11;
 using DatosSKD.InterfazDAO.Modulo14;
-
+using DatosSKD.InterfazDAO.Modulo3;
+using DatosSKD.InterfazDAO.Modulo5;
 
 namespace DatosSKD.Fabrica
 {
@@ -42,7 +43,7 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 3
-		public DaoOrganizacion ObtenerDaoOrganizacion()
+        public static IDaoOrganizacion ObtenerDaoOrganizacion()
         {
             return new DaoOrganizacion();
         }
@@ -52,7 +53,7 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 5
-		public DaoCinta ObtenerDaoCinta()
+        public static IDaoCinta ObtenerDaoCinta()
         {
             return new DaoCinta();
         }

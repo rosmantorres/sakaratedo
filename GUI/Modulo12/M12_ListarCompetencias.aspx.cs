@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
 using LogicaNegociosSKD;
-using LogicaNegociosSKD.Modulo12;
 using Interfaz_Contratos.Modulo12;
 using Interfaz_Presentadores.Modulo12;
 
@@ -73,8 +72,8 @@ namespace templateApp.GUI.Modulo12
         protected void llenarModalInfo(int elIdCompetencia)
         {
             Competencia laCompetencia = new Competencia();
-            LogicaCompetencias logica = new LogicaCompetencias();
-            laCompetencia = logica.detalleCompetenciaXId(elIdCompetencia);
+            //LogicaCompetencias logica = new LogicaCompetencias();
+            //laCompetencia = logica.detalleCompetenciaXId(elIdCompetencia);
 
         }
 

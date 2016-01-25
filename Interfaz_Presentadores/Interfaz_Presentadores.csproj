@@ -34,7 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\packages\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,8 +58,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>M10_RecursosPresentador.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo10\PresentadorAgregarAsistencia.cs" />
+    <Compile Include="Modulo10\PresentadorDetalleAsistencia.cs" />
     <Compile Include="Modulo10\PresentadorListarAsistencia.cs" />
     <Compile Include="Modulo10\PresentadorModificarAsistencia.cs" />
+    <Compile Include="Modulo11\M11_RecursosPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M11_RecursosPresentador.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo11\PresentadorListaResultado.cs" />
+    <Compile Include="Modulo11\PresentadorModificarResultado.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
@@ -115,11 +128,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Modulo3\PresentadorAgregarOrganizacion.cs" />
+    <Compile Include="Modulo3\PresentadorLlenarOrganizacion.cs" />
+    <Compile Include="Modulo3\PresentadorModificarOrganizacion.cs" />
+    <Compile Include="Modulo3\RecursosPresentadorM3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosPresentadorM3.resx</DependentUpon>
+    </Compile>
     <Compile Include="Modulo2\ValidacionesM2.cs" />
     <Compile Include="Modulo5\PresentadorCrearCintas.cs" />
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
     <Compile Include="Modulo5\RecursoPresentadorM5.Designer.cs" />
+    <Compile Include="Modulo9\M9_RecursoInterfazPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M9_RecursoInterfazPresentador.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo9\PresentadorAgregarEvento.cs" />
+    <Compile Include="Modulo9\PresentadorListarEventos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
@@ -146,19 +174,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo3\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
     <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />
-    <Folder Include="Modulo9\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Modulo10\M10_RecursosPresentador.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M10_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo11\M11_RecursosPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M11_RecursosPresentador.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo16\M16_Recursointerfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -184,13 +213,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazPresentadorM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo3\RecursosPresentadorM3.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosPresentadorM3.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo5\RecursoPresentadorM5.resx" />
+    <EmbeddedResource Include="Modulo9\M9_RecursoInterfazPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M9_RecursoInterfazPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\menuLateral.xml" />
     <Content Include="Master\menuSuperior.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Modulo16\Carnet_titulo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

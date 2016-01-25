@@ -45,23 +45,23 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 3
-		public Entidad ObtenerOrganizacion_M3()
+        public static Entidad ObtenerOrganizacion_M3()
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion();
         }
-        public Entidad ObtenerOrganizacion_M3(int elId, String elNombre)
+        public static Entidad ObtenerOrganizacion_M3(int elId, String elNombre)
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion(elId, elNombre);
         }
-        public Entidad ObtenerOrganizacion_M3(String elNombre)
+        public static Entidad ObtenerOrganizacion_M3(String elNombre)
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion(elNombre);
         }
-        public Entidad ObtenerOrganizacion_M3(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        public static Entidad ObtenerOrganizacion_M3(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion(elId, elNombre, laDireccion, elTelefono, elEmail, elEstado, elEstilo);
         }
-        public Entidad ObtenerOrganizacion_M3(String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
+        public static Entidad ObtenerOrganizacion_M3(String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
         {
             return new DominioSKD.Entidades.Modulo3.Organizacion(elNombre, laDireccion, elTelefono, elEmail, elEstado, elEstilo);
         }
@@ -72,27 +72,27 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 5
-		public Entidad ObtenerCinta_M5()
+        public static Entidad ObtenerCinta_M5()
         {
             return new DominioSKD.Entidades.Modulo5.Cinta();
         }
-        public Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
+        public static Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor, elRango, laClasificacion, elOrden, elSignificado, elIdRestriccion);
         }
-        public Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
+        public static Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elColor, elRango, laClasificacion, elOrden, elSignificado, elIdRestriccion);
         }
-        public Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
+        public static Entidad ObtenerCinta_M5(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor, elRango, laClasificacion, elOrden, elSignificado, organizacion, status);
         }
-        public Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
+        public static Entidad ObtenerCinta_M5(String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, DominioSKD.Entidades.Modulo3.Organizacion organizacion, Boolean status)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elColor, elRango, laClasificacion, elOrden, elSignificado, organizacion, status);
         }
-        public Entidad ObtenerCinta_M5(int elId, String elColor)
+        public static Entidad ObtenerCinta_M5(int elId, String elColor)
         {
             return new DominioSKD.Entidades.Modulo5.Cinta(elId, elColor);
         }
@@ -197,17 +197,17 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 9
-        public Entidad ObtenerEvento()
+        public  Entidad ObtenerEvento()
         {
             return new DominioSKD.Entidades.Modulo9.Evento();
         }
 
-        public Entidad ObtenerHorario()
+        public  Entidad ObtenerHorario()
         {
             return new DominioSKD.Entidades.Modulo9.Horario();
         }
 
-        public Entidad ObtenerTipoEvento()
+        public  Entidad ObtenerTipoEvento()
         {
             return new DominioSKD.Entidades.Modulo9.TipoEvento();
         }
@@ -251,6 +251,11 @@ namespace DominioSKD.Fabrica
         public static Entidad ObtenerTipoEventoM10()
         {
             return new DominioSKD.Entidades.Modulo10.TipoEvento();
+        }
+
+        public static Entidad ObtenerValores()
+        {
+            return new DominioSKD.Entidades.Modulo10.Valores();
         }
         #endregion
 
@@ -501,12 +506,15 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <param name="implementos">Lista con todos los implementos del carrito</param>
         /// <param name="eventos">Lista con todos los eventos del carrito</param>
-        /// <param name="matriculas">Lisita con todas las matriculas del carrito</param>
+        /// <param name="matriculas">Lista con todas las matriculas del carrito</param>
+        /// <param name="monto">Monto que se ha pagado de ese carrito</param>
         /// <returns>La entidad carrito con todos sus datos llenos</returns>
         public static Entidad ObtenerCarrito(
-           Dictionary<Entidad, int> implementos, Dictionary<Entidad, int> eventos, Dictionary<Entidad, int> matriculas)
+           Dictionary<Entidad, int> implementos,
+            Dictionary<Entidad, int> eventos,
+            Dictionary<Entidad, int> matriculas, float monto)
         {
-            return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas);
+            return new Entidades.Modulo16.Carrito(implementos, eventos, matriculas, monto);
         }
 
         /// <summary>
@@ -549,6 +557,46 @@ namespace DominioSKD.Fabrica
         public static Entidad ObtenerFactura()
         {
             return new Compra();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de productos</returns>
+        public static Entidad ObtenerFacturaImplemento()
+        {
+            return new DetalleFacturaProducto();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de eventos</returns>
+        public static Entidad ObtenerFacturaEvento()
+        {
+            return new DetalleFacturaEvento();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad compra con todos sus datos llenos de matricula</returns>
+        public static Entidad ObtenerFacturaMatricula()
+        {
+            return new DetalleFacturaMatricula();
+        }
+
+        /// <summary>
+        /// Metodo de la fabrica que instancia la compra
+        /// </summary>
+        /// <param name="NONE">Este metodo no posee parametros</param>
+        /// <returns>La entidad pago con todos datos de la factura</returns>
+        public static Entidad ObtenerFacturaPago()
+        {
+            return new Pago();
         }
 
         #endregion

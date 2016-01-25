@@ -264,7 +264,7 @@
     <comment>Nombre del SP solicitado por M10 y M11</comment>
   </data>
   <data name="ProcedimientoConsultarTiposEventos" xml:space="preserve">
-    <value>M9_TodosLosTiposEvento</value>
+    <value>M9_ConsultarTipoEventos</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
   <data name="ProcedimientoModificarEvento" xml:space="preserve">

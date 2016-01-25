@@ -20,12 +20,12 @@ namespace templateApp.GUI.Modulo11
             ((SKD)Page.Master).IdModulo = "11";
             if (!IsPostBack)
             {
-                String idEvento = Request.QueryString[M11_RecursosInterfaz.Mostrar];
-                String tipo = Request.QueryString[M11_RecursosInterfaz.Tipo];
+                String idEvento = Request.QueryString[M11_RecursoInterfaz.Mostrar];
+                String tipo = Request.QueryString[M11_RecursoInterfaz.Tipo];
                 Session["M11_IdEvento"] = idEvento;
                 Session["M11_tipo"] = tipo;
 
-                if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Evento))
+                if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
                 {
                     #region Detalle de Eventos Examen de Ascenso
                     evento = LogicaResultado.ConsultarEventoDetalle(Session["M11_IdEvento"].ToString());
@@ -38,19 +38,19 @@ namespace templateApp.GUI.Modulo11
                         List<Inscripcion> inscripciones = LogicaResultado.listaAtletasEnCategoriaYAscenso(evento);
                         foreach (Inscripcion inscripcion in inscripciones)
                         {
-                            this.dataTable.Text += M11_RecursosInterfaz.AbrirTR;
-                            this.dataTable.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable.Text += M11_RecursosInterfaz.AbrirTD;
-                            if (inscripcion.ResAscenso.ElementAt(0).Aprobado.Equals(M11_RecursosInterfaz.valorSi))
+                            this.dataTable.Text += M11_RecursoInterfaz.AbrirTR;
+                            this.dataTable.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable.Text += M11_RecursoInterfaz.AbrirTD;
+                            if (inscripcion.ResAscenso.ElementAt(0).Aprobado.Equals(M11_RecursoInterfaz.valorSi))
                             {
-                                this.dataTable.Text += M11_RecursosInterfaz.Aprobado;
+                                this.dataTable.Text += M11_RecursoInterfaz.Aprobado;
                             }
-                            else if (inscripcion.ResAscenso.ElementAt(0).Aprobado.Equals(M11_RecursosInterfaz.valorNo))
+                            else if (inscripcion.ResAscenso.ElementAt(0).Aprobado.Equals(M11_RecursoInterfaz.valorNo))
                             {
-                                this.dataTable.Text += M11_RecursosInterfaz.NoAprobado;
+                                this.dataTable.Text += M11_RecursoInterfaz.NoAprobado;
                             }
-                            this.dataTable.Text += M11_RecursosInterfaz.CerrarTD;
-                            this.dataTable.Text += M11_RecursosInterfaz.CerrarTR;
+                            this.dataTable.Text += M11_RecursoInterfaz.CerrarTD;
+                            this.dataTable.Text += M11_RecursoInterfaz.CerrarTR;
                         }
                     }
                     catch (Exception ex)
@@ -59,7 +59,7 @@ namespace templateApp.GUI.Modulo11
                     }
                     #endregion
                 }
-                else if (Session["M11_tipo"].Equals(M11_RecursosInterfaz.Competencia))
+                else if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
                 {
                     lEspecialidad.Visible = true;
                     especialidadEvento.Visible = true;
@@ -70,7 +70,7 @@ namespace templateApp.GUI.Modulo11
                     competencia.Id_competencia = Convert.ToInt32(Session["M11_IdEvento"].ToString());
                     categoriaEvento.Text = competencia.Categoria.Edad_inicial.ToString() + " a " + competencia.Categoria.Edad_final.ToString() + " años " + competencia.Categoria.Cinta_inicial + " - " + competencia.Categoria.Cinta_final + " " + competencia.Categoria.Sexo;
 
-                    if (especialidadEvento.Text.Equals(M11_RecursosInterfaz.Kata))
+                    if (especialidadEvento.Text.Equals(M11_RecursoInterfaz.Kata))
                     {
                         #region Detalle de Competencia tipo Kata
                         try
@@ -78,12 +78,12 @@ namespace templateApp.GUI.Modulo11
                             List<Inscripcion> inscripciones = LogicaResultado.listaAtletasParticipanCompetenciaKata(competencia);
                             foreach (Inscripcion inscripcion in inscripciones)
                             {
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTR;
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado1 + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado2 + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado3 + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable2.Text += M11_RecursosInterfaz.CerrarTR;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTR;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado1 + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado2 + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado3 + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable2.Text += M11_RecursoInterfaz.CerrarTR;
                             }
                         }
                         catch (Exception ex)
@@ -92,7 +92,7 @@ namespace templateApp.GUI.Modulo11
                         }
                         #endregion
                     }
-                    else if (especialidadEvento.Text.Equals(M11_RecursosInterfaz.Kumite))
+                    else if (especialidadEvento.Text.Equals(M11_RecursoInterfaz.Kumite))
                     {
                         #region Detalle de Competencia tipo Kumite
                         try
@@ -100,17 +100,17 @@ namespace templateApp.GUI.Modulo11
                             List<ResultadoKumite> listaKumite = LogicaResultado.listaAtletasParticipanCompetenciaKumite(competencia);
                             foreach (ResultadoKumite resultado in listaKumite)
                             {
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTR;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD + resultado.Id_ResKumite + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTR;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD + resultado.Id_ResKumite + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
                                 this.dataTable3.Text += resultado.Puntaje1;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
                                 this.dataTable3.Text += resultado.Puntaje2;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
                             }
                         }
                         catch (Exception ex)
@@ -119,7 +119,7 @@ namespace templateApp.GUI.Modulo11
                         }
                         #endregion
                     }
-                    else if (especialidadEvento.Text.Equals(M11_RecursosInterfaz.Kata_Kumite))
+                    else if (especialidadEvento.Text.Equals(M11_RecursoInterfaz.Kata_Kumite))
                     {
                         #region Detalle de Competencia tipo Kata Ambos
                         try
@@ -127,12 +127,12 @@ namespace templateApp.GUI.Modulo11
                             List<Inscripcion> inscripciones = LogicaResultado.listaAtletasParticipanCompetenciaKataAmbas(competencia);
                             foreach (Inscripcion inscripcion in inscripciones)
                             {
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTR;
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado1 + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado2 + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable2.Text += M11_RecursosInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado3 + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable2.Text += M11_RecursosInterfaz.CerrarTR;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTR;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado1 + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado2 + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.ResKata.ElementAt(0).Jurado3 + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable2.Text += M11_RecursoInterfaz.CerrarTR;
                             }
                         }
                         catch (Exception ex)
@@ -147,17 +147,17 @@ namespace templateApp.GUI.Modulo11
                             List<ResultadoKumite> listaKumite = LogicaResultado.listaAtletasParticipanCompetenciaKumiteAmbas(competencia);
                             foreach (ResultadoKumite resultado in listaKumite)
                             {
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTR;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD + resultado.Id_ResKumite + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTR;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD + resultado.Id_ResKumite + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre1 + resultado.Inscripcion1.Persona.Nombre + " " + resultado.Inscripcion1.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
                                 this.dataTable3.Text += resultado.Puntaje1;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.AbrirTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTDNombre2 + resultado.Inscripcion2.Persona.Nombre + " " + resultado.Inscripcion2.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.AbrirTD;
                                 this.dataTable3.Text += resultado.Puntaje2;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTD;
-                                this.dataTable3.Text += M11_RecursosInterfaz.CerrarTR;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
+                                this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
                             }
                         }
                         catch (Exception ex)
@@ -175,15 +175,15 @@ namespace templateApp.GUI.Modulo11
             string nuevo = "";
             if (competencia.TipoCompetencia.Equals("1"))
             {
-                nuevo = M11_RecursosInterfaz.Kata;
+                nuevo = M11_RecursoInterfaz.Kata;
             }
             else if (competencia.TipoCompetencia.Equals("2"))
             {
-                nuevo = M11_RecursosInterfaz.Kumite;
+                nuevo = M11_RecursoInterfaz.Kumite;
             }
             else if (competencia.TipoCompetencia.Equals("3"))
             {
-                nuevo = M11_RecursosInterfaz.Kata_Kumite;
+                nuevo = M11_RecursoInterfaz.Kata_Kumite;
             }
             return nuevo;
         }

@@ -103,6 +103,7 @@
     <Compile Include="Modulo16\ErrorEnHTTPException.cs" />
     <Compile Include="Modulo16\ItemInvalidoException.cs" />
     <Compile Include="Modulo16\LogicaagregarEventoaCarritoException.cs" />
+    <Compile Include="Modulo16\MontoInvalidoException.cs" />
     <Compile Include="Modulo16\OpcionItemErroneoException.cs" />
     <Compile Include="Modulo16\OpcionPagoNoValidoException.cs" />
     <Compile Include="Modulo16\ParametroIncorrectoException.cs" />
@@ -117,9 +118,11 @@
     <Compile Include="Modulo2\RolesException.cs" />
     <Compile Include="Modulo3\EstiloInexistenteException.cs" />
     <Compile Include="Modulo3\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo3\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo3\OrganizacionExistenteException.cs" />
     <Compile Include="Modulo5\CintaRepetidaException.cs" />
     <Compile Include="Modulo5\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo5\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo5\OrdenCintaRepetidoException.cs" />
     <Compile Include="Modulo5\OrganizacionInexistenteException.cs" />
     <Compile Include="Modulo7\ListaNulaException.cs" />
