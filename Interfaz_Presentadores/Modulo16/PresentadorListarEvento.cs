@@ -406,7 +406,7 @@ namespace Interfaz_Presentadores.Modulo16
                 String[] datos = aux.ID.Split('-');
 
                 //Creo el evento asignandole su ID                
-                Evento evento = (Evento)fabrica.ObtenerEvento();
+                Evento evento = (Evento)FabricaEntidades.ObtenerEvento();
                 evento.Id = int.Parse(datos[1]);
 
                 //Respuesta de la accion de agregar y la cantidad que se desea de ese item

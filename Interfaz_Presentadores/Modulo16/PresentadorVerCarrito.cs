@@ -447,7 +447,7 @@ namespace Interfaz_Presentadores.Modulo16
                         cantidad = int.Parse(cantidadNueva);
 
                         //Pasamos el ID que vino del boton                    
-                        Evento objeto = (Evento)fabrica.ObtenerEvento();
+                        Evento objeto = (Evento)FabricaEntidades.ObtenerEvento();
                         objeto.Id = int.Parse(datos[1]);
 
                         //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso                      
@@ -793,7 +793,7 @@ namespace Interfaz_Presentadores.Modulo16
                     TipoObjeto = 3;
                     FabricaEntidades fabrica = new FabricaEntidades();
                     //Pasamos el ID que vino del boton                
-                    Entidad objeto = (Evento)fabrica.ObtenerEvento();
+                    Entidad objeto = (Evento)FabricaEntidades.ObtenerEvento();
                     objeto.Id = int.Parse(datos[1]);
                 
                     //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
