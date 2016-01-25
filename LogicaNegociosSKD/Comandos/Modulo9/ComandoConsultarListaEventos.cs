@@ -34,19 +34,19 @@ namespace LogicaNegociosSKD.Comandos.Modulo9
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
             catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Console.Out.WriteLine("2" + " " + ex.Message);
                 throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Console.Out.WriteLine("3" + " " + ex.Message);
                 throw ex;
             }
             
