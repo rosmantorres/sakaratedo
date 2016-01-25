@@ -29,17 +29,7 @@ namespace templateApp.GUI.Modulo8
            }
        }
 
-       public string descripcion_rest_cinta
-        {
-            get
-            {
-                return this.descripcion.Value;
-            }
-            set
-            {
-                this.descripcion.Value = value;
-            }
-        }
+      
 
        public string tiempo_Min
         {
@@ -160,7 +150,10 @@ namespace templateApp.GUI.Modulo8
                
        protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            _presentador.agregarRest();
+            if (_presentador.agregarRest() == true)
+            {
+                Response.Redirect("../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true");
+            }
 
         }
 

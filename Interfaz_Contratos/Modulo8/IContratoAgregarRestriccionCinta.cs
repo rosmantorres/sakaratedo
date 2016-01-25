@@ -12,7 +12,7 @@ namespace Interfaz_Contratos.Modulo8
     public interface IContratoAgregarRestriccionCinta
     {
         
-        string descripcion_rest_cinta { get; set; }
+        
         string tiempo_Min { get; set; }
         string tiempo_Max { get; set; }
         string horas_docen { get; set; }
