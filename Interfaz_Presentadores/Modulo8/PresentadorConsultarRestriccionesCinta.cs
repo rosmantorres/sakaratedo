@@ -39,7 +39,7 @@ namespace Interfaz_Presentadores.Modulo8
                 foreach (DominioSKD.Entidades.Modulo8.RestriccionCinta rest in lista)
                 {
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTR;
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Id.ToString() + RecursoPresentadorM8.CerrarTD;
+                    vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.IdRestriccionCinta.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Descripcion.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.TiempoMinimo.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.PuntosMinimos.ToString() + RecursoPresentadorM8.CerrarTD;
@@ -52,11 +52,11 @@ namespace Interfaz_Presentadores.Modulo8
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTD;*/
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD;
                     //vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificar + rest.Id + RecursoPresentadorM8.Nombre + plani.Nombre + RecursoPresentadorM8.Tipo + plani.TipoPlanilla + RecursoPresentadorM8.BotonCerrar;
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificarRegistro + rest.Id + RecursoPresentadorM8.Nombre + rest.Descripcion + RecursoPresentadorM8.BotonCerrar;
+                    vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificarRegistro + rest.IdRestriccionCinta + RecursoPresentadorM8.Nombre + rest.Descripcion + RecursoPresentadorM8.BotonCerrar;
                     /*if (plani.Status)
                         vista.RestriccionesCreadas += RecursoPresentadorM8.BotonActivarPlanilla + plani.ID + RecursoPresentadorM8.BotonCerrar;
                     else*/
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.BotonDesactivarPlanilla + rest.Id + RecursoPresentadorM8.BotonCerrar;
+                    vista.RestriccionesCreadas += RecursoPresentadorM8.BotonDesactivarPlanilla + rest.IdRestriccionCinta + RecursoPresentadorM8.BotonCerrar;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTR;
 
