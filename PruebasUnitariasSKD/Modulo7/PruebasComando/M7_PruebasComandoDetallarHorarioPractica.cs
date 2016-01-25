@@ -1,7 +1,10 @@
 ﻿using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
 using DominioSKD.Fabrica;
+using ExcepcionesSKD.Modulo7;
 using LogicaNegociosSKD.Comandos.Modulo7;
 using LogicaNegociosSKD.Fabrica;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +13,17 @@ using System.Threading.Tasks;
 
 namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 {
+
+    /// <summary>
+    /// Clase que contiene las pruebas unitarias para el comando detallar el horario de practica del atleta
+    /// </summary>
+    [TestFixture]
     class M7_PruebasComandoDetallarHorarioPractica
-    {/*
+    {
         #region Atributos
-        private Evento idEvento;
+        private EventoM7 idEvento;
         private FabricaComandos fabricaComandos;
         private ComandoConsultarDetallarHorarioPractica detalleHorario;
-        private FabricaEntidades fabricaEntidades;
         #endregion
 
         #region SetUp & TearDown
@@ -28,8 +35,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = new FabricaComandos();
             detalleHorario = (ComandoConsultarDetallarHorarioPractica)fabricaComandos.ObtenerComandoConsultarDetallarHorarioPractica();
-            fabricaEntidades = new FabricaEntidades();
-            idEvento = new Evento();//cambiar por fabrica
+            idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             idEvento.Id = 1;
             detalleHorario.LaEntidad = idEvento;
         }
@@ -42,7 +48,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         {
             fabricaComandos = null;
             detalleHorario = null;
-            fabricaEntidades = null;
             idEvento = null;
         }
         #endregion
@@ -54,7 +59,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaEvento()
         {
-            Evento evento = (Evento)detalleHorario.Ejecutar();
+            EventoM7 evento = (EventoM7)detalleHorario.Ejecutar();
             Assert.GreaterOrEqual("Clase Regular", evento.Nombre);
         }
 
@@ -64,7 +69,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [Test]
         public void PruebaEventoNoNulo()
         {
-            Evento evento = (Evento)detalleHorario.Ejecutar();
+            EventoM7 evento = (EventoM7)detalleHorario.Ejecutar();
             Assert.IsNotNull(evento);
         }
 
@@ -76,8 +81,8 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         public void DetallarHorarioPracticaNumeroEnteroException()
         {
             idEvento.Id = -1;
-            Evento evento = (Evento)detalleHorario.Ejecutar();
+            EventoM7 evento = (EventoM7)detalleHorario.Ejecutar();
         }
-        #endregion*/
+        #endregion
     }
 }

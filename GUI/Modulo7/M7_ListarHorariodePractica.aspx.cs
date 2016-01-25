@@ -1,4 +1,5 @@
 ﻿using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
@@ -25,7 +26,7 @@ namespace templateApp.GUI.Modulo7
         #region Atributos
         private PresentadorListarHorarioPractica presentador;
         private FabricaEntidades fabricaEntidades;
-        private Persona idPersona;
+        private PersonaM7 idPersona;
 
         /// <summary>
         /// Implementacion de contrato laTabla
@@ -41,6 +42,10 @@ namespace templateApp.GUI.Modulo7
             {
                 laTabla.Text = value;
             }
+        }
+        public M7_ListarHorariodePractica ()
+        {
+            presentador = new PresentadorListarHorarioPractica(this);
         }
         #endregion
 
@@ -74,7 +79,7 @@ namespace templateApp.GUI.Modulo7
                         try
                         {
                             fabricaEntidades = new FabricaEntidades();
-                            idPersona = new Persona();//cambiar por fabrica
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                             presentador.ConsultarHorarioPractica(idPersona);
                         }

@@ -1,6 +1,7 @@
 ﻿using DatosSKD.DAO.Modulo7;
 using DatosSKD.Fabrica;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using System;
@@ -24,13 +25,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         {
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();
-            Evento idEvento = (Evento)LaEntidad;
-            Evento evento;
+            EventoM7 idEvento = (EventoM7)LaEntidad;
+            EventoM7 evento;
             try
             {
                 if (idEvento.Id > 0)
                 {
-                    evento = (Evento)baseDeDatosEvento.ConsultarXId(idEvento);
+                    evento = (EventoM7)baseDeDatosEvento.ConsultarXId(idEvento);
                 }
                 else
                 {

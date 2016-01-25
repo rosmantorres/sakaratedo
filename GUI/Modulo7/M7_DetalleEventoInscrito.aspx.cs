@@ -11,6 +11,8 @@ using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
 using Interfaz_Presentadores.Modulo7;
 using Interfaz_Contratos.Modulo7;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 
 
@@ -18,7 +20,7 @@ namespace templateApp.GUI.Modulo7
 {
     public partial class M7_DetalleEventoInscrito : System.Web.UI.Page, IContratoDetallarEvento
     {
-        private Evento idEvento;
+        private EventoM7 idEvento;
         private PresentadorDetallarEvento presentador;
 
         /// <summary>
@@ -236,9 +238,9 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                            idEvento = new Evento();//cambiar por fabrica
+                            idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
                             idEvento.Id = int.Parse(detalleStringEvento);
-                            presentador.cargarDatos(idEvento);
+                            presentador.CargarDatos(idEvento);
                         }
                         catch (ObjetoNuloException)
                         {

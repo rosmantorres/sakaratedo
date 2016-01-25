@@ -38,7 +38,7 @@ namespace Interfaz_Presentadores.Modulo7
         /// Método para cargar los datos de la matricula
         /// </summary>
         /// <param name="idCinta">id de la matricula</param>
-        public void cargarDatos(Entidad idMatricula, Entidad idPersona)
+        public void CargarDatos(Entidad idMatricula, Entidad idPersona)
         {           
             try
             {

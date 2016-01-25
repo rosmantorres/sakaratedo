@@ -191,7 +191,7 @@ namespace templateApp.GUI.Modulo7
                         {
                             idCompetencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
                             idCompetencia.Id = int.Parse(detalleStringCompetencia);
-                            presentador.cargarDatos(idCompetencia);
+                            presentador.CargarDatos(idCompetencia);
                         }
                         catch (ObjetoNuloException)
                         {

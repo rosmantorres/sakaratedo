@@ -1,4 +1,5 @@
 ﻿using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
@@ -21,7 +22,7 @@ namespace templateApp.GUI.Modulo7
          #region Atributos
         private PresentadorListarEventosInscritos presentador;
         private FabricaEntidades fabricaEntidades;
-        private Persona idPersona;
+        private PersonaM7 idPersona;
 
         /// <summary>
         /// Implementacion de contrato laTabla
@@ -39,8 +40,13 @@ namespace templateApp.GUI.Modulo7
             }
         }
 
-        private List<Evento> laLista;
-        private List<DominioSKD.Competencia> laListaCompetencias;
+        /// <summary>
+        /// Constructor de la clase 
+        /// </summary>
+        public M7_ListarEventosInscritos()
+        {
+            presentador = new PresentadorListarEventosInscritos(this);
+        }
 
         #endregion
         #region Page Load
@@ -72,8 +78,7 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            fabricaEntidades = new FabricaEntidades();
-                            idPersona = new Persona();//cambiar por fabrica
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                             presentador.ConsultarEventosInscritos(idPersona);
                         }

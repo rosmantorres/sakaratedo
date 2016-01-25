@@ -252,7 +252,7 @@ namespace templateApp.GUI.Modulo7
                             idEvento.Id = int.Parse(detalleStringEvento);
                             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                            presentador.cargarDatos(idEvento);
+                            presentador.CargarDatos(idEvento);
 
                         }
                         catch (ObjetoNuloException)

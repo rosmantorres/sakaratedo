@@ -1,4 +1,5 @@
 ﻿using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using Interfaz_Contratos.Modulo7;
@@ -29,14 +30,14 @@ namespace Interfaz_Presentadores.Modulo7
         /// Método para cargar los datos del Horario
         /// </summary>
         /// <param name="idEvento">id del evento</param>
-        public void cargarDatosHorario(Evento idEvento)
+        public void CargarDatosHorario(Entidad idEvento)
         {
             try
             {
                 fabricaComandos = new FabricaComandos();
                 ComandoConsultarDetallarHorarioPractica comandoDetallarEvento = (ComandoConsultarDetallarHorarioPractica)fabricaComandos.ObtenerComandoConsultarDetallarHorarioPractica();
                 comandoDetallarEvento.LaEntidad = idEvento;
-                Evento evento = (Evento)comandoDetallarEvento.Ejecutar();
+                EventoM7 evento = (EventoM7)comandoDetallarEvento.Ejecutar();
 
                 vista.descripcion_evento = evento.Descripcion;
                 vista.direccionEvento_evento = evento.Ubicacion.Direccion;

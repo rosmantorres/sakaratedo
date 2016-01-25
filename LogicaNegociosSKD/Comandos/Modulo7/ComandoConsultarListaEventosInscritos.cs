@@ -1,6 +1,7 @@
 ﻿using DatosSKD.DAO.Modulo7;
 using DatosSKD.Fabrica;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using System;
@@ -26,7 +27,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
                 DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();
                 List<Entidad> eventos = new List<Entidad>();
                 List<Entidad> competencias = new List<Entidad>();
-                Persona idPersona = (Persona)LaEntidad;
+                PersonaM7 idPersona = (PersonaM7)LaEntidad;
                 Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>> tupla;
                 List<DateTime> listaFechaEventos = new List<DateTime>();
                 List<DateTime> listaFechaCompetencias = new List<DateTime>();
@@ -37,11 +38,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
                         eventos = baseDeDatosEvento.ListarEventosInscritos(idPersona);
                         competencias = baseDeDatosEvento.ListarCompetenciasInscritas(idPersona);
 
-                        foreach (Evento evento in eventos)
+                        foreach (EventoM7 evento in eventos)
                         {
                             listaFechaEventos.Add(baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento));
                         }
-                        foreach (Competencia competencia in competencias)
+                        foreach (CompetenciaM7 competencia in competencias)
                         {
                             listaFechaCompetencias.Add(baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia));
                         }

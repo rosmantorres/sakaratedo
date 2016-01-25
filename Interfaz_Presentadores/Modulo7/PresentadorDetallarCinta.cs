@@ -37,7 +37,7 @@ namespace Interfaz_Presentadores.Modulo7
         /// </summary>
         /// <param name="idCinta">id de la cinta</param>
         /// <param name="idPersona">id de la persona</param>
-        public void cargarDatos(Entidad idCinta, Entidad idPersona)
+        public void CargarDatos(Entidad idCinta, Entidad idPersona)
         {           
             try
             {

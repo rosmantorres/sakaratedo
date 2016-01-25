@@ -242,7 +242,7 @@ namespace templateApp.GUI.Modulo7
                         {
                             idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
                             idEvento.Id = int.Parse(detalleStringEvento);
-                            presentador.cargarDatos(idEvento);
+                            presentador.CargarDatos(idEvento);
 
                         }
                         catch (ObjetoNuloException)

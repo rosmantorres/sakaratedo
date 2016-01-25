@@ -1,4 +1,5 @@
 ﻿using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
 using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
@@ -32,7 +33,7 @@ namespace Interfaz_Presentadores.Modulo7
         /// <summary>
         /// Método para consultar los horarios de practica del atleta
         /// </summary>
-        public void ConsultarHorarioPractica(Persona idPersona)
+        public void ConsultarHorarioPractica(Entidad idPersona)
         {
             FabricaComandos fabricaComandos = new FabricaComandos();
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
@@ -50,7 +51,7 @@ namespace Interfaz_Presentadores.Modulo7
                 {
                     while (e1.MoveNext())
                     {
-                        Evento evento = (Evento)e1.Current;
+                        EventoM7 evento = (EventoM7)e1.Current;
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + evento.Nombre.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + evento.Horario.HoraInicio.ToString() + M7_RecursosPresentador.CerrarTD;

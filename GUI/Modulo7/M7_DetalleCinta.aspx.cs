@@ -163,7 +163,7 @@ namespace templateApp.GUI.Modulo7
                             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                             idCinta.Id = int.Parse(detalleStringCinta);
-                            presentador.cargarDatos(idCinta, idPersona);
+                            presentador.CargarDatos(idCinta, idPersona);
                         }
                         catch (Exception ex)
                         {

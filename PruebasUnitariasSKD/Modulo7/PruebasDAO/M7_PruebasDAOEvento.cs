@@ -329,7 +329,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaInscripcionNoNula()
         {
-            Evento evento = new Evento();//cambiar por fabrica
+            EventoM7 evento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             evento.Id = 5;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento);
             Assert.NotNull(fechaInscripcion);
@@ -342,7 +342,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void FechaInscripcionNumeroEnteroException()
         {
-            Evento evento = new Evento();//cambiar por fabrica
+            EventoM7 evento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             evento.Id = -1;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionEvento(idPersona, evento);
         }
@@ -353,7 +353,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaInscripcionCompetencia()
         {
-            Competencia competencia = new Competencia();//cambiar por fabrica
+            CompetenciaM7 competencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
             competencia.Id = 8;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
             Assert.AreEqual("02/13/2014", fechaInscripcion.ToString("MM/dd/yyyy"));
@@ -365,7 +365,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [Test]
         public void PruebaFechaInscripcionCompetenciaNoNula()
         {
-            Competencia competencia = new Competencia();//cambiar por fabrica
+            CompetenciaM7 competencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
             competencia.Id = 8;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
             Assert.NotNull(fechaInscripcion);
@@ -378,7 +378,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [ExpectedException(typeof(NumeroEnteroInvalidoException))]
         public void FechaInscripcionCompetenciaNumeroEnteroException()
         {
-            Competencia competencia = new Competencia();//cambiar por fabrica
+            CompetenciaM7 competencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
             competencia.Id = -1;
             DateTime fechaInscripcion = baseDeDatosEvento.FechaInscripcionCompetencia(idPersona, competencia);
         }

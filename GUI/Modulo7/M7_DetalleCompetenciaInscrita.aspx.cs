@@ -186,7 +186,7 @@ namespace templateApp.GUI.Modulo7
                         {
                             idCompetencia = new Competencia();//cambiar por fabrica
                             idCompetencia.Id = int.Parse(detalleStringCompetencia);
-                            presentador.cargarDatos(idCompetencia);
+                            presentador.CargarDatos(idCompetencia);
                         }
                         catch (ObjetoNuloException)
                         {

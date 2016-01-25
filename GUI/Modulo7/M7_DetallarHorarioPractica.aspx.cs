@@ -1,4 +1,6 @@
 ﻿using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using Interfaz_Contratos.Modulo7;
@@ -17,7 +19,7 @@ namespace templateApp.GUI.Modulo7
 {
     public partial class M7_DetallarHorarioPractica : System.Web.UI.Page, IContratoDetallarHorarioPractica
     {
-        private Evento idEvento;
+        private EventoM7 idEvento;
         private PresentadorDetallarHorarioPractica presentador;
 
         /// <summary>
@@ -155,9 +157,9 @@ namespace templateApp.GUI.Modulo7
             {
                 try
                 {
-                    idEvento = new Evento();//cambiar por fabrica
+                    idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();    
                     idEvento.Id = int.Parse(detalleStringEvento);
-                    presentador.cargarDatosHorario(idEvento);
+                    presentador.CargarDatosHorario(idEvento);
                 }
                         catch (ObjetoNuloException)
                         {

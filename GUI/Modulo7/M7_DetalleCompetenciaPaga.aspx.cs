@@ -195,7 +195,7 @@ namespace templateApp.GUI.Modulo7
                             idCompetencia.Id = int.Parse(detalleStringCompetencia);
                             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                            presentador.cargarDatos(idCompetencia);
+                            presentador.CargarDatos(idCompetencia);
 
                         }
                         catch (ObjetoNuloException)

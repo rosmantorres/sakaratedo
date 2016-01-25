@@ -1,6 +1,7 @@
 ﻿using DatosSKD.DAO.Modulo7;
 using DatosSKD.Fabrica;
 using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo7;
 using System;
@@ -26,10 +27,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();
             List<Entidad> eventos = new List<Entidad>();
-            List<Entidad> competencias = new List<Entidad>();
-            Persona idPersona = (Persona)LaEntidad;
+            PersonaM7 idPersona = (PersonaM7)LaEntidad;
             Tuple<List<Entidad>> tupla;
-            List<DateTime> listaFechaEventos = new List<DateTime>();
             try
             {
                 if (idPersona.Id > 0)
