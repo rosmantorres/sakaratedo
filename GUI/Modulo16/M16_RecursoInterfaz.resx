@@ -300,4 +300,7 @@
   <data name="Script_Tres" xml:space="preserve">
     <value>&lt;script type='text/javascript'&gt;$('#modal-info3').modal('toggle');&lt;/script&gt;</value>
   </data>
+  <data name="MENSAJE_SIN_FACTURAS" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Usted no Posee Facturas Asociadas.&lt;/div&gt;</value>
+  </data>
 </root>

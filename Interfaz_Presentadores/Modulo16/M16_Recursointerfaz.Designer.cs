@@ -349,6 +349,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to btn btn-success glyphicon glyphicon-print.
+        /// </summary>
+        internal static string BOTON_IMPRIMIR {
+            get {
+                return ResourceManager.GetString("BOTON_IMPRIMIR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-success glyphicon glyphicon glyphicon-print&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot;  onclick=&quot;prueba3(this);&quot; id=&quot;.
         /// </summary>
         internal static string BOTON_IMPRIMIR_FACTURA {
@@ -670,6 +679,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string EXCEPCION_LISTA_VACIA {
             get {
                 return ResourceManager.GetString("EXCEPCION_LISTA_VACIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_ListarFacturas.aspx?accion=4&amp;mensaje=14.
+        /// </summary>
+        internal static string EXCEPCION_LISTA_VACIA_FACTURA {
+            get {
+                return ResourceManager.GetString("EXCEPCION_LISTA_VACIA_FACTURA", resourceCulture);
             }
         }
         
@@ -1376,6 +1394,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Imprimir-.
+        /// </summary>
+        internal static string REFERENCIA_IMPRIMIR {
+            get {
+                return ResourceManager.GetString("REFERENCIA_IMPRIMIR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Matricula-.
         /// </summary>
         internal static string REFERENCIA_MATRICULA {
@@ -1511,6 +1538,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Fecha de Pago&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_FECHA_PAGO_FACTURA {
+            get {
+                return ResourceManager.GetString("TITULO_FECHA_PAGO_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;Id Matricula&lt;/h3&gt;.
         /// </summary>
         internal static string TITULO_ID_MATRICULA {
@@ -1556,6 +1592,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Nro. Factura&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_NUM_FACTURA {
+            get {
+                return ResourceManager.GetString("TITULO_NUM_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h3&gt;Precio&lt;/h3&gt;.
         /// </summary>
         internal static string TITULO_PRECIO {
@@ -1597,6 +1642,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string TITULO_TIPO {
             get {
                 return ResourceManager.GetString("TITULO_TIPO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Total&lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_TOTAL {
+            get {
+                return ResourceManager.GetString("TITULO_TOTAL", resourceCulture);
             }
         }
         
