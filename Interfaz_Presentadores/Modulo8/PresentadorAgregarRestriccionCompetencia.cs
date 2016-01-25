@@ -25,7 +25,8 @@ namespace Interfaz_Presentadores.Modulo8
             try
             {
 
-       
+                if (validarCampos())
+                {
                     DominioSKD.Entidad elObjeto = meterParametrosVistaEnObjeto();
                     LogicaNegociosSKD.Fabrica.FabricaComandos fabrica = new LogicaNegociosSKD.Fabrica.FabricaComandos();
                     DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
@@ -36,7 +37,7 @@ namespace Interfaz_Presentadores.Modulo8
                     restriccionCompetencia = meterParametrosVistaEnObjeto();
                     comando.Parametro = restriccionCompetencia;
                     resultado= comando.Ejecutar(); 
-                
+                }
 
 
             }
@@ -262,7 +263,7 @@ namespace Interfaz_Presentadores.Modulo8
                                      + " Rango Min: " + vista.rangoMinimo.SelectedValue.ToString()
                                      + " Rango Max: " + vista.rangoMaximo.SelectedValue.ToString()
                                      + " Sexo: " + vista.sexo.SelectedValue.ToString()
-                                     + " Modalidad: " + vista.modalidad.SelectedValue.ToString());
+                                     + " Modalidad: " + vista.sexo.SelectedValue.ToString());
 
         }
     

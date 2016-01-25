@@ -114,26 +114,20 @@ namespace templateApp.GUI.Modulo8
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (!Page.IsPostBack)
-            {
-
-                        presentador = new Interfaz_Presentadores.Modulo8.PresentadorAgregarRestriccionCompetencia(this);
+ 
+                    presentador = new Interfaz_Presentadores.Modulo8.PresentadorAgregarRestriccionCompetencia(this);
                     presentador.LlenarComboEdades();
                     presentador.LlenarComboModalidad();
                     presentador.LlenarComboRangos();
                     presentador.LlenarComboSexo();
-
-            }
-           
                 
             
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            
-            presentador.agregarRestriccionCompetencia();
+            PresentadorAgregarRestriccionCompetencia presentador2 = new PresentadorAgregarRestriccionCompetencia(this);
+            presentador2.agregarRestriccionCompetencia();
             
         }
     }
