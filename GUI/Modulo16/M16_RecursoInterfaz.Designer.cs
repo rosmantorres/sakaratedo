@@ -268,7 +268,7 @@ namespace templateApp.GUI.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error, los montos permitidos para pagar su compra solo pueden ser mayores a cero&lt;/div&gt;.
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error, los montos permitidos para pagar su compra solo pueden ser mayores a cero y sin contener puntos&lt;/div&gt;.
         /// </summary>
         internal static string EXCEPTION_MONTO_INVALIDO_MENSAJE {
             get {
