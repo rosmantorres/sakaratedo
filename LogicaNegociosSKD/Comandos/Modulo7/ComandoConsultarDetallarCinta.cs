@@ -18,7 +18,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
     /// </summary>
     public class ComandoConsultarDetallarCinta : Comando<Tuple<Entidad, DateTime>>
     {
-        private PersonaM7 idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7(); //cambiar por fabrica
+        private PersonaM7 idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
 
         public PersonaM7 IdPersona
         {
@@ -63,26 +63,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             }
             catch (ExceptionSKDConexionBD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw ex;
             }
             catch (NumeroEnteroInvalidoException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new NumeroEnteroInvalidoException(RecursosComandoModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosComandoModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (FormatException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new NumeroEnteroInvalidoException(RecursosComandoModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosComandoModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (ExceptionSKD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw ex;
             }
             return tupla;

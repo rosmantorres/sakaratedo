@@ -51,26 +51,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             }
             catch (ExceptionSKDConexionBD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw ex;
             }
             catch (NumeroEnteroInvalidoException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new NumeroEnteroInvalidoException(RecursosComandoModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosComandoModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (FormatException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new NumeroEnteroInvalidoException(RecursosComandoModulo7.Codigo_Numero_Parametro_Invalido,
                                 RecursosComandoModulo7.Mensaje_Numero_Parametro_invalido, new Exception());
             }
             catch (ExceptionSKD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw ex;
             }
 
