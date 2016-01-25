@@ -134,11 +134,11 @@ namespace templateApp.GUI.Modulo7
                         {
                             idMatricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
                             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());               
                             idMatricula.Id = int.Parse(detalleStringMatricula);
                             presentador.cargarDatos(idMatricula,idPersona);
                            
-                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                         
+                            
                           
                         }
                         catch (ObjetoNuloException)

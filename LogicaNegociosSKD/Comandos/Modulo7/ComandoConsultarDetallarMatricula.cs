@@ -16,7 +16,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
     public class ComandoConsultarDetallarMatricula : Comando<Entidad>
     {
         
-        private PersonaM7 idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7(); //cambiar por fabrica
+        private PersonaM7 idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7(); 
 
         public PersonaM7 IdPersona
         {
@@ -46,6 +46,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
                 if (idMatricula.Id > 0)
                 {
                     matricula = (MatriculaM7)baseDeDatosMatricula.ConsultarXId(idMatricula);
+                    matricula.Status = baseDeDatosMatricula.EstadoMatricula(idPersona);
                 }
                 else
                 {
