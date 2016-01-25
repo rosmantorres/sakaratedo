@@ -545,5 +545,11 @@ namespace templateApp.GUI.Modulo16
             // Llamada para llenar el modal de la Mensualidad
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), M16_RecursoInterfaz.Test, M16_RecursoInterfaz.Script_Tres, false);
         }
+
+
+        protected void ComboBox1_SelectedIndexChanged(object sender, System.EventArgs e){
+
+
+        }
     }
 }
