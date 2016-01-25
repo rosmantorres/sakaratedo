@@ -32,6 +32,10 @@ namespace Interfaz_Presentadores.Modulo12
             this.vista = laVista;
         }
 
+
+        /// <summary>
+        /// Metodo para consultar las variables del url
+        /// </summary>
         public void ObtenerVariablesURL()
         {
             String modificarString = HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.strCompMod];
@@ -54,6 +58,9 @@ namespace Interfaz_Presentadores.Modulo12
 
         }
 
+        /// <summary>
+        /// Metodo para llenar los comboboxes organizaciones y cintas
+        /// </summary>
         public void LlenarCombos()
         {
             try
@@ -114,6 +121,10 @@ namespace Interfaz_Presentadores.Modulo12
                 vista.alerta = M12_RecursoInterfazPresentador.alertaHtml + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
             }
         }
+
+        /// <summary>
+        /// Metodo para modificar fechas
+        /// </summary>
         protected DateTime convertirFecha(string fechaE)
         {
             string diaFecha;
@@ -121,7 +132,7 @@ namespace Interfaz_Presentadores.Modulo12
             string anoFecha;
             string fechaCompleta;
             string fechaCortada;
-            if (fechaE.Length == 24)
+            if (fechaE.Length >= 24)
             {
                 fechaCortada = fechaE.Substring(0, 24);
 
@@ -147,6 +158,9 @@ namespace Interfaz_Presentadores.Modulo12
             }
         }
 
+        /// <summary>
+        /// Metodo para detallar competencia
+        /// </summary>
         public void obtenerCompetencia(int elIdCompetencia) 
         {
             LlenarCombos();
@@ -262,6 +276,9 @@ namespace Interfaz_Presentadores.Modulo12
         
         }
 
+        /// <summary>
+        /// Metodo para modificar competencia
+        /// </summary>
         public void ModificarCompetencia() 
         {
             List<String> laListaDeInputs = new List<String>();
@@ -286,6 +303,11 @@ namespace Interfaz_Presentadores.Modulo12
             {
                 laListaDeInputs.Add(convertirFecha(vista.inicioComp).ToString());
                 laListaDeInputs.Add(convertirFecha(vista.finComp).ToString());
+            }
+            else
+            {
+                laListaDeInputs.Add(vista.inicioComp.ToString());
+                laListaDeInputs.Add(vista.finComp.ToString());
             }
 
             laListaDeInputs.Add(vista.edadIniComp);
@@ -313,6 +335,9 @@ namespace Interfaz_Presentadores.Modulo12
 
             if (Validaciones.ValidarCamposVacios(laListaDeInputs))
             {
+              Regex rex = new Regex(M12_RecursoInterfazPresentador.expresionNombre);
+              if (rex.IsMatch(vista.nombreComp))
+              {
                 try
                 {
                     String modificarString = 
@@ -363,8 +388,12 @@ namespace Interfaz_Presentadores.Modulo12
                         laCompetencia.Categoria.Sexo = vista.cateSexoFComp;
 
                     //FECHAS INI-FIN
-                    laCompetencia.FechaInicio = Convert.ToDateTime(vista.inicioComp);
-                    laCompetencia.FechaFin = Convert.ToDateTime(vista.finComp);
+
+                    laCompetencia.FechaInicio = convertirFecha(vista.inicioComp);
+                    laCompetencia.FechaFin = convertirFecha(vista.finComp);
+
+                    //laCompetencia.FechaInicio = Convert.ToDateTime(vista.inicioComp);
+                    //laCompetencia.FechaFin = Convert.ToDateTime(vista.finComp);
 
                     //STATUS
                     if (vista.statusIniciarCompBool == true)
@@ -399,6 +428,15 @@ namespace Interfaz_Presentadores.Modulo12
                     vista.alerta = M12_RecursoInterfazPresentador.alertaHtml
                         + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
                 }
+              }
+              else
+              {
+                  vista.alertaClase = M12_RecursoInterfazPresentador.alertaError;
+                  vista.alertaRol = M12_RecursoInterfazPresentador.tipoAlerta;
+                  vista.alerta = M12_RecursoInterfazPresentador.alertaHtml
+                  + M12_RecursoInterfazPresentador.nombreInvalido
+                  + M12_RecursoInterfazPresentador.alertaHtmlFinal;
+              }
             }
             else
             {
