@@ -464,9 +464,9 @@ namespace Interfaz_Presentadores.Modulo16
              foreach (DetalleFacturaEvento eve in compra.Listaevento)
              {
                  detalleEve += "<tr><td>" + eve.Evento.Nombre;
-                 detalleEve += "<tr><td>" + eve.Evento.Costo;
-                 detalleEve += "<tr><td>" + eve.Cantidad_evento;
-                 detalleEve += "<tr><td>" + eve.Subtotal + "</td></tr>";
+                 detalleEve += "</td><td>" + eve.Evento.Costo;
+                 detalleEve += "</td><td>" + eve.Cantidad_evento;
+                 detalleEve += "</td><td>" + eve.Subtotal + "</td></tr>";
              }
 
              string finEncabezadoDetalleEve = evento + detalleEve + "</tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
@@ -476,9 +476,9 @@ namespace Interfaz_Presentadores.Modulo16
              foreach (DetalleFacturaMatricula matri in compra.Listamatricula)
              {
                  detalleMatri += "<tr><td>" + matri.Matricula.Identificador;
-                 detalleMatri += "<tr><td>" + matri.Matricula.Costo;
-                 detalleMatri += "<tr><td>" + matri.Cantidad_matricula;
-                 detalleMatri += "<tr><td>" + matri.Subtotal+ "</td></tr>";
+                 detalleMatri += "</td><td>" + matri.Matricula.Costo;
+                 detalleMatri += "</td><td>" + matri.Cantidad_matricula;
+                 detalleMatri += "</td><td>" + matri.Subtotal + "</td></tr>";
              }
              string finEncabezadoDetalleMatri = matricula + detalleMatri + "</tbody></table><p>&nbsp;</p><p>&nbsp;</p>";
              string total = finEncabezadoDetalleMatri +"<p><strong>Total:</strong>" + compra.Monto + "</p>";

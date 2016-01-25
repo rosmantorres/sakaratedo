@@ -67,7 +67,7 @@ namespace templateApp.GUI.Modulo16
         protected void Page_Load(object sender, EventArgs e)
         {
             //Carga la Barra lateral del modulo indicado
-            ((SKD)Page.Master).IdModulo = "16";
+            ((SKD)Page.Master).IdModulo = M16_RecursoInterfaz.Modulo16;
 
             //Incio el Presentador 
             this.IniciarPresentador();
