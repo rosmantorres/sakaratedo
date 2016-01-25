@@ -68,7 +68,7 @@
                                        <asp:DropDownList ID="comboTipoEvento"  class="btn btn-default dropdown-toggle" runat="server" OnSelectedIndexChanged="comboTipoEvento_SelectedIndexChanged">
                                        </asp:DropDownList>
                                     </div>
-                                        <asp:TextBox runat="server" type="text" name="otroEvento" id="otroEvento" placeholder="Tipo de Evento" class="form-control" Visible="False"></asp:TextBox>
+                                      
                                     
                                 </div>
                             </div>
