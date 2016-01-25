@@ -142,6 +142,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;label id=&apos;labelprecio&apos; &gt;.
+        /// </summary>
+        internal static string ABRE_LABEL_PRECIO_FINAL {
+            get {
+                return ResourceManager.GetString("ABRE_LABEL_PRECIO_FINAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;td&gt;.
         /// </summary>
         internal static string ABRIR_TD {
@@ -1552,6 +1561,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         internal static string TITULO_PRECIO {
             get {
                 return ResourceManager.GetString("TITULO_PRECIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Precio final: &lt;/h3&gt;.
+        /// </summary>
+        internal static string TITULO_PRECIO_FINAL {
+            get {
+                return ResourceManager.GetString("TITULO_PRECIO_FINAL", resourceCulture);
             }
         }
         

@@ -42,7 +42,7 @@ namespace Interfaz_Presentadores.Modulo16
         #endregion
 
         #region Metodos
-        //LISTO
+        
         #region VerCarrito
         /// <summary>
         /// Metodo del presentador que obtiene el carrito de una persona
@@ -182,11 +182,6 @@ namespace Interfaz_Presentadores.Modulo16
                     boton.ID = M16_Recursointerfaz.EVENTO_ID + item.Id.ToString();
                     celda.Controls.Add(boton);
 
-                  /*  //Se modifica para que el boton no haga postback
-                    boton.OnClientClick = M16_Recursointerfaz.NO_POSTBACK;
-                    boton.UseSubmitBehavior = false;
-                    celda.Controls.Add(boton);*/
-
                     //Boton informacion
                     boton = new Button();
                     boton.ID = M16_Recursointerfaz.EVENTO_INFORMACION + item.Id.ToString();
@@ -274,7 +269,7 @@ namespace Interfaz_Presentadores.Modulo16
                 precioFinal -= elCarrito.montoPagado;
 
                 //Colocamos el precio en el modal
-                laVista.PrecioFinal.Text =  "</br>" + "<h3>Precio final: </h3>" + "<label id='labelprecio' >" + precioFinal.ToString() + "</label>";
+                laVista.PrecioFinal.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_PRECIO_FINAL + M16_Recursointerfaz.ABRE_LABEL_PRECIO_FINAL + precioFinal.ToString() + M16_Recursointerfaz.CIERRE_LABEL;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -328,7 +323,7 @@ namespace Interfaz_Presentadores.Modulo16
             }
         }
         #endregion        
-        //LISTO
+        
         #region ModificarCarrito
         /// <summary>
         /// Metodo del presentador que modifica la cantidad de un item determinado en el carrito de una persona
@@ -561,7 +556,7 @@ namespace Interfaz_Presentadores.Modulo16
             }
         }
         #endregion
-        //LISTO
+        
         #region RegistrarPago
         /// <summary>
         /// Metodo del presentador que registra el pago de los productos que hay en el carrito de una persona
@@ -730,7 +725,7 @@ namespace Interfaz_Presentadores.Modulo16
             }            
         }
         #endregion
-        //LISTO
+        
         #region EliminarItem
         /// <summary>
         /// Metodo del presentador que elimina un item del carrito del usuario
@@ -897,7 +892,7 @@ namespace Interfaz_Presentadores.Modulo16
              
         }
         #endregion
-        // listo ver lo que se coloca en los recursos
+        
         #region Metodos para el detalle del Implemento
         /// <summary>
         /// Metodo del presentador que pinta el detalle en el modal
@@ -918,15 +913,15 @@ namespace Interfaz_Presentadores.Modulo16
                 Implemento resultados = DetalleImplemento(implemento);
 
                 // Variables para imprimir en el modal
-                laVista.LiteralDetallesProductos.Text = "</br>" + "<h3>Imagen del Producto</h3>" + "<label id='aux1' >" + resultados.Imagen_implemento + "</label>" +
-                                                                  "<h3>Nombre</h3>" + "<label id='aux2' >" + resultados.Nombre_Implemento + "</label>" +
-                                                                  "<h3>Tipo</h3>" + "<label id='aux3' >" + resultados.Tipo_Implemento + "</label>" +
-                                                                  "<h3>Marca</h3>" + "<label id='aux4' >" + resultados.Marca_Implemento + "</label>" +
-                                                                  "<h3>Color</h3>" + "<label id='aux5' >" + resultados.Color_Implemento + "</label>" +
-                                                                  "<h3>Talla</h3>" + "<label id='aux6' >" + resultados.Talla_Implemento + "</label>" +
-                                                                  "<h3>Estatus</h3>" + "<label id='aux7' >" + resultados.Estatus_Implemento + "</label>" +
-                                                                  "<h3>Precio</h3>" + "<label id='aux8' >" + resultados.Precio_Implemento + "</label>" +
-                                                                  "<h3>Descripcion</h3>" + "<label id='aux9' >" + resultados.Descripcion_Implemento + "</label>";
+                laVista.LiteralDetallesProductos.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_IMAGEN + M16_Recursointerfaz.INICIO_TAG_IMAGEN + resultados.Imagen_implemento + M16_Recursointerfaz.FIN_TAG_IMAGEN +
+                                                                      M16_Recursointerfaz.TITULO_NOMBRE + M16_Recursointerfaz.ABRE_LABEL_AUX2 + resultados.Nombre_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_TIPO + M16_Recursointerfaz.ABRE_LABEL_AUX3 + resultados.Tipo_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_MARCA + M16_Recursointerfaz.ABRE_LABEL_AUX4 + resultados.Marca_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_COLOR + M16_Recursointerfaz.ABRE_LABEL_AUX5 + resultados.Color_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_TALLA + M16_Recursointerfaz.ABRE_LABEL_AUX6 + resultados.Talla_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_STATUS + M16_Recursointerfaz.ABRE_LABEL_AUX7 + resultados.Estatus_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_PRECIO + M16_Recursointerfaz.ABRE_LABEL_AUX8 + resultados.Precio_Implemento + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_DESCRIPCIONES + M16_Recursointerfaz.ABRE_LABEL_AUX9 + resultados.Descripcion_Implemento + M16_Recursointerfaz.CIERRE_LABEL;
                 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -997,13 +992,82 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="implemento">El producto que se ha de mostrar en detalle</param>
         public Implemento DetalleImplemento(Entidad implemento)
         {
-            Comando<Entidad> DetalleProducto = FabricaComandos.CrearComandoDetallarProducto(implemento);
-            Implemento elImplemento = (Implemento)DetalleProducto.Ejecutar();
-            return elImplemento;
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Casteamos
+                Comando<Entidad> DetalleProducto = FabricaComandos.CrearComandoDetallarProducto(implemento);
+                Implemento elImplemento = (Implemento)DetalleProducto.Ejecutar();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                // Retornamos el Implemento
+                return elImplemento;
+            }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+
+            #endregion
         }
 
         #endregion
-        // listo ver lo que se coloca en los recursos
+        
         #region Metodos para el detalle del evento
         /// <summary>
         /// Metodo del presentador que pinta el detalle en el modal
@@ -1025,9 +1089,9 @@ namespace Interfaz_Presentadores.Modulo16
                 Evento resultados = DetalleEvento(evento);
 
                 // Variables para imprimir en el modal
-                laVista.LiteralDetallesEventos.Text = "</br>" + "<h3>Nombre</h3>" + "<label id='aux1' >" + resultados.Nombre + "</label>" +
-                                                            "<h3>Descripcion</h3>" + "<label id='aux2' >" + resultados.Descripcion + "</label>" +
-                                                            "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>";
+                laVista.LiteralDetallesEventos.Text =   M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_NOMBRE + M16_Recursointerfaz.ABRE_LABEL_AUX1 + resultados.Nombre + M16_Recursointerfaz.CIERRE_LABEL +
+                                                        M16_Recursointerfaz.TITULO_DESCRIPCION + M16_Recursointerfaz.ABRE_LABEL_AUX2 + resultados.Descripcion + M16_Recursointerfaz.CIERRE_LABEL +
+                                                        M16_Recursointerfaz.TITULO_COSTO + M16_Recursointerfaz.ABRE_LABEL_AUX3 + resultados.Costo + M16_Recursointerfaz.CIERRE_LABEL;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -1098,13 +1162,82 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="evento">El evento que se ha mostrar en detalle</param>
         public Evento DetalleEvento(Entidad evento)
         {
-            Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
-            Evento elEvento = (Evento)DetalleEvento.Ejecutar();
-            return elEvento;
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Casteamos
+                Comando<Entidad> DetalleEvento = FabricaComandos.CrearComandoDetallarEvento(evento);
+                Evento elEvento = (Evento)DetalleEvento.Ejecutar();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                // Retornamos el Evento
+                return elEvento;
+            }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+
+            #endregion
         }
 
         #endregion
-        // listo ver lo que se coloca en los recursos
+        
         #region Metodos para el detalle de la Mensualidad
         /// <summary>
         /// Metodo del presentador que pinta el detalle en el modal
@@ -1125,11 +1258,11 @@ namespace Interfaz_Presentadores.Modulo16
                 Matricula resultados = DetalleMatricula(matricula);
 
                 // Variables para imprimir en el modal
-                laVista.LiteralDetallesMensualidades.Text = "</br>" + "<h3>Id Matricula</h3>" + "<label id='aux1' >" + resultados.Id + "</label>" +
-                                                                  "<h3>Identificador</h3>" + "<label id='aux2' >" + resultados.Identificador + "</label>" +
-                                                                  "<h3>Costo</h3>" + "<label id='aux3' >" + resultados.Costo + "</label>" +
-                                                                  "<h3>Ultima Fecha de Pago</h3>" + "<label id='aux4' >" + resultados.UltimaFechaPago + "</label>" +
-                                                                  "<h3>Nombre del Dojo al que pertenece</h3>" + "<label id='aux4' >" + resultados.Dojo_Matricula.Nombre_dojo + "</label>";
+                laVista.LiteralDetallesMensualidades.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_ID_MATRICULA + M16_Recursointerfaz.ABRE_LABEL_AUX1 + resultados.Id + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_IDENTIFICADOR + M16_Recursointerfaz.ABRE_LABEL_AUX2 + resultados.Identificador + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_COSTO + M16_Recursointerfaz.ABRE_LABEL_AUX3 + resultados.Costo + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_FECHA_PAGO + M16_Recursointerfaz.ABRE_LABEL_AUX4 + resultados.UltimaFechaPago + M16_Recursointerfaz.CIERRE_LABEL +
+                                                                      M16_Recursointerfaz.TITULO_DOJO_PERTENECE + M16_Recursointerfaz.ABRE_LABEL_AUX5 + resultados.Dojo_Matricula.Nombre_dojo + M16_Recursointerfaz.CIERRE_LABEL;
 
                 //Escribo en el logger la salida a este metodo
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -1200,9 +1333,78 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="matricula">La mensualidad que se ha de mostrar en detalle</param>
         public Matricula DetalleMatricula(Entidad matricula)
         {
-            Comando<Entidad> DetalleMatricula = FabricaComandos.CrearComandoDetallarMatricula(matricula);
-            Matricula laMatricula = (Matricula)DetalleMatricula.Ejecutar();
-            return laMatricula;
+            try
+            {
+                //Escribo en el logger la entrada a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
+                    System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                //Casteamos
+                Comando<Entidad> DetalleMatricula = FabricaComandos.CrearComandoDetallarMatricula(matricula);
+                Matricula laMatricula = (Matricula)DetalleMatricula.Ejecutar();
+
+                //Escribo en el logger la salida a este metodo
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    M16_Recursointerfaz.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                // Retornamos la Matricula
+                return laMatricula;
+            }
+
+            #region Catches
+            catch (PersonaNoValidaException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (LoggerException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (OverflowException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ParametroInvalidoException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (ExceptionSKD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+
+            }
+            catch (Exception ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+
+            #endregion
         }
 
         #endregion
