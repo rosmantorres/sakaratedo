@@ -868,6 +868,12 @@ namespace DatosSKD.DAO.Modulo16
                     //Casteo explicitamente el pago para obtener sus datos
                     Pago pagoCompra = pago as Pago;
 
+                    if (pagoCompra == null)
+                        throw new ItemInvalidoException
+                                    (RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_INVALIDO,
+                                    RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO,
+                                    new ItemInvalidoException());
+
                     //Creo la lista de los parametros para el stored procedure y los anexo
                     List<Parametro> parametros = new List<Parametro>();
                     Parametro parametro = new Parametro();
@@ -917,6 +923,13 @@ namespace DatosSKD.DAO.Modulo16
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;
                 }
+
+                catch (ItemInvalidoException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+
                 catch (ArgumentNullException e)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -1002,9 +1015,11 @@ namespace DatosSKD.DAO.Modulo16
                             Implemento elImplemento = objeto as Implemento;
 
                             //Lanzamos una excepcion si no es un implemento o si esta en vacio
-                            if (elImplemento == null)
-                                //De Igual Forma Aca
-                                throw new ItemInvalidoException(RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO);
+                            if (elImplemento == null)                                
+                                throw new ItemInvalidoException(
+                                    RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_INVALIDO, 
+                                    RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO, 
+                                    new ItemInvalidoException());
 
                             //Si es un implemento
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO2,
@@ -1029,8 +1044,10 @@ namespace DatosSKD.DAO.Modulo16
 
                             //Lanzamos una excepcion si no es un Evento o si esta en vacio
                             if (elEvento == null)
-                                //De Igual Forma Aca
-                                throw new ItemInvalidoException(RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO);
+                                throw new ItemInvalidoException(
+                                    RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_INVALIDO,
+                                    RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO,
+                                    new ItemInvalidoException());
 
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO2,
                                 SqlDbType.Int, elEvento.Id.ToString(), false);
@@ -1079,6 +1096,11 @@ namespace DatosSKD.DAO.Modulo16
                     return exito;
                 }
                 catch (LoggerException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ItemInvalidoException e)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;

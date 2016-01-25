@@ -455,6 +455,11 @@ namespace templateApp.GUI.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);               
                 HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LOGGER_LINK, false);
             }
+            catch (ItemInvalidoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_ITEM_INVALIDO_LINK, false);
+            }
             catch(OpcionPagoNoValidoException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
@@ -539,6 +544,13 @@ namespace templateApp.GUI.Modulo16
         {
             // Llamada para llenar el modal de la Mensualidad
             ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), M16_RecursoInterfaz.Test, M16_RecursoInterfaz.Script_Tres, false);
+
+        }
+
+
+        protected void ComboBox1_SelectedIndexChanged(object sender, System.EventArgs e){
+
+
         }
     }
 }

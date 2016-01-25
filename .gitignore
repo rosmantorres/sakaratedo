@@ -219,3 +219,9 @@ Log.xml
 Interfaz_Presentadores/Interfaz_Presentadores.csproj
 Log.xml
 Interfaz_Presentadores/Interfaz_Presentadores.csproj
+PruebasUnitariasSKD/PruebasUnitariasSKD.csproj
+PruebasUnitariasSKD/App.config
+LogicaNegociosSKD/LogicaNegociosSKD.csproj
+Interfaz_Contratos/Interfaz_Contratos.csproj
+Interfaz.csproj
+DatosSKD/DatosSKD.csproj
