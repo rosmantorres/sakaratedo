@@ -1,73 +1,63 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazRestriccionesHorario.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazRestriccionesHorario" %>
+﻿<%@ Page EnableEventValidation="true" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazRestriccionesHorario.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazRestriccionesHorario" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <title>Consultar Restricciones Horarios-Eventos</title>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
 
     <%--Breadcrumbs--%>
-	<ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
-
-		<li>
-			<a href="../Master/Inicio.aspx">Inicio</a>
-		</li>
-		
-		<li>
-			<a href="../Modulo8/interfazMenuRestriccionesCintasYEventos.aspx">Menú de Restricciones de Cintas y Eventos</a>
-		</li>
-		
-		<li class="active">
-			Gestión Restricciones de Horarios
-		</li>
-	
-	</ol>
+    <div>
+	    <ol class="breadcrumb" style="background-color:rgba(0,0,0,0);">
+		    <li>
+			    <a href="../Master/Inicio.aspx">Inicio</a>
+		    </li>
+		    <li>
+			    <a href="../Modulo8/interfazMenuRestriccionesCintasYEventos.aspx">Menú de Restricciones de Cintas y Eventos</a>
+		    </li>
+		    <li class="active">
+			    Gestión Restricciones de Horarios
+		    </li>
+	    </ol>
+    </div>
 	<%--Fin_Breadcrumbs--%>
-
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">
-
-    Gestión de Restricciones de Horarios
-
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">
-    
-    Restricciones de Horarios
-
-</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Restricciones de Horarios</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Restricciones de Horarios</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-	
-	<div id="alerta" runat="server">
+   <div id="alerta" runat="server">
 	</div>
+  <div class="row">
+   <div class="col-xs-12">
+	 <div class="box">
+	   <div class="box-header">
+		   <h3 class="box-title">Lista de Restricciones de Horarios</h3>
+		</div><!-- /.box-header -->
+      <form role="form" name="consultar_planilla" id="consular_planillas" runat="server">
 
-	<div class="row">
-			<div class="col-xs-12">
-			  <div class="box">
-				<div class="box-header">
-				  <h3 class="box-title">Lista de Restricciones de Horarios</h3>
-				</div><!-- /.box-header -->
+	      <div class="box-body table-responsive">
 
-                <form role="form" name="consultar_planilla" id="consular_planillas" runat="server">
-	                <div class="box-body table-responsive">
-
-	                   <table id="RestriccionesCintas" class="table table-bordered table-striped dataTable">
-		                <thead>
-				                <tr>
-					                <th>Id Restriccion</th>
-					                <th>Id Evento</th>
-					                <th>Nombre Evento</th>
-					                <th>Edad Minima</th>
-					                <th>Edad Maxima</th>
-                                    <th>Cinta</th>
-                                    <th>Sexo</th>
-					                <th style="text-align:right;">Acciones</th>
-				                </tr>
-			                </thead>
-                           <asp:Literal runat="server" ID="tabla"></asp:Literal>
-			                <tbody>
+	      <table id="RestriccionesCintas" class="table table-bordered table-striped dataTable" accesskey="">
+		   <thead>
+			<tr>
+			    <th>Id Restriccion</th>
+			    <th>Id Evento</th>
+			    <th>Nombre Evento</th>
+			    <th>Edad Minima</th>
+			    <th>Edad Maxima</th>
+                <th>Cinta</th>
+                <th>Sexo</th>
+			    <th style="text-align:right;">Acciones</th>
+			</tr>
+		   </thead>
+          <asp:Literal runat="server" ID="tabla"></asp:Literal>
+		<tbody>
 							
 				
-			                </tbody>
-	                </table>
-                    </div>
-                </form>
+	</tbody>
+	  </table>
+       </div>
+     </form>
 
 					  
 
@@ -97,7 +87,7 @@
 		<script type="text/javascript">
 			$(document).ready(function () {
 
-				var table = $('#Restricciones').DataTable({
+			    var table = $('#RestriccionesCintas').DataTable({
 					"language": {
 						"url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
 					}
@@ -105,7 +95,7 @@
 				var req;
 				var tr;
 
-				$('#Restricciones tbody').on('click', 'a', function () {
+				$('#RestriccionesCintas tbody').on('click', 'a', function () {
 					if ($(this).parent().hasClass('selected')) {
 						req = $(this).parent().prev().prev().prev().prev().text();
 						tr = $(this).parents('tr');//se guarda la fila seleccionada
