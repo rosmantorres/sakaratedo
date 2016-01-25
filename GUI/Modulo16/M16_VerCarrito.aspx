@@ -253,7 +253,7 @@
 		    </div>
             </div>
             <br />
-        <h4 class="modal-title">Monto a debitar:</h4>
+        <h4 class="modal-title">Monto a debitar (solamente use comas para los decimales y no se use puntos para las unidades de mil)</h4>
         <div class="form-group">
 	        <div id="div_uario" class="col-sm-10 col-md-10 col-lg-10">
 		        <input id="Monto" type="text" placeholder="Ingrese el monto" class="form-control" name="Text2" runat="server"/>
@@ -322,7 +322,7 @@
          <div class="form-group">
 		    <div class="box-footer">
                 <br />			
-                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" disabled="false" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
+                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>

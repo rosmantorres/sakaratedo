@@ -876,7 +876,7 @@ namespace DatosSKD.DAO.Modulo16
                     parametros.Add(parametro);
 
                     parametro = new Parametro(RecursosBDModulo16.PARAMETRO_MONTO,
-                        SqlDbType.VarChar, pagoCompra.Monto.ToString(), false);
+                        SqlDbType.Float, pagoCompra.Monto.ToString(), false);
                     parametros.Add(parametro);
 
                     parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PAGO,
