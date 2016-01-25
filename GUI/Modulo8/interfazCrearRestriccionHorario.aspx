@@ -62,11 +62,11 @@
                     </div>	
 					
 					<div class="col-sm-8 col-md-8 col-lg-84">
-                    <div class="dropdown" runat="server" id="div1"  style="margin-top:10px; margin-left:-15px;">
-                    <asp:DropDownList ID="comboSexo" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
-                 </asp:DropDownList>
-              </div>  
-          </div>
+                        <div class="dropdown" runat="server" id="div1"  style="margin-top:10px; margin-left:-15px;">
+                            <asp:DropDownList ID="comboSexo" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
+                            </asp:DropDownList>
+                         </div>  
+                    </div>
 				</div>
 			
             </div>
@@ -86,9 +86,8 @@
                  </asp:DropDownList>
               </div>  
           </div>
-				    <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx">Cancelar</a>
-                    
-				 <asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar" href="interfazRestriccionesHorario.aspx?actionSuccess=1"  ></asp:Button>
+				    <a id="btn-cancelar" type="submit" style="margin-top:11px; margin-right:183px; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx">Cancelar</a>
+                  <asp:Button id="btnaceptar" style="margin-top:55px; margin-left:-277px;" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar" href="interfazRestriccionesHorario.aspx?actionSuccess=1"  ></asp:Button>
                 </div>
 			</div>
 		</div>
