@@ -31,23 +31,23 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
            }
            catch (ExcepcionComandoAgregarImplemento ex)
            {
-               ex = new ExcepcionComandoAgregarImplemento("Error en Comando Agregar Implemento", new Exception());
-               Logger.EscribirError("Error en Comando Agregar Implemento", ex);
+               ex = new ExcepcionComandoAgregarImplemento(RecursosComandoModulo15.ErrorCAgregar, new Exception());
+               Logger.EscribirError(RecursosComandoModulo15.ErrorCAgregar, ex);
                throw ex;
 
            }
 
            catch (ExceptionSKD ex)
            {
-               ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-               Logger.EscribirError("Error en Comando Agregar Implemento", ex);
+               ex = new ExcepcionesSKD.ExceptionSKD(RecursosComandoModulo15.ErrorOperacion, new Exception());
+               Logger.EscribirError(RecursosComandoModulo15.ErrorCAgregar, ex);
                throw ex;
            }
 
            catch (Exception ex)
            {
 
-               Logger.EscribirError("Error de en Comando Agregar implemento datos ", ex);
+               Logger.EscribirError(RecursosComandoModulo15.ErrorCAgregar, ex);
                throw ex;
            }
        }
