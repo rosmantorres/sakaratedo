@@ -859,6 +859,11 @@ namespace DominioSKD.Fabrica
             return new Pago();
         }
 
+
+        public static Entidad ObtenerPersonaModulo16()
+        {
+            return new Entidades.Modulo1.PersonaM1();
+        }
         #endregion
     }
 }

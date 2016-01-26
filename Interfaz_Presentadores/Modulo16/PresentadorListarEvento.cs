@@ -54,7 +54,8 @@ namespace Interfaz_Presentadores.Modulo16
                 Comando<Entidad> comandoListarEventos = FabricaComandos.CrearComandoConsultarTodosEventos();
 
                 // Casteamos el parametro
-                PersonaM1 param = new PersonaM1();
+                //PersonaM1 param = new PersonaM1();
+                PersonaM1 param = (PersonaM1)FabricaEntidades.ObtenerPersonaModulo16();
                 param._Id = persona;
                 comandoListarEventos.LaEntidad = param;
 
