@@ -106,6 +106,7 @@
     <Compile Include="Modulo16\CarritoConPagoException.cs" />
     <Compile Include="Modulo16\CarritoSinEventoException.cs" />
     <Compile Include="Modulo16\CarritoSinInventarioException.cs" />
+    <Compile Include="Modulo16\CarritoVacioException.cs" />
     <Compile Include="Modulo16\ErrorEnHTTPException.cs" />
     <Compile Include="Modulo16\ItemInvalidoException.cs" />
     <Compile Include="Modulo16\LogicaagregarEventoaCarritoException.cs" />
