@@ -60,6 +60,8 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
+            fabrica = new FabricaEntidades();
+
 
             //La persona
             this.persona = FabricaEntidades.ObtenerPersona();
@@ -84,6 +86,13 @@ namespace PruebasUnitariasSKD.Modulo16
             //this.eventos.LaEntidad = fabrica.ObtenerPersona_M1(11, "prueba", "prueba");
             //this.listaEventos = (ListaEvento)this.eventos.Ejecutar();
 
+            /*this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
+            this.evento.Id = 1;
+            this.evento.Costo = 0;
+
+            this.evento2 = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
+            this.evento2.Id = 2;
+            this.evento2.Costo = 2000;*/
             this.evento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;

@@ -448,6 +448,42 @@ namespace DatosSKD.DAO.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SKD_00_004.
+        /// </summary>
+        internal static string CodigoErrorFormato {
+            get {
+                return ResourceManager.GetString("CodigoErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string MensajeErrorFormato {
+            get {
+                return ResourceManager.GetString("MensajeErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @_aprobado.
         /// </summary>
         internal static string ParametroAprobadoResultadoAscenso {

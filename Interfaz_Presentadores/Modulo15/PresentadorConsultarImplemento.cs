@@ -41,23 +41,23 @@ namespace Interfaz_Presentadores.Modulo15
              }
              catch (ExcepcionPresentadorConsultarImplemento ex)
              {
-                 ex = new ExcepcionPresentadorConsultarImplemento("Error en Presentador Consultar Implemento", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionPresentadorConsultarImplemento(M15_RecursoInterfazPresentador.ErrorPConsultar, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
 
              }
 
              catch (ExceptionSKD ex)
              {
-                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionesSKD.ExceptionSKD(M15_RecursoInterfazPresentador.ErrorPOperacion, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
 
              catch (Exception ex)
              {
 
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
          }
@@ -77,23 +77,23 @@ namespace Interfaz_Presentadores.Modulo15
          }
              catch (ExcepcionPresentadorConsultarImplemento ex)
              {
-                 ex = new ExcepcionPresentadorConsultarImplemento("Error en Presentador Consultar Implemento", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionPresentadorConsultarImplemento(M15_RecursoInterfazPresentador.ErrorPConsultar, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
 
              }
 
              catch (ExceptionSKD ex)
              {
-                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionesSKD.ExceptionSKD(M15_RecursoInterfazPresentador.ErrorPOperacion, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
 
              catch (Exception ex)
              {
 
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
          }
@@ -119,23 +119,23 @@ namespace Interfaz_Presentadores.Modulo15
 
              catch (ExcepcionPresentadorConsultarImplemento ex)
              {
-                 ex = new ExcepcionPresentadorConsultarImplemento("Error en Presentador Consultar Implemento", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionPresentadorConsultarImplemento(M15_RecursoInterfazPresentador.ErrorPConsultar, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
 
              }
 
              catch (ExceptionSKD ex)
              {
-                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionesSKD.ExceptionSKD(M15_RecursoInterfazPresentador.ErrorPOperacion, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
 
              catch (Exception ex)
              {
 
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
          }
@@ -157,23 +157,23 @@ namespace Interfaz_Presentadores.Modulo15
 
              catch (ExcepcionPresentadorConsultarImplemento ex)
              {
-                 ex = new ExcepcionPresentadorConsultarImplemento("Error en Presentador Consultar Implemento", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionPresentadorConsultarImplemento(M15_RecursoInterfazPresentador.ErrorPConsultar, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
 
              }
 
              catch (ExceptionSKD ex)
              {
-                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionesSKD.ExceptionSKD(M15_RecursoInterfazPresentador.ErrorPOperacion, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
 
              catch (Exception ex)
              {
 
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
          }
@@ -191,23 +191,23 @@ namespace Interfaz_Presentadores.Modulo15
 
              catch (ExcepcionPresentadorConsultarImplemento ex)
              {
-                 ex = new ExcepcionPresentadorConsultarImplemento("Error en Presentador Consultar Implemento", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionPresentadorConsultarImplemento(M15_RecursoInterfazPresentador.ErrorPConsultar, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
 
              }
 
              catch (ExceptionSKD ex)
              {
-                 ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 ex = new ExcepcionesSKD.ExceptionSKD(M15_RecursoInterfazPresentador.ErrorPOperacion, new Exception());
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
 
              catch (Exception ex)
              {
 
-                 Logger.EscribirError("Error en Presentador Consultar Implemento", ex);
+                 Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPConsultar, ex);
                  throw ex;
              }
          }

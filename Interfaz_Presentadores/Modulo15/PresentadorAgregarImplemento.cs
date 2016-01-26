@@ -34,23 +34,23 @@ namespace Interfaz_Presentadores.Modulo15
               }
               catch (ExcepcionPresentadorAgregarImplemento ex)
               {
-                  ex = new ExcepcionPresentadorAgregarImplemento("Error en Presentador Agregar Implemento", new Exception());
-                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  ex = new ExcepcionPresentadorAgregarImplemento(M15_RecursoInterfazPresentador.ErrorPAgregar, new Exception());
+                  Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPAgregar, ex);
                   throw ex;
 
               }
 
               catch (ExceptionSKD ex)
               {
-                  ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  ex = new ExcepcionesSKD.ExceptionSKD(M15_RecursoInterfazPresentador.ErrorPOperacion, new Exception());
+                  Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPAgregar, ex);
                   throw ex;
               }
 
               catch (Exception ex)
               {
 
-                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPAgregar, ex);
                   throw ex;
               }
 
@@ -69,23 +69,23 @@ namespace Interfaz_Presentadores.Modulo15
               }
               catch (ExcepcionPresentadorAgregarImplemento ex)
               {
-                  ex = new ExcepcionPresentadorAgregarImplemento("Error en Presentador Agregar Implemento", new Exception());
-                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  ex = new ExcepcionPresentadorAgregarImplemento(M15_RecursoInterfazPresentador.ErrorPAgregar, new Exception());
+                  Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPAgregar, ex);
                   throw ex;
 
               }
 
               catch (ExceptionSKD ex)
               {
-                  ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  ex = new ExcepcionesSKD.ExceptionSKD(M15_RecursoInterfazPresentador.ErrorPOperacion, new Exception());
+                  Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPAgregar, ex);
                   throw ex;
               }
 
               catch (Exception ex)
               {
 
-                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPAgregar, ex);
                   throw ex;
               }
 
@@ -105,23 +105,23 @@ namespace Interfaz_Presentadores.Modulo15
               }
               catch (ExcepcionPresentadorAgregarImplemento ex)
               {
-                  ex = new ExcepcionPresentadorAgregarImplemento("Error en Presentador Agregar Implemento", new Exception());
-                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  ex = new ExcepcionPresentadorAgregarImplemento(M15_RecursoInterfazPresentador.ErrorPAgregar, new Exception());
+                  Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPAgregar, ex);
                   throw ex;
 
               }
 
               catch (ExceptionSKD ex)
               {
-                  ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  ex = new ExcepcionesSKD.ExceptionSKD(M15_RecursoInterfazPresentador.ErrorPOperacion, new Exception());
+                  Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPAgregar, ex);
                   throw ex;
               }
 
               catch (Exception ex)
               {
 
-                  Logger.EscribirError("Error en Presentador Agregar Implemento", ex);
+                  Logger.EscribirError(M15_RecursoInterfazPresentador.ErrorPAgregar, ex);
                   throw ex;
               }
 
