@@ -24,7 +24,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo2
                 Cuenta cta = (Cuenta)LaEntidad;
                 FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();
                 IDaoRoles conexionBD = laFabrica.ObtenerDaoRoles();
-                return conexionBD.consultarRolesUsuario(cta.Id.ToString()).Cast<Entidad>().ToList();
+                return conexionBD.consultarRolesUsuario(cta.Id.ToString());
             }
             catch (Exception e)
             {
