@@ -98,9 +98,6 @@
     </Compile>
     <Compile Include="Modulo15\PruebaComando.cs" />
     <Compile Include="Modulo15\PruebaDao.cs" />
-    <Compile Include="Modulo15\PruebaDatos.cs" />
-    <Compile Include="Modulo15\PruebaInterfaz.cs" />
-    <Compile Include="Modulo15\PruebaLogica.cs" />
     <Compile Include="Modulo15\RecursosPU_Mod15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

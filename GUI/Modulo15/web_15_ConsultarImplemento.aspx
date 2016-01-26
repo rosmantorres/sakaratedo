@@ -191,12 +191,9 @@
 
            
 
-                $('#example tfoot th').each(function () {
-                    var title = $(this).text();
-                    $(this).html('<input type="text" size="7"  placeholder="Buscar ' + title + '" />');
-                });
+             
 
-                table.columns().every( function () {
+                table.columns().every(function (){
                     var that = this;
 
                     $( 'input', this.footer()).on( 'keyup change', function () {
