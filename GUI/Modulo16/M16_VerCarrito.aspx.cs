@@ -338,6 +338,14 @@ namespace templateApp.GUI.Modulo16
                                 alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
                                 alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_MONTO_INVALIDO_MENSAJE;
                                 break;
+
+                            case "17":
+                                //Si se deseo registrar el pago de un carrito completamente vacio
+                                //Si hubo error al insertar un monto de pago menor o igual a 0
+                                alert.Attributes[M16_RecursoInterfaz.VARIABLE_CLASS] = M16_RecursoInterfaz.ALERT_DANGER;
+                                alert.Attributes[M16_RecursoInterfaz.VARIABLE_ROL] = M16_RecursoInterfaz.VALOR_ALERT;
+                                alert.InnerHtml = M16_RecursoInterfaz.EXCEPTION_CARRITO_VACIO_MENSAJE;
+                                break;
                         }
                         break;
 
@@ -452,8 +460,13 @@ namespace templateApp.GUI.Modulo16
             }            
             catch (LoggerException e)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);               
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LOGGER_LINK, false);
+            }
+            catch (CarritoVacioException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_CARRITO_VACIO_LINK, false);
             }
             catch (ItemInvalidoException e)
             {

@@ -25,8 +25,7 @@ namespace Interfaz_Presentadores.Modulo16
     {
         #region Atributos
         //Interfaz a usar de su vista
-        IcontratoVerCarrito laVista;
-        private float precioFinal;
+        IcontratoVerCarrito laVista;        
         #endregion
 
         #region Constructores
@@ -36,8 +35,7 @@ namespace Interfaz_Presentadores.Modulo16
         /// <param name="laVista">Interfaz que es la vista a la que se manipulara</param>
         public PresentadorVerCarrito(IcontratoVerCarrito laVista)
         {
-            this.laVista = laVista;
-            this.precioFinal = 0;
+            this.laVista = laVista;            
         }
         #endregion
 
@@ -57,13 +55,11 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER,
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                //Creo la fabrica y persona y le pongo su ID
-                FabricaEntidades fabrica = new FabricaEntidades();
+                //Creo la fabrica y persona y le pongo su ID               
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
-                //Instancio el comando para ver el carrito, obtengo el carrito de la persona y casteo
-                FabricaComandos fabricaComando = new FabricaComandos();
+                //Instancio el comando para ver el carrito, obtengo el carrito de la persona y casteo                
                 Comando<Entidad> VerCarrito = FabricaComandos.CrearComandoVerCarrito(persona);
                 Carrito elCarrito = (Carrito)VerCarrito.Ejecutar();
 
@@ -110,11 +106,6 @@ namespace Interfaz_Presentadores.Modulo16
                     boton.ID = M16_Recursointerfaz.IMPLEMENTO_ID + item.Id.ToString();
                     celda.Controls.Add(boton);
 
-                /*    //Se modifica para que el boton no haga postback
-                    boton.OnClientClick = M16_Recursointerfaz.NO_POSTBACK;
-                    boton.UseSubmitBehavior = false;
-                    celda.Controls.Add(boton);*/
-
                     //Boton informacion
                     boton = new Button();
                     boton.ID = M16_Recursointerfaz.PRODUCTO_INFORMACION + item.Id.ToString();
@@ -134,10 +125,7 @@ namespace Interfaz_Presentadores.Modulo16
                     fila.Cells.Add(celda);
 
                     //Agrego la fila a la tabla
-                    this.laVista.tablaImplemento.Rows.Add(fila);
-
-                    //Anexo al precio total
-                    precioFinal += (float)item.Precio_Implemento*aux.Value;
+                    this.laVista.tablaImplemento.Rows.Add(fila);                    
                 }
 
                 //Obtenemos cada evento para ponerlos en la tabla
@@ -201,10 +189,7 @@ namespace Interfaz_Presentadores.Modulo16
                     fila.Cells.Add(celda);
 
                     //Agrego la fila a la tabla
-                    this.laVista.tablaEvento.Rows.Add(fila);
-
-                    //Anexo al precio final
-                    precioFinal += item.Costo * aux.Value;
+                    this.laVista.tablaEvento.Rows.Add(fila);                    
                 }
 
                 //Obtenemos cada matricula para ponerlas en la tabla            
@@ -259,17 +244,13 @@ namespace Interfaz_Presentadores.Modulo16
                     fila.Cells.Add(celda);
 
                     //Agrego la fila a la tabla
-                    this.laVista.tablaMatricula.Rows.Add(fila);
-
-                    //Anexo al precio final
-                    precioFinal += item.Costo * aux.Value;
-                }
-
-                //Descontamos del total los pagos que ya haya hecho
-                precioFinal -= elCarrito.montoPagado;
+                    this.laVista.tablaMatricula.Rows.Add(fila);                    
+                }                
 
                 //Colocamos el precio en el modal
-                laVista.PrecioFinal.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_PRECIO_FINAL + M16_Recursointerfaz.ABRE_LABEL_PRECIO_FINAL + precioFinal.ToString() + M16_Recursointerfaz.CIERRE_LABEL;
+                laVista.PrecioFinal.Text = M16_Recursointerfaz.SALTO_LINEA + M16_Recursointerfaz.TITULO_PRECIO_FINAL +
+                    M16_Recursointerfaz.ABRE_LABEL_PRECIO_FINAL + ObtenerMonto(elCarrito)
+                    + M16_Recursointerfaz.CIERRE_LABEL;
 
                 //Escribo en el logger la salida a este metodo
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -576,8 +557,7 @@ namespace Interfaz_Presentadores.Modulo16
                 //Expresion regular que validara los datos del tipo de pago 
                 Regex expresionRegular = new Regex("^[0-9]+[0-9]*$");                
 
-                //Instancio la fabrica, obtengo la entidad persona y asigno su ID
-                FabricaEntidades fabrica = new FabricaEntidades();
+                //Instancio la fabrica, obtengo la entidad persona y asigno su ID                
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id = int.Parse(idpersona);
 
@@ -592,14 +572,7 @@ namespace Interfaz_Presentadores.Modulo16
                 if (!laVista.MontoPago.Value.Contains('.'))
                 {
                     //Obtengo el monto con el que pago la transaccion
-                    montoPago = float.Parse(laVista.MontoPago.Value);
-
-                    //Disparo una excepcion si el pago insertado es menor a 0 o es 0
-                    if (montoPago <= 0)
-                        throw new MontoInvalidoException(
-                            M16_Recursointerfaz.CODIGO_EXCEPCION_MONTO_INVALIDO,
-                            M16_Recursointerfaz.MENSAJE_EXCEPCION_MONTO_INVALIDO,
-                            new MontoInvalidoException());
+                    montoPago = float.Parse(laVista.MontoPago.Value);                    
                 }
                 else
                     throw new MontoInvalidoException(
@@ -636,13 +609,38 @@ namespace Interfaz_Presentadores.Modulo16
 
                 //Si los datos del tipo de pago seleccionado son numeros
                 if (Validaciones.ValidarExpresionRegular(datosPago, expresionRegular))
-                {                    
-                    //Instancio la entidad pago y asigno sus datos
-                    Entidad pagoCompra = FabricaEntidades.ObtenerPago(montoPago, pagofinal, datosPago);
+                {
+                    //Obtengo el Carrito para ver si esta vacio
+                    Comando<Entidad> VerCarrito = FabricaComandos.CrearComandoVerCarrito(persona);
+                    Carrito elCarrito = (Carrito)VerCarrito.Ejecutar();                    
 
-                    //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso            
-                    Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
-                    respuesta = registrarPago.Ejecutar();  
+                    /*Si el carrito esta completamente vacio se lanzara una excepcion porque no se puede pagar, sino
+                     registramos el pago normalmente*/
+                    if (elCarrito.Listaevento.Count != 0 
+                        || elCarrito.ListaImplemento.Count != 0 
+                        || elCarrito.Listamatricula.Count != 0)
+                    {
+                        //Obtenemos el total adeudado para hacer las comparaciones
+                        float montoCarrito = ObtenerMonto(elCarrito);
+
+                        /*Si lo que voy a pagar es mayor a mi deuda, menor a 0 o si mi deuda es mayor a cero 
+                          pero el monto a pagar es 0 lanzo esta excepcion*/
+                        if (montoPago > montoCarrito || montoPago < 0 || (montoPago == 0 && montoCarrito > 0))
+                            throw new MontoInvalidoException(M16_Recursointerfaz.CODIGO_EXCEPCION_MONTO_INVALIDO,
+                                M16_Recursointerfaz.MENSAJE_EXCEPCION_MONTO_INVALIDO,
+                                new MontoInvalidoException());                        
+
+                        //Instancio la entidad pago y asigno sus datos
+                        Entidad pagoCompra = FabricaEntidades.ObtenerPago(montoPago, pagofinal, datosPago);
+
+                        //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso            
+                        Comando<bool> registrarPago = FabricaComandos.CrearComandoRegistrarPago(persona, pagoCompra);
+                        respuesta = registrarPago.Ejecutar();  
+                    }
+                    else
+                        throw new CarritoVacioException(M16_Recursointerfaz.CODIGO_EXCEPCION_CARRITO_VACIO, 
+                            M16_Recursointerfaz.MENSAJE_EXCEPCION_CARRITO_VACIO, 
+                            new CarritoVacioException());                    
                 }
                 else
                     throw new CantidadInvalidaException(
@@ -662,6 +660,11 @@ namespace Interfaz_Presentadores.Modulo16
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);                
                 throw new ParseoVacioException(M16_Recursointerfaz.CODIGO_EXCEPCION_ARGUMENTO_NULO,
                     M16_Recursointerfaz.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+            }
+            catch (CarritoVacioException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
             }
             catch (CantidadInvalidaException e)
             {
@@ -910,7 +913,59 @@ namespace Interfaz_Presentadores.Modulo16
              
         }
         #endregion
-        
+
+        #region ObtenerMonto
+        /// <summary>
+        /// Metodo del Presentador que obtiene la cantidad de Deuda total del carrito
+        /// </summary>
+        /// <param name="carrito">El carrito al que se le vera el monto</param>
+        /// <returns>La deuda restante del carrito</returns>
+        public float ObtenerMonto(Entidad carrito)
+        {
+            //Casteamos el carrito obtenido
+            Carrito ElCarrito = carrito as Carrito;
+
+            //Monto a devolver
+            float precioFinal = 0;
+
+            //Recorremos todos los implementos y obtenemos los valores
+            foreach (KeyValuePair<Entidad, int> aux in ElCarrito.ListaImplemento)
+            {
+                //Casteamos la entidad como un implemento
+                Implemento item = aux.Key as Implemento;
+
+                //Anexo al precio total
+                precioFinal += (float)item.Precio_Implemento * aux.Value;
+            }
+
+            //Obtenemos cada evento para ponerlos en la tabla
+            foreach (KeyValuePair<Entidad, int> aux in ElCarrito.Listaevento)
+            {
+                //Casteamos la entidad como un evento
+                Evento item = aux.Key as Evento;
+
+                //Anexo al precio final
+                precioFinal += item.Costo * aux.Value;
+            }
+
+            //Obtenemos cada matricula para ponerlas en la tabla            
+            foreach (KeyValuePair<Entidad, int> aux in ElCarrito.Listamatricula)
+            {
+                //Casteamos la entidad como una matricula
+                Matricula item = aux.Key as Matricula;
+
+                //Anexo al precio final
+                precioFinal += item.Costo * aux.Value;
+            }
+
+            //Descontamos del total los pagos que ya haya hecho
+            precioFinal -= ElCarrito.montoPagado;
+
+            return precioFinal;
+
+        }
+        #endregion
+
         #region Metodos para el detalle del Implemento
         /// <summary>
         /// Metodo del presentador que pinta el detalle en el modal
