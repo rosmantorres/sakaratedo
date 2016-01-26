@@ -100,7 +100,7 @@ namespace Interfaz_Presentadores.Modulo2
                     if (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM2.parametroIDUsuario] != null)
                     {
                         idUsuarioURL = cripto.DesencriptarCadenaDeCaracteres
-                             (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM2.parametroIDUsuario], RecursosLogicaModulo2.claveDES);
+                             (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM2.parametroIDUsuario], RecursosInterfazPresentadorM2.claveDES);
                         cuentaComando.Id = int.Parse(idUsuarioURL);
                         ComandoCuentaUsuario cuentaConsultada = (ComandoCuentaUsuario)laFabrica.ObtenerCuentaUsuario();
                         cuentaConsultada.LaEntidad = cuentaComando;

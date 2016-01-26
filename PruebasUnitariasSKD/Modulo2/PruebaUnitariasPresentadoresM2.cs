@@ -10,8 +10,6 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos.Modulo2;
 using DominioSKD.Fabrica;
 using DominioSKD;
-using DominioSKD.Entidades.Modulo2;
-using LogicaNegociosSKD.Modulo2;
 using DominioSKD.Entidades.Modulo1;
 
 namespace PruebasUnitariasSKD.Modulo2

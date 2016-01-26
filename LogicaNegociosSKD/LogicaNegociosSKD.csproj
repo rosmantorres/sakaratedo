@@ -228,20 +228,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo16.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo1\logicaLogin.cs" />
-    <Compile Include="Modulo1\logicaRestablecer.cs" />
-    <Compile Include="Modulo1\RecursosLogicaModulo1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo1.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo2\AlgoritmoDeEncriptacion.cs" />
-    <Compile Include="Modulo2\logicaRol.cs" />
-    <Compile Include="Modulo2\RecursosLogicaModulo2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo3\RecursosLogicaModulo3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -355,14 +341,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo1\RecursosLogicaModulo1.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo2\RecursosLogicaModulo2.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo3\RecursosLogicaModulo3.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo3.Designer.cs</LastGenOutput>
@@ -395,10 +373,6 @@
   <ItemGroup>
     <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo15\" />
-    <Folder Include="Comandos\Modulo16\" />
-    <Folder Include="Comandos\Modulo1\" />
-    <Folder Include="Comandos\Modulo2\" />
     <Folder Include="Comandos\Modulo4\" />
     <Folder Include="Comandos\Modulo6\" />
     <Folder Include="Comandos\Modulo7\" />

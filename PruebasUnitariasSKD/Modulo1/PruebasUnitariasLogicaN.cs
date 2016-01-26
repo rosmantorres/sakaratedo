@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using LogicaNegociosSKD.Modulo1;
 using Interfaz_Presentadores.Modulo2;
 using LogicaNegociosSKD.Comandos.Modulo1;
 using LogicaNegociosSKD.Fabrica;
@@ -165,7 +164,7 @@ namespace PruebasUnitariasSKD.Modulo1
 
         }
         // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena)
-        [Test]
+       /* [Test]
         public void PruebaValidarCaracteres()
         {
             logicaRestablecer lgr = new logicaRestablecer();
@@ -174,7 +173,7 @@ namespace PruebasUnitariasSKD.Modulo1
 
             _respuesta = lgr.ValidarCaracteres(RecursosPU_Mod1.Descripcion);
             Assert.AreEqual(true, _respuesta);
-        }
+        }*/
    /*     // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena) EXC
         [Test]
         [ExpectedException(typeof(NullReferenceException))]

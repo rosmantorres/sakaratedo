@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Modulo6;
-using LogicaNegociosSKD.Modulo2;
+using Interfaz_Presentadores.Modulo2;
 using Interfaz_Contratos.Master;
 
 namespace templateApp.GUI.Modulo6
@@ -14,8 +14,8 @@ namespace templateApp.GUI.Modulo6
     public partial class M6_ListaUsuarios : System.Web.UI.Page
     {
         public List<Cuenta> lasCuentas = new List<Cuenta>();
-        public AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
-        public string DES = RecursosLogicaModulo2.claveDES;
+        public Encriptacion cripto = new Encriptacion();
+        public string DES = RecursosInterfazPresentadorM2.claveDES;
         protected void Page_Load(object sender, EventArgs e)
         {
             IContratoMasterPage _iMaster = ((SKD)Page.Master);

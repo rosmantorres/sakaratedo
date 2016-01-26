@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using LogicaNegociosSKD.Modulo2;
+using Interfaz_Presentadores.Modulo2;
 using DominioSKD.Entidades.Modulo2;
 using DominioSKD.Entidades.Modulo1;
 using LogicaNegociosSKD.Comandos.Modulo2;
@@ -18,7 +18,7 @@ namespace PruebasUnitariasSKD.Modulo2
 
     class PruebasUnitariasLogicaN
     {
-        AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
+        Encriptacion cripto = new Encriptacion();
         private FabricaComandos laFabrica = new FabricaComandos();
         private FabricaEntidades laFabricaE = new FabricaEntidades();
 
