@@ -181,8 +181,8 @@
     <Compile Include="Comandos\Modulo2\ComandoEliminarRol.cs" />
     <Compile Include="Comandos\Modulo2\ComandoRolesDeSistema.cs" />
     <Compile Include="Comandos\Modulo2\ComandoRolesUsuario.cs" />
-    <Compile Include="Comandos\Modulo2\RecursosLogicaModulo2.Designer.cs">
-      <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
+    <Compile Include="Comandos\Modulo2\RecursosComandoModulo2.Designer.cs">
+      <DependentUpon>RecursosComandoModulo2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -290,9 +290,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comandos\Modulo2\RecursosLogicaModulo2.resx">
+    <EmbeddedResource Include="Comandos\Modulo2\RecursosComandoModulo2.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
+      <LastGenOutput>RecursosComandoModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo9\RecursosComandosModulo9.resx">
       <Generator>ResXFileCodeGenerator</Generator>
