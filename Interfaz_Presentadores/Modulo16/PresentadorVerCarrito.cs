@@ -982,7 +982,7 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                Implemento implemento = new Implemento();
+                DominioSKD.Entidades.Modulo15.Implemento implemento = (DominioSKD.Entidades.Modulo15.Implemento)FabricaEntidades.ObtenerImplemento();
                 implemento.Id_Implemento = int.Parse(id);
 
                 // Casteamos
@@ -1158,7 +1158,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                Evento evento = new Evento();
+                DominioSKD.Evento evento = (DominioSKD.Evento)FabricaEntidades.ObtenerEventoCompletos();
                 evento.Id = int.Parse(id);
 
                 //Casteamos
@@ -1327,7 +1327,7 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                Matricula matricula = new Matricula();
+                DominioSKD.Entidades.Modulo6.Matricula matricula = (DominioSKD.Entidades.Modulo6.Matricula)FabricaEntidades.ObtenerMatricula();
                 matricula.Id = int.Parse(id);
 
                 //Casteamos
