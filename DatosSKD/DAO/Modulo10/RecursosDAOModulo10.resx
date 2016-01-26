@@ -350,4 +350,21 @@
     <value>M10_ConsultarEventosRangoFecha</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="CodigoErrorFormato" xml:space="preserve">
+    <value>SKD_00_004</value>
+    <comment>Codigo de error de Parseo</comment>
+  </data>
+  <data name="MensajeErrorFormato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mejsaje de error de parseo</comment>
+  </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
 </root>
