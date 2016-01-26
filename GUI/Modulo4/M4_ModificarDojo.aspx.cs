@@ -10,80 +10,102 @@ using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo4
 {
-    public partial class M4_AgregarDojo : System.Web.UI.Page, IContratoAgregarDojo
+    public partial class M4_ModificarDojo : System.Web.UI.Page, IContratoModificarDojo
     {
-        PresentadorAgregarDojo _presentador;
+        PresentadorModificarDojo _presentador;
+        int idDojom;
 
-
-        #region Implementacion de Contrato
+       #region Implementacion de Contrato
         /// <summary>
         /// Se implementan todos los metodos que indica el contrato
         /// </summary>
+        public int idDojo 
+        {
+            get { return idDojom; }
+            set { idDojom = value; } 
+        }
+        public string imglogo 
+        {
+            set { logDojo.ImageUrl = value; }
+        }
         public string logo
         {
             get
             {
-                string log = logoDojos.Text;
+                string log = logDojos.Text;
                 return log; 
             }
+            set { logDojos.Text = value; }
+
         }
       
         public string rif
         {
-            get { return rifDojo.Text; } 
+            get { return rifDojo.Text; }
+            set { rifDojo.Text = value; }
         }
+
         public string nombre 
         {
             get { return nombreDojo.Text; }
+            set { nombreDojo.Text = value; }
         }
+
         public string telefono 
         {
             get { return numeroDojo.Text; }
+            set { numeroDojo.Text = value; }
         }
+
         public string email
         {
             get { return emailDojo.Text; }
+            set { emailDojo.Text = value; }
         }
+
         public string estado 
         {
             get { return estadoDojo.Text; }
+            set { estadoDojo.Text = value; }
+
         }
+
         public string ciudad 
         {
             get { return ciudadDojo.Text; }
+            set { ciudadDojo.Text = value; }
         }
+
         public string direccion
         {
             get { return direccionDojo.Text; }
+            set { direccionDojo.Text = value; }
         }
+
         public bool statusAct
         {
-            get { return statusDojoA.Checked; } 
+            get { return statusDojoA.Checked; }
+            set { statusDojoA.Checked = value; }
         }
+
         public bool statusIn
         {
             get { return statusDojoI.Checked; }
+            set { statusDojoI.Checked = value; }
         }
-        public int persona
-        {
-            get 
-            { 
-                int per = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                return per;          
-            }
-        }
+
         #endregion
 
        #region Constructor
         /// <summary>
         /// Es el constructor de la clase M4_AgregarDojo
         /// </summary>
-        public M4_AgregarDojo()
+        public M4_ModificarDojo()
 		{
-			_presentador = new PresentadorAgregarDojo(this);
+			_presentador = new PresentadorModificarDojo(this);
 		}
-
 		#endregion
+
         /// <summary>
         /// Metodo para el inicio de la vista
         /// </summary>
@@ -92,18 +114,40 @@ namespace templateApp.GUI.Modulo4
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "4";
+            this.idDojom = int.Parse(Request.QueryString["dojoMod"]);
+
+            if (!IsPostBack)
+            {
+                if ((Request.QueryString["dojoMod"] != null) || (int.Parse(Request.QueryString["dojoMod"]) > 0))
+                {
+                    _presentador.MostrarDojo();
+                }
+            }
         }
 
+
+
+
+        
+        
+        
+        
+        
         /// <summary>
         /// El metodo que perite la llamada del presentador para 
-        /// agregar el nuevo Dojo
+        /// modificar el Dojo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btn_agregarDojo_Click(object sender, EventArgs e)
+        protected void Btn_ModificarDojo_Click(object sender, EventArgs e)
         {
-            _presentador.AgregarDojo_Click();
-           Response.Redirect("M4_ListarDojos.aspx?success=1");
+           bool opc = _presentador.ModificarDojo_Click();
+            if (opc)
+                Response.Redirect("M4_ListarDojos.aspx?success=3");
+            else
+                Response.Redirect("M4_ListarDojos.aspx?success=4");
         }
+
+
     }
 }

@@ -10,16 +10,16 @@
 namespace templateApp.GUI.Modulo4 {
     
     
-    public partial class M4_AgregarDojo {
+    public partial class M4_ModificarDojo {
         
         /// <summary>
-        /// Control agregar_dojo.
+        /// Control modificar_dojo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm agregar_dojo;
+        protected global::System.Web.UI.HtmlControls.HtmlForm modificar_dojo;
         
         /// <summary>
         /// Control logDojo.
@@ -38,6 +38,15 @@ namespace templateApp.GUI.Modulo4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox logoDojos;
+        
+        /// <summary>
+        /// Control logDojos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox logDojos;
         
         /// <summary>
         /// Control rifDojo.
@@ -148,12 +157,12 @@ namespace templateApp.GUI.Modulo4 {
         protected global::System.Web.UI.WebControls.RadioButton statusDojoI;
         
         /// <summary>
-        /// Control btn_agregarDojo.
+        /// Control Btn_ModificarDojo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_agregarDojo;
+        protected global::System.Web.UI.WebControls.Button Btn_ModificarDojo;
     }
 }
