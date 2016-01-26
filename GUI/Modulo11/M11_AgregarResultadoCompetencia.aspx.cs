@@ -1,8 +1,6 @@
 ﻿using DominioSKD;
 using Interfaz_Contratos.Modulo11;
 using Interfaz_Presentadores.Modulo11;
-using LogicaNegociosSKD.Modulo10;
-using LogicaNegociosSKD.Modulo11;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -306,8 +304,8 @@ namespace templateApp.GUI.Modulo11
 
                 try
                 {
-                    List<Inscripcion> inscripciones = LogicaResultado.listaInscritosExamenAscenso(evento);
-                    foreach (Inscripcion inscripcion in inscripciones)
+                    //List<Inscripcion> inscripciones = LogicaResultado.listaInscritosExamenAscenso(evento);
+                    /*foreach (Inscripcion inscripcion in inscripciones)
                     {
                         this.dataTable.Text += M11_RecursoInterfaz.AbrirTR;
                         this.dataTable.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
@@ -315,7 +313,7 @@ namespace templateApp.GUI.Modulo11
                         this.dataTable.Text += M11_RecursoInterfaz.Seleccionar;
                         this.dataTable.Text += M11_RecursoInterfaz.CerrarTD;
                         this.dataTable.Text += M11_RecursoInterfaz.CerrarTR;
-                    }
+                    }*/
                 }
                 catch (Exception ex)
                 {
@@ -340,8 +338,8 @@ namespace templateApp.GUI.Modulo11
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kata
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
-                        foreach (Inscripcion inscripcion in inscripciones)
+                        //List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*foreach (Inscripcion inscripcion in inscripciones)
                         {
                             this.dataTable2.Text += M11_RecursoInterfaz.AbrirTR;
                             this.dataTable2.Text += M11_RecursoInterfaz.AbrirTD + inscripcion.Persona.Nombre + " " + inscripcion.Persona.Apellido + M11_RecursoInterfaz.CerrarTD;
@@ -355,7 +353,7 @@ namespace templateApp.GUI.Modulo11
                             this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo3;
                             this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
                             this.dataTable2.Text += M11_RecursoInterfaz.CerrarTR;
-                        }
+                        }*/
                     }
                     catch (Exception ex)
                     {
@@ -372,8 +370,8 @@ namespace templateApp.GUI.Modulo11
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kumite
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
-                        if ((inscripciones.Count != 1) && (inscripciones.Count != 0))
+                        //List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*if ((inscripciones.Count != 1) && (inscripciones.Count != 0))
                         {
                             int rango = buscarNumeroPermitido(inscripciones) / 2;
                             Session["M11_Rango"] = rango;
@@ -391,7 +389,7 @@ namespace templateApp.GUI.Modulo11
                                 this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
                                 this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
                             }
-                        }
+                        }*/
                     }
                     catch (Exception ex)
                     {
@@ -408,7 +406,7 @@ namespace templateApp.GUI.Modulo11
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kata
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                         foreach (Inscripcion inscripcion in inscripciones)
                         {
                             this.dataTable2.Text += M11_RecursoInterfaz.AbrirTR;
@@ -423,7 +421,7 @@ namespace templateApp.GUI.Modulo11
                             this.dataTable2.Text += M11_RecursoInterfaz.SeleccionarCombo3;
                             this.dataTable2.Text += M11_RecursoInterfaz.CerrarTD;
                             this.dataTable2.Text += M11_RecursoInterfaz.CerrarTR;
-                        }
+                        }*/
                     }
                     catch (Exception ex)
                     {
@@ -433,7 +431,7 @@ namespace templateApp.GUI.Modulo11
                     #region Carga de tabla de Atletas que compiten en una competencia de tipo kumite
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                         if ((inscripciones.Count != 1) && (inscripciones.Count != 0))
                         {
                             int rango = buscarNumeroPermitido(inscripciones) / 2;
@@ -452,7 +450,7 @@ namespace templateApp.GUI.Modulo11
                                 this.dataTable3.Text += M11_RecursoInterfaz.CerrarTD;
                                 this.dataTable3.Text += M11_RecursoInterfaz.CerrarTR;
                             }
-                        }
+                        }*/
                     }
                     catch (Exception ex)
                     {
@@ -465,7 +463,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bAgregar_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
+            /*if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Evento))
             {
                 #region Agregar Examen de Ascenso
                 Evento evento = new Evento();
@@ -508,7 +506,7 @@ namespace templateApp.GUI.Modulo11
                     throw ex;
                 }
                 #endregion
-            }
+            }*/
         }
 
         protected void bCancelar_Click(object sender, EventArgs e)
@@ -531,7 +529,7 @@ namespace templateApp.GUI.Modulo11
                     competencia.Categoria = categoria;
                     try
                     {
-                        List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                        /*List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                         List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue.Value);
                         List<ResultadoKata> listaResultado = new List<ResultadoKata>();
 
@@ -556,7 +554,7 @@ namespace templateApp.GUI.Modulo11
                             Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=5");
                         }
                         else
-                            Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=6");
+                            Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=6");*/
                     }
                     catch (Exception ex)
                     {
@@ -584,7 +582,7 @@ namespace templateApp.GUI.Modulo11
                         competencia.Categoria = categoria;
                         try
                         {
-                            List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
+                            /*List<Inscripcion> inscripciones = LogicaResultado.listaInscritosCompetencia(competencia);
                             List<valorKataKumite> valores = JsonConvert.DeserializeObject<List<valorKataKumite>>(rvalue2.Value);
                             List<ResultadoKumite> listaKumite = new List<ResultadoKumite>();
 
@@ -611,7 +609,7 @@ namespace templateApp.GUI.Modulo11
                                 Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=13");
                             }
                             else
-                                Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=14");
+                                Response.Redirect("M11_ListarResultadoCompetencia.aspx?success=14");*/
                         }
                         catch (Exception ex)
                         {
@@ -625,7 +623,7 @@ namespace templateApp.GUI.Modulo11
 
         protected void bAgregarAmbos_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
+            /*if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 if (Session["M11_especialidad"].ToString().Equals("3"))
                 {
@@ -676,12 +674,12 @@ namespace templateApp.GUI.Modulo11
                         #endregion
                     }
                 }
-            }
+            }*/
         }
 
         protected void bSiguiente_Click(object sender, EventArgs e)
         {
-            alert.Visible = false;
+            /*alert.Visible = false;
             if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) / 2;
@@ -806,12 +804,12 @@ namespace templateApp.GUI.Modulo11
                     }
                     #endregion
                 }
-            }
+            }*/
         }
 
         protected void bSiguienteAmbos_Click(object sender, EventArgs e)
         {
-            if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
+            /*if (Session["M11_tipo"].Equals(M11_RecursoInterfaz.Competencia))
             {
                 Session["M11_Rango"] = Convert.ToInt32(Session["M11_Rango"].ToString()) / 2;
                 Competencia competencia = new Competencia();
@@ -882,7 +880,7 @@ namespace templateApp.GUI.Modulo11
             }
             bSiguienteAmbos.Visible = false;
             bSiguiente.Visible = true;
-            this.dataTable2.Text = " ";
+            this.dataTable2.Text = " ";*/
         }
 
         private void llenarComboCategoria(List<Categoria> lista)
@@ -988,7 +986,7 @@ namespace templateApp.GUI.Modulo11
                 empate = inscripcionesEnCurso(listaKumite, lista);
                 if (empate.Equals(false))
                 {
-                    LogicaResultado.agregarResultadoKumite(listaKumite);
+                    //LogicaResultado.agregarResultadoKumite(listaKumite);
                 }
                 dataTable3.Text = "";
             }

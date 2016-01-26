@@ -77,6 +77,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Modulo7\DaoCinta.cs" />
+    <Compile Include="DAO\Modulo7\DaoCompetencia.cs" />
+    <Compile Include="DAO\Modulo7\DaoDojo.cs" />
+    <Compile Include="DAO\Modulo7\DaoEvento.cs" />
+    <Compile Include="DAO\Modulo7\DaoHorario.cs" />
+    <Compile Include="DAO\Modulo7\DaoMatricula.cs" />
+    <Compile Include="DAO\Modulo7\DaoOrganizacion.cs" />
+    <Compile Include="DAO\Modulo7\DaoPersona.cs" />
+    <Compile Include="DAO\Modulo7\DaoTipoEvento.cs" />
+    <Compile Include="DAO\Modulo7\DaoUbicacion.cs" />
+    <Compile Include="DAO\Modulo7\RecursosDAOModulo7.Designer.cs">
+      <DependentUpon>RecursosDAOModulo7.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +139,16 @@
     <Compile Include="DAO\Modulo5\RecursosDaoModulo5.Designer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoCinta.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoCompetencia.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoDojo.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoEvento.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoHorario.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoMatricula.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoOrganizacion.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoPersona.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoTipoEvento.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoUbicacion.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoDatos.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoDiseno.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoPlanilla.cs" />
@@ -134,13 +159,11 @@
     <Compile Include="InterfazDAO\Modulo3\IDaoOrganizacion.cs" />
     <Compile Include="InterfazDAO\Modulo5\IDaoCinta.cs" />
     <Compile Include="InterfazDAO\Modulo9\IDaoEvento.cs" />
-    <Compile Include="Modulo10\BDAsistencia.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo10.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo11\BDResultado.cs" />
     <Compile Include="Modulo11\RecursosBDModulo11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -174,21 +197,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo4.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo7\BDCinta.cs" />
-    <Compile Include="Modulo7\BDCompetencia.cs" />
-    <Compile Include="Modulo7\BDDojo.cs" />
-    <Compile Include="Modulo7\BDEvento.cs" />
-    <Compile Include="Modulo7\BDHorario.cs" />
-    <Compile Include="Modulo7\BDMatricula.cs" />
-    <Compile Include="Modulo7\BDOrganizacion.cs" />
-    <Compile Include="Modulo7\BDPersona.cs" />
-    <Compile Include="Modulo7\BDTipoEvento.cs" />
-    <Compile Include="Modulo7\BDUbicacion.cs" />
-    <Compile Include="Modulo7\RecursosBDModulo7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo7.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -220,6 +228,10 @@
     <EmbeddedResource Include="DAO\Modulo12\RecursosDAOModulo12.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAOModulo12.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo7\RecursosDAOModulo7.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo16\RecursosBDModulo16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -267,10 +279,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo7\RecursosBDModulo7.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo7.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo8.Designer.cs</LastGenOutput>
@@ -316,12 +324,10 @@
     <Folder Include="DAO\Modulo13\" />
     <Folder Include="DAO\Modulo4\" />
     <Folder Include="DAO\Modulo6\" />
-    <Folder Include="DAO\Modulo7\" />
     <Folder Include="DAO\Modulo8\" />
     <Folder Include="InterfazDAO\Modulo13\" />
     <Folder Include="InterfazDAO\Modulo4\" />
     <Folder Include="InterfazDAO\Modulo6\" />
-    <Folder Include="InterfazDAO\Modulo7\" />
     <Folder Include="InterfazDAO\Modulo8\" />
   </ItemGroup>
   <ItemGroup>
