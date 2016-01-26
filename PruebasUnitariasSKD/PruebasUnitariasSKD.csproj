@@ -11,6 +11,7 @@
     <AssemblyName>PruebasUnitariasSKD</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,18 +30,33 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\bin\log4net.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,21 +64,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modulo10\M10_PruebasBDAsistencia.cs" />
     <Compile Include="Modulo10\M10_PruebasComandosAsistencia.cs" />
     <Compile Include="Modulo10\M10_PruebasDAO.cs" />
-    <Compile Include="Modulo10\M10_PruebasLogica.cs" />
     <Compile Include="Modulo10\RecursosPU_Mod10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod10.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo11\M11_PruebasBDResultado.cs" />
     <Compile Include="Modulo11\M11_PruebasComandoResultadoCompetencia.cs" />
     <Compile Include="Modulo11\M11_PruebasDAOResultadoAscenso.cs" />
     <Compile Include="Modulo11\M11_PruebasDAOResultadoKata.cs" />
     <Compile Include="Modulo11\M11_PruebasDAOResultadoKumite.cs" />
-    <Compile Include="Modulo11\M11_PruebasLogicaResultado.cs" />
     <Compile Include="Modulo11\RecursosPU_Mod11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +82,7 @@
     </Compile>
     <Compile Include="Modulo12\PruebaLogicaCompetencias.cs" />
     <Compile Include="Modulo12\PruebasBDCompetencias.cs" />
+    <Compile Include="Modulo12\PruebasDAOCompetencias.cs" />
     <Compile Include="Modulo13\RecursosPU_Mod13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -84,28 +98,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod14.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\PruebaDatos.cs" />
-    <Compile Include="Modulo15\PruebaInterfaz.cs" />
-    <Compile Include="Modulo15\PruebaLogica.cs" />
+    <Compile Include="Modulo15\PruebaComando.cs" />
+    <Compile Include="Modulo15\PruebaDao.cs" />
     <Compile Include="Modulo15\RecursosPU_Mod15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod15.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo16\PruebaComandoAgregarItem.cs" />
-    <Compile Include="Modulo16\PruebaComandoEliminarItem.cs" />
-    <Compile Include="Modulo16\PruebaComandoModificarCarrito.cs" />
-    <Compile Include="Modulo16\PruebaComandoRegistrarPago.cs" />
-    <Compile Include="Modulo16\PruebaDaoCarrito.cs" />
-    <Compile Include="Modulo16\PruebaComandoVerCarrito.cs" />
+    <Compile Include="Modulo16\PruebaComandoAgregarItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaComandoEliminarItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaComandoModificarCarrito.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaComandoRegistrarPago.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaComandoVerCarrito.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaDaoCarrito.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaDaoConsultarImplementos.cs" />
+    <Compile Include="Modulo16\PruebaDaoDetallarImplemento.cs" />
     <Compile Include="Modulo16\RecursosPU_Mod16.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod16.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Modulo1\PruebasUnitariasDominio.cs" />
     <Compile Include="Modulo1\PruebasUnitariasDatos.cs" />
     <Compile Include="Modulo1\PruebasUnitariasLogicaN.cs" />
+    <Compile Include="Modulo1\PruebaUnitariaPresentadores.cs" />
     <Compile Include="Modulo1\RecursosPU_Mod1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -113,6 +141,7 @@
     </Compile>
     <Compile Include="Modulo2\PruebasUnitariasDatos.cs" />
     <Compile Include="Modulo2\PruebasUnitariasLogicaN.cs" />
+    <Compile Include="Modulo2\PruebaUnitariasPresentadoresM2.cs" />
     <Compile Include="Modulo2\RecursosPU_Mod2.Designer.cs">
       <DependentUpon>RecursosPU_Mod2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -142,29 +171,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod6.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo7\M7_PruebaLogicaEventosPagos.cs" />
-    <Compile Include="Modulo7\M7_PruebaLogicaCintas.cs" />
-    <Compile Include="Modulo7\M7_PruebaLogicaEventosInscritos.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDCinta.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDCompetencia.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDDojo.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDEvento.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDHorario.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDOrganizacion.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDMatricula.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDPersona.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDTipoEvento.cs" />
-    <Compile Include="Modulo7\M7_PruebasBDUbicacion.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaEventosAsistidos.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaEventosPagos.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaHorarioPractica.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaMatriculasPagas.cs" />
-    <Compile Include="Modulo7\M7_PruebasLogicaOrganizacionYDojo.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoConsultarPerfil.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCinta.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarCompetencia.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarHorarioPractica.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarMatricula.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoDetallarEvento.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosInscritos.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoHorarioPractica.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoMatriculasPagas.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosPagos.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoEventosAsistidos.cs" />
+    <Compile Include="Modulo7\PruebasComando\M7_PruebasComandoListarCintas.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOCinta.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOCompetencia.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAODojo.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOEvento.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOHorario.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOMatricula.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOOrganizacion.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOPersona.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOTipoEvento.cs" />
+    <Compile Include="Modulo7\PruebasDAO\M7_PruebasDAOUbicacion.cs" />
     <Compile Include="Modulo7\RecursosPU_Mod7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod7.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\PruebasRestCinta.cs" />
+    <Compile Include="Modulo8\PruebaDAORestriccionCompetencia.cs" />
     <Compile Include="Modulo8\RecursosPU_Mod8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -196,6 +231,10 @@
       <Project>{355ee1d1-efbd-44ed-9333-984e675ddd6d}</Project>
       <Name>Interfaz</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Interfaz_Contratos\Interfaz_Contratos.csproj">
+      <Project>{688be1ea-7c38-424e-a86a-14ba0fa85f20}</Project>
+      <Name>Interfaz_Contratos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaz_Presentadores\Interfaz_Presentadores.csproj">
       <Project>{f31464f0-9be3-4fe9-9a30-34d5891cc4ea}</Project>
       <Name>Interfaz_Presentadores</Name>
@@ -222,6 +261,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo15\RecursosPU_Mod15.resx" />
     <EmbeddedResource Include="Modulo16\RecursosPU_Mod16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosPU_Mod16.Designer.cs</LastGenOutput>
@@ -271,6 +311,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

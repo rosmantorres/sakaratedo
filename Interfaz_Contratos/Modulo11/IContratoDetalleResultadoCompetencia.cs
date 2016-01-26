@@ -9,20 +9,20 @@ namespace Interfaz_Contratos.Modulo11
 {
     public interface IContratoDetalleResultadoCompetencia
     {
-        TextBox fechaEvento { set; }
+        TextBox FechaEvento { get;  set; }
 
-        TextBox nombreEvento { set; }
+        TextBox NombreEvento { get; set; }
 
-        TextBox especialidadEvento { set; }
+        TextBox EspecialidadEvento { get; set; }
 
-        TextBox categoriaEvento { set; }
+        TextBox CategoriaEvento { get; set; }
 
-        Literal dataTable { set; }
+        Literal TablaAscenso { get; set; }
 
-        Literal dataTable2 { set; }
+        Literal TablaKata { get; set; }
 
-        Literal dataTable3 { set; }
+        Literal TablaKumite { get; set; }
 
-
+        bool LEspecialidad { get; set; }
     }
 }

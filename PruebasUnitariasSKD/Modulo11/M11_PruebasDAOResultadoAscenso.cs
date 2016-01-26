@@ -178,6 +178,24 @@ namespace PruebasUnitariasSKD.Modulo11
             Assert.NotNull(entidad);
         }
 
+        [Test]
+
+        public void PruebaTodaLasFechasEventoAscenso()
+        {
+            IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
+            listaEntidad = DAO.TodasLasFechasEventoAscenso();
+            Assert.NotNull(listaEntidad);
+        }
+
+        [Test]
+
+        public void PruebaAscensosXfecha()
+        {
+            IDaoResultadoAscenso DAO = FabricaDAOSqlServer.ObtenerDAOResultadoAscenso();
+            listaEntidad = DAO.AscensosPorFechaM10("15/10/2016");
+            Assert.NotNull(listaEntidad);
+        }
+
         
         #endregion
     }

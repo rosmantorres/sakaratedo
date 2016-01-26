@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaNegociosSKD.Modulo15;
 using DominioSKD;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo15;
@@ -136,7 +135,7 @@ namespace templateApp.GUI.Modulo15
                     presentador.agregarImplemento(implemento);
 
                     guardarImagen();
-                    Response.Redirect("web_15_ConsultarImplemento.aspx");
+                    Response.Redirect("web_15_ConsultarImplemento.aspx?agregar=exito");
                 }
                 else
                 {

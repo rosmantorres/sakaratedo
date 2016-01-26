@@ -11,6 +11,7 @@
     <AssemblyName>DominioSKD</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,10 +30,19 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,11 +68,14 @@
     <Compile Include="Entidades\Modulo11\ResultadoAscenso.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKata.cs" />
     <Compile Include="Entidades\Modulo11\ResultadoKumite.cs" />
+    <Compile Include="Entidades\Modulo11\ValorEvento.cs" />
+    <Compile Include="Entidades\Modulo11\ValorKataKumite.cs" />
     <Compile Include="Entidades\Modulo12\Categoria.cs" />
     <Compile Include="Cinta.cs" />
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\Modulo8\RestriccionCinta.cs" />
     <Compile Include="Entidades\Modulo15\Implemento.cs" />
     <Compile Include="Entidades\Modulo15\Usuario.cs" />
     <Compile Include="Entidades\Modulo16\Carrito.cs" />
@@ -74,6 +88,16 @@
     <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
     <Compile Include="Entidades\Modulo16\Pago.cs" />
     <Compile Include="Entidades\Modulo4\Dojo.cs" />
+    <Compile Include="Entidades\Modulo7\MatriculaM7.cs" />
+    <Compile Include="Entidades\Modulo7\CintaM7.cs" />
+    <Compile Include="Entidades\Modulo7\CompetenciaM7.cs" />
+    <Compile Include="Entidades\Modulo7\DojoM7.cs" />
+    <Compile Include="Entidades\Modulo7\EventoM7.cs" />
+    <Compile Include="Entidades\Modulo7\HorarioM7.cs" />
+    <Compile Include="Entidades\Modulo7\OrganizacionM7.cs" />
+    <Compile Include="Entidades\Modulo7\PersonaM7.cs" />
+    <Compile Include="Entidades\Modulo7\TipoEventoM7.cs" />
+    <Compile Include="Entidades\Modulo7\UbicacionM7.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Entidades\Modulo6\Matricula.cs" />
     <Compile Include="Entidades\Modulo14\Diseño.cs" />
@@ -83,6 +107,7 @@
     <Compile Include="Entidades\Modulo3\Organizacion.cs" />
     <Compile Include="Entidades\Modulo5\Cinta.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCompetencia.cs" />
+    <Compile Include="Entidades\Modulo8\RestriccionEvento.cs" />
     <Compile Include="Evento.cs" />
     <Compile Include="Entidades\Modulo9\Evento.cs" />
     <Compile Include="Entidades\Modulo9\Horario.cs" />
@@ -124,7 +149,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entidades\Modulo13\" />
-    <Folder Include="Entidades\Modulo7\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

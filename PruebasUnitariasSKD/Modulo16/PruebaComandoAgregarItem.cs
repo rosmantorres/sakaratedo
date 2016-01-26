@@ -59,39 +59,41 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            //Las fabricas
-            fabrica = new FabricaEntidades(); 
-            
+    
             //La persona
-            this.persona = new Persona();
+            this.persona = FabricaEntidades.ObtenerPersona();
             this.persona.Id = 11;
-            this.persona2 = new Persona();
+            this.persona2 = FabricaEntidades.ObtenerPersona();
             this.persona2.Id = 12;
-            this.persona3 = new Persona();
+            this.persona3 = FabricaEntidades.ObtenerPersona();
             this.persona3.Id = 13;
 
             //Dos implementos distintos
-            this.implemento = new Implemento();
+            this.implemento = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
-            this.implemento2 = new Implemento();
+            this.implemento2 = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento2.Id = 2;
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos
-            this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
+
+           /* this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
+=======
+            this.evento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
+>>>>>>> e8ac3154aec28d056bea24d3a4ad8b0913ba08cd
             this.evento.Id = 1;
             this.evento.Costo = 0;
 
-            this.evento2 = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
+            this.evento2 = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             this.evento2.Id = 2;
-            this.evento2.Costo = 2000;
+            this.evento2.Costo = 2000;*/
 
             //Dos matriculas distintas
-            this.matricula = new Matricula();
+            this.matricula = (Matricula)FabricaEntidades.ObtenerMatricula();
             this.matricula.Id = 1;
             this.matricula.Costo = 5000;
-            this.matricula2 = new Matricula();
+            this.matricula2 = (Matricula)FabricaEntidades.ObtenerMatricula();
             this.matricula2.Id = 2;
             this.matricula2.Costo = 4500;
 
@@ -270,7 +272,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento2 = null;           
             this.matricula = null;
             this.matricula2 = null;
-            fabrica = null;            
+            this.fabrica = null;            
             this.evento = null;
             this.evento2 = null;
         }

@@ -405,4 +405,35 @@
     <value>M11_PersonasEnCategoriaYAscenso</value>
     <comment>Nombre del SP a ejecutar</comment>
   </data>
+  <data name="ProcedimientoTodasLasFechasAscensosM10" xml:space="preserve">
+    <value>M11_TodasLasFechasAscensos</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="ParametroFechaFin" xml:space="preserve">
+    <value>@_fechafin</value>
+  </data>
+  <data name="ParametroFechaInicio" xml:space="preserve">
+    <value>@_fechaInicio</value>
+  </data>
+  <data name="ProcedimientoAscensosPorFechaM10" xml:space="preserve">
+    <value>M11_ConsultarAscensosRangoFecha</value>
+    <comment>Nombre del SP a ejecutar</comment>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CodigoErrorFormato" xml:space="preserve">
+    <value>SKD_00_004</value>
+    <comment>Codigo de error de Parseo</comment>
+  </data>
+  <data name="MensajeErrorFormato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mejsaje de error de parseo</comment>
+  </data>
+  <data name="MensajeFinInfoLogger" xml:space="preserve">
+    <value>Salida del Método</value>
+  </data>
+  <data name="MensajeInicioInfoLogger" xml:space="preserve">
+    <value>Entrada en el Método</value>
+  </data>
 </root>

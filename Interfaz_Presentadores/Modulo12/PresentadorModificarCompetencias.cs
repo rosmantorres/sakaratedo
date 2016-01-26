@@ -21,6 +21,7 @@ namespace Interfaz_Presentadores.Modulo12
     public class PresentadorModificarCompetencias
     {
         private IContratoModificarCompetencias vista;
+        int elIdComp;
 
         /// <summary>
         /// Constructor del presentador
@@ -31,6 +32,10 @@ namespace Interfaz_Presentadores.Modulo12
             this.vista = laVista;
         }
 
+
+        /// <summary>
+        /// Metodo para consultar las variables del url
+        /// </summary>
         public void ObtenerVariablesURL()
         {
             String modificarString = HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.strCompMod];
@@ -53,6 +58,9 @@ namespace Interfaz_Presentadores.Modulo12
 
         }
 
+        /// <summary>
+        /// Metodo para llenar los comboboxes organizaciones y cintas
+        /// </summary>
         public void LlenarCombos()
         {
             try
@@ -113,30 +121,46 @@ namespace Interfaz_Presentadores.Modulo12
                 vista.alerta = M12_RecursoInterfazPresentador.alertaHtml + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
             }
         }
+
+        /// <summary>
+        /// Metodo para modificar fechas
+        /// </summary>
         protected DateTime convertirFecha(string fechaE)
         {
             string diaFecha;
             string mesFecha;
             string anoFecha;
             string fechaCompleta;
-            string fechaCortada = fechaE.Substring(0, 24);
-            string formato = "ddd MMM dd yyyy hh:mm:ss";
-            DateTime fechaEntrada = DateTime.ParseExact(fechaCortada, formato, CultureInfo.InvariantCulture);
+            string fechaCortada;
+            if (fechaE.Length >= 24)
+            {
+                fechaCortada = fechaE.Substring(0, 24);
 
-            diaFecha = fechaEntrada.Day.ToString();
-            if (int.Parse(diaFecha) < 10)
-                diaFecha = "0" + diaFecha.ToString();
+                string formato = "ddd MMM dd yyyy hh:mm:ss";
+                DateTime fechaEntrada = DateTime.ParseExact(fechaCortada, formato, CultureInfo.InvariantCulture);
 
-            mesFecha = fechaEntrada.Month.ToString();
-            if (int.Parse(mesFecha) < 10)
-                mesFecha = "0" + mesFecha.ToString();
+                diaFecha = fechaEntrada.Day.ToString();
+                if (int.Parse(diaFecha) < 10)
+                    diaFecha = "0" + diaFecha.ToString();
 
-            anoFecha = fechaEntrada.Year.ToString();
-            fechaCompleta = mesFecha + "/" + diaFecha + "/" + anoFecha;
+                mesFecha = fechaEntrada.Month.ToString();
+                if (int.Parse(mesFecha) < 10)
+                    mesFecha = "0" + mesFecha.ToString();
 
-            return DateTime.ParseExact(fechaCompleta, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+                anoFecha = fechaEntrada.Year.ToString();
+                fechaCompleta = mesFecha + "/" + diaFecha + "/" + anoFecha;
+
+                return DateTime.ParseExact(fechaCompleta, "MM/dd/yyyy", CultureInfo.InvariantCulture);
+            }
+            else
+            {
+                return DateTime.ParseExact(fechaE,"MM/dd/yyyy",CultureInfo.InvariantCulture);
+            }
         }
 
+        /// <summary>
+        /// Metodo para detallar competencia
+        /// </summary>
         public void obtenerCompetencia(int elIdCompetencia) 
         {
             LlenarCombos();
@@ -145,6 +169,7 @@ namespace Interfaz_Presentadores.Modulo12
                 Entidad entidad = FabricaEntidades.ObtenerCompetencia();
 
                 entidad.Id = elIdCompetencia;
+                elIdComp = entidad.Id;
                 Comando<Entidad> comandoObtenerCompetenciaXID =
                     FabricaComandos.ObtenerComandoDetallarCompetencia(entidad);
 
@@ -251,6 +276,9 @@ namespace Interfaz_Presentadores.Modulo12
         
         }
 
+        /// <summary>
+        /// Metodo para modificar competencia
+        /// </summary>
         public void ModificarCompetencia() 
         {
             List<String> laListaDeInputs = new List<String>();
@@ -267,13 +295,19 @@ namespace Interfaz_Presentadores.Modulo12
                 laListaDeInputs.Add(M12_RecursoInterfazPresentador.orgTodas);
             if (vista.orgCompBool == false)
                 laListaDeInputs.Add(vista.organizacionComp.SelectedItem.Text);
-            //laListaDeInputs.Add(vista.longitudComp);
-            //laListaDeInputs.Add(vista.latitudComp);
+            
+            laListaDeInputs.Add(vista.longitudComp);
+            laListaDeInputs.Add(vista.latitudComp);
 
             if (vista.inicioComp != "" || vista.finComp != "")
             {
                 laListaDeInputs.Add(convertirFecha(vista.inicioComp).ToString());
                 laListaDeInputs.Add(convertirFecha(vista.finComp).ToString());
+            }
+            else
+            {
+                laListaDeInputs.Add(vista.inicioComp.ToString());
+                laListaDeInputs.Add(vista.finComp.ToString());
             }
 
             laListaDeInputs.Add(vista.edadIniComp);
@@ -301,15 +335,22 @@ namespace Interfaz_Presentadores.Modulo12
 
             if (Validaciones.ValidarCamposVacios(laListaDeInputs))
             {
+              Regex rex = new Regex(M12_RecursoInterfazPresentador.expresionNombre);
+              if (rex.IsMatch(vista.nombreComp))
+              {
                 try
                 {
+                    String modificarString = 
+                        HttpContext.Current.Request.QueryString[M12_RecursoInterfazPresentador.strCompMod];
+
                     Comando<bool> comandoModificarCompetencia;
 
                     DominioSKD.Entidades.Modulo12.Competencia laCompetencia =
-                        (DominioSKD.Entidades.Modulo12.Competencia)FabricaEntidades.ObtenerCompetencia();
+                        (DominioSKD.Entidades.Modulo12.Competencia)FabricaEntidades.ObtenerCompetencia(int.Parse(modificarString),vista.nombreComp,"",false,"");
 
                     //ARMAR OBJETO COMPETENCIA---->
                     //NOMBRE
+                    //laCompetencia.Id = elIdComp;
                     laCompetencia.Nombre = vista.nombreComp;
 
                     //TIPO COMPETENCIA
@@ -347,8 +388,12 @@ namespace Interfaz_Presentadores.Modulo12
                         laCompetencia.Categoria.Sexo = vista.cateSexoFComp;
 
                     //FECHAS INI-FIN
-                    laCompetencia.FechaInicio = Convert.ToDateTime(vista.inicioComp);
-                    laCompetencia.FechaFin = Convert.ToDateTime(vista.finComp);
+
+                    laCompetencia.FechaInicio = convertirFecha(vista.inicioComp);
+                    laCompetencia.FechaFin = convertirFecha(vista.finComp);
+
+                    //laCompetencia.FechaInicio = Convert.ToDateTime(vista.inicioComp);
+                    //laCompetencia.FechaFin = Convert.ToDateTime(vista.finComp);
 
                     //STATUS
                     if (vista.statusIniciarCompBool == true)
@@ -383,6 +428,15 @@ namespace Interfaz_Presentadores.Modulo12
                     vista.alerta = M12_RecursoInterfazPresentador.alertaHtml
                         + ex.Mensaje + M12_RecursoInterfazPresentador.alertaHtmlFinal;
                 }
+              }
+              else
+              {
+                  vista.alertaClase = M12_RecursoInterfazPresentador.alertaError;
+                  vista.alertaRol = M12_RecursoInterfazPresentador.tipoAlerta;
+                  vista.alerta = M12_RecursoInterfazPresentador.alertaHtml
+                  + M12_RecursoInterfazPresentador.nombreInvalido
+                  + M12_RecursoInterfazPresentador.alertaHtmlFinal;
+              }
             }
             else
             {

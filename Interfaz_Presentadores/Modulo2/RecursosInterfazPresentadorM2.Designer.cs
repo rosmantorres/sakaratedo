@@ -22,7 +22,7 @@ namespace Interfaz_Presentadores.Modulo2 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RecursosInterfazPresentadorM2 {
+    public class RecursosInterfazPresentadorM2 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Interfaz_Presentadores.Modulo2.RecursosInterfazPresentadorM2", typeof(RecursosInterfazPresentadorM2).Assembly);
@@ -51,7 +51,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -64,7 +64,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         ///   Looks up a localized string similar to user.
         ///   Busca una cadena traducida similar a Agregar.
         /// </summary>
-        internal static string agregarCat {
+        public static string agregarCat {
             get {
                 return ResourceManager.GetString("agregarCat", resourceCulture);
             }
@@ -73,7 +73,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;a title=&apos;Añadir&apos; class=&apos;btn btn-success glyphicon glyphicon-plus-sign botonRol&apos; data-toggle=&apos;modal&apos; data-target=&apos;#modal-create&apos; data-id=&apos;.
         /// </summary>
-        internal static string AgregarRolEtq {
+        public static string AgregarRolEtq {
             get {
                 return ResourceManager.GetString("AgregarRolEtq", resourceCulture);
             }
@@ -82,7 +82,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a SaKARAteDO2015.
         /// </summary>
-        internal static string claveDES {
+        public static string claveDES {
             get {
                 return ResourceManager.GetString("claveDES", resourceCulture);
             }
@@ -91,7 +91,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a SKD_00_13.
         /// </summary>
-        internal static string Codigo_Error_AgregarRol {
+        public static string Codigo_Error_AgregarRol {
             get {
                 return ResourceManager.GetString("Codigo_Error_AgregarRol", resourceCulture);
             }
@@ -100,7 +100,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a SKD_00_14.
         /// </summary>
-        internal static string Codigo_Error_ConsultarRolUsuario {
+        public static string Codigo_Error_ConsultarRolUsuario {
             get {
                 return ResourceManager.GetString("Codigo_Error_ConsultarRolUsuario", resourceCulture);
             }
@@ -109,7 +109,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a SKD_00_12.
         /// </summary>
-        internal static string Codigo_Error_EliminarRol {
+        public static string Codigo_Error_EliminarRol {
             get {
                 return ResourceManager.GetString("Codigo_Error_EliminarRol", resourceCulture);
             }
@@ -118,7 +118,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a SKD_00_15.
         /// </summary>
-        internal static string Codigo_Error_FiltrarRol {
+        public static string Codigo_Error_FiltrarRol {
             get {
                 return ResourceManager.GetString("Codigo_Error_FiltrarRol", resourceCulture);
             }
@@ -127,7 +127,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a SKD_00_10.
         /// </summary>
-        internal static string Codigo_Error_Hash {
+        public static string Codigo_Error_Hash {
             get {
                 return ResourceManager.GetString("Codigo_Error_Hash", resourceCulture);
             }
@@ -136,7 +136,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a SKD_17.
         /// </summary>
-        internal static string Codigo_Error_RolNoEditable {
+        public static string Codigo_Error_RolNoEditable {
             get {
                 return ResourceManager.GetString("Codigo_Error_RolNoEditable", resourceCulture);
             }
@@ -145,7 +145,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a SKD_00_16.
         /// </summary>
-        internal static string Codigo_Error_ValidarPrioridad {
+        public static string Codigo_Error_ValidarPrioridad {
             get {
                 return ResourceManager.GetString("Codigo_Error_ValidarPrioridad", resourceCulture);
             }
@@ -154,7 +154,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Eliminar.
         /// </summary>
-        internal static string eliminarCat {
+        public static string eliminarCat {
             get {
                 return ResourceManager.GetString("eliminarCat", resourceCulture);
             }
@@ -163,7 +163,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;a title=&apos;Eliminar&apos; class=&apos;btn btn-danger glyphicon glyphicon-remove-sign botonRol&apos; data-toggle=&apos;modal&apos; data-target=&apos;#modal-delete&apos; data-id=&apos;.
         /// </summary>
-        internal static string EliminarRolEtq {
+        public static string EliminarRolEtq {
             get {
                 return ResourceManager.GetString("EliminarRolEtq", resourceCulture);
             }
@@ -172,7 +172,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a x2.
         /// </summary>
-        internal static string equis2 {
+        public static string equis2 {
             get {
                 return ResourceManager.GetString("equis2", resourceCulture);
             }
@@ -181,7 +181,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;asp:DropDownList id=&quot;RolList&quot; class=&quot;btn btn-default dropdown-toggle&quot; AutoPostBack=&quot;True&quot; OnSelectedIndexChanged=&quot;Selection_Change&quot; runat=&quot;server&quot;&gt;.
         /// </summary>
-        internal static string etiquetaAperturaDropDawn {
+        public static string etiquetaAperturaDropDawn {
             get {
                 return ResourceManager.GetString("etiquetaAperturaDropDawn", resourceCulture);
             }
@@ -190,7 +190,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;/asp:DropDownList&gt;.
         /// </summary>
-        internal static string etiquetaCierreDropDawn {
+        public static string etiquetaCierreDropDawn {
             get {
                 return ResourceManager.GetString("etiquetaCierreDropDawn", resourceCulture);
             }
@@ -199,7 +199,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a ../../dist/img/AvatarSKD.jpg.
         /// </summary>
-        internal static string imgDefault {
+        public static string imgDefault {
             get {
                 return ResourceManager.GetString("imgDefault", resourceCulture);
             }
@@ -208,7 +208,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Info.
         /// </summary>
-        internal static string informacionCat {
+        public static string informacionCat {
             get {
                 return ResourceManager.GetString("informacionCat", resourceCulture);
             }
@@ -217,7 +217,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;a title=&apos;Info&apos; class=&apos;btn btn-info glyphicon glyphicon-info-sign &apos;data-toggle=&apos;modal&apos;  data-target=&apos;#modal-info&apos; data-id=&apos;.
         /// </summary>
-        internal static string InfoRol {
+        public static string InfoRol {
             get {
                 return ResourceManager.GetString("InfoRol", resourceCulture);
             }
@@ -226,7 +226,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Error al agregar rol.
         /// </summary>
-        internal static string Mensaje_Error_AgregarRol {
+        public static string Mensaje_Error_AgregarRol {
             get {
                 return ResourceManager.GetString("Mensaje_Error_AgregarRol", resourceCulture);
             }
@@ -235,7 +235,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Error al consultar rol de usuario.
         /// </summary>
-        internal static string Mensaje_Error_ConsultarRolUsuario {
+        public static string Mensaje_Error_ConsultarRolUsuario {
             get {
                 return ResourceManager.GetString("Mensaje_Error_ConsultarRolUsuario", resourceCulture);
             }
@@ -244,7 +244,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Error al eliminar rol .
         /// </summary>
-        internal static string Mensaje_Error_EliminarRol {
+        public static string Mensaje_Error_EliminarRol {
             get {
                 return ResourceManager.GetString("Mensaje_Error_EliminarRol", resourceCulture);
             }
@@ -253,7 +253,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Error al filtrar rol.
         /// </summary>
-        internal static string Mensaje_Error_FiltarRol {
+        public static string Mensaje_Error_FiltarRol {
             get {
                 return ResourceManager.GetString("Mensaje_Error_FiltarRol", resourceCulture);
             }
@@ -262,7 +262,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Error encontrado en login.hash.
         /// </summary>
-        internal static string Mensaje_Error_Hash {
+        public static string Mensaje_Error_Hash {
             get {
                 return ResourceManager.GetString("Mensaje_Error_Hash", resourceCulture);
             }
@@ -271,7 +271,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Error rol no editable.
         /// </summary>
-        internal static string Mensaje_Error_RolNoEditable {
+        public static string Mensaje_Error_RolNoEditable {
             get {
                 return ResourceManager.GetString("Mensaje_Error_RolNoEditable", resourceCulture);
             }
@@ -280,7 +280,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Rol no registrado/validado en sistema: LogicaNegociosSKD.logicaRol.prioridadRol().
         /// </summary>
-        internal static string Mensaje_Error_RolSinRegistro {
+        public static string Mensaje_Error_RolSinRegistro {
             get {
                 return ResourceManager.GetString("Mensaje_Error_RolSinRegistro", resourceCulture);
             }
@@ -289,7 +289,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a Error al validar prioridad.
         /// </summary>
-        internal static string Mensaje_Error_ValidarPrioridad {
+        public static string Mensaje_Error_ValidarPrioridad {
             get {
                 return ResourceManager.GetString("Mensaje_Error_ValidarPrioridad", resourceCulture);
             }
@@ -298,7 +298,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a user.
         /// </summary>
-        internal static string parametroIDUsuario {
+        public static string parametroIDUsuario {
             get {
                 return ResourceManager.GetString("parametroIDUsuario", resourceCulture);
             }
@@ -307,7 +307,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &apos; href=&apos;#&apos;&gt;&lt;/a&gt;.
         /// </summary>
-        internal static string RolFinEtq {
+        public static string RolFinEtq {
             get {
                 return ResourceManager.GetString("RolFinEtq", resourceCulture);
             }
@@ -316,7 +316,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a +.
         /// </summary>
-        internal static string signoMas {
+        public static string signoMas {
             get {
                 return ResourceManager.GetString("signoMas", resourceCulture);
             }
@@ -325,7 +325,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;asp:ListItem Value=&quot;.
         /// </summary>
-        internal static string subEtiquetaApertura {
+        public static string subEtiquetaApertura {
             get {
                 return ResourceManager.GetString("subEtiquetaApertura", resourceCulture);
             }
@@ -334,7 +334,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &quot;&gt;.
         /// </summary>
-        internal static string subEtiquetaCierreApertura {
+        public static string subEtiquetaCierreApertura {
             get {
                 return ResourceManager.GetString("subEtiquetaCierreApertura", resourceCulture);
             }
@@ -343,7 +343,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;/asp:ListItem&gt;.
         /// </summary>
-        internal static string subEtiquetaCierreTotal {
+        public static string subEtiquetaCierreTotal {
             get {
                 return ResourceManager.GetString("subEtiquetaCierreTotal", resourceCulture);
             }
@@ -352,7 +352,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;asp:ListItem Selected=&quot;True&quot; Value=&quot;select&quot;&gt;-Seleccionar rol- &lt;/asp:ListItem&gt;.
         /// </summary>
-        internal static string subEtiquetaSeleccionar {
+        public static string subEtiquetaSeleccionar {
             get {
                 return ResourceManager.GetString("subEtiquetaSeleccionar", resourceCulture);
             }
@@ -361,7 +361,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;/td&gt;.
         /// </summary>
-        internal static string tdFin {
+        public static string tdFin {
             get {
                 return ResourceManager.GetString("tdFin", resourceCulture);
             }
@@ -370,7 +370,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;td&gt;.
         /// </summary>
-        internal static string tdIni {
+        public static string tdIni {
             get {
                 return ResourceManager.GetString("tdIni", resourceCulture);
             }
@@ -379,7 +379,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;/tr&gt;.
         /// </summary>
-        internal static string trFin {
+        public static string trFin {
             get {
                 return ResourceManager.GetString("trFin", resourceCulture);
             }
@@ -388,7 +388,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;tr style=&apos;background: rgb(224, 235, 235);&apos;&gt;.
         /// </summary>
-        internal static string trInfoIni {
+        public static string trInfoIni {
             get {
                 return ResourceManager.GetString("trInfoIni", resourceCulture);
             }
@@ -397,7 +397,7 @@ namespace Interfaz_Presentadores.Modulo2 {
         /// <summary>
         ///   Busca una cadena traducida similar a &lt;tr&gt;.
         /// </summary>
-        internal static string trIni {
+        public static string trIni {
             get {
                 return ResourceManager.GetString("trIni", resourceCulture);
             }

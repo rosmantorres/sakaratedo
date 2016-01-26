@@ -39,7 +39,7 @@ namespace PruebasUnitariasSKD.Modulo16
             fabrica = new FabricaDAOSqlServer();
 
             //Obtengo el comando
-            this.pruebaDao = (DaoImplemento)fabrica.ObtenerDaoProductos();
+            //this.pruebaDao = (DaoImplemento)fabrica.ObtenerDaoProductos();
 
 
         }
@@ -52,7 +52,7 @@ namespace PruebasUnitariasSKD.Modulo16
         [Test]
         public void pruebaConsultarImplementos()
         {
-            daoImplemento = fabrica.ObtenerDaoProductos();
+            //daoImplemento = fabrica.ObtenerDaoProductos();
             Assert.IsNotNull(daoImplemento.ListarImplemento());
 
         }

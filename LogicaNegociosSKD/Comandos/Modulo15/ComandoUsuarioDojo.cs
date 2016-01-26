@@ -28,23 +28,23 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             }
             catch (ExcepcionComandoUsuarioDojo ex)
             {
-                ex = new ExcepcionComandoUsuarioDojo("Error en Comando usuario Dojo", new Exception());
-                Logger.EscribirError("Error en Comando usuario Dojo", ex);
+                ex = new ExcepcionComandoUsuarioDojo(RecursosComandoModulo15.ErrorCUDojo, new Exception());
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCUDojo, ex);
                 throw ex;
 
             }
 
             catch (ExceptionSKD ex)
             {
-                ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                Logger.EscribirError("Error en Comando usuario Dojo", ex);
+                ex = new ExcepcionesSKD.ExceptionSKD(RecursosComandoModulo15.ErrorOperacion, new Exception());
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCUDojo, ex);
                 throw ex;
             }
 
             catch (Exception ex)
             {
 
-                Logger.EscribirError("Error de en Comando usuario Dojo", ex);
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCUDojo, ex);
                 throw ex;
             }
         }

@@ -28,23 +28,23 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             }
             catch (ExcepcionComandoConsultarTodosImplementos2 ex)
             {
-                ex = new ExcepcionComandoConsultarTodosImplementos2("Error en Comando consultar todos implementos2", new Exception());
-                Logger.EscribirError("Error en Comando consultar todos implementos2", ex);
+                ex = new ExcepcionComandoConsultarTodosImplementos2(RecursosComandoModulo15.ErrorCCTImplementos2, new Exception());
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCCTImplementos2, ex);
                 throw ex;
 
             }
 
             catch (ExceptionSKD ex)
             {
-                ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                Logger.EscribirError("Error en Comando consultar todos implementos2", ex);
+                ex = new ExcepcionesSKD.ExceptionSKD(RecursosComandoModulo15.ErrorOperacion, new Exception());
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCCTImplementos2, ex);
                 throw ex;
             }
 
             catch (Exception ex)
             {
 
-                Logger.EscribirError("Error de en Comando consultar todos implemento2", ex);
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCCTImplementos2, ex);
                 throw ex;
             }
             return lista;

@@ -31,16 +31,17 @@ namespace templateApp.GUI.Modulo9
             #region LLENAR COMBO TIPOEVENTO
             if (!IsPostBack)
             {
-                otroEvento.Visible = false;
+                
                 presentador.LlenarCombos();
             }
             #endregion
         }
+        #region void
         protected void btn_agregarEventoClick(object sender, EventArgs e)
         {
             presentador.AgregarEvento(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
         }
-        #region void
+ 
         protected void comboTipoEvento_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -61,10 +62,6 @@ namespace templateApp.GUI.Modulo9
         string IContratoAgregarEvento.iNombreEvento
         {
             get { return nombreEvento.Text; }
-        }
-        string IContratoAgregarEvento.iOtroEvento
-        {
-            get { return otroEvento.Text; }
         }
         string IContratoAgregarEvento.iCostoEvento
         {
@@ -90,12 +87,10 @@ namespace templateApp.GUI.Modulo9
         {
             get { return descripcionEvento.Text; }
         }
-
         string IContratoAgregarEvento.iStatusActivo
         {
             get { return inputEstadoActivo.Text; }
         }
-
         bool IContratoAgregarEvento.iStatusActivoBool
         {
             get { return inputEstadoActivo.Checked; }
@@ -104,7 +99,6 @@ namespace templateApp.GUI.Modulo9
         {
             get { return inputEstadoInactivo.Text; }
         }
-
         bool IContratoAgregarEvento.iStatusInactivoBool
         {
             get { return inputEstadoInactivo.Checked; }
@@ -113,12 +107,10 @@ namespace templateApp.GUI.Modulo9
         {
             set { alert.Attributes[M9_RecursoInterfaz.alertClase] = value; }
         }
-
         public string alertaRol
         {
             set { alert.Attributes[M9_RecursoInterfaz.alertRole] = value; }
         }
-
         public string alerta
         {
             set { alert.InnerHtml = value; }

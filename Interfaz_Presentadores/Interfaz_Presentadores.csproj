@@ -34,18 +34,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\packages\CKEditor.NET.dll</HintPath>
+      <HintPath>..\bin\CKEditor.NET.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+    <Reference Include="itextsharp">
+      <HintPath>..\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <!--<Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Visual Studio 2012\Projects\EjemploPdf\EjemploPdf\bin\itextsharp.dll</HintPath>
-    </Reference>
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>-->
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +56,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo8\PresentadorAgregarRestriccionCinta.cs" />
+    <Compile Include="Modulo8\PresentadorAgregarRestriccionCompetencia.cs" />
+    <Compile Include="Modulo11\PresentadorDetalleResultado.cs" />
+    <Compile Include="Modulo7\M7_RecursosPresentador.Designer.cs">
+      <DependentUpon>M7_RecursosPresentador.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Modulo7\PresentadorDetallarEventoPago.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarHorarioPractica.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarMatricula.cs" />
+    <Compile Include="Modulo7\PresentadorConsultarPerfil.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarCinta.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarEvento.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarCompetencia.cs" />
+    <Compile Include="Modulo7\PresentadorListarCintasObtenidas.cs" />
+    <Compile Include="Modulo7\PresentadorListarEventosInscritos.cs" />
+    <Compile Include="Modulo7\PresentadorListarHorarioPractica.cs" />
+    <Compile Include="Modulo7\PresentadorListarMatriculasPagas.cs" />
+    <Compile Include="Modulo7\PresentadorListarEventosPagos.cs" />
+    <Compile Include="Modulo7\PresentadorListarEventosAsistidos.cs" />
     <Compile Include="Modulo10\M10_RecursosPresentador.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -62,6 +86,20 @@
     <Compile Include="Modulo10\PresentadorDetalleAsistencia.cs" />
     <Compile Include="Modulo10\PresentadorListarAsistencia.cs" />
     <Compile Include="Modulo10\PresentadorModificarAsistencia.cs" />
+    <Compile Include="Modulo11\M11_RecursosPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M11_RecursosPresentador.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo11\PresentadorAgregarResultado.cs" />
+    <Compile Include="Modulo11\PresentadorListaResultado.cs" />
+    <Compile Include="Modulo11\PresentadorModificarResultado.cs" />
+    <Compile Include="Modulo15\M15_RecursoInterfazPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M15_RecursoInterfazPresentador.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo14\PresentadorM14MostrarFacturaPlanilla.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
@@ -134,13 +172,27 @@
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
     <Compile Include="Modulo5\RecursoPresentadorM5.Designer.cs" />
+    <Compile Include="Modulo8\PresentadorAgregarRestriccionEvento.cs" />
+    <Compile Include="Modulo8\PresentadorConsultarRestriccionesCinta.cs" />
+    <Compile Include="Modulo8\PresentadorConsultarRestriccionesEvento.cs" />
+    <Compile Include="Modulo8\PresentadorConsultarTodosRestriccionCompetencia.cs" />
+    <Compile Include="Modulo8\PresentadorModificarRestriccionCinta.cs" />
+    <Compile Include="Modulo8\PresentadorModificarRestriccionCompetencia.cs" />
+    <Compile Include="Modulo8\PresentadorModificarRestriccionEvento.cs" />
+    <Compile Include="Modulo8\RecursoPresentadorM8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoPresentadorM8.resx</DependentUpon>
+    </Compile>
     <Compile Include="Modulo9\M9_RecursoInterfazPresentador.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>M9_RecursoInterfazPresentador.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo9\PresentadorAgregarEvento.cs" />
-    <Compile Include="Modulo9\PresentadorListarEventos.cs" />
+    <Compile Include="Modulo9\PresentadorDetalleEvento.cs" />
+    <Compile Include="Modulo9\PresentadorListarEvento.cs" />
+    <Compile Include="Modulo9\PresentadorModificarEvento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
@@ -167,17 +219,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
-    <Folder Include="Modulo7\" />
-    <Folder Include="Modulo8\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Modulo7\M7_RecursosPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M7_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\M10_RecursosPresentador.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M10_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo11\M11_RecursosPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M11_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo15\M15_RecursoInterfazPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M15_RecursoInterfazPresentador.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo16\M16_Recursointerfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -200,7 +261,7 @@
       <LastGenOutput>RecursosInterfazPresentadorM1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo2\RecursosInterfazPresentadorM2.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazPresentadorM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo3\RecursosPresentadorM3.resx">
@@ -208,6 +269,10 @@
       <LastGenOutput>RecursosPresentadorM3.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo5\RecursoPresentadorM5.resx" />
+    <EmbeddedResource Include="Modulo8\RecursoPresentadorM8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoPresentadorM8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo9\M9_RecursoInterfazPresentador.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M9_RecursoInterfazPresentador.Designer.cs</LastGenOutput>

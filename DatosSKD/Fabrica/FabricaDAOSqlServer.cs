@@ -63,7 +63,7 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 7
-        /*
+        
         /// <summary>
         /// Método que instancia el DAO de cinta de M7
         /// </summary>
@@ -153,10 +153,26 @@ namespace DatosSKD.Fabrica
         {
             return new DAO.Modulo7.DaoUbicacion();
         }
-        */
+        
         #endregion
 
         #region Modulo 8
+
+        public DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionCompetencia ObtenerDAORestriccionCompetencia()
+        {
+            return new DatosSKD.DAO.Modulo8.DAORestriccionCompetencia();
+        }
+
+        public static DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionCinta ObtenerDAORestriccionCinta()
+        {
+            return new DatosSKD.DAO.Modulo8.DAORestriccionCinta();
+        }
+
+        public static DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionEvento ObtenerDAORestriccionEvento()
+        {
+            return new DatosSKD.DAO.Modulo8.DAORestriccionEvento();
+        }
+
         #endregion
 
         #region Modulo 9

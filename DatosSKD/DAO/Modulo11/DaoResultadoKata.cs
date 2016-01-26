@@ -69,8 +69,6 @@ namespace DatosSKD.DAO.Modulo11
         public List<string> ListaEspecialidadesCompetencia(string idCompetencia)
         {
             List<string> especialidades = new List<string>();
-            string especialidad2 = "0";
-            especialidades.Add(especialidad2);
             try
             {
                 List<Parametro> parametros = new List<Parametro>();

@@ -123,6 +123,9 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
+  <data name="agregarExito" xml:space="preserve">
+    <value>../Modulo9/M9_ListarEventos.aspx?success=1</value>
+  </data>
   <data name="alertaError" xml:space="preserve">
     <value>alert alert-danger alert-dismissible</value>
   </data>
@@ -145,10 +148,13 @@
     <value>"&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M9_DetalleEvento.aspx?EventDetalle=</value>
+    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M9_DetalleEvento.aspx?eventoDetalle=</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M9_ModificarEvento.aspx?EventMod=</value>
+    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M9_ModificarEvento.aspx?eventoMod=</value>
+  </data>
+  <data name="camposVacios" xml:space="preserve">
+    <value>Existen campos vacios, todos los campos son obligatorios</value>
   </data>
   <data name="CerrarTD" xml:space="preserve">
     <value>&lt;/td&gt;</value>
@@ -156,34 +162,76 @@
   <data name="CerrarTR" xml:space="preserve">
     <value>&lt;/tr&gt;</value>
   </data>
+  <data name="coma" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="comboVacio" xml:space="preserve">
+    <value>Debe seleccionar un tipo de evento</value>
+  </data>
   <data name="errorGet" xml:space="preserve">
     <value>error</value>
+  </data>
+  <data name="expresionSQL" xml:space="preserve">
+    <value>/\w*((\%27)|(\'))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/ix</value>
+  </data>
+  <data name="idAlertAgregar" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="idAlertModificar" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="idModulo" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="idModuloModificar" xml:space="preserve">
+    <value>9.1</value>
+  </data>
+  <data name="innerHtmlAlertAgregar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento agregado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="innerHtmlAlertModificar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento modificado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="inputCaracteresEspeciales" xml:space="preserve">
+    <value>Los campos no deben tener caracteres especiales</value>
   </data>
   <data name="inputMalicioso" xml:space="preserve">
     <value>Se ha detectado un ingreso de datos malicioso.</value>
   </data>
+  <data name="keyCombo" xml:space="preserve">
+    <value>key</value>
+  </data>
+  <data name="modificarExito" xml:space="preserve">
+    <value>../Modulo9/M9_ListarEventos.aspx?success=2</value>
+  </data>
   <data name="selecccionarEvento" xml:space="preserve">
-    <value>Seleccionar Evento</value>
+    <value>Seleccione un Evento</value>
   </data>
   <data name="strErrorMalicioso" xml:space="preserve">
     <value>input_malicioso</value>
   </data>
+  <data name="strEventoDetalle" xml:space="preserve">
+    <value>eventoDetalle</value>
+  </data>
+  <data name="strEventoMod" xml:space="preserve">
+    <value>eventoMod</value>
+  </data>
+  <data name="strSuccess" xml:space="preserve">
+    <value>success</value>
+  </data>
   <data name="tipoAlerta" xml:space="preserve">
     <value>alert</value>
-  </data>
-  <data name="keyCombo" xml:space="preserve">
-    <value>key</value>
   </data>
   <data name="valueCombo" xml:space="preserve">
     <value>value</value>
   </data>
-  <data name="agregarExito" xml:space="preserve">
-    <value>../Modulo9/M9_ListarEventos.aspx?success=1</value>
+  <data name="expresionNombre" xml:space="preserve">
+    <value>^[A-Z 0-9 a-z]*$</value>
   </data>
-  <data name="camposVacios" xml:space="preserve">
-    <value>Existen campos vacios, todos los campos son obligatorios</value>
+  <data name="nombreInvalido" xml:space="preserve">
+    <value>El nombre posee un carácter inválido</value>
   </data>
-  <data name="comboVacio" xml:space="preserve">
-    <value>Seleccione un Tipo de Evento</value>
+  <data name="costoInvalido" xml:space="preserve">
+    <value>El costo del evento no puede ser negativo</value>
   </data>
 </root>

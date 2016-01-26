@@ -89,10 +89,13 @@
                                <option value="NIKE" >NIKE</option>
                                <option value="KOMBA" >KOMBA</option>
                                <option value="RS21" >RS21</option>
+                                <option value="otros" >Otros</option>
+
                         </select>
-                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                         <input id="marca_implemento_div"  placeholder="*marca" class="form-control"  runat="server"/>             
+                              
                       </div>
+                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
+                         <input id="marca_implemento_div"  placeholder="*marca" class="form-control"  runat="server"/>       
 
                         </div>
                       <br/>
@@ -104,7 +107,6 @@
                                <option value="M" >M</option>
                                <option value="L" >L</option>
                                <option value="XL" >XL</option>
-                               <option value="XXL" >XXL</option>
                                <option value="otros" >Otros</option>
 
                         </select>            
@@ -226,23 +228,23 @@
                      },
                      ctl00$contenidoCentral$tipo_implemento_div: {
                          required: true,
-                         minlength: 5,
-                         maxlength: 10,
+                         minlength: 3,
+                         maxlength: 120,
                      },
                      ctl00$contenidoCentral$marca_implemento_div: {
                          required: true,
-                         minlength: 5,
-                         maxlength: 10,
+                         minlength: 3,
+                         maxlength: 120,
                      },
                      ctl00$contenidoCentral$color_implemento_div: {
                          required: true,
-                         minlength: 5,
-                         maxlength: 10,
+                         minlength: 3,
+                         maxlength: 120,
                      },
                      ctl00$contenidoCentral$talla_implemento_div: {
                          required: true,
-                         minlength: 5,
-                         maxlength: 120,
+                         minlength: 1,
+                         maxlength: 3,
                      }
 
                  },
@@ -306,26 +308,26 @@
                      },
                      ctl00$contenidoCentral$tipo_implemento_div: {
                          required: "Este campo es obligatorio",
-                         minlength: "Minimo tiene que ser 5 caracteres",
-                         maxlength: "Maximo tiene que ser 10 caracteres"
+                         minlength: "Minimo tiene que ser 3 caracteres",
+                         maxlength: "Maximo tiene que ser 120 caracteres"
 
                      },
                      ctl00$contenidoCentral$marca_implemento_div: {
                          required: "Este campo es obligatorio",
-                         minlength: "Minimo tiene que ser 5 caracteres",
-                         maxlength: "Maximo tiene que ser 10 caracteres"
+                         minlength: "Minimo tiene que ser 3 caracteres",
+                         maxlength: "Maximo tiene que ser 120 caracteres"
 
                      },
-                     ctl00$contenidoCentral$color_implemento_div: {
+                     ctl00$contenidoCentral$color_impolemento_div: {
                          required: "Este campo es obligatorio",
-                         minlength: "Minimo tiene que ser 5 caracteres",
-                         maxlength: "Maximo tiene que ser 10 caracteres"
+                         minlength: "Minimo tiene que ser 3 caracteres",
+                         maxlength: "Maximo tiene que ser 120 caracteres"
 
                      },
                      ctl00$contenidoCentral$talla_implemento_div: {
                          required: "Este campo es obligatorio",
-                         minlength: "Minimo tiene que ser 5 caracteres",
-                         maxlength: "Maximo tiene que ser 10 caracteres"
+                         minlength: "Minimo tiene que ser 1 caracteres",
+                         maxlength: "Maximo tiene que ser 3 caracteres"
 
                      }
 
@@ -342,6 +344,7 @@
              });
 
 
+
              // talla implemento
              $("#contenidoCentral_talla_implemento").change(function () {
                  // alert("hola");
@@ -355,7 +358,6 @@
                  }
 
              });
-             $("#contenidoCentral_talla_implemento_div").hide();
 
 
              // tipo implemento
@@ -363,7 +365,6 @@
                  // alert("hola");
                  if ($("#contenidoCentral_tipo_implemento").val() == "otros") {
                      $("#contenidoCentral_tipo_implemento_div").val("");
-
                      $("#contenidoCentral_tipo_implemento_div").show();
 
                  } else {
@@ -373,23 +374,21 @@
                  }
 
              });
-             $("#contenidoCentral_tipo_implemento_div").hide();
 
 
              // color implemento
              $("#contenidoCentral_color_implemento").change(function () {
                  // alert("hola");
                  if ($("#contenidoCentral_color_implemento").val() == "otros") {
-                     $("#contenidoCentral_color_implemento_div").show();
+                     $("#contenidoCentral_color_impolemento_div").show();
                  } else {
-                     $("#contenidoCentral_color_implemento_div").hide();
-                     $("#contenidoCentral_color_implemento_div").val("prueba");
-                     $("#contenidoCentral_color_implemento_div-error").text("");
+                     $("#contenidoCentral_color_impolemento_div").hide();
+                     $("#contenidoCentral_color_impolemento_div").val("prueba");
+                     $("#contenidoCentral_color_impolemento_div-error").text("");
 
                  }
 
              });
-             $("#contenidoCentral_color_implemento_div").hide();
 
 
              // talla marca
@@ -405,7 +404,6 @@
                  }
 
              });
-             $("#contenidoCentral_marca_implemento_div").hide();
 
 
          });

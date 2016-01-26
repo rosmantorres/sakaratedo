@@ -151,7 +151,7 @@ namespace Interfaz_Presentadores.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M9_DetalleEvento.aspx?EventDetalle=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot;  href=&quot;M9_DetalleEvento.aspx?eventoDetalle=.
         /// </summary>
         internal static string BotonInfo {
             get {
@@ -160,7 +160,7 @@ namespace Interfaz_Presentadores.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M9_ModificarEvento.aspx?EventMod=.
+        ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M9_ModificarEvento.aspx?eventoMod=.
         /// </summary>
         internal static string BotonModificar {
             get {
@@ -196,11 +196,29 @@ namespace Interfaz_Presentadores.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Seleccione un Tipo de Evento.
+        ///   Looks up a localized string similar to ,.
+        /// </summary>
+        internal static string coma {
+            get {
+                return ResourceManager.GetString("coma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Debe seleccionar un tipo de evento.
         /// </summary>
         internal static string comboVacio {
             get {
                 return ResourceManager.GetString("comboVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El costo del evento no puede ser negativo.
+        /// </summary>
+        internal static string costoInvalido {
+            get {
+                return ResourceManager.GetString("costoInvalido", resourceCulture);
             }
         }
         
@@ -210,6 +228,87 @@ namespace Interfaz_Presentadores.Modulo9 {
         internal static string errorGet {
             get {
                 return ResourceManager.GetString("errorGet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^[A-Z 0-9 a-z]*$.
+        /// </summary>
+        internal static string expresionNombre {
+            get {
+                return ResourceManager.GetString("expresionNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /\w*((\%27)|(\&apos;))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/ix.
+        /// </summary>
+        internal static string expresionSQL {
+            get {
+                return ResourceManager.GetString("expresionSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string idAlertAgregar {
+            get {
+                return ResourceManager.GetString("idAlertAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string idAlertModificar {
+            get {
+                return ResourceManager.GetString("idAlertModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9.
+        /// </summary>
+        internal static string idModulo {
+            get {
+                return ResourceManager.GetString("idModulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 9.1.
+        /// </summary>
+        internal static string idModuloModificar {
+            get {
+                return ResourceManager.GetString("idModuloModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento agregado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertAgregar {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento modificado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertModificar {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Los campos no deben tener caracteres especiales.
+        /// </summary>
+        internal static string inputCaracteresEspeciales {
+            get {
+                return ResourceManager.GetString("inputCaracteresEspeciales", resourceCulture);
             }
         }
         
@@ -232,7 +331,25 @@ namespace Interfaz_Presentadores.Modulo9 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Seleccionar Evento.
+        ///   Looks up a localized string similar to ../Modulo9/M9_ListarEventos.aspx?success=2.
+        /// </summary>
+        internal static string modificarExito {
+            get {
+                return ResourceManager.GetString("modificarExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El nombre posee un carácter inválido.
+        /// </summary>
+        internal static string nombreInvalido {
+            get {
+                return ResourceManager.GetString("nombreInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seleccione un Evento.
         /// </summary>
         internal static string selecccionarEvento {
             get {
@@ -246,6 +363,33 @@ namespace Interfaz_Presentadores.Modulo9 {
         internal static string strErrorMalicioso {
             get {
                 return ResourceManager.GetString("strErrorMalicioso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to eventoDetalle.
+        /// </summary>
+        internal static string strEventoDetalle {
+            get {
+                return ResourceManager.GetString("strEventoDetalle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to eventoMod.
+        /// </summary>
+        internal static string strEventoMod {
+            get {
+                return ResourceManager.GetString("strEventoMod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to success.
+        /// </summary>
+        internal static string strSuccess {
+            get {
+                return ResourceManager.GetString("strSuccess", resourceCulture);
             }
         }
         

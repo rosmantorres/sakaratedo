@@ -101,7 +101,7 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btneliminar" type="button" class="btn btn-primary"  href="M15_ConsultarImplemento.aspx?eliminacionSuccess=1" >Eliminar</a>
+                <a id="btneliminar" type="button" class="btn btn-primary"  href="web_15_eliminarImplemento.aspx?eliminacionSuccess=1" >Eliminar</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
            </div>
           </div>
@@ -191,12 +191,9 @@
 
            
 
-                $('#example tfoot th').each(function () {
-                    var title = $(this).text();
-                    $(this).html('<input type="text" size="7"  placeholder="Buscar ' + title + '" />');
-                });
+             
 
-                table.columns().every( function () {
+                table.columns().every(function (){
                     var that = this;
 
                     $( 'input', this.footer()).on( 'keyup change', function () {

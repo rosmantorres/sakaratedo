@@ -18,5 +18,9 @@ namespace DatosSKD.InterfazDAO.Modulo11
         List<Entidad> ListaInscritosExamenAscenso(Entidad entidad);
 
         Entidad ConsultarEventoDetalle(string idEvento);
+
+        List<Entidad> TodasLasFechasEventoAscenso();
+
+        List<Entidad> AscensosPorFechaM10(string fecha);
     }
 }

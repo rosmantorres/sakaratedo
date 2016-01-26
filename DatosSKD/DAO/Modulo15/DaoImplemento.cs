@@ -8,7 +8,6 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo15;
-using DatosSKD.Modulo15;
 using DominioSKD;
 using DatosSKD.InterfazDAO.Modulo15;
 using DominioSKD.Fabrica;
@@ -398,7 +397,7 @@ namespace DatosSKD.DAO.Modulo15
                 }
                 else
                 {
-                    ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
+                    ExcepcionListarInventarioDatos ex = new ExcepcionListarInventarioDatos(RecursosBDModulo15.parametroDojoIdImplemento,
                      RecursosBDModulo15.tabla_dojoImplemento, new Exception());
                     Logger.EscribirError("ConexionBaseDatos", ex);
                     throw ex;
@@ -479,7 +478,7 @@ namespace DatosSKD.DAO.Modulo15
                 }
                 else
                 {
-                    ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
+                    ExcepcionlistaInventarioDatos2 ex = new ExcepcionlistaInventarioDatos2(RecursosBDModulo15.parametroDojoIdImplemento,
                       RecursosBDModulo15.tabla_dojoImplemento, new Exception());
                     Logger.EscribirError("ConexionBaseDatos", ex);
                     throw ex;
@@ -557,7 +556,7 @@ namespace DatosSKD.DAO.Modulo15
                     parametros.Add(parametro);
                 }
                 else
-                    throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroIdimplemento,
+                    throw new ExcepcionimplementoInventarioDatos(RecursosBDModulo15.parametroIdimplemento,
                         RecursosBDModulo15.tabla_idImplemento, new Exception());
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureConsultarImplemento, parametros);
@@ -565,16 +564,16 @@ namespace DatosSKD.DAO.Modulo15
                 row = dt.Rows[0];
 
 
-                ((Implemento)implemento).Id_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_idImplemento]);
+                ((Implemento)implemento).Id_Implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_idImplemento]);
                 ((Implemento)implemento).Nombre_Implemento = row[RecursosBDModulo15.tabla_nombreImplemento].ToString();
-                ((Implemento)implemento).Cantida_implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_cantidadImplemento]);
+                ((Implemento)implemento).Cantida_implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_cantidadImplemento]);
                 ((Implemento)implemento).Imagen_implemento = row[RecursosBDModulo15.tabla_imagenImplemento].ToString();
                 ((Implemento)implemento).Tipo_Implemento = row[RecursosBDModulo15.tabla_tipoImplemento].ToString();
                 ((Implemento)implemento).Marca_Implemento = row[RecursosBDModulo15.tabla_marcaImplemento].ToString();
                 ((Implemento)implemento).Color_Implemento = row[RecursosBDModulo15.tabla_colorImplemento].ToString();
                 ((Implemento)implemento).Talla_Implemento = row[RecursosBDModulo15.tabla_tallaImplemento].ToString();
-                ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt16(row[RecursosBDModulo15.tabla_dojoImplemento]);
-                ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt16(row[RecursosBDModulo15.tabla_stockImplemento]);
+                ((Dojo)(((Implemento)implemento).Dojo_Implemento)).Dojo_Id = Convert.ToInt32(row[RecursosBDModulo15.tabla_dojoImplemento]);
+                ((Implemento)implemento).Stock_Minimo_Implemento = Convert.ToInt32(row[RecursosBDModulo15.tabla_stockImplemento]);
                 ((Implemento)implemento).Estatus_Implemento = row[RecursosBDModulo15.tabla_estatusImplemento].ToString();
                 ((Implemento)implemento).Precio_Implemento = Convert.ToDouble(row[RecursosBDModulo15.tabla_precioImplemento]);
                 ((Implemento)implemento).Descripcion_Implemento = row[RecursosBDModulo15.tabla_descripcionImplemento].ToString();
@@ -629,7 +628,7 @@ namespace DatosSKD.DAO.Modulo15
                     parametros.Add(parametro);
                 }
                 else
-                    throw new ExcepcionesSKD.Modulo15.ImplementoSinIDException(RecursosBDModulo15.parametroIdimplemento,
+                    throw new ExcepcioneliminarInventarioDatos(RecursosBDModulo15.parametroIdimplemento,
                         RecursosBDModulo15.tabla_idImplemento, new Exception());
 
                 if (((Dojo)parametroDojo) != null)
@@ -638,7 +637,7 @@ namespace DatosSKD.DAO.Modulo15
                     parametros.Add(parametro);
                 }
                 else
-                    throw new ExcepcionesSKD.Modulo15.ImplementoSinIDException(RecursosBDModulo15.parametroDojoIdImplemento,
+                    throw new ExcepcioneliminarInventarioDatos(RecursosBDModulo15.parametroDojoIdImplemento,
                         RecursosBDModulo15.tabla_dojoImplemento, new Exception());
 
                 laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureEliminarInventario, parametros);
@@ -699,7 +698,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroIdimplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroIdimplemento,
                         RecursosBDModulo15.tabla_idImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -710,7 +709,7 @@ namespace DatosSKD.DAO.Modulo15
                         parametros.Add(parametro);
                     }
                     else
-                        throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroNombreImplemento,
+                        throw new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroNombreImplemento,
                           RecursosBDModulo15.tabla_idImplemento, new Exception());
 
                     if ((((Implemento)parametroImplemento).Tipo_Implemento != null) && (((Implemento)parametroImplemento).Tipo_Implemento != ""))
@@ -720,7 +719,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroTipoImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroTipoImplemento,
                         RecursosBDModulo15.tabla_tipoImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -732,7 +731,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroMarcaImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroMarcaImplemento,
                         RecursosBDModulo15.tabla_marcaImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -744,7 +743,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroColorImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroColorImplemento,
                         RecursosBDModulo15.tabla_colorImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -756,7 +755,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroTallaImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroTallaImplemento,
                          RecursosBDModulo15.tabla_tallaImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -769,7 +768,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroPrecioImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroPrecioImplemento,
                         RecursosBDModulo15.tabla_precioImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -782,7 +781,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroStockMinimoImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroStockMinimoImplemento,
                         RecursosBDModulo15.tabla_stockImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -795,7 +794,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroCantidadInventario,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroCantidadInventario,
                         RecursosBDModulo15.tabla_cantidadImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -808,7 +807,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDescripcionImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroDescripcionImplemento,
                         RecursosBDModulo15.tabla_descripcionImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -820,7 +819,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroDojoIdImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroDojoIdImplemento,
                         RecursosBDModulo15.tabla_dojoImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -832,7 +831,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroEstatusImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroEstatusImplemento,
                         RecursosBDModulo15.tabla_estatusImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -844,7 +843,7 @@ namespace DatosSKD.DAO.Modulo15
                     }
                     else
                     {
-                        ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroImagenImplemento,
+                        ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroImagenImplemento,
                         RecursosBDModulo15.tabla_imagenImplemento, new Exception());
                         Logger.EscribirError("ConexionBaseDatos", ex);
                         throw ex;
@@ -856,7 +855,7 @@ namespace DatosSKD.DAO.Modulo15
                 }
                 else
                 {
-                    ErrorEnParametroDeProcedure ex = new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroImplemento, RecursosBDModulo15.tabla_implemento, new Exception());
+                    ExcepcionmodificarInventarioDatos ex = new ExcepcionmodificarInventarioDatos(RecursosBDModulo15.parametroImplemento, RecursosBDModulo15.tabla_implemento, new Exception());
                     Logger.EscribirError("ConexionBaseDatos", ex);
                     throw ex;
                 }
@@ -1045,7 +1044,7 @@ namespace DatosSKD.DAO.Modulo15
                     parametros.Add(parametro);
                 }
                 else
-                    throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroIdimplemento,
+                    throw new ExcepcionimplementoInventarioDatosBool(RecursosBDModulo15.parametroIdimplemento,
                         RecursosBDModulo15.tabla_idImplemento, new Exception());
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureConsultarImplemento, parametros);
@@ -1119,7 +1118,7 @@ namespace DatosSKD.DAO.Modulo15
                     parametros.Add(parametro);
                 }
                 else
-                    throw new ExcepcionesSKD.Modulo15.ErrorEnParametroDeProcedure(RecursosBDModulo15.parametroUsuario,
+                    throw new ExcepcionusuarioImplementoDatos(RecursosBDModulo15.parametroUsuario,
                         RecursosBDModulo15.tabla_dojoImplemento, new Exception());
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(RecursosBDModulo15.nombreProcedureUsuario, parametros);
@@ -1155,8 +1154,9 @@ namespace DatosSKD.DAO.Modulo15
         }
 #endregion
 
-          #region 
+        #region 
           #endregion
+
         #endregion
 
           #region IDAO

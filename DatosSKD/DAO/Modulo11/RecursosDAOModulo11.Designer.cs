@@ -448,11 +448,65 @@ namespace DatosSKD.DAO.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SKD_00_004.
+        /// </summary>
+        internal static string CodigoErrorFormato {
+            get {
+                return ResourceManager.GetString("CodigoErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string MensajeErrorFormato {
+            get {
+                return ResourceManager.GetString("MensajeErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to @_aprobado.
         /// </summary>
         internal static string ParametroAprobadoResultadoAscenso {
             get {
                 return ResourceManager.GetString("ParametroAprobadoResultadoAscenso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_fechafin.
+        /// </summary>
+        internal static string ParametroFechaFin {
+            get {
+                return ResourceManager.GetString("ParametroFechaFin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @_fechaInicio.
+        /// </summary>
+        internal static string ParametroFechaInicio {
+            get {
+                return ResourceManager.GetString("ParametroFechaInicio", resourceCulture);
             }
         }
         
@@ -592,6 +646,15 @@ namespace DatosSKD.DAO.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M11_ConsultarAscensosRangoFecha.
+        /// </summary>
+        internal static string ProcedimientoAscensosPorFechaM10 {
+            get {
+                return ResourceManager.GetString("ProcedimientoAscensosPorFechaM10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M11_CategoriasCompetenciaEspecialidad.
         /// </summary>
         internal static string ProcedimientoCategoriasCompetenciaEspecialidad {
@@ -705,6 +768,24 @@ namespace DatosSKD.DAO.Modulo11 {
         internal static string ProcedimientoPersonasEnCategoriaAscenso {
             get {
                 return ResourceManager.GetString("ProcedimientoPersonasEnCategoriaAscenso", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_TodasLasFechasAscensos.
+        /// </summary>
+        internal static string ProcedimientoTodasLasFechasAscensosM10 {
+            get {
+                return ResourceManager.GetString("ProcedimientoTodasLasFechasAscensosM10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
     }
