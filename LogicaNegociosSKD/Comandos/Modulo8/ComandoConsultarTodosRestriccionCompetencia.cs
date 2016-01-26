@@ -13,18 +13,23 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
     public class ComandoConsultarTodosRestriccionCompetencia : Comando<List<Entidad>>
     {
 
-        
+        private Entidad parametro;
+
+        public Entidad Parametro
+        {
+            get { return parametro; }
+            set { parametro = value; }
+        }
         public override List<Entidad> Ejecutar()
         {
             List<Entidad> resultado = new List<Entidad>();
 
             DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
 
-            IDaoRestriccionCompetencia daoRestriccionCompetencia = fabricaDAO.ObtenerDAORestriccionCompetencia();
-
+            
             try
             {
-
+                IDaoRestriccionCompetencia daoRestriccionCompetencia = fabricaDAO.ObtenerDAORestriccionCompetencia();
                 resultado = daoRestriccionCompetencia.ConsultarTodos();
 
             }

@@ -31,6 +31,15 @@ namespace templateApp.GUI.Modulo8 {
         protected global::System.Web.UI.HtmlControls.HtmlForm agregar_restriccion;
         
         /// <summary>
+        /// alertlocal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertlocal;
+        
+        /// <summary>
         /// divcomboCintaMenor control.
         /// </summary>
         /// <remarks>
@@ -139,12 +148,12 @@ namespace templateApp.GUI.Modulo8 {
         protected global::System.Web.UI.WebControls.DropDownList comboModalidad;
         
         /// <summary>
-        /// bAgregar control.
+        /// bMod control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bAgregar;
+        protected global::System.Web.UI.WebControls.Button bMod;
     }
 }

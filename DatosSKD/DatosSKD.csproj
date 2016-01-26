@@ -81,6 +81,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAORestriccionEvento.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Modulo8\RecursoExepcion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoExepcion.resx</DependentUpon>
+    </Compile>
     <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCinta.cs" />
     <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCompetencia.cs" />
     <Compile Include="DAO\Modulo10\DaoAsistencia.cs" />
@@ -285,6 +290,10 @@
     <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionEvento.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAORestriccionEvento.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo8\RecursoExepcion.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoExepcion.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo9\RecursosDaoEvento.resx">
       <Generator>ResXFileCodeGenerator</Generator>

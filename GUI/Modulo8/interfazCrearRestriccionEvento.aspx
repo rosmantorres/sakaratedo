@@ -123,7 +123,7 @@
 				    
                    <a id="btn-cancelar" type="submit" style="margin-top:5%; margin-right:5%; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesCompetencia.aspx">Cancelar</a>
                     <%--<asp:Button id="btnaceptar" style="margin-top:5%" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Bu<%--tton>--%>
-				    <asp:Button id="bAgregar" style="margin-top:5%" class="btn btn-primary" type="submit" runat="server" Text = "Agregar" onclick ="btnaceptar_Click"  ></asp:Button>
+				    <asp:Button id="bMod" style="margin-top:5%" class="btn btn-primary" type="submit" runat="server" Text = "Agregar" onclick ="btnaceptar_Click"  ></asp:Button>
 <%--                    <asp:Button id="Button1" style="margin-top:5%" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar"   ></asp:Button>    --%>
                 </div>
 			</div>

@@ -229,6 +229,9 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta(laRestCinta);
         }
+
+
+
         #endregion
 
         #region Restriccion Evento

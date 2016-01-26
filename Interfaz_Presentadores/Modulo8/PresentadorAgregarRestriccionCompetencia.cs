@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using Interfaz_Contratos.Modulo8;
+using ExcepcionesSKD.Modulo8;
 using System.Data.SqlClient;
+using ExcepcionesSKD;
 //using System.Windows;
 
 
@@ -14,48 +16,62 @@ namespace Interfaz_Presentadores.Modulo8
     public class PresentadorAgregarRestriccionCompetencia
     {
         private IContratoAgregarRestriccionCompetencia vista;
-       
+
         //public PresentadorAgregarRestriccionCompetencia (IContratoAgregarRestriccionCompetencia laVista)
         //{
         //    this.vista = laVista;
         //}
- 
+
         public Boolean agregarRestriccionCompetencia()
         {
             Boolean resultado = false;
             try
             {
 
-       
-                    DominioSKD.Entidad elObjeto = meterParametrosVistaEnObjeto();
-                    LogicaNegociosSKD.Fabrica.FabricaComandos fabrica = new LogicaNegociosSKD.Fabrica.FabricaComandos();
-                    DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
-                    LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia comando =
-                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCompetencia();
-                    DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabricaEntidad.ObtenerRestriccionCompetencia();
-                    //comando.Parametro = elObjeto;
-                    restriccionCompetencia = meterParametrosVistaEnObjeto();
-                    comando.Parametro = restriccionCompetencia;
-                    resultado= comando.Ejecutar(); 
-                
 
+                DominioSKD.Entidad elObjeto = meterParametrosVistaEnObjeto();
+                LogicaNegociosSKD.Fabrica.FabricaComandos fabrica = new LogicaNegociosSKD.Fabrica.FabricaComandos();
+                DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
+                LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia comando =
+                (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCompetencia();
+                DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabricaEntidad.ObtenerRestriccionCompetencia();
+                //comando.Parametro = elObjeto;
+                restriccionCompetencia = meterParametrosVistaEnObjeto();
+                comando.Parametro = restriccionCompetencia;
+                resultado = comando.Ejecutar();
+
+
+
+            }
+            catch (RestriccionExistenteException ex)
+            {
+
+                throw ex;
 
             }
             catch (SqlException ex)
             {
+
+
                 throw ex;
+
             }
             catch (FormatException ex)
             {
                 throw ex;
+
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExceptionSKDConexionBD ex)
             {
+
                 throw ex;
+
             }
             catch (Exception ex)
             {
+
                 throw ex;
+
             }
             return resultado;
         }
@@ -70,7 +86,7 @@ namespace Interfaz_Presentadores.Modulo8
                 ("M".Equals(vista.sexo.SelectedValue.ToString()) || "F".Equals(vista.sexo.SelectedValue.ToString()) || "B".Equals(vista.sexo.SelectedValue.ToString())) &&
                 ("kata".Equals(vista.sexo.SelectedValue.ToString()) || "kumite".Equals(vista.sexo.SelectedValue.ToString()) || "todas".Equals(vista.sexo.SelectedValue.ToString())))
                 resultado = true;
-           
+
             return resultado;
         }
 
@@ -79,9 +95,9 @@ namespace Interfaz_Presentadores.Modulo8
 
         public PresentadorAgregarRestriccionCompetencia(IContratoAgregarRestriccionCompetencia laVista)
         {
-          
+
             this.vista = laVista;
-            
+
         }
 
         //public void LlenarListaCompetenciasNoAsociadas()
@@ -90,22 +106,22 @@ namespace Interfaz_Presentadores.Modulo8
         //    LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCompetencias();
         //    List<DominioSKD.Entidad> listaEntidades = consultarCompetencias.Ejecutar();
         //    List<DominioSKD.Entidades.Modulo12.Competencia> listaCompetencias = listaEntidades.Cast<DominioSKD.Entidades.Modulo12.Competencia>().ToList();
-            
+
         //    //foreach (DominioSKD.Entidad entidad in listaEntidades)
         //    //{
         //    //    listaCompetencias.Add = ((DominioSKD.Entidades.Modulo12.Competencia)entidad);
         //    //}
-            
+
         //    vista.competeciasNoRelacionadas.Enabled = true;
         //    vista.competeciasNoRelacionadas.DataTextField = "nombre";
-            
+
         //    vista.competeciasNoRelacionadas.DataSource = listaCompetencias;
         //    vista.competeciasNoRelacionadas.DataBind();
         //    //foreach (DominioSKD.Entidad competencia in listaCompetencias)
         //    //{
-               
+
         //    //    vista.competeciasNoRelacionadas.Items.Add = (DominioSKD.Entidades.Modulo12.Competencia)competencia;
-            
+
         //    //}
         //}
 
@@ -120,10 +136,10 @@ namespace Interfaz_Presentadores.Modulo8
         //    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
 
 
-            
+
         //    //LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
         //    //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
-            
+
         //    DominioSKD.Fabrica.FabricaEntidades fabrica = new  DominioSKD.Fabrica.FabricaEntidades();
         //    DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp;
         //    restComp = meterParametrosVistaEnObjeto();
@@ -159,7 +175,7 @@ namespace Interfaz_Presentadores.Modulo8
         //}
 
 
-         public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto()
+        public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto()
         {
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
             DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabrica.ObtenerRestriccionCompetencia();
@@ -172,20 +188,20 @@ namespace Interfaz_Presentadores.Modulo8
             generarDescripcion();
             restriccionCompetencia.Descripcion = vista.descripcion;
             return restriccionCompetencia;
-            
+
         }
         //public void llenarComboRangos()
         //{
         //    int index;
         //    vista.rangoMinimo.Enabled = true;
         //    vista.rangoMaximo.Enabled = true;
-            
+
         //    for (index=0;index<=20;index++)
         //    {
         //        vista.rangoMinimo.Items.Add(index.ToString());
-                
+
         //        vista.rangoMaximo.Items.Add(index.ToString());
-            
+
         //    }
 
         //}
@@ -216,7 +232,7 @@ namespace Interfaz_Presentadores.Modulo8
             vista.rangoMaximo.DataValueField = "value";
             vista.rangoMinimo.DataBind();
             vista.rangoMaximo.DataBind();
-        
+
         }
 
         public void LlenarComboEdades()
@@ -278,7 +294,7 @@ namespace Interfaz_Presentadores.Modulo8
                                      + " Modalidad: " + vista.modalidad.SelectedValue.ToString());
 
         }
-    
+
 
     }
 }

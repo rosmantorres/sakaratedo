@@ -1,19 +1,23 @@
-﻿using System;
+﻿using DominioSKD;
+using DominioSKD.Fabrica;
+using ExcepcionesSKD;
+using Interfaz_Contratos.Modulo8;
+using LogicaNegociosSKD;
+using LogicaNegociosSKD.Comandos.Modulo8;
+using LogicaNegociosSKD.Fabrica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
-using Interfaz_Contratos.Modulo8;
-using DominioSKD;
-
 namespace Interfaz_Presentadores.Modulo8
 {
     public class PresentadorConsultarTodosRestriccionCompetencia
     {
         private IContratoConsultarRestriccionCompetencia vista;
         List<Entidad> lista;
-        public PresentadorConsultarTodosRestriccionCompetencia (IContratoConsultarRestriccionCompetencia laVista)
+        public PresentadorConsultarTodosRestriccionCompetencia(IContratoConsultarRestriccionCompetencia laVista)
         {
             this.vista = laVista;
 
@@ -23,7 +27,6 @@ namespace Interfaz_Presentadores.Modulo8
         {
             try
             {
-
                 this.lista = lista;
                 foreach (DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccion in lista)
                 {
@@ -43,28 +46,45 @@ namespace Interfaz_Presentadores.Modulo8
                     //}
                     //vista.restriccionCompetencia += RecursosPresentadorModulo14.CerrarTD;
                     vista.restriccionCompetencia += RecursoPresentadorM8.AbrirTD;
-                    //vista.restriccionCompetencia += RecursoPresentadorM8.BotonModificar + restriccion.IdRestriccionComp + RecursoPresentadorM8.Nombre 
-                    //    + plani.Nombre + RecursosPresentadorModulo14.Tipo + plani.TipoPlanilla + RecursosPresentadorModulo14.BotonCerrar;
-                    
+                    vista.restriccionCompetencia += RecursoPresentadorM8.BotonModificarRegistroCompetencia + restriccion.IdRestriccionComp + RecursoPresentadorM8.Descripcion
+                        + restriccion.Descripcion + RecursoPresentadorM8.EdadMin + restriccion.EdadMinima + RecursoPresentadorM8.EdadMax + restriccion.EdadMaxima
+                        + RecursoPresentadorM8.RangoMin + restriccion.RangoMinimo + RecursoPresentadorM8.RangoMax + restriccion.RangoMaximo
+                        + RecursoPresentadorM8.Sexo + restriccion.Sexo + RecursoPresentadorM8.Modalidad + restriccion.Modalidad + RecursoPresentadorM8.BotonCerrar;
+
                     //vista.restriccionCompetencia += RecursosPresentadorModulo14.BotonModificarRegistro + restriccion.ID + RecursosPresentadorModulo14.Nombre + plani.Nombre + RecursosPresentadorModulo14.Tipo + plani.TipoPlanilla + RecursosPresentadorModulo14.BotonCerrar;
                     //if (plani.Status)
                     //    vista.planillaCreadas += RecursosPresentadorModulo14.BotonActivarPlanilla + restriccion.ID + RecursosPresentadorModulo14.BotonCerrar;
                     //else
                     //    vista.planillaCreadas += RecursosPresentadorModulo14.BotonDesactivarPlanilla + restriccion.ID + RecursosPresentadorModulo14.BotonCerrar;
-                    //vista.planillaCreadas += RecursosPresentadorModulo14.CerrarTD;
-                    //vista.planillaCreadas += RecursosPresentadorModulo14.CerrarTR;
+                    vista.restriccionCompetencia += RecursoPresentadorM8.CerrarTD;
+                    vista.restriccionCompetencia += RecursoPresentadorM8.CerrarTR;
 
                 }
 
 
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
 
             }
-            
+
+        }
+
+        public List<Entidad> LlenarTabla()
+        {
+            try
+            {
+                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarTodosRestriccionCompetencia();
+                return command.Ejecutar();
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
 

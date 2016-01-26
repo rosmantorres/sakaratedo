@@ -215,4 +215,49 @@
   <data name="BotonModificarRegistroEvento" xml:space="preserve">
     <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="interfazModificarRestriccionHorario.aspx?idPlan=</value>
   </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>&amp;descripcion=</value>
+  </data>
+  <data name="EdadMax" xml:space="preserve">
+    <value>&amp;edadmaxima=</value>
+  </data>
+  <data name="EdadMin" xml:space="preserve">
+    <value>&amp;edadminima=</value>
+  </data>
+  <data name="Modalidad" xml:space="preserve">
+    <value>&amp;modalidad=</value>
+  </data>
+  <data name="RangoMax" xml:space="preserve">
+    <value>&amp;rangomax=</value>
+  </data>
+  <data name="RangoMin" xml:space="preserve">
+    <value>&amp;rangomin=</value>
+  </data>
+  <data name="Sexo" xml:space="preserve">
+    <value>&amp;sexo=</value>
+  </data>
+  <data name="BotonModificarRegistroCompetencia" xml:space="preserve">
+    <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="interfazModificarRestriccionEvento.aspx?idPlan=</value>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>&amp;descripcion=</value>
+  </data>
+  <data name="EdadMax" xml:space="preserve">
+    <value>&amp;edadmaxima=</value>
+  </data>
+  <data name="EdadMin" xml:space="preserve">
+    <value>&amp;edadminima=</value>
+  </data>
+  <data name="Modalidad" xml:space="preserve">
+    <value>&amp;modalidad=</value>
+  </data>
+  <data name="RangoMax" xml:space="preserve">
+    <value>&amp;rangomax=</value>
+  </data>
+  <data name="RangoMin" xml:space="preserve">
+    <value>&amp;rangomin=</value>
+  </data>
+  <data name="Sexo" xml:space="preserve">
+    <value>&amp;sexo=</value>
+  </data>
 </root>

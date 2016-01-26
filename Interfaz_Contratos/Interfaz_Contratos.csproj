@@ -11,9 +11,7 @@
     <AssemblyName>Interfaz_Contratos</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-
     <TargetFrameworkProfile />
-
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
   </PropertyGroup>
@@ -38,13 +36,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-
       <HintPath>..\bin\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\bin\itextsharp.dll</HintPath>
       <!--<HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>-->
-
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,13 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="Modulo8\IContratoAgregarRestriccionEvento.cs" />
+    <Compile Include="Modulo8\IContratoConsultarRestriccionCompetencia.cs" />
     <Compile Include="Modulo8\IContratoConsultarRestriccionEvento.cs" />
+    <Compile Include="Modulo8\IContratoModificarRestriccionCompetencia.cs" />
     <Compile Include="Modulo8\IContratoModificarRestriccionEvento.cs" />
     <Compile Include="Modulo8\IContratoAgregarRestriccionCinta.cs" />
     <Compile Include="Modulo8\IContratoAgregarRestriccionCompetencia.cs" />
-
     <Compile Include="Modulo7\IContratoDetallarHorarioPractica.cs" />
     <Compile Include="Modulo7\IContratoDetallarMatricula.cs" />
     <Compile Include="Modulo7\IContratoConsultarPerfil.cs" />
@@ -145,7 +141,6 @@
       <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
       <Name>DominioSKD</Name>
     </ProjectReference>
-    <Folder Include="Modulo8\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

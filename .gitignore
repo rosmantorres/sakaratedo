@@ -217,6 +217,8 @@ Interfaz_Contratos/Interfaz_Contratos.csproj
 PruebasUnitariasSKD/App.config
 Log.xml
 Interfaz_Presentadores/Interfaz_Presentadores.csproj
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Log.xml
 Interfaz_Presentadores/Interfaz_Presentadores.csproj
 PruebasUnitariasSKD/PruebasUnitariasSKD.csproj
@@ -225,5 +227,15 @@ LogicaNegociosSKD/LogicaNegociosSKD.csproj
 Interfaz_Contratos/Interfaz_Contratos.csproj
 Interfaz.csproj
 DatosSKD/DatosSKD.csproj
+*.csproj
+*.config
+=======
+*.csproj
+*.csproj
+>>>>>>> Stashed changes
+=======
+*.csproj
+*.csproj
+>>>>>>> Stashed changes
 *.csproj
 *.config

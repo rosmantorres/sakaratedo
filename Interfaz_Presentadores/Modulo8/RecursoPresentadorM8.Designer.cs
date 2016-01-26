@@ -261,6 +261,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;interfazModificarRestriccionEvento.aspx?idPlan=.
+        /// </summary>
+        internal static string BotonModificarRegistroCompetencia {
+            get {
+                return ResourceManager.GetString("BotonModificarRegistroCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;interfazModificarRestriccionHorario.aspx?idPlan=.
         /// </summary>
         internal static string BotonModificarRegistroEvento {
@@ -333,6 +342,33 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &amp;descripcion=.
+        /// </summary>
+        internal static string Descripcion {
+            get {
+                return ResourceManager.GetString("Descripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;edadmaxima=.
+        /// </summary>
+        internal static string EdadMax {
+            get {
+                return ResourceManager.GetString("EdadMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;edadminima=.
+        /// </summary>
+        internal static string EdadMin {
+            get {
+                return ResourceManager.GetString("EdadMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;br/&gt;.
         /// </summary>
         internal static string linea {
@@ -342,11 +378,47 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &amp;modalidad=.
+        /// </summary>
+        internal static string Modalidad {
+            get {
+                return ResourceManager.GetString("Modalidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;nombre=.
         /// </summary>
         internal static string Nombre {
             get {
                 return ResourceManager.GetString("Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;rangomax=.
+        /// </summary>
+        internal static string RangoMax {
+            get {
+                return ResourceManager.GetString("RangoMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;rangomin=.
+        /// </summary>
+        internal static string RangoMin {
+            get {
+                return ResourceManager.GetString("RangoMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;sexo=.
+        /// </summary>
+        internal static string Sexo {
+            get {
+                return ResourceManager.GetString("Sexo", resourceCulture);
             }
         }
     }
