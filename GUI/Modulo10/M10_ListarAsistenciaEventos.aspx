@@ -19,11 +19,11 @@
 		    </li>
 		
 		    <li>
-			    <a href="#">Asistencia a Eventos</a> 
+			    <a href="../Modulo10/M10_ListarAsistenciaEventos.aspx">Asistencia a Eventos</a> 
 		    </li>
 
             <li>
-			    <a href="#">Gestión de Asistencia a Eventos</a> 
+			    <a href="../Modulo10/M10_ListarAsistenciaEventos.aspx">Gestión de Asistencia a Eventos</a> 
 		    </li>
 		
 		    <li class="active">

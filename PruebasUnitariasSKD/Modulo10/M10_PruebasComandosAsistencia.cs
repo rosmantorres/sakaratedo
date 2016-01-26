@@ -58,7 +58,7 @@ namespace PruebasUnitariasSKD.Modulo10
         {
             Comando<List<Entidad>> comandoHorarios = FabricaComandos.ObtenerComandoListarHorariosCompetencia();
             listaEntidad = comandoHorarios.Ejecutar();
-            Assert.AreEqual(1, listaEntidad.ToArray().Length);
+            Assert.AreEqual(3, listaEntidad.ToArray().Length);
         }
 
 
@@ -92,7 +92,7 @@ namespace PruebasUnitariasSKD.Modulo10
         {
             Comando<List<Entidad>> comandoCompetenciasAsistidas = FabricaComandos.ObtenerComandoListarCompetenciasAsistidas();
             listaEntidad = comandoCompetenciasAsistidas.Ejecutar();
-            Assert.AreEqual(5, listaEntidad.ToArray().Length);
+            Assert.AreEqual(3, listaEntidad.ToArray().Length);
         }
 
 
@@ -109,7 +109,7 @@ namespace PruebasUnitariasSKD.Modulo10
         {
             Comando<List<Entidad>> comandoNoAsististenteEvento = FabricaComandos.ObtenerComandoListaNoAsistentesEvento(idEvento);
             listaEntidad = comandoNoAsististenteEvento.Ejecutar();
-            Assert.AreEqual(4, listaEntidad.ToArray().Length);
+            Assert.AreEqual(2, listaEntidad.ToArray().Length);
         }
 
         [Test]
@@ -183,7 +183,7 @@ namespace PruebasUnitariasSKD.Modulo10
         {
             Comando<List<Entidad>> comandoAtletasInsComp = FabricaComandos.ObtenerComandoListaAtletasInscritosCompetencia(idCompetencia);
             listaEntidad = comandoAtletasInsComp.Ejecutar();
-            Assert.AreEqual(9, listaEntidad.ToArray().Length);
+            Assert.AreEqual(8, listaEntidad.ToArray().Length);
         }
 
         [Test]
@@ -199,7 +199,7 @@ namespace PruebasUnitariasSKD.Modulo10
         {
             Comando<List<Entidad>> comandoAsistenteEvento = FabricaComandos.ObtenerComandoListaAsistentesEvento(idEvento);
             listaEntidad = comandoAsistenteEvento.Ejecutar();
-            Assert.AreEqual(13, listaEntidad.ToArray().Length);
+            Assert.AreEqual(16, listaEntidad.ToArray().Length);
         }
 
         [Test]
@@ -215,7 +215,7 @@ namespace PruebasUnitariasSKD.Modulo10
         {
             Comando<List<Entidad>> comandoAsistenteComp = FabricaComandos.ObtenerComandoListaAsistentesCompetencia(idCompetencia);
             listaEntidad = comandoAsistenteComp.Ejecutar();
-            Assert.AreEqual(7, listaEntidad.ToArray().Length);
+            Assert.AreEqual(8, listaEntidad.ToArray().Length);
         }
 
         [Test]
@@ -259,7 +259,7 @@ namespace PruebasUnitariasSKD.Modulo10
         {
             Comando<List<Entidad>> comandoConsultarXfecha = FabricaComandos.ObtenerComandoCompetenciasPorFecha("20/02/2016");
             listaEntidad = comandoConsultarXfecha.Ejecutar();
-            Assert.AreEqual(2, listaEntidad.ToArray().Length);
+            Assert.AreEqual(3, listaEntidad.ToArray().Length);
         }
 
 
