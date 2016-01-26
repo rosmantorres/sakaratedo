@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-﻿//Funcion que activa el boton si el valor seleccionado es diferente de -1, sino, lo desactiva
-function example() {
-    if ($('#<%=DropDownList1.ClientID %>').val() == -1) {
 
-        $('#<%=BotonPagar.ClientID %>').attr("disabled", true);
-    }
-    else
-        $('#<%=BotonPagar.ClientID %>').attr("disabled", false);
-=======
 ﻿//Funcion que activa o desactiva el Boton de Procesar Pago si los campos cumplen o no con ciertas condiciones.
 function example() {
     //
@@ -59,8 +50,6 @@ function onchangeExample() {
 
         }
 
-
->>>>>>> e8ac3154aec28d056bea24d3a4ad8b0913ba08cd
 }
 
 
