@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Interfaz_Contratos.Modulo4
 {
+    /// <summary>
+    /// Firma de Métodos que deben ser implementados en el 
+    /// presentador del LitarDojo 
+    /// </summary>
     public interface IContratoListarDojos
     {
         string Success { get; set; }

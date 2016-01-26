@@ -16,14 +16,17 @@ using System.Threading.Tasks;
 
 namespace DatosSKD.DAO.Modulo4
 {
+    /// <summary>
+    /// Clase DAO de DOJO que implementa DAO General e Interfaz Dao Dojo
+    /// </summary>
     public class DaoDojo : DAOGeneral, IDaoDojo 
     {
         #region IDAO
         /// <summary>
         /// Método que agrega el dojo a la base de datos
         /// </summary>
-        /// <param name="parametro">el dojo a insertar</param>
-        /// <returns>true si se insertó y false en el caso contrario</returns>
+        /// <param name="parametro">El dojo a insertar</param>
+        /// <returns>True si se insertó y False en caso contrario</returns>
         public bool Agregar(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -132,6 +135,12 @@ namespace DatosSKD.DAO.Modulo4
             
             return false;
         }
+
+        /// <summary>
+        /// Método que modifica un dojo base de datos
+        /// </summary>
+        /// <param name="parametro">El dojo con sus cambios</param>
+        /// <returns>True si modificó y false en caso contrario</returns>
         public bool Modificar(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
@@ -188,10 +197,7 @@ namespace DatosSKD.DAO.Modulo4
                     elParametro = new Parametro(RecursosDAOModulo4.ParametroDireccion, SqlDbType.VarChar,
                         elDojo.Ubicacion.Direccion, false);
                     parametros.Add(elParametro);
-
-                    //elParametro = new Parametro(RecursosDAOModulo4.ParamIdOrganizacion, SqlDbType.Int, elDojo.Organizacion.Id.ToString(), false);
-                    //parametros.Add(elParametro);
-
+                
                     BDConexion laConexion = new BDConexion();
                     laConexion.EjecutarStoredProcedure(RecursosDAOModulo4.ModificarDojo, parametros);
                     Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -236,6 +242,12 @@ namespace DatosSKD.DAO.Modulo4
 
             return false;
         }
+
+        /// <summary>
+        /// Método que consulta dojos
+        /// </summary>
+        /// <param name="parametro">id del dojo a consultar</param>
+        /// <returns>dojo según el id de parametro</returns>
         public Entidad ConsultarXId(Entidad parametro)
         {
             BDConexion laConexion;
@@ -288,8 +300,6 @@ namespace DatosSKD.DAO.Modulo4
 
                         }
                         
-                    
-
             }
             catch (SqlException ex)
             {
@@ -316,6 +326,12 @@ namespace DatosSKD.DAO.Modulo4
 
             return elDojo;
         }
+
+
+        /// <summary>
+        /// Método que consulta todos los dojos
+        /// </summary>
+        /// <returns>lista de los dojos en la base de datos</returns>
         public List<Entidad> ConsultarTodos()
         {
             BDConexion laConexion;
@@ -379,6 +395,12 @@ namespace DatosSKD.DAO.Modulo4
 
             return laListaDeDojos;
         }
+
+        /// <summary>
+        /// Método que elimina un dojo de la base de datos
+        /// </summary>
+        /// <param name="parametro">id del dojo a eliminar</param>
+        /// <returns>True si elimina  dicho dojo y Flase en caso contrario</returns>
         public bool EliminarDojo(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -424,6 +446,13 @@ namespace DatosSKD.DAO.Modulo4
             }
             return false;
         }
+
+
+        /// <summary>
+        /// Método que busca todos los dojos según la organización a la que pertenece
+        /// </summary>
+        /// <param name="parametro">id de la organización</param>
+        /// <returns>lista de todos los dojos pertenecintes a dicha organización</returns>
         public List<Entidad> ConsultarTodosOrganizacion(Entidad parametro)
         {
             BDConexion laConexion;
@@ -496,6 +525,13 @@ namespace DatosSKD.DAO.Modulo4
         #endregion
 
         #region IDaoDojo
+
+        /// <summary>
+        /// Verifica si existe o no un registro de rif de un dojo en la base de datos
+        /// debido a que un rif debe ser único para cada dojo/
+        /// </summary>
+        /// <param name="parametro">rif a consultar</param>
+        /// <returns>True si el rif existe y False en caso contrario</returns>
         public bool BuscarRifDojo(Entidad parametro)
         {
             bool retorno = false;
@@ -560,6 +596,12 @@ namespace DatosSKD.DAO.Modulo4
 
         }
 
+
+        /// <summary>
+        /// Consulta el id de una organizacion a la que pertenece la persona que se encuentra en sesión
+        /// </summary>
+        /// <param name="parametro">id de la persona que esta en sesión</param>
+        /// <returns>id de la orgnización a la cual pertenece dicha persona</returns>
         public int BuscarIdOrganizacion(Entidad parametro)
         {
             BDConexion laConexion;

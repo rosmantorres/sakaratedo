@@ -12,6 +12,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
 {
     public class ComandoListarDojos : Comando<List<Entidad>>
     {
+        /// <summary>
+        /// Método que sirve de enlace entre los datos
+        /// y la vista que ejecuta el Listar dojos
+        /// </summary>
+        /// <returns>retorna lista de dojos</returns>
         public override List<Entidad> Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name

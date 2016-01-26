@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_AgregarDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_AgregarDojo" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
@@ -10,12 +12,7 @@
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     <script src="../../../plugins/datepicker/bootstrap-datepicker.js"></script>  
     
-    
-    
-    
-    
-    
-    
+     
     <script type="text/javascript">
         function initialize() {
             var latitude;
@@ -135,8 +132,8 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <h3>Nombre Del Dojo:</h3>
                           <asp:TextBox runat="server" type="text" name="nombreDojo" id="nombreDojo" placeholder="*Nombre" class="form-control" ></asp:TextBox>
+                          
                         </div>
-                        
                         <br/>
 
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -149,6 +146,8 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Email:</h3>
                             <asp:TextBox runat="server" type="email" name="emailDojo" id="emailDojo" placeholder="*Email" class="form-control" ></asp:TextBox>
+                            
+                        
                         </div>
                         
                         <br/>

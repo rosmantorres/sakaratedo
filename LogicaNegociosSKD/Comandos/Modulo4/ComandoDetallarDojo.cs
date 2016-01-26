@@ -12,6 +12,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
 {
     class ComandoDetallarDojo : Comando<Entidad>
     {
+        /// <summary>
+        /// /// <summary>
+        /// Método que sirve de enlace entre los datos
+        /// y la vista que ejecuta el detalle de un dojo
+        /// </summary>
+        /// <returns>retorna el dojo</returns>
         public override Entidad Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name

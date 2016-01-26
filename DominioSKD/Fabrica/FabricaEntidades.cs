@@ -7,6 +7,9 @@ using DominioSKD;
 
 namespace DominioSKD.Fabrica
 {
+    /// <summary>
+    /// Clase que intancia entidades de tipo
+    /// </summary>
     public class FabricaEntidades
     {
         #region Modulo 1
@@ -39,18 +42,34 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 4
+        
+        /// <summary>
+        /// instancia dojo
+        /// </summary>
+        /// <returns>entidad dojo</returns>
         public static Entidad ObtenerDojo_M4() 
         {
             return new Dojo();
         }
+        
+        /// <summary>
+        /// instancia lista de entidad
+        /// </summary>
+        /// <returns>lista de entidad</returns>
         public static List<Entidad> ObtenerListaEntidad_M4()
         {
             return new List<Entidad>();
         }
+
+        /// <summary>
+        /// instancia lista de dojo
+        /// </summary>
+        /// <returns>lista dojo</returns>
         public static List<Dojo> ObtenerListaDojos_M4()
         {
             return new List<Dojo>();
         }
+
         public static Entidad ObtenerHistorialMatricula()
         {
             return new Historial_Matricula();
@@ -60,10 +79,20 @@ namespace DominioSKD.Fabrica
             return new List<Historial_Matricula>();
         }
 
+       
+        /// <summary>
+        /// Instancia una Organizacion
+        /// </summary>
+        /// <returns>entidad org</returns>
         public static Entidad ObtenerOrganizacion_M4()
         {
             return new Organizacion();
         }
+
+        /// <summary>
+        /// Instancia Ubicacion
+        /// </summary>
+        /// <returns>entidad ubicacion</returns>
         public static Entidad ObtenerUbicacion_M4()
         {
             return new Ubicacion();

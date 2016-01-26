@@ -15,7 +15,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
         /// Método que sirve de enlace entre los datos
         /// y la vista que ejecuta en modificar el dojo
         /// </summary>
-        /// <returns>retorna true si se agrego y false si no se agregó</returns>
+        /// <returns>retorna true si se modificó y false si no se modificó</returns>
         public override bool Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name

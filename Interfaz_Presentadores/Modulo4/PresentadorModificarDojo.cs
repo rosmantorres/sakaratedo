@@ -14,9 +14,9 @@ namespace Interfaz_Presentadores.Modulo4
 {
     public class PresentadorModificarDojo
     {
-         private IContratoModificarDojo vista;
+        private IContratoModificarDojo vista;
 
-         #region Constructor
+        #region Constructor
         /// <summary>
         /// Constructor del Presentador
         /// </summary>
@@ -27,12 +27,10 @@ namespace Interfaz_Presentadores.Modulo4
             }
          #endregion
 
-
-
         /// <summary>
         /// Método para modificar un Dojo
         /// </summary>
-             public bool ModificarDojo_Click()
+        public bool ModificarDojo_Click()
              {
                  DominioSKD.Dojo elDojo = (DominioSKD.Dojo)FabricaEntidades.ObtenerDojo_M4();
                  DominioSKD.Organizacion org = (DominioSKD.Organizacion)FabricaEntidades.ObtenerOrganizacion_M4();
@@ -93,8 +91,10 @@ namespace Interfaz_Presentadores.Modulo4
                  }
              }
 
-
-             public void MostrarDojo()
+        /// <summary>
+        /// Método para mostrar los datos de un dojo
+        /// </summary>
+        public void MostrarDojo()
              {
                  try
                  {
