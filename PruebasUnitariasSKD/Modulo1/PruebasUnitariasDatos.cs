@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-//using DatosSKD.Modulo1;
-using DatosSKD.Modulo2;
 using PruebasUnitariasSKD.Modulo1;
 using DominioSKD.Entidades.Modulo1;
 using ExcepcionesSKD;
