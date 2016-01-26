@@ -76,6 +76,16 @@
     <Compile Include="Entidades\Modulo16\ListaMatricula.cs" />
     <Compile Include="Entidades\Modulo16\Pago.cs" />
     <Compile Include="Entidades\Modulo4\Dojo.cs" />
+    <Compile Include="Entidades\Modulo7\MatriculaM7.cs" />
+    <Compile Include="Entidades\Modulo7\CintaM7.cs" />
+    <Compile Include="Entidades\Modulo7\CompetenciaM7.cs" />
+    <Compile Include="Entidades\Modulo7\DojoM7.cs" />
+    <Compile Include="Entidades\Modulo7\EventoM7.cs" />
+    <Compile Include="Entidades\Modulo7\HorarioM7.cs" />
+    <Compile Include="Entidades\Modulo7\OrganizacionM7.cs" />
+    <Compile Include="Entidades\Modulo7\PersonaM7.cs" />
+    <Compile Include="Entidades\Modulo7\TipoEventoM7.cs" />
+    <Compile Include="Entidades\Modulo7\UbicacionM7.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Entidades\Modulo6\Matricula.cs" />
     <Compile Include="Entidades\Modulo14\Diseño.cs" />
@@ -126,7 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entidades\Modulo13\" />
-    <Folder Include="Entidades\Modulo7\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

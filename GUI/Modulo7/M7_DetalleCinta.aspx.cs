@@ -1,22 +1,129 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using DominioSKD;
-using LogicaNegociosSKD;
-using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
 using ExcepcionesSKD;
-using ExcepcionesSKD.Modulo7;
+using Interfaz_Presentadores.Modulo7;
+using Interfaz_Contratos.Modulo7;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_DetalleCinta : System.Web.UI.Page
+    /// <summary>
+    /// Clase que maneja la interfaz de detallar cinta
+    /// </summary>
+    public partial class M7_DetalleCinta : System.Web.UI.Page, IContratoDetallarCinta
     {
-        Cinta cinta = new Cinta();
-        LogicaCintas laLogica = new LogicaCintas();
+        private CintaM7 idCinta;
+        private PresentadorDetallarCinta presentador;
+        private PersonaM7 idPersona;
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        public M7_DetalleCinta()
+        {
+            presentador = new PresentadorDetallarCinta(this);
+        }
+
+        #region Contratos
+        /// <summary>
+        /// Implementacion contrato clasificacionCinta
+        /// </summary>
+        string IContratoDetallarCinta.clasificacionCinta
+        {
+            get
+            {
+                return clasificacionCinta1.InnerText;
+            }
+
+            set
+            {
+                clasificacionCinta1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato colorCinta
+        /// </summary>
+        string IContratoDetallarCinta.colorCinta
+        {
+            get
+            {
+                return colorCinta1.InnerText;
+            }
+
+            set
+            {
+                colorCinta1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato fechaObtencionCinta
+        /// </summary>
+        string IContratoDetallarCinta.fechaObtencionCinta
+        {
+            get
+            {
+                return fechaObtencionCinta1.InnerText;
+            }
+
+            set
+            {
+                fechaObtencionCinta1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato ordenCinta
+        /// </summary>
+        string IContratoDetallarCinta.ordenCinta
+        {
+            get
+            {
+                return ordenCinta1.InnerText;
+            }
+
+            set
+            {
+                ordenCinta1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato rangoCinta
+        /// </summary>
+        string IContratoDetallarCinta.rangoCinta
+        {
+            get
+            {
+                return rangoCinta1.InnerText;
+            }
+
+            set
+            {
+                rangoCinta1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato significadoCinta
+        /// </summary>
+        string IContratoDetallarCinta.significadoCinta
+        {
+            get
+            {
+                return significadoCinta1.InnerText;
+            }
+
+            set
+            {
+                significadoCinta1.InnerText += value;
+            }
+        }
+
+        #endregion
 
         /// <summary>
         /// Método que se ejecuta al cargar la página
@@ -26,14 +133,14 @@ namespace templateApp.GUI.Modulo7
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
-            String detalleString = Request.QueryString["cintaDetalle"];
+            String detalleStringCinta = Request.QueryString["cintaDetalle"];
 
             try
             {
                 String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                    (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -45,32 +152,11 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            cinta = laLogica.detalleCintaID(int.Parse(detalleString));
-                            if (cinta != null)
-                            {
-                                this.colorCinta.Text = cinta.Color_nombre;
-                                this.rangoCinta.Text = cinta.Rango;
-                                this.clasificacionCinta.Text = cinta.Clasificacion;
-                                this.significadoCinta.Text = cinta.Significado;
-                                this.ordenCinta.Text = cinta.Orden.ToString();
-                                this.fechaObtencionCinta.Text = laLogica.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()),
-                                                                                            int.Parse(detalleString)).ToString("MM/dd/yyyy");
-                            }
-                            else
-                            {
-                                throw new ObjetoNuloException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
-                                M7_Recursos.MensajeObjetoNuloLogger, new Exception());
-                            }
-                        }
-                        catch (ObjetoNuloException)
-                        {
-                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                M7_Recursos.MensajeObjetoNuloLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                        }
-                        catch (NumeroEnteroInvalidoException)
-                        {
-                            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                M7_Recursos.Mensaje_Numero_Parametro_invalido, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                            idCinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                            idCinta.Id = int.Parse(detalleStringCinta);
+                            presentador.CargarDatos(idCinta, idPersona);
                         }
                         catch (Exception ex)
                         {
