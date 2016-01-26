@@ -736,4 +736,31 @@
   <data name="FechaEvento" xml:space="preserve">
     <value>M11_fecha</value>
   </data>
+  <data name="RangoEvento" xml:space="preserve">
+    <value>M11_Rango</value>
+  </data>
+  <data name="ResultadoAmbosAgregarError" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=16</value>
+  </data>
+  <data name="ResultadoAmbosAgregarExito" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=15</value>
+  </data>
+  <data name="ResultadoAscensoAgregarError" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=3</value>
+  </data>
+  <data name="ResultadoAscensoAgregarExito" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=1</value>
+  </data>
+  <data name="ResultadoKataAgregarError" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=6</value>
+  </data>
+  <data name="ResultadoKataAgregarExito" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=5</value>
+  </data>
+  <data name="ResultadoKumiteAgregarError" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=14</value>
+  </data>
+  <data name="ResultadoKumiteAgregarExito" xml:space="preserve">
+    <value>M11_ListarResultadoCompetencia.aspx?success=13</value>
+  </data>
 </root>
