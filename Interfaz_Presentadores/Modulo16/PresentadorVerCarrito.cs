@@ -132,7 +132,8 @@ namespace Interfaz_Presentadores.Modulo16
                 foreach (KeyValuePair<Entidad, int> aux in elCarrito.Listaevento)
                 {
                     //Casteamos la entidad como un evento
-                    Evento item = aux.Key as Evento;
+                    DominioSKD.Entidades.Modulo9.Evento item = 
+                        aux.Key as DominioSKD.Entidades.Modulo9.Evento;
 
                     //Creamos la nueva fila que ira en la tabla
                     TableRow fila = new TableRow();
@@ -940,7 +941,8 @@ namespace Interfaz_Presentadores.Modulo16
             foreach (KeyValuePair<Entidad, int> aux in ElCarrito.Listaevento)
             {
                 //Casteamos la entidad como un evento
-                Evento item = aux.Key as Evento;
+                DominioSKD.Entidades.Modulo9.Evento item =
+                    aux.Key as DominioSKD.Entidades.Modulo9.Evento;
 
                 //Anexo al precio final
                 precioFinal += item.Costo * aux.Value;
