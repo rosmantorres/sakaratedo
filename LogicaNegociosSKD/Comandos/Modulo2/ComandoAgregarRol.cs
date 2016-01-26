@@ -27,8 +27,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo2
             }
             catch (Exception e)
             {
-                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Codigo_Error_AgregarRol,
-                         RecursosLogicaModulo2.Mensaje_Error_AgregarRol, e);
+                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosComandoModulo2.Codigo_Error_AgregarRol,
+                         RecursosComandoModulo2.Mensaje_Error_AgregarRol, e);
             }
         }
     }

@@ -9,7 +9,6 @@ using System.Web.UI.WebControls;
 using templateApp.GUI.Master;
 using templateApp.GUI.Modulo1;
 using DominioSKD.Entidades.Modulo1;
-using LogicaNegociosSKD.Modulo2;
 using Interfaz_Contratos.Master;
 using Interfaz_Presentadores.Master;
 

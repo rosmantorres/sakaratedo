@@ -11,6 +11,7 @@
     <AssemblyName>PruebasUnitariasSKD</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,8 +30,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+    </Reference>
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -56,6 +67,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -118,6 +130,7 @@
     <Compile Include="Modulo1\PruebasUnitariasDominio.cs" />
     <Compile Include="Modulo1\PruebasUnitariasDatos.cs" />
     <Compile Include="Modulo1\PruebasUnitariasLogicaN.cs" />
+    <Compile Include="Modulo1\PruebaUnitariaPresentadores.cs" />
     <Compile Include="Modulo1\RecursosPU_Mod1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +138,7 @@
     </Compile>
     <Compile Include="Modulo2\PruebasUnitariasDatos.cs" />
     <Compile Include="Modulo2\PruebasUnitariasLogicaN.cs" />
+    <Compile Include="Modulo2\PruebaUnitariasPresentadoresM2.cs" />
     <Compile Include="Modulo2\RecursosPU_Mod2.Designer.cs">
       <DependentUpon>RecursosPU_Mod2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -211,6 +225,10 @@
     <ProjectReference Include="..\Interfaz.csproj">
       <Project>{355ee1d1-efbd-44ed-9333-984e675ddd6d}</Project>
       <Name>Interfaz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaz_Contratos\Interfaz_Contratos.csproj">
+      <Project>{688be1ea-7c38-424e-a86a-14ba0fa85f20}</Project>
+      <Name>Interfaz_Contratos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaz_Presentadores\Interfaz_Presentadores.csproj">
       <Project>{f31464f0-9be3-4fe9-9a30-34d5891cc4ea}</Project>

@@ -126,8 +126,8 @@
     <Compile Include="DAO\Modulo1\DaoLogin.cs" />
     <Compile Include="DAO\Modulo1\DaoRestablecer.cs" />
     <Compile Include="DAO\Modulo2\DaoRoles.cs" />
-    <Compile Include="DAO\Modulo2\RecursosBDModulo2.Designer.cs">
-      <DependentUpon>RecursosBDModulo2.resx</DependentUpon>
+    <Compile Include="DAO\Modulo2\RecursosBDM2.Designer.cs">
+      <DependentUpon>RecursosBDM2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -174,29 +174,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo15.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo1\BDLogin.cs" />
-    <Compile Include="Modulo1\BDRestablecer.cs" />
-    <Compile Include="DAO\Modulo1\RecursosBDModulo1.Designer.cs">
+    <Compile Include="DAO\Modulo1\RecursosBDM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo1.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo1\RecursosBDModulo1.Designer.cs">
-      <DependentUpon>RecursosBDModulo1.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Modulo2\BDRoles.cs" />
-    <Compile Include="Modulo2\RecursosBDModulo2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo2.resx</DependentUpon>
+      <DependentUpon>RecursosBDM1.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo4\RecursosBDModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\BDListarUsuarios.cs" />
+    <Compile Include="Modulo6\RecursosBDModulo6.Designer.cs" />
     <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -237,9 +226,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo16.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="DAO\Modulo2\RecursosBDModulo2.resx">
+    <EmbeddedResource Include="DAO\Modulo2\RecursosBDM2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo2.Designer.cs</LastGenOutput>
+      <LastGenOutput>RecursosBDM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo14\RecursosDAOModulo14.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -263,22 +252,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo15.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="DAO\Modulo1\RecursosBDModulo1.resx">
+    <EmbeddedResource Include="DAO\Modulo1\RecursosBDM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo1\RecursosBDModulo1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo2\RecursosBDModulo2.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo4\RecursosBDModulo4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo6\RecursosBDModulo6.resx" />
     <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo8.Designer.cs</LastGenOutput>

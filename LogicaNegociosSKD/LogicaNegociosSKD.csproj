@@ -186,8 +186,8 @@
     <Compile Include="Comandos\Modulo2\ComandoEliminarRol.cs" />
     <Compile Include="Comandos\Modulo2\ComandoRolesDeSistema.cs" />
     <Compile Include="Comandos\Modulo2\ComandoRolesUsuario.cs" />
-    <Compile Include="Comandos\Modulo2\RecursosLogicaModulo2.Designer.cs">
-      <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
+    <Compile Include="Comandos\Modulo2\RecursosComandoModulo2.Designer.cs">
+      <DependentUpon>RecursosComandoModulo2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -233,25 +233,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo1\logicaLogin.cs" />
-    <Compile Include="Modulo1\logicaRestablecer.cs" />
-    <Compile Include="Modulo1\RecursosLogicaModulo1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo1.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo2\AlgoritmoDeEncriptacion.cs" />
-    <Compile Include="Modulo2\logicaRol.cs" />
-    <Compile Include="Modulo2\RecursosLogicaModulo2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo4\RecursosLogicaModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\LogicaListar.cs" />
+    <Compile Include="Modulo6\RecursosLogicaModulo6.Designer.cs" />
     <Compile Include="Modulo8\RecursosLogicaModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -306,9 +294,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comandos\Modulo2\RecursosLogicaModulo2.resx">
+    <EmbeddedResource Include="Comandos\Modulo2\RecursosComandoModulo2.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
+      <LastGenOutput>RecursosComandoModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo9\RecursosComandosModulo9.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -322,24 +310,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo1\RecursosLogicaModulo1.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo2\RecursosLogicaModulo2.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo4\RecursosLogicaModulo4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo6\RecursosLogicaModulo6.resx" />
     <EmbeddedResource Include="Modulo8\RecursosLogicaModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\" />
     <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo4\" />

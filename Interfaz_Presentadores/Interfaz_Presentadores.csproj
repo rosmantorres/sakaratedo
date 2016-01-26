@@ -34,11 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+      <HintPath>..\CKEditor.NET.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp">
+      <HintPath>..\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -245,7 +244,7 @@
       <LastGenOutput>RecursosInterfazPresentadorM1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo2\RecursosInterfazPresentadorM2.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazPresentadorM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo3\RecursosPresentadorM3.resx">
