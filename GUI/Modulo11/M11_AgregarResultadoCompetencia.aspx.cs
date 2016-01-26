@@ -282,11 +282,11 @@ namespace templateApp.GUI.Modulo11
             {
                 Session[M11_RecursoInterfaz.EspecialidadEvento] = "";
             }
-            string numero = "";
-            bool respuesta = presentador.CargarTablas_LuegoDeCategoria(Session[M11_RecursoInterfaz.IdEvento].ToString(), Session[M11_RecursoInterfaz.TipoEvento].ToString(), Session[M11_RecursoInterfaz.EspecialidadEvento].ToString(), Session[M11_RecursoInterfaz.CategoriaEvento].ToString(), numero);
+            Entidad valor = DominioSKD.Fabrica.FabricaEntidades.ObtenerValores();
+            bool respuesta = presentador.CargarTablas_LuegoDeCategoria(Session[M11_RecursoInterfaz.IdEvento].ToString(), Session[M11_RecursoInterfaz.TipoEvento].ToString(), Session[M11_RecursoInterfaz.EspecialidadEvento].ToString(), Session[M11_RecursoInterfaz.CategoriaEvento].ToString(), valor);
             if (respuesta.Equals(true))
             {
-                Session[M11_RecursoInterfaz.RangoEvento] = numero;
+                Session[M11_RecursoInterfaz.RangoEvento] = ((DominioSKD.Entidades.Modulo10.Valores)valor).Nombre;
             }
         }
 
@@ -384,11 +384,11 @@ namespace templateApp.GUI.Modulo11
             {
                 Session[M11_RecursoInterfaz.RangoEvento] = Convert.ToInt32(Session[M11_RecursoInterfaz.RangoEvento].ToString()) / 2;
                 List<ValorKataKumite> valores = JsonConvert.DeserializeObject<List<ValorKataKumite>>(rvalue2.Value);
-                string numero = "";
-                bool resultado = presentador.CargarTablas_LuegoDeSiguiente(Session[M11_RecursoInterfaz.IdEvento].ToString(), Session[M11_RecursoInterfaz.EspecialidadEvento].ToString(), Session[M11_RecursoInterfaz.CategoriaEvento].ToString(), Session[M11_RecursoInterfaz.RangoEvento].ToString(), valores, numero);
+                Entidad valor = DominioSKD.Fabrica.FabricaEntidades.ObtenerValores();
+                bool resultado = presentador.CargarTablas_LuegoDeSiguiente(Session[M11_RecursoInterfaz.IdEvento].ToString(), Session[M11_RecursoInterfaz.EspecialidadEvento].ToString(), Session[M11_RecursoInterfaz.CategoriaEvento].ToString(), Session[M11_RecursoInterfaz.RangoEvento].ToString(), valores, valor);
                 if (resultado.Equals(true))
                 {
-                    Session[M11_RecursoInterfaz.RangoEvento] = numero;
+                    Session[M11_RecursoInterfaz.RangoEvento] = ((DominioSKD.Entidades.Modulo10.Valores)valor).Nombre;
                 }
             }
         }
@@ -400,11 +400,11 @@ namespace templateApp.GUI.Modulo11
                 Session[M11_RecursoInterfaz.RangoEvento] = Convert.ToInt32(Session[M11_RecursoInterfaz.RangoEvento].ToString()) / 2;
                 List<ValorKataKumite> valores = JsonConvert.DeserializeObject<List<ValorKataKumite>>(rvalue2.Value);
                 List<ValorKataKumite> valores2 = JsonConvert.DeserializeObject<List<ValorKataKumite>>(rvalue.Value);
-                string numero = "";
-                bool resultado = presentador.CargarTablas_LuegoDeSiguienteAmbos(Session[M11_RecursoInterfaz.IdEvento].ToString(), Session[M11_RecursoInterfaz.EspecialidadEvento].ToString(), Session[M11_RecursoInterfaz.CategoriaEvento].ToString(), Session[M11_RecursoInterfaz.RangoEvento].ToString(), valores, numero, valores2);
+                Entidad valor = DominioSKD.Fabrica.FabricaEntidades.ObtenerValores();
+                bool resultado = presentador.CargarTablas_LuegoDeSiguienteAmbos(Session[M11_RecursoInterfaz.IdEvento].ToString(), Session[M11_RecursoInterfaz.EspecialidadEvento].ToString(), Session[M11_RecursoInterfaz.CategoriaEvento].ToString(), Session[M11_RecursoInterfaz.RangoEvento].ToString(), valores, valor, valores2);
                 if (resultado.Equals(true))
                 {
-                    Session[M11_RecursoInterfaz.RangoEvento] = numero;
+                    Session[M11_RecursoInterfaz.RangoEvento] = ((DominioSKD.Entidades.Modulo10.Valores)valor).Nombre;
                 }
             }
         }

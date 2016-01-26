@@ -150,7 +150,7 @@ namespace Interfaz_Presentadores.Modulo11
             llenarComboCategoria(comando.Ejecutar());
         }
 
-        public bool CargarTablas_LuegoDeCategoria(string idEvento, string tipoEvento, string especialidad, string idCategoria, string numero)
+        public bool CargarTablas_LuegoDeCategoria(string idEvento, string tipoEvento, string especialidad, string idCategoria, Entidad numero)
         {
             bool rango = false;
             vista.TablaAscenso.Text = " ";
@@ -175,7 +175,7 @@ namespace Interfaz_Presentadores.Modulo11
             return rango;
         }
 
-        public bool CargarTablas_LuegoDeSiguiente(string idEvento, string especialidad, string idCategoria, string rango, List<ValorKataKumite> valores, string numero)
+        public bool CargarTablas_LuegoDeSiguiente(string idEvento, string especialidad, string idCategoria, string rango, List<ValorKataKumite> valores, Entidad numero)
         {
             bool and = false;
             vista.DivAlerta = false;
@@ -207,7 +207,7 @@ namespace Interfaz_Presentadores.Modulo11
                         else if (bleh.Equals(true))
                         {
                             int num = Convert.ToInt32(rango) * 2;
-                            numero = num.ToString();
+                            ((DominioSKD.Entidades.Modulo10.Valores)numero).Nombre = num.ToString();
                             and = true;
                             ListaEmpate(listaKumite);
                             vista.DivAlerta = true;
@@ -231,7 +231,7 @@ namespace Interfaz_Presentadores.Modulo11
                             vista.BotonSiguiente.Visible = true;
                             vista.BotonKumite.Enabled = false;
                             int num = Convert.ToInt32(rango) + 1;
-                            numero = num.ToString();
+                            ((DominioSKD.Entidades.Modulo10.Valores)numero).Nombre = num.ToString();
                             and = true;
                             vista.DivAlerta = true;
                             vista.alertaClase = M11_RecursosPresentador.AlertaWarning;
@@ -267,7 +267,7 @@ namespace Interfaz_Presentadores.Modulo11
                         else if (bleh.Equals(true))
                         {
                             int num = Convert.ToInt32(rango) * 2;
-                            numero = num.ToString();
+                            ((DominioSKD.Entidades.Modulo10.Valores)numero).Nombre = num.ToString();
                             and = true;
                             ListaEmpate(listaKumite);
                             vista.DivAlerta = true;
@@ -291,7 +291,7 @@ namespace Interfaz_Presentadores.Modulo11
                             vista.BotonSiguiente.Visible = true;
                             vista.BotonAmbos.Enabled = false;
                             int num = Convert.ToInt32(rango) + 1;
-                            numero = num.ToString();
+                            ((DominioSKD.Entidades.Modulo10.Valores)numero).Nombre = num.ToString();
                             and = true;
                             vista.DivAlerta = true;
                             vista.alertaClase = M11_RecursosPresentador.AlertaWarning;
@@ -309,7 +309,7 @@ namespace Interfaz_Presentadores.Modulo11
             return and;
         }
 
-        public bool CargarTablas_LuegoDeSiguienteAmbos(string idEvento, string especialidad, string idCategoria, string rango, List<ValorKataKumite> valores, string numero, List<ValorKataKumite> valores2)
+        public bool CargarTablas_LuegoDeSiguienteAmbos(string idEvento, string especialidad, string idCategoria, string rango, List<ValorKataKumite> valores, Entidad numero, List<ValorKataKumite> valores2)
         {
             bool and = false;
             Entidad competencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerCompetencia();
@@ -340,7 +340,7 @@ namespace Interfaz_Presentadores.Modulo11
                         else if (bleh.Equals(true))
                         {
                             int num = Convert.ToInt32(rango) * 2;
-                            numero = num.ToString();
+                            ((DominioSKD.Entidades.Modulo10.Valores)numero).Nombre = num.ToString();
                             and = true;
                             ListaEmpate(listaKumite);
                             vista.DivAlerta = true;
@@ -622,7 +622,7 @@ namespace Interfaz_Presentadores.Modulo11
             }
         }
 
-        private bool CargarTablas_Kata_Kumite_Ambos(Entidad competencia, string especialidad, string numero)
+        private bool CargarTablas_Kata_Kumite_Ambos(Entidad competencia, string especialidad, Entidad numero)
         {
             bool rango = false;
             if (especialidad.ToString().Equals(M11_RecursosPresentador.especialidadKata))
@@ -648,7 +648,7 @@ namespace Interfaz_Presentadores.Modulo11
                 {
                     rango = true;
                     int rango2 = buscarNumeroPermitido(inscripciones) / 2;
-                    numero = rango2.ToString();
+                    ((DominioSKD.Entidades.Modulo10.Valores)numero).Nombre = rango2.ToString();
                     List<Entidad> listaKumite = crearRandomPeleas(inscripciones, rango2);
                     CargarKumite(listaKumite);
                 }
@@ -672,7 +672,7 @@ namespace Interfaz_Presentadores.Modulo11
                 {
                     rango = true;
                     int rango2 = buscarNumeroPermitido(inscripciones2) / 2;
-                    numero = rango2.ToString();
+                    ((DominioSKD.Entidades.Modulo10.Valores)numero).Nombre = rango2.ToString();
                     List<Entidad> listaKumite = crearRandomPeleas(inscripciones2, rango2);
                     CargarKumite(listaKumite);
                 }
@@ -688,7 +688,6 @@ namespace Interfaz_Presentadores.Modulo11
             {
                 foreach (Entidad inscripcion in inscripciones)
                 {
-                    Entidad resKata = ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).ResKata.ElementAt(0);
                     vista.TablaKata.Text += M11_RecursosPresentador.AbrirTR;
                     vista.TablaKata.Text += M11_RecursosPresentador.AbrirTD + ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Persona.Nombre + " " + ((DominioSKD.Entidades.Modulo10.Inscripcion)inscripcion).Persona.Apellido + M11_RecursosPresentador.CerrarTD;
                     vista.TablaKata.Text += M11_RecursosPresentador.AbrirTD;
