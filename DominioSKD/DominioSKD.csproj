@@ -61,6 +61,7 @@
     <Compile Include="Entidades\Modulo9\Horario.cs" />
     <Compile Include="Entidades\Modulo9\TipoEvento.cs" />
     <Compile Include="Fabrica\FabricaEntidades.cs" />
+    <Compile Include="Historial_Matricula.cs" />
     <Compile Include="InformacionPersonal.cs" />
     <Compile Include="Matricula.cs" />
     <Compile Include="PersonaM1.cs" />

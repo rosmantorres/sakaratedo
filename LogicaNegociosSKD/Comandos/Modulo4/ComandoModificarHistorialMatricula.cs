@@ -9,25 +9,25 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo4
 {
-    class ComandoEliminarDojo : Comando<bool>
+    public class ComandoModificarHistorialMatricula : Comando<bool>
     {
         /// <summary>
         /// Método que sirve de enlace entre los datos
-        /// y la vista que ejecuta el eliminar un dojo
+        /// y la vista que ejecuta en modificar el dojo
         /// </summary>
-        /// <returns>retorna true si se eliminó y false si no se eliminó</returns>
+        /// <returns>retorna true si se agrego y false si no se agregó</returns>
         public override bool Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
-                    , RecursosComandoModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                , RecursosComandoModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                IDaoDojo daoDojo = FabricaDAOSqlServer.ObtenerDAODojo();
+                IDaoHistorialM daoHistorial = FabricaDAOSqlServer.ObtenerDAOHistorialMatricula();
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                     , RecursosComandoModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return daoDojo.EliminarDojo(this.LaEntidad);
+                return daoHistorial.Modificar(this.LaEntidad);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -35,13 +35,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
+            catch (ExcepcionesSKD.Modulo4.DojoInexistenteException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 

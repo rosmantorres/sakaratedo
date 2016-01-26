@@ -33,13 +33,18 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 4
+
         /// <summary>
         /// Método que instancia el DAO de Dojo
         /// </summary>
         /// <returns>DaoDojo</returns>
-        public IDaoDojo ObtenerDAODojo()
+        public static IDaoDojo ObtenerDAODojo()
         {
             return new DaoDojo();
+        }
+        public static IDaoHistorialM ObtenerDAOHistorialMatricula()
+        {
+            return new DaoHistorialMatricula();
         }
         #endregion
 
