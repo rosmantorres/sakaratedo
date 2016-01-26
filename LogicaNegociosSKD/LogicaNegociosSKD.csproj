@@ -89,6 +89,11 @@
     <Compile Include="Comandos\Modulo11\ComandoModificarResultadoAscenso.cs" />
     <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKata.cs" />
     <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKumite.cs" />
+    <Compile Include="Comandos\Modulo15\RecursosComandoModulo15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo15.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
@@ -270,6 +275,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\Modulo15\RecursosComandoModulo15.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo15.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo16\RecursosLogicaModulo16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
