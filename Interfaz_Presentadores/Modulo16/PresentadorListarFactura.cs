@@ -61,7 +61,7 @@ namespace Interfaz_Presentadores.Modulo16
                 Comando<Entidad> comandoListarFacturas = FabricaComandos.CrearComandoConsultarTodasFacturas();
 
                 //Casteamos el parametro
-                PersonaM1 param = new PersonaM1();
+                PersonaM1 param = (PersonaM1)FabricaEntidades.ObtenerPersonaModulo16();
                 param._Id = persona;
                 comandoListarFacturas.LaEntidad = param;
 
@@ -200,7 +200,8 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                Compra compra = new Compra();
+                //Compra compra = new Compra();
+                DominioSKD.Entidades.Modulo16.Compra compra = (DominioSKD.Entidades.Modulo16.Compra)FabricaEntidades.ObtenerFactura();
                 compra.Com_id = int.Parse(id);
 
                 //Casteamos
