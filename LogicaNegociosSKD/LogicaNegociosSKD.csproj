@@ -128,6 +128,11 @@
     <Compile Include="Comandos\Modulo11\ComandoModificarResultadoAscenso.cs" />
     <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKata.cs" />
     <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKumite.cs" />
+    <Compile Include="Comandos\Modulo15\RecursosComandoModulo15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo15.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
@@ -250,11 +255,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\RecursosLogicaModulo15.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo15.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo1\logicaLogin.cs" />
     <Compile Include="Modulo1\logicaRestablecer.cs" />
     <Compile Include="Modulo1\RecursosLogicaModulo1.Designer.cs">
@@ -296,6 +296,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\Modulo15\RecursosComandoModulo15.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo15.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo7\RecursosComandoModulo7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo7.Designer.cs</LastGenOutput>
@@ -339,10 +343,6 @@
     <EmbeddedResource Include="Modulo11\RecursosLogicaModulo11.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo11.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo15\RecursosLogicaModulo15.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo15.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo1\RecursosLogicaModulo1.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

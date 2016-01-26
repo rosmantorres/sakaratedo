@@ -123,11 +123,14 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
+  <data name="Agregar" xml:space="preserve">
+    <value>agregar</value>
+  </data>
   <data name="agregarExito" xml:space="preserve">
-    <value>../Modulo9/M9_ListarEventos.aspx?success=1</value>
+    <value>web_15_ConsultarImplemento.aspx?agregar=exito</value>
   </data>
   <data name="alertaError" xml:space="preserve">
-    <value>alert alert-danger alert-dismissible</value>
+    <value>alert alert-success alert-dismissible</value>
   </data>
   <data name="alertaHtml" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
@@ -136,22 +139,37 @@
     <value>&lt;/div&gt;</value>
   </data>
   <data name="alertaSuccess" xml:space="preserve">
-    <value>alert alert-success alert-dismissible</value>
+    <value>alert</value>
   </data>
   <data name="alertClase" xml:space="preserve">
     <value>class</value>
   </data>
+  <data name="AlertErrorConsultar" xml:space="preserve">
+    <value>&lt;td&gt;&lt;div class='panel panel-default caja'&gt;&lt;div class='panel-body alert-error'&gt;&lt;/div&gt;&lt;/td&gt;</value>
+  </data>
+  <data name="AlertErrorWarningConsultar" xml:space="preserve">
+    <value>&lt;td&gt;&lt;div class='panel panel-default caja'&gt;&lt;div class='panel-body alert-warning'&gt;&lt;/div&gt;&lt;/td&gt;</value>
+  </data>
+  <data name="AlertInnerHtmlConsultar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;"+ex.Data+"&lt;/div&gt;</value>
+  </data>
+  <data name="AlertInnerHtmlExcepcionConsultar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Problema Cargando los Datos&lt;/div&gt;</value>
+  </data>
   <data name="alertRole" xml:space="preserve">
     <value>role</value>
   </data>
-  <data name="BotonCerrar" xml:space="preserve">
-    <value>"&gt;&lt;/a&gt;</value>
+  <data name="AlertSuccesConsultar" xml:space="preserve">
+    <value>&lt;td&gt;&lt;div class='panel panel-default caja'&gt;&lt;div class='panel-body alert-success'&gt;&lt;/div&gt;&lt;/td&gt;</value>
+  </data>
+  <data name="BotonEliminar" xml:space="preserve">
+    <value>&lt;a id='nombre_2' class='eliminar_clase btn btn-danger glyphicon glyphicon-remove-sign' data-id=" + ((Implemento)valorActual).Id_Implemento + " data-toggle='modal' data-target='#modal-delete'&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
-    <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign"  href="M9_DetalleEvento.aspx?eventoDetalle=</value>
+    <value>&lt;a class='btn btn-primary glyphicon glyphicon-info-sign' data-toggle='modal' data-target='#modal-info' href='#'&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonModificar" xml:space="preserve">
-    <value>&lt;a class="btn btn-default glyphicon glyphicon-pencil" href="M9_ModificarEvento.aspx?eventoMod=</value>
+    <value>&lt;a class='btn btn-default glyphicon glyphicon-pencil'  href='web_15_ModificarImplemento.aspx?idImplemento=" + ((Implemento)valorActual).Id_Implemento + "'&gt;&lt;/a&gt;</value>
   </data>
   <data name="camposVacios" xml:space="preserve">
     <value>Existen campos vacios, todos los campos son obligatorios</value>
@@ -165,32 +183,38 @@
   <data name="coma" xml:space="preserve">
     <value>,</value>
   </data>
-  <data name="comboVacio" xml:space="preserve">
-    <value>Debe seleccionar un tipo de evento</value>
+  <data name="Consultar" xml:space="preserve">
+    <value>consultar</value>
+  </data>
+  <data name="Eliminar" xml:space="preserve">
+    <value>eliminar</value>
   </data>
   <data name="errorGet" xml:space="preserve">
     <value>error</value>
   </data>
+  <data name="Exito" xml:space="preserve">
+    <value>exito</value>
+  </data>
   <data name="expresionSQL" xml:space="preserve">
     <value>/\w*((\%27)|(\'))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/ix</value>
   </data>
-  <data name="idAlertAgregar" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="idAlertModificar" xml:space="preserve">
-    <value>2</value>
+  <data name="IdImplemento" xml:space="preserve">
+    <value>idImplemento</value>
   </data>
   <data name="idModulo" xml:space="preserve">
-    <value>9</value>
+    <value>15</value>
   </data>
-  <data name="idModuloModificar" xml:space="preserve">
-    <value>9.1</value>
+  <data name="Inactivo" xml:space="preserve">
+    <value>Inactivo</value>
   </data>
-  <data name="innerHtmlAlertAgregar" xml:space="preserve">
-    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento agregado exitosamente&lt;/div&gt;</value>
+  <data name="innerHtmlAlertAgregarError" xml:space="preserve">
+    <value>"&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;"+ex.Data+"&lt;/div&gt;"</value>
   </data>
-  <data name="innerHtmlAlertModificar" xml:space="preserve">
-    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento modificado exitosamente&lt;/div&gt;</value>
+  <data name="innerHtmlAlertAgregarExcepcion" xml:space="preserve">
+    <value>"&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Problema con los campos ingresados&lt;/div&gt;"</value>
+  </data>
+  <data name="innerHtmlAlertAgregarExitoso" xml:space="preserve">
+    <value>"&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Implemento deportivo eliminado exitosamente&lt;/div&gt;"</value>
   </data>
   <data name="inputCaracteresEspeciales" xml:space="preserve">
     <value>Los campos no deben tener caracteres especiales</value>
@@ -201,37 +225,31 @@
   <data name="keyCombo" xml:space="preserve">
     <value>key</value>
   </data>
+  <data name="MensajeAgregarSuccess" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se agrego con exito&lt;/div&gt;</value>
+  </data>
+  <data name="MensajeEliminarSuccess" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span&gt; aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se elimino con exito&lt;/div&gt;</value>
+  </data>
+  <data name="MensajeModificarSuccess" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se modifico con exito&lt;/div&gt;</value>
+  </data>
+  <data name="Modificar" xml:space="preserve">
+    <value>modificar</value>
+  </data>
   <data name="modificarExito" xml:space="preserve">
-    <value>../Modulo9/M9_ListarEventos.aspx?success=2</value>
+    <value>../Modulo12/M12_ListarCompetencias.aspx?success=2</value>
   </data>
-  <data name="selecccionarEvento" xml:space="preserve">
-    <value>Seleccione un Evento</value>
+  <data name="orgTodas" xml:space="preserve">
+    <value>Todas</value>
   </data>
-  <data name="strErrorMalicioso" xml:space="preserve">
-    <value>input_malicioso</value>
+  <data name="Otros" xml:space="preserve">
+    <value>otros</value>
   </data>
-  <data name="strEventoDetalle" xml:space="preserve">
-    <value>eventoDetalle</value>
+  <data name="Redireccionar" xml:space="preserve">
+    <value>~/GUI/Modulo1/Index.aspx</value>
   </data>
-  <data name="strEventoMod" xml:space="preserve">
-    <value>eventoMod</value>
-  </data>
-  <data name="strSuccess" xml:space="preserve">
-    <value>success</value>
-  </data>
-  <data name="tipoAlerta" xml:space="preserve">
-    <value>alert</value>
-  </data>
-  <data name="valueCombo" xml:space="preserve">
-    <value>value</value>
-  </data>
-  <data name="expresionNombre" xml:space="preserve">
-    <value>^[A-Z 0-9 a-z]*$</value>
-  </data>
-  <data name="nombreInvalido" xml:space="preserve">
-    <value>El nombre posee un carácter inválido</value>
-  </data>
-  <data name="costoInvalido" xml:space="preserve">
-    <value>El costo del evento no puede ser negativo</value>
+  <data name="RutaImagenes" xml:space="preserve">
+    <value>~/GUI/Modulo15/Imagenes/</value>
   </data>
 </root>

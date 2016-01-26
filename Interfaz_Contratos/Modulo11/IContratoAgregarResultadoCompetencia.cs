@@ -46,5 +46,7 @@ namespace Interfaz_Contratos.Modulo11
         bool LEspecialidad { get; set; }
 
         bool LPosicion { get; set; }
+
+        bool DivAlerta { get; set; }
     }
 }
