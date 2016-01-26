@@ -7,6 +7,7 @@ using DominioSKD;
 using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
+using DominioSKD.Entidades.Modulo7;
 
 namespace DominioSKD.Fabrica
 {
@@ -99,9 +100,50 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 6
+
         #endregion
 
         #region Modulo 7
+        public static Entidad ObtenerCintaM7()
+        {
+            return new CintaM7();
+        }
+        public static Entidad ObtenerCompetenciaM7()
+        {
+            return new CompetenciaM7();
+        }
+        public static Entidad ObtenerMatriculaM7()
+        {
+            return new MatriculaM7();
+        }
+        public static Entidad ObtenerDojoM7()
+        {
+            return new DojoM7();
+        }
+        public static Entidad ObtenerEventoM7()
+        {
+            return new EventoM7();
+        }
+        public static Entidad ObtenerHorarioM7()
+        {
+            return new HorarioM7();
+        }
+        public static Entidad ObtenerOrganizacionM7()
+        {
+            return new OrganizacionM7();
+        }
+        public static Entidad ObtenerPersonaM7()
+        {
+            return new PersonaM7();
+        }
+        public static Entidad ObtenerTipoEventoM7()
+        {
+            return new TipoEventoM7();
+        }
+        public static Entidad ObtenerUbicacionM7()
+        {
+            return new UbicacionM7();
+        }
         #endregion
 
         #region Modulo 8
@@ -111,7 +153,7 @@ namespace DominioSKD.Fabrica
         /// Fabrica de Restriccion Competencia sin parametros de entrada
         /// </summary>
         /// <returns> Objeto Tipo Entidad </returns>
-       
+
         public Entidad ObtenerRestriccionCompetencia()
         {
             return new Entidades.Modulo8.RestriccionCompetencia();
