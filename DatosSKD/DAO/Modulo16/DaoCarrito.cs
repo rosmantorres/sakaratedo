@@ -44,16 +44,16 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>El exito o fallo del proceso</returns>
         public bool agregarItem(Entidad persona, Entidad objeto, int tipoObjeto, int cantidad)
         {
+            //Escribo en el logger la entrada a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER,
+                System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             //Nos aseguramos que realmente sea una persona valida
             if (persona is Persona)
             {
                 try
                 {
-                    //Escribo en el logger la entrada a este metodo
-                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                        RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER,
-                        System.Reflection.MethodBase.GetCurrentMethod().Name);
-
                     //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
                     int respuesta = 0;
                     bool exito = false;
@@ -258,14 +258,15 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Lista de Implementos encontrados en el carrito de la persona</returns>
         public Dictionary<Entidad, int> getImplemento(Entidad persona)
         {
+            //Escribo en el logger la entrada a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            //Nos aseguramos que realmente sea una persona valida
             if (persona is Persona)
             {
                 try
                 {
-                    //Escribo en el logger la entrada a este metodo
-                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                        RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
                     //Creo la lista que sera la respuesta de la consulta
                     Dictionary<Entidad, int> laLista = new Dictionary<Entidad, int>();
 
@@ -383,14 +384,15 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Lista de Eventos encontrados en el carrito de la persona</returns>
         public Dictionary<Entidad, int> getEvento(Entidad persona)
         {
+            //Escribo en el logger la entrada a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            //Nos aseguramos que realmente sea una persona valida
             if (persona is Persona)
             {
                 try
                 {
-                    //Escribo en el logger la entrada a este metodo
-                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                        RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
                     //Creo la lista que sera la consulta
                     Dictionary<Entidad, int> laLista = new Dictionary<Entidad, int>();
 
@@ -425,8 +427,8 @@ namespace DatosSKD.DAO.Modulo16
                         {
                             //Me creo el evento
                             FabricaEntidades fabrica = new FabricaEntidades();
-                            DominioSKD.Entidades.Modulo9.Evento elEvento 
-                                = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
+                            DominioSKD.Entidades.Modulo9.Evento elEvento
+                                = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
                             elEvento.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
                             elEvento.Nombre = row2[RecursosBDModulo16.PARAMETRO_NOMBRE].ToString();
                             elEvento.Costo = int.Parse(row2[RecursosBDModulo16.PARAMETRO_PRECIO].ToString());
@@ -503,14 +505,15 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>Lista de Matriculas encontradas en el carrito de la persona</returns>
         public Dictionary<Entidad, int> getMatricula(Entidad persona)
         {
+            //Escribo en el logger la entrada a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            //Nos aseguramos que realmente sea una persona valida
             if (persona is Persona)
             {
                 try
                 {
-                    //Escribo en el logger la entrada a este metodo
-                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                        RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
                     //Creo la lista que sera la consulta
                     Dictionary<Entidad, int> laLista = new Dictionary<Entidad, int>();
 
@@ -612,6 +615,109 @@ namespace DatosSKD.DAO.Modulo16
                     throw new ExceptionSKDConexionBD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
                         RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
                 }
+            }
+            else throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
+                    RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());
+        }
+
+        /// <summary>
+        /// Metodo del DAO que obtiene todos los pagos que existan de un carrito aun abierto del usuario
+        /// en la Base de Datos
+        /// </summary>
+        /// <param name="persona">La persona a la que se le vera los pagos realizados</param>
+        /// <returns>La cantidad total que la persona haya ya pagado al carrito</returns>
+        public float getMontoPagado (Entidad persona)
+        {
+
+            //Escribo en el logger la entrada a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            //Nos aseguramos que realmente sea una persona valida
+            if (persona is Persona)
+            {
+                try
+                {
+                    //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
+                    float respuesta = 0;
+                    List<Resultado> result;
+
+                    //Creo la lista de los parametros para el stored procedure y los anexo
+                    List<Parametro> parametros = new List<Parametro>();
+                    Parametro parametro = new Parametro();
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
+                        SqlDbType.Int, persona.Id.ToString(), false);
+                    parametros.Add(parametro);
+                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
+                        SqlDbType.Float, respuesta.ToString(), true);
+                    parametros.Add(parametro);
+
+                    //Ejecuto el Stored Procedure
+                    result = EjecutarStoredProcedure(RecursosBDModulo16.PROCEDIMIENTO_MONTOS_PAGADOS, parametros);
+
+                    //Recorro cada una de las respuestas en la lista
+                    foreach (Resultado aux in result)
+                    {
+                        //Obtengo el monto de todo lo pagado
+                        respuesta = float.Parse(aux.valor);
+                    }
+
+                    //Limpio la conexion
+                        LimpiarSQLConnection();
+
+                    //Escribo en el logger la salida a este metodo
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                    RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    //Retorno el monto
+                    return respuesta;
+                }
+                catch (LoggerException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ArgumentNullException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
+                }
+                catch (FormatException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
+                }
+                catch (OverflowException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
+                }
+                catch (ParametroInvalidoException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ExceptionSKDConexionBD e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ExceptionSKD e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (Exception e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw new ExceptionSKDConexionBD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
+                        RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
+                }
+
+                
             }
             else throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
                     RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());
@@ -744,16 +850,16 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>El exito o fallo del proceso</returns>
         public bool RegistrarPago(Entidad persona, Entidad pago)
         {
+            //Escribo en el logger la entrada a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             //Nos aseguramos que realmente sea una persona valida
             if (persona is Persona)
             {
                 //Procedo a intentar registrar el pago en Base de Datos
                 try
                 {
-                    //Escribo en el logger la entrada a este metodo
-                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                        RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
                     //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
                     int respuesta = 0;
                     bool exito = false;
@@ -761,6 +867,12 @@ namespace DatosSKD.DAO.Modulo16
 
                     //Casteo explicitamente el pago para obtener sus datos
                     Pago pagoCompra = pago as Pago;
+
+                    if (pagoCompra == null)
+                        throw new ItemInvalidoException
+                                    (RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_INVALIDO,
+                                    RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO,
+                                    new ItemInvalidoException());
 
                     //Creo la lista de los parametros para el stored procedure y los anexo
                     List<Parametro> parametros = new List<Parametro>();
@@ -770,7 +882,7 @@ namespace DatosSKD.DAO.Modulo16
                     parametros.Add(parametro);
 
                     parametro = new Parametro(RecursosBDModulo16.PARAMETRO_MONTO,
-                        SqlDbType.VarChar, pagoCompra.Monto.ToString(), false);
+                        SqlDbType.Float, pagoCompra.Monto.ToString(), false);
                     parametros.Add(parametro);
 
                     parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PAGO,
@@ -811,109 +923,7 @@ namespace DatosSKD.DAO.Modulo16
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;
                 }
-                catch (ArgumentNullException e)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                    throw new ParseoVacioException(RecursosBDModulo16.CODIGO_EXCEPCION_ARGUMENTO_NULO,
-                        RecursosBDModulo16.MENSAJE_EXCEPCION_ARGUMENTO_NULO, e);
-                }
-                catch (FormatException e)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                    throw new ParseoFormatoInvalidoException(RecursosBDModulo16.CODIGO_EXCEPCION_FORMATO_INVALIDO,
-                        RecursosBDModulo16.MENSAJE_EXCEPCION_FORMATO_INVALIDO, e);
-                }
-                catch (OverflowException e)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                    throw new ParseoEnSobrecargaException(RecursosBDModulo16.CODIGO_EXCEPCION_SOBRECARGA,
-                        RecursosBDModulo16.MENSAJE_EXCEPCION_SOBRECARGA, e);
-                }
-                catch (ParametroInvalidoException e)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                    throw e;
-                }
-                catch (ExceptionSKDConexionBD e)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                    throw e;
-                }
-                catch (ExceptionSKD e)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                    throw e;
-                }
-                catch (Exception e)
-                {
-                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
-                    throw new ExceptionSKD(RecursosBDModulo16.CODIGO_EXCEPCION_GENERICO,
-                        RecursosBDModulo16.MENSAJE_EXCEPCION_GENERICO, e);
-                }
-            }
-            else
-                throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
-                    RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());
-        }
-
-       /* /// <summary>
-        /// Metodo que registra el pago de los productos de una persona en la Base de Datos
-        /// </summary>
-        /// <param name="persona">La persona a la que se le adjudicara el pago</param>
-        /// <param name="tipoPago">El tipo de pago con el que se realizo la transaccion</param>
-        /// <returns>El exito o fallo del proceso</returns>
-        public bool RegistrarPago(Entidad persona, String tipoPago)
-        {
-            //Nos aseguramos que realmente sea una persona valida
-            if (persona is Persona)
-            {
-                //Procedo a intentar registrar el pago en Base de Datos
-                try
-                {
-                    //Escribo en el logger la entrada a este metodo
-                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                        RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-                    //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
-                    int respuesta = 0;
-                    bool exito = false;
-                    List<Resultado> result;
-
-                    //Creo la lista de los parametros para el stored procedure y los anexo
-                    List<Parametro> parametros = new List<Parametro>();
-                    Parametro parametro = new Parametro();
-                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_USUARIO,
-                        SqlDbType.Int, persona.Id.ToString(), false);
-                    parametros.Add(parametro);
-                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_PAGO,
-                        SqlDbType.VarChar, tipoPago, false);
-                    parametros.Add(parametro);
-                    parametro = new Parametro(RecursosBDModulo16.PARAMETRO_EXITO,
-                        SqlDbType.Int, respuesta.ToString(), true);
-                    parametros.Add(parametro);
-
-                    //Ejecuto el Stored Procedure
-                    result = EjecutarStoredProcedure(RecursosBDModulo16.PROCEDIMIENTO_REGISTRAR_PAGO, parametros);
-
-                    //Recorro cada una de las respuestas en la lista
-                    foreach (Resultado aux in result)
-                    {
-                        //Si el valor retornado del Stored Procedure es 1 la operacion se realizo con exito
-                        if (aux.valor == "1")
-                            exito = true;
-                    }
-
-                    //Limpio la conexion
-                    LimpiarSQLConnection();
-
-                    //Escribo en el logger la salida a este metodo
-                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                       RecursosBDModulo16.MENSAJE_SALIDA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-                    //Retorno la Respuesta
-                    return exito;
-                }
-                catch (LoggerException e)
+                catch (ItemInvalidoException e)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;
@@ -961,7 +971,7 @@ namespace DatosSKD.DAO.Modulo16
             else
                 throw new PersonaNoValidaException(RecursosBDModulo16.CODIGO_EXCEPCION_PERSONA_INVALIDA,
                     RecursosBDModulo16.MENSAJE_EXCEPCION_PERSONA_INVALIDA, new PersonaNoValidaException());
-        }*/
+        }       
         #endregion
 
         #region ModificarCarrito
@@ -975,15 +985,15 @@ namespace DatosSKD.DAO.Modulo16
         /// <returns>El exito o fallo del proceso</returns>
         public bool ModificarCarrito(Entidad persona, Entidad objeto, int tipoObjeto, int cantidad)
         {
+            //Escribo en el logger la entrada a este metodo
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+              RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
             //Nos aseguramos que realmente sea una persona valida
             if (persona is Persona)
             {
                 try
                 {
-                    //Escribo en el logger la entrada a este metodo
-                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                      RecursosBDModulo16.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
                     //Preparamos la respuesta del Stored procedure y el exito o fallo del proceso
                     int respuesta = 0;
                     bool exito = false;
@@ -1003,9 +1013,11 @@ namespace DatosSKD.DAO.Modulo16
                             Implemento elImplemento = objeto as Implemento;
 
                             //Lanzamos una excepcion si no es un implemento o si esta en vacio
-                            if (elImplemento == null)
-                                //De Igual Forma Aca
-                                throw new ItemInvalidoException(RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO);
+                            if (elImplemento == null)                                
+                                throw new ItemInvalidoException(
+                                    RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_INVALIDO, 
+                                    RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO, 
+                                    new ItemInvalidoException());
 
                             //Si es un implemento
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDIMPLEMENTO2,
@@ -1030,8 +1042,10 @@ namespace DatosSKD.DAO.Modulo16
 
                             //Lanzamos una excepcion si no es un Evento o si esta en vacio
                             if (elEvento == null)
-                                //De Igual Forma Aca
-                                throw new ItemInvalidoException(RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO);
+                                throw new ItemInvalidoException(
+                                    RecursosBDModulo16.CODIGO_EXCEPCION_ITEM_INVALIDO,
+                                    RecursosBDModulo16.MENSAJE_EXCEPCION_ITEM_INVALIDO,
+                                    new ItemInvalidoException());
 
                             parametro = new Parametro(RecursosBDModulo16.PARAMETRO_IDEVENTO2,
                                 SqlDbType.Int, elEvento.Id.ToString(), false);
@@ -1080,6 +1094,11 @@ namespace DatosSKD.DAO.Modulo16
                     return exito;
                 }
                 catch (LoggerException e)
+                {
+                    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                    throw e;
+                }
+                catch (ItemInvalidoException e)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;

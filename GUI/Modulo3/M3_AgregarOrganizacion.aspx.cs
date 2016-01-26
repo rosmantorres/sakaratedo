@@ -5,58 +5,78 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
-using LogicaNegociosSKD.Modulo3;
+using Interfaz_Presentadores.Modulo3;
+using Interfaz_Contratos.Modulo3;
+
 
 namespace templateApp.GUI.Modulo3
 {
-    public partial class M3_AgregarOrganizacion : System.Web.UI.Page
+    public partial class M3_AgregarOrganizacion : System.Web.UI.Page, IContratoAgregarOrganizacion
     {
+        private PresentadorAgregarOrganizacion presentador;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "3";
+            this.presentador = new PresentadorAgregarOrganizacion(this);
         }
 
+        #region Contrato
+        public string obtenerNombreOrg()
+        {
+            return this.nombre.Value;
+        }
+        public string obtenerEmail()
+        {
+            return this.email.Value;
+        }
+        public string obtenerTelefono()
+        {
+            return this.telefono.Value;
+        }
+        public string obtenerDireccion()
+        {
+            return this.direccion.Value;
+        }
+        public string obtenerEstado()
+        {
+            return this.ListEstados.SelectedValue;
+        }
+        public string obtenerTecnica()
+        {
+            return this.ListTecnica.SelectedValue;
+        }
+        public void alertaCamposVacios()
+        {
+            this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
+            this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + M3_RecursoInterfaz.camposVacios + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaAgregarFallidoNombreOrg(ExcepcionesSKD.Modulo3.OrganizacionExistenteException ex)
+        {
+            this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
+            this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Message + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaAgregarFallidoEstiloOrg(ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
+        {
+            this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
+            this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Message + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void Respuesta()
+        {
+            this.Response.Redirect(M3_RecursoInterfaz.agregarExito);
+        }
+        #endregion
 
         protected void btnAgregarOrganizaciones(object sender, EventArgs e)
         {
-            string estado = "";
-            string tecnica = "";
-          //  LogicaOrganizacion lO = new LogicaNegociosSKD.Modulo3.LogicaOrganizacion();
-            Organizacion laOrganizacion = new Organizacion();
-
-            if (this.ListEstados.SelectedValue != "-1")
-            {
-                estado = this.ListEstados.SelectedValue;
-                
-            }
-
-            if (this.ListTecnica.SelectedValue != "-1")
-            {
-                tecnica = this.ListTecnica.SelectedValue;
-
-            }
-
-            string nombreOrg = nombre.Value;
-            string correo = email.Value;
-            string tel = telefono.Value;
-            string dir = direccion.Value;
-
-            laOrganizacion.Nombre = nombreOrg;
-            laOrganizacion.Email = correo;
-            laOrganizacion.Telefono = Int32.Parse(tel);
-            laOrganizacion.Direccion = dir;
-            laOrganizacion.Estado = estado;
-            laOrganizacion.Estilo = tecnica;
-            
-            //try
-            try
-            {
-               // lO.agregarOrganizacion(laOrganizacion);
-            }
-            catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
-            {
-
-            }
+           
+            this.presentador.agregarValoresOrganizacion(); 
 
         }
  

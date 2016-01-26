@@ -255,4 +255,10 @@
   <data name="strErrorMalicioso" xml:space="preserve">
     <value>input_malicioso</value>
   </data>
+  <data name="expresionNombre" xml:space="preserve">
+    <value>^[A-Z 0-9 a-z]*$</value>
+  </data>
+  <data name="nombreInvalido" xml:space="preserve">
+    <value>El nombre posee un carácter inválido</value>
+  </data>
 </root>

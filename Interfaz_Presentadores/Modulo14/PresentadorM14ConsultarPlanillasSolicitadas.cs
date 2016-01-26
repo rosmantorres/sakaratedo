@@ -31,7 +31,9 @@ namespace Interfaz_Presentadores.Modulo14
             vista.alertaRol = "alert";
             vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
-
+        /// <summary>
+        /// Agrega los datos requeridos de la tabla de planillas solicitadas
+        /// </summary>
         public void LlenarInformacion(List<Entidad> lista)
         {
             try
@@ -57,15 +59,18 @@ namespace Interfaz_Presentadores.Modulo14
             catch (NullReferenceException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Llena la tabla con los datos de las planillas solicitadas por usuario
+        /// </summary>
+        /// <returns>lista de entidad</returns>
         public List<Entidad> LlenarTabla(int idPersona)
         {
 
@@ -79,35 +84,38 @@ namespace Interfaz_Presentadores.Modulo14
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
+            return null;
         }
-
+        /// <summary>
+        /// Elimina toda una fila de la tabla
+        /// </summary>
         public void EliminarFilaTable(HttpRequest request, int idSol)
         {
             try
@@ -131,32 +139,32 @@ namespace Interfaz_Presentadores.Modulo14
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
         }
     }

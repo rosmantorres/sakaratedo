@@ -9,25 +9,44 @@ namespace Interfaz_Contratos.Modulo11
 {
     public interface IContratoAgregarResultadoCompetencia
     {
-        Calendar fecha { get; set; }
+        Calendar Fecha { get; set; }
 
-        DropDownList comboEvento { get; set; }
+        DropDownList ComboEvento { get; set; }
 
-        DropDownList comboEspecialidad { get; set; }
+        DropDownList ComboEspecialidad { get; set; }
 
-        DropDownList comboCategoria { get; set; }
+        DropDownList ComboCategoria { get; set; }
 
-        Literal dataTable { get; set; }
+        Literal TablaAscenso { get; set; }
 
-        Literal dataTable2 { get; set; }
+        Literal TablaKata { get; set; }
 
-        Literal dataTable3 { get; set; }
+        Literal TablaKumite { get; set; }
 
-        ListBox posiciones { set; }
+        ListBox Posiciones { get; set; }
+
         string alertaClase { set; }
 
         string alertaRol { set; }
 
-        string alert { set; }
+        string alerta { set; }
+
+        LinkButton Boton { get; set; }
+
+        LinkButton BotonKata { get; set; }
+
+        LinkButton BotonKumite { get; set; }
+
+        LinkButton BotonAmbos { get; set; }
+
+        LinkButton BotonSiguiente { get; set; }
+
+        LinkButton BotonSiguienteAmbos { get; set; }
+
+        bool LEspecialidad { get; set; }
+
+        bool LPosicion { get; set; }
+
+        bool DivAlerta { get; set; }
     }
 }

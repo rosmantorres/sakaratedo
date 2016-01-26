@@ -14,7 +14,7 @@ namespace Interfaz_Presentadores.Modulo14
 {
     public class PresentadorM14SolicitarPlanilla
     {
-                 //Variable que contiene la vista respectiva de este presentador a ser manipulada
+       //Variable que contiene la vista respectiva de este presentador a ser manipulada
         private IContratoM14SolicitarPlanilla vista;
         List<Entidad> lista;
         public PresentadorM14SolicitarPlanilla(IContratoM14SolicitarPlanilla vista)
@@ -28,7 +28,9 @@ namespace Interfaz_Presentadores.Modulo14
             vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
             vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
-
+        /// <summary>
+        /// Llenar la informacion de la tabla.
+        /// </summary>
         public void LlenarLaInformacion(List<Entidad>lista)
         {
             this.lista = lista;
@@ -48,15 +50,18 @@ namespace Interfaz_Presentadores.Modulo14
             catch (NullReferenceException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Llenar la tabla con las planillas que se pueden solicitar.
+        /// </summary>
+        /// <returns>una lista de entidad</returns>>
         public List<Entidad> LlenarLaTabla()
         {
             try
@@ -67,35 +72,38 @@ namespace Interfaz_Presentadores.Modulo14
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message); 
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
+            return null;
         }
-
+        /// <summary>
+        /// Cargar la pagina de solicitar plannillas.
+        /// </summary>
         public void PageLoadSolicitarPlanilla()
         {
             try

@@ -20,8 +20,8 @@ namespace templateApp.GUI.Modulo6
         {
             IContratoMasterPage _iMaster = ((SKD)Page.Master);
             _iMaster.IdModulo = "6";
-            LogicaListar lg = new LogicaListar();
-            lasCuentas = lg.Listar();
+            //LogicaListar lg = new LogicaListar();
+            //lasCuentas = lg.Listar();
 
         }
     }

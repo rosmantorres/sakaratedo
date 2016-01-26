@@ -41,39 +41,44 @@
                           
            <table id="example" class="table table-bordered table-striped dataTable" >
                 <thead>
-    			<tr>
-				    <td>ID</td>
-					<td>Nombre</td>
-					<td>Tipo</td>
-                    <td>Marca</td>
-					<td>Color</td>
-                    <td>Talla</td>
-                    <td>Cantidad</td>
-                    <td>Stock M&iacutenimo</td>
-                    <td>Estatus</td>                 
-					<td>Precio (Bs)</td>
-                    <td>Monto Total Bs</td>
-                   <th style="text-align:right;">Acciones</th>
-				</tr>
+    			
                     <tr>
 				
-                    <th>ID</th>
-					<th>Nombre</th>
-					<th>Tipo</th>
-                    <th>Marca</th>
-					<th>Color</th>
-                    <th>Talla</th>
-                    <th>Cantidad</th>
+                    <th >ID</th>
+					<th class="tomar" >Nombre</th>
+					<th class="tomar" >Tipo</th>
+                    <th class="tomar">Marca</th>
+					<th class="tomar">Color</th>
+                    <th class="tomar">Talla</th>
+                    <th class="tomar">Cantidad</th>
                     <th>Stock M&iacutenimo</th>
                     <th>Estatus</th>                 
-					<th>Precio (Bs)</th>
+					<th class="tomar">Precio (Bs)</th>
                     <th >Monto Total Bs</th>
                    <th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
-
+                <tfoot>
+                        <tr>
+                    <th>ID</th>
+					<th >Nombre</th>
+					<th >Tipo</th>
+                    <th >Marca</th>
+					<th >Color</th>
+                    <th >Talla</th>
+                    <th >Cantidad</th>
+                    <th>Stock M&iacutenimo</th>
+                    <td>Estatus</td>                 
+					<th >Precio (Bs)</th>
+                    <th>Monto Total Bs</th>
+                   <td style="text-align:right;">Acciones</td>
+                            
+                        </tr>
+                    </tfoot>
+                    <tbody id="cuerpo"> 
             <asp:Literal runat="server" ID="tabla"></asp:Literal>
-           </table>
+           </tbody>
+                   </table>
   
         	<%--fin del llenado de la tabla--%>
 
@@ -96,7 +101,7 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <a id="btneliminar" type="button" class="btn btn-primary"  href="M15_ConsultarImplemento.aspx?eliminacionSuccess=1" >Eliminar</a>
+                <a id="btneliminar" type="button" class="btn btn-primary"  href="web_15_eliminarImplemento.aspx?eliminacionSuccess=1" >Eliminar</a>
                 <button type="button" class="btn btn-default" data-dismiss="modal" >Cancelar</button>
            </div>
           </div>
@@ -139,8 +144,11 @@
     </div>
 
       <!-- Declaración de las alertas-->
-    <script type="text/javascript" src="../../plugins/dataTables.tableTools.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../plugins/dataTables.tableTools.css" media="screen" />
+<script type="text/javascript" src="../../plugins/datatables/extensions/TableTools/js/dataTables.tableTools.js" ></script>
+ <link rel="stylesheet" type="text/css" href="../../plugins/datatables/extensions/TableTools/css/dataTables.tableTools.css" />
+
+
+        <link rel="stylesheet" type="text/css" href="../../plugins/dataTables.tableTools.css" media="screen" />
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -149,6 +157,12 @@
                 $("#nombre-dojo").css("text-align", "center");
 
                 var table = $('#example').DataTable({  //lenguaje del DataTable
+                    "iDisplayLength": 6,
+                    "bLengthChange": false,
+
+                    dom: 'T<"clear">lfrtip',
+
+                    "smart":true,
                     "language": {
                         "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
                     },
@@ -157,16 +171,17 @@
                         "targets": [0],
                         "visible": false
                     }],
-                    dom: 'T<"clear">lfrtip',
                     tableTools: {
-                        "sSwfPath": "copy_csv_xls_pdf.swf",
+                        "sSwfPath": "../../plugins/copy_csv_xls_pdf.swf",
                         "aButtons": [
                             "copy",
                             "csv",
                             "xls",
                             {
                                 "sExtends": "pdf",
-                                "sPdfOrientation": "landscape"
+                                "sPdfOrientation": "landscape",
+                                "sPdfMessage": "Lista de Implementos"
+
                             },
                             "print"
                         ]
@@ -176,7 +191,25 @@
 
            
 
-                
+                $('#example tfoot th').each(function () {
+                    var title = $(this).text();
+                    $(this).html('<input type="text" size="7"  placeholder="Buscar ' + title + '" />');
+                });
+
+                table.columns().every( function () {
+                    var that = this;
+
+                    $( 'input', this.footer()).on( 'keyup change', function () {
+                     //   alert(that.search());
+                        if (that.search() !== this.value) {
+
+                            that.search(this.value).draw();
+                        } 
+                } );
+                });
+
+
+
 
                 var req;
                 var tr;

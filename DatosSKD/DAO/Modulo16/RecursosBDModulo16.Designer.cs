@@ -268,11 +268,29 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_CONSULTARFACTURAEVENTOS.
+        /// </summary>
+        internal static string CONSULTAR_EVENTO_FACTURA {
+            get {
+                return ResourceManager.GetString("CONSULTAR_EVENTO_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_CONSULTAREVENTOS.
         /// </summary>
         internal static string CONSULTAR_EVENTOS {
             get {
                 return ResourceManager.GetString("CONSULTAR_EVENTOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_CONSULTARFACTURADATOS.
+        /// </summary>
+        internal static string CONSULTAR_FACTURA_DATO {
+            get {
+                return ResourceManager.GetString("CONSULTAR_FACTURA_DATO", resourceCulture);
             }
         }
         
@@ -295,11 +313,29 @@ namespace DatosSKD.DAO.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M16_CONSULTARFACTURAMATRICULAS.
+        /// </summary>
+        internal static string CONSULTAR_MATRICULA_FACTURA {
+            get {
+                return ResourceManager.GetString("CONSULTAR_MATRICULA_FACTURA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M16_MATRICULAS_MOROSAS.
         /// </summary>
         internal static string CONSULTAR_MATRICULAS_MOROSAS {
             get {
                 return ResourceManager.GetString("CONSULTAR_MATRICULAS_MOROSAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_CONSULTARFACTURAPRODUCTOS.
+        /// </summary>
+        internal static string CONSULTAR_PRODUCTO_FACTURA {
+            get {
+                return ResourceManager.GetString("CONSULTAR_PRODUCTO_FACTURA", resourceCulture);
             }
         }
         
@@ -489,6 +525,132 @@ namespace DatosSKD.DAO.Modulo16 {
         internal static string OPCION_MATRICULA {
             get {
                 return ResourceManager.GetString("OPCION_MATRICULA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cantEvento.
+        /// </summary>
+        internal static string PARAM_CANT_EVENTO {
+            get {
+                return ResourceManager.GetString("PARAM_CANT_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cantMatricula.
+        /// </summary>
+        internal static string PARAM_CANT_MAT {
+            get {
+                return ResourceManager.GetString("PARAM_CANT_MAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to cantProducto.
+        /// </summary>
+        internal static string PARAM_CANTIDAD {
+            get {
+                return ResourceManager.GetString("PARAM_CANTIDAD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fechaPago.
+        /// </summary>
+        internal static string PARAM_FECHA_COMPRA {
+            get {
+                return ResourceManager.GetString("PARAM_FECHA_COMPRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idfactura.
+        /// </summary>
+        internal static string PARAM_ID_FACT {
+            get {
+                return ResourceManager.GetString("PARAM_ID_FACT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to montoPago.
+        /// </summary>
+        internal static string PARAM_MONTO_PAGO_FACT {
+            get {
+                return ResourceManager.GetString("PARAM_MONTO_PAGO_FACT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to totalEvento.
+        /// </summary>
+        internal static string PARAM_MONTO_PE {
+            get {
+                return ResourceManager.GetString("PARAM_MONTO_PE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to totalMatricula.
+        /// </summary>
+        internal static string PARAM_MONTO_PM {
+            get {
+                return ResourceManager.GetString("PARAM_MONTO_PM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to totalProducto.
+        /// </summary>
+        internal static string PARAM_MONTO_PP {
+            get {
+                return ResourceManager.GetString("PARAM_MONTO_PP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to prodNombre.
+        /// </summary>
+        internal static string PARAM_NOMBRE {
+            get {
+                return ResourceManager.GetString("PARAM_NOMBRE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to evenNombre.
+        /// </summary>
+        internal static string PARAM_NOMBRE_EVENTO {
+            get {
+                return ResourceManager.GetString("PARAM_NOMBRE_EVENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to matNombre.
+        /// </summary>
+        internal static string PARAM_NOMBRE_MAT {
+            get {
+                return ResourceManager.GetString("PARAM_NOMBRE_MAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to precUnitario.
+        /// </summary>
+        internal static string PARAM_PRECIO {
+            get {
+                return ResourceManager.GetString("PARAM_PRECIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tipoPago.
+        /// </summary>
+        internal static string PARAM_TIPO_PAGO_FACT {
+            get {
+                return ResourceManager.GetString("PARAM_TIPO_PAGO_FACT", resourceCulture);
             }
         }
         
@@ -948,6 +1110,15 @@ namespace DatosSKD.DAO.Modulo16 {
         internal static string PROCEDIMIENTO_MODIFICAR_CANTIDAD_IMPLEMENTO {
             get {
                 return ResourceManager.GetString("PROCEDIMIENTO_MODIFICAR_CANTIDAD_IMPLEMENTO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M16_MONTOS_PAGADOS.
+        /// </summary>
+        internal static string PROCEDIMIENTO_MONTOS_PAGADOS {
+            get {
+                return ResourceManager.GetString("PROCEDIMIENTO_MONTOS_PAGADOS", resourceCulture);
             }
         }
         

@@ -77,6 +77,14 @@ namespace DatosSKD.InterfazDAO.Modulo16
         /// <param name="objetoBorrar">El objeto que voy a eliminar</param>
         /// <param name="parametro">La persona a la cual esta asociada el carrito</param>
         /// <returns>El exito o fallo del proceso</returns>
-        bool eliminarItem(int tipoObjeto, Entidad objetoBorrar, Entidad persona);                  
+        bool eliminarItem(int tipoObjeto, Entidad objetoBorrar, Entidad persona);
+
+        /// <summary>
+        /// Metodo que obtiene todos los pagos que se hayan hecho de ese carrito abierto
+        /// </summary>
+        /// <param name="persona">La persona a la que se desea consultar los montos 
+        /// que ha pagado en Base de Datos</param>
+        /// <returns>La cantidad total que ha pagado</returns>
+        float getMontoPagado(Entidad persona);  
     }
 }

@@ -20,6 +20,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPersona; }
             set { idPersona = value; }
         }
+        /// <summary>Obtener una solicitud por ID</summary>
+        /// <param name="idPlanilla"></param>
+        /// <returns>Regresa la solicitud con su fechar, fecharei y motivo</returns>
+        /// 
         public override List<Entidad> Ejecutar()
         {
             IDaoSolicitud BaseDeDatoSolicitud = FabricaDAOSqlServer.ObtenerDAOSolicitud();

@@ -14,11 +14,6 @@ namespace templateApp.GUI.Modulo12
 {
     public partial class M12_AgregarCompetencias : System.Web.UI.Page, IContratoAgregarCompetencias
     {
-        //private DominioSKD.Competencia laCompetencia = new DominioSKD.Competencia();
-        //private LogicaNegociosSKD.Modulo12.LogicaCompetencias laLogica = new LogicaNegociosSKD.Modulo12.LogicaCompetencias();
-        //private List<Organizacion> listaOrg = new List<Organizacion>();
-        //private List<Cinta> listaCintaDesde = new List<Cinta>();
-        //private List<Cinta> listaCintaHasta = new List<Cinta>();
 
         private PresentadorAgregarCompetencia presentador;
 
@@ -39,6 +34,7 @@ namespace templateApp.GUI.Modulo12
             {
                 presentador.LlenarCombos();
             }
+            
             #endregion
 
         }
@@ -66,6 +62,7 @@ namespace templateApp.GUI.Modulo12
 
         }
         #endregion
+
         #region Contrato
         string IContratoAgregarCompetencias.nombreComp
         {
@@ -147,11 +144,13 @@ namespace templateApp.GUI.Modulo12
         string IContratoAgregarCompetencias.inicioComp
         {
             get { return fechaIni.Value; }
+            set { fechaIni.Value = value; }
         }
 
         string IContratoAgregarCompetencias.finComp
         {
             get { return fechaFin.Value; }
+            set { fechaFin.Value = value; }
         }
 
         string IContratoAgregarCompetencias.latitudComp
