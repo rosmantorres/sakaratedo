@@ -200,7 +200,6 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                //Compra compra = new Compra();
                 DominioSKD.Entidades.Modulo16.Compra compra = (DominioSKD.Entidades.Modulo16.Compra)FabricaEntidades.ObtenerFactura();
                 compra.Com_id = int.Parse(id);
 

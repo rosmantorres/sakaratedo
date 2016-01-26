@@ -217,7 +217,6 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                     string id = e.CommandName;
-                   // Matricula matricula = new Matricula();
                     DominioSKD.Entidades.Modulo6.Matricula matricula = (DominioSKD.Entidades.Modulo6.Matricula)FabricaEntidades.ObtenerMatricula();
                     matricula.Id = int.Parse(id);
                     

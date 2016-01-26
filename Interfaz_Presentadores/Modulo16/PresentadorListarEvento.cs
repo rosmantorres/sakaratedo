@@ -224,7 +224,6 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                //Evento evento = new Evento();
                 DominioSKD.Evento evento = (DominioSKD.Evento)FabricaEntidades.ObtenerEventoCompletos();
                 evento.Id = int.Parse(id);
 
