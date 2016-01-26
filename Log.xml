@@ -2168,3 +2168,185 @@ Error Number:547,State:0,Class:16
 2016-01-25 12:12:29,596 INFO  DaoDojo - Clase: DaoDojo
 2016-01-25 12:12:29,596 INFO  DaoDojo - Mensaje: Entrada en el Método
 2016-01-25 12:12:29,596 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-25 22:22:49,737 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 22:22:49,745 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 22:22:49,745 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 22:22:49,745 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 22:22:49,775 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 22:22:49,775 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 22:22:49,775 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 22:22:49,775 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 22:22:54,629 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:22:54,629 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:22:54,629 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:22:54,629 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:22:54,636 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:22:54,636 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:22:54,637 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:22:54,637 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:22:59,542 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-25 22:22:59,542 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-25 22:22:59,542 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-01-25 22:22:59,543 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-25 22:22:59,546 INFO  ComandoDetallarDojo - *******************************************************
+2016-01-25 22:22:59,546 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-01-25 22:22:59,546 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-01-25 22:22:59,546 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-01-25 22:22:59,552 INFO  DaoDojo - *******************************************************
+2016-01-25 22:22:59,552 INFO  DaoDojo - Clase: DaoDojo
+2016-01-25 22:22:59,552 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-25 22:22:59,552 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-25 22:26:11,687 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 22:26:11,694 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 22:26:11,694 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 22:26:11,694 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 22:26:11,704 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 22:26:11,705 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 22:26:11,705 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 22:26:11,705 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 22:26:15,685 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:26:15,685 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:26:15,685 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:26:15,685 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:26:15,687 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:26:15,687 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:26:15,687 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:26:15,688 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:26:22,441 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:26:22,442 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:26:22,442 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:26:22,442 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:26:22,444 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:26:22,444 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:26:22,444 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:26:22,444 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:26:33,433 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:26:33,434 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:26:33,434 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:26:33,434 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:26:33,438 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:26:33,438 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:26:33,438 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:26:33,438 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:27:01,373 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:27:01,373 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:27:01,373 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:27:01,373 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:27:01,375 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:27:01,375 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:27:01,376 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:27:01,376 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:27:32,368 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-25 22:27:32,368 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-25 22:27:32,370 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-25 22:27:32,370 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-25 22:27:32,372 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-25 22:27:32,372 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-25 22:27:32,372 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-25 22:27:32,372 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-25 22:27:32,378 INFO  DaoDojo - *******************************************************
+2016-01-25 22:27:32,378 INFO  DaoDojo - Clase: DaoDojo
+2016-01-25 22:27:32,378 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-25 22:27:32,378 INFO  DaoDojo - Metodo: Agregar
+2016-01-25 22:27:32,417 ERROR DaoDojo - *******************************************************
+2016-01-25 22:27:32,417 ERROR DaoDojo - Mensaje: No se puede convertir un objeto de tipo 'DominioSKD.Historial_Matricula' al tipo 'DominioSKD.Dojo'.
+2016-01-25 22:27:32,767 ERROR DaoDojo - Origen: DatosSKD
+2016-01-25 22:27:32,768 ERROR DaoDojo - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-25 22:27:32,768 ERROR DaoDojo - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 34
+2016-01-25 22:27:32,768 ERROR DaoDojo - InnerException: 
+2016-01-25 22:27:32,770 INFO  DaoDojo - *******************************************************
+2016-01-25 22:27:32,770 INFO  DaoDojo - Clase: DaoDojo
+2016-01-25 22:27:32,770 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-25 22:27:32,770 INFO  DaoDojo - Metodo: Agregar
+2016-01-25 22:27:32,814 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:27:32,814 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:27:32,814 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:27:32,814 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:27:32,815 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:27:32,816 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:27:32,816 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:27:32,816 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:34:38,970 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 22:34:38,977 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 22:34:38,977 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 22:34:38,977 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 22:34:39,006 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 22:34:39,006 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 22:34:39,006 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 22:34:39,006 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 22:35:02,243 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-25 22:35:02,244 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-25 22:35:02,244 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-25 22:35:02,244 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-25 22:35:02,252 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-25 22:35:02,252 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-25 22:35:02,252 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-25 22:35:02,252 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-25 22:35:02,259 INFO  DaoDojo - *******************************************************
+2016-01-25 22:35:02,259 INFO  DaoDojo - Clase: DaoDojo
+2016-01-25 22:35:02,260 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-25 22:35:02,260 INFO  DaoDojo - Metodo: Agregar
+2016-01-25 22:35:02,301 ERROR DaoDojo - *******************************************************
+2016-01-25 22:35:02,301 ERROR DaoDojo - Mensaje: No se puede convertir un objeto de tipo 'DominioSKD.Historial_Matricula' al tipo 'DominioSKD.Dojo'.
+2016-01-25 22:35:02,306 ERROR DaoDojo - Origen: DatosSKD
+2016-01-25 22:35:02,306 ERROR DaoDojo - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-25 22:35:02,306 ERROR DaoDojo - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 34
+2016-01-25 22:35:02,306 ERROR DaoDojo - InnerException: 
+2016-01-25 22:35:02,310 INFO  DaoDojo - *******************************************************
+2016-01-25 22:35:02,310 INFO  DaoDojo - Clase: DaoDojo
+2016-01-25 22:35:02,310 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-25 22:35:02,310 INFO  DaoDojo - Metodo: Agregar
+2016-01-25 22:35:53,063 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:35:53,063 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:35:53,063 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:35:53,063 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:35:53,070 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:35:53,070 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:35:53,070 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:35:53,070 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:38:23,663 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:38:23,663 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:38:23,663 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:38:23,663 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:38:23,667 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:38:23,667 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:38:23,667 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:38:23,667 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:39:10,828 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-25 22:39:10,828 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-25 22:39:10,828 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-25 22:39:10,828 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-25 22:39:10,830 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-25 22:39:10,830 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-25 22:39:10,830 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-25 22:39:10,830 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-25 22:39:10,833 INFO  DaoDojo - *******************************************************
+2016-01-25 22:39:10,833 INFO  DaoDojo - Clase: DaoDojo
+2016-01-25 22:39:10,833 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-25 22:39:10,833 INFO  DaoDojo - Metodo: Agregar
+2016-01-25 22:39:10,862 ERROR DaoDojo - *******************************************************
+2016-01-25 22:39:10,862 ERROR DaoDojo - Mensaje: No se puede convertir un objeto de tipo 'DominioSKD.Historial_Matricula' al tipo 'DominioSKD.Dojo'.
+2016-01-25 22:39:10,863 ERROR DaoDojo - Origen: DatosSKD
+2016-01-25 22:39:10,863 ERROR DaoDojo - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-25 22:39:10,863 ERROR DaoDojo - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 34
+2016-01-25 22:39:10,863 ERROR DaoDojo - InnerException: 
+2016-01-25 22:39:10,866 INFO  DaoDojo - *******************************************************
+2016-01-25 22:39:10,866 INFO  DaoDojo - Clase: DaoDojo
+2016-01-25 22:39:10,866 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-25 22:39:10,866 INFO  DaoDojo - Metodo: Agregar
+2016-01-25 22:40:05,606 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:40:05,606 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:40:05,606 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:40:05,606 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:40:05,609 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:40:05,609 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:40:05,609 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:40:05,609 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:48:33,281 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:48:33,281 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:48:33,281 INFO  ComandoListarHistorialMatricula - Mensaje: Entrada en el Método
+2016-01-25 22:48:33,281 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
+2016-01-25 22:48:33,289 INFO  ComandoListarHistorialMatricula - *******************************************************
+2016-01-25 22:48:33,289 INFO  ComandoListarHistorialMatricula - Clase: ComandoListarHistorialMatricula
+2016-01-25 22:48:33,289 INFO  ComandoListarHistorialMatricula - Mensaje: Salida del Método
+2016-01-25 22:48:33,289 INFO  ComandoListarHistorialMatricula - Metodo: Ejecutar
