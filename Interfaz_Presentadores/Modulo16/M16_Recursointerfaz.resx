@@ -565,7 +565,7 @@
     <value>S_16_16</value>
   </data>
   <data name="MENSAJE_EXCEPCION_MONTO_INVALIDO" xml:space="preserve">
-    <value>Se ha introducido un monto para pagar el cual es menor a 0 o igual a 0</value>
+    <value>Se ha introducido un monto para pagar el cual es menor a 0 o mayor al adeudado</value>
   </data>
   <data name="ABRE_LABEL_AUX4" xml:space="preserve">
     <value>&lt;label id='aux4' &gt;</value>
@@ -659,5 +659,11 @@
   </data>
   <data name="EXCEPCION_LISTA_VACIA_FACTURA" xml:space="preserve">
     <value>M16_ListarFacturas.aspx?accion=4&amp;mensaje=14</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_CARRITO_VACIO" xml:space="preserve">
+    <value>S_16_17</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_CARRITO_VACIO" xml:space="preserve">
+    <value>Error, no se puede realizar pagos en donde no existan items en el carrito.</value>
   </data>
 </root>

@@ -51,7 +51,6 @@ namespace PruebasUnitariasSKD.Modulo16
         private Implemento implemento2;
         private Matricula matricula;
         private Matricula matricula2;
-        private FabricaEntidades fabrica;
         #endregion
 
         /// <summary>
@@ -60,9 +59,6 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            fabrica = new FabricaEntidades();
-
-
             //La persona
             this.persona = FabricaEntidades.ObtenerPersona();
             this.persona.Id = 11;
@@ -78,21 +74,10 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
             this.implemento2 = (Implemento)FabricaEntidades.ObtenerImplemento();
-            this.implemento2.Id = 2;
+            this.implemento2.Id = 5;
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos
-            //this.eventos = (ComandoConsultarTodosEventos)FabricaComandos.CrearComandoConsultarTodosEventos();
-            //this.eventos.LaEntidad = fabrica.ObtenerPersona_M1(11, "prueba", "prueba");
-            //this.listaEventos = (ListaEvento)this.eventos.Ejecutar();
-
-            /*this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
-            this.evento.Id = 1;
-            this.evento.Costo = 0;
-
-            this.evento2 = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
-            this.evento2.Id = 2;
-            this.evento2.Costo = 2000;*/
             this.evento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;
@@ -296,7 +281,6 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento2 = null;
             this.matricula = null;
             this.matricula2 = null;
-            this.fabrica = null;
         }
 
     }
