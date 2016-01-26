@@ -12,6 +12,7 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD;
 using DominioSKD;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 namespace Interfaz_Presentadores.Modulo8
 {
     public class PresentadorModificarRestriccionEvento
@@ -129,13 +130,33 @@ namespace Interfaz_Presentadores.Modulo8
 
         public void ModificarRest()
         {
+
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
 
             laRestEvento = meterParametrosVistaEnObjeto1(laRestEvento);
 
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<bool> _comando = _fabrica.CrearComandoModificarRestriccionEvento(laRestEvento);
-            bool resultado = _comando.Ejecutar();
+            try
+            {
+                FabricaComandos _fabrica = new FabricaComandos();
+                Comando<bool> _comando = _fabrica.CrearComandoModificarRestriccionEvento(laRestEvento);
+                bool resultado = _comando.Ejecutar();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

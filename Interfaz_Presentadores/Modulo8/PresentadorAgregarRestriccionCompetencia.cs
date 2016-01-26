@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using Interfaz_Contratos.Modulo8;
+using System.Data.SqlClient;
 //using System.Windows;
 
 
@@ -40,9 +41,21 @@ namespace Interfaz_Presentadores.Modulo8
 
 
             }
-            catch (Exception e)
+            catch (SqlException ex)
             {
-                throw e;
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             return resultado;
         }

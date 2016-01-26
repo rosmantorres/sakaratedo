@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace Interfaz_Presentadores.Modulo8
 {
@@ -62,14 +63,20 @@ namespace Interfaz_Presentadores.Modulo8
 
                 }
             }
-            catch (NullReferenceException ex)
+            catch (SqlException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
                 throw ex;
             }
             catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
         }

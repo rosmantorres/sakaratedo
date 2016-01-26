@@ -12,6 +12,7 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD;
 using DominioSKD;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace Interfaz_Presentadores.Modulo8
 {
@@ -61,10 +62,28 @@ namespace Interfaz_Presentadores.Modulo8
             laRestCinta.TiempoMaximo = Int32.Parse(this.vista.tiempo_Max);
             laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);*/
 
-
+            try 
+            { 
             FabricaComandos _fabrica = new FabricaComandos();
             Comando<bool> _comando = _fabrica.CrearComandoModificarRestriccionCinta(laRestCinta);
             bool resultado = _comando.Ejecutar();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Alerta(string msj)

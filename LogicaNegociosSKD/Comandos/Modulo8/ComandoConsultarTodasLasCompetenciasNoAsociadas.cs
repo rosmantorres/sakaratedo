@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
+using System.Data.SqlClient;
+
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
@@ -31,11 +33,21 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
                 resultado = daoRestriccionCompetencia.ConsultarTodasLasCompetenciasNoAsociadas(this.RestriccionCompetencia);
 
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
-
                 throw ex;
-
             }
 
             return resultado;

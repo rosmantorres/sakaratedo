@@ -95,29 +95,21 @@ namespace DatosSKD.DAO.Modulo8
                 }
                 catch (SqlException ex)
                 {
-                
-                    throw new ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
-                
+                    throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                            RecursoGeneralBD.Mensaje, ex);
                 }
                 catch (FormatException ex)
                 {
-
-                    throw new FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                    RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
-                
+                    throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                         RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                 }
-                catch (ExceptionSKDConexionBD ex)
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
-
                     throw ex;
-                
                 }
                 catch (Exception ex)
                 {
-
-                    throw new ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-                
+                    throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
                 
                 return true;
@@ -189,28 +181,20 @@ namespace DatosSKD.DAO.Modulo8
                 }
                 catch (SqlException ex)
                 {
-                    //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                     throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
+                            RecursoGeneralBD.Mensaje, ex);
                 }
                 catch (FormatException ex)
                 {
-                    //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                     throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
                          RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
-                    //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                     throw ex;
                 }
                 catch (Exception ex)
                 {
-                    //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
@@ -268,7 +252,12 @@ namespace DatosSKD.DAO.Modulo8
                 catch (SqlException ex)
                 {
                     throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
+                            RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (FormatException ex)
+                {
+                    throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                         RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
@@ -450,27 +439,24 @@ namespace DatosSKD.DAO.Modulo8
                  }
 
             }
-               
+
             catch (SqlException ex)
             {
-                   
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                RecursoGeneralBD.Mensaje, ex);
-
+                        RecursoGeneralBD.Mensaje, ex);
             }
-              
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-
                 throw ex;
-                
             }
-                
             catch (Exception ex)
             {
-                
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-                
             }
 
                 
@@ -548,24 +534,20 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
-               // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                    RecursoGeneralBD.Mensaje, ex);
+                        RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-               // Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
                      RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -620,32 +602,22 @@ namespace DatosSKD.DAO.Modulo8
 
                 catch (SqlException ex)
                 {
-
-                    throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo, RecursoGeneralBD.Mensaje, ex);
-
+                    throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                            RecursoGeneralBD.Mensaje, ex);
                 }
-
                 catch (FormatException ex)
                 {
-
                     throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                    RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
-
+                         RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                 }
-
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
-
                     throw ex;
-
                 }
-
                 catch (Exception ex)
                 {
-
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-
-                } 
+                }
             }
             else
             {
@@ -750,22 +722,21 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
-
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                RecursoGeneralBD.Mensaje, ex);
-
+                        RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-
                 throw ex;
-
             }
             catch (Exception ex)
             {
-
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            
             }
 
             return listaDeCompetencias;
@@ -865,22 +836,21 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
-
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                RecursoGeneralBD.Mensaje, ex);
-
+                        RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-
                 throw ex;
-
             }
             catch (Exception ex)
             {
-
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            
             }
 
             return listaDeCompetencias;
@@ -935,23 +905,22 @@ namespace DatosSKD.DAO.Modulo8
 
                 catch (SqlException ex)
                 {
-
-                    throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo, RecursoGeneralBD.Mensaje, ex);
-
+                    throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                            RecursoGeneralBD.Mensaje, ex);
                 }
-
+                catch (FormatException ex)
+                {
+                    throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                         RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+                }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
-
                     throw ex;
-
                 }
                 catch (Exception ex)
                 {
-
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-
-                } 
+                }
 
             }
             else
@@ -1024,29 +993,21 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
-
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                RecursoGeneralBD.Mensaje, ex);
-
+                        RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-
                 throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
-            
+                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-             
                 throw ex;
-            
             }
             catch (Exception ex)
             {
-            
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            
             }
             
             return elId;
@@ -1119,24 +1080,21 @@ namespace DatosSKD.DAO.Modulo8
 
             catch (SqlException ex)
             {
-
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                RecursoGeneralBD.Mensaje, ex);
-            
+                        RecursoGeneralBD.Mensaje, ex);
             }
-
+            catch (FormatException ex)
+            {
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-              
                 throw ex;
-            
             }
-
             catch (Exception ex)
             {
-
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
-            
             }
 
             return retorno;
@@ -1184,11 +1142,23 @@ namespace DatosSKD.DAO.Modulo8
                }
 
            }
-           catch (Exception ex1)
+           catch (SqlException ex)
            {
-
-               throw ex1;
-           
+               throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                       RecursoGeneralBD.Mensaje, ex);
+           }
+           catch (FormatException ex)
+           {
+               throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                    RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+           }
+           catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+           {
+               throw ex;
+           }
+           catch (Exception ex)
+           {
+               throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
            
             return resultado;
@@ -1236,11 +1206,23 @@ namespace DatosSKD.DAO.Modulo8
                }
 
            }
-           catch (Exception ex1)
+           catch (SqlException ex)
            {
-
-               throw ex1;
-           
+               throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                       RecursoGeneralBD.Mensaje, ex);
+           }
+           catch (FormatException ex)
+           {
+               throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                    RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+           }
+           catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+           {
+               throw ex;
+           }
+           catch (Exception ex)
+           {
+               throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
            
            return resultado;
@@ -1314,28 +1296,20 @@ namespace DatosSKD.DAO.Modulo8
            }
            catch (SqlException ex)
            {
-               //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                   RecursoGeneralBD.Mensaje, ex);
+                       RecursoGeneralBD.Mensaje, ex);
            }
            catch (FormatException ex)
            {
-               //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-               throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo12.Codigo_Error_Formato,
-                    RecursosDAOModulo12.Mensaje_Error_Formato, ex);
+               throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                    RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
            }
            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
            {
-               //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                throw ex;
            }
            catch (Exception ex)
            {
-           //    Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
            }
 

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace Interfaz_Presentadores.Modulo8
 {

@@ -12,6 +12,7 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD;
 using DominioSKD;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace Interfaz_Presentadores.Modulo8
 {
@@ -179,6 +180,8 @@ namespace Interfaz_Presentadores.Modulo8
 
         public void agregarRest()
         {
+            try
+            {
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
 
             laRestEvento.Descripcion = this.vista.rangoMaximo.SelectedItem.ToString();
@@ -191,6 +194,23 @@ namespace Interfaz_Presentadores.Modulo8
             FabricaComandos _fabrica = new FabricaComandos();
             Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionEvento(laRestEvento);
             bool resultado = _comando.Ejecutar();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }

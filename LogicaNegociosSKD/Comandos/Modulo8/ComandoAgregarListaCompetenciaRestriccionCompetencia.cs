@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
+using System.Data.SqlClient;
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
