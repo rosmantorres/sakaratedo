@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo11\PresentadorDetalleResultado.cs" />
     <Compile Include="Modulo7\M7_RecursosPresentador.Designer.cs">
       <DependentUpon>M7_RecursosPresentador.resx</DependentUpon>
       <AutoGen>True</AutoGen>
