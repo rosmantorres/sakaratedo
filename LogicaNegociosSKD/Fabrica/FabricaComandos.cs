@@ -210,7 +210,7 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Comandos Restriccion Avance de Cinta
-        public Comando<Boolean> CrearComandoAgregarRestriccionCinta(Entidad laRestCinta)
+        public static Comando<Boolean> CrearComandoAgregarRestriccionCinta(Entidad laRestCinta)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta(laRestCinta);
         }

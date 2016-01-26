@@ -524,6 +524,7 @@
 2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - Metodo: Void LlenarInformacion(System.Collections.Generic.List`1[DominioSKD.Entidad])
 2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarInformacion(List`1 lista) in c:\Users\Cesar\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 39
 2016-01-24 11:21:22,196 ERROR PresentadorConsultarRestriccionesCinta - InnerException: 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
@@ -607,6 +608,15 @@
    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas.Ejecutar() in c:\Users\sesm\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarCintaTodas.cs:line 32
 2016-01-24 23:49:14,963 ERROR ComandoConsultarCintaTodas - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Cintas'.
 >>>>>>> Stashed changes
+=======
+2016-01-25 19:08:20,467 ERROR PresentadorConsultarRestriccionesEvento - *******************************************************
+2016-01-25 19:08:20,483 ERROR PresentadorConsultarRestriccionesEvento - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-25 19:08:20,520 ERROR PresentadorConsultarRestriccionesEvento - Origen: LogicaNegociosSKD
+2016-01-25 19:08:20,520 ERROR PresentadorConsultarRestriccionesEvento - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] Ejecutar()
+2016-01-25 19:08:20,520 ERROR PresentadorConsultarRestriccionesEvento - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionEvento.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionEvento.cs:line 40
+   at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesEvento.LlenarTabla() in c:\Users\Cesar\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesEvento.cs:line 84
+2016-01-25 19:08:20,601 ERROR PresentadorConsultarRestriccionesEvento - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_CONSULTAR_EVENTOS_CONRESTRICCION'.
+>>>>>>> fd28240094e61dc43bf0a6fecacc90c7271b679e
    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -623,6 +633,7 @@
    at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+<<<<<<< HEAD
 <<<<<<< Updated upstream
    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Istvan\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
 ClientConnectionId:2c75b9df-b23a-4c1e-a214-17562333e9ef
@@ -1987,3 +1998,8 @@ ClientConnectionId:7e72f694-36a2-4b41-b425-f9381f5efa6d
 Error Number:2812,State:62,Class:16
 =======
 >>>>>>> Stashed changes
+=======
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:965db426-e050-490b-97b5-740beac0f27a
+Error Number:2812,State:62,Class:16
+>>>>>>> fd28240094e61dc43bf0a6fecacc90c7271b679e
