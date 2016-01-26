@@ -424,8 +424,7 @@ namespace templateApp.GUI.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LINK);
-            }
-                
+            }                
         }
 
         #region EventHandlers
