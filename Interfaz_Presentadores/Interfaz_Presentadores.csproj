@@ -89,6 +89,11 @@
     <Compile Include="Modulo11\PresentadorAgregarResultado.cs" />
     <Compile Include="Modulo11\PresentadorListaResultado.cs" />
     <Compile Include="Modulo11\PresentadorModificarResultado.cs" />
+    <Compile Include="Modulo15\M15_RecursoInterfazPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M15_RecursoInterfazPresentador.resx</DependentUpon>
+    </Compile>
     <Compile Include="Modulo14\PresentadorM14MostrarFacturaPlanilla.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
@@ -214,6 +219,10 @@
     <EmbeddedResource Include="Modulo11\M11_RecursosPresentador.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M11_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo15\M15_RecursoInterfazPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M15_RecursoInterfazPresentador.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo16\M16_Recursointerfaz.resx">
       <Generator>ResXFileCodeGenerator</Generator>

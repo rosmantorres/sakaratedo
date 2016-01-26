@@ -26,22 +26,22 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             }
             catch (ExcepcionComandoDojoId ex)
             {
-                ex = new ExcepcionComandoDojoId("Error en Comando dojo Id", new Exception());
-                Logger.EscribirError("Error en Comando dojo Id", ex);
+                ex = new ExcepcionComandoDojoId(RecursosComandoModulo15.ErrorCDId, new Exception());
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCDId, ex);
                 throw ex;
 
             }
 
             catch (ExceptionSKD ex)
             {
-                ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                Logger.EscribirError("Error en Comando dojo Id", ex);
+                ex = new ExcepcionesSKD.ExceptionSKD(RecursosComandoModulo15.ErrorOperacion, new Exception());
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCDId, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                
-                Logger.EscribirError("Error comando dojo id", ex);
+
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCDId, ex);
                 throw ex;
             }
 

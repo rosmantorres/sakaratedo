@@ -29,23 +29,23 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
            }
            catch (ExcepcionComandoModificarImplemento ex)
            {
-               ex = new ExcepcionComandoModificarImplemento("Error en Comando modificar implemento", new Exception());
-               Logger.EscribirError("Error en Comando modificar implemento", ex);
+               ex = new ExcepcionComandoModificarImplemento(RecursosComandoModulo15.ErrorCModificar, new Exception());
+               Logger.EscribirError(RecursosComandoModulo15.ErrorCModificar, ex);
                throw ex;
 
            }
 
            catch (ExceptionSKD ex)
            {
-               ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-               Logger.EscribirError("Error en Comando modificar implemento", ex);
+               ex = new ExcepcionesSKD.ExceptionSKD(RecursosComandoModulo15.ErrorOperacion, new Exception());
+               Logger.EscribirError(RecursosComandoModulo15.ErrorCModificar, ex);
                throw ex;
            }
 
            catch (Exception ex)
            {
 
-               Logger.EscribirError("Error de en Comando modificar implemento", ex);
+               Logger.EscribirError(RecursosComandoModulo15.ErrorCModificar, ex);
                throw ex;
            }
        }
