@@ -12,14 +12,9 @@ namespace Interfaz_Contratos.Modulo4
         /// Firma de Métodos que deben ser implementados en el 
         /// presentador del DetallarDojo 
         /// </summary>
-        string logo { set; }
-        string rif { set; }
-        string nombre { set; }
-        string telefono { set; }
-        string email { set; }
-        string statusAct { set; }
-        string statusIn { set; }
-        string nombreOrg { set; }
-        string estilo { set; }
+        string fecha { set; }
+        string modalidad { set; }
+        string monto { set; }
+        int idHM { get; }
     }
 }

@@ -13,17 +13,10 @@ namespace Interfaz_Contratos.Modulo4
         /// Firma de Métodos que deben ser implementados en el 
         /// presentador del ModificarDojo 
         /// </summary>
-        int idDojo { get; set; }
         string imglogo { set; }
-        string logo { get; set; }
-        string rif { get; set; }
-        string nombre { get; set; }
-        string telefono { get; set; }
-        string email { get; set; }
-        string estado { get; set; }
-        string ciudad { get; set; }
-        string direccion { get; set; }
-        bool statusAct { get; set; }
-        bool statusIn { get; set; }
+        string fecha { get; set; }
+        string modalidad { get; set; }
+        string monto { get; set; }
+        int idHM { get; set; }
     }
 }
