@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Modulo12\PruebaLogicaCompetencias.cs" />
     <Compile Include="Modulo12\PruebasBDCompetencias.cs" />
+    <Compile Include="Modulo12\PruebasDAOCompetencias.cs" />
     <Compile Include="Modulo13\RecursosPU_Mod13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
