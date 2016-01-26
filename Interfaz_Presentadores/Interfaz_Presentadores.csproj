@@ -34,18 +34,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +53,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo7\M7_RecursosPresentador.Designer.cs">
+      <DependentUpon>M7_RecursosPresentador.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Modulo7\PresentadorDetallarEventoPago.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarHorarioPractica.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarMatricula.cs" />
+    <Compile Include="Modulo7\PresentadorConsultarPerfil.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarCinta.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarEvento.cs" />
+    <Compile Include="Modulo7\PresentadorDetallarCompetencia.cs" />
+    <Compile Include="Modulo7\PresentadorListarCintasObtenidas.cs" />
+    <Compile Include="Modulo7\PresentadorListarEventosInscritos.cs" />
+    <Compile Include="Modulo7\PresentadorListarHorarioPractica.cs" />
+    <Compile Include="Modulo7\PresentadorListarMatriculasPagas.cs" />
+    <Compile Include="Modulo7\PresentadorListarEventosPagos.cs" />
+    <Compile Include="Modulo7\PresentadorListarEventosAsistidos.cs" />
     <Compile Include="Modulo10\M10_RecursosPresentador.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -67,6 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>M11_RecursosPresentador.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo11\PresentadorAgregarResultado.cs" />
     <Compile Include="Modulo11\PresentadorListaResultado.cs" />
     <Compile Include="Modulo11\PresentadorModificarResultado.cs" />
     <Compile Include="Modulo15\M15_RecursoInterfazPresentador.Designer.cs">
@@ -74,6 +93,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>M15_RecursoInterfazPresentador.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo14\PresentadorM14MostrarFacturaPlanilla.cs" />
     <Compile Include="Modulo15\PresentadorAgregarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorConsultarImplemento.cs" />
     <Compile Include="Modulo15\PresentadorModificarImplemento.cs" />
@@ -184,10 +204,13 @@
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
-    <Folder Include="Modulo7\" />
     <Folder Include="Modulo8\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Modulo7\M7_RecursosPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M7_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\M10_RecursosPresentador.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M10_RecursosPresentador.Designer.cs</LastGenOutput>

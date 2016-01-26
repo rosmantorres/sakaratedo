@@ -40,7 +40,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarCompetencia.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarHorarioPractica.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarMatricula.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarEvento.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaCinta.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosInscritos.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosPagos.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaMatriculasPagas.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosAsistidos.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaHorarioPractica.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarPerfil.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarCinta.cs" />
+    <Compile Include="Comandos\Modulo7\RecursosComandoModulo7.Designer.cs">
+      <DependentUpon>RecursosComandoModulo7.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAscensosPorFechaM10.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoTodasLasFechasEventoAscensoM10.cs" />
     <Compile Include="Comandos\Modulo14\ComandoCambiarStatusPlanilla.cs" />
     <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
@@ -198,20 +217,17 @@
     <Compile Include="Comandos\Modulo9\ComandoModificarEvento.cs" />
     <Compile Include="Comandos\Modulo9\ComandoModificarEventoConTipo.cs" />
     <Compile Include="Comandos\Modulo9\ComandoConsultarListaTipoEventos.cs" />
-    <Compile Include="Comandos\Modulo9\Logica2daEntrega.cs" />
     <Compile Include="Comandos\Modulo9\RecursosComandosModulo9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosComandosModulo9.resx</DependentUpon>
     </Compile>
     <Compile Include="Fabrica\FabricaComandos.cs" />
-    <Compile Include="Modulo10\LogicaAsistencia.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo10.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo11\LogicaResultado.cs" />
     <Compile Include="Modulo11\RecursosLogicaModulo11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,27 +252,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo4.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo7\LogicaCintas.cs" />
-    <Compile Include="Modulo7\LogicaEventosPagos.cs" />
-    <Compile Include="Modulo7\LogicaEventosAsistidos.cs" />
-    <Compile Include="Modulo7\LogicaEventosInscritos.cs" />
-    <Compile Include="Modulo7\LogicaHorarioPractica.cs" />
-    <Compile Include="Modulo7\LogicaMatriculasPagas.cs" />
-    <Compile Include="Modulo7\LogicaOrganizacionYDojo.cs" />
-    <Compile Include="Modulo7\RecursosLogicaModulo7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo7.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo8\RecursosLogicaModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo8.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo9\RecursosLogicaModulo9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo9.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -278,6 +277,10 @@
     <EmbeddedResource Include="Comandos\Modulo15\RecursosComandoModulo15.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo15.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo7\RecursosComandoModulo7.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo16\RecursosLogicaModulo16.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -331,17 +334,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo7\RecursosLogicaModulo7.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo7.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo8\RecursosLogicaModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo8.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo9\RecursosLogicaModulo9.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -349,7 +344,6 @@
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo4\" />
     <Folder Include="Comandos\Modulo6\" />
-    <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -250,6 +250,15 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M11_fecha.
+        /// </summary>
+        internal static string FechaEvento {
+            get {
+                return ResourceManager.GetString("FechaEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M11_IdEvento.
         /// </summary>
         internal static string IdEvento {

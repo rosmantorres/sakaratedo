@@ -59,12 +59,12 @@ namespace Interfaz_Presentadores.Modulo14
             catch (NullReferenceException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
         }
 
@@ -83,39 +83,40 @@ namespace Interfaz_Presentadores.Modulo14
 
             try
             {
-                Comando<List<Entidad>> command =FabricaComandos.ObtenerComandConsultarPlanillas();
+                Comando<List<Entidad>> command = FabricaComandos.ObtenerComandConsultarPlanillas();
                 return command.Ejecutar();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
+                return null;
         }
         /// <summary>
         /// Activa e Inactiva una planilla
@@ -131,32 +132,32 @@ namespace Interfaz_Presentadores.Modulo14
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
 
         }

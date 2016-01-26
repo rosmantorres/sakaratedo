@@ -10,22 +10,6 @@ using System.Web.UI.WebControls;
 
 namespace Interfaz_Presentadores.Modulo10
 {
-    #region struct
-    struct valores
-    {
-        public int id;
-        public string nombre;
-        public string tipo;
-
-        public valores(int s, string x, string y)
-        {
-            id = s;
-            nombre = x;
-            tipo = y;
-        }
-    }
-    #endregion
-
     public class PresentadorAgregarAsistencia
     {
         IContratoAgregarAsistencia vista;
@@ -328,6 +312,30 @@ namespace Interfaz_Presentadores.Modulo10
                 resultado = true;
             }
             return resultado;
+        }
+
+        public void RenderCalendario(DayRenderEventArgs e, List<Entidad> horariosEventos)
+        {
+            e.Day.IsSelectable = false;
+            if (e.Day.IsSelected)
+                e.Cell.Style["background-color"] = "Red";
+            #region Horarios de Eventos y Competencias
+            foreach (Entidad horario in horariosEventos)
+            {
+                if (e.Day.IsSelected)
+                    e.Cell.Style["background-color"] = "Red";
+                else if (e.Day.Date == ((DominioSKD.Entidades.Modulo10.Horario)horario).FechaInicio)
+                {
+                    e.Cell.Style["background-color"] = "Blue";
+                    DateTime date1 = e.Day.Date.Date;
+                    DateTime date2 = DateTime.Now.Date;
+                    if (date1 >= date2)
+                    {
+                        e.Day.IsSelectable = true;
+                    }
+                }
+            }
+            #endregion
         }
     }
 }

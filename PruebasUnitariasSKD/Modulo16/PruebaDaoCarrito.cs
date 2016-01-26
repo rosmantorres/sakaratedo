@@ -80,11 +80,11 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos
-            this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabricaentidades.ObtenerEvento();
+            this.evento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;
 
-            this.evento2 = (DominioSKD.Entidades.Modulo9.Evento)fabricaentidades.ObtenerEvento();
+            this.evento2 = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             this.evento2.Id = 2;
             this.evento2.Costo = 2000;
 
