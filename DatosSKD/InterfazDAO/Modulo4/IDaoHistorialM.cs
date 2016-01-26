@@ -10,5 +10,6 @@ namespace DatosSKD.InterfazDAO.Modulo4
     public interface IDaoHistorialM : IDao<Entidad, bool, Entidad>
     {
         List<Entidad> ConsultarTodosDojo(Entidad parametro);
+        bool Eliminar(Entidad parametro);
     }
 }

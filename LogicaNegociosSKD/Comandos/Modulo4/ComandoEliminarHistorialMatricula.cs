@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo4
 {
-    class ComandoEliminarDojo : Comando<bool>
+    class ComandoEliminarHistorialMatricula : Comando<bool>
     {
         /// <summary>
         /// Método que sirve de enlace entre los datos
@@ -22,12 +22,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
                     , RecursosComandoModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                IDaoDojo daoDojo = FabricaDAOSqlServer.ObtenerDAODojo();
+                IDaoHistorialM daoHistorial = FabricaDAOSqlServer.ObtenerDAOHistorialMatricula();
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                     , RecursosComandoModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return daoDojo.EliminarDojo(this.LaEntidad);
+                return daoHistorial.Eliminar(this.LaEntidad);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {

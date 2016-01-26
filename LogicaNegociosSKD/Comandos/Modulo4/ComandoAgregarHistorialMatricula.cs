@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo4
 {
-    class ComandoEliminarDojo : Comando<bool>
+    public class ComandoAgregarHistorialMatricula : Comando<bool>
     {
-        /// <summary>
+        /// <summary> 
         /// Método que sirve de enlace entre los datos
         /// y la vista que ejecuta en agregar el nuevo dojo
         /// </summary>
@@ -19,15 +19,15 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
         public override bool Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
-                    , RecursosComandoModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                , RecursosComandoModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                IDaoDojo daoDojo = FabricaDAOSqlServer.ObtenerDAODojo();
+                IDaoHistorialM daoHistorial = FabricaDAOSqlServer.ObtenerDAOHistorialMatricula();
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                     , RecursosComandoModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return daoDojo.EliminarDojo(this.LaEntidad);
+                return daoHistorial.Agregar(this.LaEntidad);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {

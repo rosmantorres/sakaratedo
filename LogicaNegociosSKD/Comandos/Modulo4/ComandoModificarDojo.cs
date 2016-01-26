@@ -22,8 +22,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
                 , RecursosComandoModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();
-                IDaoDojo daoDojo = laFabrica.ObtenerDAODojo();
+                IDaoDojo daoDojo = FabricaDAOSqlServer.ObtenerDAODojo();
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                     , RecursosComandoModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

@@ -30,9 +30,13 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 4
-        public IDaoDojo ObtenerDAODojo()
+        public static IDaoDojo ObtenerDAODojo()
         {
             return new DaoDojo();
+        }
+        public static IDaoHistorialM ObtenerDAOHistorialMatricula()
+        {
+            return new DaoHistorialMatricula();
         }
         #endregion
 

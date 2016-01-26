@@ -14,6 +14,7 @@ namespace DatosSKD.DAO.Modulo4
 {
     class DaoHistorialMatricula : DAOGeneral, IDaoHistorialM
     {
+        #region IDAO
         public bool Agregar(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -289,7 +290,7 @@ namespace DatosSKD.DAO.Modulo4
             return laListaDeMatriculas;
         }
 
-        public bool EliminarDojo(Entidad parametro)
+        public bool Eliminar(Entidad parametro)
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -398,6 +399,6 @@ namespace DatosSKD.DAO.Modulo4
 
             return laListaDeMatriculas;
         }
-
+        #endregion
     }
 }
