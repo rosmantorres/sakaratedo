@@ -8,9 +8,6 @@ using ExcepcionesSKD.Modulo16.ExcepcionesDeDatos;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
 using DatosSKD.DAO.Modulo16;
-using DominioSKD;
-
-
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {

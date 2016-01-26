@@ -42,7 +42,6 @@ namespace PruebasUnitariasSKD.Modulo16
         private Dictionary<Entidad, int> MatriculasCarrito;
         private DominioSKD.Entidades.Modulo9.Evento evento;
         private DominioSKD.Entidades.Modulo9.Evento evento2; 
-        FabricaEntidades fabricaentidades;
         private Entidad pago;
         private List<String> datoPago;       
         #endregion
@@ -55,7 +54,6 @@ namespace PruebasUnitariasSKD.Modulo16
         {
             //Obtengo el DAO           
             this.daoPrueba = FabricaDAOSqlServer.ObtenerdaoCarrito();
-            fabricaentidades = new FabricaEntidades();
 
             //La persona
             this.persona = FabricaEntidades.ObtenerPersona();
@@ -607,7 +605,6 @@ namespace PruebasUnitariasSKD.Modulo16
             this.MatriculasCarrito = null;
             this.evento = null;
             this.evento2 = null;
-            this.fabricaentidades = null;
             this.pago = null;
             this.datoPago = null;
         }

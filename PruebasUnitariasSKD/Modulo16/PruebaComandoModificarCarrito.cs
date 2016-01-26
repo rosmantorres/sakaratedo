@@ -42,8 +42,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> ComandoModificarCarrito3;
         private Comando<bool> ComandoModificarCarrito4;
         private Comando<bool> ComandoModificarCarrito5;
-        private Comando<bool> ComandoModificarCarrito6;
-        FabricaEntidades fabrica;        
+        private Comando<bool> ComandoModificarCarrito6;      
         #endregion
 
         /// <summary>
@@ -208,8 +207,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoModificarCarrito3 = null;
             this.ComandoModificarCarrito4 = null;
             this.ComandoModificarCarrito5 = null;
-            this.ComandoModificarCarrito6 = null;
-            this.fabrica = null;    
+            this.ComandoModificarCarrito6 = null;    
             this.evento = null;
         }
     }

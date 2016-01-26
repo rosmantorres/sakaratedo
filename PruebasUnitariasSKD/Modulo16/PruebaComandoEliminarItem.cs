@@ -51,7 +51,6 @@ namespace PruebasUnitariasSKD.Modulo16
         private Implemento implemento2;
         private Matricula matricula;
         private Matricula matricula2;
-        private FabricaEntidades fabrica;
         #endregion
 
         /// <summary>
@@ -287,7 +286,6 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento2 = null;
             this.matricula = null;
             this.matricula2 = null;
-            this.fabrica = null;
         }
 
     }

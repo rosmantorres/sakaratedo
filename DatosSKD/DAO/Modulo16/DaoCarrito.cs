@@ -425,8 +425,7 @@ namespace DatosSKD.DAO.Modulo16
                         //Por cada ID obtengo su informacion correspondiente
                         foreach (DataRow row2 in dt2.Rows)
                         {
-                            //Me creo el evento
-                            FabricaEntidades fabrica = new FabricaEntidades();
+                            //Me creo el evento                           
                             DominioSKD.Entidades.Modulo9.Evento elEvento
                                 = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
                             elEvento.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDEVENTO].ToString());
@@ -548,7 +547,6 @@ namespace DatosSKD.DAO.Modulo16
                         foreach (DataRow row2 in dt2.Rows)
                         {
                             //Me creo la matricula
-                            FabricaEntidades fabrica = new FabricaEntidades();
                             Matricula laMatricula = (Matricula)FabricaEntidades.ObtenerMatricula();                            
                             laMatricula.Id = int.Parse(row[RecursosBDModulo16.PARAMETRO_IDMATRICULA].ToString());
                             laMatricula.Identificador = (row2[RecursosBDModulo16.aliasIdentificadorMatricula].ToString());

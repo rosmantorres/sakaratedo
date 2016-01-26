@@ -321,7 +321,6 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Persona que eventualmente la buscaremos por el session
-                FabricaEntidades fabrica = new FabricaEntidades();
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
@@ -780,8 +779,7 @@ namespace Interfaz_Presentadores.Modulo16
                     TipoObjeto = 1;
 
                     //Pasamos el ID que vino del boton
-                    Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();
-				
+                    Entidad objeto = (Implemento)FabricaEntidades.ObtenerImplemento();				
                     objeto.Id = int.Parse(datos[1]);
                 
                     //Instancio el comando para eliminar item y obtengo el exito o fallo del proceso
@@ -799,7 +797,7 @@ namespace Interfaz_Presentadores.Modulo16
                 {
                     //Decimos que se trata de un evento
                     TipoObjeto = 3;
-                    FabricaEntidades fabrica = new FabricaEntidades();
+
                     //Pasamos el ID que vino del boton                
                     Entidad objeto = (Evento)FabricaEntidades.ObtenerEvento();
                     objeto.Id = int.Parse(datos[1]);

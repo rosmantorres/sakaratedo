@@ -40,7 +40,6 @@ namespace PruebasUnitariasSKD.Modulo16
         private Matricula matricula;
         private Carrito Carrito;
         private DominioSKD.Entidades.Modulo9.Evento evento;
-        FabricaEntidades fabrica;
         #endregion
 
         /// <summary>
@@ -266,7 +265,6 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula = null;
             this.Carrito = null;
             this.evento = null;
-            this.fabrica = null;       
         }
     }
 }
