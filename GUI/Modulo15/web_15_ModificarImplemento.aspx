@@ -139,7 +139,7 @@
                       <br/>
                       <div class="form-group col-sm-10 col-md-10 col-lg-10">
                       <p><b>Estatus:</b></p>
-                             <select id="estatus_implemento" name="estatus_implemento" class="form-control" runat="server">
+                             <select id="estatus_implemento" name="estatus_implemento" class="form-control" runat="server"  accept="image/*">
                                   <option value="Activo" >Activo</option>
                                   <option value="Inactivo" >Inactivo</option>                                  
                               </select>
