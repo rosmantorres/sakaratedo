@@ -59,6 +59,8 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
+            fabrica = new FabricaEntidades();
+
 
             //La persona
             this.persona = FabricaEntidades.ObtenerPersona();

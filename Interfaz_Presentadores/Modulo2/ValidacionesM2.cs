@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD.Entidades.Modulo2;
+using DominioSKD;
 
 namespace Interfaz_Presentadores.Modulo2
 {
@@ -16,12 +17,12 @@ namespace Interfaz_Presentadores.Modulo2
         /// <param name="usuarioRol">Lista de los roles que el usuario tiene asignado</param>
         /// <param name="sistemaRol">Lista de los roles de sistema</param>
         /// <returns>Lista de roles que el usuario no tiene asignado</returns>
-        public  List<Rol> filtrarRoles(List<Rol> usuarioRol, List<Rol> sistemaRol)
+        public  List<Entidad> filtrarRoles(List<Entidad> usuarioRol, List<Entidad> sistemaRol)
         {
             bool diferente;
             try
             {
-                List<Rol> respuesta = new List<Rol>();
+                List<Entidad> respuesta = new List<Entidad>();
                 foreach (Rol rolSistema in sistemaRol)
                 {
                     diferente = true;
@@ -47,10 +48,10 @@ namespace Interfaz_Presentadores.Modulo2
         /// <param name="Roles">lista de roles con sus atributos</param>
         /// <param name="usuarioRol">usuario al que se le validaran los roles</param>
         /// <returns>lista de roles del usuario con la validacion de sus prioridades</returns>
-        public List<Rol> validarPrioridad(List<Rol> Roles, string usuarioRol)
+        public List<Entidad> validarPrioridad(List<Entidad> Roles, string usuarioRol)
         {
 
-            List<Rol> respuesta = new List<Rol>();
+            List<Entidad> respuesta = new List<Entidad>();
             try
             {
                 foreach (Rol rol in Roles)
@@ -97,10 +98,10 @@ namespace Interfaz_Presentadores.Modulo2
         /// <param name="Roles"></param>
         /// <param name="usuarioRol"></param>
         /// <returns></returns>
-        public  List<Rol> rolNoEditable(List<Rol> Roles, string usuarioRol)
+        public  List<Entidad> rolNoEditable(List<Entidad> Roles, string usuarioRol)
         {
 
-            List<Rol> respuesta = new List<Rol>();
+            List<Entidad> respuesta = new List<Entidad>();
             try
             {
                 foreach (Rol rol in Roles)

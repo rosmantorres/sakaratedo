@@ -86,7 +86,7 @@ namespace PruebasUnitariasSKD.Modulo10
 
            IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
            listaEntidad = DAO.ListarCompetenciasAsistidas();
-           Assert.AreEqual(5, listaEntidad.ToArray().Length);
+           Assert.AreEqual(3, listaEntidad.ToArray().Length);
 
 
        }
@@ -122,7 +122,7 @@ namespace PruebasUnitariasSKD.Modulo10
 
            IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
            listaEntidad = DAO.ListaAsistentesEvento(idEvento);
-           Assert.AreEqual(14, listaEntidad.ToArray().Length);
+           Assert.AreEqual(15, listaEntidad.ToArray().Length);
 
 
        }
@@ -170,8 +170,8 @@ namespace PruebasUnitariasSKD.Modulo10
        {
 
            IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
-           listaEntidad = DAO.ListaAsistentesCompetencia(idCompetencia);
-           Assert.AreEqual(11, listaEntidad.ToArray().Length);
+           listaEntidad = DAO.ListaAsistentesCompetencia("6");
+           Assert.AreEqual(7, listaEntidad.ToArray().Length);
 
 
        }
@@ -195,8 +195,8 @@ namespace PruebasUnitariasSKD.Modulo10
        {
 
            IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
-           listaEntidad = DAO.ListaNoAsistentesCompetencia(idCompetencia);
-           Assert.AreEqual(1, listaEntidad.ToArray().Length);
+           listaEntidad = DAO.ListaNoAsistentesCompetencia("6");
+           Assert.AreEqual(5, listaEntidad.ToArray().Length);
 
 
        }
@@ -321,7 +321,7 @@ namespace PruebasUnitariasSKD.Modulo10
          {
              IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
              listaEntidad = DAO.ListarHorariosCompetencia();
-             Assert.AreEqual(1, listaEntidad.ToArray().Length);
+             Assert.AreEqual(3, listaEntidad.ToArray().Length);
 
          }
 
@@ -360,7 +360,7 @@ namespace PruebasUnitariasSKD.Modulo10
              IDaoAsistencia DAO = FabricaDAOSqlServer.ObtenerDAOAsistencia();
 
              listaEntidad = DAO.ListaAtletasInscritosCompetencia(idCompetencia);
-             Assert.AreEqual(12, listaEntidad.ToArray().Length);
+             Assert.AreEqual(10, listaEntidad.ToArray().Length);
          }
 
 

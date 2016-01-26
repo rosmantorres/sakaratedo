@@ -8,7 +8,6 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using ExcepcionesSKD;
 using ExcepcionesSKD.Modulo15;
-using DatosSKD.Modulo15;
 using DominioSKD;
 using DatosSKD.InterfazDAO.Modulo15;
 using DominioSKD.Fabrica;

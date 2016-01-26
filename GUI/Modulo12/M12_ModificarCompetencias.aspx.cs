@@ -27,14 +27,12 @@ namespace templateApp.GUI.Modulo12
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = M12_RecursoInterfaz.idModuloModificar;
-            presentador.ObtenerVariablesURL();
-
+            
             if (!IsPostBack)
             {
-                //presentador.LlenarCombos();
+                presentador.ObtenerVariablesURL();
+
             }
-
-
         }
 
         #region void

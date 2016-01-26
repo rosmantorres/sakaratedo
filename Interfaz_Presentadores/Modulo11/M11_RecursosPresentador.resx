@@ -814,4 +814,10 @@
   <data name="especialidadKumite" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="AlertaWarning" xml:space="preserve">
+    <value>alert alert-warning alert-dismissible</value>
+  </data>
+  <data name="EmpatesNoPermitidos" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Los EMPATES en las Competencias de tipo Kumite no estan permitidos.&lt;/div&gt;</value>
+  </data>
 </root>

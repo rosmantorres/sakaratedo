@@ -76,8 +76,14 @@ namespace PruebasUnitariasSKD.Modulo11
         public void pruebaInscritosExamenAscenso() // Vacio!
         {
 
-            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerAsistencia();
+            
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoM10();
+            Entidad categoria = DominioSKD.Fabrica.FabricaEntidades.ObtenerCategoria();
+            ((DominioSKD.Entidades.Modulo12.Categoria)categoria).Id = 1;
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Categoria = categoria as DominioSKD.Entidades.Modulo12.Categoria;
+            ((DominioSKD.Entidades.Modulo10.Evento)entidad).Id = 3;
             Comando<List<Entidad>> comandoInscritosExamenA = FabricaComandos.ObtenerComandoListaInscritosExamenAscenso(entidad);
+            Assert.NotNull(comandoInscritosExamenA.Ejecutar());
      
         }
 

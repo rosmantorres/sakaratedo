@@ -927,11 +927,13 @@ namespace DatosSKD.DAO.Modulo16
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;
                 }
+
                 catch (ItemInvalidoException e)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                     throw e;
                 }
+
                 catch (ArgumentNullException e)
                 {
                     Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);

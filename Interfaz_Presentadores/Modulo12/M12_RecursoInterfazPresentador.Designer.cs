@@ -223,6 +223,15 @@ namespace Interfaz_Presentadores.Modulo12 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ^[A-Z 0-9 a-z]*$.
+        /// </summary>
+        internal static string expresionNombre {
+            get {
+                return ResourceManager.GetString("expresionNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /\w*((\%27)|(\&apos;))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/ix.
         /// </summary>
         internal static string expresionSQL {
@@ -318,6 +327,15 @@ namespace Interfaz_Presentadores.Modulo12 {
         internal static string modificarExito {
             get {
                 return ResourceManager.GetString("modificarExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El nombre posee un carácter inválido.
+        /// </summary>
+        internal static string nombreInvalido {
+            get {
+                return ResourceManager.GetString("nombreInvalido", resourceCulture);
             }
         }
         
