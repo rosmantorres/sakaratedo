@@ -15,6 +15,7 @@ namespace Interfaz_Presentadores.Modulo4
     public class PresentadorListarDojos
     {
         private IContratoListarDojos vista;
+        
         #region Constructor
         /// <summary>
         /// Constructor del Presentador
@@ -26,6 +27,11 @@ namespace Interfaz_Presentadores.Modulo4
         }
         #endregion
 
+        /// <summary>
+        /// Método que muestra una lista de los dojos
+        /// </summary>
+        /// <param name="rol">rol del usuario en sesión</param>
+        /// <param name="idlog">id de la persona que esta en sesión</param>
         public void ListarDojos(string rol, int idlog)
         {
            
@@ -160,6 +166,10 @@ namespace Interfaz_Presentadores.Modulo4
             
         }
 
+        /// <summary>
+        /// Método que elimina un dojo de bd
+        /// </summary>
+        /// <param name="id">id del dojo a eliminar</param>
         public void EliminarDojo(int id)
         {
             try

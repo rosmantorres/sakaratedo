@@ -14,9 +14,9 @@ namespace Interfaz_Presentadores.Modulo4
 {
     public class PresentadorDetallarDojo
     {
-             private IContratoDetalleDojo vista;
+        private IContratoDetalleDojo vista;
 
-         #region Constructor
+        #region Constructor
         /// <summary>
         /// Constructor del Presentador
         /// </summary>
@@ -26,6 +26,11 @@ namespace Interfaz_Presentadores.Modulo4
                 this.vista = laVista;
             }
          #endregion
+        
+        /// <summary>
+        /// Metodo que muestra explicitamente un dojo
+        /// </summary>
+        /// <param name="idDojo">id del dojo</param>
         public void DetalleDojo (int idDojo)
         {
             try

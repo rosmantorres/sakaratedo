@@ -14,6 +14,9 @@ using DatosSKD.InterfazDAO.Modulo4;
 
 namespace DatosSKD.Fabrica
 {
+    /// <summary>
+    /// Clase Familia o fabrica de las instancias a los DAO
+    /// </summary>
     public class FabricaDAOSqlServer
     {
         #region Modulo 1
@@ -30,6 +33,10 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 4
+        /// <summary>
+        /// Método que instancia el DAO de Dojo
+        /// </summary>
+        /// <returns>DaoDojo</returns>
         public IDaoDojo ObtenerDAODojo()
         {
             return new DaoDojo();
@@ -210,7 +217,6 @@ namespace DatosSKD.Fabrica
         }*/
 
         #endregion
-
 
     }
 }

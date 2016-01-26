@@ -11,6 +11,9 @@ using LogicaNegociosSKD.Comandos.Modulo4;
 
 namespace LogicaNegociosSKD.Fabrica
 {
+    /// <summary>
+    /// Instancia de comandos
+    /// </summary>
     public class FabricaComandos
     {
         #region Modulo 1
@@ -43,22 +46,47 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 4
+
+        /// <summary>
+        /// Instancia comando para Agregar Dojo
+        /// </summary>
+        /// <returns>True o False</returns>
         public static Comando<bool> CrearComandoAgregarDojo()
         {
             return new ComandoAgregarDojo();
         }
+
+        /// <summary>
+        /// Instancia comando para Listar Dojo
+        /// </summary>
+        /// <returns>Lista de Dojos</returns>
         public static Comando<List<Entidad>> CrearComandoListarDojos()
         {
             return new ComandoListarDojos();
         }
+
+        /// <summary>
+        /// Instancia comando para Eliminar Dojo
+        /// </summary>
+        /// <returns>True o False</returns>
         public static Comando<bool> CrearComandoEliminarDojo()
         {
             return new ComandoEliminarDojo();
         }
+
+        /// <summary>
+        /// Instancia comando para Detallar Dojo
+        /// </summary>
+        /// <returns>Dojo</returns>
         public static Comando<Entidad> CrearComandoDetallarDojo()
         {
             return new ComandoDetallarDojo();
         }
+
+        /// <summary>
+        /// Instancia comando para Modificar Dojo
+        /// </summary>
+        /// <returns>True o False</returns>
         public static Comando<bool> CrearComandoModificarDojo()
         {
             return new ComandoModificarDojo();

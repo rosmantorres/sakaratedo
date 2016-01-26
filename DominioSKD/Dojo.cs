@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
+    /// <summary>
+    /// Clse dojo de tipo entidad con atributos, propiedades (descriptores) y constructores
+    /// </summary>
     public class Dojo:Entidad
     {
         #region atributos
@@ -25,6 +28,9 @@ namespace DominioSKD
         #endregion
 
         #region propiedades
+        /// <summary>
+        /// 
+        /// </summary>
         public int Organizacion_dojo
         {
             get { return organizacion_dojo; }

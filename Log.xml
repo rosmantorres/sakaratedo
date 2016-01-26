@@ -2168,3 +2168,169 @@ Error Number:547,State:0,Class:16
 2016-01-25 12:12:29,596 INFO  DaoDojo - Clase: DaoDojo
 2016-01-25 12:12:29,596 INFO  DaoDojo - Mensaje: Entrada en el Método
 2016-01-25 12:12:29,596 INFO  DaoDojo - Metodo: ConsultarXId
+2016-01-25 14:53:56,207 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 14:53:56,212 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 14:53:56,212 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 14:53:56,212 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 14:53:56,221 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 14:53:56,221 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 14:53:56,221 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 14:53:56,222 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 14:53:56,356 ERROR ComandoListarDojos - *******************************************************
+2016-01-25 14:53:56,356 ERROR ComandoListarDojos - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-25 14:53:56,359 ERROR ComandoListarDojos - Origen: DatosSKD
+2016-01-25 14:53:56,359 ERROR ComandoListarDojos - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodos()
+2016-01-25 14:53:56,359 ERROR ComandoListarDojos - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.ConsultarTodos() en c:\Users\JavierA\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 373
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoListarDojos.Ejecutar() en c:\Users\JavierA\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoListarDojos.cs:línea 27
+2016-01-25 14:53:56,368 ERROR ComandoListarDojos - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M4_ConsultarDojos'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en DatosSKD.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\JavierA\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 284
+ClientConnectionId:833459b3-8302-4f3e-8999-886f87e204a9
+Error Number:2812,State:62,Class:16
+2016-01-25 14:58:49,791 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 14:58:49,796 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 14:58:49,796 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 14:58:49,796 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 14:58:49,813 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 14:58:49,813 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 14:58:49,813 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 14:58:49,813 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 14:58:49,917 ERROR ComandoListarDojos - *******************************************************
+2016-01-25 14:58:49,917 ERROR ComandoListarDojos - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-25 14:58:49,921 ERROR ComandoListarDojos - Origen: DatosSKD
+2016-01-25 14:58:49,921 ERROR ComandoListarDojos - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodos()
+2016-01-25 14:58:49,921 ERROR ComandoListarDojos - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.ConsultarTodos() en c:\Users\JavierA\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 373
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoListarDojos.Ejecutar() en c:\Users\JavierA\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoListarDojos.cs:línea 27
+2016-01-25 14:58:49,930 ERROR ComandoListarDojos - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M4_ConsultarDojos'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en DatosSKD.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\JavierA\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 284
+ClientConnectionId:9b0ed7a5-2f92-409b-bb14-49ef9a0d437a
+Error Number:2812,State:62,Class:16
+2016-01-25 15:09:50,372 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 15:09:50,378 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 15:09:50,378 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 15:09:50,378 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 15:09:50,415 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 15:09:50,415 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 15:09:50,415 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 15:09:50,415 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 15:09:50,541 ERROR ComandoListarDojos - *******************************************************
+2016-01-25 15:09:50,541 ERROR ComandoListarDojos - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-25 15:09:50,544 ERROR ComandoListarDojos - Origen: DatosSKD
+2016-01-25 15:09:50,545 ERROR ComandoListarDojos - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodos()
+2016-01-25 15:09:50,545 ERROR ComandoListarDojos - StackTrace:    en DatosSKD.DAO.Modulo4.DaoDojo.ConsultarTodos() en c:\Users\JavierA\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoDojo.cs:línea 373
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoListarDojos.Ejecutar() en c:\Users\JavierA\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoListarDojos.cs:línea 27
+2016-01-25 15:09:50,552 ERROR ComandoListarDojos - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M4_ConsultarDojos'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en DatosSKD.BDConexion.EjecutarStoredProcedureTuplas(String query, List`1 parametros) en c:\Users\JavierA\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 284
+ClientConnectionId:e5e29282-5f9f-493b-a562-2e2c7279c675
+Error Number:2812,State:62,Class:16
+2016-01-25 15:28:09,447 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 15:28:09,453 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 15:28:09,453 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 15:28:09,453 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 15:28:09,471 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 15:28:09,471 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 15:28:09,471 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 15:28:09,471 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 15:30:50,509 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 15:30:50,515 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 15:30:50,515 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 15:30:50,515 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 15:30:50,533 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 15:30:50,533 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 15:30:50,533 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 15:30:50,533 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 15:31:42,195 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 15:31:42,202 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 15:31:42,202 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 15:31:42,202 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 15:31:42,218 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 15:31:42,218 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 15:31:42,218 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 15:31:42,218 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:15:40,443 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:15:40,449 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:15:40,449 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 16:15:40,449 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:15:40,468 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:15:40,468 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:15:40,468 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 16:15:40,468 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:21:37,898 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:21:37,905 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:21:37,905 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 16:21:37,905 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:21:37,921 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:21:37,921 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:21:37,921 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 16:21:37,921 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:30:38,857 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:30:38,863 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:30:38,863 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 16:30:38,863 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:30:38,876 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:30:38,876 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:30:38,876 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 16:30:38,876 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:49:50,605 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:49:50,614 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:49:50,614 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 16:49:50,614 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:49:50,625 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:49:50,625 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:49:50,625 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 16:49:50,625 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:55:49,078 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:55:49,084 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:55:49,084 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-25 16:55:49,084 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-25 16:55:49,095 INFO  ComandoListarDojos - *******************************************************
+2016-01-25 16:55:49,095 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-25 16:55:49,095 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-25 16:55:49,095 INFO  ComandoListarDojos - Metodo: Ejecutar

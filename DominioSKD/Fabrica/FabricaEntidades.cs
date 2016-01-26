@@ -7,6 +7,9 @@ using DominioSKD;
 
 namespace DominioSKD.Fabrica
 {
+    /// <summary>
+    /// Clase que intancia entidades de tipo
+    /// </summary>
     public class FabricaEntidades
     {
         #region Modulo 1
@@ -39,31 +42,70 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 4
+        
+        /// <summary>
+        /// instancia dojo
+        /// </summary>
+        /// <returns>entidad dojo</returns>
         public static Entidad ObtenerDojo_M4() 
         {
             return new Dojo();
         }
+        
+        /// <summary>
+        /// instancia lista de entidad
+        /// </summary>
+        /// <returns>lista de entidad</returns>
         public static List<Entidad> ObtenerListaEntidad_M4()
         {
             return new List<Entidad>();
         }
+
+        /// <summary>
+        /// instancia lista de dojo
+        /// </summary>
+        /// <returns>lista dojo</returns>
         public static List<Dojo> ObtenerListaDojos_M4()
         {
             return new List<Dojo>();
         }
+        
+        /// <summary>
+        /// Instancia una entidad
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="Rif"></param>
+        /// <param name="Nombre"></param>
+        /// <param name="Telefono"></param>
+        /// <param name="Email"></param>
+        /// <param name="Logo"></param>
+        /// <param name="Status"></param>
+        /// <param name="organizacion"></param>
+        /// <param name="ubicacion"></param>
+        /// <returns>Dojo</returns>
         public static Entidad ObtenerDojo_M4(int Id, string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Organizacion organizacion, Ubicacion ubicacion)
         {
             return new Dojo(Id, Rif, Nombre, Telefono, Email, Logo, Status, organizacion, ubicacion);
         }
+        
         public static Entidad ObtenerDojo_M4(string Rif, string Nombre, int Telefono, string Email, string Logo, bool Status, Organizacion organizacion, Ubicacion ubicacion)
         {
             return new Dojo( Rif, Nombre, Telefono, Email, Logo, Status, organizacion, ubicacion);
         }
        
+        /// <summary>
+        /// Instancia una Organizacion
+        /// </summary>
+        /// <returns>entidad org</returns>
         public static Entidad ObtenerOrganizacion_M4()
         {
             return new Organizacion();
         }
+
+        /// <summary>
+        /// Instancia Ubicacion
+        /// </summary>
+        /// <returns>entidad ubicacion</returns>
         public static Entidad ObtenerUbicacion_M4()
         {
             return new Ubicacion();
