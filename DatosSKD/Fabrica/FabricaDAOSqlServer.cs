@@ -163,12 +163,12 @@ namespace DatosSKD.Fabrica
             return new DatosSKD.DAO.Modulo8.DAORestriccionCompetencia();
         }
 
-        public DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionCinta ObtenerDAORestriccionCinta()
+        public static DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionCinta ObtenerDAORestriccionCinta()
         {
             return new DatosSKD.DAO.Modulo8.DAORestriccionCinta();
         }
 
-        public DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionEvento ObtenerDAORestriccionEvento()
+        public static DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionEvento ObtenerDAORestriccionEvento()
         {
             return new DatosSKD.DAO.Modulo8.DAORestriccionEvento();
         }

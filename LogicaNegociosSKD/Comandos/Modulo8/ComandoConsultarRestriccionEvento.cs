@@ -30,7 +30,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
 
             try
             {
-                IDaoRestriccionEvento daoRestriccionEvento = fabricaDAO.ObtenerDAORestriccionEvento();
+                IDaoRestriccionEvento daoRestriccionEvento = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
                 resultado = daoRestriccionEvento.ConsultarEventosConRestriccion();
 
             }

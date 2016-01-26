@@ -38,7 +38,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             try
             {
                 FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                IDaoRestriccionCinta miRestCintaDAO = fabrica.ObtenerDAORestriccionCinta();
+                IDaoRestriccionCinta miRestCintaDAO = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCinta();
 
                 miRestCintaDAO.AgregarRestriccionCinta(this.LaEntidad);
                 //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

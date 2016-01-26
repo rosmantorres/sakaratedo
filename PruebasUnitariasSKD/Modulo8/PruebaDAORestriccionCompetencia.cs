@@ -1,285 +1,57 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NUnit.Framework;
+using DatosSKD.InterfazDAO.Modulo8;
+using DominioSKD;
+using DatosSKD.DAO.Modulo8;
+using DatosSKD.Fabrica;
 
 namespace PruebasUnitariasSKD.Modulo8
 {
      [TestFixture]
     class PruebaDAORestriccionCompetencia
     {
-       DominioSKD.Entidades.Modulo8.RestriccionCompetencia laRestriccion;
-       DominioSKD.Fabrica.FabricaEntidades fabricaEntidad;
-       DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO;
-       DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionCompetencia DAORestriccionCompetencia;
-       //laRestriccion = fabrica.ObtenerRestriccionCompetencia();
-       //List<Competencia> laListaCompetencias;
-       //Competencia laCompetencia;
-       //List<RestriccionCompetencia> laListaRestriccionCompetencia;
-       //RestriccionCompetencia laRestriccionCompetencia, laRestriccionCompetencia2;
-       //DatosSKD.Modulo8.BDRestriccionCompetencia BDRestComp;
-       //Persona atleta;
+        #region Atributos
+        List<Entidad> listaEntidad;
+        public string idEvento;
+        public string idCompetencia;
+        public Entidad entidad;
+        public Entidad entidad2;
+        public bool a;
+        #endregion
 
-       [SetUp]
-       public void init()
-       {   fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
-           fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
-           DAORestriccionCompetencia = fabricaDAO.ObtenerDAORestriccionCompetencia();
-           laRestriccion = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabricaEntidad.ObtenerRestriccionCompetencia();
-           
-           laRestriccion.Descripcion = "Restriccion Prueba";
-           laRestriccion.EdadMaxima = 75;
-           laRestriccion.EdadMinima=75;
-           laRestriccion.Modalidad= "Modalidad";
-           laRestriccion.RangoMaximo=21;
-           laRestriccion.RangoMinimo=-1;
-           laRestriccion.Sexo="P";
-           
-           //laListaCompetencias = new List<Competencia>();
-           //laCompetencia = new Competencia(47);
-           //laListaRestriccionCompetencia = new List<RestriccionCompetencia>();
-           //laRestriccionCompetencia = new RestriccionCompetencia("Restriccion Prueba",10,40,1,20,"B","Ambos") ;
-           //laRestriccionCompetencia2 = new RestriccionCompetencia("Restriccion Prueba", 20, 40, 10, 20, "M", "Kumite");
-           //BDRestComp = new BDRestriccionCompetencia();
-           //atleta = new Persona(1);
-       }
+        [SetUp]
+        public void init()
+        {
+            listaEntidad = new List<Entidad>();
+            idEvento = "3";
+            idCompetencia = "11";
+        }
 
-       [Test]
-       public void PruebaAgregar()
-       {
-           try
-           {
-               Assert.IsTrue(DAORestriccionCompetencia.Agregar(laRestriccion));
+        [TearDown]
+        public void clean()
+        {
+            listaEntidad = null;
+            entidad = null;
+        }
+
+        #region Pruebas Unitarias
+
+        [Test]
+        public void PruebaAgregarRestriccionEvento()
+        {
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionEvento("Negra", 10, 15, "M", 7, "PUevento");
+            IDaoRestriccionEvento DAO = FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
+            a = DAO.AgregarRestriccionEvento(entidad);
+            Assert.IsTrue(a);
+        }
+
+        
+        #endregion
 
 
-           }
-           catch (Exception e)
-           {
-               
-               throw e;
-           }
-       }
-
-       [Test]
-       public void pruebaEliminarRestriccionCompetencia()
-       {
-
-
-           try
-           {
-
-               Assert.IsTrue(DAORestriccionCompetencia.Eliminar(laRestriccion));
-           }
-           catch (Exception e)
-           {
-
-               throw e;
-           }
-       }
-
-       [Test]
-       public void pruebaModificarCompetencia()
-       {
-
-           try
-           {
-               DAORestriccionCompetencia.Agregar(laRestriccion);
-               laRestriccion.IdRestriccionComp  = DAORestriccionCompetencia.traerIdRestriccionCompetencia(laRestriccion);
-               laRestriccion.Id = DAORestriccionCompetencia.traerIdRestriccionCompetencia(laRestriccion);
-               laRestriccion.Descripcion = "prueba modificar";
-               laRestriccion.EdadMinima =-1;
-               laRestriccion.EdadMaxima=90;
-               laRestriccion.RangoMinimo=25;
-               laRestriccion.RangoMaximo=-1;
-               laRestriccion.Sexo="T";
-               laRestriccion.Modalidad="Modificar";
-
-               Assert.IsTrue(DAORestriccionCompetencia.Modificar(laRestriccion));
-           }
-           catch (Exception e)
-           {
-
-               throw e;
-           }
-       }
-
-
-
-
-    //   [Test]
-    //   public void PruebaExisteRestriccionCompetenciaSimilar()
-    //   {
-    //       try
-    //       {
-    //           DatosSKD.Modulo8.BDRestriccionCompetencia.AgregarRestriccionCompetencia(laRestriccionCompetencia);
-    //           Assert.IsTrue(DatosSKD.Modulo8.BDRestriccionCompetencia.ExisteRestriccionCompetenciaSimilar(laRestriccionCompetencia));
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
-
-    //   [Test]
-    //   public void pruebaVacioListaRestriccionCompetencias()
-    //   {
-
-    //       try
-    //       {
-    //           Assert.IsNotNull(DatosSKD.Modulo8.BDRestriccionCompetencia.ListarRestriccionesCompetencia());
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
-
-    //   [Test]
-    //   public void pruebaAtletasQueCumplenRestriccion()
-    //   {
-
-    //       try
-    //       {
-    //           Assert.IsNotNull(DatosSKD.Modulo8.BDRestriccionCompetencia.atletasQueCumplenRestriccion(laRestriccionCompetencia));
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
-
-
-
-
-
-
-    //   [Test]
-    //   public void pruebaTraerIdRestriccionCompetencia()
-    //   {
-
-    //       try
-    //       {
-    //           DatosSKD.Modulo8.BDRestriccionCompetencia.AgregarRestriccionCompetencia(laRestriccionCompetencia);
-    //           int Id = DatosSKD.Modulo8.BDRestriccionCompetencia.traerIdRestriccionCompetencia(laRestriccionCompetencia);
-    //           Assert.IsTrue(DatosSKD.Modulo8.BDRestriccionCompetencia.ExisteRestriccionCompetenciaSimilar(laRestriccionCompetencia));
-    //           Assert.AreEqual(DatosSKD.Modulo8.BDRestriccionCompetencia.traerIdRestriccionCompetencia(laRestriccionCompetencia), Id);
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
-
-
-
-
-
-
-       
-    //   [Test]
-    //       public void pruebaCompetenciasQuePuedeIrUnAtleta()
-    //   {
-    //       try
-    //       {
-               
-    //           Assert.IsNotNull(DatosSKD.Modulo8.BDRestriccionCompetencia.competenciasQuePuedeIrUnAtleta(atleta));
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
-
-
-
-    //    [Test]
-    //       public void pruebaListarCompetenciasAsociadasALaRestriccion()
-    //   {
-
-    //       try
-    //       {
-    //           Assert.IsNotNull(DatosSKD.Modulo8.BDRestriccionCompetencia.ListarCompetenciasAsociadasALaRestriccion(laRestriccionCompetencia));
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
-
-       
-    //       [Test]
-    //       public void pruebaListarCompetenciasNoAsociadasALaRestriccion()
-    //   {
-
-    //       try
-    //       {
-    //           Assert.IsNotNull(DatosSKD.Modulo8.BDRestriccionCompetencia.ListarCompetenciasNoAsociadasALaRestriccion(laRestriccionCompetencia));
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
-
-
-    //    [Test]
-    //       public void pruebaCrearCompetenciaRestriccionCompetencia()
-    //   {
-    //       try
-    //       {
-    //           laCompetencia = new Competencia(46);
-    //           laRestriccionCompetencia = new RestriccionCompetencia(6);
-    //           Assert.IsTrue(DatosSKD.Modulo8.BDRestriccionCompetencia.AgregarCompetenciaRestriccionCompetencia(laRestriccionCompetencia, laCompetencia));
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-               
-    //   }
-
-       
-
-    //       [Test]
-    //       public void pruebaEliminarCompetenciaRestriccionCompetencia()
-    //   {
-    //       try
-    //       {
-    //           laCompetencia = new Competencia(46);
-    //           laRestriccionCompetencia = new RestriccionCompetencia(6);
-    //           Assert.IsTrue(DatosSKD.Modulo8.BDRestriccionCompetencia.EliminarCompetenciaRestriccionCompetencia(laRestriccionCompetencia, laCompetencia));
-
-    //       }
-    //       catch (Exception e)
-    //       {
-               
-    //           throw e;
-    //       }
-    //   }
-       
-
-       [TearDown]
-       public void limpiar()
-       {
-           fabricaDAO = null;
-           fabricaEntidad = null;
-           DAORestriccionCompetencia = null;
-           laRestriccion = null;
-
-       }
     }
-
-}
-
-
-//}
+ }

@@ -244,7 +244,7 @@ namespace DatosSKD.DAO.Modulo8
 
                     FabricaEntidades fabricaEntidades = new FabricaEntidades();
                     DataTable dt = EjecutarStoredProcedureTuplas(RecursosDAORestriccionCompetencia.ConsultarTodasRestriccionCompetencia, parametros);
-                    DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionDeCompetencia = 
+                    DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionDeCompetencia =
                     (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabricaEntidades.ObtenerRestriccionCompetencia();
                    
                     foreach (DataRow row in dt.Rows)

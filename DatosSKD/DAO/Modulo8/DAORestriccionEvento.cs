@@ -330,8 +330,8 @@ namespace DatosSKD.DAO.Modulo8
         /// <returns>Objeto de tipo RestriccionEvento con todos los datos</returns>
         public DominioSKD.Entidad ConsultarRestriccionEvento(DominioSKD.Entidad parametro)
         {
-            DominioSKD.Entidades.Modulo8.EventoSimple elEventoSimple =
-                (DominioSKD.Entidades.Modulo8.EventoSimple)parametro;
+            DominioSKD.Entidades.Modulo8.RestriccionEvento elEventoSimple =
+                (DominioSKD.Entidades.Modulo8.RestriccionEvento)parametro;
 
             DominioSKD.Entidad laRestriccionEvento = null;
             DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
@@ -340,7 +340,7 @@ namespace DatosSKD.DAO.Modulo8
             {
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro(RecursosDAORestriccionEvento.ParamIdEvento, SqlDbType.Int,
-                    elEventoSimple.IdEvento.ToString(), false);
+                    elEventoSimple.ToString(), false);
 
                 parametros.Add(elParametro);
 
@@ -358,7 +358,7 @@ namespace DatosSKD.DAO.Modulo8
                 int IdEvento = int.Parse(RecursosDAORestriccionEvento.AliasIdEvento.ToString());
                 String NombreEvento = RecursosDAORestriccionEvento.AliasNombreEve.ToString();
 
-                laRestriccionEvento = fabricaEntidad.ObtenerRestriccionEvento(IdRestEvento, Descripcion, EdadMinima, EdadMaxima, Sexo, IdEvento, NombreEvento);
+                laRestriccionEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionEvento(IdRestEvento, Descripcion, EdadMinima, EdadMaxima, Sexo, IdEvento, NombreEvento);
             }
             catch (SqlException ex)
             {
@@ -413,7 +413,7 @@ namespace DatosSKD.DAO.Modulo8
                     int IdEvento = int.Parse(row[RecursosDAORestriccionEvento.AliasIdEvento].ToString());
                     String NombreEvento = row[RecursosDAORestriccionEvento.AliasNombreEve].ToString();
 
-                    Entidad laRestriccionEvento = fabricaEntidad.ObtenerRestriccionEvento(IdRestEvento, Descripcion, EdadMinima, EdadMaxima, Sexo, IdEvento, NombreEvento);
+                    Entidad laRestriccionEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionEvento(IdRestEvento, Descripcion, EdadMinima, EdadMaxima, Sexo, IdEvento, NombreEvento);
                     laListaRestriccionesEvento.Add(laRestriccionEvento);
                 }
 
