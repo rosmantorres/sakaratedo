@@ -232,11 +232,9 @@
                      
                             <asp:Literal runat="server" ID="precioFinal" ></asp:Literal>
                             <h3>Seleccione tipo de pago</h3>
-<<<<<<< HEAD
-                                <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()">
-=======
+
                                 <select id="DropDownList1" name="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px"   onchange="example()">
->>>>>>> e8ac3154aec28d056bea24d3a4ad8b0913ba08cd
+
                                 <option value="-1">Seleccione</option>
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
@@ -265,11 +263,9 @@
          <div class="form-group">
 		    <div class="box-footer">
                 <br />			
-<<<<<<< HEAD
-                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
-=======
+
                 <asp:Button ID="BotonPagar" disabled="disabled" runat="server" Text="Procesar Pago" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
->>>>>>> e8ac3154aec28d056bea24d3a4ad8b0913ba08cd
+
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
@@ -279,11 +275,9 @@
 			</div>
 		</div>
        </div>
-<<<<<<< HEAD
-         <script src="JS/ValidacionesJS.js"></script>
-=======
+
          <script src="JS/ValidacionesJS.js"></script>         
->>>>>>> e8ac3154aec28d056bea24d3a4ad8b0913ba08cd
+
      </form>
     
 </asp:Content>
