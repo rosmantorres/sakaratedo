@@ -51,13 +51,13 @@ namespace DatosSKD.DAO.Modulo1
             {
                 parametros = new List<Parametro>();
                 Cuenta laCuenta = (Cuenta) laFabrica.ObtenerCuenta_M1();
-                elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, usuarioId, false);
+                elParametro = new Parametro(RecursosBDM1.AliasIdUsuario, SqlDbType.Int, usuarioId, false);
                 parametros.Add(elParametro);
-                elParametro = new Parametro(RecursosBDModulo1.AliasContrasena, SqlDbType.VarChar, contraseña, false);
+                elParametro = new Parametro(RecursosBDM1.AliasContrasena, SqlDbType.VarChar, contraseña, false);
                 parametros.Add(elParametro);
 
                 this.EjecutarStoredProcedureTuplas(
-                      RecursosBDModulo1.CambiarContraseña, parametros);
+                      RecursosBDM1.CambiarContraseña, parametros);
                 return true;
             }
             catch (SqlException e)

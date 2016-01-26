@@ -303,7 +303,9 @@
   <data name="MENSAJE_SIN_FACTURAS" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Usted no Posee Facturas Asociadas.&lt;/div&gt;</value>
   </data>
+
   <data name="EXCEPTION_ITEM_INVALIDO_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=10</value>
   </data>
+
 </root>

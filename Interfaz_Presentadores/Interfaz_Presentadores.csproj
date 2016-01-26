@@ -34,12 +34,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+      <HintPath>..\bin\CKEditor.NET.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+    <Reference Include="itextsharp">
+      <HintPath>..\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <!--<Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
-    </Reference>
+    </Reference>-->
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
@@ -53,6 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo8\PresentadorAgregarRestriccionCinta.cs" />
+    <Compile Include="Modulo8\PresentadorAgregarRestriccionCompetencia.cs" />
     <Compile Include="Modulo11\PresentadorDetalleResultado.cs" />
     <Compile Include="Modulo7\M7_RecursosPresentador.Designer.cs">
       <DependentUpon>M7_RecursosPresentador.resx</DependentUpon>
@@ -167,6 +172,18 @@
     <Compile Include="Modulo5\PresentadorLlenarCintas.cs" />
     <Compile Include="Modulo5\PresentadorModificarCinta.cs" />
     <Compile Include="Modulo5\RecursoPresentadorM5.Designer.cs" />
+    <Compile Include="Modulo8\PresentadorAgregarRestriccionEvento.cs" />
+    <Compile Include="Modulo8\PresentadorConsultarRestriccionesCinta.cs" />
+    <Compile Include="Modulo8\PresentadorConsultarRestriccionesEvento.cs" />
+    <Compile Include="Modulo8\PresentadorConsultarTodosRestriccionCompetencia.cs" />
+    <Compile Include="Modulo8\PresentadorModificarRestriccionCinta.cs" />
+    <Compile Include="Modulo8\PresentadorModificarRestriccionCompetencia.cs" />
+    <Compile Include="Modulo8\PresentadorModificarRestriccionEvento.cs" />
+    <Compile Include="Modulo8\RecursoPresentadorM8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoPresentadorM8.resx</DependentUpon>
+    </Compile>
     <Compile Include="Modulo9\M9_RecursoInterfazPresentador.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -205,7 +222,6 @@
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
-    <Folder Include="Modulo8\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Modulo7\M7_RecursosPresentador.resx">
@@ -245,7 +261,7 @@
       <LastGenOutput>RecursosInterfazPresentadorM1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo2\RecursosInterfazPresentadorM2.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosInterfazPresentadorM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo3\RecursosPresentadorM3.resx">
@@ -253,6 +269,10 @@
       <LastGenOutput>RecursosPresentadorM3.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo5\RecursoPresentadorM5.resx" />
+    <EmbeddedResource Include="Modulo8\RecursoPresentadorM8.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoPresentadorM8.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo9\M9_RecursoInterfazPresentador.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M9_RecursoInterfazPresentador.Designer.cs</LastGenOutput>

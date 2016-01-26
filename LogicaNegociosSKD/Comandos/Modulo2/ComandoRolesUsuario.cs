@@ -24,12 +24,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo2
                 Cuenta cta = (Cuenta)LaEntidad;
                 FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();
                 IDaoRoles conexionBD = laFabrica.ObtenerDaoRoles();
-                return conexionBD.consultarRolesUsuario(cta.Id.ToString()).Cast<Entidad>().ToList();
+                return conexionBD.consultarRolesUsuario(cta.Id.ToString());
             }
             catch (Exception e)
             {
-                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosLogicaModulo2.Codigo_Error_ConsultarRolUsuario,
-                         RecursosLogicaModulo2.Mensaje_Error_ConsultarRolUsuario, e);
+                throw new ExcepcionesSKD.Modulo2.RolesException(RecursosComandoModulo2.Codigo_Error_ConsultarRolUsuario,
+                         RecursosComandoModulo2.Mensaje_Error_ConsultarRolUsuario, e);
             }
         }
 
