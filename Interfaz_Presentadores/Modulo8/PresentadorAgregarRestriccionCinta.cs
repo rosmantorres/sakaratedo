@@ -122,7 +122,9 @@ namespace Interfaz_Presentadores.Modulo8
 
 
                 FabricaComandos _fabrica = new FabricaComandos();
-                Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionCinta(laRestCinta);
+                LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta _comando =
+                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCinta(laRestCinta);
+                
                 bool resultado = _comando.Ejecutar();
                 return resultado;
             }
