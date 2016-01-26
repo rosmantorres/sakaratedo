@@ -318,7 +318,7 @@
                          maxlength: "Maximo tiene que ser 120 caracteres"
 
                      },
-                     ctl00$contenidoCentral$color_implemento_div: {
+                     ctl00$contenidoCentral$color_impolemento_div: {
                          required: "Este campo es obligatorio",
                          minlength: "Minimo tiene que ser 3 caracteres",
                          maxlength: "Maximo tiene que ser 120 caracteres"
@@ -380,11 +380,11 @@
              $("#contenidoCentral_color_implemento").change(function () {
                  // alert("hola");
                  if ($("#contenidoCentral_color_implemento").val() == "otros") {
-                     $("#contenidoCentral_color_implemento_div").show();
+                     $("#contenidoCentral_color_impolemento_div").show();
                  } else {
-                     $("#contenidoCentral_color_implemento_div").hide();
-                     $("#contenidoCentral_color_implemento_div").val("prueba");
-                     $("#contenidoCentral_color_implemento_div-error").text("");
+                     $("#contenidoCentral_color_impolemento_div").hide();
+                     $("#contenidoCentral_color_impolemento_div").val("prueba");
+                     $("#contenidoCentral_color_impolemento_div-error").text("");
 
                  }
 

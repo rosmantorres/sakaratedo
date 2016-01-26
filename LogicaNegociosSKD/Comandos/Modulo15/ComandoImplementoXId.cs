@@ -30,23 +30,23 @@ namespace LogicaNegociosSKD.Comandos.Modulo15
             }
             catch (ExcepcionComandoImplementoXId ex)
             {
-                ex = new ExcepcionComandoImplementoXId("Error en Comando implemento por Id", new Exception());
-                Logger.EscribirError("Error en Comando implemento por Id", ex);
+                ex = new ExcepcionComandoImplementoXId(RecursosComandoModulo15.ErrorCIXI, new Exception());
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCIXI, ex);
                 throw ex;
 
             }
 
             catch (ExceptionSKD ex)
             {
-                ex = new ExcepcionesSKD.ExceptionSKD("No se pudo completar la operacion", new Exception());
-                Logger.EscribirError("Error en Comando implemento por Id", ex);
+                ex = new ExcepcionesSKD.ExceptionSKD(RecursosComandoModulo15.ErrorOperacion, new Exception());
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCIXI, ex);
                 throw ex;
             }
 
             catch (Exception ex)
             {
 
-                Logger.EscribirError("Error de en Comando implemento por Id", ex);
+                Logger.EscribirError(RecursosComandoModulo15.ErrorCIXI, ex);
                 throw ex;
             }
         }

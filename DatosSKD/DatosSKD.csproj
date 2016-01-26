@@ -169,7 +169,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\RecursosBDModulo15.Designer.cs">
+    <Compile Include="DAO\Modulo15\RecursosBDModulo15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo15.resx</DependentUpon>
@@ -248,7 +248,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo15\RecursosBDModulo15.resx">
+    <EmbeddedResource Include="DAO\Modulo15\RecursosBDModulo15.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo15.Designer.cs</LastGenOutput>
     </EmbeddedResource>
