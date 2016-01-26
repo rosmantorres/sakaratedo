@@ -160,6 +160,15 @@ namespace Interfaz_Presentadores.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alert alert-warning alert-dismissible.
+        /// </summary>
+        internal static string AlertaWarning {
+            get {
+                return ResourceManager.GetString("AlertaWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to class.
         /// </summary>
         internal static string alertClase {
@@ -363,6 +372,15 @@ namespace Interfaz_Presentadores.Modulo11 {
         internal static string Competencia {
             get {
                 return ResourceManager.GetString("Competencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=\&quot;button\&quot; class=\&quot;close\&quot; data-dismiss=\&quot;alert\&quot; aria-label=\&quot;Close\&quot;&gt;&lt;span aria-hidden=\&quot;true\&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Los EMPATES en las Competencias de tipo Kumite no estan permitidos.&lt;/div&gt;.
+        /// </summary>
+        internal static string EmpatesNoPermitidos {
+            get {
+                return ResourceManager.GetString("EmpatesNoPermitidos", resourceCulture);
             }
         }
         
