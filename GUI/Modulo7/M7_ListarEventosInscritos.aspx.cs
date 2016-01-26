@@ -1,38 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using DominioSKD;
-using LogicaNegociosSKD;
-using LogicaNegociosSKD.Modulo7;
-using templateApp.GUI.Master;
-using ExcepcionesSKD.Modulo7;
+﻿using DominioSKD;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
+using Interfaz_Contratos.Modulo7;
+using Interfaz_Presentadores.Modulo7;
+using System;
+using System.Collections.Generic;
+using System.Web.UI;
+using templateApp.GUI.Master;
+
+
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_ListarEventosInscritos : System.Web.UI.Page
+    /// <summary>
+    /// Clase que maneja la interfaz de inscripción a eventos
+    /// </summary>
+    public partial class M7_ListarEventosInscritos : System.Web.UI.Page, IContratoListarEventosInscritos
     {
          #region Atributos
-        private List<DominioSKD.Evento> laLista;
-        private List<DominioSKD.Competencia> laListaCompetencias;
+        private PresentadorListarEventosInscritos presentador;
+        private FabricaEntidades fabricaEntidades;
+        private PersonaM7 idPersona;
+
+        /// <summary>
+        /// Implementacion de contrato laTabla
+        /// </summary>
+        string IContratoListarEventosInscritos.laTabla
+        {
+            get
+            {
+                return laTabla.Text;
+            }
+
+            set
+            {
+                laTabla.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Constructor de la clase 
+        /// </summary>
+        public M7_ListarEventosInscritos()
+        {
+            presentador = new PresentadorListarEventosInscritos(this);
+        }
+
         #endregion
         #region Page Load
         /// <summary>
-        /// Método que se ejecuta al cargar la página
+        /// Método que se ejecuta al cargar la página eventos inscritos
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                String rolUsuario = Session[GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
+            ((SKD)Page.Master).IdModulo = M7_Recursos.Modulo;
+            String detalleString = Request.QueryString[M7_Recursos.DetalleStringEventoInscrito];
+
+           #region Llenar Data Table con Eventos
+               try
+                 {
+                String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                    (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -40,61 +74,18 @@ namespace templateApp.GUI.Modulo7
                 }
                 if (permitido)
                 {
-                    ((SKD)Page.Master).IdModulo = "7";
-
-                    String detalleString = Request.QueryString["EventInscDetalle"];
-
-                    if (detalleString != null)
-                    {
-
-                    }
-
-                    #region Llenar Data Table con Eventos
-                    LogicaEventosInscritos logEvento = new LogicaEventosInscritos();
                     if (!IsPostBack)
                     {
                         try
                         {
-                            laLista = logEvento.obtenerListaDeEventos(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            laListaCompetencias = logEvento.obtenerListaDeCompetencias(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-                            if (laLista != null && laListaCompetencias != null)
-                            {
-                                foreach (Evento evento in laLista)
-                                {
-                                    this.laTabla.Text += M7_Recursos.AbrirTR;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.Horario.FechaInicio.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + evento.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD;
-                                    this.laTabla.Text += M7_Recursos.BotonInfoEventosInscritos + evento.Id_evento + M7_Recursos.BotonCerrar;
-                                    this.laTabla.Text += M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.CerrarTR;
-                                }
-
-                                foreach (Competencia competencia in laListaCompetencias)
-                                {
-                                    this.laTabla.Text += M7_Recursos.AbrirTR;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Nombre.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.TipoCompetencia.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.FechaInicio.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD + competencia.Ubicacion.Ciudad.ToString() + M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.AbrirTD;
-                                    this.laTabla.Text += M7_Recursos.BotonInfoCompetenciaInscrita + competencia.Id_competencia + M7_Recursos.BotonCerrar;
-                                    this.laTabla.Text += M7_Recursos.CerrarTD;
-                                    this.laTabla.Text += M7_Recursos.CerrarTR;
-                                }
-                            }
-                            else
-                            {
-                                throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
-                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
-                            }
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
+                            presentador.ConsultarEventosInscritos(idPersona);
                         }
                         catch (ListaNulaException)
                         {
                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                             M7_Recursos.MensajeListaNulaLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                M7_Recursos.MensajeListaNulaLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                         catch (NumeroEnteroInvalidoException)
                         {
@@ -104,13 +95,13 @@ namespace templateApp.GUI.Modulo7
                         catch (Exception ex)
                         {
                             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
-                            ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
                         }
                     }
-                    else
-                    {
-                        Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
-                    }
+                }
+                else
+                {
+                    Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
                 }
 
             }
@@ -120,8 +111,9 @@ namespace templateApp.GUI.Modulo7
                 ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);
             }
         }
-            #endregion
+                
     }
+            #endregion
                    
         #endregion
       

@@ -169,7 +169,7 @@
                      <div class="form-group col-sm-12 col-md-12 col-lg-12" onload="initialize();">
                         <h3>Ubicación :</h3>
                         <asp:HiddenField runat="server" id="txtLAT" ClientIDMode="Static"></asp:HiddenField><!--LATITUD DE UBICACION-->
-                        <asp:HiddenField runat="server" id="txtLONG" ClientIDMode="Static"/><!--LONGITUD DE UBICACION-->                       <div id="googleMap" style="width:735px;height:350px;"></div>
+                        <asp:HiddenField runat="server" id="txtLONG" ClientIDMode="Static"></asp:HiddenField><!--LONGITUD DE UBICACION-->                       <div id="googleMap" style="width:735px;height:350px;"></div>
                         <br />
                      </div>
                      <div class="panel-group col-sm-10 col-md-10 col-lg-10">
@@ -331,7 +331,7 @@
   <script>
       $(document).ready(function () {
           $("#input_fecha_ini").datepicker('update', document.getElementById("fechaIni").value);
-          $("#input_fecha_fin").datepicker('update', document.getElementById("fechaFin").value);
+          $("#input_fecha_fin").datepicker('update', document.getElementById("fechaFin").value); 
           $('#input_fecha_ini').datepicker('setEndDate', document.getElementById("fechaFin").value);
           $('#input_fecha_fin').datepicker('setStartDate', document.getElementById("fechaIni").value);
           $("#input_fecha_fin").datepicker({

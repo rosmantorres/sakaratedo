@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesSKD.Modulo4
 {
-    /// <summary>
-    /// Excepcion de errores en formatos en la bd
-    /// con código y mensaje que corresponda
-    /// </summary>
     public class FormatoIncorrectoException : ExceptionSKD
     {
         public FormatoIncorrectoException()

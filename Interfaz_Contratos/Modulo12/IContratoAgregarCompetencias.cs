@@ -23,14 +23,14 @@ namespace Interfaz_Contratos.Modulo12
         string statusEnCursoComp { get; }
         bool statusEnCursoCompBool { get; }
         string costoComp { get; }
-        string inicioComp { get; }
-        string finComp { get; }
+        string inicioComp { get; set; }
+        string finComp { get; set; }
         string latitudComp { get; }
         string longitudComp { get; }
         DropDownList categIniComp { get; set; }
         DropDownList categFinComp { get; set; }
-        string categEdadIniComp { get; }
-        string cateEdadFinComp { get; }
+        string edadIniComp { get; }
+        string edadFinComp { get; }
         string categSexoMComp { get; }
         bool categSexoMCompBool { get; }
         string cateSexoFComp { get; }

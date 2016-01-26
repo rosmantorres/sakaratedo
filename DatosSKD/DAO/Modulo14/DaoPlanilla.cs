@@ -27,14 +27,15 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            // BDConexion laConexion;
+          
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            Planilla planilla = (Planilla)laPlanilla;
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
 
             try
             {
-                //   laConexion = new BDConexion();
+                
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroNombrePlanilla,
@@ -112,13 +113,14 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //BDConexion laConexion;
+   
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
-            Planilla planilla = (Planilla)laPlanilla;
+            DominioSKD.Entidades.Modulo14.Planilla planilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)laPlanilla;
             try
             {
-                //  laConexion = new BDConexion();
+               
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -197,16 +199,15 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //  BDConexion laConexion;
-            int idPlanilla = ((Planilla)laPlanilla).ID;
-            Planilla planilla = null;
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+          
+            int idPlanilla = ((DominioSKD.Entidades.Modulo14.Planilla)laPlanilla).ID;
+            DominioSKD.Entidades.Modulo14.Planilla planilla = null;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-                //  laConexion = new BDConexion();
+               
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -220,7 +221,8 @@ namespace DatosSKD.DAO.Modulo14
                     String tipoPlanilla = row[RecursosDAOModulo14.AtributoNombreTipoPlanilla].ToString();
                     String nombrePlanilla = row[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
                     bool statusPlanilla = (bool)row[RecursosDAOModulo14.AtributoStatusPlanilla];
-                    planilla = (Planilla)fabricaEntidad.ObtenerPlanilla(nombrePlanilla, statusPlanilla, tipoPlanilla);
+                    planilla =
+                        (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla(nombrePlanilla, statusPlanilla, tipoPlanilla);
                 }
 
             }
@@ -286,29 +288,107 @@ namespace DatosSKD.DAO.Modulo14
         #region IDAOPlanilla
 
         /// <summary>
+        /// Método cambia el status de una planilla
+        /// </summary>
+        /// <param name="idPlanilla">id de la planilla a cambiar</param>
+        public Boolean CambiarStatus(int idPlanilla)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            SqlConnection conect = Conectar();
+            try
+            {
+
+                SqlCommand sqlcom = new SqlCommand(RecursosDAOModulo14.ProcedureCambiarStatusPlanilla, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+                sqlcom.Parameters.Add(new SqlParameter(RecursosDAOModulo14.ParametroIdPlanilla,
+                            SqlDbType.Int));
+                sqlcom.Parameters[RecursosDAOModulo14.ParametroIdPlanilla].Value = idPlanilla;
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoIoException,
+                    RecursosDAOModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoNullReferencesExcep,
+                    RecursosDAOModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoDisposedObject,
+                    RecursosDAOModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoFormatExceptio,
+                    RecursosDAOModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoException,
+                    RecursosDAOModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            finally
+            {
+                Desconectar(conect);
+            }
+
+        }
+
+        /// <summary>
         /// Obtiene la lista de los tipo de planillas
         /// </summary>
         /// <returns>Lista de los tipos de planillas</returns>
         public List<Entidad> ObtenerTipoPlanilla()
         {
-            FabricaEntidades fabricaEntidad = new FabricaEntidades();
+
 
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //BDConexion laConexion;
+            
             List<Entidad> listaTipoPlanilla = new List<Entidad>();
             List<Parametro> parametros;
 
             try
             {
-             //   laConexion = new BDConexion();
+            
                 this.Conectar();
                 parametros = new List<Parametro>();
                 DataTable resultadoConsulta = this.EjecutarStoredProcedureTuplas(RecursosDAOModulo14.ProcedureListaTipoPlanilla, parametros);
 
                 foreach (DataRow row in resultadoConsulta.Rows)
                 {
-                    Entidad laPlanilla = fabricaEntidad.ObtenerPlanilla(Int32.Parse(row[RecursosDAOModulo14.AtributoIdTipoPlanilla].ToString()), row[RecursosDAOModulo14.AtributoNombreTipoPlanilla].ToString());
+                    Entidad laPlanilla = FabricaEntidades.ObtenerPlanilla(Int32.Parse(row[RecursosDAOModulo14.AtributoIdTipoPlanilla].ToString()), row[RecursosDAOModulo14.AtributoNombreTipoPlanilla].ToString());
                     listaTipoPlanilla.Add(laPlanilla);
                 }
 
@@ -373,14 +453,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-         //   BDConexion laConexion;
+        
             List<String> listaDatos = new List<String>();
             List<Parametro> parametros;
-            //List<Resultado> resultadoConsulta;
 
             try
             {
-             //   laConexion = new BDConexion();
+            
                 this.Conectar();
                 parametros = new List<Parametro>();
                 DataTable resultadoConsulta = this.EjecutarStoredProcedureTuplas(RecursosDAOModulo14.ProcedureConsultarListaDatos, parametros);
@@ -452,14 +531,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-           // BDConexion laConexion;
+          
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-             //   laConexion = new BDConexion();
-                //this.Conectar();
+             
                 parametros = new List<Parametro>();
 
                 parametro = new Parametro(RecursosDAOModulo14.ParametroNombrePlanilla,
@@ -532,13 +610,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-          //  BDConexion laConexion;
+          
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-               // laConexion = new BDConexion();
+               
                 this.Conectar();
                 parametros = new List<Parametro>();
 
@@ -611,14 +689,14 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-           // BDConexion laConexion;
+           
             int idTipolanilla;
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-               // laConexion = new BDConexion();
+               
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroTipoPlanilla,
@@ -687,9 +765,7 @@ namespace DatosSKD.DAO.Modulo14
             }
 
             return idTipolanilla;
-        }
-
-       
+        } 
 
         /// <summary>
         /// Obtiene los datos de una planilla id
@@ -700,13 +776,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-          //  BDConexion laConexion;
+          
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
             List<String> listDatos = new List<String>();
             try
             {
-            //    laConexion = new BDConexion();
+            
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -783,13 +859,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-          //  BDConexion laConexion;
+         
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
             List<String> listDatos = new List<String>();
             try
             {
-              //  laConexion = new BDConexion();
+              
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -857,7 +933,6 @@ namespace DatosSKD.DAO.Modulo14
             return listDatos;
         }
 
-
         /// <summary>
         /// Modifica una planilla en la base de datos
         /// </summary>
@@ -867,13 +942,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //BDConexion laConexion;
+            
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-                //laConexion = new BDConexion();
+                
                 this.Conectar();
                 parametros = new List<Parametro>();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -945,13 +1020,13 @@ namespace DatosSKD.DAO.Modulo14
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //BDConexion laConexion;
+            
             List<Parametro> parametros;
             Parametro parametro = new Parametro();
 
             try
             {
-              //  laConexion = new BDConexion();
+              
                 parametros = new List<Parametro>();
                 this.Conectar();
                 parametro = new Parametro(RecursosDAOModulo14.ParametroIdPlanilla,
@@ -1013,6 +1088,105 @@ namespace DatosSKD.DAO.Modulo14
                 throw excep;
             }
             return true;
+        }
+
+        /// <summary>
+        /// Método que consulta todas las planillas creadas
+        /// </summary>
+        /// <returns>Lista de planillas creadas</returns>
+        public List<Entidad> ConsultarPlanillasCreadas()
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
+                RecursosDAOModulo14.MsjDeEntrada, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            SqlConnection conect = Conectar();
+            List<Entidad> lista = new List<Entidad>();
+            FabricaEntidades fabrica = new FabricaEntidades();
+            DominioSKD.Entidades.Modulo14.Planilla planilla;
+            try
+            {
+
+                SqlCommand sqlcom = new SqlCommand(RecursosDAOModulo14.ProcedureConsultarPlanillasCreadas, conect);
+                sqlcom.CommandType = CommandType.StoredProcedure;
+
+                SqlDataReader leer;
+                conect.Open();
+
+                leer = sqlcom.ExecuteReader();
+                if (leer != null)
+                {
+                    while (leer.Read())
+                    {
+                        planilla = new DominioSKD.Entidades.Modulo14.Planilla();
+                        planilla.ID = Convert.ToInt32(leer[RecursosDAOModulo14.AtributoIdPlanilla]);
+                        planilla.Nombre = leer[RecursosDAOModulo14.AtributoNombrePlanilla].ToString();
+                        planilla.Status = Convert.ToBoolean(leer[RecursosDAOModulo14.AtributoStatusPlanilla]);
+                        planilla.TipoPlanilla = leer[RecursosDAOModulo14.AtributoNombreTipoPlanilla].ToString();
+                        lista.Add(planilla);
+                        planilla = null;
+
+                    }
+
+                    return lista;
+                }
+                else
+                {
+
+                    return null;
+                }
+            }
+            catch (SqlException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (IOException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoIoException,
+                    RecursosDAOModulo14.MsjExceptionIO, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (NullReferenceException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoNullReferencesExcep,
+                    RecursosDAOModulo14.MsjNullException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ObjectDisposedException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoDisposedObject,
+                    RecursosDAOModulo14.MensajeDisposedException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, ex);
+
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoFormatExceptio,
+                    RecursosDAOModulo14.MsjFormatException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            catch (Exception ex)
+            {
+                BDPLanillaException excep = new BDPLanillaException(RecursosDAOModulo14.CodigoException,
+                    RecursosDAOModulo14.MsjException, ex);
+                Logger.EscribirError(RecursosDAOModulo14.ClaseBDPlanilla, excep);
+                throw excep;
+            }
+            finally
+            {
+                Desconectar(conect);
+            }
+
         }
 
         #endregion

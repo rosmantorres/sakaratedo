@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -12,21 +13,22 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
    public class ComandoRegistrarPlanilla : Comando<bool>
     {
+        /// <summary>Para registrar una planilla</summary>
+        /// <param name="">planilla</param>
+        /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
        public override bool Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            Planilla laPlanilla = (Planilla)this.LaEntidad;
+            DominioSKD.Entidades.Modulo14.Planilla laPlanilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)this.LaEntidad;
             bool resultPlanilla = true;
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 resultPlanilla = BaseDeDatoPlanilla.Agregar(laPlanilla);
-                BaseDeDatoPlanilla.LimpiarSQLConnection();
                 foreach (String nombreDato in laPlanilla.Dato)
                 {
 
                     Boolean resultdatos = BaseDeDatoPlanilla.RegistrarDatosPlanillaBD(laPlanilla.Nombre, nombreDato);
-                    BaseDeDatoPlanilla.LimpiarSQLConnection();
                 }
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -12,22 +13,23 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
     public class ComandoModificarPlanillaID : Comando<Entidad>
     {
+        /// <summary>Modificar una planilla por id</summary>
+        /// <param name="laPlanilla">la planilla</param>
+        /// <returns>Regresa true si se modifico y false si no</returns>
+        /// 
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            Planilla laPlanilla = (Planilla)this.LaEntidad;
+            DominioSKD.Entidades.Modulo14.Planilla laPlanilla =( 
+                DominioSKD.Entidades.Modulo14.Planilla)this.LaEntidad;
 
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 BaseDeDatoPlanilla.Modificar(laPlanilla);
-                BaseDeDatoPlanilla.LimpiarSQLConnection();
                 BaseDeDatoPlanilla.EliminarDatosPlanillaBD(laPlanilla.ID);
-                BaseDeDatoPlanilla.LimpiarSQLConnection();
                 foreach (String item in laPlanilla.Dato)
                 {
                     BaseDeDatoPlanilla.RegistrarDatosPlanillaIdBD(laPlanilla.ID, item);
-                    BaseDeDatoPlanilla.LimpiarSQLConnection();
                 }
 
                 

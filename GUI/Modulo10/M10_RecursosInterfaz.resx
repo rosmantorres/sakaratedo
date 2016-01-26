@@ -123,6 +123,12 @@
   <data name="AbrirTR" xml:space="preserve">
     <value>&lt;tr&gt;</value>
   </data>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
+  </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
   </data>
@@ -161,5 +167,35 @@
   </data>
   <data name="Value" xml:space="preserve">
     <value>Value</value>
+  </data>
+  <data name="IdEvento" xml:space="preserve">
+    <value>M10_IdEvento</value>
+  </data>
+  <data name="tipoEvento" xml:space="preserve">
+    <value>M10_tipo</value>
+  </data>
+  <data name="ListaAsistenciaModificada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=2</value>
+  </data>
+  <data name="ListaAsistenciaNoModificada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=6</value>
+  </data>
+  <data name="FechaEvento" xml:space="preserve">
+    <value>M10_fecha</value>
+  </data>
+  <data name="ListaAsistenciaCompetenciaAgregada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=4</value>
+  </data>
+  <data name="ListaAsistenciaCompetenciaNoAgregada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=5</value>
+  </data>
+  <data name="ListaAsistenciaEventoAgregada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=1</value>
+  </data>
+  <data name="ListaAsistenciaEventoNoAgregada" xml:space="preserve">
+    <value>M10_ListarAsistenciaEventos.aspx?success=3</value>
+  </data>
+  <data name="Detalle" xml:space="preserve">
+    <value>compDetalle</value>
   </data>
 </root>

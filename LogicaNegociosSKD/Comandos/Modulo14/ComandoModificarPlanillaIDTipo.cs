@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -20,16 +21,19 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return tipoPlanilla; }
             set { tipoPlanilla = value; }
         }
+        /// <summary>Modificar una planilla</summary>
+        /// <param name="">tipo de planilla</param>
+        /// <returns>Regresa la planilla modificando su tipo de planilla</returns>
+        /// 
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            FabricaComandos fabricaComandos = new FabricaComandos();
-            Planilla laPlanilla = (Planilla)this.LaEntidad;
-            ComandoModificarPlanillaID modificar = (ComandoModificarPlanillaID)fabricaComandos.ObtenerComandoModificarPlanillaID();
+            DominioSKD.Entidades.Modulo14.Planilla laPlanilla =
+                (DominioSKD.Entidades.Modulo14.Planilla)this.LaEntidad;
+            ComandoModificarPlanillaID modificar = (ComandoModificarPlanillaID)FabricaComandos.ObtenerComandoModificarPlanillaID();
 
             try
             {
-                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
+                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
                 int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(this.tipoPlanilla);
                 laPlanilla.IDtipoPlanilla = idTipoPlanilla;
                 modificar.LaEntidad = (Entidad)laPlanilla;

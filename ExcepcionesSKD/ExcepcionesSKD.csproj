@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
@@ -69,16 +75,60 @@
     <Compile Include="Modulo14\URLImagenException.cs" />
     <Compile Include="Modulo15\ErrorEnParametroDeProcedure.cs" />
     <Compile Include="Modulo15\ErrorInputInterfaz.cs" />
+    <Compile Include="Modulo15\ExcepcionComando\ExcepcionComandoAgregarImplemento.cs" />
+    <Compile Include="Modulo15\ExcepcionComando\ExcepcionComandoConsultarTodosImplementos.cs" />
+    <Compile Include="Modulo15\ExcepcionComando\ExcepcionComandoConsultarTodosImplementos2.cs" />
+    <Compile Include="Modulo15\ExcepcionComando\ExcepcionComandoDojoId.cs" />
+    <Compile Include="Modulo15\ExcepcionComando\ExcepcionComandoEliminarImplemento.cs" />
+    <Compile Include="Modulo15\ExcepcionComando\ExcepcionComandoImplementoXId.cs" />
+    <Compile Include="Modulo15\ExcepcionComando\ExcepcionComandoModificarImplemento.cs" />
+    <Compile Include="Modulo15\ExcepcionComando\ExcepcionComandoUsuarioDojo.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionConsultarXId.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionDetallarDojo.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionDetallarImplemento.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcioneliminarInventarioDatos.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionimplementoInventarioDatos.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionimplementoInventarioDatosBool.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionimplementoInventarioDatosUltimo.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionlistaInventarioDatos2.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionListarInventarioDatos.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionmodificarInventarioDatos.cs" />
+    <Compile Include="Modulo15\ExcepcionDao\ExcepcionusuarioImplementoDatos.cs" />
+    <Compile Include="Modulo15\ExcepcionPresentador\ExcepcionPresentadorAgregarImplemento.cs" />
+    <Compile Include="Modulo15\ExcepcionPresentador\ExcepcionPresentadorConsultarImplemento.cs" />
+    <Compile Include="Modulo15\ExcepcionPresentador\ExcepcionPresentadorModificarImplemento.cs" />
     <Compile Include="Modulo15\ImplementoSinIDException.cs" />
+    <Compile Include="Modulo16\AgregarEventoaCarritoFallidoException.cs" />
+    <Compile Include="Modulo16\AtributoIncorrectoException.cs" />
+    <Compile Include="Modulo16\BDEventoException.cs" />
+    <Compile Include="Modulo16\BDMatriculaException.cs" />
+    <Compile Include="Modulo16\CantidadInvalidaException.cs" />
+    <Compile Include="Modulo16\CarritoConPagoException.cs" />
+    <Compile Include="Modulo16\CarritoSinEventoException.cs" />
+    <Compile Include="Modulo16\CarritoSinInventarioException.cs" />
+    <Compile Include="Modulo16\ErrorEnHTTPException.cs" />
+    <Compile Include="Modulo16\ItemInvalidoException.cs" />
+    <Compile Include="Modulo16\LogicaagregarEventoaCarritoException.cs" />
+    <Compile Include="Modulo16\MontoInvalidoException.cs" />
+    <Compile Include="Modulo16\OpcionItemErroneoException.cs" />
+    <Compile Include="Modulo16\OpcionPagoNoValidoException.cs" />
+    <Compile Include="Modulo16\ParametroIncorrectoException.cs" />
+    <Compile Include="Modulo16\ParseoEnSobrecargaException.cs" />
+    <Compile Include="Modulo16\ParseoFormatoInvalidoException.cs" />
+    <Compile Include="Modulo16\ParseoVacioException.cs" />
+    <Compile Include="Modulo16\PersonaNoValidaException.cs" />
+    <Compile Include="Modulo16\ReferenciaNulaException.cs" />
     <Compile Include="Modulo1\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo1\HashException.cs" />
     <Compile Include="Modulo1\InicioSesionException.cs" />
     <Compile Include="Modulo2\RolesException.cs" />
     <Compile Include="Modulo3\EstiloInexistenteException.cs" />
     <Compile Include="Modulo3\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo3\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo3\OrganizacionExistenteException.cs" />
     <Compile Include="Modulo5\CintaRepetidaException.cs" />
     <Compile Include="Modulo5\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo5\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo5\OrdenCintaRepetidoException.cs" />
     <Compile Include="Modulo5\OrganizacionInexistenteException.cs" />
     <Compile Include="Modulo7\ListaNulaException.cs" />
@@ -86,6 +136,10 @@
     <Compile Include="Modulo4\DojoInexistenteException.cs" />
     <Compile Include="Modulo4\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo7\ObjetoNuloException.cs" />
+    <Compile Include="Modulo8\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo8\RestriccionExistenteException.cs" />
+    <Compile Include="Modulo8\RestriccionInexistenteException.cs" />
+    <Compile Include="Modulo8\RestriccionRepetidaException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,9 +147,7 @@
     <Folder Include="Modulo10\" />
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo16\" />
     <Folder Include="Modulo6\" />
-    <Folder Include="Modulo8\" />
     <Folder Include="Modulo9\" />
   </ItemGroup>
   <ItemGroup>

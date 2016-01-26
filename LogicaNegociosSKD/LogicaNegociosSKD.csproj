@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +46,113 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarListaCompetenciaRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionEvento.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarEventosSinRestriccion.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarCintaTodas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionEvento.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodosRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarCompetencias.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasAsociadas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasNoAsociadas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoEliminarListaCompetenciaRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarCompetencia.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarHorarioPractica.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarMatricula.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarEvento.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaCinta.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosInscritos.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosPagos.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaMatriculasPagas.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaEventosAsistidos.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarListaHorarioPractica.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarPerfil.cs" />
+    <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarCinta.cs" />
+    <Compile Include="Comandos\Modulo7\RecursosComandoModulo7.Designer.cs">
+      <DependentUpon>RecursosComandoModulo7.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Comandos\Modulo10\ComandoConsultarEventoM10XId.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAscensosPorFechaM10.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoTodasLasFechasEventoAscensoM10.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoCambiarStatusPlanilla.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoAgregarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosImplementos2.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoDojoId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoEliminarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoImplementoXId.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoModificarImplemento.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoUsuarioDojo.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoAgregarAsistenciaEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoCompetenciasPorFecha.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarCompetenciasXId.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarCompetenciaXIdDetalle.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAsistentesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAsistentesEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAtletasInscritosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaAtletasInscritosEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaInasistentesPlanilla.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaInasistentesPlanillaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaNoAsistentesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListaNoAsistentesEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarCompetenciasAsistidas.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarEventosAsistidos.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoListarHorariosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoModificarAsistenciaEvento.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoConsultarTodasLasFechasDeUnEventoM10.cs" />
+    <Compile Include="Comandos\Modulo10\ComandoEventosPorRangosdeFechaM10.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoAgregarResultadoKumite.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoConsultarEventoDetalle.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasEnCategoriaYAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKataAmbos.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKumite.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaAtletasParticipanCompetenciaKumiteAmbos.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaCategoriaCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaCategoriaEvento.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaEspecialidadesCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaInscritosCompetencia.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListaInscritosExamenAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListarResultadosCompetenciaPasado.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoListarResultadosEventosPasados.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoAscenso.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKata.cs" />
+    <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKumite.cs" />
+    <Compile Include="Comandos\Modulo15\RecursosComandoModulo15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo15.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarTodosEventos.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoConsultarTodosProductos.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoDetallarEvento.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarFactura.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoDetallarMatricula.cs" />
+    <Compile Include="Comandos\Modulo15\ComandoDetallarProducto.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoeliminarItem.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoModificarCarrito.cs" />
+    <Compile Include="Comandos\Modulo16\Comandoregistrarpago.cs" />
+    <Compile Include="Comandos\Modulo16\ComandoVerCarrito.cs" />
+    <Compile Include="Comandos\Modulo16\RecursosLogicaModulo16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosLogicaModulo16.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo12\ComandoAgregarCompetencia.cs" />
     <Compile Include="Comandos\Modulo12\ComandoConsultarCintas.cs" />
     <Compile Include="Comandos\Modulo12\ComandoConsultarOrganizaciones.cs" />
@@ -55,6 +168,7 @@
     <Compile Include="Comandos\Modulo14\ComandoCompetenciasSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarDiseño.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarDiseñoPuro.cs" />
+    <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillas.cs" />
     <Compile Include="Comandos\Modulo14\ComandoConsultarPlanillasASolicitar.cs" />
     <Compile Include="Comandos\Modulo14\ComandoDatosRequeridosSolicitud.cs" />
     <Compile Include="Comandos\Modulo14\ComandoEliminarSolicitud.cs" />
@@ -80,67 +194,66 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosComandoModulo14.resx</DependentUpon>
     </Compile>
+    <Compile Include="Comandos\Modulo1\ComandoConsultarCorreo.cs" />
+    <Compile Include="Comandos\Modulo1\ComandoEnviarCorreo.cs" />
+    <Compile Include="Comandos\Modulo1\ComandoIniciarSesion.cs" />
+    <Compile Include="Comandos\Modulo1\ComandoRestablecerContraseña.cs" />
+    <Compile Include="Comandos\Modulo1\RecursosComandoModulo1.Designer.cs">
+      <DependentUpon>RecursosComandoModulo1.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Comandos\Modulo2\ComandoAgregarRol.cs" />
+    <Compile Include="Comandos\Modulo2\ComandoCuentaUsuario.cs" />
+    <Compile Include="Comandos\Modulo2\ComandoEliminarRol.cs" />
+    <Compile Include="Comandos\Modulo2\ComandoRolesDeSistema.cs" />
+    <Compile Include="Comandos\Modulo2\ComandoRolesUsuario.cs" />
+    <Compile Include="Comandos\Modulo2\RecursosLogicaModulo2.Designer.cs">
+      <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Comandos\Modulo3\EjecutarAgregarOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarComboOrganizaciones.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarConsultarTodosOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarConsultarXIdOrganizacion.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarModificarOrganizacion.cs" />
-    <Compile Include="Comandos\Modulo4\ComandoDetallarDojo.cs" />
-    <Compile Include="Comandos\Modulo4\ComandoEliminarDojo.cs" />
-    <Compile Include="Comandos\Modulo4\ComandoListarDojos.cs" />
-    <Compile Include="Comandos\Modulo4\ComandoModificarDojo.cs" />
-    <Compile Include="Comandos\Modulo4\ComandoAgregarDojo.cs" />
-    <Compile Include="Comandos\Modulo4\RecursosComandoModulo4.Designer.cs">
+    <Compile Include="Comandos\Modulo3\RecursosComandosModulo3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosComandoModulo4.resx</DependentUpon>
+      <DependentUpon>RecursosComandosModulo3.resx</DependentUpon>
     </Compile>
     <Compile Include="Comandos\Modulo5\EjecutarAgregarCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarConsultarTodosCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarConsultarXIdCinta.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarModificarCinta.cs" />
-    <Compile Include="Comandos\Modulo5\RecursosDaoModulo5.Designer.cs" />
+    <Compile Include="Comandos\Modulo5\RecursosComandosModulo5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandosModulo5.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Comandos\Modulo9\ComandoAgregarEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoAgregarEventoConTipo.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarListaEventos.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoModificarEvento.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoModificarEventoConTipo.cs" />
+    <Compile Include="Comandos\Modulo9\ComandoConsultarListaTipoEventos.cs" />
+    <Compile Include="Comandos\Modulo9\RecursosComandosModulo9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandosModulo9.resx</DependentUpon>
+    </Compile>
     <Compile Include="Fabrica\FabricaComandos.cs" />
-    <Compile Include="Modulo10\LogicaAsistencia.cs" />
     <Compile Include="Modulo10\RecursosLogicaModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo10.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo11\LogicaResultado.cs" />
     <Compile Include="Modulo11\RecursosLogicaModulo11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo11.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo12\LogicaCompetencias.cs" />
-    <Compile Include="Modulo12\RecursosLogicaModulo12.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo12.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo13\RecursosLogicaModulo13.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo13.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo14\LogicaDiseño.cs" />
-    <Compile Include="Modulo14\LogicaPlanilla.cs" />
-    <Compile Include="Modulo14\LogicaSolicitud.cs" />
-    <Compile Include="Modulo14\RecursosLogicaModulo14.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo14.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo15\RecursosLogicaModulo15.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo15.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo16\RecursosLogicaModulo16.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo16.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo1\logicaLogin.cs" />
     <Compile Include="Modulo1\logicaRestablecer.cs" />
@@ -156,48 +269,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo3\RecursosLogicaModulo3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo3.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo4\RecursosLogicaModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo4.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo5\RecursosLogicaModulo5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo5.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo6\LogicaListar.cs" />
-    <Compile Include="Modulo6\RecursosLogicaModulo6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo6.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo7\LogicaCintas.cs" />
-    <Compile Include="Modulo7\LogicaEventosPagos.cs" />
-    <Compile Include="Modulo7\LogicaEventosAsistidos.cs" />
-    <Compile Include="Modulo7\LogicaEventosInscritos.cs" />
-    <Compile Include="Modulo7\LogicaHorarioPractica.cs" />
-    <Compile Include="Modulo7\LogicaMatriculasPagas.cs" />
-    <Compile Include="Modulo7\LogicaOrganizacionYDojo.cs" />
-    <Compile Include="Modulo7\RecursosLogicaModulo7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo7.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo8\RecursosLogicaModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo8.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo9\RecursosLogicaModulo9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo9.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -216,6 +296,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\Modulo15\RecursosComandoModulo15.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo15.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo7\RecursosComandoModulo7.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo7.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo16\RecursosLogicaModulo16.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo12\RecursosComandoModulo12.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo12.Designer.cs</LastGenOutput>
@@ -224,11 +316,26 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo14.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comandos\Modulo4\RecursosComandoModulo4.resx">
+    <EmbeddedResource Include="Comandos\Modulo3\RecursosComandosModulo3.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosComandoModulo4.Designer.cs</LastGenOutput>
+      <LastGenOutput>RecursosComandosModulo3.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comandos\Modulo5\RecursosDaoModulo5.resx" />
+    <EmbeddedResource Include="Comandos\Modulo5\RecursosComandosModulo5.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandosModulo5.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo1\RecursosComandoModulo1.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo2\RecursosLogicaModulo2.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo9\RecursosComandosModulo9.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandosModulo9.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosLogicaModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo10.Designer.cs</LastGenOutput>
@@ -236,26 +343,6 @@
     <EmbeddedResource Include="Modulo11\RecursosLogicaModulo11.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo11.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo12\RecursosLogicaModulo12.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo12.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo13\RecursosLogicaModulo13.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo13.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo14\RecursosLogicaModulo14.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo14.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo15\RecursosLogicaModulo15.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo15.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo16\RecursosLogicaModulo16.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo16.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo1\RecursosLogicaModulo1.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -265,48 +352,21 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo3\RecursosLogicaModulo3.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo3.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo4\RecursosLogicaModulo4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo4.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo5\RecursosLogicaModulo5.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo5.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo6\RecursosLogicaModulo6.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo6.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo7\RecursosLogicaModulo7.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo8\RecursosLogicaModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo9\RecursosLogicaModulo9.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo9.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Comandos\Master\" />
-    <Folder Include="Comandos\Modulo10\" />
-    <Folder Include="Comandos\Modulo11\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo15\" />
-    <Folder Include="Comandos\Modulo16\" />
-    <Folder Include="Comandos\Modulo1\" />
-    <Folder Include="Comandos\Modulo2\" />
+    <Folder Include="Comandos\Modulo4\" />
     <Folder Include="Comandos\Modulo6\" />
-    <Folder Include="Comandos\Modulo7\" />
     <Folder Include="Comandos\Modulo8\" />
-    <Folder Include="Comandos\Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

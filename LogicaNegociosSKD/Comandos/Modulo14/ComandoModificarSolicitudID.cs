@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -12,13 +13,16 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
    public class ComandoModificarSolicitudID : Comando<Entidad>
     {
+        /// <summary>Modificar una solicitud por id</summary>
+        /// <param name="laSolicitud">la solicitud</param>
+        /// <returns>Regresa true si se modifico y false si no</returns>
+        /// 
        public override Entidad Ejecutar()
         {
         
-
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoSolicitud BaseDeDatoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
-            SolicitudP laSolicitud = (SolicitudP)this.LaEntidad;
+            IDaoSolicitud BaseDeDatoSolicitud = FabricaDAOSqlServer.ObtenerDAOSolicitud();
+            DominioSKD.Entidades.Modulo14.SolicitudP laSolicitud =
+                (DominioSKD.Entidades.Modulo14.SolicitudP)this.LaEntidad;
 
             try
             {
