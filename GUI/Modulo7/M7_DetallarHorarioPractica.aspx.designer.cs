@@ -22,57 +22,57 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.HtmlControls.HtmlForm detalleHorario;
         
         /// <summary>
-        /// nombre_evento1 control.
+        /// nombre_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombre_evento1;
+        protected global::System.Web.UI.WebControls.Label nombre_evento;
         
         /// <summary>
-        /// descripcion_evento1 control.
+        /// descripcion_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl descripcion_evento1;
+        protected global::System.Web.UI.WebControls.Label descripcion_evento;
         
         /// <summary>
-        /// estado_evento1 control.
+        /// estado_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl estado_evento1;
+        protected global::System.Web.UI.WebControls.Label estado_evento;
         
         /// <summary>
-        /// horaInicio_evento1 control.
+        /// horaInicio_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl horaInicio_evento1;
+        protected global::System.Web.UI.WebControls.Label horaInicio_evento;
         
         /// <summary>
-        /// horaFin_evento1 control.
+        /// horaFin_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl horaFin_evento1;
+        protected global::System.Web.UI.WebControls.Label horaFin_evento;
         
         /// <summary>
-        /// direccion_evento1 control.
+        /// direccion_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl direccion_evento1;
+        protected global::System.Web.UI.WebControls.Label direccion_evento;
     }
 }

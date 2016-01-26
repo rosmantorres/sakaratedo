@@ -7,8 +7,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using DatosSKD.Modulo1;
-using DominioSKD.Entidades.Modulo1;
-using DominioSKD.Entidades.Modulo2;
+using DominioSKD;
 using ExcepcionesSKD;
 using LogicaNegociosSKD.Modulo2;
 

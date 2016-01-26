@@ -14,6 +14,16 @@ namespace templateApp.GUI.Modulo7 {
         
         /// <summary>
         /// Control detalle_evento.
+        /// Control alert.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        
+        /// <summary>
+        /// Control modificar_planilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -22,102 +32,93 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.HtmlControls.HtmlForm detalle_evento;
         
         /// <summary>
-        /// Control nombre_evento1.
+        /// Control nombre_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombre_evento1;
+        protected global::System.Web.UI.WebControls.Label nombre_evento;
         
         /// <summary>
-        /// Control descripcion_evento1.
+        /// Control descripcion_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl descripcion_evento1;
+        protected global::System.Web.UI.WebControls.Label descripcion_evento;
         
         /// <summary>
-        /// Control costo_evento1.
+        /// Control costo_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl costo_evento1;
+        protected global::System.Web.UI.WebControls.Label costo_evento;
         
         /// <summary>
-        /// Control estado_evento1.
+        /// Control estado_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl estado_evento1;
+        protected global::System.Web.UI.WebControls.Label estado_evento;
         
         /// <summary>
-        /// Control fechaInicio_evento1.
+        /// Control fechaInicio_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaInicio_evento1;
+        protected global::System.Web.UI.WebControls.Label fechaInicio_evento;
         
         /// <summary>
-        /// Control fechaFin_evento1.
+        /// Control fechaFin_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaFin_evento1;
+        protected global::System.Web.UI.WebControls.Label fechaFin_evento;
         
         /// <summary>
-        /// Control horaInicio_evento1.
+        /// Control horaInicio_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl horaInicio_evento1;
+        protected global::System.Web.UI.WebControls.Label horaInicio_evento;
         
         /// <summary>
-        /// Control horaFin_evento1.
+        /// Control horaFin_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl horaFin_evento1;
+        protected global::System.Web.UI.WebControls.Label horaFin_evento;
         
         /// <summary>
-        /// Control ciudad_evento1.
+        /// Control ciudad_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ciudad_evento1;
+        protected global::System.Web.UI.WebControls.Label ciudad_evento;
         
         /// <summary>
-        /// Control estadoUbicacion_evento1.
+        /// Control estadoUbicacion_evento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl estadoUbicacion_evento1;
-        
-        /// <summary>
-        /// Control direccion_evento1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl direccion_evento1;
+        protected global::System.Web.UI.WebControls.Label estadoUbicacion_evento;
     }
 }

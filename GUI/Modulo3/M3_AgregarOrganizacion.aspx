@@ -41,7 +41,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-     <div id="alert" runat="server"></div>
+
 
         <!-- general form elements -->
               <div class="box box-primary">
@@ -72,30 +72,8 @@
       <div class="dropdown" runat="server" id="divComboEstado"  >
                  <asp:DropDownList ID="ListEstados" style="margin-top:1%" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
                  <asp:listitem value ="-1">Seleccionar Estado</asp:listitem>
-                 <asp:listitem value ="Amazonas">Amazonas</asp:listitem>
-                 <asp:listitem value ="Anzoategui">Anzoategui</asp:listitem>
-                 <asp:listitem value ="Apure">Apure</asp:listitem>
-                 <asp:listitem value ="Aragua">Aragua</asp:listitem>
-                 <asp:listitem value ="Barinas">Barinas</asp:listitem>
-                 <asp:listitem value ="Bolívar">Bolívar</asp:listitem>
-                 <asp:listitem value ="Carabobo">Carabobo</asp:listitem>
-                 <asp:listitem value ="Cojedes">Cojedes</asp:listitem>
-                 <asp:listitem value ="Delta Amacuro">Delta Amacuro</asp:listitem>
                  <asp:listitem value ="Distrito Federal">Distrito Federal</asp:listitem>
-                 <asp:listitem value ="Falcon">Falcón</asp:listitem>
-                 <asp:listitem value ="Guarico">Guárico</asp:listitem>
-                 <asp:listitem value ="Lara">Lara</asp:listitem>
-                 <asp:listitem value ="Merida">Mérida</asp:listitem>
-                 <asp:listitem value ="Miranda">Miranda</asp:listitem>
-                 <asp:listitem value ="Monagas">Monagas</asp:listitem>
-                 <asp:listitem value ="Nueva Esparta">Nueva Esparta</asp:listitem>
-                 <asp:listitem value ="Portuguesa">Portuguesa</asp:listitem>
-                 <asp:listitem value ="Sucre">Sucre</asp:listitem>
-                 <asp:listitem value ="Tachira">Táchira</asp:listitem>
-                 <asp:listitem value ="Trujillo">Trujillo</asp:listitem>
-                 <asp:listitem value ="Vargas">Vargas</asp:listitem>
-                 <asp:listitem value ="Yaracuy">Yaracuy</asp:listitem>
-                 <asp:listitem value ="Zulia">Zulia</asp:listitem>                               
+                 <asp:listitem value ="Falcon">Falcon</asp:listitem>
                  </asp:DropDownList> 
        </div>
     </div>

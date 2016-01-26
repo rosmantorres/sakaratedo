@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace ExcepcionesSKD.Modulo4
 {
+    /// <summary>
+    /// E
+    /// xcepcion de existencia de dojos en la bd
+    /// con código y mensaje que corresponda
+    /// </summary>
     public class DojoInexistenteException : ExceptionSKD
     {
         public DojoInexistenteException() : base()

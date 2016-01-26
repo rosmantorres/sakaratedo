@@ -89,7 +89,7 @@ namespace DominioSKD.Entidades.Modulo5
             significado = "";
             id_restriccion = 0;
             organizacion = null;
-            status = true;
+            status = false;
         }
 
         public Cinta(int elId, String elColor, String elRango, String laClasificacion, int elOrden, String elSignificado, int elIdRestriccion) : base()

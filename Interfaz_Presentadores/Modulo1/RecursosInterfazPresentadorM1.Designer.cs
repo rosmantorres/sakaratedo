@@ -61,24 +61,6 @@ namespace Interfaz_Presentadores.Modulo1 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789 ..
-        /// </summary>
-        internal static string abc {
-            get {
-                return ResourceManager.GetString("abc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789-_..
-        /// </summary>
-        internal static string abc_ {
-            get {
-                return ResourceManager.GetString("abc_", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a ~/GUI/Modulo1/Index.aspx.
         /// </summary>
         internal static string direccionM1_Index {
@@ -242,6 +224,15 @@ namespace Interfaz_Presentadores.Modulo1 {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error.
         /// </summary>
         internal static string tipoErr {
@@ -283,33 +274,6 @@ namespace Interfaz_Presentadores.Modulo1 {
         internal static string tipoWarning {
             get {
                 return ResourceManager.GetString("tipoWarning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a fecha.
-        /// </summary>
-        internal static string variableFecha {
-            get {
-                return ResourceManager.GetString("variableFecha", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a &amp;fecha=.
-        /// </summary>
-        internal static string variableFechaHTTP {
-            get {
-                return ResourceManager.GetString("variableFechaHTTP", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a restablecer.
-        /// </summary>
-        internal static string variableRestablecer {
-            get {
-                return ResourceManager.GetString("variableRestablecer", resourceCulture);
             }
         }
     }

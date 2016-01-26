@@ -16,7 +16,5 @@ namespace Interfaz_Contratos.Modulo5
         void llenarBotones(int id);
         void llenarStatusActivo(int id);
         void llenarStatusInactivo(int id);
-        int obtenerIdCinta();
-        int obtenerStatusCinta();
     }
 }

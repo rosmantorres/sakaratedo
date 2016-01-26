@@ -1,5 +1,4 @@
 ﻿using DatosSKD.DAO.Modulo14;
-using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using ExcepcionesSKD;
 using System;
@@ -19,19 +18,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPlanilla; }
             set { idPlanilla = value; }
         }
-        /// <summary>
-        /// Método que devuelve una lista de sting con los datos que posee 
-        /// una planilla
-        /// </summary>
-        /// <param name="idPlanilla">iD de la planilla de la cual se desean 
-        /// saber sus datos</param>
-        /// <returns>Regresa la lista con dichos datos</returns>
        public override List<String> Ejecutar()
         {
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             List<String> datos;
             try
             {
-                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
+                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
                 datos = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(this.idPlanilla);
                 
             }

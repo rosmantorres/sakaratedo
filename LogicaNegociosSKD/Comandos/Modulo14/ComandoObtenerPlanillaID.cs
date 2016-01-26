@@ -1,5 +1,4 @@
 ﻿using DatosSKD.DAO.Modulo14;
-using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -22,22 +21,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPlanilla; }
             set { idPlanilla = value; }
         }
-        /// <summary>Obtener una planilla por ID</summary>
-        /// <param name="idPlanilla"></param>
-        /// <returns>Regresa la planilla con su nombre, status y tipo planilla</returns>
-        /// 
+
         public override Entidad Ejecutar()
         {
-            DominioSKD.Entidades.Modulo14.Planilla planilla =
-                (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            FabricaEntidades fabricaEntidades = new FabricaEntidades();
+            Planilla planilla = (Planilla)fabricaEntidades.ObtenerPlanilla();
             try
             {
 
-                IDaoPlanilla BaseDeDatoPlanilla =FabricaDAOSqlServer.ObtenerDAOPlanilla();
+                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
                 
                 planilla.ID = this.idPlanilla;
                 Entidad entidad = BaseDeDatoPlanilla.ConsultarXId(planilla);
-                planilla.Nombre = ((DominioSKD.Entidades.Modulo14.Planilla)entidad).Nombre;
+                BaseDeDatoPlanilla.LimpiarSQLConnection();
                 planilla.Dato = BaseDeDatoPlanilla.ObtenerDatosPlanillaID(idPlanilla);
                
             }

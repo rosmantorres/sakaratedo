@@ -1,5 +1,4 @@
 ﻿using DatosSKD.DAO.Modulo14;
-using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -20,13 +19,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPersona; }
             set { idPersona = value; }
         }
-        /// <summary>Obtener una solicitud por ID</summary>
-        /// <param name="idPlanilla"></param>
-        /// <returns>Regresa la solicitud con su fechar, fecharei y motivo</returns>
-        /// 
         public override List<Entidad> Ejecutar()
         {
-            IDaoSolicitud BaseDeDatoSolicitud = FabricaDAOSqlServer.ObtenerDAOSolicitud();
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            DaoSolicitud BaseDeDatoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
             List<Entidad> eventos = new List<Entidad>();
 
             try

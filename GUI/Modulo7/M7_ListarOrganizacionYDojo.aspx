@@ -38,63 +38,63 @@
                   <div class="panel-body">
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <br />
-                        <%--<asp:Label runat="server" name="nombrePersona" id="nombrePersona" Text="" Font-Size="Large"></asp:Label>--%>
-                         <h4 id="nombrePersona1" runat="server" name="nombrePersona">&nbsp;Nombre: </h4>
+                        <h4>Nombre :</h4>
+                        <asp:Label runat="server" name="nombrePersona" id="nombrePersona" Font-Size="Large"></asp:Label>
                      </div>
                      <br/>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="ApellidoPersona" id="apellidoPersona" Font-Size="Large"></asp:Label>--%>
-                         <h4 id="apellidoPersona1" runat="server" name="apellidoPersona">&nbsp;Apellido: </h4>
+                        <h4>Apellido :</h4>
+                        <asp:Label runat="server" name="ApellidoPersona" id="apellidoPersona" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="fechaNacimiento" id="fechaNacimiento" Font-Size="Large"></asp:Label>--%>
-                         <h4 id="fechaNacimiento1" runat="server" name="fechaNacimiento">&nbsp;Fecha de Nacimiento: </h4>
+                        <h4>Fecha de Nacimiento :</h4>
+                        <asp:Label runat="server" name="fechaNacimiento" id="fechaNacimiento" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="direccion" id="direccion" Font-Size="Large"></asp:Label>--%>
-                         <h4 id="direccion1" runat="server" name="direccion">&nbsp;Dirección: </h4>
+                        <h4>Direccion :</h4>
+                        <asp:Label runat="server" name="direccion" id="direccion" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="nombreDojo" id="nombreDojo" Font-Size="Large"></asp:Label>--%>
-                         <h4 id="nombreDojo1" runat="server" name="nombreDojo">&nbsp;Dojo al que pertenece: </h4>
+                        <h4>Dojo al que pertenece :</h4>
+                        <asp:Label runat="server" name="nombreDojo" id="nombreDojo" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="telefonoDojo" id="telefonoDojo" Font-Size="Large"></asp:Label>--%>
-                          <h4 id="telefonoDojo1" runat="server" name="telefonoDojo">&nbsp;Teléfono del Dojo: </h4>
+                        <h4>Teléfono del Dojo :</h4>
+                        <asp:Label runat="server" name="telefonoDojo" id="telefonoDojo" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="emailDojo" id="emailDojo" Font-Size="Large"></asp:Label>--%>
-                          <h4 id="emailDojo1" runat="server" name="emailDojo">&nbsp;Email del Dojo: </h4>
+                        <h4>Email del Dojo :</h4>
+                        <asp:Label runat="server" name="emailDojo" id="emailDojo" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="ubicacionDojo" id="ubicacionDojo" Font-Size="Large"></asp:Label>--%>
-                          <h4 id="ubicacionDojo1" runat="server" name="ubicacionDojo">&nbsp;Ubicación del Dojo: </h4>
+                        <h4>Ubicación del Dojo :</h4>
+                        <asp:Label runat="server" name="ubicacionDojo" id="ubicacionDojo" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="nombreOrganizacion" id="nombreOrganizacion" Font-Size="Large"></asp:Label>--%>
-                          <h4 id="nombreOrganizacion1" runat="server" name="nombreOrganizacion">&nbsp;Organización: </h4>
+                        <h4>Organización :</h4>
+                        <asp:Label runat="server" name="nombreOrganizacion" id="nombreOrganizacion" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="emailOrganizacion" id="emailOrganizacion" Font-Size="Large"></asp:Label>--%>
-                          <h4 id="emailOrganizacion1" runat="server" name="emailOrganizacion">&nbsp;Email Organización: </h4>
+                        <h4>Email Organización :</h4>
+                        <asp:Label runat="server" name="emailOrganizacion" id="emailOrganizacion" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="ubicacionOrganizacion" id="ubicacionOrganizacion" Font-Size="Large"></asp:Label>--%>
-                          <h4 id="ubicacionOrganizacion1" runat="server" name="ubicacionOrganizacion">&nbsp;Ubicación Organización: </h4>
+                        <h4>Ubicación Organización :</h4>
+                        <asp:Label runat="server" name="ubicacionOrganizacion" id="ubicacionOrganizacion" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                       <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <%--<asp:Label runat="server" name="cintaActual" id="cintaActual" Font-Size="Large"></asp:Label>--%>
-                          <h4 id="cintaActual1" runat="server" name="cintaActual">&nbsp;Cinta Actual: </h4>
+                        <h4>Cinta Actual :</h4>
+                        <asp:Label runat="server" name="cintaActual" id="cintaActual" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                       <div class="panel-group col-sm-10 col-md-10 col-lg-10">

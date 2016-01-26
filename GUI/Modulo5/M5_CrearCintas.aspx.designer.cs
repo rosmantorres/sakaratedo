@@ -11,16 +11,7 @@ namespace templateApp.GUI.Modulo5 {
     
     
     public partial class M5_CrearCintas {
-
-        /// <summary>
-        /// alert control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
-
+        
         /// <summary>
         /// consulta_org control.
         /// </summary>

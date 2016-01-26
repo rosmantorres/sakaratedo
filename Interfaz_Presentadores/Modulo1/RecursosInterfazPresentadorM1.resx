@@ -173,6 +173,9 @@
   <data name="signoPregunta" xml:space="preserve">
     <value>?</value>
   </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
   <data name="tipoErr" xml:space="preserve">
     <value>Error</value>
     <comment>Timpo de mensaje Error</comment>
@@ -195,20 +198,5 @@
   <data name="LogInfoRestablecer" xml:space="preserve">
     <value>La contraseña debe poseer de &lt;strong&gt;8-30 caracteres&lt;/strong&gt; e incluir al menos &lt;strong&gt;una letra mayúscula &lt;/strong&gt; ,
                          &lt;strong&gt; una letra minúscula&lt;/strong&gt; y &lt;strong&gt;un número.&lt;/strong&gt;</value>
-  </data>
-  <data name="abc" xml:space="preserve">
-    <value>QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789 .</value>
-  </data>
-  <data name="abc_" xml:space="preserve">
-    <value>QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789-_.</value>
-  </data>
-  <data name="variableFecha" xml:space="preserve">
-    <value>fecha</value>
-  </data>
-  <data name="variableFechaHTTP" xml:space="preserve">
-    <value>&amp;fecha=</value>
-  </data>
-  <data name="variableRestablecer" xml:space="preserve">
-    <value>restablecer</value>
   </data>
 </root>

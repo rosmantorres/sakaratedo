@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD
 {
-    public class Horario : Entidad
+    public class Horario
     {
         #region Atributos
         private int id;

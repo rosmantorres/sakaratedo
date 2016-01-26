@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.Modulo2;
 using System.Collections.Generic;
-using DominioSKD.Entidades.Modulo1;
-using DominioSKD.Entidades.Modulo2;
+using DominioSKD;
 using System.Data;
 using ExcepcionesSKD;
 

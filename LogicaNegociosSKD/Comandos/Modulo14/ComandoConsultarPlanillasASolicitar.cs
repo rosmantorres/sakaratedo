@@ -1,5 +1,4 @@
 ﻿using DatosSKD.DAO.Modulo14;
-using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -12,18 +11,14 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo14
 {
-    public class ComandoConsultarPlanillasASolicitar : Comando<List<Entidad>>
+    class ComandoConsultarPlanillasASolicitar : Comando<List<Entidad>>
     {
-        /// <summary>
-        /// Método que devuelve todas las planillas que un atleta puede solicitar
-        /// </summary>
-        /// <returns>retorna una lista de planillas</returns>
         public override List<Entidad> Ejecutar()
         {
-            
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
-                IDaoSolicitud daoSolicitud =FabricaDAOSqlServer.ObtenerDAOSolicitud();
+                DaoSolicitud daoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
                 return daoSolicitud.ConsultarPlanillasASolicitarBD();
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

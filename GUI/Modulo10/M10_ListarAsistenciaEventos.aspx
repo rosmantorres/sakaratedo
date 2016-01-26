@@ -19,11 +19,11 @@
 		    </li>
 		
 		    <li>
-			    <a href="../Modulo10/M10_ListarAsistenciaEventos.aspx">Asistencia a Eventos</a> 
+			    <a href="#">Asistencia a Eventos</a> 
 		    </li>
 
             <li>
-			    <a href="../Modulo10/M10_ListarAsistenciaEventos.aspx">Gestión de Asistencia a Eventos</a> 
+			    <a href="#">Gestión de Asistencia a Eventos</a> 
 		    </li>
 		
 		    <li class="active">
@@ -61,7 +61,7 @@
 				</tr>
 			</thead>
 			<tbody>
-                <asp:Literal runat="server" ID="tabla"></asp:Literal>
+                <asp:Literal runat="server" ID="dataTable"></asp:Literal>
 		    </tbody>
             </table>
            </div>  

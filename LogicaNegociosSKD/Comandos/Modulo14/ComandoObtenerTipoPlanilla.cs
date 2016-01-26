@@ -1,5 +1,4 @@
 ﻿using DatosSKD.Fabrica;
-using DatosSKD.InterfazDAO.Modulo14;
 using DominioSKD;
 using ExcepcionesSKD;
 using System;
@@ -13,16 +12,14 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
   public class ComandoObtenerTipoPlanilla : Comando<List<Entidad>>
     {
-        /// <summary>Para obtener el tipo de planilla</summary>
-        /// <returns>Regresa una lista con los tipos de planillas</returns>
-        /// 
       public override List<Entidad> Ejecutar()
         {
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             List<Entidad> listaTipoPlanilla = new List<Entidad>();
             try
             {
-
-                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
+                
+                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
                 listaTipoPlanilla = BaseDeDatoPlanilla.ObtenerTipoPlanilla();
 
             }

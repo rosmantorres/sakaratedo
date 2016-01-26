@@ -130,7 +130,7 @@
     <value>No seleccionaste ningun dato</value>
   </data>
   <data name="Alerta_Html" xml:space="preserve">
-    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+    <value>&lt;div&gt;&lt;button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"&gt;&lt;span aria-hidden=\"true\"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
   </data>
   <data name="Alerta_HtmlFinal" xml:space="preserve">
     <value>&lt;/div&gt;</value>
@@ -421,23 +421,5 @@
   </data>
   <data name="TipoEvento" xml:space="preserve">
     <value>$TIPO_EVENTO&lt;br/&gt;</value>
-  </data>
-  <data name="AlertaFechaReincorporacionVacio" xml:space="preserve">
-    <value>No ingresaste ninguna fecha de reincorporacion</value>
-  </data>
-  <data name="AlertaFechaRetiroVacio" xml:space="preserve">
-    <value>No ingresaste ninguna fecha de retiro</value>
-  </data>
-  <data name="AlertaMotivoVacio" xml:space="preserve">
-    <value>No ingresaste el motivo</value>
-  </data>
-  <data name="Alerta_Pregunta" xml:space="preserve">
-    <value>Seguro que deseas solicitar esta planilla?</value>
-  </data>
-  <data name="Alert_Clase_Success" xml:space="preserve">
-    <value>alert alert-info alert-dismissible</value>
-  </data>
-  <data name="Status" xml:space="preserve">
-    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="M14_ConsultarPlanillas.aspx?idPlan=</value>
   </data>
 </root>

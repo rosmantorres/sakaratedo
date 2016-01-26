@@ -1,8 +1,6 @@
 ﻿using DatosSKD.DAO.Modulo14;
-using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
-using DominioSKD.Fabrica;
 using ExcepcionesSKD;
 using System;
 using System.Collections.Generic;
@@ -21,27 +19,22 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idPlanilla; }
             set { idPlanilla = value; }
         }
-        /// <summary>Para determinar que datos son requeridos en la solicitud</summary>
-        /// <param name="idPlanilla"> id de la planilla solicitada</param>
-        /// <returns>Regresa una lista de bool para determinar que datos son requeridos</returns>
           public override List<Boolean> Ejecutar()
           {
               List<Boolean> datosRequeridos = new List<Boolean>();
 
               try
               {
-
-                  IDaoDiseno diseno = FabricaDAOSqlServer.ObtenerDAODiseno();
-                  DominioSKD.Entidades.Modulo14.Planilla planilla = (DominioSKD.Entidades.Modulo14.Planilla)FabricaEntidades.ObtenerPlanilla();
-                  planilla.ID = LaEntidad.Id;
-                  Entidad resultDiseño = diseno.ConsultarXId(planilla);
+                  FabricaDAOSqlServer fabricaDao = new FabricaDAOSqlServer();
+                  DaoDiseno diseno = (DaoDiseno)fabricaDao.ObtenerDAODiseno();
+                  Entidad resultDiseño = diseno.ConsultarXId(this.LaEntidad);
 
 
-                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaRetiro));
-                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaReincor));
-                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.EveNombre));
-                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.CompNombre));
-                  datosRequeridos.Add(((DominioSKD.Entidades.Modulo14.Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.Motivo));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaRetiro));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.FechaReincor));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.EveNombre));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.CompNombre));
+                  datosRequeridos.Add(((Diseño)resultDiseño).Contenido.Contains(RecursosComandoModulo14.Motivo));
 
                
               }

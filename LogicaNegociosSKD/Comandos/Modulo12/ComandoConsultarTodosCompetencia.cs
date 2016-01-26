@@ -10,23 +10,16 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo12
 {
-    /// <summary>
-    /// Comando para consultar competencias
-    /// </summary>
     public class ComandoConsultarTodosCompetencia : Comando<List<Entidad>>
     {
-        /// <summary>
-        /// Metodo que ejecuta el comando
-        /// </summary>
-        /// <returns>Lista de Entidad con las competencias</returns>
        public override List<Entidad> Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                 , RecursosComandoModulo12.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                //FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();
-                IDaoCompetencia daoCompetencia = FabricaDAOSqlServer.ObtenerDAOCompetencia();
+                FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();
+                IDaoCompetencia daoCompetencia = laFabrica.ObtenerDAOCompetencia();
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                     , RecursosComandoModulo12.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);

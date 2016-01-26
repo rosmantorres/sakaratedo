@@ -16,11 +16,11 @@
 		    </li>
 		
 		    <li>
-			    <a href="../Modulo11/M11_ListarResultadoCompetencia.aspx">Resultados de Competencia</a> 
+			    <a href="#">Resultados de Competencia</a> 
 		    </li>
 
             <li>
-			    <a href="../Modulo11/M11_ListarResultadoCompetencia.aspx">Gestión de Resultados de Competencia</a> 
+			    <a href="#">Gestión de Resultados de Competencia</a> 
 		    </li>
 		
 		    <li class="active">

@@ -1,5 +1,4 @@
 ﻿using DatosSKD.DAO.Modulo14;
-using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using ExcepcionesSKD;
 using System;
@@ -19,16 +18,14 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return nombreTipo; }
             set { nombreTipo = value; }
         }
-        /// <summary>
-        /// Método que registra un nuevo tipo de planilla
-        /// </summary>
-        /// <param name="nombreTipo">El nuevo tipo de planilla</param>
+
         public override Boolean Ejecutar()
         {
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             Boolean result = true;
             try
             {
-                IDaoPlanilla BaseDeDatoPlanilla = FabricaDAOSqlServer.ObtenerDAOPlanilla();
+                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
                 result = BaseDeDatoPlanilla.RegistrarTipoPlanilla(this.nombreTipo);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

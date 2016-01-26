@@ -19,8 +19,8 @@ namespace Interfaz_Contratos.Modulo12
         string longitudComp { get; set; }
         string categIniComp { get; set; }
         string categFinComp { get; set; }
-        string edadIniComp { get; set; }
-        string edadFinComp { get; set; }
+        string categEdadIniComp { get; set; }
+        string cateEdadFinComp { get; set; }
         string categSexoComp { get; set; }
         string alertaClase { set; }
         string alertaRol { set; }

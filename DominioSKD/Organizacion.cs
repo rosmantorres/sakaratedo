@@ -8,7 +8,6 @@ namespace DominioSKD
 {
     public class Organizacion : Entidad
     {
-        private int id_organizacion;
         private String nombre;
         private String direccion;
         private int telefono;
@@ -17,12 +16,6 @@ namespace DominioSKD
         private String estilo;
 
         private Boolean status;
-
-        public int Id_organizacion
-        {
-            get { return id_organizacion; }
-            set { id_organizacion = value; }
-        }
 
         public String Nombre
         {
@@ -68,7 +61,7 @@ namespace DominioSKD
 
         public Organizacion(int elId, String elNombre) : base()
         {
-            this.id_organizacion = elId;
+            this.Id = elId;
             this.nombre = elNombre;
         }
 
@@ -79,7 +72,7 @@ namespace DominioSKD
 
         public Organizacion() : base()
         {
-            id_organizacion = 0;
+            Id = 0;
             nombre = "";
             direccion = "";
             telefono = 0;
@@ -91,7 +84,7 @@ namespace DominioSKD
 
         public Organizacion(int elId, String elNombre, String laDireccion, int elTelefono, String elEmail, String elEstado, String elEstilo)
         {
-            id_organizacion = elId;
+            Id = elId;
             nombre = elNombre;
             direccion = laDireccion;
             telefono = elTelefono;

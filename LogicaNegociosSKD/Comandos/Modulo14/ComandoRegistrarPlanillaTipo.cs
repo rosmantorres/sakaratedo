@@ -1,5 +1,4 @@
 ﻿using DatosSKD.DAO.Modulo14;
-using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -21,22 +20,19 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return nombreTipo; }
             set { nombreTipo = value; }
         }
-        /// <summary>
-        /// Método que registra una planilla
-        /// </summary>
-        /// <param name="laPlanilla">planilla</param>
-        /// <param name="nombreTipo">El tipo de planilla al cual pertenece</param>
+
         public override bool Ejecutar()
         {
 
 
-            DominioSKD.Entidades.Modulo14.Planilla laPlanilla =
-                (DominioSKD.Entidades.Modulo14.Planilla)this.LaEntidad;
-            ComandoRegistrarPlanilla registrar = (ComandoRegistrarPlanilla)FabricaComandos.ObtenerComandoRegistrarPlanilla();
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            FabricaComandos fabricaComandos = new FabricaComandos();
+            Planilla laPlanilla = (Planilla)this.LaEntidad;
+            ComandoRegistrarPlanilla registrar = (ComandoRegistrarPlanilla)fabricaComandos.ObtenerComandoRegistrarPlanilla();
             bool resultPlanilla = true;
             try
             {
-                IDaoPlanilla BaseDeDatoPlanilla =FabricaDAOSqlServer.ObtenerDAOPlanilla();
+                DaoPlanilla BaseDeDatoPlanilla = (DaoPlanilla)fabrica.ObtenerDAOPlanilla();
                 int idTipoPlanilla = BaseDeDatoPlanilla.ObtenerIdTipoPlanilla(this.nombreTipo);
                 laPlanilla.IDtipoPlanilla = idTipoPlanilla;
                 registrar.LaEntidad = (Entidad)laPlanilla;

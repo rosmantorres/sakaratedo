@@ -6,26 +6,17 @@ using System.Web;
 using System.Threading.Tasks;
 using Interfaz_Contratos.Modulo1;
 using Interfaz_Presentadores.Master;
-using Interfaz_Presentadores.Modulo2;
-using LogicaNegociosSKD.Fabrica;
-using LogicaNegociosSKD.Comandos.Modulo1;
-using DominioSKD.Entidades.Modulo1;
-using DominioSKD.Fabrica;
+using LogicaNegociosSKD.Modulo2;
+using LogicaNegociosSKD.Modulo1;
 
 namespace Interfaz_Presentadores.Modulo1
 {
     public class PresentadorM1Restablecer
     {
         private IContratoM1Restablecer _iMaster;
-        private string IdUser = "";
-        private string value;
-        private FabricaComandos laFabrica=new FabricaComandos();
-        private FabricaEntidades laFabricaE=new FabricaEntidades();
-        private Encriptacion cripto = new Encriptacion();
-        private ComandoRestablecerContraseña restablecer;
-        private ValidacionesM1 validar = new ValidacionesM1();
-        private Cuenta cuenta;
-        private String des = RecursosInterfazPresentadorM2.claveDES;
+        private AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
+        string IdUser = "";
+        string value;
 
         public PresentadorM1Restablecer(IContratoM1Restablecer iMaster)
         {
@@ -55,24 +46,24 @@ namespace Interfaz_Presentadores.Modulo1
                     MensajeAlert(false, "", true,RecursosInterfazPresentadorM1.LogInfoRestablecer);
                 }
                 DateTime fechaActual = DateTime.Now;
-                string fechaString = HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM1.variableFecha].ToString();
-                fechaString = cripto.DesencriptarCadenaDeCaracteres(fechaString, des);
+                string fechaString = HttpContext.Current.Request.QueryString[RecursosLogicaModulo1.variableFecha].ToString();
+                fechaString = cripto.DesencriptarCadenaDeCaracteres(fechaString,RecursosLogicaModulo2.claveDES);
                 DateTime fecha = Convert.ToDateTime(fechaString);
                 if ((fecha.Date.Year != fechaActual.Date.Year) ||
                     (fecha.Date.Month != fechaActual.Date.Month) ||
                     (fecha.Date.Day != fechaActual.Date.Day))
                 {
                     value = cripto.EncriptarCadenaDeCaracteres
-                       (RecursosInterfazPresentadorM1.parametroURLRestablecerCaducado,des);
+                       (RecursosInterfazPresentadorM1.parametroURLRestablecerCaducado, RecursosLogicaModulo2.claveDES);
 
                     HttpContext.Current.Response.Redirect(RecursosInterfazPresentadorM1.direccionM1_Index + "?"
                        + RecursosInterfazPresentadorM1.tipoInfo + "=" + value);
                 }
 
 
-                string idUsuario = HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM1.variableRestablecer].ToString();
+                string idUsuario = HttpContext.Current.Request.QueryString[RecursosLogicaModulo1.variableRestablecer].ToString();
 
-                idUsuario = cripto.DesencriptarCadenaDeCaracteres(idUsuario,des);
+                idUsuario = cripto.DesencriptarCadenaDeCaracteres(idUsuario, RecursosLogicaModulo2.claveDES);
                 IdUser = idUsuario;
             }
             catch (NullReferenceException ex)
@@ -87,21 +78,18 @@ namespace Interfaz_Presentadores.Modulo1
             {
                 string pass1 = _iMaster.ClaveEtq;
                 string pass2 = _iMaster.ClaveConfirmacionEtq;
-                restablecer =(ComandoRestablecerContraseña) laFabrica.ObtenerRestablecerContraseña();
-                cuenta = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+                logicaRestablecer Restablecer = new logicaRestablecer();
                 if (pass1 != "" && pass1 == pass2
                     && pass1.Length > 7 && IdUser != ""
-                    && validar.ValidarCaracteres(pass1))
+                    && Restablecer.ValidarCaracteres(pass1))
                 {
-                    cuenta.Id = int.Parse(IdUser);
-                    cuenta.Contrasena = cripto.hash(pass1);
-                    restablecer.LaEntidad = cuenta;
-                    if (restablecer.Ejecutar())
+
+                    if (Restablecer.restablecerContrasena(IdUser, pass1))
                     {
                         if (HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID] == null)
                         {
                             value = cripto.EncriptarCadenaDeCaracteres
-                               (RecursosInterfazPresentadorM1.parametroURLReestablecerExito, des);
+                               (RecursosInterfazPresentadorM1.parametroURLReestablecerExito, RecursosLogicaModulo2.claveDES);
                             HttpContext.Current.Response.Redirect(RecursosInterfazPresentadorM1.direccionM1_Index + "?"
                                 + RecursosInterfazPresentadorM1.tipoSucess + "=" + value);
                         }
@@ -110,7 +98,7 @@ namespace Interfaz_Presentadores.Modulo1
                     }
 
                 }
-                else if (!validar.ValidarCaracteres(pass1))
+                else if (!Restablecer.ValidarCaracteres(pass1))
                 {
                     MensajeAlert(true, RecursosInterfazPresentadorM1.logCaracterInvalidos, false, "");
                 }

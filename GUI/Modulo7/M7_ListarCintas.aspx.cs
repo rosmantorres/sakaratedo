@@ -1,52 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
+using DominioSKD;
+using LogicaNegociosSKD;
+using LogicaNegociosSKD.Modulo7;
 using templateApp.GUI.Master;
 using ExcepcionesSKD.Modulo7;
 using ExcepcionesSKD;
-using Interfaz_Contratos.Modulo7;
-using Interfaz_Presentadores.Modulo7;
-using DominioSKD.Fabrica;
-using DominioSKD.Entidades.Modulo7;
 
 namespace templateApp.GUI.Modulo7
 {
-    /// <summary>
-    /// Clase que maneja la interfaz de lista de cintas 
-    /// </summary>
-    public partial class M7_ListarCintas : System.Web.UI.Page, IContratoListarCintasObtenidas
+    public partial class M7_ListarCintas : System.Web.UI.Page
     {
         #region Atributos
-        private PresentadorListarCintasObtenidas presentador;
-        private PersonaM7 idPersona;
-
-        #region Contrato
-        /// <summary>
-        /// Implementacion de contrato laTabla
-        /// </summary>
-        string IContratoListarCintasObtenidas.laTabla
-        {
-            get
-            {
-                return laTabla.Text;
-            }
-
-            set
-            {
-                laTabla.Text = value;
-            }
-        }
+        private List<Cinta> laLista = new List<Cinta>();
         #endregion
-
-        #endregion
-
-        /// <summary>
-        /// Constructor de la clase
-        /// </summary>
-        public M7_ListarCintas()
-        {
-            presentador = new PresentadorListarCintasObtenidas(this);
-        }
 
         #region Page_Load
         /// <summary>
@@ -59,15 +30,18 @@ namespace templateApp.GUI.Modulo7
             ((SKD)Page.Master).IdModulo = "7";
 
             String detalleString = Request.QueryString["compDetalle"];
-                       
-        #region Llenar DataTable con Cintas
+            DateTime fechaInscripcion;
+
+            #region Llenar DataTable con Cintas
+
+            LogicaCintas logEvento = new LogicaCintas();
 
             try
             {
                 String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
+                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -79,9 +53,29 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();//cambiar por fabrica
-                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
-                            presentador.ConsultarCintasObtenidas(idPersona);
+                            laLista = logEvento.obtenerListaDeCintas(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
+                            if (laLista != null)
+                            {
+                                foreach (Cinta cinta in laLista)
+                                {
+                                    fechaInscripcion = logEvento.obtenerFechaCinta(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()), cinta.Id_cinta);
+                                    this.laTabla.Text += M7_Recursos.AbrirTR;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Color_nombre.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Rango.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD + cinta.Clasificacion.ToString() + M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.AbrirTD;
+                                    this.laTabla.Text += M7_Recursos.BotonInfoCintas + cinta.Id_cinta + M7_Recursos.BotonCerrar;
+                                    this.laTabla.Text += M7_Recursos.CerrarTD;
+                                    this.laTabla.Text += M7_Recursos.CerrarTR;
+                                }
+                            }
+                            else
+                            {
+                                throw new ListaNulaException(M7_Recursos.Codigo_Lista_Nula,
+                                M7_Recursos.Mensaje_Numero_Parametro_invalido, new Exception());
+                            }
+
                         }
                         catch (ListaNulaException)
                         {
@@ -106,8 +100,8 @@ namespace templateApp.GUI.Modulo7
                     Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
                 }
 
-                        }
-                  catch (NullReferenceException ex)
+            }
+            catch (NullReferenceException ex)
             {
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name,
                 ex.Message, System.Reflection.MethodBase.GetCurrentMethod().Name);

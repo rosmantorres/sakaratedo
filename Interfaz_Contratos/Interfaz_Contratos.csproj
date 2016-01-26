@@ -11,9 +11,6 @@
     <AssemblyName>Interfaz_Contratos</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,20 +28,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\bin\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\bin\itextsharp.dll</HintPath>
-      <!--<HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>-->
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,50 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modulo8\IContratoAgregarRestriccionEvento.cs" />
-    <Compile Include="Modulo8\IContratoConsultarRestriccionCompetencia.cs" />
-    <Compile Include="Modulo8\IContratoConsultarRestriccionEvento.cs" />
-    <Compile Include="Modulo8\IContratoModificarRestriccionCompetencia.cs" />
-    <Compile Include="Modulo8\IContratoModificarRestriccionEvento.cs" />
-    <Compile Include="Modulo8\IContratoAgregarRestriccionCinta.cs" />
-    <Compile Include="Modulo8\IContratoAgregarRestriccionCompetencia.cs" />
-    <Compile Include="Modulo7\IContratoDetallarHorarioPractica.cs" />
-    <Compile Include="Modulo7\IContratoDetallarMatricula.cs" />
-    <Compile Include="Modulo7\IContratoConsultarPerfil.cs" />
-    <Compile Include="Modulo7\IContratoDetallarCinta.cs" />
-    <Compile Include="Modulo7\IContratoDetallarCompetencia.cs" />
-    <Compile Include="Modulo7\IContratoDetallarEvento.cs" />
-    <Compile Include="Modulo7\IContratoListarCintasObtenidas.cs" />
-    <Compile Include="Modulo7\IContratoListarEventosInscritos.cs" />
-    <Compile Include="Modulo7\IContratoListarHorarioPractica.cs" />
-    <Compile Include="Modulo7\IContratoListarMatriculasPagas.cs" />
-    <Compile Include="Modulo7\IContratoListarEventosPagos.cs" />
-    <Compile Include="Modulo7\IContratoListarEventosAsistidos.cs" />
-    <Compile Include="Modulo14\IContartoM14MostrarFacturaPlanilla.cs" />
-    <Compile Include="Modulo15\IContratoAgregarImplemento.cs" />
-    <Compile Include="Modulo15\IContratoConsultarImplemento.cs" />
-    <Compile Include="Modulo15\IContratoModificarImplemento.cs" />
-    <Compile Include="Modulo16\IContratoEliminarItem.cs" />
-    <Compile Include="Modulo16\IContratoListarEvento.cs" />
-    <Compile Include="Modulo16\IContratoListarFactura.cs" />
-    <Compile Include="Modulo16\IContratoListarMensualidad.cs" />
-    <Compile Include="Modulo16\IContratoListarProducto.cs" />
-    <Compile Include="Modulo16\IcontratoVerCarrito.cs" />
     <Compile Include="Master\IContratoMasterPage.cs" />
-    <Compile Include="Modulo10\IContratoAgregarAsistencia.cs" />
-    <Compile Include="Modulo10\IContratoDetalleAsistencia.cs" />
-    <Compile Include="Modulo10\IContratoListarAsistencia.cs" />
-    <Compile Include="Modulo10\IContratoModificarAsistencia.cs" />
-    <Compile Include="Modulo11\IContratoAgregarResultadoCompetencia.cs" />
-    <Compile Include="Modulo11\IContratoDetalleResultadoCompetencia.cs" />
-    <Compile Include="Modulo11\IContratoListarResultadoCompetencia.cs" />
-    <Compile Include="Modulo11\IContratoModificarResultadoCompetencia.cs" />
     <Compile Include="Modulo12\IContratoAgregarCompetencias.cs" />
     <Compile Include="Modulo12\IContratoDetalleCompetencia.cs" />
     <Compile Include="Modulo12\IContratoListarCompetencias.cs" />
     <Compile Include="Modulo12\IContratoModificarCompetencias.cs" />
-    <Compile Include="Modulo14\IContratoM14ConsultarPlanillas.cs" />
-    <Compile Include="Modulo14\IContratoM14ConsultarPlanillasSolicitadas.cs" />
     <Compile Include="Modulo14\IContratoM14DisenoPlanilla.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaCreada.cs" />
     <Compile Include="Modulo14\IContratoM14ModificarPlanillaSolicitada.cs" />
@@ -107,18 +61,13 @@
     <Compile Include="Modulo1\IContratoM1Inicio.cs" />
     <Compile Include="Modulo1\IContratoM1Restablecer.cs" />
     <Compile Include="Modulo2\IContratoM2.cs" />
-    <Compile Include="Modulo3\IContratoAgregarOrganizacion.cs" />
-    <Compile Include="Modulo3\IContratoConsultarOrganizacion.cs" />
-    <Compile Include="Modulo3\IContratoModificarOrganizacion.cs" />
+    <Compile Include="Modulo4\IContratoDetalleDojo.cs" />
+    <Compile Include="Modulo4\IContratoListarDojos.cs" />
+    <Compile Include="Modulo4\IContratoAgregarDojo.cs" />
+    <Compile Include="Modulo4\IContratoModificarDojo.cs" />
     <Compile Include="Modulo5\IContratoCrearCinta.cs" />
     <Compile Include="Modulo5\IContratoListarCintas.cs" />
     <Compile Include="Modulo5\IContratoModificarCinta.cs" />
-    <Compile Include="Modulo8\IContratoConsultarResticcionCinta.cs" />
-    <Compile Include="Modulo8\IContratoModificarRestriccionCinta.cs" />
-    <Compile Include="Modulo9\IContratoAgregarEvento.cs" />
-    <Compile Include="Modulo9\IContratoDetalleEvento.cs" />
-    <Compile Include="Modulo9\IContratoListarEventos.cs" />
-    <Compile Include="Modulo9\IContratoModificarEvento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -126,21 +75,18 @@
       <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
       <Name>DominioSKD</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ExcepcionesSKD\ExcepcionesSKD.csproj">
-      <Project>{0ed3b87a-3199-4536-9b50-9c79cee8e47a}</Project>
-      <Name>ExcepcionesSKD</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Modulo10\" />
+    <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo4\" />
+    <Folder Include="Modulo15\" />
+    <Folder Include="Modulo16\" />
+    <Folder Include="Modulo3\" />
     <Folder Include="Modulo6\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DominioSKD\DominioSKD.csproj">
-      <Project>{50944adf-6563-46d8-91e0-c7b6c9430c8b}</Project>
-      <Name>DominioSKD</Name>
-    </ProjectReference>
+    <Folder Include="Modulo7\" />
+    <Folder Include="Modulo8\" />
+    <Folder Include="Modulo9\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

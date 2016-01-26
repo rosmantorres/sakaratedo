@@ -6,7 +6,7 @@ using System.Web;
 using System.Xml;
 using Interfaz_Contratos.Master;
 using LogicaNegociosSKD.Modulo2;
-using DominioSKD.Entidades.Modulo1;
+using DominioSKD;
 
 namespace Interfaz_Presentadores.Master
 {

@@ -42,24 +42,23 @@
                   <div class="panel-body">
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
                         <br />
-                         
-                         <h4 id="identificador1" runat="server" name="identificador">&nbsp;Identificador: </h4>
-                        <%--<asp:Label runat="server" name="identificador" id="identificador" Font-Size="Large"></asp:Label>--%>
+                        <h4>Identificador :</h4>
+                        <asp:Label runat="server" name="identificador" id="identificador" Font-Size="Large"></asp:Label>
                      </div>
                      <br/>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                       <h4 id="fecha_creacion1" runat="server" name="fecha_creacion">&nbsp;Fecha Creacion: </h4>
-                         <%--<<asp:Label runat="server" name="fecha_creacion" id="fecha_creacion" Font-Size="Large"></asp:Label>--%>
+                        <h4>Fecha Creacion :</h4>
+                        <asp:Label runat="server" name="fecha_creacion" id="fecha_creacion" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                        <h4 id="fecha_pago1" runat="server" name="fecha_pago">&nbsp;Fecha Pago: </h4>
-                        <%--<<asp:Label runat="server" name="fecha_pago" id="fecha_pago" Font-Size="Large"></asp:Label>--%>
+                        <h4>Fecha Pago:</h4>
+                        <asp:Label runat="server" name="fecha_pago" id="fecha_pago" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      <div class="form-group col-sm-4 col-md-4 col-lg-4">
-                       <h4 id="estado_matricula1" runat="server" name="estado_matricula">&nbsp;Estado: </h4>
-                       <%--<  <asp:Label runat="server" name="estado_matricula" id="estado_matricula" Font-Size="Large"></asp:Label>--%>
+                        <h4>Estado :</h4>
+                        <asp:Label runat="server" name="estado_matricula" id="estado_matricula" Font-Size="Large"></asp:Label>
                         <br />
                      </div>
                      

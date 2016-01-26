@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DominioSKD.Entidades.Modulo8
 {
-    public class RestriccionCompetencia : Entidad
+    class RestriccionCompetencia : Entidad
     {
 
         #region Atributos

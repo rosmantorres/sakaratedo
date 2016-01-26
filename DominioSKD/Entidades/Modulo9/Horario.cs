@@ -14,9 +14,6 @@ namespace DominioSKD.Entidades.Modulo9
         private DateTime fechaFin;
         private int horaInicio;
         private int horaFin;
-        /*SOLO PARA M9*/
-        private String horaInicioS;
-        private String horaFinS;
         #endregion
 
         #region Constructores
@@ -60,18 +57,6 @@ namespace DominioSKD.Entidades.Modulo9
         {
             get { return horaFin; }
             set { horaFin = value; }
-        }
-
-        public String HoraInicioS
-        {
-            get { return horaInicioS; }
-            set { horaInicioS = value; }
-        }
-
-        public String HoraFinS
-        {
-            get { return horaFinS; }
-            set { horaFinS = value; }
         }
 
         #endregion  

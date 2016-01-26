@@ -117,14 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Codigo_Error_Lista_Vacia" xml:space="preserve">
-    <value>SKD_001</value>
-    <comment>Codigo de error para una lista vacia</comment>
-  </data>
-  <data name="Mensaje_Error_Lista_Vacia" xml:space="preserve">
-    <value>La Lista Que Devuelve Esta Vacia</value>
-    <comment>Mensaje de error cuando una lista devuelta esta vacia</comment>
-  </data>
   <data name="opcionDefecto" xml:space="preserve">
     <value>Selecciona una opcion</value>
   </data>

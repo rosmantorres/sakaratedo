@@ -6,29 +6,21 @@ using System.Web;
 using System.Threading.Tasks;
 using Interfaz_Contratos.Modulo1;
 using Interfaz_Presentadores.Master;
-using Interfaz_Presentadores.Modulo2;
-using DominioSKD.Entidades.Modulo1;
-using DominioSKD.Fabrica;
-using LogicaNegociosSKD.Fabrica;
-using LogicaNegociosSKD.Comandos.Modulo1;
+using LogicaNegociosSKD.Modulo2;
+using LogicaNegociosSKD.Modulo1;
 
 
 namespace Interfaz_Presentadores.Modulo1
 {
     public class PresentadorM1Inicio
     {
-        #region Variables
         private IContratoM1Inicio _iMaster;
         private String QuerySuccess;
         private String QueryInfo;
         private String QueryError;
-        //private String QueryWarning;
-        public  Encriptacion cripto = new Encriptacion();
-        private string des = RecursosInterfazPresentadorM2.claveDES;
-        FabricaComandos laFabrica = new FabricaComandos();
-        FabricaEntidades laFabricaEntidades = new FabricaEntidades();
-        ValidacionesM1 validarLogin = new ValidacionesM1();
-        #endregion
+        private String QueryWarning;
+        public AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
+        private string des = RecursosLogicaModulo2.claveDES;
 
         public PresentadorM1Inicio(IContratoM1Inicio iMaster)
         {
@@ -54,7 +46,8 @@ namespace Interfaz_Presentadores.Modulo1
                 if ((QueryInfo != null))
                 {
                     sessionRequest =
-                   cripto.DesencriptarCadenaDeCaracteres(QueryInfo, des);
+                   cripto.DesencriptarCadenaDeCaracteres
+                   (QueryInfo, RecursosLogicaModulo2.claveDES);
 
                     if (sessionRequest == RecursosInterfazPresentadorM1.parametroURLCorreoEnviado)
                         mensajeLogin(RecursosInterfazPresentadorM1.logInfo, RecursosInterfazPresentadorM1.tipoInfo);
@@ -67,7 +60,7 @@ namespace Interfaz_Presentadores.Modulo1
                 if (QuerySuccess != null)
                 {
                     sessionRequest = cripto.DesencriptarCadenaDeCaracteres
-                     (QuerySuccess, des);
+                     (QuerySuccess, RecursosLogicaModulo2.claveDES);
                     if (sessionRequest == RecursosInterfazPresentadorM1.parametroURLReestablecerExito)
                         mensajeLogin(RecursosInterfazPresentadorM1.logSuccess, RecursosInterfazPresentadorM1.tipoSucess);
                     else
@@ -133,35 +126,9 @@ namespace Interfaz_Presentadores.Modulo1
             String CorreoDestino = _iMaster.RestablecerCorreoEtq;
             try
             {
-
-                Cuenta cta=(Cuenta)laFabricaEntidades.ObtenerCuenta_M1();
-                cta.PersonaUsuario._CorreoElectronico=CorreoDestino;
-
-
-                ComandoConsultarCorreo consulta=(ComandoConsultarCorreo) laFabrica.ObtenerConsultarCorreo();
-                consulta.LaEntidad = cta;
-
-                String idUser=consulta.Ejecutar();
-                if (idUser == null)
-                   throw new Exception(RecursosComandoModulo1.Mensaje_Error_CorreoNoRegistrado);
-                #region Envio de correo
-                cta.Id = int.Parse(idUser);
-                cta.PersonaUsuario._Descripcion =
-                RecursosComandoModulo1.localhost +                
-                RecursosComandoModulo1.puertoSAKARATEDO +
-                RecursosComandoModulo1.direccionM1_RestablecerContraseña +
-                RecursosComandoModulo1.variableRestablecerHTTP +
-                cripto.EncriptarCadenaDeCaracteres(cta.Id.ToString(), des) +
-                RecursosComandoModulo1.variableFechaHTTP +
-                cripto.EncriptarCadenaDeCaracteres
-                (DateTime.Now.Date.ToString(),des);         
-
-                ComandoEnviarCorreo correo = (ComandoEnviarCorreo)laFabrica.ObtenerEnviarCorreo();
-                correo.LaEntidad = cta;
-                correo.Ejecutar();
-                #endregion
+                new logicaLogin().EnviarCorreo(CorreoDestino);
                 string value = cripto.EncriptarCadenaDeCaracteres
-                 (RecursosInterfazPresentadorM1.parametroURLCorreoEnviado,des);
+                 (RecursosInterfazPresentadorM1.parametroURLCorreoEnviado, RecursosLogicaModulo2.claveDES);
 
                 HttpContext.Current.Response.Redirect(RecursosInterfazPresentadorM1.direccionM1_Index + RecursosInterfazPresentadorM1.signoPregunta
                     + RecursosInterfazPresentadorM1.tipoInfo + RecursosInterfazPresentadorM1.signoIgual +
@@ -185,15 +152,9 @@ namespace Interfaz_Presentadores.Modulo1
         {
             try
             {
-                string usuarioID = _iMaster.UserNameEtq;
+                string correo = _iMaster.UserNameEtq;
                 string clave = _iMaster.PasswordEtq;
-                ComandoIniciarSesion SesionI = (ComandoIniciarSesion)laFabrica.ObtenerIniciarSesion();
-                Cuenta usuario = (Cuenta)laFabricaEntidades.ObtenerCuenta_M1();
-                usuario.Nombre_usuario = usuarioID;
-                usuario.Contrasena = cripto.hash(clave);
-                SesionI.LaEntidad = usuario;
-                String[] Respuesta = SesionI.Ejecutar();
-
+                string[] Respuesta = new logicaLogin().iniciarSesion(correo, clave);
                 if (Respuesta != null)
                 {
                     HttpContext.Current.Session[RecursosInterfazMaster.sessionRol] = Respuesta[3];
@@ -220,12 +181,12 @@ namespace Interfaz_Presentadores.Modulo1
             List<String> campos = new List<String>();
             campos.Add(_iMaster.UserNameEtq);
             campos.Add(_iMaster.PasswordEtq);
-
+            logicaLogin validarLogin = new logicaLogin();
             if (validarLogin.ValidarCamposVacios(campos))
             {
                 if (validarLogin.ValidarCaracteres(_iMaster.UserNameEtq, true) &&
                    validarLogin.ValidarCaracteres(_iMaster.PasswordEtq, false))
-                    this.consultarUsuario();
+                    consultarUsuario();
                 else
                     mensajeLogin(RecursosInterfazPresentadorM1.logCaracterInvalidos, RecursosInterfazPresentadorM1.tipoErr);
             }

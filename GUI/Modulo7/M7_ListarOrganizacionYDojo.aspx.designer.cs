@@ -22,111 +22,111 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.HtmlControls.HtmlForm detalle_Persona;
         
         /// <summary>
-        /// nombrePersona1 control.
+        /// nombrePersona control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombrePersona1;
+        protected global::System.Web.UI.WebControls.Label nombrePersona;
         
         /// <summary>
-        /// apellidoPersona1 control.
+        /// apellidoPersona control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl apellidoPersona1;
+        protected global::System.Web.UI.WebControls.Label apellidoPersona;
         
         /// <summary>
-        /// fechaNacimiento1 control.
+        /// fechaNacimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaNacimiento1;
+        protected global::System.Web.UI.WebControls.Label fechaNacimiento;
         
         /// <summary>
-        /// direccion1 control.
+        /// direccion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl direccion1;
+        protected global::System.Web.UI.WebControls.Label direccion;
         
         /// <summary>
-        /// nombreDojo1 control.
+        /// nombreDojo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombreDojo1;
+        protected global::System.Web.UI.WebControls.Label nombreDojo;
         
         /// <summary>
-        /// telefonoDojo1 control.
+        /// telefonoDojo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl telefonoDojo1;
+        protected global::System.Web.UI.WebControls.Label telefonoDojo;
         
         /// <summary>
-        /// emailDojo1 control.
+        /// emailDojo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl emailDojo1;
+        protected global::System.Web.UI.WebControls.Label emailDojo;
         
         /// <summary>
-        /// ubicacionDojo1 control.
+        /// ubicacionDojo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ubicacionDojo1;
+        protected global::System.Web.UI.WebControls.Label ubicacionDojo;
         
         /// <summary>
-        /// nombreOrganizacion1 control.
+        /// nombreOrganizacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombreOrganizacion1;
+        protected global::System.Web.UI.WebControls.Label nombreOrganizacion;
         
         /// <summary>
-        /// emailOrganizacion1 control.
+        /// emailOrganizacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl emailOrganizacion1;
+        protected global::System.Web.UI.WebControls.Label emailOrganizacion;
         
         /// <summary>
-        /// ubicacionOrganizacion1 control.
+        /// ubicacionOrganizacion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ubicacionOrganizacion1;
+        protected global::System.Web.UI.WebControls.Label ubicacionOrganizacion;
         
         /// <summary>
-        /// cintaActual1 control.
+        /// cintaActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl cintaActual1;
+        protected global::System.Web.UI.WebControls.Label cintaActual;
     }
 }

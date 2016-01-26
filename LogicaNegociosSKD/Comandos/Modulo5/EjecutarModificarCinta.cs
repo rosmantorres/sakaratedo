@@ -18,24 +18,19 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
             this.LaEntidad = nuevaEntidad;
         }
 
-        /// <summary>
-        /// Método Ejecutar el Modificar una Cinta en especifico
-        /// </summary>
-        /// <param name="nuevaEntidad">Id de la Cinta a consultar</param>
-        /// <returns>true si modifica, false si no</returns>
         public override bool Ejecutar()
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try
             { 
-
-            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta(); 
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            IDaoCinta miDaoCinta = fabrica.ObtenerDaoCinta(); 
             miDaoCinta.Modificar(this.LaEntidad);
 
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
            
-            return true;
+            return false;
             
 
             }
@@ -45,13 +40,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
+            catch (ExcepcionesSKD.Modulo3.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 

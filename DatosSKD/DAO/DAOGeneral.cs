@@ -10,6 +10,9 @@ using DatosSKD.DAO;
 
 namespace DatosSKD
 {
+    /// <summary>
+    /// Clase que implementa toda la conexion a la base de datos
+    /// </summary>
     public abstract class DAOGeneral
     {
         private SqlConnection conexion;
@@ -33,10 +36,10 @@ namespace DatosSKD
             try
             {
                 strConexion = ConfigurationManager.ConnectionStrings[RecursoGeneralDAO.NombreBD].ConnectionString;
-                //if (conexion == null)
-                //{
+                if (conexion == null)
+                {
                     conexion = new SqlConnection(strConexion);
-                //}
+                }
 
             }
 
@@ -68,7 +71,6 @@ namespace DatosSKD
             try
             {
                 this.conexion.Close();
-                conexion = null;
             }
 
             catch (Exception ex)
@@ -264,6 +266,13 @@ namespace DatosSKD
         #endregion
 
         #region Ejecutar Stored Procedure Multiples Tuplas
+
+        /// <summary>
+        /// Ejecuta el procedimientos almacenados en la Base de datos
+        /// </summary>
+        /// <param name="query">nombre procedimiento a ejecutar</param>
+        /// <param name="parametros">lista de parametros segun corresponda recibe el procedimiento</param>
+        /// <returns>tabla con todos los registros de la consulta</returns>
         public DataTable EjecutarStoredProcedureTuplas(string query, List<Parametro> parametros)
         {
             try
@@ -329,5 +338,9 @@ namespace DatosSKD
             this.conexion = null;
         }
         #endregion
+
+
+
+
     }
 }

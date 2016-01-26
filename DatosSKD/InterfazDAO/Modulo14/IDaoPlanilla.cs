@@ -27,7 +27,5 @@ namespace DatosSKD.InterfazDAO.Modulo14
 
          Boolean RegistrarDatosPlanillaIdBD(int idPlanilla, String datoPlanilla);
 
-         Boolean CambiarStatus(int idPlanilla);
-
     }
 }

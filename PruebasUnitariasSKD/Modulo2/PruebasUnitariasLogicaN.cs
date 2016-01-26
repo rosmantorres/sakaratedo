@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using LogicaNegociosSKD.Modulo1;
 using LogicaNegociosSKD.Modulo2;
-using DominioSKD.Entidades.Modulo1;
-using DominioSKD.Entidades.Modulo2;
+using DominioSKD;
 
 namespace PruebasUnitariasSKD.Modulo2
 {

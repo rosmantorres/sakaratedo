@@ -18,23 +18,18 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
             this.LaEntidad = nuevaEntidad;
         }
 
-        /// <summary>
-        /// Método Ejecutar el Consultar los Detalles de una Cinta en especifico
-        /// </summary>
-        /// <param name="nuevaEntidad">Id de la Cinta a consultar</param>
-        /// <returns>LaCinta</returns>
         public override Entidad Ejecutar()
         {
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             try { 
-
-            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta(); 
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            IDaoCinta miDaoCinta = fabrica.ObtenerDaoCinta(); 
             Entidad _miEntidad= miDaoCinta.ConsultarXId(this.LaEntidad);
             
             if (_miEntidad != null)
             {
-                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandosModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return _miEntidad;
             }
@@ -50,7 +45,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo5
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo5.FormatoIncorrectoException ex)
+            catch (ExcepcionesSKD.Modulo3.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 

@@ -44,7 +44,7 @@ namespace LogicaNegociosSKD.Modulo2
         /// </summary>
         /// <param name="clave">Clave simetrica</param>
         /// <returns>objeto TripleDes</returns>
-        private TripleDES CrearDES(string clave)
+        public TripleDES CrearDES(string clave)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
             TripleDES des = new TripleDESCryptoServiceProvider();

@@ -29,7 +29,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
 
-    Restricciones de Competencia
+    Restricciones de Eventos
 
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
@@ -44,32 +44,63 @@
 				  <h3 class="box-title">Lista de Restricciones de Eventos</h3>
 				</div><!-- /.box-header -->
 
-    <form role="form" name="consultar_planilla" id="consular_planillas" runat="server">
+	 
 	<div class="box-body table-responsive">
 
 	   <table id="RestriccionesEventos" class="table table-bordered table-striped dataTable">
 		<thead>
 				<tr>
 					<th>ID</th>
-					<th>Descripcion</th>
+					<th>Evento</th>
 					<th >Edad Mínima</th>
 					<th>Edad Máxima</th>
 					<th >Rango Mínimo</th>
 					<th >Rango Máximo</th>
 					<th >Sexo</th>
-                    <th>Modalidad</th>
+					<th >Categoría</th>
+                    <th>Especialidad</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>
-           <asp:Literal runat="server" ID="tabla"></asp:Literal>
 			<tbody>
-							
+				<tr>
+					<td class="id">REV_1</td>
+					<td>Entrenamiento Especial 1/1/2016  12:00 a 14:00</td>
+					<td>10</td>
+					<td>18</td>
+					<td>Blanco</td>
+					<td>Marrón</td>
+					<td>Ambos</td>
+                    <td>N/A</td>
+                    <td>N/a</td>
+					<td>
+						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionEvento.aspx"></a>
+						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+					 </td>
+				</tr>
+
+				<tr>
+					<td class="id">REV_2</td>
+					<td>Competencia 1/2/2016  12:00 a 14:00</td>
+					<td>10</td>
+					<td>18</td>
+					<td>Blanco</td>
+					<td>Marrón</td>
+					<td>Femenino</td>
+                    <td>Peso Ligero</td>
+                    <td>Kumite</td>
+					<td>
+						<a class="btn btn-default glyphicon glyphicon-pencil" href="interfazModificarRestriccionEvento.aspx"></a>
+						<a class="btn btn-danger glyphicon glyphicon-remove" data-toggle="modal" data-target="#modal-delete" href="#"></a>
+					 </td>
+				</tr>
+				
 				
 			</tbody>
 	</table>
-    </div>
-    </form>
-	 
+
+					  
+
 		<div id="modal-delete" class="modal" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 		  <div class="modal-content">

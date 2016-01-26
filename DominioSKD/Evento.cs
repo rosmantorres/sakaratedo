@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DominioSKD;
-
 
 namespace DominioSKD
 {
-    public class Evento : Entidad
+    public class Evento
     {
         #region Atributos
 
@@ -40,7 +38,7 @@ namespace DominioSKD
             this.estado = estado;
         }
 
-        public Evento(int id, String nombre, String descripcion, float costo, Boolean estado, Persona persona, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
+        public Evento(int id, String nombre, String descripcion, float costo, Boolean estado ,Persona persona, Ubicacion ubicacion, Categoria categoria, TipoEvento tipoEvento, Horario horario)
         {
             this.id = id;
             this.nombre = nombre;
@@ -78,6 +76,7 @@ namespace DominioSKD
 
 
         #endregion
+
 
         #region Propiedades
 
@@ -142,6 +141,8 @@ namespace DominioSKD
             set { persona = value; }
         }
         #endregion
+
+
 
     }
 }

@@ -22,75 +22,75 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.HtmlControls.HtmlForm detalleEventoIns;
         
         /// <summary>
-        /// nombre_evento1 control.
+        /// nombre_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nombre_evento1;
+        protected global::System.Web.UI.WebControls.Label nombre_evento;
         
         /// <summary>
-        /// costo_evento1 control.
+        /// costo_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl costo_evento1;
+        protected global::System.Web.UI.WebControls.Label costo_evento;
         
         /// <summary>
-        /// tipo_evento1 control.
+        /// tipo_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tipo_evento1;
+        protected global::System.Web.UI.WebControls.Label tipo_evento;
         
         /// <summary>
-        /// fechaInicio_evento1 control.
+        /// fechaInicio_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaInicio_evento1;
+        protected global::System.Web.UI.WebControls.Label fechaInicio_evento;
         
         /// <summary>
-        /// fechaFin_evento1 control.
+        /// fechaFin_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaFin_evento1;
+        protected global::System.Web.UI.WebControls.Label fechaFin_evento;
         
         /// <summary>
-        /// ciudad_evento1 control.
+        /// ciudad_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ciudad_evento1;
+        protected global::System.Web.UI.WebControls.Label ciudad_evento;
         
         /// <summary>
-        /// estadoUbicacion_evento1 control.
+        /// estadoUbicacion_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl estadoUbicacion_evento1;
+        protected global::System.Web.UI.WebControls.Label estadoUbicacion_evento;
         
         /// <summary>
-        /// direccion_evento1 control.
+        /// direccion_evento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl direccion_evento1;
+        protected global::System.Web.UI.WebControls.Label direccion_evento;
     }
 }

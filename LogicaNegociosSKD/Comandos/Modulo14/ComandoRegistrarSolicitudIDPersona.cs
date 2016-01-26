@@ -1,5 +1,4 @@
 ﻿using DatosSKD.DAO.Modulo14;
-using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using ExcepcionesSKD;
@@ -13,15 +12,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
 {
    public class ComandoRegistrarSolicitudIDPersona : Comando<Boolean>
     {
-        /// <summary>Para registrar una solicitud por el id de la persona</summary>
-        /// <param name="laSolicitud"> la solicitud</param>
-        /// <returns>Regresa true si el registro se realizó correctamente y false si no</returns>
        public override Boolean Ejecutar()
         {
-            
-            IDaoSolicitud BaseDeDatoSolicitud = FabricaDAOSqlServer.ObtenerDAOSolicitud();
-            DominioSKD.Entidades.Modulo14.SolicitudP laSolicitud =
-                (DominioSKD.Entidades.Modulo14.SolicitudP)this.LaEntidad;
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            DaoSolicitud BaseDeDatoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
+            SolicitudP laSolicitud = (SolicitudP)this.LaEntidad;
             Boolean result = false;
             try
             {

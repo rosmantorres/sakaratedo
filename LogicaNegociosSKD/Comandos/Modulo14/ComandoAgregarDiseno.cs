@@ -1,5 +1,4 @@
 ﻿using DatosSKD.DAO.Modulo14;
-using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -28,21 +27,15 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return planilla; }
             set { planilla= value; }
         }
-        /// <summary>
-        /// Metodo que comunica con la Bd para agregar un diseño nuevo
-        /// </summary>
-        /// <param name="diseño">diseño</param>
-        /// <param name="planilla">para unir con el diseño en la BD</param>
-        /// <returns>Retorna True, si se realizo la operación satisfactoriamente.
-        /// De lo contrario devuelve false</returns>
         public override Boolean Ejecutar()
         {
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
-
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosComandoModulo14.MsjLoggerInfo, System.Reflection.MethodBase.GetCurrentMethod().Name);
-                ((DominioSKD.Entidades.Modulo14.Diseño)Diseño).Base64Encode();
-                IDaoDiseno dao = FabricaDAOSqlServer.ObtenerDAODiseno();
+                FabricaEntidades fabricaEntidad = new FabricaEntidades();
+                ((Diseño)Diseño).Base64Encode();
+                DaoDiseno dao = (DaoDiseno)fabrica.ObtenerDAODiseno();
                 return dao.GuardarDiseñoBD(this.diseño, this.planilla); 
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

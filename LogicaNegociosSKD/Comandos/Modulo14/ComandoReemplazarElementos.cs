@@ -61,20 +61,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return laSolicitud; }
             set { laSolicitud = value; }
         }
-        /// <summary>
-        /// Método que reemplaza cada uno de los elementos del diseño de la panilla
-        /// con datos reales del atleta
-        /// </summary>
-        /// <param name="info">Contenido del diseño</param>
-        /// <param name="persona">persona</param>
-        /// <param name="dojo">Dojo</param>
-        /// <param name="evento">Evento</param>
-        /// <param name="competencia">Competencia</param>
-        /// <param name="matricula">Matricula</param>
-        /// <param name="organizacion">Organizacion</param>
-        /// datos que se reemplazan en el diseño original
-        /// <returns>Retorna el contenido del diseño, modificado por los datos</returns>
-    
+
         public override string Ejecutar()
         {
             
@@ -113,8 +100,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                     info = info.Replace(RecursosComandoModulo14.PerNacionalidad, "");
                 }
 
-                DominioSKD.Entidades.Modulo14.SolicitudPlanilla solicitud =
-                    (DominioSKD.Entidades.Modulo14.SolicitudPlanilla)laSolicitud;
+                SolicitudPlanilla solicitud = (SolicitudPlanilla)laSolicitud;
                 if (solicitud != null)
                 {
                     info = info.Replace(RecursosComandoModulo14.FechaCreacionPlanilla, 
@@ -184,8 +170,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                     info = info.Replace(RecursosComandoModulo14.OrgTelefono, "");
                     info = info.Replace(RecursosComandoModulo14.OrgEmail, "");
                 }
-                DominioSKD.Entidades.Modulo9.Evento evento =
-                    (DominioSKD.Entidades.Modulo9.Evento)elEvento;
+                //Evento evento = (Evento)elEvento;
+                Evento evento= new Evento();
                 if (evento != null)
                 {
                     info = info.Replace(RecursosComandoModulo14.EveNombre, evento.Nombre);
@@ -231,8 +217,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
                         RecursosComandoModulo14.Linea;
                 }
 
-                DominioSKD.Entidades.Modulo12.Competencia competencia =
-                    (DominioSKD.Entidades.Modulo12.Competencia)laCompetencia;
+                Competencia competencia = (Competencia)laCompetencia;
                 if (competencia != null)
                 {
                     info = info.Replace(RecursosComandoModulo14.CompNombre, competencia.Nombre);

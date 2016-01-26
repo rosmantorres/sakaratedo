@@ -189,53 +189,7 @@ Interfaz.v2.ncrunchsolution
 *.sql
 PruebasUnitariasSKD/App.config
 Interfaz.csproj
-<<<<<<< HEAD
-PruebasUnitariasSKD/Modulo15/PruebaDatos.cs
-PruebasUnitariasSKD/Modulo15/PruebaInterfaz.cs
-PruebasUnitariasSKD/Modulo15/PruebaLogica.cs
-PruebasUnitariasSKD/Modulo15/PruebaDatos.cs
-PruebasUnitariasSKD/Modulo15/PruebaDatos.cs
-PruebasUnitariasSKD/Modulo15/PruebaInterfaz.cs
-PruebasUnitariasSKD/Modulo15/PruebaLogica.cs
-PruebasUnitariasSKD/Modulo15/PruebaDatos.cs
-PruebasUnitariasSKD/Modulo15/PruebaInterfaz.cs
-PruebasUnitariasSKD/Modulo15/PruebaLogica.cs
-=======
-Log.xml
->>>>>>> ae1054d7521700263b9b9aacd87c3bad7edc9bd0
-*.json
-Log.xml
-PruebasUnitariasSKD/App.config
-PruebasUnitariasSKD/PruebasUnitariasSKD.csproj
-Interfaz_Presentadores/Interfaz_Presentadores.csproj
-Log.xml
-LogicaNegociosSKD/LogicaNegociosSKD.csproj
-PruebasUnitariasSKD/App.config
-PruebasUnitariasSKD/PruebasUnitariasSKD.csproj
-PruebasUnitariasSKD/App.config
-Interfaz_Contratos/Interfaz_Contratos.csproj
-PruebasUnitariasSKD/App.config
-Log.xml
-Interfaz_Presentadores/Interfaz_Presentadores.csproj
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-Log.xml
-Interfaz_Presentadores/Interfaz_Presentadores.csproj
-PruebasUnitariasSKD/PruebasUnitariasSKD.csproj
-PruebasUnitariasSKD/App.config
-LogicaNegociosSKD/LogicaNegociosSKD.csproj
-Interfaz_Contratos/Interfaz_Contratos.csproj
 Interfaz.csproj
-DatosSKD/DatosSKD.csproj
-*.csproj
-*.config
-=======
-*.csproj
-*.csproj
->>>>>>> Stashed changes
-=======
-*.csproj
-*.csproj
->>>>>>> Stashed changes
-*.csproj
-*.config
+Interfaz.csproj
+Log.xml
+Log.xml

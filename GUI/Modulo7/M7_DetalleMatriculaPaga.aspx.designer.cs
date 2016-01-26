@@ -22,39 +22,39 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.HtmlControls.HtmlForm detalle_matricula;
         
         /// <summary>
-        /// Control identificador1.
+        /// Control identificador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl identificador1;
+        protected global::System.Web.UI.WebControls.Label identificador;
         
         /// <summary>
-        /// Control fecha_creacion1.
+        /// Control fecha_creacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fecha_creacion1;
+        protected global::System.Web.UI.WebControls.Label fecha_creacion;
         
         /// <summary>
-        /// Control fecha_pago1.
+        /// Control fecha_pago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fecha_pago1;
+        protected global::System.Web.UI.WebControls.Label fecha_pago;
         
         /// <summary>
-        /// Control estado_matricula1.
+        /// Control estado_matricula.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl estado_matricula1;
+        protected global::System.Web.UI.WebControls.Label estado_matricula;
     }
 }

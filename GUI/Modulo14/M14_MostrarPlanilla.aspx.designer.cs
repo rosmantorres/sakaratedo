@@ -13,13 +13,13 @@ namespace templateApp.GUI.Modulo14 {
     public partial class M14_MostrarPlanilla {
         
         /// <summary>
-        /// Control alerta.
+        /// Control alert.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alerta;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
         /// Control mostrar_planilla.
@@ -31,22 +31,22 @@ namespace templateApp.GUI.Modulo14 {
         protected global::System.Web.UI.HtmlControls.HtmlForm mostrar_planilla;
         
         /// <summary>
-        /// Control NombrePanilla1.
+        /// Control NombrePanilla.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NombrePanilla1;
+        protected global::System.Web.UI.WebControls.Label NombrePanilla;
         
         /// <summary>
-        /// Control informacion1.
+        /// Control informacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label informacion1;
+        protected global::System.Web.UI.WebControls.Label informacion;
         
         /// <summary>
         /// Control btnguardar.

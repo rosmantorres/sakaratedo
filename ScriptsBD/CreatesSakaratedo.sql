@@ -1824,13 +1824,14 @@ DELETE
 UPDATE NO ACTION
 GO
 
-
+<<<<<<< HEAD
+=======
 
 
 
 
 -----------------------------------PROCEDURE----------------------
-
+>>>>>>> master
 ---------------------------------------------------------STORED PROCEDURES M12--------------------------------------------------------------------
 
 --PROCEDURE AGREGAR COMPETENCIA--
@@ -2086,7 +2087,7 @@ as
 			comp_id = @idCompetencia;
  end;
  go
-
+<<<<<<< HEAD
 
 
 
@@ -2111,7 +2112,7 @@ go
 
 
  ----------------------------------STORED PROCEDURES M1-------------------------------------
-
+=======
   ----------------------------------STORED PROCEDURES M1-------------------------------------
 
 --------------------PROCEDURE CONSULTA PERSONA POR ID ----------------------
@@ -2138,7 +2139,7 @@ as
 	end;
 	go
 
-
+>>>>>>> master
 
 ------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA ------------
 CREATE procedure M1_ConsultarNombreUsuarioContrasena
@@ -2229,9 +2230,9 @@ as
 	end;
 	go
 
-
+<<<<<<< HEAD
 -------------------------------------------------Stored Procedure M14--------------------------
-
+=======
 
 ------------------PROCEDURE CONSULTA NOMBRE DE USUARIO Y CONTRASEÑA POR ID--------*NUEVO*----
 
@@ -2248,7 +2249,7 @@ as
 	go
 
 -------------------------------------------M14---------------------------------------------------
-
+>>>>>>> master
 CREATE PROCEDURE M14_AgregarDiseño
 		 
 		@dis_contenido   [varchar](8000),
@@ -3184,7 +3185,6 @@ as
     where doj.doj_id = @idDojo and doj.UBICACION_ubi_id = ubi.ubi_id and doj.ORGANIZACION_org_id = org.org_id 
     
   end;
-go
 --------------------------------------------------------------------------------Fin Procedure Inventario----------------------------------------------------
 
 
@@ -4117,7 +4117,7 @@ BEGIN
 		END
 	SET @exito = 1;
 END
-go
+
 /*===============================================Stored Procedures Modulo 16 =======================*/
 
 ---------------------------------------------------STORED PROCEDURES M3-------------------------------------
@@ -4135,6 +4135,10 @@ as
 		
 	end;
 go
+-- Le falta la descipcion del estilo y solo las org que tengan estilo van ha aparecer
+
+--COMO PROBAR EL PROCEDIMIENTO
+--execute M3_ConsultarOrganizacion;
 
 
 --PROCEDURE CONSULTA LISTA DE ORGANIZACIONES POR ID, SERIA PARA LA LISTA DESPLEGABLE ESA DEL ICONO "i"
@@ -4150,6 +4154,10 @@ as
 		where org.ESTILO_est_id = est.est_id and @id_organizacion = org.org_id
 	end;
 go
+-- Le falta la descipcion del estilo
+
+--COMO PROBAR EL PROCEDIMIENTO
+execute M3_ConsultarOrganizacionXId "1";
 
 
 --PROCEDURE ELIMINAR ORGANIZACION --- SOLO BORRO ORG
@@ -4161,7 +4169,7 @@ as
 		where @id_organizacion = org.org_id
 	end;
 go
-
+--COMO PROBAR EL PROCEDIMIENTO execute M3_EliminarOrganizacion "1";
 
 
 --PROCEDURE AGREGAR ORGANIZACION
@@ -4184,6 +4192,8 @@ as
 		
  end;
 go
+--COMO PROBAR EL PROCEDIMIENTO
+--execute M3_AgregarOrganizacion "Seito Karate-do","Av 24, calle 8 edificio Morales, Altamira, Caracas","2123117754","seitokaratedo@gmail.com","Distrito Federal","Cobra-do";
 
 
 --PROCEDURE MODIFICAR ORGANIZACION--
@@ -4216,6 +4226,9 @@ as
  end;
 go
 
+--COMO PROBAR EL PROCEDIMIENTO
+--execute M3_ModificarOrganizacion "6","Prueba Karate-do","Av 24, calle 8 edificio Morales, Altamira, Caracas","2123117754","seitokaratedo@gmail.com","Distrito Federal","Cobra-do";
+
 
 CREATE procedure M3_ConsultarComboOrganizacion
 as
@@ -4225,8 +4238,6 @@ as
 		
 	end;
 go
-
-
 --PROCEDURE CONSULTAR NOMBRE ORGANIZACION--
 CREATE PROCEDURE M3_BuscarNombreOrganizacion
 	@nombreOrganizacion  [varchar](100),
@@ -4239,7 +4250,6 @@ as
 	where org_nombre = @nombreOrganizacion
 
  end;
- go
  
 --PROCEDURE CONSULTAR NOMBRE ESTILO--
 CREATE PROCEDURE M3_BuscarEstilo
@@ -4253,7 +4263,6 @@ as
 	where est_nombre = @nombreEstilo
 
  end;
- go
  ---------------------------------------------------STORED PROCEDURES M3-------------------------------------
  
  ---------------------------------------------------STORED PROCEDURES M5-------------------------------------
@@ -4281,7 +4290,7 @@ as
 				VALUES (@idOrganizacion, @idCinta);
 		
  end;
-go 
+ 
  
 --PROCEDURE BUSCAR ID DE CINTA
 CREATE procedure M5_BuscarIdCinta
@@ -4293,7 +4302,7 @@ declare @id_cinta     [int]
 		select @id_cinta = cin_id from cinta
 		where cin_color_nombre = @color_cinta
 	end;
-go	
+	
 --Para Cesar
 CREATE procedure M5_BuscarNombreCinta
 	@color_cinta [varchar](100)
@@ -4304,7 +4313,7 @@ declare @nombre_cinta  [varchar](100)
 		select @nombre_cinta  = cin_color_nombre from cinta
 		where cin_color_nombre = @color_cinta
 	end;
-go
+
 
 --PROCEDURE CONSULTA LISTA DE CINTAS 
 CREATE procedure M5_ConsultarCintas
@@ -4317,7 +4326,7 @@ as
 		from  CINTA cin, ORGANIZACION_CINTA orgcin, ORGANIZACION org
 		where orgcin.CINTA_cin_id = cin.cin_id  and orgcin.ORGANIZACION_org_id = org.org_id	
 	end;
-go
+
 
 --PROCEDURE CONSULTA LISTA DE CINTAS POR ID, para el de "i"
 CREATE procedure M5_ConsultarCintasXId
@@ -4332,7 +4341,6 @@ as
 		where orgcin.CINTA_cin_id = cin.cin_id  and orgcin.ORGANIZACION_org_id = org.org_id	
 		and @id_cinta = cin.cin_id  
 	end;
-go
 	
 --PROCEDURE CONSULTA LISTA DE CINTAS POR IDORGANIZACION
 CREATE procedure M5_ConsultarCintasXOrganizacionId
@@ -4347,7 +4355,7 @@ as
 		where orgcin.CINTA_cin_id = cin.cin_id  and orgcin.ORGANIZACION_org_id = org.org_id	and
 		org.org_id = @id_organizacion	
 	end;
-go	
+	
 
 --PROCEDURE ELIMINAR CINTA --- SOLO BORRO CINTA
 CREATE procedure M5_EliminarCinta
@@ -4357,9 +4365,7 @@ as
 	    delete cinta from cinta cin
 		where @id_cinta = cin.cin_id
 	end;
-go	
-
-
+	
 --PROCEDURE MODIFICAR CINTA--
 CREATE PROCEDURE M5_ModificarCinta
 	@idcinta				[int],
@@ -4375,6 +4381,8 @@ as
  begin
 	declare @idOrg as int
 
+
+--	@idOrganizacionNueva = @idOrganizacion
 	
 	select @idOrg = orgcin.ORGANIZACION_org_id from  CINTA cin, ORGANIZACION_CINTA orgcin
 		where orgcin.CINTA_cin_id = cin.cin_id  and cin.cin_id = @idcinta
@@ -4390,10 +4398,10 @@ as
 			cin_orden		  = @ordenCinta	
 			WHERE
 			cin_id = @idCinta;	
-	else if(@idOrganizacion != @idOrg)
-	
+	else
 		delete ORGANIZACION_CINTA from ORGANIZACION_CINTA orgcin 
-					where orgcin.ORGANIZACION_org_id = @idOrg and orgcin.CINTA_cin_id = @idcinta;		
+					where orgcin.ORGANIZACION_org_id = @idOrg and orgcin.CINTA_cin_id = @idcinta;
+		
 	UPDATE CINTA
 		SET 
 			cin_color_nombre  = @colorCinta,
@@ -4409,8 +4417,6 @@ as
 	
  end;
  
- go
-
  --PROCEDURE CONSULTAR ID ORGANIACION--
 CREATE PROCEDURE M5_BuscarIDOrganiacion
 	@idOrganizacion   [int],
@@ -4423,7 +4429,7 @@ as
 	where org_id = @idOrganizacion
 
  end;
-go 
+ 
  --PROCEDURE CONSULTAR OrdenCinta--
 CREATE PROCEDURE M5_BuscarOrdenCinta
 	@ordenCinta			[int],
@@ -4438,7 +4444,7 @@ as
 		org.org_id = @idOrganizacion and cin.cin_orden = @ordenCinta
 
  end;
-go 
+ 
 --PROCEDURE CONSULTAR NOMBRE CINTA--
 CREATE PROCEDURE M5_BuscarCintaNombre
 	@colorCinta [varchar](100),
@@ -4453,5 +4459,5 @@ as
 		org.org_id = @idOrganizacion and cin.cin_color_nombre = @colorCinta
 
  end;
-go 
+ 
   ---------------------------------------------------STORED PROCEDURES M5-------------------------------------

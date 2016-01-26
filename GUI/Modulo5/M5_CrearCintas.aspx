@@ -34,7 +34,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
     
-     <div id="alert" runat="server"></div>
+
 
     <div class="box box-primary">
         <div class="box-header with-border">

@@ -8,8 +8,6 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos.Modulo5;
 using LogicaNegociosSKD;
 using DominioSKD;
-using ExcepcionesSKD.Modulo5;
-using DominioSKD.Fabrica;
 
 
 namespace Interfaz_Presentadores.Modulo5
@@ -24,26 +22,19 @@ namespace Interfaz_Presentadores.Modulo5
             this.vista = vista;
         }
 
-        /// <summary>
-        /// Método para ejecutar el comando ConsultarTodasCinta y obtener la lista de cintas
-        /// </summary>
+
         public void LlenarInformacion()
         {
-            try
-            {
-                Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarConsultarTodosCinta();
-                List<Entidad> _miLista = _comando.Ejecutar();
-                this.llenarVista(_miLista);
-            }
-            catch (ExcepcionesSKD.Modulo5.ListaVaciaExcepcion ex){
-                throw ex;
-            }
+
+            FabricaComandos _fabrica = new FabricaComandos();
+            Comando<List<Entidad>> _comando = _fabrica.ObtenerEjecutarConsultarTodosCinta();
+            List<Entidad> _miLista = _comando.Ejecutar();
       
+            // en caso de q sea null... pero cuando trengas la excepcion tienes q quitarlo
+            if (_miLista != null)
+                this.llenarVista(_miLista);
        }
 
-        /// <summary>
-        /// Método para llenar la vista (tabla) con la lista de cintas
-        /// </summary>
         private void llenarVista(List<Entidad> lista)
         {
             foreach (Entidad entidad in lista)
@@ -63,24 +54,6 @@ namespace Interfaz_Presentadores.Modulo5
                     this.vista.llenarStatusInactivo(cinta.Id_cinta);
 
             }
-        }
-
-        public void cambiarStatus()
-        {
-            DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)FabricaEntidades.ObtenerCinta_M5();
-            laCinta.Id_cinta = this.vista.obtenerIdCinta();
-
-            if (this.vista.obtenerStatusCinta() == 1)
-                laCinta.Status = true;
-            else
-                laCinta.Status = false;
-
-            /* 
-            if (laCinta.Status)
-                this.vista.llenarStatusInactivo(laCinta.Id_cinta);
-            else
-                this.vista.llenarStatusActivo(laCinta.Id_cinta);    
-             * */
         }
     }
 }

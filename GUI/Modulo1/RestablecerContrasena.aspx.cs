@@ -30,8 +30,8 @@ namespace templateApp.GUI.Modulo1
         }
         String IContratoM1Restablecer.InfoRestablecerEtqText
         {
-            get { return infoRestablecer.InnerHtml; }
-            set { infoRestablecer.InnerHtml = value; }
+            get { return infoRestablecer.InnerText; }
+            set { infoRestablecer.InnerText = value; }
         }
         String IContratoM1Restablecer.WarningCaracterEtqText
         {

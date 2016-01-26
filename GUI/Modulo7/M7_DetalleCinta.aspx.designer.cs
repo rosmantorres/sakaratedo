@@ -22,57 +22,57 @@ namespace templateApp.GUI.Modulo7 {
         protected global::System.Web.UI.HtmlControls.HtmlForm detalle_cinta;
         
         /// <summary>
-        /// colorCinta1 control.
+        /// colorCinta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl colorCinta1;
+        protected global::System.Web.UI.WebControls.Label colorCinta;
         
         /// <summary>
-        /// rangoCinta1 control.
+        /// rangoCinta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rangoCinta1;
+        protected global::System.Web.UI.WebControls.Label rangoCinta;
         
         /// <summary>
-        /// clasificacionCinta1 control.
+        /// clasificacionCinta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl clasificacionCinta1;
+        protected global::System.Web.UI.WebControls.Label clasificacionCinta;
         
         /// <summary>
-        /// significadoCinta1 control.
+        /// significadoCinta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl significadoCinta1;
+        protected global::System.Web.UI.WebControls.Label significadoCinta;
         
         /// <summary>
-        /// ordenCinta1 control.
+        /// ordenCinta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ordenCinta1;
+        protected global::System.Web.UI.WebControls.Label ordenCinta;
         
         /// <summary>
-        /// fechaObtencionCinta1 control.
+        /// fechaObtencionCinta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl fechaObtencionCinta1;
+        protected global::System.Web.UI.WebControls.Label fechaObtencionCinta;
     }
 }

@@ -34,18 +34,17 @@ namespace Interfaz_Presentadores.Modulo14
             vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
-        /// <summary>
-        /// Llena el combobox de los eventos
-        /// </summary>
         public void LlenarEventosCombo()
         {
-            try{
-            Comando<List<Entidad>> comboEvento = FabricaComandos.ObtenerComandoEventosSolicitud();
+            //LogicaNegociosSKD.Modulo14.LogicaSolicitud lP = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
+            FabricaComandos fabricaCo = new FabricaComandos();
+            Comando<List<Entidad>> comboEvento = fabricaCo.ObtenerComandoEventosSolicitud();
             ((ComandoEventosSolicitud)comboEvento).IDPersona = vista.IDUsuario;
+            //List<SolicitudP> listEventos = (Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
             List<Entidad> listEventos = comboEvento.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listEventos)
+            foreach (SolicitudP item in listEventos)
             {
                 options.Add(item.ID.ToString(), item.NombreEvento);
             }
@@ -55,49 +54,18 @@ namespace Interfaz_Presentadores.Modulo14
             vista.eventoCombo.DataValueField = "key";
             vista.eventoCombo.DataBind();
         }
-        catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (NullReferenceException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                Alerta(ex.Message);
-            }
 
-        }
-
-        /// <summary>
-        /// Llena el combobox de las competencias
-        /// </summary>
         public void LLenarCompetenciaCombo()
         {
-            try{
-            Comando<List<Entidad>> comboCompetencia = FabricaComandos.ObtenerComandoCompetenciasSolicitud();
+            //LogicaNegociosSKD.Modulo14.LogicaSolicitud lP = new LogicaNegociosSKD.Modulo14.LogicaSolicitud();
+            //List<SolicitudP> listCompetencias = lP.CompetenciasSolicitud(Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));
+            FabricaComandos fabricaCo = new FabricaComandos();
+            Comando<List<Entidad>>comboCompetencia = fabricaCo.ObtenerComandoCompetenciasSolicitud();
             ((ComandoCompetenciasSolicitud)comboCompetencia).IDPersona = vista.IDUsuario;
             List<Entidad> listCompetencias = comboCompetencia.Ejecutar();
             Dictionary<string, string> options = new Dictionary<string, string>();
 
-            foreach (DominioSKD.Entidades.Modulo14.SolicitudP item in listCompetencias)
+            foreach (SolicitudP item in listCompetencias)
             {
                 options.Add(item.ID.ToString(), item.NombreEvento);
             }
@@ -107,146 +75,72 @@ namespace Interfaz_Presentadores.Modulo14
             vista.competenciaCombo.DataValueField = "key";
             vista.competenciaCombo.DataBind();
         }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (NullReferenceException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                Alerta(ex.Message);
-            }
 
-        }
-
-        /// <summary>
-        /// Agrega los datos de la solicitud
-        /// </summary>
-        /// <returns>verdadero si se logro agregar correctamente la solicitud </returns>
-        public bool AgregarSolicitud()
+        public void AgregarSolicitud()
         {
-            Entidad planilla = FabricaEntidades.ObtenerPlanilla();
-            ((DominioSKD.Entidades.Modulo14.Planilla)planilla).ID = Int32.Parse(vista.planillaId);
-            bool resultado = false;
+            FabricaEntidades fabricaEntidades = new FabricaEntidades();
+            FabricaComandos fabricaComandos = new FabricaComandos();
+            Entidad planilla = fabricaEntidades.ObtenerPlanilla();
+            ((Planilla)planilla).ID = Int32.Parse(vista.planillaId);
+            //LogicaSolicitud lS = new LogicaSolicitud();
+            Comando<bool> comandoRegistrarSolicitudPlanilla = fabricaComandos.ObtenerComandoRegistrarSolicitudPlanilla();
+            Comando<Boolean> comandoRegistrarSolicitudPlanillaID = fabricaComandos.ObtenerComandoRegistrarSolicitudIDPersona();
+            Comando<Boolean> comandoRegistrarSolicitudIDPersona = fabricaComandos.ObtenerComandoRegistrarSolicitudIDPersona();
+            
+            bool resultado;
 
-            try
+            if (vista.ComboEventoVisible == true)
             {
-                Comando<bool> comandoRegistrarSolicitudPlanilla = FabricaComandos.ObtenerComandoRegistrarSolicitudPlanilla();
-                Comando<Boolean> comandoRegistrarSolicitudPlanillaID = FabricaComandos.ObtenerComandoRegistrarSolicitudIDPersona();
-                Comando<Boolean> comandoRegistrarSolicitudIDPersona = FabricaComandos.ObtenerComandoRegistrarSolicitudIDPersona();
-
-
-
-                if (vista.ComboEventoVisible == true)
-                {
-
-                    Entidad laSolicitud =
-                        FabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI,
-                        vista.FechaReincorporacion,
-                                             vista.Motivo,
-                                             (DominioSKD.Entidades.Modulo14.Planilla
-                                             )planilla, Int32.Parse(
-                                             vista.eventoCombo.SelectedValue));
-
-                    comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
-                    resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
-
-                }
-                if (vista.ComboCompetenciaVisible == true)
-                {
-                    Entidad laSolicitud = FabricaEntidades.ObtenerSolicitudP(
-                       vista.fechaRetiroI, vista.FechaReincorporacion,
-                                            vista.Motivo,
-                                            (DominioSKD.Entidades.Modulo14.Planilla
-                                            )planilla, Int32.Parse
-                                            (vista.competenciaCombo.SelectedValue));
-                    comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
-                    resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
-
-                }
-                if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
-                {
-
-                    Entidad laSolicitud =
-                        FabricaEntidades.ObtenerSolicitudP(
-                        vista.fechaRetiroI, vista.FechaReincorporacion,
-                                             vista.Motivo,
-                                             (DominioSKD.Entidades.Modulo14.Planilla
-                                             )planilla, vista.IDUsuario);
-                    comandoRegistrarSolicitudIDPersona.LaEntidad = laSolicitud;
-                    resultado = comandoRegistrarSolicitudIDPersona.Ejecutar();
-
-                }
-
+                //SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                //                             this.id_motivo.Value, planilla, Int32.Parse(this.comboEvento.SelectedValue));
+                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI,vista.FechaReincorporacion,
+                                         vista.Motivo, (Planilla)planilla, Int32.Parse(vista.eventoCombo.SelectedValue));
+               // lS.RegistrarSolicitudPlanilla(laSolicitud);
+                comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
+                resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
+                
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            if (vista.ComboCompetenciaVisible == true)
             {
-                Alerta(ex.Message);
+               // SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+               //                              this.id_motivo.Value, planilla, Int32.Parse(this.comboCompetencia.SelectedValue));
+                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
+                                         vista.Motivo, (Planilla)planilla, Int32.Parse(vista.competenciaCombo.SelectedValue));
+                comandoRegistrarSolicitudPlanilla.LaEntidad = laSolicitud;
+                resultado = comandoRegistrarSolicitudPlanilla.Ejecutar();
+               // lS.RegistrarSolicitudPlanilla(laSolicitud);
             }
-            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            if (vista.ComboEventoVisible == false && vista.ComboCompetenciaVisible == false)
             {
-                Alerta(ex.Message);
+               /* SolicitudP laSolicitud = new SolicitudP(this.idFechaI.Value, this.idFechaF.Value,
+                                             this.id_motivo.Value, planilla, Convert.ToInt32(Session[RecursosInterfazMaster.sessionUsuarioID]));*/
+                
+                Entidad laSolicitud = fabricaEntidades.ObtenerSolicitudP(vista.fechaRetiroI, vista.FechaReincorporacion,
+                                         vista.Motivo, (Planilla)planilla, vista.IDUsuario);
+                comandoRegistrarSolicitudIDPersona.LaEntidad = laSolicitud;
+                resultado = comandoRegistrarSolicitudIDPersona.Ejecutar();
+               // lS.RegistrarSolicitudIDPersona(laSolicitud);
             }
-            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (NullReferenceException ex)
-            {
-                Alerta(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                Alerta(ex.Message);
-            }
+                  
 
-
-            return resultado;
      
         }
 
-        /// <summary>
-        /// Inicio de la pagina, validaciones de los datos que se mostraran 
-        /// </summary>
         public void PageLoadSolicitud()
         {
             try
             {
-               
+               // int idPlanilla = Int32.Parse(Request.QueryString[RecursoInterfazModulo14.idPlan]);
                 int idPlanilla = vista.IDPlanilla;
                 vista.planillaId = idPlanilla.ToString();
                 vista.IDPlanillaVisible = false;
 
-                Comando<List<Boolean>> comandoDatosRequeridosSolicitud = FabricaComandos.ObtenerComandoDatosRequeridosSolicitud();
-               
-                ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad = FabricaEntidades.ObtenerPlanilla();
+               //LogicaSolicitud lP = new LogicaSolicitud();
+                FabricaEntidades fabricaEnt = new FabricaEntidades();
+                FabricaComandos fabricaCo = new FabricaComandos();
+                Comando<List<Boolean>> comandoDatosRequeridosSolicitud = fabricaCo.ObtenerComandoDatosRequeridosSolicitud();
+               // List<bool> datosRequeridos = lP.DatosRequeridosSolicitud(idPlanilla);
+                ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad = fabricaEnt.ObtenerPlanilla();
                 ((ComandoDatosRequeridosSolicitud)comandoDatosRequeridosSolicitud).LaEntidad.Id = idPlanilla;
                 List<Boolean> datosRequeridos = comandoDatosRequeridosSolicitud.Ejecutar();
                 if (datosRequeridos[0] == true)
@@ -299,14 +193,6 @@ namespace Interfaz_Presentadores.Modulo14
                 else
                 {
                     vista.divMotivoVisible = false;
-                }
-                if ((datosRequeridos[0] == false) && (datosRequeridos[1] == false) && (datosRequeridos[2] == false) &&
-                    (datosRequeridos[3] == false) && (datosRequeridos[4] == false))
-                {
-                    vista.alertLocalClase = RecursosPresentadorModulo14.Alert_Clase_Success;
-                    vista.alertLocalRol = RecursosPresentadorModulo14.Alerta_Rol;
-                    vista.alertLocal = RecursosPresentadorModulo14.Alerta_Html + RecursosPresentadorModulo14.Alerta_Pregunta + RecursosPresentadorModulo14.Alerta_HtmlFinal; ;
-                    vista.alerta = true;
                 }
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
