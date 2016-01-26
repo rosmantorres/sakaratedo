@@ -72,7 +72,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
             this.implemento2 = (Implemento)FabricaEntidades.ObtenerImplemento();
-            this.implemento2.Id = 2;
+            this.implemento2.Id = 5;
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos

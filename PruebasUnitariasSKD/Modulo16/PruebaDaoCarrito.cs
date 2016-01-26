@@ -74,7 +74,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
             this.implemento2 = (Implemento)FabricaEntidades.ObtenerImplemento();
-            this.implemento2.Id = 2;
+            this.implemento2.Id = 5;
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos
@@ -88,11 +88,11 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Dos matriculas distintas
             this.matricula = (Matricula)FabricaEntidades.ObtenerMatricula();
-            this.matricula.Id = 1;
-            this.matricula.Costo = 5000;
+            this.matricula.Id = 37;
+            this.matricula.Costo = 4250;
             this.matricula2 = new Matricula();
-            this.matricula2.Id = 2;
-            this.matricula2.Costo = 4500;                   
+            this.matricula2.Id = 38;
+            this.matricula2.Costo = 4250;                   
         }
 
         /// <summary>
@@ -353,7 +353,7 @@ namespace PruebasUnitariasSKD.Modulo16
             //Insertamos pagos de prueba
             this.datoPago = new List<String>();
             this.datoPago.Add("123456789");
-            this.pago = FabricaEntidades.ObtenerPago(2500, "Tarjeta", this.datoPago);
+            this.pago = FabricaEntidades.ObtenerPago(4250, "Tarjeta", this.datoPago);
 
             //Pagamos            
             Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona4, this.pago));
@@ -361,7 +361,7 @@ namespace PruebasUnitariasSKD.Modulo16
             //Insertamos pagos de prueba
             this.datoPago = new List<String>();
             this.datoPago.Add("123456789");
-            this.pago = FabricaEntidades.ObtenerPago(2500, "Tarjeta", this.datoPago);
+            this.pago = FabricaEntidades.ObtenerPago(4250, "Tarjeta", this.datoPago);
 
             //Pagamos            
             Assert.IsTrue(this.daoPrueba.RegistrarPago(this.persona4, this.pago));
@@ -441,8 +441,8 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Limpio los datos
             this.daoPrueba.eliminarItem(1, this.implemento, this.persona6);
-            this.daoPrueba.eliminarItem(3, this.implemento, this.persona6);
-            this.daoPrueba.eliminarItem(2, this.implemento, this.persona6);
+            this.daoPrueba.eliminarItem(3, this.evento, this.persona6);
+            this.daoPrueba.eliminarItem(2, this.matricula, this.persona6);
         }
         #endregion
 
@@ -529,8 +529,8 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Obtenemos la Matricula y verificamos sus valores
             this.matricula = this.MatriculasCarrito.ElementAt(0).Key as Matricula;
-            Assert.AreEqual(this.matricula.Id, 1);
-            Assert.AreEqual(this.matricula.Costo, 5000);            
+            Assert.AreEqual(this.matricula.Id, 37);
+            Assert.AreEqual(this.matricula.Costo, 4250);            
             Assert.AreEqual(this.MatriculasCarrito.ElementAt(0).Value, 1);
 
             //Limpio los datos
@@ -572,8 +572,8 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.EventosCarrito.ElementAt(0).Value, 6);
 
             this.matricula = this.MatriculasCarrito.ElementAt(0).Key as Matricula;
-            Assert.AreEqual(this.matricula.Id, 1);
-            Assert.AreEqual(this.matricula.Costo, 5000);            
+            Assert.AreEqual(this.matricula.Id, 37);
+            Assert.AreEqual(this.matricula.Costo, 4250);            
             Assert.AreEqual(this.MatriculasCarrito.ElementAt(0).Value, 1);
 
             //Limpio los datos

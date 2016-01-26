@@ -75,14 +75,10 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Id = 1;
             this.implemento.Precio_Implemento = 4500;
             this.implemento2 = (Implemento)FabricaEntidades.ObtenerImplemento();
-            this.implemento2.Id = 2;
+            this.implemento2.Id = 5;
             this.implemento2.Precio_Implemento = 3000;
 
             //Eventos
-            //this.eventos = (ComandoConsultarTodosEventos)FabricaComandos.CrearComandoConsultarTodosEventos();
-            //this.eventos.LaEntidad = fabrica.ObtenerPersona_M1(11, "prueba", "prueba");
-            //this.listaEventos = (ListaEvento)this.eventos.Ejecutar();
-
             this.evento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;
