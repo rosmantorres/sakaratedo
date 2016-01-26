@@ -41,11 +41,21 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
                 resultado = daoRestriccionCompetencia.AgregarListaCompetenciaRestriccionCompetencia(this.RestriccionCompetencia, this.listaCompetencias);
 
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
-
                 throw ex;
-
             }
 
             return resultado;

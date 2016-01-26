@@ -7,6 +7,7 @@ using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
 using DatosSKD.DAO.Modulo8;
 using ExcepcionesSKD;
+using System.Data.SqlClient;
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
@@ -34,11 +35,21 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
                 resultado = daoRestriccionCinta.ConsultarRestriccionCintaDT();
             
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
             catch (Exception ex)
             {
-                
                 throw ex;
-            
             }
             
             return resultado;

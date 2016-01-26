@@ -7,6 +7,8 @@ using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
 using DatosSKD.Fabrica;
 using ExcepcionesSKD;
+using System.Data;
+using System.Data.SqlClient;
 
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
@@ -44,22 +46,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
                 return true;
 
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo3.FormatoIncorrectoException ex)
+            catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }
-            catch (ExcepcionesSKD.ExceptionSKD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw ex;
             }
 

@@ -12,6 +12,7 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD;
 using DominioSKD;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 //using System.Windows;
 
 
@@ -109,20 +110,39 @@ namespace Interfaz_Presentadores.Modulo8
         public Boolean agregarRest()
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
+            try
+            {
+                laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
+                /*laRestCinta.Descripcion = this.vista.descripcion_rest_cinta;
+                laRestCinta.Id = Int32.Parse(this.vista.comboRestCinta.SelectedValue);
+                laRestCinta.PuntosMinimos = Int32.Parse(this.vista.puntaje_min);
+                laRestCinta.TiempoDocente = Int32.Parse(this.vista.horas_docen);
+                laRestCinta.TiempoMaximo = Int32.Parse(this.vista.tiempo_Max);
+                laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);*/
 
-            laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
-            /*laRestCinta.Descripcion = this.vista.descripcion_rest_cinta;
-            laRestCinta.Id = Int32.Parse(this.vista.comboRestCinta.SelectedValue);
-            laRestCinta.PuntosMinimos = Int32.Parse(this.vista.puntaje_min);
-            laRestCinta.TiempoDocente = Int32.Parse(this.vista.horas_docen);
-            laRestCinta.TiempoMaximo = Int32.Parse(this.vista.tiempo_Max);
-            laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);*/
 
-
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionCinta(laRestCinta);
-            bool resultado = _comando.Ejecutar();
-            return resultado;
+                FabricaComandos _fabrica = new FabricaComandos();
+                Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionCinta(laRestCinta);
+                bool resultado = _comando.Ejecutar();
+                return resultado;
+            }
+            
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void Alerta(string msj)

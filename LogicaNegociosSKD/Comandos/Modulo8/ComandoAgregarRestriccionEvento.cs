@@ -7,6 +7,7 @@ using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
 using DatosSKD.Fabrica;
 using ExcepcionesSKD;
+using System.Data.SqlClient;
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
