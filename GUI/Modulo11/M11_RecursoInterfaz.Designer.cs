@@ -931,6 +931,33 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M11_Rango.
+        /// </summary>
+        internal static string RangoEvento {
+            get {
+                return ResourceManager.GetString("RangoEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=16.
+        /// </summary>
+        internal static string ResultadoAmbosAgregarError {
+            get {
+                return ResourceManager.GetString("ResultadoAmbosAgregarError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=15.
+        /// </summary>
+        internal static string ResultadoAmbosAgregarExito {
+            get {
+                return ResourceManager.GetString("ResultadoAmbosAgregarExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=10.
         /// </summary>
         internal static string ResultadoAmbosModificadoError {
@@ -949,6 +976,42 @@ namespace templateApp.GUI.Modulo11 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=3.
+        /// </summary>
+        internal static string ResultadoAscensoAgregarError {
+            get {
+                return ResourceManager.GetString("ResultadoAscensoAgregarError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=1.
+        /// </summary>
+        internal static string ResultadoAscensoAgregarExito {
+            get {
+                return ResourceManager.GetString("ResultadoAscensoAgregarExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=6.
+        /// </summary>
+        internal static string ResultadoKataAgregarError {
+            get {
+                return ResourceManager.GetString("ResultadoKataAgregarError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=5.
+        /// </summary>
+        internal static string ResultadoKataAgregarExito {
+            get {
+                return ResourceManager.GetString("ResultadoKataAgregarExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=6.
         /// </summary>
         internal static string ResultadoKataModificadoError {
@@ -963,6 +1026,24 @@ namespace templateApp.GUI.Modulo11 {
         internal static string ResultadoKataModificadoExito {
             get {
                 return ResourceManager.GetString("ResultadoKataModificadoExito", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=14.
+        /// </summary>
+        internal static string ResultadoKumiteAgregarError {
+            get {
+                return ResourceManager.GetString("ResultadoKumiteAgregarError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M11_ListarResultadoCompetencia.aspx?success=13.
+        /// </summary>
+        internal static string ResultadoKumiteAgregarExito {
+            get {
+                return ResourceManager.GetString("ResultadoKumiteAgregarExito", resourceCulture);
             }
         }
         
