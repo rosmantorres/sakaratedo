@@ -14,7 +14,6 @@ using DominioSKD.Entidades.Modulo1;
 namespace PruebasUnitariasSKD.Modulo1
 {
     [TestFixture]
-
     class PruebasUnitariasLogicaN
     {
         Encriptacion cripto = new Encriptacion();
