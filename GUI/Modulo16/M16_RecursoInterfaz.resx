@@ -303,7 +303,6 @@
   <data name="MENSAJE_SIN_FACTURAS" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Usted no Posee Facturas Asociadas.&lt;/div&gt;</value>
   </data>
-
   <data name="EXCEPTION_ITEM_INVALIDO_LINK" xml:space="preserve">
     <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=10</value>
   </data>
@@ -313,5 +312,16 @@
   <data name="EXCEPTION_CARRITO_VACIO_MENSAJE" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;No se ha podido realizar su pago ya que no tiene items en su carrito&lt;/div&gt;</value>
   </data>
-
+  <data name="ERROR_1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ERROR_2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ERROR_3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ERROR_4" xml:space="preserve">
+    <value>4</value>
+  </data>
 </root>

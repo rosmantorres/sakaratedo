@@ -139,16 +139,16 @@ namespace templateApp.GUI.Modulo16
                 System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             //Carga la Barra lateral del modulo indicado
-            ((SKD)Page.Master).IdModulo = "16";
+            ((SKD)Page.Master).IdModulo = M16_RecursoInterfaz.Modulo16;
             try
             {
                /*Obtengo el Carrito de la Persona pasandole el ID del session sino hubo ningun error previo o solamente
                   error de la base de datos*/
                 if (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] == null ||
-                    (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] != "1" &&
-                    Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE]  != "2" &&
-                    Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE]  != "3"&&
-                    Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE]  != "4"))
+                    (Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE] != M16_RecursoInterfaz.ERROR_1 &&
+                    Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE]  != M16_RecursoInterfaz.ERROR_2 &&
+                    Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE]  != M16_RecursoInterfaz.ERROR_3 &&
+                    Request.QueryString[M16_RecursoInterfaz.VARIABLE_MENSAJE]  != M16_RecursoInterfaz.ERROR_4))
                     this.elPresentador.LlenarTabla(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
                 //Nos indica si hubo alguna accion de agregar, modificar o eliminar
@@ -424,8 +424,7 @@ namespace templateApp.GUI.Modulo16
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 HttpContext.Current.Response.Redirect(M16_RecursoInterfaz.EXCEPTION_LINK);
-            }
-                
+            }                
         }
 
         #region EventHandlers
