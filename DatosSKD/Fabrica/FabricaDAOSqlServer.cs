@@ -42,10 +42,7 @@ namespace DatosSKD.Fabrica
         {
             return new DaoDojo();
         }
-        public static IDaoHistorialM ObtenerDAOHistorialMatricula()
-        {
-            return new DaoHistorialMatricula();
-        }
+        
         #endregion
 
         #region Modulo 5
