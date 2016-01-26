@@ -214,6 +214,15 @@ namespace Interfaz_Presentadores.Modulo9 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to El costo del evento no puede ser negativo.
+        /// </summary>
+        internal static string costoInvalido {
+            get {
+                return ResourceManager.GetString("costoInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to error.
         /// </summary>
         internal static string errorGet {
@@ -372,15 +381,6 @@ namespace Interfaz_Presentadores.Modulo9 {
         internal static string strEventoMod {
             get {
                 return ResourceManager.GetString("strEventoMod", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string String {
-            get {
-                return ResourceManager.GetString("String", resourceCulture);
             }
         }
         
