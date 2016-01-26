@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +46,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarListaCompetenciaRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionEvento.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarEventosSinRestriccion.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarCintaTodas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionEvento.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodosRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarCompetencias.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasAsociadas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasNoAsociadas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoEliminarListaCompetenciaRestriccionCompetencia.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarCompetencia.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarHorarioPractica.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarMatricula.cs" />
@@ -116,6 +136,8 @@
     <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionEvento.cs" />
     <Compile Include="Comandos\Modulo9\ComandoConsultarTodosEventos.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosProductos.cs" />
     <Compile Include="Comandos\Modulo9\ComandoDetallarEvento.cs" />

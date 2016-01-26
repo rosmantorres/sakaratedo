@@ -72,9 +72,13 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula.Costo = 5000;
 
             //Evento
+
+            /*this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
+=======
             this.evento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
+>>>>>>> e8ac3154aec28d056bea24d3a4ad8b0913ba08cd
             this.evento.Id = 1;
-            this.evento.Costo = 0;            
+            this.evento.Costo = 0;  */          
 
             //Iniciamos los atributos para la prueba de vacio
             this.PruebaComandoVacio = FabricaComandos.CrearComandoModificarCarrito();

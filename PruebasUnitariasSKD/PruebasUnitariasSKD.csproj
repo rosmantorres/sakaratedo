@@ -41,16 +41,6 @@
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
     </Reference>
-    <Reference Include="nunit.core">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\log4net.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
@@ -116,16 +106,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod15.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo16\PruebaComandoAgregarItem.cs" />
-    <Compile Include="Modulo16\PruebaComandoEliminarItem.cs" />
-    <Compile Include="Modulo16\PruebaComandoModificarCarrito.cs" />
-    <Compile Include="Modulo16\PruebaComandoRegistrarPago.cs" />
-    <Compile Include="Modulo16\PruebaDaoCarrito.cs" />
-    <Compile Include="Modulo16\PruebaComandoVerCarrito.cs" />
+    <Compile Include="Modulo16\PruebaComandoAgregarItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaComandoEliminarItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaComandoModificarCarrito.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaComandoRegistrarPago.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaComandoVerCarrito.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaDaoCarrito.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Modulo16\PruebaDaoConsultarImplementos.cs" />
+    <Compile Include="Modulo16\PruebaDaoDetallarImplemento.cs" />
     <Compile Include="Modulo16\RecursosPU_Mod16.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod16.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Modulo1\PruebasUnitariasDominio.cs" />
     <Compile Include="Modulo1\PruebasUnitariasDatos.cs" />
@@ -195,6 +199,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod7.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\PruebasRestCinta.cs" />
+    <Compile Include="Modulo8\PruebaDAORestriccionCompetencia.cs" />
     <Compile Include="Modulo8\RecursosPU_Mod8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
