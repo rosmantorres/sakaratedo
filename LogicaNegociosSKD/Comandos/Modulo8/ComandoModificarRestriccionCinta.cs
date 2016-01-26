@@ -31,8 +31,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             Boolean resultado = false;
             
             DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
-            
-            IDaoRestriccionCinta daoRestriccionCinta = fabricaDAO.ObtenerDAORestriccionCinta();
+
+            IDaoRestriccionCinta daoRestriccionCinta = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCinta();
 
             try
             {

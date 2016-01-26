@@ -31,7 +31,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
            
             try
             {
-                IDaoRestriccionCinta daoRestriccionCinta = fabricaDAO.ObtenerDAORestriccionCinta();
+                IDaoRestriccionCinta daoRestriccionCinta = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCinta();
                 resultado = daoRestriccionCinta.ConsultarRestriccionCintaDT();
             
             }
