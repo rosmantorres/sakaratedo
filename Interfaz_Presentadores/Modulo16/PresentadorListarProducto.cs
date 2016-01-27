@@ -55,7 +55,7 @@ namespace Interfaz_Presentadores.Modulo16
                 Comando<Entidad> comandoListarProductos = FabricaComandos.CrearComandoConsultarTodosProductos();
 
                 // Casteamos el parametro
-                PersonaM1 param = new PersonaM1();
+                PersonaM1 param = (PersonaM1)FabricaEntidades.ObtenerPersonaModulo16();
                 param._Id = persona;
                 comandoListarProductos.LaEntidad = param;
 
@@ -253,7 +253,7 @@ namespace Interfaz_Presentadores.Modulo16
                         M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                     string id = e.CommandName;
-                    Implemento implemento = new Implemento();
+                    DominioSKD.Entidades.Modulo15.Implemento implemento = (DominioSKD.Entidades.Modulo15.Implemento)FabricaEntidades.ObtenerImplemento();
                     implemento.Id_Implemento = int.Parse(id);
 
                     // casteamos

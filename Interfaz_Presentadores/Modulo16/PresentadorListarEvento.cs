@@ -54,7 +54,7 @@ namespace Interfaz_Presentadores.Modulo16
                 Comando<Entidad> comandoListarEventos = FabricaComandos.CrearComandoConsultarTodosEventos();
 
                 // Casteamos el parametro
-                PersonaM1 param = new PersonaM1();
+                PersonaM1 param = (PersonaM1)FabricaEntidades.ObtenerPersonaModulo16();
                 param._Id = persona;
                 comandoListarEventos.LaEntidad = param;
 
@@ -224,7 +224,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                Evento evento = new Evento();
+                DominioSKD.Evento evento = (DominioSKD.Evento)FabricaEntidades.ObtenerEventoCompletos();
                 evento.Id = int.Parse(id);
 
                 //Casteamos

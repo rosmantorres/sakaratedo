@@ -428,7 +428,8 @@ namespace Interfaz_Presentadores.Modulo16
                         cantidad = int.Parse(cantidadNueva);
 
                         //Pasamos el ID que vino del boton                    
-                        Evento objeto = (Evento)FabricaEntidades.ObtenerEvento();
+                        DominioSKD.Entidades.Modulo9.Evento objeto = 
+                            (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
                         objeto.Id = int.Parse(datos[1]);
 
                         //Instancio el comando para Registrar un Pago y obtengo el exito o fallo del proceso                      
@@ -802,7 +803,7 @@ namespace Interfaz_Presentadores.Modulo16
                     TipoObjeto = 3;
 
                     //Pasamos el ID que vino del boton                
-                    Entidad objeto = (Evento)FabricaEntidades.ObtenerEvento();
+                    Entidad objeto = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
                     objeto.Id = int.Parse(datos[1]);
                 
                     //Instancio el comando para eliminar el evento del carrito y obtengo el exito o fallo del proceso
@@ -981,7 +982,7 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                Implemento implemento = new Implemento();
+                DominioSKD.Entidades.Modulo15.Implemento implemento = (DominioSKD.Entidades.Modulo15.Implemento)FabricaEntidades.ObtenerImplemento();
                 implemento.Id_Implemento = int.Parse(id);
 
                 // Casteamos
@@ -1157,7 +1158,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                Evento evento = new Evento();
+                DominioSKD.Evento evento = (DominioSKD.Evento)FabricaEntidades.ObtenerEventoCompletos();
                 evento.Id = int.Parse(id);
 
                 //Casteamos
@@ -1326,7 +1327,7 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                Matricula matricula = new Matricula();
+                DominioSKD.Entidades.Modulo6.Matricula matricula = (DominioSKD.Entidades.Modulo6.Matricula)FabricaEntidades.ObtenerMatricula();
                 matricula.Id = int.Parse(id);
 
                 //Casteamos
