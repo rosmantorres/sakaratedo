@@ -23,33 +23,33 @@ namespace templateApp.GUI.Modulo3
         }
 
         #region Contrato
-        public int obtenerIdOrg()
+        public int obtenerIdOrg
         {
-            return Int32.Parse(Request.QueryString["idOrg"]);
+            get { return Int32.Parse(Request.QueryString["idOrg"]); }
         }
-        public string obtenerNombreOrg()
+        public string obtenerNombreOrg
         {
-            return this.nombre.Value;
+            get { return this.nombre.Value; }
         }
-        public string obtenerEmail()
+        public string obtenerEmail
         {
-            return this.email.Value;
+            get { return this.email.Value; }
         }
-        public string obtenerTelefono()
+        public string obtenerTelefono
         {
-            return this.telefono.Value;
+            get { return this.telefono.Value; }
         }
-        public string obtenerDireccion()
+        public string obtenerDireccion
         {
-            return this.direccion.Value;
+            get { return this.direccion.Value; }
         }
-        public string obtenerEstado()
+        public string obtenerEstado
         {
-            return this.ListEstados.SelectedValue;
+            get { return this.ListEstados.SelectedValue; }
         }
-        public string obtenerTecnica()
+        public string obtenerTecnica
         {
-            return this.ListTecnica.SelectedValue;
+            get { return this.ListTecnica.SelectedValue; }
         }
         public void alertaModificarFallidoEstiloOrg(ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
         {

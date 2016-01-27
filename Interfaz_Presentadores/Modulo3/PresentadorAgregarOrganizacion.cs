@@ -30,24 +30,24 @@ namespace Interfaz_Presentadores.Modulo3
 
             //Se llena una lista de todos los valores que se piden por pantalla para validar si estan vacios
             List<String> laListaDeInputs = new List<String>();
-            laListaDeInputs.Add(this.vista.obtenerNombreOrg());
-            laListaDeInputs.Add(this.vista.obtenerEmail());
-            laListaDeInputs.Add(this.vista.obtenerTelefono().ToString());
-            laListaDeInputs.Add(this.vista.obtenerDireccion());
-            laListaDeInputs.Add(this.vista.obtenerEstado());
-            laListaDeInputs.Add(this.vista.obtenerTecnica());
+            laListaDeInputs.Add(this.vista.obtenerNombreOrg);
+            laListaDeInputs.Add(this.vista.obtenerEmail);
+            laListaDeInputs.Add(this.vista.obtenerTelefono.ToString());
+            laListaDeInputs.Add(this.vista.obtenerDireccion);
+            laListaDeInputs.Add(this.vista.obtenerEstado);
+            laListaDeInputs.Add(this.vista.obtenerTecnica);
 
             if (Validaciones.ValidarCamposVacios(laListaDeInputs))
             {
 
                 try
                 {
-                     laOrganizacion.Nombre = this.vista.obtenerNombreOrg();
-                     laOrganizacion.Email = this.vista.obtenerEmail();
-                     laOrganizacion.Telefono = Int32.Parse(this.vista.obtenerTelefono());
-                     laOrganizacion.Direccion = this.vista.obtenerDireccion();
-                     laOrganizacion.Estado = this.vista.obtenerEstado();
-                     laOrganizacion.Estilo = this.vista.obtenerTecnica();
+                     laOrganizacion.Nombre = this.vista.obtenerNombreOrg;
+                     laOrganizacion.Email = this.vista.obtenerEmail;
+                     laOrganizacion.Telefono = Int32.Parse(this.vista.obtenerTelefono);
+                     laOrganizacion.Direccion = this.vista.obtenerDireccion;
+                     laOrganizacion.Estado = this.vista.obtenerEstado;
+                     laOrganizacion.Estilo = this.vista.obtenerTecnica;
 
                      Comando<bool> _comando = FabricaComandos.ObtenerEjecutarAgregarOrganizacion(laOrganizacion);
                      bool resultado = _comando.Ejecutar();

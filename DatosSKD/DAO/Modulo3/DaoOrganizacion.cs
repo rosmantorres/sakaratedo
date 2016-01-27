@@ -260,6 +260,7 @@ namespace DatosSKD.DAO.Modulo3
                     laOrganizacion.Direccion = row[RecursosDaoModulo3.AliasDireccionOrg].ToString();
                     laOrganizacion.Estado = row[RecursosDaoModulo3.AliasEstadoOrg].ToString();
                     laOrganizacion.Estilo = row[RecursosDaoModulo3.AliasNombreEstilo].ToString();
+                    laOrganizacion.Status = bool.Parse(row[RecursosDaoModulo3.AliasStatusOrg].ToString());
 
                     laListaOrganizaciones.Add(laOrganizacion);
 
@@ -505,6 +506,48 @@ namespace DatosSKD.DAO.Modulo3
             return retorno;
 
 
+        }
+
+        /// <summary>
+        /// Método Modificar el status de una Organizacion especifica en la Base de Datos 
+        /// </summary>
+        /// <param name="parametro">Organizacion</param>
+        /// <returns>True si lo modifica, False si no</returns>
+        public bool ModificarStatus(Entidad parametro)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
+
+
+                    List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+
+                    Parametro elParametro = new Parametro(RecursosDaoModulo3.ParamIdOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(), false);
+                    parametros.Add(elParametro);
+                    
+
+                    //BDConexion laConexion = new BDConexion();// abres la conexion
+                    this.EjecutarStoredProcedure(RecursosDaoModulo3.ModificarStatusOrganizacion
+                                                 , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+
+                    return true;
+            }
+            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo3.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return false;
         }
         #endregion
     }

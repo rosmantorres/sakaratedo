@@ -207,9 +207,8 @@ namespace DatosSKD.DAO.Modulo5
           
             DominioSKD.Entidades.Modulo5.Cinta laCinta;
 
-            laCinta = (DominioSKD.Entidades.Modulo5.Cinta)FabricaEntidades.ObtenerCinta_M5();
+            laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-            laCinta.Id_cinta = parametro.Id;
             try
             {
                // laConexion = new BDConexion();
@@ -280,7 +279,7 @@ namespace DatosSKD.DAO.Modulo5
            // BDConexion laConexion;
             List<Entidad> laListaCintas = new List<Entidad>();
             List<Parametro> parametros;
-            
+            string status;
             DominioSKD.Entidades.Modulo5.Cinta laCinta;
 
             try
@@ -301,9 +300,15 @@ namespace DatosSKD.DAO.Modulo5
                     laCinta.Rango = row[RecursosDaoModulo5.AliasRangoCinta].ToString();
                     laCinta.Clasificacion = row[RecursosDaoModulo5.AliasClasificacionCint].ToString();
                     laCinta.Significado = row[RecursosDaoModulo5.AliasSignificadoCinta].ToString();
-                    laCinta.Orden = int.Parse(row[RecursosDaoModulo5.AliasOrdenCinta].ToString());
+                    laCinta.Orden = int.Parse(row[RecursosDaoModulo5.AliasOrdenCinta].ToString());                
                     laCinta.Organizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
                                                                         , row[RecursosDaoModulo5.AliasNombreOrg].ToString());
+                    status = row[RecursosDaoModulo5.AliasStatusCinta].ToString();
+                    if (status == "True")
+                        laCinta.Status = true;
+                    else
+                        laCinta.Status = false;
+
                     laListaCintas.Add(laCinta);
 
                 }
@@ -375,8 +380,10 @@ namespace DatosSKD.DAO.Modulo5
                 foreach (Resultado elResultado in resultados)
                 {
                     if (elResultado.etiqueta == RecursosDaoModulo5.ParamSalidaNumOrganizacion)
-                        if (int.Parse(elResultado.valor) == 1)
+                        if (int.Parse(elResultado.valor) == 1){
                             retorno = true;
+                            return retorno;
+                        }                            
                         else
                         {
                             Logger.EscribirWarning(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.Mensaje_Organizacion_Inexistente, System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -584,9 +591,8 @@ namespace DatosSKD.DAO.Modulo5
             Parametro elParametro = new Parametro();
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
 
-            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
-
-            laOrganizacion.Id_organizacion = parametro.Id;
+            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
+          
 
             try
             {
@@ -610,7 +616,8 @@ namespace DatosSKD.DAO.Modulo5
                     laCinta.Clasificacion = row[RecursosDaoModulo5.AliasClasificacionCint].ToString();
                     laCinta.Significado = row[RecursosDaoModulo5.AliasSignificadoCinta].ToString();
                     laCinta.Orden = int.Parse(row[RecursosDaoModulo5.AliasOrdenCinta].ToString());
-                    laCinta.Organizacion = new DominioSKD.Entidades.Modulo3.Organizacion(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
+                    laCinta.Status = bool.Parse(row[RecursosDaoModulo5.AliasStatusCinta].ToString());
+                    laCinta.Organizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
                                                                          , row[RecursosDaoModulo5.AliasNombreOrg].ToString());
                     laListaCintas.Add(laCinta);
 
@@ -648,6 +655,48 @@ namespace DatosSKD.DAO.Modulo5
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return laListaCintas;
+        }
+        /// Método Modificar el Status de una Cinta especifica en la Base de Datos 
+        /// </summary>
+        /// <param name="parametro">Cinta</param>
+        /// <returns>True si hace el cambio, False si no</returns>
+        public bool ModificarStatus(Entidad parametro)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
+
+                        List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+
+
+                        Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamModificarCinta, SqlDbType.Int, laCinta.Id_cinta.ToString(), false);
+                        parametros.Add(elParametro);
+                        elParametro = new Parametro(RecursosDaoModulo5.ParamNomOrg, SqlDbType.VarChar, laCinta.Organizacion.Nombre, false);
+                        parametros.Add(elParametro);
+                        //  BDConexion laConexion = new BDConexion();// abres la conexion
+
+                        string query = RecursosDaoModulo5.ModificarStatusCinta;
+                        List<Resultado> resultados = this.EjecutarStoredProcedure(query, parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+
+
+            } // Fin Try
+            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return true;
         }
 
         #endregion

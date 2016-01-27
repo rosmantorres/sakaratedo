@@ -124,8 +124,8 @@
     <value>&lt;tr&gt;</value>
   </data>
   <data name="BotonActivarOrg" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked id="</value>
+    <value>&lt;a class="make-switch switch-mini statusToggle" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked value="</value>
   </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
@@ -134,8 +134,8 @@
     <value>&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonDesactivarOrg" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
+    <value>&lt;a class="make-switch switch-mini statusToggle" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " value="</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>

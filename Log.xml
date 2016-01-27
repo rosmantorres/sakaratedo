@@ -2003,3 +2003,1818 @@ Error Number:2812,State:62,Class:16
 ClientConnectionId:965db426-e050-490b-97b5-740beac0f27a
 Error Number:2812,State:62,Class:16
 >>>>>>> fd28240094e61dc43bf0a6fecacc90c7271b679e
+2016-01-26 15:04:28,435 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 15:04:28,463 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 15:04:28,463 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 15:04:28,463 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 15:04:28,528 INFO  DaoCinta - *******************************************************
+2016-01-26 15:04:28,528 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:04:28,528 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:04:28,528 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 15:04:29,630 INFO  DaoCinta - *******************************************************
+2016-01-26 15:04:29,630 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:04:29,630 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:04:29,630 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 15:04:29,690 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 15:04:29,690 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 15:04:29,690 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 15:04:29,690 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 15:05:17,182 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 15:05:17,182 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 15:05:17,182 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:05:17,182 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 15:05:17,239 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:05:17,239 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:05:17,239 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:05:17,239 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 15:05:17,492 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:05:17,492 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:05:17,492 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:05:17,492 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 15:05:17,512 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 15:05:17,512 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 15:05:17,512 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:05:17,514 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 15:08:43,227 INFO  EjecutarAgregarOrganizacion - *******************************************************
+2016-01-26 15:08:43,227 INFO  EjecutarAgregarOrganizacion - Clase: EjecutarAgregarOrganizacion
+2016-01-26 15:08:43,227 INFO  EjecutarAgregarOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:08:43,227 INFO  EjecutarAgregarOrganizacion - Metodo: Ejecutar
+2016-01-26 15:08:43,247 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:08:43,247 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:08:43,247 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:08:43,247 INFO  DaoOrganizacion - Metodo: Agregar
+2016-01-26 15:08:43,269 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:08:43,269 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:08:43,269 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:08:43,269 INFO  DaoOrganizacion - Metodo: ValidarNombreOrganizacion
+2016-01-26 15:08:43,319 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:08:43,319 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:08:43,319 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:08:43,319 INFO  DaoOrganizacion - Metodo: ValidarNombreOrganizacion
+2016-01-26 15:08:43,449 ERROR EjecutarAgregarOrganizacion - *******************************************************
+2016-01-26 15:08:43,449 ERROR EjecutarAgregarOrganizacion - Mensaje: La Organizacion ya existe
+2016-01-26 15:08:43,459 ERROR EjecutarAgregarOrganizacion - Origen: DatosSKD
+2016-01-26 15:08:43,459 ERROR EjecutarAgregarOrganizacion - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-26 15:08:43,459 ERROR EjecutarAgregarOrganizacion - StackTrace:    at DatosSKD.DAO.Modulo3.DaoOrganizacion.Agregar(Entidad parametro) in c:\sakaratedo\DatosSKD\DAO\Modulo3\DaoOrganizacion.cs:line 67
+   at LogicaNegociosSKD.Comandos.Modulo3.EjecutarAgregarOrganizacion.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo3\EjecutarAgregarOrganizacion.cs:line 33
+2016-01-26 15:08:43,459 ERROR EjecutarAgregarOrganizacion - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2016-01-26 15:11:00,064 INFO  EjecutarAgregarOrganizacion - *******************************************************
+2016-01-26 15:11:00,064 INFO  EjecutarAgregarOrganizacion - Clase: EjecutarAgregarOrganizacion
+2016-01-26 15:11:00,064 INFO  EjecutarAgregarOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:11:00,064 INFO  EjecutarAgregarOrganizacion - Metodo: Ejecutar
+2016-01-26 15:11:00,079 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:11:00,079 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:11:00,079 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:11:00,079 INFO  DaoOrganizacion - Metodo: Agregar
+2016-01-26 15:11:00,096 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:11:00,096 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:11:00,096 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:11:00,096 INFO  DaoOrganizacion - Metodo: ValidarNombreOrganizacion
+2016-01-26 15:11:00,129 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:11:00,129 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:11:00,129 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:11:00,129 INFO  DaoOrganizacion - Metodo: ValidarNombreOrganizacion
+2016-01-26 15:11:00,154 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:11:00,154 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:11:00,154 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:11:00,154 INFO  DaoOrganizacion - Metodo: ValidarEstilo
+2016-01-26 15:11:00,196 WARN  DaoOrganizacion - *******************************************************
+2016-01-26 15:11:00,196 WARN  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:11:00,196 WARN  DaoOrganizacion - Mensaje: La Tecnica seleccionada no existe
+2016-01-26 15:11:00,196 WARN  DaoOrganizacion - Metodo: ValidarEstilo
+2016-01-26 15:11:00,251 ERROR EjecutarAgregarOrganizacion - *******************************************************
+2016-01-26 15:11:00,251 ERROR EjecutarAgregarOrganizacion - Mensaje: La Tecnica seleccionada no existe
+2016-01-26 15:11:00,254 ERROR EjecutarAgregarOrganizacion - Origen: DatosSKD
+2016-01-26 15:11:00,254 ERROR EjecutarAgregarOrganizacion - Metodo: Boolean ValidarEstilo(DominioSKD.Entidad)
+2016-01-26 15:11:00,254 ERROR EjecutarAgregarOrganizacion - StackTrace:    at DatosSKD.DAO.Modulo3.DaoOrganizacion.ValidarEstilo(Entidad parametro) in c:\sakaratedo\DatosSKD\DAO\Modulo3\DaoOrganizacion.cs:line 477
+   at DatosSKD.DAO.Modulo3.DaoOrganizacion.Agregar(Entidad parametro) in c:\sakaratedo\DatosSKD\DAO\Modulo3\DaoOrganizacion.cs:line 37
+   at LogicaNegociosSKD.Comandos.Modulo3.EjecutarAgregarOrganizacion.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo3\EjecutarAgregarOrganizacion.cs:line 33
+2016-01-26 15:11:00,254 ERROR EjecutarAgregarOrganizacion - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2016-01-26 15:11:33,119 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 15:11:33,119 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 15:11:33,119 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:11:33,119 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 15:11:33,199 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:11:33,199 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:11:33,199 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:11:33,199 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 15:11:33,399 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:11:33,399 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:11:33,399 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:11:33,399 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 15:11:33,417 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 15:11:33,417 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 15:11:33,417 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:11:33,417 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 15:15:54,278 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 15:15:54,278 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 15:15:54,278 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:15:54,278 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 15:15:54,358 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:15:54,358 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:15:54,358 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:15:54,358 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 15:15:54,398 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:15:54,398 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:15:54,398 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:15:54,398 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 15:15:54,415 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 15:15:54,415 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 15:15:54,415 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:15:54,415 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 15:16:01,800 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 15:16:01,800 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 15:16:01,800 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 15:16:01,800 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 15:16:01,815 INFO  DaoCinta - *******************************************************
+2016-01-26 15:16:01,815 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:16:01,815 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:16:01,815 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 15:16:01,840 INFO  DaoCinta - *******************************************************
+2016-01-26 15:16:01,840 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:16:01,840 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:16:01,840 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 15:16:01,850 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 15:16:01,850 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 15:16:01,850 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 15:16:01,850 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 15:17:21,435 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-26 15:17:21,435 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-26 15:17:21,435 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-26 15:17:21,435 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-26 15:17:21,480 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:17:21,480 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:17:21,480 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:17:21,480 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-26 15:17:21,562 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:17:21,562 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:17:21,565 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:17:21,565 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-26 15:17:21,585 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-26 15:17:21,585 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-26 15:17:21,585 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-26 15:17:21,585 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-26 15:18:40,604 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:18:40,604 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-26 15:18:40,604 INFO  EjecutarAgregarCinta - Mensaje: Entrada en el Método
+2016-01-26 15:18:40,604 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-26 15:18:40,692 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:40,692 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:40,692 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:18:40,692 INFO  DaoCinta - Metodo: Agregar
+2016-01-26 15:18:40,715 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:40,715 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:40,715 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:18:40,715 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:18:40,802 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:40,802 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:40,802 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:18:40,802 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:18:40,817 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:40,817 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:40,817 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:18:40,817 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:18:40,852 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:40,852 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:40,852 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:18:40,852 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:18:40,870 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:40,870 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:40,870 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:18:40,870 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:18:40,897 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:40,897 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:40,897 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:18:40,897 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:18:41,130 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:41,130 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:41,132 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:18:41,132 INFO  DaoCinta - Metodo: Agregar
+2016-01-26 15:18:41,142 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:18:41,142 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-26 15:18:41,142 INFO  EjecutarAgregarCinta - Mensaje: Salida del Método
+2016-01-26 15:18:41,142 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-26 15:18:41,227 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 15:18:41,227 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 15:18:41,227 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 15:18:41,227 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 15:18:41,240 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:41,240 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:41,240 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:18:41,240 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 15:18:41,300 INFO  DaoCinta - *******************************************************
+2016-01-26 15:18:41,300 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:18:41,300 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:18:41,300 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 15:18:41,315 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 15:18:41,315 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 15:18:41,315 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 15:18:41,315 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 15:18:51,991 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-26 15:18:51,991 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-26 15:18:51,991 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-26 15:18:51,991 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-26 15:18:52,049 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:18:52,049 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:18:52,049 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 15:18:52,049 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-26 15:18:52,069 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 15:18:52,069 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 15:18:52,069 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 15:18:52,069 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-26 15:18:52,086 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-26 15:18:52,086 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-26 15:18:52,086 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-26 15:18:52,086 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-26 15:19:17,087 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:19:17,087 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-26 15:19:17,087 INFO  EjecutarAgregarCinta - Mensaje: Entrada en el Método
+2016-01-26 15:19:17,087 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-26 15:19:17,137 INFO  DaoCinta - *******************************************************
+2016-01-26 15:19:17,137 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:19:17,137 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:19:17,137 INFO  DaoCinta - Metodo: Agregar
+2016-01-26 15:19:17,155 INFO  DaoCinta - *******************************************************
+2016-01-26 15:19:17,155 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:19:17,155 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:19:17,155 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:19:17,220 INFO  DaoCinta - *******************************************************
+2016-01-26 15:19:17,220 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:19:17,220 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:19:17,220 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:19:17,240 INFO  DaoCinta - *******************************************************
+2016-01-26 15:19:17,240 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:19:17,240 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:19:17,240 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:19:17,302 INFO  DaoCinta - *******************************************************
+2016-01-26 15:19:17,302 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:19:17,302 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:19:17,302 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:19:17,490 ERROR EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:19:17,490 ERROR EjecutarAgregarCinta - Mensaje: La Cinta Para La Organizacion Seleccionada Esta Repetida
+2016-01-26 15:19:17,492 ERROR EjecutarAgregarCinta - Origen: DatosSKD
+2016-01-26 15:19:17,492 ERROR EjecutarAgregarCinta - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-26 15:19:17,492 ERROR EjecutarAgregarCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.Agregar(Entidad parametro) in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 79
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarAgregarCinta.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarAgregarCinta.cs:line 35
+2016-01-26 15:19:17,492 ERROR EjecutarAgregarCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2016-01-26 15:22:44,072 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:22:44,072 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-26 15:22:44,072 INFO  EjecutarAgregarCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:44,072 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-26 15:22:44,089 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:44,089 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:44,089 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:44,089 INFO  DaoCinta - Metodo: Agregar
+2016-01-26 15:22:44,127 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:44,127 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:44,127 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:44,127 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:22:44,184 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:44,184 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:44,184 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:22:44,184 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:22:44,217 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:44,217 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:44,217 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:44,217 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:22:44,237 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:44,237 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:44,237 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:22:44,237 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:22:44,249 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:44,249 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:44,249 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:44,249 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:22:44,277 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:44,277 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:44,279 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:22:44,279 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:22:44,359 ERROR EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:22:44,359 ERROR EjecutarAgregarCinta - Mensaje: Orden de Cinta Repetido
+2016-01-26 15:22:44,359 ERROR EjecutarAgregarCinta - Origen: DatosSKD
+2016-01-26 15:22:44,359 ERROR EjecutarAgregarCinta - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-26 15:22:44,359 ERROR EjecutarAgregarCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.Agregar(Entidad parametro) in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 73
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarAgregarCinta.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarAgregarCinta.cs:line 35
+2016-01-26 15:22:44,359 ERROR EjecutarAgregarCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2016-01-26 15:22:54,135 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:22:54,135 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-26 15:22:54,135 INFO  EjecutarAgregarCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:54,135 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-26 15:22:54,173 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:54,173 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:54,173 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:54,173 INFO  DaoCinta - Metodo: Agregar
+2016-01-26 15:22:54,188 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:54,188 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:54,188 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:54,188 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:22:54,203 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:54,203 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:54,203 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:22:54,203 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:22:54,220 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:54,220 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:54,220 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:54,220 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:22:54,235 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:54,235 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:54,235 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:22:54,235 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:22:54,250 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:54,250 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:54,250 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:54,253 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:22:54,265 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:54,268 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:54,268 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:22:54,268 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:22:54,313 ERROR EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:22:54,313 ERROR EjecutarAgregarCinta - Mensaje: Orden de Cinta Repetido
+2016-01-26 15:22:54,313 ERROR EjecutarAgregarCinta - Origen: DatosSKD
+2016-01-26 15:22:54,313 ERROR EjecutarAgregarCinta - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-26 15:22:54,313 ERROR EjecutarAgregarCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.Agregar(Entidad parametro) in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 73
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarAgregarCinta.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarAgregarCinta.cs:line 35
+2016-01-26 15:22:54,313 ERROR EjecutarAgregarCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2016-01-26 15:22:59,768 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:22:59,768 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-26 15:22:59,768 INFO  EjecutarAgregarCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:59,768 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-26 15:22:59,785 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:59,785 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:59,785 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:59,785 INFO  DaoCinta - Metodo: Agregar
+2016-01-26 15:22:59,800 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:59,800 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:59,800 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:59,800 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:22:59,818 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:59,818 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:59,818 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:22:59,818 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:22:59,830 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:59,830 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:59,830 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:59,830 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:22:59,845 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:59,845 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:59,845 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:22:59,845 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:22:59,863 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:59,863 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:59,863 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:22:59,863 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:22:59,883 INFO  DaoCinta - *******************************************************
+2016-01-26 15:22:59,883 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:22:59,883 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:22:59,883 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:22:59,960 ERROR EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:22:59,960 ERROR EjecutarAgregarCinta - Mensaje: Orden de Cinta Repetido
+2016-01-26 15:22:59,960 ERROR EjecutarAgregarCinta - Origen: DatosSKD
+2016-01-26 15:22:59,960 ERROR EjecutarAgregarCinta - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-26 15:22:59,960 ERROR EjecutarAgregarCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.Agregar(Entidad parametro) in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 73
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarAgregarCinta.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarAgregarCinta.cs:line 35
+2016-01-26 15:22:59,960 ERROR EjecutarAgregarCinta - InnerException: System.Exception: Exception of type 'System.Exception' was thrown.
+2016-01-26 15:23:06,199 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:23:06,199 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-26 15:23:06,199 INFO  EjecutarAgregarCinta - Mensaje: Entrada en el Método
+2016-01-26 15:23:06,199 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-26 15:23:06,209 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,209 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,209 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:23:06,209 INFO  DaoCinta - Metodo: Agregar
+2016-01-26 15:23:06,226 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,226 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,226 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:23:06,226 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:23:06,241 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,241 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,241 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:23:06,241 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-26 15:23:06,249 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,249 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,249 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:23:06,249 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:23:06,264 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,264 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,264 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:23:06,264 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-26 15:23:06,274 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,274 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,274 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:23:06,274 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:23:06,284 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,284 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,284 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:23:06,284 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-26 15:23:06,309 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,309 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,309 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:23:06,309 INFO  DaoCinta - Metodo: Agregar
+2016-01-26 15:23:06,324 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-26 15:23:06,324 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-26 15:23:06,324 INFO  EjecutarAgregarCinta - Mensaje: Salida del Método
+2016-01-26 15:23:06,324 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-26 15:23:06,399 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 15:23:06,399 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 15:23:06,399 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 15:23:06,399 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 15:23:06,411 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,414 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,414 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 15:23:06,414 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 15:23:06,436 INFO  DaoCinta - *******************************************************
+2016-01-26 15:23:06,436 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 15:23:06,436 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 15:23:06,436 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 15:23:06,451 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 15:23:06,451 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 15:23:06,451 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 15:23:06,451 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 18:03:44,771 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 18:03:44,791 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 18:03:44,791 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 18:03:44,791 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 18:03:44,831 INFO  DaoCinta - *******************************************************
+2016-01-26 18:03:44,831 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 18:03:44,831 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 18:03:44,831 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 18:03:45,181 INFO  DaoCinta - *******************************************************
+2016-01-26 18:03:45,184 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 18:03:45,184 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 18:03:45,184 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 18:03:45,201 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 18:03:45,201 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 18:03:45,201 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 18:03:45,201 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 19:51:28,802 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 19:51:28,815 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 19:51:28,815 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 19:51:28,815 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 19:51:28,835 INFO  DaoCinta - *******************************************************
+2016-01-26 19:51:28,835 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 19:51:28,835 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 19:51:28,835 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 19:51:29,101 ERROR DaoCinta - *******************************************************
+2016-01-26 19:51:29,101 ERROR DaoCinta - Mensaje: 'column' argument cannot be null.
+Parameter name: column
+2016-01-26 19:51:29,119 ERROR DaoCinta - Origen: System.Data
+2016-01-26 19:51:29,165 ERROR DaoCinta - Metodo: Void CheckColumn(System.Data.DataColumn)
+2016-01-26 19:51:29,165 ERROR DaoCinta - StackTrace:    at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 305
+2016-01-26 19:51:29,165 ERROR DaoCinta - InnerException: 
+2016-01-26 19:51:29,229 ERROR EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 19:51:29,229 ERROR EjecutarConsultarTodosCinta - Mensaje: No se pudo completar la operacion
+2016-01-26 19:51:29,232 ERROR EjecutarConsultarTodosCinta - Origen: DatosSKD
+2016-01-26 19:51:29,232 ERROR EjecutarConsultarTodosCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodos()
+2016-01-26 19:51:29,233 ERROR EjecutarConsultarTodosCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 335
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarConsultarTodosCinta.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarConsultarTodosCinta.cs:line 28
+2016-01-26 19:51:29,233 ERROR EjecutarConsultarTodosCinta - InnerException: System.ArgumentNullException: 'column' argument cannot be null.
+Parameter name: column
+   at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 305
+2016-01-26 19:59:13,906 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 19:59:13,930 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 19:59:13,930 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 19:59:13,930 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 19:59:14,050 INFO  DaoCinta - *******************************************************
+2016-01-26 19:59:14,050 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 19:59:14,050 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 19:59:14,050 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 19:59:14,299 ERROR DaoCinta - *******************************************************
+2016-01-26 19:59:14,299 ERROR DaoCinta - Mensaje: 'column' argument cannot be null.
+Parameter name: column
+2016-01-26 19:59:14,308 ERROR DaoCinta - Origen: System.Data
+2016-01-26 19:59:14,308 ERROR DaoCinta - Metodo: Void CheckColumn(System.Data.DataColumn)
+2016-01-26 19:59:14,309 ERROR DaoCinta - StackTrace:    at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 305
+2016-01-26 19:59:14,309 ERROR DaoCinta - InnerException: 
+2016-01-26 19:59:14,370 ERROR EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 19:59:14,371 ERROR EjecutarConsultarTodosCinta - Mensaje: No se pudo completar la operacion
+2016-01-26 19:59:14,379 ERROR EjecutarConsultarTodosCinta - Origen: DatosSKD
+2016-01-26 19:59:14,379 ERROR EjecutarConsultarTodosCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodos()
+2016-01-26 19:59:14,380 ERROR EjecutarConsultarTodosCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 338
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarConsultarTodosCinta.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarConsultarTodosCinta.cs:line 28
+2016-01-26 19:59:14,380 ERROR EjecutarConsultarTodosCinta - InnerException: System.ArgumentNullException: 'column' argument cannot be null.
+Parameter name: column
+   at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 305
+2016-01-26 20:01:29,953 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:01:29,969 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:01:29,969 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 20:01:29,969 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:01:29,992 INFO  DaoCinta - *******************************************************
+2016-01-26 20:01:29,992 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:01:29,992 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:01:29,992 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:01:30,179 ERROR DaoCinta - *******************************************************
+2016-01-26 20:01:30,179 ERROR DaoCinta - Mensaje: 'column' argument cannot be null.
+Parameter name: column
+2016-01-26 20:01:30,188 ERROR DaoCinta - Origen: System.Data
+2016-01-26 20:01:30,188 ERROR DaoCinta - Metodo: Void CheckColumn(System.Data.DataColumn)
+2016-01-26 20:01:30,188 ERROR DaoCinta - StackTrace:    at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 307
+2016-01-26 20:01:30,188 ERROR DaoCinta - InnerException: 
+2016-01-26 20:01:30,233 ERROR EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:01:30,233 ERROR EjecutarConsultarTodosCinta - Mensaje: No se pudo completar la operacion
+2016-01-26 20:01:30,239 ERROR EjecutarConsultarTodosCinta - Origen: DatosSKD
+2016-01-26 20:01:30,239 ERROR EjecutarConsultarTodosCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodos()
+2016-01-26 20:01:30,239 ERROR EjecutarConsultarTodosCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 338
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarConsultarTodosCinta.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarConsultarTodosCinta.cs:line 28
+2016-01-26 20:01:30,240 ERROR EjecutarConsultarTodosCinta - InnerException: System.ArgumentNullException: 'column' argument cannot be null.
+Parameter name: column
+   at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 307
+2016-01-26 20:04:37,027 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:04:37,053 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:04:37,053 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 20:04:37,053 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:04:37,089 INFO  DaoCinta - *******************************************************
+2016-01-26 20:04:37,090 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:04:37,090 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:04:37,090 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:04:37,630 ERROR DaoCinta - *******************************************************
+2016-01-26 20:04:37,630 ERROR DaoCinta - Mensaje: 'column' argument cannot be null.
+Parameter name: column
+2016-01-26 20:04:37,637 ERROR DaoCinta - Origen: System.Data
+2016-01-26 20:04:37,638 ERROR DaoCinta - Metodo: Void CheckColumn(System.Data.DataColumn)
+2016-01-26 20:04:37,638 ERROR DaoCinta - StackTrace:    at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 307
+2016-01-26 20:04:37,639 ERROR DaoCinta - InnerException: 
+2016-01-26 20:04:37,689 ERROR EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:04:37,689 ERROR EjecutarConsultarTodosCinta - Mensaje: No se pudo completar la operacion
+2016-01-26 20:04:37,695 ERROR EjecutarConsultarTodosCinta - Origen: DatosSKD
+2016-01-26 20:04:37,695 ERROR EjecutarConsultarTodosCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodos()
+2016-01-26 20:04:37,695 ERROR EjecutarConsultarTodosCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 339
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarConsultarTodosCinta.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarConsultarTodosCinta.cs:line 28
+2016-01-26 20:04:37,696 ERROR EjecutarConsultarTodosCinta - InnerException: System.ArgumentNullException: 'column' argument cannot be null.
+Parameter name: column
+   at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 307
+2016-01-26 20:11:06,268 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:11:06,284 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:11:06,284 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 20:11:06,284 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:11:06,319 INFO  DaoCinta - *******************************************************
+2016-01-26 20:11:06,319 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:11:06,320 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:11:06,320 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:11:06,520 ERROR DaoCinta - *******************************************************
+2016-01-26 20:11:06,520 ERROR DaoCinta - Mensaje: 'column' argument cannot be null.
+Parameter name: column
+2016-01-26 20:11:06,524 ERROR DaoCinta - Origen: System.Data
+2016-01-26 20:11:06,524 ERROR DaoCinta - Metodo: Void CheckColumn(System.Data.DataColumn)
+2016-01-26 20:11:06,524 ERROR DaoCinta - StackTrace:    at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 307
+2016-01-26 20:11:06,524 ERROR DaoCinta - InnerException: 
+2016-01-26 20:11:06,565 ERROR EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:11:06,565 ERROR EjecutarConsultarTodosCinta - Mensaje: No se pudo completar la operacion
+2016-01-26 20:11:06,570 ERROR EjecutarConsultarTodosCinta - Origen: DatosSKD
+2016-01-26 20:11:06,570 ERROR EjecutarConsultarTodosCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] ConsultarTodos()
+2016-01-26 20:11:06,570 ERROR EjecutarConsultarTodosCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 340
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarConsultarTodosCinta.Ejecutar() in c:\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarConsultarTodosCinta.cs:line 28
+2016-01-26 20:11:06,570 ERROR EjecutarConsultarTodosCinta - InnerException: System.ArgumentNullException: 'column' argument cannot be null.
+Parameter name: column
+   at System.Data.DataRow.CheckColumn(DataColumn column)
+   at System.Data.DataRow.get_Item(DataColumn column)
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 307
+2016-01-26 20:15:40,221 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:15:40,249 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:15:40,250 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 20:15:40,250 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:15:40,292 INFO  DaoCinta - *******************************************************
+2016-01-26 20:15:40,292 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:15:40,292 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:15:40,292 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:15:40,579 INFO  DaoCinta - *******************************************************
+2016-01-26 20:15:40,579 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:15:40,579 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 20:15:40,579 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:15:40,590 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:15:40,590 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:15:40,590 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 20:15:40,590 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:16:05,351 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 20:16:05,352 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 20:16:05,352 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:16:05,352 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 20:16:05,413 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:16:05,413 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:16:05,413 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:16:05,413 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 20:16:05,509 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:16:05,510 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:16:05,510 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:16:05,510 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 20:16:05,534 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 20:16:05,534 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 20:16:05,534 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:16:05,534 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 20:17:16,972 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 20:17:16,995 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 20:17:16,995 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:17:16,995 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 20:17:17,024 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:17,024 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:17,024 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:17:17,024 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 20:17:17,120 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:17,120 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:17,121 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:17:17,121 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 20:17:17,138 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 20:17:17,138 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 20:17:17,138 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:17:17,138 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 20:17:58,209 INFO  EjecutarAgregarOrganizacion - *******************************************************
+2016-01-26 20:17:58,210 INFO  EjecutarAgregarOrganizacion - Clase: EjecutarAgregarOrganizacion
+2016-01-26 20:17:58,210 INFO  EjecutarAgregarOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:17:58,210 INFO  EjecutarAgregarOrganizacion - Metodo: Ejecutar
+2016-01-26 20:17:58,242 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:58,242 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:58,242 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:17:58,242 INFO  DaoOrganizacion - Metodo: Agregar
+2016-01-26 20:17:58,264 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:58,264 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:58,264 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:17:58,264 INFO  DaoOrganizacion - Metodo: ValidarNombreOrganizacion
+2016-01-26 20:17:58,326 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:58,326 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:58,326 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:17:58,326 INFO  DaoOrganizacion - Metodo: ValidarNombreOrganizacion
+2016-01-26 20:17:58,359 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:58,359 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:58,359 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:17:58,359 INFO  DaoOrganizacion - Metodo: ValidarEstilo
+2016-01-26 20:17:58,391 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:58,391 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:58,392 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:17:58,392 INFO  DaoOrganizacion - Metodo: ValidarEstilo
+2016-01-26 20:17:58,734 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:58,734 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:58,734 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:17:58,734 INFO  DaoOrganizacion - Metodo: Agregar
+2016-01-26 20:17:58,757 INFO  EjecutarAgregarOrganizacion - *******************************************************
+2016-01-26 20:17:58,757 INFO  EjecutarAgregarOrganizacion - Clase: EjecutarAgregarOrganizacion
+2016-01-26 20:17:58,757 INFO  EjecutarAgregarOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:17:58,757 INFO  EjecutarAgregarOrganizacion - Metodo: Ejecutar
+2016-01-26 20:17:58,983 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 20:17:58,983 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 20:17:58,983 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:17:58,983 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 20:17:58,993 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:58,993 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:58,993 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:17:58,993 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 20:17:59,006 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:17:59,006 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:17:59,006 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:17:59,006 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 20:17:59,016 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 20:17:59,016 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 20:17:59,016 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:17:59,016 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 20:49:42,217 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:49:42,233 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:49:42,233 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 20:49:42,233 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:49:42,254 INFO  DaoCinta - *******************************************************
+2016-01-26 20:49:42,254 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:49:42,254 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:49:42,254 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:49:42,384 INFO  DaoCinta - *******************************************************
+2016-01-26 20:49:42,384 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:49:42,384 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 20:49:42,384 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:49:42,392 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:49:42,392 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:49:42,393 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 20:49:42,393 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:49:52,050 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-26 20:49:52,050 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-26 20:49:52,050 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-26 20:49:52,050 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-26 20:49:52,066 INFO  DaoCinta - *******************************************************
+2016-01-26 20:49:52,066 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:49:52,066 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:49:52,066 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-26 20:49:52,123 INFO  DaoCinta - *******************************************************
+2016-01-26 20:49:52,124 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:49:52,124 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 20:49:52,124 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-26 20:49:52,140 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-26 20:49:52,140 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-26 20:49:52,140 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-26 20:49:52,140 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-26 20:50:11,273 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-26 20:50:11,273 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-26 20:50:11,274 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-26 20:50:11,274 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-26 20:50:11,323 INFO  DaoCinta - *******************************************************
+2016-01-26 20:50:11,323 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:50:11,323 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:50:11,323 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-26 20:50:11,395 INFO  DaoCinta - *******************************************************
+2016-01-26 20:50:11,396 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:50:11,396 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 20:50:11,396 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-26 20:50:11,420 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-26 20:50:11,420 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-26 20:50:11,420 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-26 20:50:11,420 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-26 20:50:18,215 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-26 20:50:18,216 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-26 20:50:18,216 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-26 20:50:18,216 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-26 20:50:18,232 INFO  DaoCinta - *******************************************************
+2016-01-26 20:50:18,232 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:50:18,232 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:50:18,232 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-26 20:50:18,249 INFO  DaoCinta - *******************************************************
+2016-01-26 20:50:18,250 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:50:18,250 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 20:50:18,250 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-26 20:50:18,264 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-26 20:50:18,264 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-26 20:50:18,264 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-26 20:50:18,265 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-26 20:53:51,044 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:53:51,058 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:53:51,058 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 20:53:51,058 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:53:51,078 INFO  DaoCinta - *******************************************************
+2016-01-26 20:53:51,078 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:53:51,078 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:53:51,078 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:53:51,216 INFO  DaoCinta - *******************************************************
+2016-01-26 20:53:51,216 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:53:51,216 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 20:53:51,216 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:53:51,226 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:53:51,226 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:53:51,226 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 20:53:51,226 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:55:43,828 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:55:43,847 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:55:43,847 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 20:55:43,847 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:55:43,893 INFO  DaoCinta - *******************************************************
+2016-01-26 20:55:43,893 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:55:43,893 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:55:43,893 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:55:44,213 INFO  DaoCinta - *******************************************************
+2016-01-26 20:55:44,213 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:55:44,213 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 20:55:44,213 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:55:44,225 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:55:44,226 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:55:44,226 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 20:55:44,226 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:55:56,104 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-26 20:55:56,104 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-26 20:55:56,104 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-26 20:55:56,104 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-26 20:55:56,134 INFO  DaoCinta - *******************************************************
+2016-01-26 20:55:56,134 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:55:56,134 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:55:56,134 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-26 20:55:56,190 INFO  DaoCinta - *******************************************************
+2016-01-26 20:55:56,190 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:55:56,190 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 20:55:56,190 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-26 20:55:56,224 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-26 20:55:56,224 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-26 20:55:56,224 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-26 20:55:56,224 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-26 20:56:41,089 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 20:56:41,090 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 20:56:41,090 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:56:41,090 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 20:56:41,128 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:56:41,128 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:56:41,128 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-26 20:56:41,128 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 20:56:41,191 INFO  DaoOrganizacion - *******************************************************
+2016-01-26 20:56:41,192 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-26 20:56:41,192 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:56:41,192 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-26 20:56:41,203 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-26 20:56:41,203 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-26 20:56:41,203 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-26 20:56:41,203 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-26 20:56:44,264 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:56:44,264 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:56:44,264 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-26 20:56:44,264 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-26 20:56:44,272 INFO  DaoCinta - *******************************************************
+2016-01-26 20:56:44,272 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:56:44,272 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-26 20:56:44,272 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:56:44,287 INFO  DaoCinta - *******************************************************
+2016-01-26 20:56:44,287 INFO  DaoCinta - Clase: DaoCinta
+2016-01-26 20:56:44,287 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-26 20:56:44,287 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-26 20:56:44,295 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-26 20:56:44,295 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-26 20:56:44,295 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-26 20:56:44,295 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:24:38,858 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:24:38,875 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:24:38,875 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 11:24:38,875 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:24:38,927 INFO  DaoCinta - *******************************************************
+2016-01-27 11:24:38,927 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:24:38,927 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:24:38,927 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:24:39,266 INFO  DaoCinta - *******************************************************
+2016-01-27 11:24:39,267 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:24:39,267 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:24:39,267 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:24:39,282 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:24:39,283 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:24:39,283 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 11:24:39,283 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:24:54,889 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:24:54,889 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:24:54,890 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-27 11:24:54,890 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:24:54,909 INFO  DaoCinta - *******************************************************
+2016-01-27 11:24:54,909 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:24:54,909 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:24:54,909 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:24:55,013 INFO  DaoCinta - *******************************************************
+2016-01-27 11:24:55,013 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:24:55,013 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:24:55,013 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:24:55,030 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:24:55,030 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:24:55,030 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-27 11:24:55,030 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:25:06,475 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:25:06,475 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:25:06,475 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:25:06,475 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:25:06,496 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:25:06,496 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:25:06,496 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:25:06,496 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:25:06,564 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:25:06,565 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:25:06,565 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:25:06,565 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:25:06,581 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:25:06,582 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:25:06,582 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:25:06,582 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:25:15,066 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:25:15,066 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:25:15,066 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-27 11:25:15,067 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:25:15,079 INFO  DaoCinta - *******************************************************
+2016-01-27 11:25:15,079 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:25:15,079 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:25:15,079 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:25:15,112 INFO  DaoCinta - *******************************************************
+2016-01-27 11:25:15,112 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:25:15,112 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:25:15,112 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:25:15,120 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:25:15,120 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:25:15,120 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-27 11:25:15,120 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:25:22,869 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:25:22,870 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:25:22,870 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-27 11:25:22,870 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:25:22,890 INFO  DaoCinta - *******************************************************
+2016-01-27 11:25:22,890 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:25:22,890 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:25:22,890 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:25:22,921 INFO  DaoCinta - *******************************************************
+2016-01-27 11:25:22,921 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:25:22,921 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:25:22,922 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:25:22,965 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:25:22,965 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:25:22,965 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-27 11:25:22,965 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:25:32,575 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:25:32,575 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:25:32,575 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 11:25:32,575 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:25:32,589 INFO  DaoCinta - *******************************************************
+2016-01-27 11:25:32,589 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:25:32,589 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:25:32,589 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:25:32,613 INFO  DaoCinta - *******************************************************
+2016-01-27 11:25:32,613 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:25:32,613 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:25:32,614 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:25:32,626 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:25:32,626 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:25:32,627 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 11:25:32,628 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:29:29,824 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:29:29,842 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:29:29,842 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:29,842 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:29:29,869 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:29,869 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:29,869 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:29,869 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:29:30,144 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:30,144 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:30,144 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:29:30,144 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:29:30,157 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:29:30,158 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:29:30,158 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 11:29:30,158 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:29:39,059 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:29:39,059 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:29:39,059 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:39,059 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:29:39,077 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:39,077 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:39,077 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:39,077 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:29:39,156 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:39,156 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:39,156 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:29:39,157 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:29:39,170 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:29:39,170 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:29:39,170 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-27 11:29:39,170 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:29:39,292 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:29:39,293 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:29:39,293 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:39,293 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:29:39,309 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:39,309 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:39,309 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:39,309 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:29:39,429 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:39,429 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:39,429 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:29:39,429 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:29:39,440 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:29:39,440 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:29:39,440 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 11:29:39,440 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:29:50,479 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:29:50,479 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:29:50,479 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:50,479 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:29:50,503 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:50,504 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:50,504 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:50,504 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:29:50,541 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:50,541 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:50,541 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:29:50,541 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:29:50,580 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:29:50,580 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:29:50,580 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-27 11:29:50,580 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:29:50,677 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:29:50,677 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:29:50,677 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:50,678 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:29:50,698 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:50,698 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:50,698 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:29:50,698 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:29:50,769 INFO  DaoCinta - *******************************************************
+2016-01-27 11:29:50,769 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:29:50,769 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:29:50,769 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:29:50,781 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:29:50,781 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:29:50,782 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 11:29:50,782 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:30:07,331 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:30:07,331 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:30:07,331 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-27 11:30:07,331 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:30:07,403 INFO  DaoCinta - *******************************************************
+2016-01-27 11:30:07,404 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:30:07,404 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:30:07,404 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:30:07,437 INFO  DaoCinta - *******************************************************
+2016-01-27 11:30:07,437 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:30:07,437 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:30:07,437 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 11:30:07,465 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 11:30:07,465 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 11:30:07,465 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-27 11:30:07,465 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 11:30:07,595 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:30:07,595 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:30:07,596 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 11:30:07,596 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:30:07,611 INFO  DaoCinta - *******************************************************
+2016-01-27 11:30:07,612 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:30:07,612 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 11:30:07,612 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:30:07,640 INFO  DaoCinta - *******************************************************
+2016-01-27 11:30:07,640 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 11:30:07,640 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 11:30:07,640 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 11:30:07,656 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 11:30:07,656 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 11:30:07,657 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 11:30:07,657 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 11:31:24,358 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:31:24,358 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:31:24,358 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:31:24,358 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:31:24,391 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:31:24,391 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:31:24,391 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:31:24,391 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:31:24,477 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:31:24,477 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:31:24,477 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:31:24,477 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:31:24,488 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:31:24,488 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:31:24,488 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:31:24,488 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:32:42,100 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:32:42,100 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:32:42,100 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:32:42,100 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:32:42,111 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:32:42,111 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:32:42,111 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:32:42,111 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:32:42,163 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:32:42,163 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:32:42,163 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:32:42,163 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:32:42,175 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:32:42,175 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:32:42,175 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:32:42,175 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:34:00,752 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:34:00,766 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:34:00,766 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:34:00,766 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:34:00,787 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:34:00,787 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:34:00,787 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:34:00,787 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:34:01,035 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:34:01,035 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:34:01,035 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:34:01,035 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:34:01,049 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:34:01,049 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:34:01,049 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:34:01,049 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:39:06,574 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:39:06,589 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:39:06,589 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:39:06,589 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:39:06,613 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:39:06,613 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:39:06,613 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:39:06,614 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:39:06,758 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:39:06,758 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:39:06,758 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:39:06,758 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:39:06,768 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:39:06,768 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:39:06,768 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:39:06,768 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:42:40,602 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:42:40,616 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:42:40,616 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:42:40,616 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:42:40,638 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:42:40,638 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:42:40,638 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:42:40,638 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:42:41,064 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:42:41,064 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:42:41,064 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:42:41,064 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:42:41,097 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:42:41,097 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:42:41,097 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:42:41,097 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:44:48,850 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:44:48,868 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:44:48,868 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:44:48,868 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:44:48,911 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:44:48,911 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:44:48,911 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:44:48,911 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:44:49,131 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:44:49,131 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:44:49,131 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:44:49,132 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:44:49,145 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:44:49,145 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:44:49,145 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:44:49,145 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:47:33,878 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:47:33,896 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:47:33,896 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:47:33,896 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:47:33,925 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:47:33,925 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:47:33,925 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:47:33,925 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:47:34,102 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:47:34,102 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:47:34,102 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:47:34,102 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:47:34,112 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:47:34,112 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:47:34,112 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:47:34,112 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:47:55,006 INFO  EjecutarModificarStatusOrganizacion - *******************************************************
+2016-01-27 11:47:55,007 INFO  EjecutarModificarStatusOrganizacion - Clase: EjecutarModificarStatusOrganizacion
+2016-01-27 11:47:55,007 INFO  EjecutarModificarStatusOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:47:55,007 INFO  EjecutarModificarStatusOrganizacion - Metodo: Ejecutar
+2016-01-27 11:47:55,157 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:47:55,158 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:47:55,158 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:47:55,158 INFO  DaoOrganizacion - Metodo: ModificarStatus
+2016-01-27 11:47:55,247 INFO  EjecutarModificarStatusOrganizacion - *******************************************************
+2016-01-27 11:47:55,248 INFO  EjecutarModificarStatusOrganizacion - Clase: EjecutarModificarStatusOrganizacion
+2016-01-27 11:47:55,248 INFO  EjecutarModificarStatusOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:47:55,248 INFO  EjecutarModificarStatusOrganizacion - Metodo: Ejecutar
+2016-01-27 11:47:55,314 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:47:55,314 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:47:55,314 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:47:55,314 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 11:47:55,329 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:47:55,334 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:47:55,334 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 11:47:55,334 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:47:55,356 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 11:47:55,356 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 11:47:55,356 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:47:55,356 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 11:47:55,376 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 11:47:55,376 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 11:47:55,376 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 11:47:55,376 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 12:01:32,452 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 12:01:32,471 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 12:01:32,471 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:01:32,471 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 12:01:32,507 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:01:32,508 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:01:32,508 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:01:32,508 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 12:01:32,720 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:01:32,720 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:01:32,720 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:01:32,720 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 12:01:32,729 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 12:01:32,730 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 12:01:32,730 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:01:32,730 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 12:01:39,246 INFO  EjecutarModificarStatusOrganizacion - *******************************************************
+2016-01-27 12:01:39,246 INFO  EjecutarModificarStatusOrganizacion - Clase: EjecutarModificarStatusOrganizacion
+2016-01-27 12:01:39,246 INFO  EjecutarModificarStatusOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:01:39,246 INFO  EjecutarModificarStatusOrganizacion - Metodo: Ejecutar
+2016-01-27 12:01:39,258 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:01:39,258 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:01:39,258 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:01:39,258 INFO  DaoOrganizacion - Metodo: ModificarStatus
+2016-01-27 12:01:39,390 INFO  EjecutarModificarStatusOrganizacion - *******************************************************
+2016-01-27 12:01:39,391 INFO  EjecutarModificarStatusOrganizacion - Clase: EjecutarModificarStatusOrganizacion
+2016-01-27 12:01:39,391 INFO  EjecutarModificarStatusOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:01:39,391 INFO  EjecutarModificarStatusOrganizacion - Metodo: Ejecutar
+2016-01-27 12:01:39,456 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 12:01:39,457 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 12:01:39,457 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:01:39,457 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 12:01:39,470 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:01:39,470 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:01:39,470 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:01:39,470 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 12:01:39,480 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:01:39,480 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:01:39,480 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:01:39,481 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 12:01:39,488 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 12:01:39,488 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 12:01:39,488 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:01:39,488 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 12:03:07,057 INFO  EjecutarAgregarOrganizacion - *******************************************************
+2016-01-27 12:03:07,057 INFO  EjecutarAgregarOrganizacion - Clase: EjecutarAgregarOrganizacion
+2016-01-27 12:03:07,057 INFO  EjecutarAgregarOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:03:07,057 INFO  EjecutarAgregarOrganizacion - Metodo: Ejecutar
+2016-01-27 12:03:07,180 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:03:07,181 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:03:07,181 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:03:07,181 INFO  DaoOrganizacion - Metodo: Agregar
+2016-01-27 12:03:07,200 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:03:07,200 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:03:07,200 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:03:07,200 INFO  DaoOrganizacion - Metodo: ValidarNombreOrganizacion
+2016-01-27 12:03:07,225 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:03:07,225 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:03:07,225 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:03:07,225 INFO  DaoOrganizacion - Metodo: ValidarNombreOrganizacion
+2016-01-27 12:03:07,261 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:03:07,261 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:03:07,261 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:03:07,261 INFO  DaoOrganizacion - Metodo: ValidarEstilo
+2016-01-27 12:03:07,276 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:03:07,277 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:03:07,277 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:03:07,277 INFO  DaoOrganizacion - Metodo: ValidarEstilo
+2016-01-27 12:03:07,404 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:03:07,404 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:03:07,404 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:03:07,404 INFO  DaoOrganizacion - Metodo: Agregar
+2016-01-27 12:03:07,416 INFO  EjecutarAgregarOrganizacion - *******************************************************
+2016-01-27 12:03:07,416 INFO  EjecutarAgregarOrganizacion - Clase: EjecutarAgregarOrganizacion
+2016-01-27 12:03:07,416 INFO  EjecutarAgregarOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:03:07,416 INFO  EjecutarAgregarOrganizacion - Metodo: Ejecutar
+2016-01-27 12:03:07,526 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 12:03:07,526 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 12:03:07,526 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:03:07,526 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 12:03:07,538 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:03:07,538 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:03:07,538 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:03:07,539 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 12:03:07,561 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:03:07,561 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:03:07,561 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:03:07,561 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 12:03:07,573 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 12:03:07,573 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 12:03:07,573 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:03:07,573 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 12:13:03,426 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 12:13:03,443 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 12:13:03,443 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 12:13:03,443 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 12:13:03,466 INFO  DaoCinta - *******************************************************
+2016-01-27 12:13:03,466 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:13:03,466 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 12:13:03,466 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 12:13:03,642 INFO  DaoCinta - *******************************************************
+2016-01-27 12:13:03,642 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:13:03,642 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 12:13:03,642 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 12:13:03,656 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 12:13:03,656 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 12:13:03,656 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 12:13:03,656 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 12:13:43,889 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 12:13:43,889 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 12:13:43,889 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 12:13:43,889 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 12:13:43,941 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:13:43,941 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:13:43,941 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 12:13:43,941 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 12:13:44,001 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 12:13:44,001 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 12:13:44,001 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 12:13:44,001 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 12:13:44,018 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 12:13:44,018 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 12:13:44,018 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 12:13:44,018 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 12:14:25,310 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-27 12:14:25,310 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-27 12:14:25,310 INFO  EjecutarAgregarCinta - Mensaje: Entrada en el Método
+2016-01-27 12:14:25,310 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-27 12:14:25,338 INFO  DaoCinta - *******************************************************
+2016-01-27 12:14:25,338 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:14:25,338 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 12:14:25,338 INFO  DaoCinta - Metodo: Agregar
+2016-01-27 12:14:25,361 INFO  DaoCinta - *******************************************************
+2016-01-27 12:14:25,362 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:14:25,362 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 12:14:25,362 INFO  DaoCinta - Metodo: ValidarOrganizacion
+2016-01-27 12:14:25,442 INFO  DaoCinta - *******************************************************
+2016-01-27 12:14:25,442 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:14:25,442 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 12:14:25,442 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-27 12:14:25,471 INFO  DaoCinta - *******************************************************
+2016-01-27 12:14:25,472 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:14:25,472 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 12:14:25,472 INFO  DaoCinta - Metodo: ValidarNombreCinta
+2016-01-27 12:14:25,511 INFO  DaoCinta - *******************************************************
+2016-01-27 12:14:25,511 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:14:25,512 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 12:14:25,512 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-27 12:14:25,540 INFO  DaoCinta - *******************************************************
+2016-01-27 12:14:25,540 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:14:25,540 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 12:14:25,540 INFO  DaoCinta - Metodo: ValidarOrdenCinta
+2016-01-27 12:14:25,689 INFO  DaoCinta - *******************************************************
+2016-01-27 12:14:25,689 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:14:25,689 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 12:14:25,689 INFO  DaoCinta - Metodo: Agregar
+2016-01-27 12:14:25,700 INFO  EjecutarAgregarCinta - *******************************************************
+2016-01-27 12:14:25,700 INFO  EjecutarAgregarCinta - Clase: EjecutarAgregarCinta
+2016-01-27 12:14:25,700 INFO  EjecutarAgregarCinta - Mensaje: Salida del Método
+2016-01-27 12:14:25,700 INFO  EjecutarAgregarCinta - Metodo: Ejecutar
+2016-01-27 12:14:25,840 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 12:14:25,841 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 12:14:25,841 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 12:14:25,841 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 12:14:25,858 INFO  DaoCinta - *******************************************************
+2016-01-27 12:14:25,858 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:14:25,858 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 12:14:25,858 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 12:14:25,892 INFO  DaoCinta - *******************************************************
+2016-01-27 12:14:25,892 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 12:14:25,892 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 12:14:25,892 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 12:14:25,910 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 12:14:25,910 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 12:14:25,910 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 12:14:25,910 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:23:06,987 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:23:07,004 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:23:07,005 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 13:23:07,005 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:23:07,038 INFO  DaoCinta - *******************************************************
+2016-01-27 13:23:07,038 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:23:07,038 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 13:23:07,038 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:23:07,911 INFO  DaoCinta - *******************************************************
+2016-01-27 13:23:07,911 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:23:07,911 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 13:23:07,911 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:23:07,921 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:23:07,921 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:23:07,921 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 13:23:07,921 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:23:21,080 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:23:21,080 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:23:21,080 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 13:23:21,080 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:23:21,122 INFO  DaoCinta - *******************************************************
+2016-01-27 13:23:21,122 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:23:21,122 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 13:23:21,122 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:23:21,189 INFO  DaoCinta - *******************************************************
+2016-01-27 13:23:21,189 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:23:21,189 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 13:23:21,189 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:23:21,216 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:23:21,217 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:23:21,217 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 13:23:21,217 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:37:57,146 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:37:57,160 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:37:57,160 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 13:37:57,160 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:37:57,193 INFO  DaoCinta - *******************************************************
+2016-01-27 13:37:57,193 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:37:57,193 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 13:37:57,193 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:37:57,373 INFO  DaoCinta - *******************************************************
+2016-01-27 13:37:57,374 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:37:57,374 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 13:37:57,374 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:37:57,394 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:37:57,395 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:37:57,395 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 13:37:57,395 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:38:03,489 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 13:38:03,489 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 13:38:03,489 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:03,489 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 13:38:03,510 INFO  DaoCinta - *******************************************************
+2016-01-27 13:38:03,510 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:38:03,510 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:03,510 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 13:38:03,617 INFO  DaoCinta - *******************************************************
+2016-01-27 13:38:03,617 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:38:03,617 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 13:38:03,617 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 13:38:03,627 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 13:38:03,627 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 13:38:03,627 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-27 13:38:03,627 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 13:38:03,710 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:38:03,710 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:38:03,710 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:03,710 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:38:03,733 INFO  DaoCinta - *******************************************************
+2016-01-27 13:38:03,733 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:38:03,733 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:03,733 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:38:03,751 INFO  DaoCinta - *******************************************************
+2016-01-27 13:38:03,751 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:38:03,751 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 13:38:03,751 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:38:03,764 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:38:03,764 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:38:03,764 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 13:38:03,764 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:38:14,728 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 13:38:14,728 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 13:38:14,728 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:14,728 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 13:38:14,759 INFO  DaoCinta - *******************************************************
+2016-01-27 13:38:14,759 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:38:14,759 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:14,759 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 13:38:14,813 INFO  DaoCinta - *******************************************************
+2016-01-27 13:38:14,813 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:38:14,813 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 13:38:14,813 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 13:38:14,841 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 13:38:14,841 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 13:38:14,841 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-27 13:38:14,841 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 13:38:14,989 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:38:14,989 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:38:14,989 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:14,989 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:38:15,005 INFO  DaoCinta - *******************************************************
+2016-01-27 13:38:15,005 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:38:15,005 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:15,005 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:38:15,038 INFO  DaoCinta - *******************************************************
+2016-01-27 13:38:15,038 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:38:15,038 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 13:38:15,038 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:38:15,054 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:38:15,054 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:38:15,054 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 13:38:15,055 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:38:58,283 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 13:38:58,284 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 13:38:58,284 INFO  EjecutarModificarStatusCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:58,284 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 13:38:58,300 INFO  DaoCinta - *******************************************************
+2016-01-27 13:38:58,301 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:38:58,301 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 13:38:58,301 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 13:40:07,996 INFO  DaoCinta - *******************************************************
+2016-01-27 13:40:07,997 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:40:07,997 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 13:40:07,997 INFO  DaoCinta - Metodo: ModificarStatus
+2016-01-27 13:40:08,011 INFO  EjecutarModificarStatusCinta - *******************************************************
+2016-01-27 13:40:08,011 INFO  EjecutarModificarStatusCinta - Clase: EjecutarModificarStatusCinta
+2016-01-27 13:40:08,011 INFO  EjecutarModificarStatusCinta - Mensaje: Salida del Método
+2016-01-27 13:40:08,012 INFO  EjecutarModificarStatusCinta - Metodo: Ejecutar
+2016-01-27 13:40:08,237 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:40:08,238 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:40:08,238 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-27 13:40:08,238 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 13:40:08,253 INFO  DaoCinta - *******************************************************
+2016-01-27 13:40:08,253 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:40:08,253 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 13:40:08,253 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:40:08,332 INFO  DaoCinta - *******************************************************
+2016-01-27 13:40:08,332 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 13:40:08,332 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 13:40:08,332 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-27 13:40:08,347 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-27 13:40:08,347 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-27 13:40:08,348 INFO  EjecutarConsultarTodosCinta - Mensaje: Salida del Método
+2016-01-27 13:40:08,348 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-27 14:13:56,854 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:13:56,866 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:13:56,866 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 14:13:56,866 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:13:56,894 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:13:56,894 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:13:56,895 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:13:56,895 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:13:57,550 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:13:57,551 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:13:57,551 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:13:57,551 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:13:57,558 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:13:57,558 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:13:57,558 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 14:13:57,558 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:14:59,355 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:14:59,366 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:14:59,366 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 14:14:59,366 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:14:59,388 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:14:59,388 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:14:59,389 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:14:59,389 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:15:00,189 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:15:00,189 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:15:00,189 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:15:00,189 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:15:00,196 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:15:00,196 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:15:00,196 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 14:15:00,196 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:15:20,048 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:15:20,048 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:15:20,048 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 14:15:20,048 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:15:20,078 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:15:20,078 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:15:20,078 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:15:20,078 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:15:20,186 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:15:20,186 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:15:20,186 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:15:20,187 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:15:20,197 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:15:20,197 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:15:20,197 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 14:15:20,197 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:19:02,411 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:19:02,427 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:19:02,428 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 14:19:02,428 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:19:02,453 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:19:02,453 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:19:02,453 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:19:02,453 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:19:05,573 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:19:05,573 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:19:05,574 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:19:05,574 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:19:05,586 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:19:05,586 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:19:05,587 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 14:19:05,587 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:19:22,109 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:19:22,109 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:19:22,109 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 14:19:22,109 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:19:22,127 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:19:22,127 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:19:22,128 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:19:22,128 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:19:22,270 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:19:22,271 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:19:22,271 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:19:22,271 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:19:22,287 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:19:22,287 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:19:22,287 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 14:19:22,287 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:20:50,134 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:20:50,134 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:20:50,134 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 14:20:50,134 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:20:50,142 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:20:50,142 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:20:50,142 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:20:50,142 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:20:50,153 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:20:50,153 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:20:50,153 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:20:50,153 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:20:50,162 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:20:50,162 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:20:50,162 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 14:20:50,162 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:32:08,288 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:32:08,302 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:32:08,302 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 14:32:08,302 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:32:08,381 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:32:08,381 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:32:08,381 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:32:08,383 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:32:08,535 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:32:08,535 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:32:08,535 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:32:08,535 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:32:08,546 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:32:08,546 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:32:08,546 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 14:32:08,546 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:32:18,702 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:32:18,702 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:32:18,702 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:32:18,702 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:32:18,735 INFO  DaoCinta - *******************************************************
+2016-01-27 14:32:18,735 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:32:18,735 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 14:32:18,735 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:32:18,805 INFO  DaoCinta - *******************************************************
+2016-01-27 14:32:18,805 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:32:18,805 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 14:32:18,805 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:32:18,825 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:32:18,825 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:32:18,825 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:32:18,825 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:32:24,568 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:32:24,568 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:32:24,568 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:32:24,568 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:32:24,587 INFO  DaoCinta - *******************************************************
+2016-01-27 14:32:24,588 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:32:24,588 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 14:32:24,588 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:32:24,771 INFO  DaoCinta - *******************************************************
+2016-01-27 14:32:24,771 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:32:24,771 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 14:32:24,771 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:32:24,787 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:32:24,787 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:32:24,787 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:32:24,787 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:32:54,812 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:32:54,812 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:32:54,812 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:32:54,812 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:32:54,856 INFO  DaoCinta - *******************************************************
+2016-01-27 14:32:54,857 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:32:54,857 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 14:32:54,857 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:38:42,257 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:38:42,267 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:38:42,267 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 14:38:42,267 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:38:42,282 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:38:42,282 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:38:42,282 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:38:42,282 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:38:42,361 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:38:42,361 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:38:42,361 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:38:42,361 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:38:42,368 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:38:42,368 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:38:42,368 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 14:38:42,368 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:38:47,136 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:38:47,136 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:38:47,136 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:38:47,136 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:38:47,168 INFO  DaoCinta - *******************************************************
+2016-01-27 14:38:47,168 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:38:47,168 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 14:38:47,168 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:38:47,243 INFO  DaoCinta - *******************************************************
+2016-01-27 14:38:47,243 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:38:47,243 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 14:38:47,244 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:38:47,250 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:38:47,250 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:38:47,250 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:38:47,250 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:38:51,787 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:38:51,787 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:38:51,787 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:38:51,787 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:38:51,801 INFO  DaoCinta - *******************************************************
+2016-01-27 14:38:51,801 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:38:51,801 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 14:38:51,801 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:38:51,840 INFO  DaoCinta - *******************************************************
+2016-01-27 14:38:51,841 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:38:51,841 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 14:38:51,841 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:38:51,852 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:38:51,852 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:38:51,852 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:38:51,853 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:38:54,807 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:38:54,808 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:38:54,808 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:38:54,808 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:38:54,820 INFO  DaoCinta - *******************************************************
+2016-01-27 14:38:54,821 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:38:54,821 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 14:38:54,821 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:38:54,844 INFO  DaoCinta - *******************************************************
+2016-01-27 14:38:54,845 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:38:54,845 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 14:38:54,845 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:38:54,857 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:38:54,857 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:38:54,857 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:38:54,857 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:38:58,393 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:38:58,393 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:38:58,393 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:38:58,393 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:38:58,407 INFO  DaoCinta - *******************************************************
+2016-01-27 14:38:58,407 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:38:58,407 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 14:38:58,407 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:38:58,423 INFO  DaoCinta - *******************************************************
+2016-01-27 14:38:58,423 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:38:58,423 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 14:38:58,423 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:38:58,440 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:38:58,440 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:38:58,441 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:38:58,441 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:01,242 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:39:01,242 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:39:01,242 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:39:01,242 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:01,253 INFO  DaoCinta - *******************************************************
+2016-01-27 14:39:01,253 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:39:01,253 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 14:39:01,253 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:39:01,270 INFO  DaoCinta - *******************************************************
+2016-01-27 14:39:01,270 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:39:01,270 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 14:39:01,270 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:39:01,278 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:39:01,278 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:39:01,278 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:39:01,278 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:09,540 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 14:39:09,540 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 14:39:09,540 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:39:09,540 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:09,555 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:39:09,555 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:39:09,556 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:39:09,556 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 14:39:09,632 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:39:09,632 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:39:09,632 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:39:09,632 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 14:39:09,641 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 14:39:09,642 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 14:39:09,642 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:39:09,642 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:13,176 INFO  EjecutarModificarStatusOrganizacion - *******************************************************
+2016-01-27 14:39:13,176 INFO  EjecutarModificarStatusOrganizacion - Clase: EjecutarModificarStatusOrganizacion
+2016-01-27 14:39:13,176 INFO  EjecutarModificarStatusOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:39:13,176 INFO  EjecutarModificarStatusOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:13,187 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:39:13,188 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:39:13,188 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:39:13,188 INFO  DaoOrganizacion - Metodo: ModificarStatus
+2016-01-27 14:39:13,244 INFO  EjecutarModificarStatusOrganizacion - *******************************************************
+2016-01-27 14:39:13,244 INFO  EjecutarModificarStatusOrganizacion - Clase: EjecutarModificarStatusOrganizacion
+2016-01-27 14:39:13,244 INFO  EjecutarModificarStatusOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:39:13,244 INFO  EjecutarModificarStatusOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:13,376 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 14:39:13,376 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 14:39:13,376 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:39:13,376 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:13,405 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:39:13,405 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:39:13,405 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:39:13,405 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 14:39:13,425 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:39:13,425 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:39:13,425 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:39:13,425 INFO  DaoOrganizacion - Metodo: ConsultarTodos
+2016-01-27 14:39:13,440 INFO  EjecutarConsultarTodosOrganizacion - *******************************************************
+2016-01-27 14:39:13,441 INFO  EjecutarConsultarTodosOrganizacion - Clase: EjecutarConsultarTodosOrganizacion
+2016-01-27 14:39:13,441 INFO  EjecutarConsultarTodosOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:39:13,441 INFO  EjecutarConsultarTodosOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:16,465 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:39:16,465 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:39:16,465 INFO  EjecutarComboOrganizaciones - Mensaje: Entrada en el Método
+2016-01-27 14:39:16,465 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:39:16,489 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:39:16,490 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:39:16,490 INFO  DaoOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:39:16,490 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:39:16,521 INFO  DaoOrganizacion - *******************************************************
+2016-01-27 14:39:16,521 INFO  DaoOrganizacion - Clase: DaoOrganizacion
+2016-01-27 14:39:16,521 INFO  DaoOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:39:16,521 INFO  DaoOrganizacion - Metodo: ComboOrganizaciones
+2016-01-27 14:39:16,545 INFO  EjecutarComboOrganizaciones - *******************************************************
+2016-01-27 14:39:16,545 INFO  EjecutarComboOrganizaciones - Clase: EjecutarComboOrganizaciones
+2016-01-27 14:39:16,545 INFO  EjecutarComboOrganizaciones - Mensaje: Salida del Método
+2016-01-27 14:39:16,545 INFO  EjecutarComboOrganizaciones - Metodo: Ejecutar
+2016-01-27 14:39:19,202 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:39:19,203 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:39:19,203 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Entrada en el Método
+2016-01-27 14:39:19,203 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar
+2016-01-27 14:39:19,221 INFO  DaoCinta - *******************************************************
+2016-01-27 14:39:19,221 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:39:19,221 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-27 14:39:19,221 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:39:19,244 INFO  DaoCinta - *******************************************************
+2016-01-27 14:39:19,244 INFO  DaoCinta - Clase: DaoCinta
+2016-01-27 14:39:19,244 INFO  DaoCinta - Mensaje: Salida del Método
+2016-01-27 14:39:19,244 INFO  DaoCinta - Metodo: ListarCintasXOrganizacion
+2016-01-27 14:39:19,257 INFO  EjecutarConsultarCintasXOrganizacion - *******************************************************
+2016-01-27 14:39:19,258 INFO  EjecutarConsultarCintasXOrganizacion - Clase: EjecutarConsultarCintasXOrganizacion
+2016-01-27 14:39:19,258 INFO  EjecutarConsultarCintasXOrganizacion - Mensaje: Salida del Método
+2016-01-27 14:39:19,258 INFO  EjecutarConsultarCintasXOrganizacion - Metodo: Ejecutar

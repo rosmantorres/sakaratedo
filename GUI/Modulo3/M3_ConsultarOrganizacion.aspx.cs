@@ -17,12 +17,11 @@ namespace templateApp.GUI.Modulo3
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.presentador = new PresentadorLlenarOrganizacion(this);
             ((SKD)Page.Master).IdModulo = "3";
             
               if (!IsPostBack)
-            {
-
-                this.presentador = new PresentadorLlenarOrganizacion(this);
+            {                
                 this.presentador.LlenarInformacion();
             }
             
@@ -77,11 +76,20 @@ namespace templateApp.GUI.Modulo3
             this.tabla.Text += M3_RecursoInterfaz.CerrarTD;
             this.tabla.Text += M3_RecursoInterfaz.CerrarTR;
         }
+        public int obtenerIdOrg
+        {
+           get {return Int32.Parse(this.OrgIdStatus.Value);}
+        }
+        public int obtenerStatusOrg
+        {
+            get { return Int32.Parse(this.estatusActual.Value); }
+        }
         #endregion
 
-        protected void CambioDeStatus_Click(object sender, EventArgs e)
+        protected void cambiarStatus(object sender, EventArgs e)
         {
-
+            this.presentador.cambiarStatus();
+            this.Response.Redirect(Request.RawUrl);
         }
 
         }

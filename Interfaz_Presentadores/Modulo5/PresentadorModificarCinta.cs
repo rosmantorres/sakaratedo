@@ -68,14 +68,14 @@ namespace Interfaz_Presentadores.Modulo5
            try
            {
                  
-            laCinta.Id_cinta = this.vista.obtenerIdCInta();
-            laCinta.Color_nombre = this.vista.obtenerColorCinta();
-            laCinta.Rango = this.vista.obtenerRango();
-            laCinta.Clasificacion = this.vista.obtenerCategoria();
-            laCinta.Significado = this.vista.obtenerSignificado();
-            laCinta.Orden = this.vista.obtenerOrden();
-            laOrganizacion.Id_organizacion = this.vista.obtenerIdOrganizacion();
-            laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion();
+            laCinta.Id_cinta = this.vista.obtenerIdCInta;
+            laCinta.Color_nombre = this.vista.obtenerColorCinta;
+            laCinta.Rango = this.vista.obtenerRango;
+            laCinta.Clasificacion = this.vista.obtenerCategoria;
+            laCinta.Significado = this.vista.obtenerSignificado;
+            laCinta.Orden = this.vista.obtenerOrden;
+            laOrganizacion.Id_organizacion = this.vista.obtenerIdOrganizacion;
+            laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion;
             laCinta.Organizacion = laOrganizacion;
 
             Comando<bool> _comando = FabricaComandos.ObtenerEjecutarModificarCinta(laCinta);

@@ -40,43 +40,43 @@ namespace templateApp.GUI.Modulo5
             this.options.Add(id, nombre);
         }
 
-        public int obtenerIdOrganizacion()
+        public int obtenerIdOrganizacion
         {
-            return Int32.Parse(this.ListOrg.SelectedValue);
+            get { return Int32.Parse(this.ListOrg.SelectedValue); }
         }
 
-        public string obtenerNombreOrganizacion()
+        public string obtenerNombreOrganizacion
         {
-            return this.ListOrg.SelectedItem.Text;
+            get { return this.ListOrg.SelectedItem.Text; }
         }
 
-        public string obtenerColorCinta()
+        public string obtenerColorCinta
         {
-            return this.color.Value;
+            get { return this.color.Value; }
         }
 
-        public string obtenerRango()
+        public string obtenerRango
         {
-            return this.ran.Value;
+            get { return this.ran.Value; }
         }
 
-        public string obtenerCategoria()
+        public string obtenerCategoria
         {
-            return this.cate.Value;
+            get { return this.cate.Value; }
         }
 
-        public string obtenerSignificado()
+        public string obtenerSignificado
         {
-            return this.signi.Value;
+            get { return this.signi.Value; }
         }
 
-        public int obtenerOrden()
+        public int obtenerOrden
         {
-            return Int32.Parse(this.ord.Value);
+            get { return Int32.Parse(this.ord.Value); }
         }
-        public int obtenerIdCInta()
+        public int obtenerIdCInta
         {
-            return Int32.Parse(Request.QueryString["idCinta"]);
+            get {  return Int32.Parse(Request.QueryString["idCinta"]); }
         }
         public void alertaModificarFallidoOrden(ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
         {

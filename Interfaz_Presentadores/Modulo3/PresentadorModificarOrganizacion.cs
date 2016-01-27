@@ -32,13 +32,13 @@ namespace Interfaz_Presentadores.Modulo3
           try
             {
 
-            laOrganizacion.Id_organizacion = this.vista.obtenerIdOrg();
-            laOrganizacion.Nombre = this.vista.obtenerNombreOrg();
-            laOrganizacion.Email = this.vista.obtenerEmail();
-            laOrganizacion.Telefono = Int32.Parse(this.vista.obtenerTelefono());
-            laOrganizacion.Direccion = this.vista.obtenerDireccion();
-            laOrganizacion.Estado = this.vista.obtenerEstado();
-            laOrganizacion.Estilo = this.vista.obtenerTecnica();
+            laOrganizacion.Id_organizacion = this.vista.obtenerIdOrg;
+            laOrganizacion.Nombre = this.vista.obtenerNombreOrg;
+            laOrganizacion.Email = this.vista.obtenerEmail;
+            laOrganizacion.Telefono = Int32.Parse(this.vista.obtenerTelefono);
+            laOrganizacion.Direccion = this.vista.obtenerDireccion;
+            laOrganizacion.Estado = this.vista.obtenerEstado;
+            laOrganizacion.Estilo = this.vista.obtenerTecnica;
 
             Comando<bool> _comando = FabricaComandos.ObtenerEjecutarModificarOrganizacion(laOrganizacion);
             bool resultado = _comando.Ejecutar();

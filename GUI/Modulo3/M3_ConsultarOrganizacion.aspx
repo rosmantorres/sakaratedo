@@ -35,7 +35,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Organizaciones
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-    
+ <form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server">    
         <div id="alert" runat="server">
     </div>
 
@@ -48,7 +48,14 @@
                       <h3 class="box-title">Lista de Organizaciones</h3>
                     
         </div><!-- /.box-header -->
-<form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server"> 
+
+
+
+
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <input id="OrgIdStatus" type="hidden" runat="server" />
+    <input id="estatusActual" type="hidden" runat="server" />
+
  <div class="box-body table-responsive"> 
         <table id="tablaOrg" class="table table-bordered table-striped dataTable">
             <thead>
@@ -68,11 +75,10 @@
 			</tbody>
             </table>
            </div>
-</form>
+
        </div>
     </div>
 </div>
-
 
 
  <div id="modal-switch" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
@@ -91,16 +97,29 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onserverclick="CambioDeStatus_Click">Aceptar</button>  <!-- onserverclick="CambioDeStatus_Click" --> 
+                <asp:Button runat="server" class="btn btn-primary" OnClick="cambiarStatus" Text="Aceptar" />
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div>
         </div>
       </div>
-    
+    </form>
     
     <script type="text/javascript">
           $(document).ready(function () {
+
+              $(".statusToggle").click(function () {
+                  //$(this).find("input").val()
+                  if ($(this).find("input").is(":checked")) {
+                      $("[id$='estatusActual']").val("1");
+                  }
+                  else {
+                      $("[id$='estatusActual']").val("0");
+                  }
+                  $("[id$='OrgIdStatus']").val($(this).find("input").val());
+
+              })
+
 
               var table = $('#tablaOrg').DataTable({
               /*  "language": {
