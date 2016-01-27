@@ -18,6 +18,8 @@ namespace Interfaz_Contratos.Modulo3
         void llenarBotones(int id);
         void llenarStatusActivo(int id);
         void llenarStatusInactivo(int id);
+        int obtenerIdOrg();
+        int obtenerStatusOrg();
 
     }
 }

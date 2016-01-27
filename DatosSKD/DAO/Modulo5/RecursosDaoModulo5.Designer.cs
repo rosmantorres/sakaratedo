@@ -27,6 +27,7 @@ namespace DatosSKD.DAO.Modulo5 {
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
+
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal RecursosDaoModulo5() {
@@ -302,6 +303,17 @@ namespace DatosSKD.DAO.Modulo5 {
                 return ResourceManager.GetString("ModificarCinta", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to M5_ModificarStatusCinta.
+        /// </summary>
+        internal static string ModificarStatusCinta
+        {
+            get
+            {
+                return ResourceManager.GetString("ModificarStatusCinta", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to @clasificacionCinta.
@@ -417,6 +429,17 @@ namespace DatosSKD.DAO.Modulo5 {
         internal static string PararamIdCinta {
             get {
                 return ResourceManager.GetString("PararamIdCinta", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to estatus.
+        /// </summary>
+        internal static string AliasStatusCinta
+        {
+            get
+            {
+                return ResourceManager.GetString("AliasStatusCinta", resourceCulture);
             }
         }
     }

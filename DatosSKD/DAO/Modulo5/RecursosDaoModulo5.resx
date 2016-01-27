@@ -144,6 +144,9 @@
   <data name="AliasSignificadoCinta" xml:space="preserve">
     <value>significadoCinta</value>
   </data>
+  <data name="AliasStatusCinta" xml:space="preserve">
+    <value>estatus</value>
+  </data>
   <data name="BuscarIDOrganiacion" xml:space="preserve">
     <value>M5_BuscarIDOrganiacion</value>
     <comment>Procedimiento para buscar el id de organizacion</comment>
@@ -202,6 +205,10 @@
   </data>
   <data name="ModificarCinta" xml:space="preserve">
     <value>M5_ModificarCinta</value>
+  </data>
+  <data name="ModificarStatusCinta" xml:space="preserve">
+    <value>M5_ModificarStatusCinta</value>
+    <comment>Procedure para modificar el estatus de una cinta</comment>
   </data>
   <data name="ParamClasiCinta" xml:space="preserve">
     <value>@clasificacionCinta</value>

@@ -48,6 +48,11 @@
                       <h3 class="box-title">Lista de Organizaciones</h3>
                     
         </div><!-- /.box-header -->
+
+ <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <input id="OrgIdStatus" type="hidden" runat="server" />
+    <input id="estatusActual" type="hidden" runat="server" />
+
 <form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server"> 
  <div class="box-body table-responsive"> 
         <table id="tablaOrg" class="table table-bordered table-striped dataTable">
@@ -101,6 +106,19 @@
     
     <script type="text/javascript">
           $(document).ready(function () {
+
+              $(".statusToggle").click(function () {
+                  //$(this).find("input").val()
+                  if ($(this).find("input").is(":checked")) {
+                      $("[id$='estatusActual']").val("1");
+                  }
+                  else {
+                      $("[id$='estatusActual']").val("0");
+                  }
+                  $("[id$='OrgIdStatus']").val($(this).find("input").val());
+
+              })
+
 
               var table = $('#tablaOrg').DataTable({
               /*  "language": {

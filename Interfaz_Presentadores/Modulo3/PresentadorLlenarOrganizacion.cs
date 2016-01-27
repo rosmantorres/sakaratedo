@@ -8,6 +8,7 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos.Modulo3;
 using DominioSKD;
 using LogicaNegociosSKD;
+using DominioSKD.Fabrica;
 
 namespace Interfaz_Presentadores.Modulo3
 {
@@ -61,6 +62,16 @@ namespace Interfaz_Presentadores.Modulo3
                     this.vista.llenarStatusInactivo(organizacion.Id_organizacion);
 
             }
+        }
+
+        public void cambiarStatus()
+        {
+            DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
+            laOrganizacion.Id_organizacion = this.vista.obtenerIdOrg();
+
+            Comando<bool> _comando = FabricaComandos.ObtenerEjecutarModificarStatusOrganizacion(laOrganizacion);
+            bool _resultado = _comando.Ejecutar();
+
         }
     }
 }

@@ -70,17 +70,9 @@ namespace Interfaz_Presentadores.Modulo5
             DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)FabricaEntidades.ObtenerCinta_M5();
             laCinta.Id_cinta = this.vista.obtenerIdCinta();
 
-            if (this.vista.obtenerStatusCinta() == 1)
-                laCinta.Status = true;
-            else
-                laCinta.Status = false;
-
-            /* 
-            if (laCinta.Status)
-                this.vista.llenarStatusInactivo(laCinta.Id_cinta);
-            else
-                this.vista.llenarStatusActivo(laCinta.Id_cinta);    
-             * */
+            Comando<bool> _comando = FabricaComandos.ObtenerEjecutarModificarStatusCinta(laCinta);
+            bool _resultado = _comando.Ejecutar();
+           
         }
     }
 }

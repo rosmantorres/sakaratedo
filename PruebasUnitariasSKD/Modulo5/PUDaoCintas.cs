@@ -78,7 +78,7 @@ namespace PruebasUnitariasSKD.Modulo5
             bool resultado;
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarOrganizacion(miEntidad);
-            Assert.IsFalse(resultado);
+            Assert.IsTrue(resultado);
            
         }
         /// <summary>
@@ -148,7 +148,7 @@ namespace PruebasUnitariasSKD.Modulo5
             List<Entidad> resultado;
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ListarCintasXOrganizacion(miEntidad);
-            Assert.IsEmpty(resultado);
+            Assert.IsNotEmpty(resultado);
 
         }
         /// <summary>
@@ -199,6 +199,20 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsNotNull(resultado);
 
         }
+
+        /// <summary>
+        /// Método de prueba para modificar el status de una Cinta en DAO
+        /// </summary>
+        [Test]
+        public void PruebaModificarStatusCinta()
+        {
+            bool resultado;
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
+            resultado = miDaoCinta.ModificarStatus(miEntidadCintaModificar);
+            Assert.IsTrue(resultado);
+
+        }
+
         #endregion
         
     }

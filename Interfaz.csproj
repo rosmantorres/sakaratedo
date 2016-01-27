@@ -365,6 +365,7 @@
     <Content Include="plugins\jquery_validate\package.json" />
     <Content Include="plugins\jquery_validate\README.md" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Sakaratedo Web.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

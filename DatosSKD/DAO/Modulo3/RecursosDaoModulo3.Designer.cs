@@ -266,6 +266,18 @@ namespace DatosSKD.DAO.Modulo3 {
                 return ResourceManager.GetString("ModificarOrganizacion", resourceCulture);
             }
         }
+
+
+        /// <summary>
+        ///   Looks up a localized string similar to M3_ModificarStatusOrganizacion.
+        /// </summary>
+        internal static string ModificarStatusOrganizacion
+        {
+            get
+            {
+                return ResourceManager.GetString("ModificarStatusOrganizacion", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to @emailOrganizacion.
@@ -356,5 +368,18 @@ namespace DatosSKD.DAO.Modulo3 {
                 return ResourceManager.GetString("ParamTelOrg", resourceCulture);
             }
         }
+
+
+        /// <summary>
+        ///   Looks up a localized string similar to estatus
+        /// </summary>
+        internal static string AliasStatusOrg
+        {
+            get
+            {
+                return ResourceManager.GetString("AliasStatusOrg", resourceCulture);
+            }
+        }
+
     }
 }

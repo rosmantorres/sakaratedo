@@ -77,6 +77,14 @@ namespace templateApp.GUI.Modulo3
             this.tabla.Text += M3_RecursoInterfaz.CerrarTD;
             this.tabla.Text += M3_RecursoInterfaz.CerrarTR;
         }
+        public int obtenerIdOrg()
+        {
+            return Int32.Parse(this.OrgIdStatus.Value);
+        }
+        public int obtenerStatusOrg()
+        {
+            return Int32.Parse(this.estatusActual.Value);
+        }
         #endregion
 
         protected void CambioDeStatus_Click(object sender, EventArgs e)

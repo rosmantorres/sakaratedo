@@ -82,6 +82,10 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new EjecutarComboOrganizaciones();
         }
+        public static Comando<bool> ObtenerEjecutarModificarStatusOrganizacion(Entidad nuevaEntidad)
+        {
+            return new EjecutarModificarStatusOrganizacion(nuevaEntidad);
+        }
         #endregion
 
         #region Modulo 4
@@ -103,6 +107,14 @@ namespace LogicaNegociosSKD.Fabrica
         public static Comando<List<Entidad>> ObtenerEjecutarConsultarTodosCinta()
         {
             return new EjecutarConsultarTodosCinta();
+        }
+        public static Comando<List<Entidad>> ObtenerEjecutarConsultarCintaXOrganizacion(Entidad nuevaEntidad)
+        {
+            return new EjecutarConsultarCintasXOrganizacion(nuevaEntidad);
+        }
+        public static Comando<bool> ObtenerEjecutarModificarStatusCinta(Entidad nuevaEntidad)
+        {
+            return new EjecutarModificarStatusCinta(nuevaEntidad);
         }
         #endregion
 
