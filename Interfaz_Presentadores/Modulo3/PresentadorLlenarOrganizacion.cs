@@ -67,6 +67,7 @@ namespace Interfaz_Presentadores.Modulo3
         public void cambiarStatus()
         {
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
+
             laOrganizacion.Id_organizacion = this.vista.obtenerIdOrg;
 
             Comando<bool> _comando = FabricaComandos.ObtenerEjecutarModificarStatusOrganizacion(laOrganizacion);

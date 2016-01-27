@@ -21,5 +21,6 @@ namespace Interfaz_Contratos.Modulo3
         int obtenerIdOrg { get; }
         int obtenerStatusOrg { get; }
 
+
     }
 }

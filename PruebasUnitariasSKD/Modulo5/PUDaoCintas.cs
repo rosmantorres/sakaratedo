@@ -79,7 +79,6 @@ namespace PruebasUnitariasSKD.Modulo5
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarOrganizacion(miEntidad);
             Assert.IsTrue(resultado);
-
         }
         /// <summary>
         /// Método para probar la exception de Organizacion inexistente para Agregar y Modificar en DAO
@@ -149,7 +148,6 @@ namespace PruebasUnitariasSKD.Modulo5
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ListarCintasXOrganizacion(miEntidad);
             Assert.GreaterOrEqual(resultado.Count, 1);
-
         }
         /// <summary>
         /// Método de prueba para Agregar una Cinta en DAO

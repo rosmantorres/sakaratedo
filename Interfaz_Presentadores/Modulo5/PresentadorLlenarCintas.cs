@@ -88,6 +88,7 @@ namespace Interfaz_Presentadores.Modulo5
         public void cambiarStatus()
         {
             DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)FabricaEntidades.ObtenerCinta_M5();
+
             laCinta.Id_cinta = this.vista.obtenerIdCinta;
             DominioSKD.Entidades.Modulo3.Organizacion laOrg = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
             laOrg.Nombre = this.vista.obtenerNombreOrg;

@@ -57,6 +57,7 @@ namespace templateApp.GUI.Modulo3 {
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputHidden estatusActual;
         
+        
         /// <summary>
         /// tabla control.
         /// </summary>

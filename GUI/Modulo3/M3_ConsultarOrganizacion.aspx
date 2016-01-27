@@ -52,9 +52,13 @@
 
 
 
+
      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <input id="OrgIdStatus" type="hidden" runat="server" />
     <input id="estatusActual" type="hidden" runat="server" />
+
+
+<form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server"> 
 
  <div class="box-body table-responsive"> 
         <table id="tablaOrg" class="table table-bordered table-striped dataTable">

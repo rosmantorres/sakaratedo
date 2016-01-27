@@ -83,7 +83,7 @@ namespace templateApp.GUI.Modulo3
         public int obtenerStatusOrg
         {
             get { return Int32.Parse(this.estatusActual.Value); }
-        }
+		}
         #endregion
 
         protected void cambiarStatus(object sender, EventArgs e)

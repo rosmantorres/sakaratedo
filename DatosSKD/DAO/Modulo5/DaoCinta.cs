@@ -675,6 +675,7 @@ namespace DatosSKD.DAO.Modulo5
                         parametros.Add(elParametro);
                         elParametro = new Parametro(RecursosDaoModulo5.ParamNomOrg, SqlDbType.VarChar, laCinta.Organizacion.Nombre, false);
                         parametros.Add(elParametro);
+
                         //  BDConexion laConexion = new BDConexion();// abres la conexion
 
                         string query = RecursosDaoModulo5.ModificarStatusCinta;
