@@ -52,7 +52,7 @@ namespace PruebasUnitariasSKD.Modulo8
         [Test]
         public void PruebaAgregarRestriccionCinta()
         {
-            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCinta("Descripcion pu", 1, 2, 3, 4);
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCinta("Descripcion pu", 1, 2, 3, 4,0);
             IDaoRestriccionCinta DAO = FabricaDAOSqlServer.ObtenerDAORestriccionCinta();
             entidad.Id = 5;
            a = DAO.AgregarRestriccionCinta(entidad);
@@ -62,7 +62,7 @@ namespace PruebasUnitariasSKD.Modulo8
         [Test]
         public void PruebaModificarRestriccionEvento()
         {
-            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCinta(2, "Modificar pu2", 50, 50, 50, 50);
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCinta(2, "Modificar pu2", 50, 50, 50, 50,0);
             IDaoRestriccionCinta DAO = FabricaDAOSqlServer.ObtenerDAORestriccionCinta();
             a = DAO.ModificarRestriccionCinta(entidad);
             Assert.IsTrue(a);

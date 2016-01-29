@@ -115,6 +115,15 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to resStatus.
+        /// </summary>
+        internal static string AliasStatus {
+            get {
+                return ResourceManager.GetString("AliasStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TiempoDocente.
         /// </summary>
         internal static string AliasTiempoDocente {

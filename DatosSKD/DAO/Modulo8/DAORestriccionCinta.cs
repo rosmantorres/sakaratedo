@@ -344,7 +344,8 @@ namespace DatosSKD.DAO.Modulo8
                                                                                    row[RecursosDAORestriccionCinta.AliasColorCinta].ToString(),
                                                                        Int32.Parse(row[RecursosDAORestriccionCinta.AliasTiempoMinCintas].ToString()),
                                                                        Int32.Parse(row[RecursosDAORestriccionCinta.AliasPuntosMinCintas].ToString()),
-                                                                       Int32.Parse(row[RecursosDAORestriccionCinta.AliasTiempoDocente].ToString())));
+                                                                       Int32.Parse(row[RecursosDAORestriccionCinta.AliasTiempoDocente].ToString()),
+                                                                       Int32.Parse(row[RecursosDAORestriccionCinta.AliasStatus].ToString())));
                     }
 
                 }
