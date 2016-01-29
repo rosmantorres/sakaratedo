@@ -91,6 +91,8 @@ namespace templateApp.GUI.Modulo8
                 this.comboEvento = value;
             }
         }
+
+      
         #endregion
 
 
