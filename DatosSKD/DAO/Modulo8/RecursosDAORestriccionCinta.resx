@@ -162,7 +162,7 @@
     <comment>Llamada a funcion para consultar todas las rest. de cinta</comment>
   </data>
   <data name="EliminarRestriccionCinta" xml:space="preserve">
-    <value>M8_Eliminar_Restriccion_Cinta</value>
+    <value>M8_EliminarRestriccionCinta</value>
     <comment>Llamada a funcion para eliminar una rest. de cinta</comment>
   </data>
   <data name="Mensaje_Error_Formato" xml:space="preserve">
@@ -193,5 +193,8 @@
   </data>
   <data name="ParamTiempoMinimo" xml:space="preserve">
     <value>@tiempo_minimo</value>
+  </data>
+  <data name="ParamStatus" xml:space="preserve">
+    <value>@status</value>
   </data>
 </root>

@@ -178,7 +178,7 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M8_Eliminar_Restriccion_Cinta.
+        ///   Looks up a localized string similar to M8_EliminarRestriccionCinta.
         /// </summary>
         internal static string EliminarRestriccionCinta {
             get {
@@ -255,6 +255,15 @@ namespace DatosSKD.DAO.Modulo8 {
         internal static string ParamPuntosMinimos {
             get {
                 return ResourceManager.GetString("ParamPuntosMinimos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @status.
+        /// </summary>
+        internal static string ParamStatus {
+            get {
+                return ResourceManager.GetString("ParamStatus", resourceCulture);
             }
         }
         

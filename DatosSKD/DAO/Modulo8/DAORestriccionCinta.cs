@@ -373,5 +373,56 @@ namespace DatosSKD.DAO.Modulo8
             }    
 
         #endregion
+
+            #region Eliminar Restriccion Cinta
+            /// <summary>
+            /// Metodo para Eliminar una restriccion de cinta a la base de datos.
+            /// </summary>
+            /// <param name="parametro"></param>
+            /// <returns></returns>
+            public Boolean EliminarRestriccionCinta(DominioSKD.Entidad parametro)
+            {
+
+                try
+                {
+
+                    DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccionCinta =
+                    (DominioSKD.Entidades.Modulo8.RestriccionCinta)parametro;
+                    List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                                        
+                    Parametro elParametro = new Parametro(RecursosDAORestriccionCinta.ParamCintaNueva, SqlDbType.Int,
+                            laRestriccionCinta.IdRestriccionCinta.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    elParametro = new Parametro(RecursosDAORestriccionCinta.ParamStatus, SqlDbType.Int,
+                            laRestriccionCinta.Status.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionCinta.EliminarRestriccionCinta
+                                        , parametros);
+                }
+
+                catch (SqlException ex)
+                {
+                    throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                            RecursoGeneralBD.Mensaje, ex);
+                }
+                catch (FormatException ex)
+                {
+                    throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                         RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    throw ex;
+                }
+                catch (Exception ex)
+                {
+                    throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+                }
+
+                return true;
+            }
+            #endregion
     }
 }

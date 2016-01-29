@@ -28,6 +28,7 @@ namespace DominioSKD.Entidades.Modulo8
         private int tiempoMaximo;
         private int tiempoDocente;
         private int puntosMinimos;
+        private int status;
         private List<Cinta> listaCintas;
         #endregion
 
@@ -69,6 +70,12 @@ namespace DominioSKD.Entidades.Modulo8
             set { puntosMinimos = value; }
         }
 
+        public int Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
         public List<Cinta> ListaCintas
         {
             get { return listaCintas; }
@@ -91,6 +98,7 @@ namespace DominioSKD.Entidades.Modulo8
             this.tiempoMaximo = 0;
             this.tiempoDocente = 1;
             this.puntosMinimos = 0;
+            this.status = 0;
             this.listaCintas = null;
         }
 
@@ -106,13 +114,14 @@ namespace DominioSKD.Entidades.Modulo8
             this.tiempoMaximo = 0;
             this.tiempoDocente = 1;
             this.puntosMinimos = 0;
+            this.status = 0;
             this.listaCintas = null;
         }
 
         /// <summary>
         /// Constructor público sin el id de la restriccion de la clase RestriccionCinta y sin identificador unico
         /// </summary>
-        public RestriccionCinta(String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        public RestriccionCinta(String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos, int inputStatus)
             : base(0)
         {
             idRestriccionCinta = -1;
@@ -121,13 +130,14 @@ namespace DominioSKD.Entidades.Modulo8
             tiempoMaximo = inputTiempoMaximo;
             tiempoDocente = inputTiempoDocente;
             puntosMinimos = inputPuntosMinimos;
+            status = inputStatus;
             listaCintas = null;
         }
 
         /// <summary>
         /// Constructor público con todos los atributos de la tupla de la clase RestriccionCinta y sin identificador unico
         /// </summary>
-        public RestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        public RestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos, int inputStatus)
             : base(0)
         {
             idRestriccionCinta = inputId;
@@ -136,13 +146,14 @@ namespace DominioSKD.Entidades.Modulo8
             tiempoMaximo = inputTiempoMaximo;
             tiempoDocente = inputTiempoDocente;
             puntosMinimos = inputPuntosMinimos;
+            status = inputStatus;
             listaCintas = null;
         }
         
         /// <summary>
         /// Constructor público con todos los atributos de la tupla de la clase RestriccionCinta y con identificador unico
         /// </summary>
-        public RestriccionCinta(int id, int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        public RestriccionCinta(int id, int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos, int inputStatus)
  
         {
             base.Id = id;
@@ -152,16 +163,18 @@ namespace DominioSKD.Entidades.Modulo8
             tiempoMaximo = inputTiempoMaximo;
             tiempoDocente = inputTiempoDocente;
             puntosMinimos = inputPuntosMinimos;
+            status = inputStatus;
             listaCintas = null;
         }
 
-        public RestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputPuntosMinimos, int inputTiempoDocente)
+        public RestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputPuntosMinimos, int inputTiempoDocente, int inputStatus)
         {
             this.idRestriccionCinta = inputId;
             this.descripcion = inputDescripcion;
             this.tiempoMinimo = inputTiempoMinimo;
             this.puntosMinimos = inputPuntosMinimos;
             this.tiempoDocente = inputTiempoDocente;
+            this.status = inputStatus;
         }
         #endregion
 

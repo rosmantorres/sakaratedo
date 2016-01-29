@@ -121,7 +121,7 @@ namespace Interfaz_Presentadores.Modulo8
                 laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);*/
 
 
-                FabricaComandos _fabrica = new FabricaComandos();
+                //FabricaComandos _fabrica = new FabricaComandos();
                 LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta _comando =
                     (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCinta(laRestCinta);
                 
