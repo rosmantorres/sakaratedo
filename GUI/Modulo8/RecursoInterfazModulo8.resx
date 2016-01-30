@@ -176,4 +176,10 @@
   <data name="interfazRH" xml:space="preserve">
     <value>8.1</value>
   </data>
+  <data name="Mod8" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="volverRestriccionHorario" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesHorario.aspx</value>
+  </data>
 </root>

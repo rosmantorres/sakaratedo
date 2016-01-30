@@ -119,7 +119,7 @@ namespace templateApp.GUI.Modulo8
         {
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 _presentador.LlenarComboCinta();
                 _presentador.LlenarComboSexo();
                 _presentador.LlenarComboEdades();
@@ -132,7 +132,7 @@ namespace templateApp.GUI.Modulo8
             Boolean validar = _presentador.ModificarRest();
             if (validar)
             {
-                Response.Redirect("../Modulo8/interfazRestriccionesHorario.aspx");
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario);
             }
         }
     }
