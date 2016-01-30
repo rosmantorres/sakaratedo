@@ -184,6 +184,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoPresentadorM8.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\ValidacionesM8.cs" />
     <Compile Include="Modulo9\M9_RecursoInterfazPresentador.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -272,6 +273,7 @@
     <EmbeddedResource Include="Modulo8\RecursoPresentadorM8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursoPresentadorM8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo9\M9_RecursoInterfazPresentador.resx">
       <Generator>ResXFileCodeGenerator</Generator>
