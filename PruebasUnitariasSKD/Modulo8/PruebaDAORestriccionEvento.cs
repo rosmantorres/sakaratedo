@@ -29,8 +29,6 @@ namespace PruebasUnitariasSKD.Modulo8
         public void init()
         {
             listaEntidad = new List<Entidad>();
-            idEvento = "3";
-            idCompetencia = "11";
         }
 
         [TearDown]
