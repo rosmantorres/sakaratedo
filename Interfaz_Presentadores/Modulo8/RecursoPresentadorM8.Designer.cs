@@ -414,11 +414,29 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &amp;stat=.
+        /// </summary>
+        internal static string RestriccionStatus {
+            get {
+                return ResourceManager.GetString("RestriccionStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;sexo=.
         /// </summary>
         internal static string Sexo {
             get {
                 return ResourceManager.GetString("Sexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-off&quot; href=&quot;interfazRestriccionesAvanceCinta.aspx?idPlan=.
+        /// </summary>
+        internal static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
             }
         }
     }

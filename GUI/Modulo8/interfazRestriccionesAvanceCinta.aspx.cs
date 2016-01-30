@@ -60,27 +60,22 @@ namespace templateApp.GUI.Modulo8
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            String success = Request.QueryString["idPlan"];
+            String stat = Request.QueryString["stat"];
 
             ((SKD)Page.Master).IdModulo = "8.3";
 
-            if (!IsPostBack)
-            {
-
-                List<Entidad> listaRestricciones = _presentador.LlenarTabla();
-                _presentador.LlenarInformacion(listaRestricciones);
-            }
-
-
-
-            String success = Request.QueryString["actionSuccess"];
-
             if (success != null)
             {
-                if (success.Equals("1"))
+                int id = Convert.ToInt32(success);
+                int sta = Convert.ToInt32(stat);
+                _presentador.CambiarStatus(id, sta);
+
+                if (sta.Equals("1"))
                 {
                     alerta.Attributes["class"] = "alert alert-success alert-dismissible";
                     alerta.Attributes["role"] = "alert";
-                    alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción agregada exitosamente</div>";
+                    alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción modificada exitosamente</div>";
                 }
                 else
                 {
@@ -95,10 +90,20 @@ namespace templateApp.GUI.Modulo8
                         {
                             alerta.Attributes["class"] = "alert alert-success alert-dismissible";
                             alerta.Attributes["role"] = "alert";
-                            alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción modificada exitosamente</div>";
+                            alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción agregada exitosamente</div>";
                         }
                 }
             }
+
+
+            if (!IsPostBack)
+            {
+
+                List<Entidad> listaRestricciones = _presentador.LlenarTabla();
+                _presentador.LlenarInformacion(listaRestricciones);
+            }
+
+            
 
         }
     }

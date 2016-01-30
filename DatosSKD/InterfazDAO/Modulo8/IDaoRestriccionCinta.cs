@@ -52,5 +52,14 @@ namespace DatosSKD.InterfazDAO.Modulo8
         /// objeto con la informacion de una restriccion para cintas</param>
         /// <returns>Retorna un Boolean una vez realizada la operacion</returns>
         List<DominioSKD.Entidad> ConsultarRestriccionCintaDT();
+
+        /// <summary>
+        /// Firma de metodo que cambia una restriccion de cinta
+        /// de status activado a dsactivado.
+        /// </summary>
+        /// <param name="parametro">Tipo: RestriccionCinta,
+        /// objeto con la informacion de una restriccion para cintas</param>
+        /// <returns>Retorna un Boolean una vez realizada la operacion</returns>
+        Boolean StatusRestriccionCinta(DominioSKD.Entidad parametro);
     }
 }

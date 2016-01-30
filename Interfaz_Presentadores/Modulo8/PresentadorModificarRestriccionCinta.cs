@@ -55,13 +55,7 @@ namespace Interfaz_Presentadores.Modulo8
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
 
             laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
-            /*laRestCinta.Descripcion = this.vista.descripcion_rest_cinta;
-            laRestCinta.Id = Int32.Parse(this.vista.comboRestCinta.SelectedValue);
-            laRestCinta.PuntosMinimos = Int32.Parse(this.vista.puntaje_min);
-            laRestCinta.TiempoDocente = Int32.Parse(this.vista.horas_docen);
-            laRestCinta.TiempoMaximo = Int32.Parse(this.vista.tiempo_Max);
-            laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);*/
-
+  
             try 
             { 
             FabricaComandos _fabrica = new FabricaComandos();

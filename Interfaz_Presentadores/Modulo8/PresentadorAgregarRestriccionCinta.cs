@@ -38,6 +38,7 @@ namespace Interfaz_Presentadores.Modulo8
             retriccionCinta.TiempoDocente = int.Parse(vista.horas_docen);
             retriccionCinta.TiempoMinimo = int.Parse(vista.tiempo_Min);
             retriccionCinta.TiempoMaximo = int.Parse(vista.tiempo_Max);
+            retriccionCinta.Status = 1;
             //generarDescripcion();
             return retriccionCinta;
             

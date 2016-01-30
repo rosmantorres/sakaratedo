@@ -51,10 +51,11 @@
 		<thead>
 				<tr>
 					<th>ID</th>
-					<th>Cinta</th>
-					<th >Tiempo Mínimo (meses)</th>
+					<th>Descripcion</th>
+					<th>Tiempo Mínimo (meses)</th>
 					<th>Puntaje Mínimo</th>
-					<th >Mínimo Horas Docentes</th>
+					<th>Mínimo Horas Docentes</th>
+					<th>Status</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>

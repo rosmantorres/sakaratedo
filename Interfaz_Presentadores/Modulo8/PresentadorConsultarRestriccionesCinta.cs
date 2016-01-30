@@ -45,19 +45,13 @@ namespace Interfaz_Presentadores.Modulo8
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.TiempoMinimo.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.PuntosMinimos.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.TiempoDocente.ToString() + RecursoPresentadorM8.CerrarTD;
-                    /*vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD;
-                    foreach (string dat in plani.Dato)
-                    {
-                        vista.RestriccionesCreadas += dat + RecursoPresentadorM8.linea;
-                    }
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTD;*/
+                    if (rest.Status == 1)
+                        vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + "Activa" + RecursoPresentadorM8.CerrarTD;
+                    else
+                        vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + "Inactiva" + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD;
-                    //vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificar + rest.Id + RecursoPresentadorM8.Nombre + plani.Nombre + RecursoPresentadorM8.Tipo + plani.TipoPlanilla + RecursoPresentadorM8.BotonCerrar;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificarRegistro + rest.IdRestriccionCinta + RecursoPresentadorM8.Nombre + rest.Descripcion + RecursoPresentadorM8.BotonCerrar;
-                    /*if (plani.Status)
-                        vista.RestriccionesCreadas += RecursoPresentadorM8.BotonActivarPlanilla + plani.ID + RecursoPresentadorM8.BotonCerrar;
-                    else*/
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.BotonDesactivarPlanilla + rest.IdRestriccionCinta + RecursoPresentadorM8.BotonCerrar;
+                    vista.RestriccionesCreadas += RecursoPresentadorM8.Status + rest.IdRestriccionCinta +RecursoPresentadorM8.RestriccionStatus + rest.Status + RecursoPresentadorM8.BotonCerrar;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTR;
 
@@ -116,6 +110,39 @@ namespace Interfaz_Presentadores.Modulo8
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw ex;
+            }
+        }
+
+        public void CambiarStatus(int id, int bitStatus)
+        {
+            try
+            {
+                DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
+                if (bitStatus == 1)
+                    bitStatus = 0;
+                else
+                    bitStatus = 1;
+                laRestCinta.Status = bitStatus;
+                laRestCinta.IdRestriccionCinta = id;
+                FabricaComandos _fabrica = new FabricaComandos();
+                Comando<bool> _comando = _fabrica.CrearComandoStatusRestriccionCinta(laRestCinta);
+                bool resultado = _comando.Ejecutar();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

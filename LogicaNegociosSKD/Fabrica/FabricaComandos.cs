@@ -230,7 +230,10 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta(laRestCinta);
         }
 
-
+        public Comando<Boolean> CrearComandoStatusRestriccionCinta(Entidad laRestCinta)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta(laRestCinta);
+        }
 
         #endregion
 
