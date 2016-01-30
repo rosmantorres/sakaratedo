@@ -387,6 +387,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edad minima no puede ser mayor a la maxima.
+        /// </summary>
+        internal static string edadErrada {
+            get {
+                return ResourceManager.GetString("edadErrada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;edadmaxima=.
         /// </summary>
         internal static string EdadMax {

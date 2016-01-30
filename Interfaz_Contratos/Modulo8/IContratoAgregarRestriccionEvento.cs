@@ -16,5 +16,8 @@ namespace Interfaz_Contratos.Modulo8
         DropDownList edadMaxima { get; set; }
         DropDownList sexo { get; set; }
         DropDownList eventos { get; set; }
+        string alertaClase { set; }
+        string alertaRol { set; }
+        string alerta { set; }
     }
 }
