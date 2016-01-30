@@ -231,10 +231,9 @@ namespace DatosSKD.DAO.Modulo8
         /// </summary>
         /// <param name="parametro">EventoSimple a consultar restriccion con su id</param>
         /// <returns>Objeto de tipo RestriccionEvento con todos los datos</returns>
-        public DominioSKD.Entidad ConsultarRestriccionEvento(DominioSKD.Entidad parametro)
+        public DominioSKD.Entidad ConsultarRestriccionEvento(int parametro)
         {
-            DominioSKD.Entidades.Modulo9.Evento elEventoSimple =
-                (DominioSKD.Entidades.Modulo9.Evento)parametro;
+            
 
             DominioSKD.Entidad laRestriccionEvento = null;
             DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
@@ -243,7 +242,7 @@ namespace DatosSKD.DAO.Modulo8
             {
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro(RecursosDAORestriccionEvento.ParamIdEvento, SqlDbType.Int,
-                    elEventoSimple.Id.ToString(), false);
+                    parametro.ToString(), false);
 
                 parametros.Add(elParametro);
 
@@ -253,15 +252,18 @@ namespace DatosSKD.DAO.Modulo8
                 DataTable dt = this.EjecutarStoredProcedureTuplas(
                                RecursosDAORestriccionEvento.ConsultarRestriccionEvento, parametros);
 
-                int IdRestEvento = int.Parse(RecursosDAORestriccionEvento.AliasIdRestriccionEvento.ToString());
-                String Descripcion = RecursosDAORestriccionEvento.AliasResDescripcion.ToString();
-                int EdadMinima = int.Parse(RecursosDAORestriccionEvento.AliasEdadMin.ToString());
-                int EdadMaxima = int.Parse(RecursosDAORestriccionEvento.AliasEdadMax.ToString());
-                String Sexo = RecursosDAORestriccionEvento.AliasSexo.ToString();
-                int IdEvento = int.Parse(RecursosDAORestriccionEvento.AliasIdEvento.ToString());
-                String NombreEvento = RecursosDAORestriccionEvento.AliasNombreEve.ToString();
+                foreach (DataRow row in dt.Rows)
+                {
+                    int IdRestEvento = int.Parse(row[RecursosDAORestriccionEvento.AliasIdRestriccionEvento].ToString());
+                    String Descripcion = row[RecursosDAORestriccionEvento.AliasResDescripcion].ToString();
+                    int EdadMinima = int.Parse(row[RecursosDAORestriccionEvento.AliasEdadMin].ToString());
+                    int EdadMaxima = int.Parse(row[RecursosDAORestriccionEvento.AliasEdadMax].ToString());
+                    String Sexo = row[RecursosDAORestriccionEvento.AliasSexo].ToString();
+                    int IdEvento = int.Parse(row[RecursosDAORestriccionEvento.AliasIdEvento].ToString());
+                    String NombreEvento = row[RecursosDAORestriccionEvento.AliasNombreEve].ToString();
 
-                laRestriccionEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionEvento(IdRestEvento, Descripcion, EdadMinima, EdadMaxima, Sexo, IdEvento, NombreEvento);
+                    laRestriccionEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionEvento(IdRestEvento, Descripcion, EdadMinima, EdadMaxima, Sexo, IdEvento, NombreEvento);
+                }
             }
             catch (SqlException ex)
             {
@@ -373,7 +375,8 @@ namespace DatosSKD.DAO.Modulo8
                     int IdEvento = int.Parse(row[RecursosDAORestriccionEvento.AliasIdEvento].ToString());
                     String NombreEvento = row[RecursosDAORestriccionEvento.AliasNombreEvento].ToString();
 
-                    Entidad elEvento = fabricaEntidad.ObtenerEventoSimple(IdEvento, NombreEvento);
+                    Entidad elEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoSimple(IdEvento, NombreEvento);
+
                     losEventosSimple.Add(elEvento);
                 }
 
@@ -433,7 +436,7 @@ namespace DatosSKD.DAO.Modulo8
                     int IdEvento = int.Parse(row[RecursosDAORestriccionEvento.AliasIdEvento].ToString());
                     String NombreEvento = row[RecursosDAORestriccionEvento.AliasNombreEvento].ToString();
 
-                    Entidad elEventoSimple = fabricaEntidad.ObtenerEventoSimple(IdEvento, NombreEvento);
+                    Entidad elEventoSimple = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoSimple(IdEvento, NombreEvento);
                     laListaEventosSimple.Add(elEventoSimple);
 
                 }

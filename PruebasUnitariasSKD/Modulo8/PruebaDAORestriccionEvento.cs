@@ -21,6 +21,7 @@ namespace PruebasUnitariasSKD.Modulo8
         public string idCompetencia;
         public Entidad entidad;
         public Entidad entidad2;
+        public Entidad entidad3;
         public bool a;
         #endregion
 
@@ -91,8 +92,15 @@ namespace PruebasUnitariasSKD.Modulo8
             listaEntidad = DAO.EventosQuePuedeAsistirAtleta(1);
             Assert.NotNull(listaEntidad);
         }
+        
+        [Test]
+        public void PruebaConsultarRestriccionEvento()
+        {
+            entidad3 = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoSimple();
+            IDaoRestriccionEvento DAO = FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
+            entidad2 = DAO.ConsultarRestriccionEvento(1);
+            Assert.NotNull(entidad2);
+        }
         #endregion
-
-
     }
 }
