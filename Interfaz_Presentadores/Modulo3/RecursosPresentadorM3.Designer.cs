@@ -70,6 +70,15 @@ namespace Interfaz_Presentadores.Modulo3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SKD_002.
+        /// </summary>
+        internal static string Codigo_Error_Expresion_Regular {
+            get {
+                return ResourceManager.GetString("Codigo_Error_Expresion_Regular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SKD_001.
         /// </summary>
         internal static string Codigo_Error_Lista_Vacia {
@@ -129,6 +138,60 @@ namespace Interfaz_Presentadores.Modulo3 {
         internal static string expresionSQL {
             get {
                 return ResourceManager.GetString("expresionSQL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Direccion solo permite expresiones alfanumericos , numeros y los caractares &quot;-&quot;  &quot;.&quot;  &quot;_&quot; y &quot;,&quot;.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Direccion {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Direccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Email solo permite expresiones alfanumericos , numeros y los caractares &quot;-&quot;,  &quot;.&quot; y &quot;_&quot;. Debe contener @.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Email {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Estado solo permite expresiones alfanumericos.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Estado {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Estilo solo permite expresiones alfanumericos y los caractares &quot;-&quot; y &quot;_&quot;.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Estilo {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Estilo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Nombre solo permite expresiones alfanumericos y los caractares &quot;-&quot; y &quot;_&quot;.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Nombre {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Telefono solo permite numeros..
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Telefono {
+            get {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Telefono", resourceCulture);
             }
         }
         

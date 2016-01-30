@@ -122,7 +122,7 @@
     <comment>Codigo de error para una lista vacia</comment>
   </data>
   <data name="expresionNombre" xml:space="preserve">
-    <value>^[A-Za-z]{2,100}$</value>
+    <value>^[A-Za-z\s]{2,100}$</value>
   </data>
   <data name="expresionSQL" xml:space="preserve">
     <value>/\w*((\%27)|(\'))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/ix</value>
@@ -148,5 +148,23 @@
   </data>
   <data name="expresionNombreNumero" xml:space="preserve">
     <value>^[A-Z0-9a-z\s]{2,100}$</value>
+  </data>
+  <data name="Codigo_Error_Expresion_Regular" xml:space="preserve">
+    <value>SKD_002</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Color" xml:space="preserve">
+    <value>El campo Color Cinta solo permite expresiones alfanumericos</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Clasificacion" xml:space="preserve">
+    <value>El campo Clasificacion solo permite expresiones alfanumericos</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Orden" xml:space="preserve">
+    <value>El campo Orden solo permite numeros</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Rango" xml:space="preserve">
+    <value>El campo Rango solo permite expresiones alfanumericos y numeros</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Significado" xml:space="preserve">
+    <value>El campo Significado solo permite expresiones alfanumericos</value>
   </data>
 </root>
