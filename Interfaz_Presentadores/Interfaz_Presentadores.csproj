@@ -52,6 +52,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo4\M4_RecursosPresentador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M4_RecursosPresentador.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modulo4\PresentadorAgregarDojo.cs" />
+    <Compile Include="Modulo4\PresentadorDetallarDojo.cs" />
+    <Compile Include="Modulo4\PresentadorListarDojos.cs" />
+    <Compile Include="Modulo4\PresentadorModificarDojo.cs" />
     <Compile Include="Modulo8\PresentadorAgregarRestriccionCinta.cs" />
     <Compile Include="Modulo8\PresentadorAgregarRestriccionCompetencia.cs" />
     <Compile Include="Modulo11\PresentadorDetalleResultado.cs" />
@@ -216,10 +225,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Modulo4\M4_RecursosPresentador.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M4_RecursosPresentador.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo7\M7_RecursosPresentador.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>M7_RecursosPresentador.Designer.cs</LastGenOutput>

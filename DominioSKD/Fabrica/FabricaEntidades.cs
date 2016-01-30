@@ -8,6 +8,7 @@ using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Entidades.Modulo4;
 
 namespace DominioSKD.Fabrica
 {
@@ -73,7 +74,60 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 4
- 
+        /// <summary>
+        /// instancia dojo
+        /// </summary>
+        /// <returns>entidad dojo</returns>
+        public static Entidad ObtenerDojo_M4()
+        {
+            return new DojoM4();
+        }
+
+        /// <summary>
+        /// instancia lista de entidad
+        /// </summary>
+        /// <returns>lista de entidad</returns>
+        public static List<Entidad> ObtenerListaEntidad_M4()
+        {
+            return new List<Entidad>();
+        }
+
+        /// <summary>
+        /// instancia lista de dojo
+        /// </summary>
+        /// <returns>lista dojo</returns>
+        public static List<DojoM4> ObtenerListaDojos_M4()
+        {
+            return new List<DojoM4>();
+        }
+
+       /* public static Entidad ObtenerHistorialMatricula()
+        {
+            return new Historial_Matricula();
+        }
+        public static List<Historial_Matricula> ObtenerListaHistorialMatricula()
+        {
+            return new List<Historial_Matricula>();
+        }*/
+
+
+        /// <summary>
+        /// Instancia una Organizacion
+        /// </summary>
+        /// <returns>entidad org</returns>
+        public static Entidad ObtenerOrganizacion_M4()
+        {
+            return new Organizacion();
+        }
+
+        /// <summary>
+        /// Instancia Ubicacion
+        /// </summary>
+        /// <returns>entidad ubicacion</returns>
+        public static Entidad ObtenerUbicacion_M4()
+        {
+            return new Ubicacion();
+        }
         #endregion
 
         #region Modulo 5

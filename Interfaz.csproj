@@ -258,8 +258,9 @@
     <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
     <Content Include="GUI\Modulo4\M4_AgregarDojo.aspx" />
+    <Content Include="GUI\Modulo4\M4_DetalleDojo.aspx" />
     <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
-    <Content Include="GUI\Modulo4\M4_ModificaDojo.aspx" />
+    <Content Include="GUI\Modulo4\M4_ModificarDojo.aspx" />
     <Content Include="GUI\Modulo5\M5_ListarCintas.aspx" />
     <Content Include="GUI\Modulo5\M5_ModificarCintas.aspx" />
     <Content Include="GUI\Modulo5\M5_CrearCintas.aspx" />
@@ -1884,6 +1885,13 @@
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.designer.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo4\M4_DetalleDojo.aspx.cs">
+      <DependentUpon>M4_DetalleDojo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_DetalleDojo.aspx.designer.cs">
+      <DependentUpon>M4_DetalleDojo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.cs">
       <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1891,12 +1899,17 @@
     <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.designer.cs">
       <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo4\M4_ModificaDojo.aspx.cs">
-      <DependentUpon>M4_ModificaDojo.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo4\M4_ModificarDojo.aspx.cs">
+      <DependentUpon>M4_ModificarDojo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo4\M4_ModificaDojo.aspx.designer.cs">
-      <DependentUpon>M4_ModificaDojo.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo4\M4_ModificarDojo.aspx.designer.cs">
+      <DependentUpon>M4_ModificarDojo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_RecursoInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M4_RecursoInterfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo5\M5_ListarCintas.aspx.cs">
       <DependentUpon>M5_ListarCintas.aspx</DependentUpon>
@@ -2228,6 +2241,10 @@
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo3\M3_RecursoInterfaz.resx" />
+    <EmbeddedResource Include="GUI\Modulo4\M4_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M4_RecursoInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo5\RecursoInterfazMod5.resx" />
     <EmbeddedResource Include="GUI\Modulo7\M7_Recursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>

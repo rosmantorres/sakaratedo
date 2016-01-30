@@ -53,6 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo4\IContratoAgregarDojo.cs" />
+    <Compile Include="Modulo4\IContratoDetalleDojo.cs" />
+    <Compile Include="Modulo4\IContratoListarDojos.cs" />
+    <Compile Include="Modulo4\IContratoModificarDojo.cs" />
     <Compile Include="Modulo8\IContratoAgregarRestriccionEvento.cs" />
     <Compile Include="Modulo8\IContratoConsultarRestriccionCompetencia.cs" />
     <Compile Include="Modulo8\IContratoConsultarRestriccionEvento.cs" />
@@ -133,7 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
   </ItemGroup>
   <ItemGroup>

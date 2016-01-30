@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_AgregarDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_AgregarDojo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M4_ModificarDojo.aspx.cs" Inherits="templateApp.GUI.Modulo4.M4_ModificarDojo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
@@ -10,7 +10,12 @@
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     <script src="../../../plugins/datepicker/bootstrap-datepicker.js"></script>  
     
-     
+    
+    
+    
+    
+    
+    
     <script type="text/javascript">
         function initialize() {
             var latitude;
@@ -89,33 +94,34 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
       
-    <%-- INICIO DE ALERTA DE FALTA DE CONTENIDO --%>
+    <!-- INICIO DE ALERTA DE FALTA DE CONTENIDO -->
         <div id="alert"  >
             <div id="contenido_alerta">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
         </div>
-    <%-- FIN DE ALERTA DE FALTA DE CONTENIDO --%>
+    <!-- FIN DE ALERTA DE FALTA DE CONTENIDO -->
 
-    <%-- INICIO DE ALERTA DE CONFIRMACION --%>
+    <!-- INICIO DE ALERTA DE CONFIRMACION -->
          <div id="alert_confirmacion"  >
             <div id="Div2"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> </div>
          </div>    
-    <%-- FIN DE ALERTA DE CONFIRMACION --%>
+    <!-- FIN DE ALERTA DE CONFIRMACION -->
 
-    <%-- ELEMENTOS GENERALES DEL FORMULARIO --%>
+    <!-- ELEMENTOS GENERALES DEL FORMULARIO -->
         <div class="box box-primary">
             <div class="box-header with-border">
                 <h3 class="box-title">Nuevo Dojo</h3>
             </div>
-    <%-- ENCABEZADO DEL FORMULARIO --%>
-            <%-- COMIENZO DEL FORMULARIO --%>
-                <form role="form" name="agregar_dojo" id="agregar_dojo" method="post" runat="server">
+    <!-- ENCABEZADO DEL FORMULARIO -->
+            <!-- COMIENZO DEL FORMULARIO -->
+                <form role="form" name="modificar_dojo" id="modificar_dojo" method="post" runat="server">
                     
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                         <div class="box-body col-sm-10 col-md-10 col-lg-10 ">
-                            <asp:Image id="logDojo" Height="100" ImageUrl="Imagenes/Aikido.png" runat="server" Width="150" style="margin: 5px 900px 5px 5px;float: left;"/>
+                            <asp:Image id="logDojo" Height="100" ImageUrl="Imagenes/Aikido.png" runat="server" Width="150" style="margin: 5px 900px 5px 5px;float: left;"/> 
                             <asp:TextBox id="logoDojos" name="logoDojos" type="file" class="file"  runat="server"></asp:TextBox>
+                            <asp:TextBox id="logDojos" name="logDojos" type="text" class="form-control" Enabled="false"  runat="server"></asp:TextBox>
                         </div>
                     
                         <br/>
@@ -130,8 +136,8 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <h3>Nombre Del Dojo:</h3>
                           <asp:TextBox runat="server" type="text" name="nombreDojo" id="nombreDojo" placeholder="*Nombre" class="form-control" ></asp:TextBox>
-                          
                         </div>
+                        
                         <br/>
 
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
@@ -144,12 +150,9 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Email:</h3>
                             <asp:TextBox runat="server" type="email" name="emailDojo" id="emailDojo" placeholder="*Email" class="form-control" ></asp:TextBox>
-                            
-                        
                         </div>
                         
                         <br/>
-
                          <!-- COMBO ESTADOS -->
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Estado:</h3>
@@ -227,7 +230,7 @@
 
                     <div class="box-footer">
                         &nbsp;&nbsp;&nbsp;&nbsp
-                        <asp:Button id="btn_agregarDojo" class="btn btn-primary" type="submit" style="align-content:flex-end" runat="server" OnClick="btn_agregarDojo_Click" Text="Agregar"></asp:Button>
+                        <asp:Button id="Btn_ModificarDojo" class="btn btn-primary" type="submit" style="align-content:flex-end" runat="server" OnClick="Btn_ModificarDojo_Click" Text="Modificar"></asp:Button>
                         &nbsp;&nbsp
                         <a class="btn btn-default" href="M4_ListarDojos.aspx">Cancelar</a>
                     </div>
@@ -333,3 +336,4 @@
     </script>
     
 </asp:Content>
+
