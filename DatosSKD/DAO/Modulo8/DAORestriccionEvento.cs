@@ -79,20 +79,28 @@ namespace DatosSKD.DAO.Modulo8
 
             catch (SqlException ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
+                     RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
             catch (Exception ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -149,20 +157,28 @@ namespace DatosSKD.DAO.Modulo8
 
             catch (SqlException ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
+                     RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
             catch (Exception ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -203,20 +219,28 @@ namespace DatosSKD.DAO.Modulo8
 
             catch (SqlException ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
+                     RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
             catch (Exception ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -268,20 +292,28 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
+                     RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
             catch (Exception ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -384,20 +416,28 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
+                     RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
             catch (Exception ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -445,20 +485,28 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
-                        RecursoGeneralBD.Mensaje, ex);
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
-                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
+                     RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
             catch (Exception ex)
             {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
