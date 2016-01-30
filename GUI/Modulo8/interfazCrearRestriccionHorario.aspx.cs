@@ -133,7 +133,7 @@ namespace templateApp.GUI.Modulo8
             Boolean validar = _presentador.agregarRest();
             if (validar)
             {
-                Response.Redirect("../Modulo8/interfazRestriccionesHorario.aspx");
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario);
             }
         }
     }
