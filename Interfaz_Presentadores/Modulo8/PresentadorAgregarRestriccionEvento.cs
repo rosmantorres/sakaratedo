@@ -194,7 +194,6 @@ namespace Interfaz_Presentadores.Modulo8
                     FabricaComandos _fabrica = new FabricaComandos();
                     Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionEvento(laRestEvento);
                     bool resultado = _comando.Ejecutar();
-                    return true;
                 }
                 catch (SqlException ex)
                 {
@@ -212,6 +211,7 @@ namespace Interfaz_Presentadores.Modulo8
                 {
                     throw ex;
                 }
+                return true;
             }
             else
             {

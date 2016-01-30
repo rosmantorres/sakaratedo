@@ -93,6 +93,18 @@ namespace templateApp.GUI.Modulo8
                 String idEvento = Request.QueryString["idPlan"]; 
             }
         }
+        public string alertaClase
+        {
+            set { alert.Attributes[RecursoInterfazModulo8.alertClase] = value; }
+        }
+        public string alertaRol
+        {
+            set { alert.Attributes[RecursoInterfazModulo8.alertRole] = value; }
+        }
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
         #endregion
 
 
@@ -117,8 +129,11 @@ namespace templateApp.GUI.Modulo8
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            _presentador.ModificarRest();
-            Response.Redirect("../Modulo8/interfazRestriccionesHorario.aspx");
+            Boolean validar = _presentador.ModificarRest();
+            if (validar)
+            {
+                Response.Redirect("../Modulo8/interfazRestriccionesHorario.aspx");
+            }
         }
     }
 }
