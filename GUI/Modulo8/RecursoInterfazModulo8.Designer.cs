@@ -79,6 +79,24 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to class.
+        /// </summary>
+        internal static string alertClase {
+            get {
+                return ResourceManager.GetString("alertClase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to role.
+        /// </summary>
+        internal static string alertRole {
+            get {
+                return ResourceManager.GetString("alertRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
         /// </summary>
@@ -203,6 +221,33 @@ namespace templateApp.GUI.Modulo8 {
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8.1.
+        /// </summary>
+        internal static string interfazRH {
+            get {
+                return ResourceManager.GetString("interfazRH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8.
+        /// </summary>
+        internal static string Mod8 {
+            get {
+                return ResourceManager.GetString("Mod8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx.
+        /// </summary>
+        internal static string volverRestriccionHorario {
+            get {
+                return ResourceManager.GetString("volverRestriccionHorario", resourceCulture);
             }
         }
     }

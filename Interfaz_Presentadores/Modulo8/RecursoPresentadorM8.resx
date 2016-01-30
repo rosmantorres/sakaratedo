@@ -245,4 +245,40 @@
   <data name="RestriccionStatus" xml:space="preserve">
     <value>&amp;stat=</value>
   </data>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="alertaSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="idAlertAgregar" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="idAlertModificar" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="innerHtmlAlertAgregar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento agregado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="innerHtmlAlertModificar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento modificado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="strEventoDetalle" xml:space="preserve">
+    <value>restEventoDetalle</value>
+  </data>
+  <data name="strSuccess" xml:space="preserve">
+    <value>success</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="edadErrada" xml:space="preserve">
+    <value>Edad minima no puede ser mayor a la maxima</value>
+  </data>
 </root>

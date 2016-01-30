@@ -56,14 +56,14 @@
 		<div class="col-md-3">
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
-					<p style="margin-top:50px;">Eddad Mínima</p>
+					<p style="margin-top:50px;">Seleccione la edad mínima:</p>
 					<div class="dropdown" runat="server" id="divEdadMin" contenteditable="false" draggable="false" >
                         <asp:DropDownList style="width:265px; height:35px; margin-top: -10px;" ID="comboEdadMinima" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="false" >
                         </asp:DropDownList>
                     </div>	
 					
 					<div class="col-sm-8 col-md-8 col-lg-84">
-                      <p style="margin-top:30px; margin-left:-15px;">Sexo:</p>
+                      <p style="margin-top:30px; margin-left:-15px;">Seleccione el sexo:</p>
                           <div class="dropdown" runat="server" id="div1"  style="margin-top:-10px; margin-left:-15px;">
                             <asp:DropDownList ID="comboSexo" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
                             </asp:DropDownList>
@@ -77,14 +77,14 @@
         <div class="col-md-3">
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
-                    <p style="margin-top:50px;">Eddad Máxima:</p>
+                    <p style="margin-top:50px;">Seleccione la edad máxima:</p>
 					<div class="dropdown" runat="server" id="divEdadMax" contenteditable="false" >
                         <asp:DropDownList ID="comboEdadMaxima" style="width:265px; height:35px; margin-top: -10px;" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="false" >
                         </asp:DropDownList>
                     </div>	
 					
 					<div class="col-sm-8 col-md-8 col-lg-84">
-                        <p style="margin-top:30px; margin-left:-15px;">Cinta:</p>
+                        <p style="margin-top:30px; margin-left:-15px;">Seleccione la cinta:</p>
              <div class="dropdown" runat="server" id="combocintama" style="margin-top:-10px; margin-left:-15px;">
                  <asp:DropDownList ID="comboCintaMayor" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
                  </asp:DropDownList>

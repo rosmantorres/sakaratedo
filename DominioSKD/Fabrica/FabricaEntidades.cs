@@ -390,7 +390,7 @@ namespace DominioSKD.Fabrica
         /// Fabrica de EventoSimple sin parametros de entrada
         /// </summary>
         /// <returns> Objeto Tipo Entidad </returns>
-        public Entidad ObtenerEventoSimple()
+        public static Entidad ObtenerEventoSimple()
         {
             return new Entidades.Modulo8.EventoSimple();
         }
@@ -401,7 +401,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Integer, atributo correspondiente al id del evento en bd </param>
         /// <param name="inputNombre">String, nombre del evento</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerEventoSimple(int inputId, String inputNombre)
+        public static Entidad ObtenerEventoSimple(int inputId, String inputNombre)
         {
             return new Entidades.Modulo8.EventoSimple(inputId, inputNombre);
         }
@@ -413,7 +413,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Integer, atributo correspondiente al id del evento en bd </param>
         /// <param name="inputNombre">String, nombre del evento</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerEventoSimple(int id, int inputId, String inputNombre)
+        public static Entidad ObtenerEventoSimple(int id, int inputId, String inputNombre)
         {
             return new Entidades.Modulo8.EventoSimple(id, inputId, inputNombre);
         }

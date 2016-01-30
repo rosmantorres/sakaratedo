@@ -43,22 +43,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
                 return false;
 
             }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo3.FormatoIncorrectoException ex)
+            catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
-            }
-            catch (ExcepcionesSKD.ExceptionSKD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
                 throw ex;
             }
 

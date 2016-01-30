@@ -46,7 +46,6 @@ namespace Interfaz_Presentadores.Modulo8
                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCintaTodas();
             List<Entidad> listCinta = new List<Entidad>();
             Dictionary<string, string> options = new Dictionary<string, string>();
-            options.Add("-1", "Selecciona una opcion");
             try
             {
                 listCinta = comboCinta.Ejecutar();
@@ -54,7 +53,6 @@ namespace Interfaz_Presentadores.Modulo8
                 {
                     options.Add(item.Id_cinta.ToString(), item.Color_nombre);
                 }
-                options.Add("-2", "OTRO");
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -128,34 +126,47 @@ namespace Interfaz_Presentadores.Modulo8
             vista.edadMaxima.DataBind();
         }
 
-        public void ModificarRest()
+        public Boolean ModificarRest()
         {
 
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
 
             laRestEvento = meterParametrosVistaEnObjeto1(laRestEvento);
-
-            try
+            if (laRestEvento.EdadMaxima >= laRestEvento.EdadMinima)
             {
-                FabricaComandos _fabrica = new FabricaComandos();
-                Comando<bool> _comando = _fabrica.CrearComandoModificarRestriccionEvento(laRestEvento);
-                bool resultado = _comando.Ejecutar();
+                try
+                {
+                    FabricaComandos _fabrica = new FabricaComandos();
+                    Comando<bool> _comando = _fabrica.CrearComandoModificarRestriccionEvento(laRestEvento);
+                    bool resultado = _comando.Ejecutar();
+                
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                catch (FormatException ex)
+                {
+                    throw ex;
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    throw ex;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return true;
             }
-            catch (SqlException ex)
+            else
             {
-                throw ex;
-            }
-            catch (FormatException ex)
-            {
-                throw ex;
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml
+                    + RecursoPresentadorM8.edadErrada
+                    + RecursoPresentadorM8.alertaHtmlFinal;
+                return false;
             }
         }
     }

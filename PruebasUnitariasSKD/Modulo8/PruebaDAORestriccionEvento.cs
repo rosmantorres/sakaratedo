@@ -21,23 +21,29 @@ namespace PruebasUnitariasSKD.Modulo8
         public string idCompetencia;
         public Entidad entidad;
         public Entidad entidad2;
+        public Entidad entidad3;
         public bool a;
         #endregion
 
+        #region SetUp y TearDown
         [SetUp]
         public void init()
         {
             listaEntidad = new List<Entidad>();
-            idEvento = "3";
-            idCompetencia = "11";
         }
 
         [TearDown]
         public void clean()
         {
             listaEntidad = null;
+            idEvento = null;
+            idCompetencia = null;
             entidad = null;
+            entidad2 = null;
+            entidad3 = null;
+            a = false;
         }
+        #endregion
 
         #region Pruebas Unitarias
 
@@ -91,8 +97,15 @@ namespace PruebasUnitariasSKD.Modulo8
             listaEntidad = DAO.EventosQuePuedeAsistirAtleta(1);
             Assert.NotNull(listaEntidad);
         }
+        
+        [Test]
+        public void PruebaConsultarRestriccionEvento()
+        {
+            entidad3 = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoSimple(1,"el Evento Prueba");
+            IDaoRestriccionEvento DAO = FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
+            entidad2 = DAO.ConsultarRestriccionEvento(entidad3);
+            Assert.NotNull(entidad2);
+        }
         #endregion
-
-
     }
 }
