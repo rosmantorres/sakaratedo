@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace Interfaz_Presentadores.Modulo8
 {
@@ -25,17 +26,44 @@ namespace Interfaz_Presentadores.Modulo8
             this.vista = vista;
         }
 
-        public void Alerta(string msj)
+        public void ObtenerVariablesURL()
         {
-            vista.alertaClase = "alert alert-danger alert-dismissible";
-            vista.alertaRol = "alert";
-            vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+
+            String success = HttpContext.Current.Request.QueryString[RecursoPresentadorM8.strSuccess];
+            String detalleString = HttpContext.Current.Request.QueryString[RecursoPresentadorM8.strEventoDetalle];
+
+
+            if (detalleString != null)
+            {
+
+            }
+
+            if (success != null)
+            {
+                if (success.Equals(RecursoPresentadorM8.idAlertAgregar))
+                {
+                    vista.alertaClase = RecursoPresentadorM8.alertaSuccess;
+                    vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                    vista.alerta = RecursoPresentadorM8.innerHtmlAlertAgregar;
+
+                }
+
+                if (success.Equals(RecursoPresentadorM8.idAlertModificar))
+                {
+                    vista.alertaClase = RecursoPresentadorM8.alertaSuccess;
+                    vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                    vista.alerta = RecursoPresentadorM8.innerHtmlAlertModificar;
+                }
+
+            }
         }
 
-        public void LlenarInformacion(List<Entidad> lista)
+        public void LlenarInformacion()
         {
             try
             {
+                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionEvento();
+                lista = command.Ejecutar();
                 this.lista = lista;
                 foreach (DominioSKD.Entidades.Modulo8.RestriccionEvento rest in lista)
                 {
@@ -47,73 +75,40 @@ namespace Interfaz_Presentadores.Modulo8
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.EdadMaxima.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Descripcion.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Sexo.ToString() + RecursoPresentadorM8.CerrarTD;
-                    /*vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD;
-                    foreach (string dat in plani.Dato)
-                    {
-                        vista.RestriccionesCreadas += dat + RecursoPresentadorM8.linea;
-                    }
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTD;*/
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD;
-                    //vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificar + rest.Id + RecursoPresentadorM8.Nombre + plani.Nombre + RecursoPresentadorM8.Tipo + plani.TipoPlanilla + RecursoPresentadorM8.BotonCerrar;
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificarRegistroEvento + rest.IdRestEvento + RecursoPresentadorM8.BotonCerrar;
-                    /*if (plani.Status)
-                        vista.RestriccionesCreadas += RecursoPresentadorM8.BotonActivarPlanilla + plani.ID + RecursoPresentadorM8.BotonCerrar;
-                    else*/
+                    vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD; vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificarRegistroEvento + rest.IdRestEvento + RecursoPresentadorM8.BotonCerrar;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.BotonDesactivarPlanilla + rest.Id + RecursoPresentadorM8.BotonCerrar;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTR;
-
                 }
             }
-            catch (NullReferenceException ex)
+            catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                    + RecursoPresentadorM8.alertaHtmlFinal;
+
             }
         }
 
         public List<Entidad> LlenarTabla()
         {
+            this.lista = null;
+            Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionEvento();
             try
             {
-                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionEvento();
-                return command.Ejecutar();
+
+                lista = command.Ejecutar();
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                    + RecursoPresentadorM8.alertaHtmlFinal;
+
             }
-            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
+            return lista;
         }
     }
 }
