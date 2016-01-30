@@ -30,7 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<!--<<<<<<< HEAD-->
+    <!--<<<<<<< HEAD-->
     <Reference Include="CKEditor.NET">
       <HintPath>..\CKEditor.NET.dll</HintPath>
     </Reference>
@@ -48,7 +48,7 @@
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-<!--=======
+      <!--=======
     <Reference Include="nunit.core">
       <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -215,6 +215,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod7.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\PruebaDAORestriccionEvento.cs" />
     <Compile Include="Modulo8\PruebasRestCinta.cs" />
     <Compile Include="Modulo8\PruebaDAORestriccionCompetencia.cs" />
     <Compile Include="Modulo8\RecursosPU_Mod8.Designer.cs">

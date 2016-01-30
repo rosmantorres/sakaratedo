@@ -24,6 +24,7 @@ namespace PruebasUnitariasSKD.Modulo8
         public bool a;
         #endregion
 
+        #region SetUp y TearDown
         [SetUp]
         public void init()
         {
@@ -38,6 +39,7 @@ namespace PruebasUnitariasSKD.Modulo8
             listaEntidad = null;
             entidad = null;
         }
+        #endregion
 
         #region Pruebas Unitarias
 
