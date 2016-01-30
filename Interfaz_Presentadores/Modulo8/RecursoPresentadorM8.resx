@@ -281,7 +281,33 @@
   <data name="edadErrada" xml:space="preserve">
     <value>Edad minima no puede ser mayor a la maxima</value>
   </data>
+<<<<<<< HEAD
   <data name="Numbers" xml:space="preserve">
     <value>0123456789</value>
+=======
+  <data name="AmbosSexos" xml:space="preserve">
+    <value>Ambos Sexos</value>
+  </data>
+  <data name="B" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="F" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="Femenino" xml:space="preserve">
+    <value>Femenino</value>
+  </data>
+  <data name="key" xml:space="preserve">
+    <value>key</value>
+  </data>
+  <data name="M" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="Masculino" xml:space="preserve">
+    <value>Masculino</value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>value</value>
+>>>>>>> origin/M8_3era_Entrg
   </data>
 </root>

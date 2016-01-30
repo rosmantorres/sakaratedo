@@ -630,6 +630,7 @@ CREATE
     res_eve_edad_max INTEGER ,
     res_eve_sexo     VARCHAR (1) ,
     EVENTO_eve_id    INTEGER,
+    res_eve_staus    INTEGER,
     CONSTRAINT RESTRICCION_EVENTO_PK PRIMARY KEY CLUSTERED (res_eve_id)
 WITH
   (

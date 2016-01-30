@@ -214,6 +214,24 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ambos Sexos.
+        /// </summary>
+        internal static string AmbosSexos {
+            get {
+                return ResourceManager.GetString("AmbosSexos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to B.
+        /// </summary>
+        internal static string B {
+            get {
+                return ResourceManager.GetString("B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
         /// </summary>
@@ -414,6 +432,24 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to F.
+        /// </summary>
+        internal static string F {
+            get {
+                return ResourceManager.GetString("F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Femenino.
+        /// </summary>
+        internal static string Femenino {
+            get {
+                return ResourceManager.GetString("Femenino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 1.
         /// </summary>
         internal static string idAlertAgregar {
@@ -450,11 +486,38 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to key.
+        /// </summary>
+        internal static string key {
+            get {
+                return ResourceManager.GetString("key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;br/&gt;.
         /// </summary>
         internal static string linea {
             get {
                 return ResourceManager.GetString("linea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M.
+        /// </summary>
+        internal static string M {
+            get {
+                return ResourceManager.GetString("M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Masculino.
+        /// </summary>
+        internal static string Masculino {
+            get {
+                return ResourceManager.GetString("Masculino", resourceCulture);
             }
         }
         
@@ -554,6 +617,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string tipoAlerta {
             get {
                 return ResourceManager.GetString("tipoAlerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to value.
+        /// </summary>
+        internal static string value {
+            get {
+                return ResourceManager.GetString("value", resourceCulture);
             }
         }
     }
