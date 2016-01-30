@@ -195,21 +195,13 @@ namespace Interfaz_Presentadores.Modulo8
                     Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionEvento(laRestEvento);
                     bool resultado = _comando.Ejecutar();
                 }
-                catch (SqlException ex)
+                catch (ExcepcionesSKD.ExceptionSKD ex)
                 {
-                    throw ex;
-                }
-                catch (FormatException ex)
-                {
-                    throw ex;
-                }
-                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-                {
-                    throw ex;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
+                    vista.alertaClase = RecursoPresentadorM8.alertaError;
+                    vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                    vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                        + RecursoPresentadorM8.alertaHtmlFinal;
+                    return false;
                 }
                 return true;
             }
