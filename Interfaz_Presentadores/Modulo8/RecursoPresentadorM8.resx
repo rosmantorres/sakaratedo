@@ -281,4 +281,7 @@
   <data name="edadErrada" xml:space="preserve">
     <value>Edad minima no puede ser mayor a la maxima</value>
   </data>
+  <data name="Numbers" xml:space="preserve">
+    <value>0123456789</value>
+  </data>
 </root>
