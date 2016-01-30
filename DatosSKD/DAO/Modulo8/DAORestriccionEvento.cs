@@ -233,6 +233,7 @@ namespace DatosSKD.DAO.Modulo8
         /// <returns>Objeto de tipo RestriccionEvento con todos los datos</returns>
         public DominioSKD.Entidad ConsultarRestriccionEvento(DominioSKD.Entidad parametro)
         {
+            DominioSKD.Entidades.Modulo9.Evento elEventoSimple =
                 (DominioSKD.Entidades.Modulo9.Evento)parametro;
 
             DominioSKD.Entidad laRestriccionEvento = null;
@@ -242,6 +243,7 @@ namespace DatosSKD.DAO.Modulo8
             {
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro(RecursosDAORestriccionEvento.ParamIdEvento, SqlDbType.Int,
+                    elEventoSimple.Id.ToString(), false);
 
                 parametros.Add(elParametro);
 
