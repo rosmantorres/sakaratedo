@@ -18,6 +18,8 @@ namespace Interfaz_Contratos.Modulo3
         void alertaAgregarFallidoNombreOrg(ExcepcionesSKD.Modulo3.OrganizacionExistenteException ex);
         void alertaAgregarFallidoEstiloOrg(ExcepcionesSKD.Modulo3.EstiloInexistenteException ex);
         void Respuesta();
+        void alertaExpresiones();
+        void alertaAgregarFallido(Exception ex);
 
     }
 }

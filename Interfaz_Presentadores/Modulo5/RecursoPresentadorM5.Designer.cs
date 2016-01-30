@@ -117,6 +117,40 @@ namespace Interfaz_Presentadores.Modulo5 {
                 return ResourceManager.GetString("Mensaje_Error_Lista_Vacia", resourceCulture);
             }
         }
-        
+
+
+
+        /// <summary>
+        ///   Looks up a localized string similar to expresionNombre.
+        /// </summary>
+        internal static string expresionNombre
+        {
+            get
+            {
+                return ResourceManager.GetString("expresionNombre", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to expresionNumero.
+        /// </summary>
+        internal static string expresionNumero
+        {
+            get
+            {
+                return ResourceManager.GetString("expresionNumero", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to expresionNombreNumero.
+        /// </summary>
+        internal static string expresionNombreNumero
+        {
+            get
+            {
+                return ResourceManager.GetString("expresionNombreNumero", resourceCulture);
+            }
+        }
     }
 }

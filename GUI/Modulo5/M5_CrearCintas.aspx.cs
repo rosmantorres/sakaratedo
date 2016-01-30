@@ -8,6 +8,7 @@ using DominioSKD;
 using Interfaz_Presentadores.Modulo5;
 using Interfaz_Contratos.Modulo5;
 using System.Globalization;
+using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo5
 {
@@ -75,9 +76,9 @@ namespace templateApp.GUI.Modulo5
             get { return this.signi.Value; }
         }
 
-        public int obtenerOrden
+        public string obtenerOrden
         {
-            get { return Int32.Parse(this.ord.Value); }
+            get { return this.ord.Value; }
         }
         public void alertaCamposVacios()
         {
@@ -103,6 +104,20 @@ namespace templateApp.GUI.Modulo5
         public void Respuesta()
         {
             this.Response.Redirect(RecursoInterfazMod5.agregarExito);
+        }
+        public void alertaExpresiones()
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + RecursoInterfazMod5.expresionesRegulares + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaAgregarFallido(Exception ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Message + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
         }
         #endregion
 

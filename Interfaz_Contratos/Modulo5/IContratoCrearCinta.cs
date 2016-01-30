@@ -18,12 +18,13 @@ namespace Interfaz_Contratos.Modulo5
         string obtenerRango { get; }
         string obtenerCategoria { get; }
         string obtenerSignificado { get; }
-        int obtenerOrden { get; }
+        string obtenerOrden { get; }
         void alertaCamposVacios();
         void alertaAgregarFallidoOrden(ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex);
         void alertaAgregarFallidoRepetida(ExcepcionesSKD.Modulo5.CintaRepetidaException ex);
         void Respuesta();
-
+        void alertaExpresiones();
+        void alertaAgregarFallido(Exception ex);
 
     }
 }

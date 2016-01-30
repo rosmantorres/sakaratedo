@@ -9,16 +9,17 @@ namespace Interfaz_Contratos.Modulo5
     public interface IContratoModificarCinta
     {
         void agregarOrganizacionCombo(string id, string nombre);
-        int obtenerIdOrganizacion { get; }
+        int obtenerIdOrganizacion { get; set; }
         string obtenerNombreOrganizacion { get; }
-        string obtenerColorCinta { get; }
-        string obtenerRango { get; }
-        string obtenerCategoria { get; }
-        string obtenerSignificado { get; }
-        int obtenerOrden { get; }
+        string obtenerColorCinta { get; set; }
+        string obtenerRango { get; set; }
+        string obtenerCategoria { get; set; }
+        string obtenerSignificado { get; set; }
+        string obtenerOrden { get; set; }
         int obtenerIdCInta { get; }
         void alertaModificarFallidoOrden(ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex);
         void Respuesta();
-
+        void alertaExpresiones();
+        void alertaModificarFallido(Exception ex);
     }
 }

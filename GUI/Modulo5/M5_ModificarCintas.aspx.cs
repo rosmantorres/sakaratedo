@@ -30,6 +30,8 @@ namespace templateApp.GUI.Modulo5
                 this.ListOrg.DataTextField = "value";
                 this.ListOrg.DataValueField = "key";
                 this.ListOrg.DataBind();
+
+                this.presentador.llenarModificar();
             }
         }
 
@@ -43,36 +45,42 @@ namespace templateApp.GUI.Modulo5
         public int obtenerIdOrganizacion
         {
             get { return Int32.Parse(this.ListOrg.SelectedValue); }
+            set { this.ListOrg.Items.FindByValue(value.ToString()).Selected = true; }
         }
 
         public string obtenerNombreOrganizacion
         {
-            get { return this.ListOrg.SelectedItem.Text; }
+            get { return this.ListOrg.SelectedItem.Text; }            
         }
 
         public string obtenerColorCinta
         {
             get { return this.color.Value; }
+            set { this.color.Value = value; }
         }
 
         public string obtenerRango
         {
             get { return this.ran.Value; }
+            set { this.ran.Value = value; }
         }
 
         public string obtenerCategoria
         {
             get { return this.cate.Value; }
+            set { this.cate.Value = value; }
         }
 
         public string obtenerSignificado
         {
             get { return this.signi.Value; }
+            set { this.signi.Value = value; }
         }
 
-        public int obtenerOrden
+        public string obtenerOrden
         {
-            get { return Int32.Parse(this.ord.Value); }
+            get { return this.ord.Value; }
+            set { this.ord.Value = value; }
         }
         public int obtenerIdCInta
         {
@@ -88,6 +96,20 @@ namespace templateApp.GUI.Modulo5
         public void Respuesta()
         {
             this.Response.Redirect(RecursoInterfazMod5.agregarExito);
+        }
+        public void alertaExpresiones()
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + RecursoInterfazMod5.expresionesRegulares + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaModificarFallido(Exception ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Message + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
         }
         #endregion
 

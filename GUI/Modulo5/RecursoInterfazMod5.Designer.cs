@@ -324,5 +324,18 @@ namespace templateApp.GUI.Modulo5 {
                 return ResourceManager.GetString("tipoAlerta", resourceCulture);
             }
         }
+
+
+
+        /// <summary>
+        ///   Looks up a localized string similar to expresionesRegulares.
+        /// </summary>
+        internal static string expresionesRegulares
+        {
+            get
+            {
+                return ResourceManager.GetString("expresionesRegulares", resourceCulture);
+            }
+        }
     }
 }

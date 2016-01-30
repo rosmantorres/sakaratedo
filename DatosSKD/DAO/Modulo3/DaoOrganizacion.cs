@@ -170,9 +170,7 @@ namespace DatosSKD.DAO.Modulo3
 
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
 
-            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
-            //PREGUNTAR POR EL ID
-            laOrganizacion.Id_organizacion= parametro.Id;
+            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
 
             try
             {

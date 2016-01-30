@@ -61,11 +61,74 @@ namespace Interfaz_Presentadores.Modulo3 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @.
+        /// </summary>
+        internal static string arroba {
+            get {
+                return ResourceManager.GetString("arroba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SKD_001.
         /// </summary>
         internal static string Codigo_Error_Lista_Vacia {
             get {
                 return ResourceManager.GetString("Codigo_Error_Lista_Vacia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^[A-Z0-9a-z,.\s-_]{2,100}$.
+        /// </summary>
+        internal static string expresionDireccion {
+            get {
+                return ResourceManager.GetString("expresionDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^[A-Z0-9a-z@.-_]{2,100}$.
+        /// </summary>
+        internal static string expresionesCorreo {
+            get {
+                return ResourceManager.GetString("expresionesCorreo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^[A-Za-z\s-_]{2,100}$.
+        /// </summary>
+        internal static string expresionNombre {
+            get {
+                return ResourceManager.GetString("expresionNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^[A-Z0-9a-z]{2,100}$.
+        /// </summary>
+        internal static string expresionNombreNumero {
+            get {
+                return ResourceManager.GetString("expresionNombreNumero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ^[0-9]{1,2}$.
+        /// </summary>
+        internal static string expresionNumero {
+            get {
+                return ResourceManager.GetString("expresionNumero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /\w*((\%27)|(\&apos;))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/ix.
+        /// </summary>
+        internal static string expresionSQL {
+            get {
+                return ResourceManager.GetString("expresionSQL", resourceCulture);
             }
         }
         
