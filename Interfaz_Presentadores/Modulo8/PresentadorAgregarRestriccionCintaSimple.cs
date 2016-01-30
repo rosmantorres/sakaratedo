@@ -13,55 +13,56 @@ using LogicaNegociosSKD;
 using DominioSKD;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
+//using System.Windows;
+
 
 namespace Interfaz_Presentadores.Modulo8
 {
-    public class PresentadorModificarRestriccionCinta
+    public class PresentadorAgregarRestriccionCintaSimple
     {
-        private IContratoModificarRestriccionCinta vista;
+        private IContratoAgregarRestriccionCinta vista;
 
-        public PresentadorModificarRestriccionCinta(IContratoModificarRestriccionCinta laVista)
+        public PresentadorAgregarRestriccionCintaSimple(IContratoAgregarRestriccionCinta laVista)
         {
           
             this.vista = laVista;
             
-        }     
+        }          
 
         public DominioSKD.Entidades.Modulo8.RestriccionCinta meterParametrosVistaEnObjeto(DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccion)
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta retriccionCinta = laRestriccion;
-            retriccionCinta.IdRestriccionCinta = int.Parse(vista.id_restriccion);
+            retriccionCinta.Descripcion = generarDescripcion();
             retriccionCinta.PuntosMinimos = int.Parse(vista.puntaje_min);
             retriccionCinta.TiempoDocente = int.Parse(vista.horas_docen);
             retriccionCinta.TiempoMinimo = int.Parse(vista.tiempo_Min);
-            //generarDescripcion();
+            retriccionCinta.TiempoMaximo = int.Parse(vista.tiempo_Max);
+            retriccionCinta.Status = 0;
             return retriccionCinta;
             
         }
-
-        public void generarDescripcion()
+        
+        public string generarDescripcion()
         {
-            /* this.vista.descripcion = ("Edad Min: " + vista.edadMinima.SelectedValue.ToString()
-                                      + " Edad Max: " + vista.edadMaxima.SelectedValue.ToString()
-                                      + " Rango Min: " + vista.rangoMinimo.SelectedValue.ToString()
-                                      + " Rango Max: " + vista.rangoMaximo.SelectedValue.ToString()
-                                      + " Sexo: " + vista.sexo.SelectedValue.ToString()
-                                      + " Modalidad: " + vista.sexo.SelectedValue.ToString());*/
+          string Descripcion = (" Puntaje Minimo: " + vista.puntaje_min.ToString() + ","
+                                + " Tiempo Minimo: " + vista.tiempo_Min.ToString() + ","
+                                + " Tiempo Maximo: " + vista.tiempo_Max.ToString() + ","
+                                + " Horas Docentes: " + vista.horas_docen.ToString());
+           return Descripcion;
 
         }
 
-        public void ModificarRest()
+        public Boolean agregarRest()
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
-
-            laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
-  
-            try 
-            {            
-                LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta _comando =
-                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionCinta(laRestCinta);
+            try
+            {
+                laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
+                LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCintaSimple _comando =
+                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCintaSimple)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCintaSimple(laRestCinta);
                 bool resultado = _comando.Ejecutar();
-            }
+                return resultado;
+            }            
             catch (SqlException ex)
             {
                 throw ex;
@@ -87,6 +88,6 @@ namespace Interfaz_Presentadores.Modulo8
             vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
-
     }
 }
+

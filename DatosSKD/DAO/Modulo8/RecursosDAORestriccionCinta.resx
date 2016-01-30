@@ -200,4 +200,7 @@
   <data name="AliasStatus" xml:space="preserve">
     <value>resStatus</value>
   </data>
+  <data name="AgregarRestriccionCintaSimple" xml:space="preserve">
+    <value>M8_Agregar_Restriccion_Cinta_Simple</value>
+  </data>
 </root>

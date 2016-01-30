@@ -57,13 +57,13 @@ namespace Interfaz_Presentadores.Modulo8
 
         public void LlenarComboCinta()
         {
-            FabricaComandos fabricaCo = new FabricaComandos();
-            Comando<List<Entidad>> comboCinta = fabricaCo.CrearComandoConsultarCintaTodas();
-            List<Entidad> listCinta = new List<Entidad>();
             Dictionary<string, string> options = new Dictionary<string, string>();
-            options.Add("-1", "Selecciona una opcion");
             try
             {
+                LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas comboCinta =
+                   (LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCintaTodas();
+                List<Entidad> listCinta = new List<Entidad>();
+                options.Add("-1", "Selecciona una opcion");
                 listCinta = comboCinta.Ejecutar();
                 foreach (DominioSKD.Entidades.Modulo5.Cinta item in listCinta)
                 {
@@ -114,18 +114,8 @@ namespace Interfaz_Presentadores.Modulo8
             try
             {
                 laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
-                /*laRestCinta.Descripcion = this.vista.descripcion_rest_cinta;
-                laRestCinta.Id = Int32.Parse(this.vista.comboRestCinta.SelectedValue);
-                laRestCinta.PuntosMinimos = Int32.Parse(this.vista.puntaje_min);
-                laRestCinta.TiempoDocente = Int32.Parse(this.vista.horas_docen);
-                laRestCinta.TiempoMaximo = Int32.Parse(this.vista.tiempo_Max);
-                laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);*/
-
-
-                //FabricaComandos _fabrica = new FabricaComandos();
                 LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta _comando =
                     (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCinta(laRestCinta);
-                
                 bool resultado = _comando.Ejecutar();
                 return resultado;
             }

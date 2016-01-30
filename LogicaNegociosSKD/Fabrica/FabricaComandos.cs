@@ -215,22 +215,27 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta(laRestCinta);
         }
 
+        public static Comando<Boolean> CrearComandoAgregarRestriccionCintaSimple(Entidad laRestCinta)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCintaSimple(laRestCinta);
+        }
+
         public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarRestriccionCinta()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta();
         }
 
-        public Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCintaTodas()
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCintaTodas()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas();
         }
 
-        public Comando<Boolean> CrearComandoModificarRestriccionCinta(Entidad laRestCinta)
+        public static Comando<Boolean> CrearComandoModificarRestriccionCinta(Entidad laRestCinta)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta(laRestCinta);
         }
 
-        public Comando<Boolean> CrearComandoStatusRestriccionCinta(Entidad laRestCinta)
+        public static Comando<Boolean> CrearComandoStatusRestriccionCinta(Entidad laRestCinta)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta(laRestCinta);
         }
@@ -258,9 +263,7 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento(laRestEvento);
         }
         #endregion
-
-
-
+        
         #endregion
 
         #region Modulo 9
