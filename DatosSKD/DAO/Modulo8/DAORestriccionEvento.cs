@@ -231,18 +231,19 @@ namespace DatosSKD.DAO.Modulo8
         /// </summary>
         /// <param name="parametro">EventoSimple a consultar restriccion con su id</param>
         /// <returns>Objeto de tipo RestriccionEvento con todos los datos</returns>
-        public DominioSKD.Entidad ConsultarRestriccionEvento(int parametro)
+        public DominioSKD.Entidad ConsultarRestriccionEvento(DominioSKD.Entidad parametro)
         {
-            
+            DominioSKD.Entidades.Modulo8.EventoSimple elEventoSimple =
+                (DominioSKD.Entidades.Modulo8.EventoSimple)parametro;
 
-            DominioSKD.Entidad laRestriccionEvento = null;
             DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
+            Entidad laRestriccionEvento = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionEvento();
 
             try
             {
                 List<Parametro> parametros = new List<Parametro>();
                 Parametro elParametro = new Parametro(RecursosDAORestriccionEvento.ParamIdEvento, SqlDbType.Int,
-                    parametro.ToString(), false);
+                    elEventoSimple.IdEvento.ToString(), false);
 
                 parametros.Add(elParametro);
 

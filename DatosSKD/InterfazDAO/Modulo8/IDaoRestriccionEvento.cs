@@ -35,7 +35,7 @@ namespace DatosSKD.InterfazDAO.Modulo8
         /// </summary>
         /// <param name="parametro">EventoSimple a consultar restriccion con su id</param>
         /// <returns>Objeto de tipo RestriccionEvento con todos los datos</returns>
-        DominioSKD.Entidad ConsultarRestriccionEvento(int parametro);
+        DominioSKD.Entidad ConsultarRestriccionEvento(DominioSKD.Entidad parametro);
 
         /// <summary>
         /// Firma Metodo para consultar todas las Restricciones de Eventos.

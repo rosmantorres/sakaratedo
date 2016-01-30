@@ -36,7 +36,12 @@ namespace PruebasUnitariasSKD.Modulo8
         public void clean()
         {
             listaEntidad = null;
+            idEvento = null;
+            idCompetencia = null;
             entidad = null;
+            entidad2 = null;
+            entidad3 = null;
+            a = false;
         }
         #endregion
 
@@ -96,9 +101,9 @@ namespace PruebasUnitariasSKD.Modulo8
         [Test]
         public void PruebaConsultarRestriccionEvento()
         {
-            entidad3 = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoSimple();
+            entidad3 = DominioSKD.Fabrica.FabricaEntidades.ObtenerEventoSimple(1,"el Evento Prueba");
             IDaoRestriccionEvento DAO = FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
-            entidad2 = DAO.ConsultarRestriccionEvento(1);
+            entidad2 = DAO.ConsultarRestriccionEvento(entidad3);
             Assert.NotNull(entidad2);
         }
         #endregion
