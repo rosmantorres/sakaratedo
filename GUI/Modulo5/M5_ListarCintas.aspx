@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M5_ListarCintas.aspx.cs" Inherits="templateApp.GUI.Modulo5.M5_ListarCintas" %> 
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="M5_ListarCintas.aspx.cs" Inherits="templateApp.GUI.Modulo5.M5_ListarCintas"  %> 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"> 
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -36,7 +36,7 @@
 </asp:Content> 
 
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server"> 
-
+   <form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server"> 
 <div id="alert" runat="server"></div>
 
 <div class="row">
@@ -46,9 +46,15 @@
             <div class="box-header">
                  <h3 class="box-title">Lista de Cintas</h3>
             </div><!-- /.box-header -->
+            
+            <asp:DropDownList ID="listaOrg" AutoPostBack="true" runat="server" OnSelectedIndexChanged="organizacionSeleccionada">
+                <asp:ListItem Value="-1">Seleccione una Organizaci&oacute;n</asp:ListItem>
+            </asp:DropDownList>
 
-<form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server">
-    
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <input id="cintaIdStatus" type="hidden" runat="server" />
+    <input id="estatusActual" type="hidden" runat="server" />
+    <input id="nombreOrg" type="hidden" runat="server" />
 <!--<div class="form-group col-sm-10 col-md-10 col-lg-10">  -->
 <div class="box-body table-responsive"> 
 <table id="ListaCintas" class="table table-bordered table-striped dataTable">
@@ -72,47 +78,13 @@
 </tbody>
 </table>
 </div>
+    
 
-</form>
 </div>
 </div>
 </div>
 
   
-<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true"> 
-<div class="modal-dialog"> 
-<div class="modal-content"> 
-<div class="modal-header"> 
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> 
-<h4 class="modal-title">Información detallada de la Organización</h4> 
-</div> 
-<div class="modal-body"> 
-<div class="container-fluid" id="info"> 
-<div class="row"> 
-<h3>Nombre</h3> 
-<p> 
-Shito Ryu 
-    </p> 
-<h3>Direccion</h3> 
-<p>  
-El Paraiso 
-</p> 
-<h3>Persona Contacto</h3> 
-<p> 
-Kyoshi Jose Gregorio Natera 
-</p> 
-<h3>Email Contacto</h3> 
-<p> 
-kyoshinatera@gmail.com 
-</p> 
- 
-</div> 
-</div> 
-</div> 
-</div> 
-</div> 
-</div> 
- 
  <div id="modal-switch" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -129,26 +101,39 @@ kyoshinatera@gmail.com
               </div>
             </div>
             <div class="modal-footer">  
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onserverclick="CambioDeStatus_Click">Aceptar</button>  <!-- onserverclick="CambioDeStatus_Click" --> 
+                <asp:Button runat="server" class="btn btn-primary" OnClick="cambiarStatus" Text="Aceptar" />
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div>
         </div>
       </div>
-    
+</form>
  
     <script type="text/javascript">
-          $(document).ready(function () {
+        $(document).ready(function () {
+            $(".statusToggle").click(function () {
+                //$(this).find("input").val()
+                if ($(this).find("input").is(":checked")) {
+                    $("[id$='estatusActual']").val("1");
+                }
+                else {
+                    $("[id$='estatusActual']").val("0");
+                }
+                $("[id$='cintaIdStatus']").val($(this).find("input").val());
+                $("[id$='nombreOrg']").val($(this).closest("td").prev("td").html());
+
+            })
+
               $('#ListaCintas').DataTable();
 
-              var table = $('#ListaCintas').DataTable({
-               /* "language": {
+        /*      var table = $('#ListaCintas').DataTable({
+                "language": {
                     "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-                }*/
-            });
+                }
+              });*/
             var req;
             var tr;
-          
+          /*
             $('#ListaCintas tbody').on('click', 'a', function () {
                 if ($(this).parent().hasClass('selected')) {
                     req = $(this).parent().prev().prev().prev().prev().text();
@@ -164,7 +149,7 @@ kyoshinatera@gmail.com
                 }
             });
            
-
+           */ // la verdad no se q coño hace esa funcion de ahi arriba
 
         }); 
           $('#dimension-switch').bootstrapSwitch('setSizeClass', 'switch-small');

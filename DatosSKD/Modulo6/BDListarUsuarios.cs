@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using DominioSKD;
-using DatosSKD.Modulo1;
+using DominioSKD.Entidades.Modulo1;
+using DominioSKD.Entidades.Modulo2;
+using DatosSKD.DAO.Modulo1;
 
 namespace DatosSKD.Modulo6
 {
@@ -30,7 +31,7 @@ namespace DatosSKD.Modulo6
                 List<Cuenta> lasCuentas = new List<Cuenta>();
 
                 DataTable dt = laConexion.EjecutarStoredProcedureTuplas(
-                                RecursosBDModulo1.listarUsuarios, parametros);
+                                RecursosBDM1.listarUsuarios, parametros);
 
 
 
@@ -42,42 +43,42 @@ namespace DatosSKD.Modulo6
                     laConexion3 = new BDConexion();
                     parametros2 = new List<Parametro>();
                     parametros = new List<Parametro>();
-                    string idUsuario = RecursosBDModulo1.idInicial;
+                    string idUsuario = RecursosBDM1.idInicial;
                     Cuenta laCuenta = new Cuenta();
-                    laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
-                    laCuenta.Imagen = row[RecursosBDModulo1.AliasImagen].ToString();
-                    idUsuario = row[RecursosBDModulo1.AliasIdUsuario].ToString();
+                    laCuenta.Nombre_usuario = row[RecursosBDM1.AliasNombreUsuario].ToString();
+                    laCuenta.Imagen = row[RecursosBDM1.AliasImagen].ToString();
+                    idUsuario = row[RecursosBDM1.AliasIdUsuario].ToString();
                     elParametro = 
-                        new Parametro(RecursosBDModulo1.AliasNombreUsuario, SqlDbType.VarChar, laCuenta.Nombre_usuario, false);
+                        new Parametro(RecursosBDM1.AliasNombreUsuario, SqlDbType.VarChar, laCuenta.Nombre_usuario, false);
                     parametros.Add(elParametro);
                     DataTable dt1 = laConexion2.EjecutarStoredProcedureTuplas(
-                RecursosBDModulo1.ConsultarRolesUsuario, parametros);
+                RecursosBDM1.ConsultarRolesUsuario, parametros);
                     List<Rol> listaRol = new List<Rol>();
                     foreach (DataRow row2 in dt1.Rows)
                     {
 
                         Rol elRol = new Rol();
-                        elRol.Id_rol = int.Parse(row2[RecursosBDModulo1.AliasIdRol].ToString());
-                        elRol.Nombre = row2[RecursosBDModulo1.AliasNombreRol].ToString();
-                        elRol.Descripcion = row2[RecursosBDModulo1.AliasDescripcionRol].ToString();
-                        elRol.Fecha_creacion = (DateTime)row2[RecursosBDModulo1.AliasFechaCreacion];
+                        elRol.Id_rol = int.Parse(row2[RecursosBDM1.AliasIdRol].ToString());
+                        elRol.Nombre = row2[RecursosBDM1.AliasNombreRol].ToString();
+                        elRol.Descripcion = row2[RecursosBDM1.AliasDescripcionRol].ToString();
+                        elRol.Fecha_creacion = (DateTime)row2[RecursosBDM1.AliasFechaCreacion];
                         listaRol.Add(elRol);
                     }
                     laCuenta.Roles = listaRol;
 
-                    elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, idUsuario, false);
+                    elParametro = new Parametro(RecursosBDM1.AliasIdUsuario, SqlDbType.Int, idUsuario, false);
                     parametros2.Add(elParametro);
                     DataTable dt2 = laConexion3.EjecutarStoredProcedureTuplas(
-                                    RecursosBDModulo1.consultarPersona, parametros2);
+                                    RecursosBDM1.consultarPersona, parametros2);
 
                     PersonaM1 laPersona = new PersonaM1();
                     foreach (DataRow row3 in dt2.Rows)
                     {
 
-                        laPersona._Id = int.Parse(row3[RecursosBDModulo1.AliasIdUsuario].ToString());
-                        laPersona._Nombre = row3[RecursosBDModulo1.AliasNombreUsuario].ToString();
-                        laPersona._Apellido = row3[RecursosBDModulo1.aliasApellidoUsuario].ToString();
-                        laPersona._DocumentoID = row3[RecursosBDModulo1.AliasDocumento].ToString();
+                        laPersona._Id = int.Parse(row3[RecursosBDM1.AliasIdUsuario].ToString());
+                        laPersona._Nombre = row3[RecursosBDM1.AliasNombreUsuario].ToString();
+                        laPersona._Apellido = row3[RecursosBDM1.aliasApellidoUsuario].ToString();
+                        laPersona._DocumentoID = row3[RecursosBDM1.AliasDocumento].ToString();
                     }
                     laCuenta.PersonaUsuario = laPersona;
 
@@ -101,8 +102,8 @@ namespace DatosSKD.Modulo6
             }
             catch (FormatException e)
             {
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo1.Codigo_Error_Formato,
-                     RecursosBDModulo1.Mensaje_Error_Formato, e);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDM1.Codigo_Error_Formato,
+                     RecursosBDM1.Mensaje_Error_Formato, e);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {

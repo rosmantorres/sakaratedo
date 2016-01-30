@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -20,12 +21,17 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return planilla; }
             set { planilla = value; }
         }
+
+        /// <summary>
+        /// Método que devuelve el diseño, tal cual se creo
+        /// </summary>
+        /// <param name="planilla">la planilla que contiene el diseño a consultar</param>
+        /// <returns>Retorna la entidad a consultar</returns>
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
-                DaoDiseno dao = (DaoDiseno)fabrica.ObtenerDAODiseno();
+                IDaoDiseno dao = FabricaDAOSqlServer.ObtenerDAODiseno();
                 return dao.ConsultarXId(this.planilla);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

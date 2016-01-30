@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AGREGAR_ITEM_EXITO" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;El producto se ha agregado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="AGREGAR_ITEM_FALLO" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Su producto no ha podido ser agregado, si ha querido agregar implementos la cantidad deseada no existe en el inventario actualmente&lt;/div&gt;</value>
+  </data>
+  <data name="ALERT_DANGER" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="ALERT_SUCESS" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="CODIGO_EXCEPCION_OPCION_PAGO_INVALIDO" xml:space="preserve">
+    <value>S_16_12</value>
+  </data>
+  <data name="ELIMINAR_EXITO" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;El producto se ha eliminado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="ELIMINAR_FALLO" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;El producto no ha podido ser eliminado, por favor intente nuevamente y revise la conexion&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTIONSKD_CONEXIONBD_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error en la Base de Datos, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTIONSKD_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=2</value>
+  </data>
+  <data name="EXCEPTIONSKD_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un conflicto en su operacion, trate de ejecutarla mas tarde y si el problema persiste comuniquese con nosotros&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_CANTIDAD_INVALIDA_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al ingresar la cantidad deseada, solo pueden ser enteros positivos y distintos de cero&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_CARRITO_PAGO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;No puede agregar, eliminar o modificar items de su carrito cuando ya este tiene un pago&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_CONEXIONBD_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=3</value>
+  </data>
+  <data name="EXCEPTION_FORMATO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=6</value>
+  </data>
+  <data name="EXCEPTION_FORMATO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al manipular datos que no tienen formatos numericos, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_ITEM_INEXISTENTE_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al intentar procesar un item no existente, intente su operacion mas tarde&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_ITEM_INVALIDO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al intentar procesar un item no acorde al indicado, intente su operacion de nuevo mas tarde&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=1</value>
+  </data>
+  <data name="EXCEPTION_LOGGER_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=8</value>
+  </data>
+  <data name="EXCEPTION_LOGGER_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error interno al mantener el seguimiento de las operaciones, si su operacion no fue ejecutada, intente realizarla mas tarde&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error inesperado en el sistema, trate de ejecutar su operacion mas tarde y si el problema persiste comuniquese con nosotros&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_PAGOINVALIDO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error, los tipos de pago disponibles en el sistema son: Tarjeta, Deposito o Transferencia&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_PARAMETRO_INVALIDO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=4</value>
+  </data>
+  <data name="EXCEPTION_PARAMETRO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al enviar informacion a la Base de Datos, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_PARSEO_VACIO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=7</value>
+  </data>
+  <data name="EXCEPTION_PERSONA_INVALIDA_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=9</value>
+  </data>
+  <data name="EXCEPTION_PERSONA_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al intentar obtener sus datos de usuario, se recomienda volver a ingresar al sistema&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_SOBRECARGA_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=5</value>
+  </data>
+  <data name="EXCEPTION_SOBRECARGA_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al manipular datos con mucha informacion, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_VACIO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha producido un error al manipular datos que son inexistentes o no contienen informacion, intente ejecutar la accion que desea mas tarde&lt;/div&gt;</value>
+  </data>
+  <data name="MENSAJE_ENTRADA_LOGGER" xml:space="preserve">
+    <value>Ingresando al metodo</value>
+  </data>
+  <data name="MENSAJE_EXCEPCION_OPCION_PAGO_INVALIDO" xml:space="preserve">
+    <value>Se ha producido un error al elegir un tipo de pago no valido</value>
+  </data>
+  <data name="MENSAJE_SALIDA_LOGGER" xml:space="preserve">
+    <value>Saliendo del metodo</value>
+  </data>
+  <data name="MODIFICAR_EXITO" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Cantidad modificada exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="MODIFICAR_FALLO" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;No existe tal cantidad en el inventario&lt;/div&gt;</value>
+  </data>
+  <data name="Modulo16" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="REGISTRAR_PAGO_EXITO" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Se ha procesado el pago exitosamente, ¡Que disfrute sus productos!&lt;/div&gt;</value>
+  </data>
+  <data name="REGISTRAR_PAGO_EXITOSO" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=2&amp;exito=1</value>
+  </data>
+  <data name="REGISTRAR_PAGO_FALLIDO" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=2&amp;exito=0</value>
+  </data>
+  <data name="REGISTRAR_PAGO_FALLO" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Su compra no ha podido ser procesada, no existe esa cantidad de implementos disponibles&lt;/div&gt;</value>
+  </data>
+  <data name="Script" xml:space="preserve">
+    <value>&lt;script type='text/javascript'&gt;$('#modal-info1').modal('toggle');&lt;/script&gt; </value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Test()</value>
+  </data>
+  <data name="TIPO_PAGO_DEPOSITO" xml:space="preserve">
+    <value>Deposito</value>
+  </data>
+  <data name="TIPO_PAGO_TARJETA" xml:space="preserve">
+    <value>Tarjeta</value>
+  </data>
+  <data name="TIPO_PAGO_TRANSFERENCIA" xml:space="preserve">
+    <value>Transferencia</value>
+  </data>
+  <data name="VALOR_ALERT" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="VALOR_EXITO" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="VARIABLE_ACCION" xml:space="preserve">
+    <value>accion</value>
+  </data>
+  <data name="VARIABLE_CLASS" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="VARIABLE_EXITO" xml:space="preserve">
+    <value>exito</value>
+  </data>
+  <data name="VARIABLE_MENSAJE" xml:space="preserve">
+    <value>mensaje</value>
+  </data>
+  <data name="VARIABLE_ROL" xml:space="preserve">
+    <value>role</value>
+  </data>
+  <data name="EXCEPCION_LISTA_VACIA_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;El Usuario logueado no cumple con las condiciones para ver los Items.&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_DATO_PAGO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=15</value>
+  </data>
+  <data name="EXCEPTION_DATO_PAGO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error en la introduccion de los datos de su pago, no pueden contener letras ni caracteres especiales&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_MONTO_INVALIDO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=16</value>
+  </data>
+  <data name="EXCEPTION_MONTO_INVALIDO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Error, los montos permitidos para pagar su compra solo pueden ser mayores a cero, no contener puntos y ademas no pueden ser mayores al adeudado&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPCION_LISTA_VACIA_PROD_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;El Usuario logueado pertenece a un dojo que no posee productos en este momento, Comuniquese con el administrador.&lt;/div&gt; </value>
+  </data>
+  <data name="MENSAJE_MATRICULA_SOLVENTE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;No posee Matriculas por Pagar. Usted se encuentra Solvente con la Administracion&lt;/div&gt;</value>
+  </data>
+  <data name="Script_Dos" xml:space="preserve">
+    <value>&lt;script type='text/javascript'&gt;$('#modal-info2').modal('toggle');&lt;/script&gt;</value>
+  </data>
+  <data name="Script_Tres" xml:space="preserve">
+    <value>&lt;script type='text/javascript'&gt;$('#modal-info3').modal('toggle');&lt;/script&gt;</value>
+  </data>
+  <data name="MENSAJE_SIN_FACTURAS" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Usted no Posee Facturas Asociadas.&lt;/div&gt;</value>
+  </data>
+  <data name="EXCEPTION_ITEM_INVALIDO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=10</value>
+  </data>
+  <data name="EXCEPTION_CARRITO_VACIO_LINK" xml:space="preserve">
+    <value>M16_VerCarrito.aspx?accion=4&amp;mensaje=17</value>
+  </data>
+  <data name="EXCEPTION_CARRITO_VACIO_MENSAJE" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;No se ha podido realizar su pago ya que no tiene items en su carrito&lt;/div&gt;</value>
+  </data>
+  <data name="ERROR_1" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ERROR_2" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ERROR_3" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ERROR_4" xml:space="preserve">
+    <value>4</value>
+  </data>
+</root>

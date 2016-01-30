@@ -11,5 +11,9 @@ namespace Interfaz_Contratos.Modulo14
     public interface IContratoM14SolicitarPlanilla
     {
         String tablaSolicitarP { get; set; }
+        String alertLocalRol { set; }
+        String alertLocalClase { set; }
+        String alertLocal { set; }
+        bool alerta { set; }
     }
 }

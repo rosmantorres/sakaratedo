@@ -4,44 +4,54 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Threading.Tasks;
-using LogicaNegociosSKD.Modulo2;
-using DominioSKD;
 using System.Web.UI.WebControls;
 using Interfaz_Contratos.Modulo2;
 using Interfaz_Presentadores.Master;
 using Interfaz_Presentadores.Modulo1;
+using LogicaNegociosSKD.Fabrica;
+using LogicaNegociosSKD.Comandos.Modulo2;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo2;
+using DominioSKD.Entidades.Modulo1;
+using DominioSKD;
 
 namespace Interfaz_Presentadores.Modulo2
 {
     public class PresentadorM2
     {
-        public List<Rol> losRolesDeSistema = new List<Rol>();
-        public List<Rol> rolesDePersona = new List<Rol>();
-        public List<Rol> rolesFiltrados = new List<Rol>();//los roles que el usuario aun no tiene permiso
-        public string rolID = "";
-        public int rolSelected = 0;
-        public int cont = 0;
-        public HiddenField Hidden = new HiddenField();
-        public List<Rol> rolSinPermiso = new List<Rol>();
-        public Cuenta cuentaConsultada = new Cuenta();
-        public AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
-        public String idUsuarioURL;
+        #region variables
+        private string rolID = "";
+        private int rolSelected = 0;
+        private int cont = 0;
+        private HiddenField Hidden = new HiddenField();
+        private Encriptacion cripto = new Encriptacion();
+        private String idUsuarioURL;
+
         private IContratoM2 _iMaster;
-        private String InfoRol="<a title='Info' class='btn btn-info glyphicon glyphicon-info-sign 'data-toggle='modal' "+
-                               "data-target='#modal-info' data-id='";
-        private String EliminarRolEtq="<a title='Eliminar' class='btn btn-danger glyphicon glyphicon-remove-sign botonRol' "+
-                       "data-toggle='modal' data-target='#modal-delete' data-id='";
-        private String AgregarRolEtq="<a title='Añadir' class='btn btn-success glyphicon glyphicon-plus-sign botonRol' "+
-                                     "data-toggle='modal' data-target='#modal-create' data-id='";
-        private String RolFinEtq = "' href='#'></a>";
-        private String tdIni="<td>";
-        private String tdFin="</td>";
-        private String trInfoIni="<tr style='background: rgb(224, 235, 235);'>";
-        private String trIni="<tr>";
-        private String trFin="</tr>";
+        private ValidacionesM2 validaciones = new ValidacionesM2();
+        private FabricaComandos laFabrica = new FabricaComandos();
+        private static FabricaEntidades laFabricaE = new FabricaEntidades();
+        private Cuenta cuenta = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+        private Cuenta cuentaComando = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+        private Rol rolComando = (Rol)laFabricaE.ObtenerRol_M2();
 
+        private List<Entidad> losRolesDeSistema = laFabricaE.ObtenerListaRol_M2();
+        private List<Entidad> rolesDePersona = laFabricaE.ObtenerListaRol_M2();
+        private List<Entidad> rolSinPermiso = laFabricaE.ObtenerListaRol_M2();
+        private List<Entidad> rolesFiltrados = laFabricaE.ObtenerListaRol_M2();//los roles que el usuario aun no tiene permiso
+        
+        private String InfoRol=RecursosInterfazPresentadorM2.InfoRol;
+        private String EliminarRolEtq=RecursosInterfazPresentadorM2.EliminarRolEtq;
+        private String AgregarRolEtq=RecursosInterfazPresentadorM2.AgregarRolEtq;
+        private String RolFinEtq = RecursosInterfazPresentadorM2.RolFinEtq;
+        private String tdIni=RecursosInterfazPresentadorM2.tdIni;
+        private String tdFin=RecursosInterfazPresentadorM2.tdFin;
+        private String trInfoIni=RecursosInterfazPresentadorM2.trInfoIni;
+        private String trIni=RecursosInterfazPresentadorM2.trIni;
+        private String trFin=RecursosInterfazPresentadorM2.trFin;
+        #endregion
 
-        public void RolesUsuario(List<Rol> Roles,String tipo){
+        public void RolesUsuario(List<Entidad> Roles,String tipo){
             String respuesta="";
             String RolEtq="";
             String trInicial=trIni;
@@ -66,15 +76,15 @@ namespace Interfaz_Presentadores.Modulo2
         }
         public void SetEtiquetas()
         {
-            _iMaster.NombreUsuaurioEtq = cuentaConsultada.Nombre_usuario;
-            _iMaster.NombreApellidoEtq = cuentaConsultada.PersonaUsuario._Nombre + " " + cuentaConsultada.PersonaUsuario._Apellido;
+            _iMaster.NombreUsuaurioEtq = cuenta.Nombre_usuario;
+            _iMaster.NombreApellidoEtq = cuenta.PersonaUsuario._Nombre + " " + cuenta.PersonaUsuario._Apellido;
         }
         public void inicio()
         {
 
             try
             {
-
+                _iMaster.RolesUsuario = "";
                 String rolUsuario = HttpContext.Current.Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
@@ -90,29 +100,29 @@ namespace Interfaz_Presentadores.Modulo2
                     if (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM2.parametroIDUsuario] != null)
                     {
                         idUsuarioURL = cripto.DesencriptarCadenaDeCaracteres
-                             (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM2.parametroIDUsuario], RecursosLogicaModulo2.claveDES);
-
-                        rolesDePersona = logicaRol.consultarRolesUsuario(idUsuarioURL);
-                        cuentaConsultada =
-                        logicaRol.cuentaAConsultar(int.Parse(idUsuarioURL));
-                        rolesDePersona = cuentaConsultada.Roles;
+                             (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM2.parametroIDUsuario], RecursosInterfazPresentadorM2.claveDES);
+                        cuentaComando.Id = int.Parse(idUsuarioURL);
+                        ComandoCuentaUsuario cuentaConsultada = (ComandoCuentaUsuario)laFabrica.ObtenerCuentaUsuario();
+                        cuentaConsultada.LaEntidad = cuentaComando;
+                        cuenta =(Cuenta)cuentaConsultada.Ejecutar();
+                        rolesDePersona = cuenta.Roles.Cast<Entidad>().ToList();
                     }
-
-                    rolSinPermiso = logicaRol.rolNoEditable(rolesDePersona,
+                    List<Entidad> rolesDePersonaE = rolesDePersona.Cast<Entidad>().ToList();
+                    rolSinPermiso = validaciones.rolNoEditable(rolesDePersonaE,
                             HttpContext.Current.Session[RecursosInterfazMaster.sessionRol].ToString());
-                    rolesDePersona = logicaRol.validarPrioridad(rolesDePersona,
+                    rolesDePersona = validaciones.validarPrioridad(rolesDePersona,
                         HttpContext.Current.Session[RecursosInterfazMaster.sessionRol].ToString());
-
-                    losRolesDeSistema = logicaRol.cargarRoles();
-                    rolesFiltrados = logicaRol.filtrarRoles(rolesDePersona, losRolesDeSistema);
-                    rolesFiltrados = logicaRol.validarPrioridad(rolesFiltrados,
+                    ComandoRolesDeSistema rolesSistema = (ComandoRolesDeSistema)laFabrica.ObtenerRolesDeSistema();
+                    losRolesDeSistema = rolesSistema.Ejecutar();
+                    rolesFiltrados = validaciones.filtrarRoles(rolesDePersona, losRolesDeSistema);
+                    rolesFiltrados = validaciones.validarPrioridad(rolesFiltrados,
                         HttpContext.Current.Session[RecursosInterfazMaster.sessionRol].ToString());
 
                     //asigno la imagen del perfil
-                    if (cuentaConsultada.Imagen == "")
-                        _iMaster.ImagenEtqSRC = "../../dist/img/AvatarSKD.jpg";
+                    if (cuenta.Imagen == "")
+                        _iMaster.ImagenEtqSRC = RecursosInterfazPresentadorM2.imgDefault;
                     else
-                        _iMaster.ImagenEtqSRC= _iMaster.ImagenEtqSRC + cuentaConsultada.Imagen;
+                        _iMaster.ImagenEtqSRC= _iMaster.ImagenEtqSRC + cuenta.Imagen;
 
                 }
                 else
@@ -120,9 +130,9 @@ namespace Interfaz_Presentadores.Modulo2
                     HttpContext.Current.Response.Redirect(RecursosInterfazMaster.direccionMaster_Inicio);
                 }
 
-                RolesUsuario(rolSinPermiso,"Info");
-                RolesUsuario(rolesDePersona, "Eliminar");
-                RolesUsuario(rolesFiltrados, "Agregar");
+                RolesUsuario(rolSinPermiso,RecursosInterfazPresentadorM2.informacionCat);
+                RolesUsuario(rolesDePersona, RecursosInterfazPresentadorM2.eliminarCat);
+                RolesUsuario(rolesFiltrados, RecursosInterfazPresentadorM2.agregarCat);
 
             }
             catch (NullReferenceException ex)
@@ -135,8 +145,13 @@ namespace Interfaz_Presentadores.Modulo2
         {
             try
             {
-
-                logicaRol.eliminarRol(idUsuarioURL, _iMaster.RolSelectEqt);
+                ComandoEliminarRol eliminarRol = (ComandoEliminarRol)laFabrica.ObtenerEliminarRol();
+                cuentaComando.Id = int.Parse(idUsuarioURL);
+                rolComando.Id=int.Parse(_iMaster.RolSelectEqt);
+                cuentaComando.Roles.Clear();
+                cuentaComando.Roles.Add(rolComando);
+                eliminarRol.LaEntidad = cuentaComando;
+                eliminarRol.Ejecutar();
                 HttpContext.Current.Response.Redirect(HttpContext.Current.Request.RawUrl);
             }
             catch (Exception ex)
@@ -150,7 +165,13 @@ namespace Interfaz_Presentadores.Modulo2
         {
             try
             {
-                logicaRol.agregarRol(idUsuarioURL, _iMaster.RolSelectEqt);
+                ComandoAgregarRol agregarRol = (ComandoAgregarRol)laFabrica.ObtenerAgregarRol();
+                cuentaComando.Id = int.Parse(idUsuarioURL);
+                rolComando.Id = int.Parse(_iMaster.RolSelectEqt);
+                cuentaComando.Roles.Clear();
+                cuentaComando.Roles.Add(rolComando);
+                agregarRol.LaEntidad = cuentaComando;
+                agregarRol.Ejecutar();
                 HttpContext.Current.Response.Redirect(HttpContext.Current.Request.RawUrl);
             }
             catch (Exception ex)

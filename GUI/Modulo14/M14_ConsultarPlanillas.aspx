@@ -23,7 +23,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="titulo" runat="server">Gestión de Planillas</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">Consultar Planillas</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoCentral" runat="server">
-   <div id="alert" runat="server">
+   <div id="alerta" runat="server">
     </div>
   <div class="row">
    <div class="col-xs-12">

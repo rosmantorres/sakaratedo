@@ -1,22 +1,109 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using DominioSKD;
-using LogicaNegociosSKD;
-using LogicaNegociosSKD.Modulo7;
-using ExcepcionesSKD.Modulo7;
-using ExcepcionesSKD;
 using templateApp.GUI.Master;
+using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo7;
+using Interfaz_Presentadores.Modulo7;
+using Interfaz_Contratos.Modulo7;
+using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Fabrica;
 
 namespace templateApp.GUI.Modulo7
 {
-    public partial class M7_DetalleMatriculaPaga : System.Web.UI.Page
+    /// <summary>
+    /// Clase que maneja la interfaz de detallar matriculas pagas
+    /// </summary>
+    public partial class M7_DetalleMatriculaPaga : System.Web.UI.Page, IContratoDetallarMatricula
+        
     {
-        Matricula matricula = new Matricula();
-        LogicaMatriculasPagas Logica = new LogicaMatriculasPagas();
+        private MatriculaM7 idMatricula;
+        private PersonaM7 idPersona;
+        private PresentadorDetallarMatricula presentador;
+        
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        public M7_DetalleMatriculaPaga()
+        {
+            presentador = new PresentadorDetallarMatricula(this);
+        }
+
+
+        #region Contrato
+        /// <summary>
+        /// Implementacion contrato identificadorMatricula
+        /// </summary>
+        string IContratoDetallarMatricula.identificadorMatricula
+        {
+            get
+            {
+                return identificador1.InnerText;
+            }
+
+            set
+            {
+                identificador1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato colorCinta
+        /// </summary>
+        string IContratoDetallarMatricula.fechaCreacionMatricula
+        {
+            get
+            {
+                return fecha_creacion1.InnerText;
+            }
+
+            set
+            {
+                fecha_creacion1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato colorCinta
+        /// </summary>
+        string IContratoDetallarMatricula.fechaPagoMatricula
+
+        {
+            get
+            {
+                return fecha_pago1.InnerText;
+            }
+
+            set
+            {
+                fecha_pago1.InnerText += value;
+            }
+        }
+
+        /// <summary>
+        /// Implementacion contrato colorCinta
+        /// </summary>
+        string IContratoDetallarMatricula.estadoMatricula
+        {
+            get
+            {
+                return estado_matricula1.InnerText;
+            }
+
+            set
+            {
+                estado_matricula1.InnerText += value;
+            }
+        }
+
+        
+        #endregion
+      
+        /// <summary>
+        /// Método que se ejecuta al cargar la página Listar Matriculas pagas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "7";
@@ -39,24 +126,14 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            matricula = Logica.detalleMatriculaID(int.Parse(detalleStringMatricula));
-                            if (matricula != null)
-                            {
-                                this.identificador.Text = matricula.Identificador.ToString();
-                                this.fecha_creacion.Text = matricula.FechaCreacion.ToString("MM/dd/yyyy");
-                                this.fecha_pago.Text = matricula.UltimaFechaPago.ToString("MM/dd/yyyy");
-                                bool estado = Logica.obtenerEstado(int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()));
-
-                                if (estado)
-                                    this.estado_matricula.Text = "Activa";
-                                else if (!estado)
-                                    this.estado_matricula.Text = "Inactiva";
-                            }
-                            else
-                            {
-                                throw new ObjetoNuloException(M7_Recursos.Codigo_Numero_Parametro_Invalido,
-                                M7_Recursos.MensajeObjetoNuloLogger, new Exception());
-                            }
+                            idMatricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
+                            idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());               
+                            idMatricula.Id = int.Parse(detalleStringMatricula);
+                            presentador.CargarDatos(idMatricula,idPersona);
+                           
+                            
+                          
                         }
                         catch (ObjetoNuloException)
                         {

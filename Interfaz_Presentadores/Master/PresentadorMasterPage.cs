@@ -5,8 +5,8 @@ using System.Text;
 using System.Web;
 using System.Xml;
 using Interfaz_Contratos.Master;
-using LogicaNegociosSKD.Modulo2;
-using DominioSKD;
+using Interfaz_Presentadores.Modulo2;
+using DominioSKD.Entidades.Modulo1;
 
 namespace Interfaz_Presentadores.Master
 {
@@ -36,8 +36,8 @@ namespace Interfaz_Presentadores.Master
         #endregion
 
 
-        public AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
-        private string des = RecursosLogicaModulo2.claveDES;
+        public Encriptacion cripto = new Encriptacion();
+        private string des = RecursosInterfazPresentadorM2.claveDES;
 
         public PresentadorMasterPage(IContratoMasterPage Imaster)
         {
@@ -191,7 +191,7 @@ namespace Interfaz_Presentadores.Master
                 cont++;
             }
             string rol = cripto.DesencriptarCadenaDeCaracteres
-                  (HttpContext.Current.Request.QueryString[RecursosInterfazMaster.sessionRol], RecursosLogicaModulo2.claveDES);
+                  (HttpContext.Current.Request.QueryString[RecursosInterfazMaster.sessionRol], RecursosInterfazPresentadorM2.claveDES);
 
 
                 if (rol != null)

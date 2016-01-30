@@ -8,6 +8,8 @@ using LogicaNegociosSKD.Fabrica;
 using LogicaNegociosSKD.Comandos.Modulo5;
 using LogicaNegociosSKD;
 using DominioSKD;
+using ExcepcionesSKD.Modulo5;
+using DominioSKD.Fabrica;
 
 
 namespace Interfaz_Presentadores.Modulo5
@@ -22,19 +24,29 @@ namespace Interfaz_Presentadores.Modulo5
             this.vista = vista;
         }
 
-
+        /// <summary>
+        /// Método para ejecutar el comando ConsultarTodasCinta y obtener la lista de cintas
+        /// </summary>
         public void LlenarInformacion()
         {
+            try
+            {
+                DominioSKD.Entidades.Modulo3.Organizacion laOrg = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
+                laOrg.Id_organizacion = Int32.Parse(this.vista.obtenerIdOrg);
 
-            FabricaComandos _fabrica = new FabricaComandos();
-            Comando<List<Entidad>> _comando = _fabrica.ObtenerEjecutarConsultarTodosCinta();
-            List<Entidad> _miLista = _comando.Ejecutar();
-      
-            // en caso de q sea null... pero cuando trengas la excepcion tienes q quitarlo
-            if (_miLista != null)
+                Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarConsultarCintaXOrganizacion(laOrg);
+                List<Entidad> _miLista = _comando.Ejecutar();
                 this.llenarVista(_miLista);
+            }
+            catch (ExcepcionesSKD.Modulo5.ListaVaciaExcepcion ex){
+                throw ex;
+            }
+      
        }
 
+        /// <summary>
+        /// Método para llenar la vista (tabla) con la lista de cintas
+        /// </summary>
         private void llenarVista(List<Entidad> lista)
         {
             foreach (Entidad entidad in lista)
@@ -55,5 +67,56 @@ namespace Interfaz_Presentadores.Modulo5
 
             }
         }
+
+        public void llenarComboOrganizacion()
+        {
+            try
+            {
+                Comando<List<Entidad>> _comando = FabricaComandos.ObtenerEjecutarComboOrganizaciones();
+                List<Entidad> _miLista = _comando.Ejecutar();
+                this.asignarInformacionCombo(_miLista);
+            }
+            catch (ExcepcionesSKD.Modulo5.ListaVaciaExcepcion ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void cambiarStatus()
+        {
+            DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)FabricaEntidades.ObtenerCinta_M5();
+
+            laCinta.Id_cinta = this.vista.obtenerIdCinta;
+            DominioSKD.Entidades.Modulo3.Organizacion laOrg = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
+            laOrg.Nombre = this.vista.obtenerNombreOrg;
+            laCinta.Organizacion = laOrg;
+
+            Comando<bool> _comando = FabricaComandos.ObtenerEjecutarModificarStatusCinta(laCinta);
+            bool _resultado = _comando.Ejecutar();
+           
+        }
+
+
+        /// <summary>
+        /// Método para asiganar la informacion en el Combo con las organizaciones 
+        /// </summary>
+        private void asignarInformacionCombo(List<Entidad> listaOrganizaciones)
+        {
+
+            //this.vista.agregarOrganizacionCombo(RecursoPresentadorM5.valorNulo, RecursoPresentadorM5.opcionDefecto);
+            foreach (Entidad entidad in listaOrganizaciones)
+            {
+                DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)entidad;
+
+                this.vista.agregarOrganizacionCombo(org.Id_organizacion.ToString(), org.Nombre);
+
+            }
+            //this.vista.agregarOrganizacionCombo(RecursoPresentadorM5.valorOtro, RecursoPresentadorM5.opcionOtro);
+
+        }
+
     }
 }

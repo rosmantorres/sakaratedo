@@ -32,6 +32,8 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
 
+    <div id="alert" runat="server"></div>
+
     <div class="box box-primary">
         <div class="box-header with-border">
                   <h3 class="box-title">Modificar Cinta</h3>

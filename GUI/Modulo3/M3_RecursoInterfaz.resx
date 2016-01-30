@@ -124,8 +124,8 @@
     <value>&lt;tr&gt;</value>
   </data>
   <data name="BotonActivarOrg" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked id="</value>
+    <value>&lt;a class="make-switch switch-mini statusToggle" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF "checked value="</value>
   </data>
   <data name="BotonCerrar" xml:space="preserve">
     <value>"&gt;&lt;/a&gt;</value>
@@ -134,8 +134,8 @@
     <value>&gt;&lt;/a&gt;</value>
   </data>
   <data name="BotonDesactivarOrg" xml:space="preserve">
-    <value>&lt;a class="make-switch switch-mini" data-toggle="modal" data-target="#modal-switch" &gt;
-                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " id="</value>
+    <value>&lt;a class="make-switch switch-mini statusToggle" data-toggle="modal" data-target="#modal-switch" &gt;
+                            &lt;input type="checkbox" data-toggle="toggle" data-on="ON" data-off="OFF " value="</value>
   </data>
   <data name="BotonInfo" xml:space="preserve">
     <value>&lt;a class="btn btn-primary glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#modal-info" href="</value>
@@ -169,5 +169,35 @@
   </data>
   <data name="Tipo" xml:space="preserve">
     <value>&amp;tipo=</value>
+  </data>
+  <data name="agregarExito" xml:space="preserve">
+    <value>../Modulo3/M3_ConsultarOrganizacion.aspx?success=1</value>
+  </data>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="alertaSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="alertClase" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole" xml:space="preserve">
+    <value>role</value>
+  </data>
+  <data name="camposVacios" xml:space="preserve">
+    <value>Existen campos vacios, todos los campos son obligatorios</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="expresionesRegulares" xml:space="preserve">
+    <value>Existen campos con valores incorrectos, solo se permiten valores alfanumericos</value>
   </data>
 </root>

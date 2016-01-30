@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -57,138 +63,165 @@
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
     <Compile Include="DAO\DAOGeneral.cs" />
+    <Compile Include="DAO\Modulo8\DAORestriccionCinta.cs" />
+    <Compile Include="DAO\Modulo8\DAORestriccionCompetencia.cs" />
+    <Compile Include="DAO\Modulo8\DAORestriccionEvento.cs" />
+    <Compile Include="DAO\Modulo8\RecursosDAORestriccionCinta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAORestriccionCinta.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Modulo8\RecursosDAORestriccionCompetencia.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAORestriccionCompetencia.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Modulo8\RecursosDAORestriccionEvento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAORestriccionEvento.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Modulo8\RecursoExepcion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursoExepcion.resx</DependentUpon>
+    </Compile>
+    <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCinta.cs" />
+    <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCompetencia.cs" />
+    <Compile Include="DAO\Modulo10\DaoAsistencia.cs" />
+    <Compile Include="DAO\Modulo10\RecursosDAOModulo10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAOModulo10.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Modulo11\DaoResultadoAscenso.cs" />
+    <Compile Include="DAO\Modulo11\DaoResultadoKata.cs" />
+    <Compile Include="DAO\Modulo11\DaoResultadoKumite.cs" />
+    <Compile Include="DAO\Modulo11\RecursosDAOModulo11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAOModulo11.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Modulo12\DaoCompetencia.cs" />
     <Compile Include="DAO\Modulo12\RecursosDAOModulo12.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosDAOModulo12.resx</DependentUpon>
     </Compile>
-    <Compile Include="DAO\Modulo14\DaoDatos.cs" />
-    <Compile Include="DAO\Modulo14\DaoDiseno.cs" />
-    <Compile Include="DAO\Modulo14\DaoPlanilla.cs" />
-    <Compile Include="DAO\Modulo14\DaoSolicitud.cs" />
-    <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs" />
-    <Compile Include="DAO\Modulo3\DaoOrganizacion.cs" />
-    <Compile Include="DAO\Modulo3\RecursosDaoModulo3.Designer.cs" />
-    <Compile Include="DAO\Modulo4\DaoDojo.cs" />
-    <Compile Include="DAO\Modulo4\RecursosDAOModulo4.Designer.cs">
+    <Compile Include="DAO\Modulo7\DaoCinta.cs" />
+    <Compile Include="DAO\Modulo7\DaoCompetencia.cs" />
+    <Compile Include="DAO\Modulo7\DaoDojo.cs" />
+    <Compile Include="DAO\Modulo7\DaoEvento.cs" />
+    <Compile Include="DAO\Modulo7\DaoHorario.cs" />
+    <Compile Include="DAO\Modulo7\DaoMatricula.cs" />
+    <Compile Include="DAO\Modulo7\DaoOrganizacion.cs" />
+    <Compile Include="DAO\Modulo7\DaoPersona.cs" />
+    <Compile Include="DAO\Modulo7\DaoTipoEvento.cs" />
+    <Compile Include="DAO\Modulo7\DaoUbicacion.cs" />
+    <Compile Include="DAO\Modulo7\RecursosDAOModulo7.Designer.cs">
+      <DependentUpon>RecursosDAOModulo7.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosDAOModulo4.resx</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Modulo14\RecursosDAOModulo14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAOModulo14.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Modulo15\DaoImplemento.cs" />
+    <Compile Include="DAO\Modulo16\DaoCarrito.cs" />
+    <Compile Include="DAO\Modulo16\DaoCompra.cs" />
+    <Compile Include="DAO\Modulo16\DaoMensualidad.cs" />
+    <Compile Include="DAO\Modulo16\RecursosBDModulo16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosBDModulo16.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\Modulo9\DaoEvento.cs" />
+    <Compile Include="DAO\Modulo9\RecursosDaoEvento.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDaoEvento.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
+    <Compile Include="InterfazDAO\Modulo15\IDaoImplemento.cs" />
+    <Compile Include="InterfazDAO\Modulo10\IDaoAsistencia.cs" />
+    <Compile Include="InterfazDAO\Modulo11\IDaoResultadoAscenso.cs" />
+    <Compile Include="InterfazDAO\Modulo11\IDaoResultadoKata.cs" />
+    <Compile Include="InterfazDAO\Modulo11\IDaoResultadoKumite.cs" />
+    <Compile Include="InterfazDAO\Modulo16\IdaoCarrito.cs" />
+    <Compile Include="InterfazDAO\Modulo16\IdaoCompra.cs" />
+    <Compile Include="InterfazDAO\Modulo16\IdaoMensualidad.cs" />
+    <Compile Include="DAO\Modulo14\DaoPlanilla.cs" />
+    <Compile Include="DAO\Modulo14\DaoSolicitud.cs" />
+    <Compile Include="DAO\Modulo1\DaoLogin.cs" />
+    <Compile Include="DAO\Modulo1\DaoRestablecer.cs" />
+    <Compile Include="DAO\Modulo2\DaoRoles.cs" />
+    <Compile Include="DAO\Modulo2\RecursosBDM2.Designer.cs">
+      <DependentUpon>RecursosBDM2.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DAO\Modulo14\DaoDatos.cs" />
+    <Compile Include="DAO\Modulo14\DaoDiseno.cs" />
+    <Compile Include="DAO\Modulo3\DaoOrganizacion.cs" />
+    <Compile Include="DAO\Modulo3\RecursosDaoModulo3.Designer.cs" />
     <Compile Include="DAO\Modulo5\DaoCinta.cs" />
     <Compile Include="DAO\Modulo5\RecursosDaoModulo5.Designer.cs" />
-    <Compile Include="Fabrica\FabricaDAOSqlServer.cs" />
     <Compile Include="InterfazDAO\IDao.cs" />
     <Compile Include="InterfazDAO\Modulo12\IDaoCompetencia.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoCinta.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoCompetencia.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoDojo.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoEvento.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoHorario.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoMatricula.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoOrganizacion.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoPersona.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoTipoEvento.cs" />
+    <Compile Include="InterfazDAO\Modulo7\IDaoUbicacion.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoDatos.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoDiseno.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoPlanilla.cs" />
     <Compile Include="InterfazDAO\Modulo14\IDaoSolicitud.cs" />
+    <Compile Include="InterfazDAO\Modulo1\IDaoLogin.cs" />
+    <Compile Include="InterfazDAO\Modulo1\IDaoRestablecer.cs" />
+    <Compile Include="InterfazDAO\Modulo2\IDaoRoles.cs" />
     <Compile Include="InterfazDAO\Modulo3\IDaoOrganizacion.cs" />
-    <Compile Include="InterfazDAO\Modulo4\IDaoDojo.cs" />
     <Compile Include="InterfazDAO\Modulo5\IDaoCinta.cs" />
-    <Compile Include="Modulo10\BDAsistencia.cs" />
+    <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionEvento.cs" />
+    <Compile Include="InterfazDAO\Modulo9\IDaoEvento.cs" />
     <Compile Include="Modulo10\RecursosBDModulo10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo10.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo11\BDResultado.cs" />
     <Compile Include="Modulo11\RecursosBDModulo11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo12\BDCompetencia.cs" />
-    <Compile Include="Modulo12\RecursosBDModulo12.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo12.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo13\RecursosBDModulo13.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo13.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo14\BDDatos.cs" />
-    <Compile Include="Modulo14\BDDiseño.cs" />
-    <Compile Include="Modulo14\BDPlanilla.cs" />
-    <Compile Include="Modulo14\BDSolicitud.cs" />
-    <Compile Include="Modulo14\RecursosBDModulo14.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo14.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo15\RecursosBDModulo15.Designer.cs">
+    <Compile Include="DAO\Modulo15\RecursosBDModulo15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo15.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo16\RecursosBDModulo16.Designer.cs">
+    <Compile Include="DAO\Modulo1\RecursosBDM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo16.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo1\BDLogin.cs" />
-    <Compile Include="Modulo1\BDRestablecer.cs" />
-    <Compile Include="Modulo1\RecursosBDModulo1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo1.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo2\BDRoles.cs" />
-    <Compile Include="Modulo2\RecursosBDModulo2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo2.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo3\RecursosBDModulo3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo3.resx</DependentUpon>
+      <DependentUpon>RecursosBDM1.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo4\RecursosBDModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo4.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo5\RecursosBDModulo5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo5.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo6\BDListarUsuarios.cs" />
-    <Compile Include="Modulo6\RecursosBDModulo6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo6.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo7\BDCinta.cs" />
-    <Compile Include="Modulo7\BDCompetencia.cs" />
-    <Compile Include="Modulo7\BDDojo.cs" />
-    <Compile Include="Modulo7\BDEvento.cs" />
-    <Compile Include="Modulo7\BDHorario.cs" />
-    <Compile Include="Modulo7\BDMatricula.cs" />
-    <Compile Include="Modulo7\BDOrganizacion.cs" />
-    <Compile Include="Modulo7\BDPersona.cs" />
-    <Compile Include="Modulo7\BDTipoEvento.cs" />
-    <Compile Include="Modulo7\BDUbicacion.cs" />
-    <Compile Include="Modulo7\RecursosBDModulo7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo7.resx</DependentUpon>
-    </Compile>
+    <Compile Include="Modulo6\RecursosBDModulo6.Designer.cs" />
     <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo8.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo9\BDEvento.cs" />
-    <Compile Include="Modulo9\RecursosBDModulo9.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo9.resx</DependentUpon>
     </Compile>
     <Compile Include="Parametro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -205,17 +238,56 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionCinta.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAORestriccionCinta.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionCompetencia.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAORestriccionCompetencia.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo10\RecursosDAOModulo10.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo10.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo11\RecursosDAOModulo11.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo11.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo12\RecursosDAOModulo12.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAOModulo12.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="DAO\Modulo14\RecursosDAOModulo14.resx" />
-    <EmbeddedResource Include="DAO\Modulo3\RecursosDaoModulo3.resx" />
-    <EmbeddedResource Include="DAO\Modulo4\RecursosDAOModulo4.resx">
+    <EmbeddedResource Include="DAO\Modulo7\RecursosDAOModulo7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosDAOModulo4.Designer.cs</LastGenOutput>
+      <LastGenOutput>RecursosDAOModulo7.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo16\RecursosBDModulo16.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosBDModulo16.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo2\RecursosBDM2.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosBDM2.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo14\RecursosDAOModulo14.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo14.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo3\RecursosDaoModulo3.resx" />
     <EmbeddedResource Include="DAO\Modulo5\RecursosDaoModulo5.resx" />
+    <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionEvento.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAORestriccionEvento.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo8\RecursoExepcion.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursoExepcion.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DAO\Modulo9\RecursosDaoEvento.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDaoEvento.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulo10\RecursosBDModulo10.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo10.Designer.cs</LastGenOutput>
@@ -224,61 +296,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo12\RecursosBDModulo12.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo12.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo13\RecursosBDModulo13.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo13.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo14\RecursosBDModulo14.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo14.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo15\RecursosBDModulo15.resx">
+    <EmbeddedResource Include="DAO\Modulo15\RecursosBDModulo15.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo15.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo16\RecursosBDModulo16.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo16.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo1\RecursosBDModulo1.resx">
+    <EmbeddedResource Include="DAO\Modulo1\RecursosBDM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo2\RecursosBDModulo2.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo2.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo3\RecursosBDModulo3.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo3.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo4\RecursosBDModulo4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo5\RecursosBDModulo5.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo5.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo6\RecursosBDModulo6.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo6.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo7\RecursosBDModulo7.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo7.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Modulo6\RecursosBDModulo6.resx" />
     <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo8.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo9\RecursosBDModulo9.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo9.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\RecursoGeneralDAO.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -318,28 +351,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
-    <Folder Include="DAO\Modulo10\" />
-    <Folder Include="DAO\Modulo11\" />
     <Folder Include="DAO\Modulo13\" />
-    <Folder Include="DAO\Modulo15\" />
-    <Folder Include="DAO\Modulo16\" />
-    <Folder Include="DAO\Modulo1\" />
-    <Folder Include="DAO\Modulo2\" />
+    <Folder Include="DAO\Modulo4\" />
     <Folder Include="DAO\Modulo6\" />
     <Folder Include="DAO\Modulo7\" />
-    <Folder Include="DAO\Modulo8\" />
-    <Folder Include="DAO\Modulo9\" />
-    <Folder Include="InterfazDAO\Modulo10\" />
-    <Folder Include="InterfazDAO\Modulo11\" />
     <Folder Include="InterfazDAO\Modulo13\" />
-    <Folder Include="InterfazDAO\Modulo15\" />
-    <Folder Include="InterfazDAO\Modulo16\" />
-    <Folder Include="InterfazDAO\Modulo1\" />
-    <Folder Include="InterfazDAO\Modulo2\" />
+    <Folder Include="InterfazDAO\Modulo4\" />
     <Folder Include="InterfazDAO\Modulo6\" />
     <Folder Include="InterfazDAO\Modulo7\" />
+    <Folder Include="DAO\Modulo8\" />
+
+
     <Folder Include="InterfazDAO\Modulo8\" />
-    <Folder Include="InterfazDAO\Modulo9\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\menuLateral.xml" />

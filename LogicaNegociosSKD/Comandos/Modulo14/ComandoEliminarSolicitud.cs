@@ -1,4 +1,5 @@
 ﻿using DatosSKD.DAO.Modulo14;
+using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.Fabrica;
 using DominioSKD;
 using DominioSKD.Fabrica;
@@ -21,13 +22,17 @@ namespace LogicaNegociosSKD.Comandos.Modulo14
             get { return idSolicitud; }
             set { idSolicitud = value; }
         }
-
+        /// <summary>
+        /// Método que elimina una solicitud dada
+        /// </summary>
+        /// <param name="idSolicitud">Id de la solicitud que se desea eliminar</param>
+        /// <returns>Retorna true si la operación se realizo con éxito.
+        /// De lo contrario devuelve false</returns>
         public override Boolean Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             try
             {
-                DaoSolicitud daoSolicitud = (DaoSolicitud)fabrica.ObtenerDAOSolicitud();
+                IDaoSolicitud daoSolicitud = FabricaDAOSqlServer.ObtenerDAOSolicitud();
                 return daoSolicitud.EliminarSolicitudBD(this.idSolicitud);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)

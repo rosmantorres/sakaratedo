@@ -35,7 +35,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Listar Organizaciones
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-    
+ <form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server">    
         <div id="alert" runat="server">
     </div>
 
@@ -48,7 +48,16 @@
                       <h3 class="box-title">Lista de Organizaciones</h3>
                     
         </div><!-- /.box-header -->
-<form role="form" class="table table-bordered table-striped dataTable" name="consulta_org" id="consulta_org" method="post" runat="server"> 
+
+
+
+
+
+     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <input id="OrgIdStatus" type="hidden" runat="server" />
+    <input id="estatusActual" type="hidden" runat="server" />
+
+
  <div class="box-body table-responsive"> 
         <table id="tablaOrg" class="table table-bordered table-striped dataTable">
             <thead>
@@ -68,52 +77,11 @@
 			</tbody>
             </table>
            </div>
-</form>
+
        </div>
     </div>
 </div>
 
-
-<div id="modal-info" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h2 class="modal-title">Información De Organización</h2>
-					</div>
-					<div class="modal-body">
-						<div class="container-fluid" id="info">
-							<div class="row">
-								<h3>Organización</h3>
-                                 <img src="Imagenes/Aikido.png" width="150" height="150" alt="">
-								
-                                        <h4><b>Nombre</b></h4>
-                                        <p>Karate</p>
-										<h4><b>Técnica</b></h4>
-                                         <p>Aikido</p>
-										<h4><b>Teléfono</b></h4>
-                                         <p>55-4567899</p>
-                                        <h4><b>Email</b></h4>
-                                         <p>admin@gmail.com</p>
-                                        <h4><b>Contacto</b></h4>
-                                         <p>Pedro Perez 0412 3117784</p>
-                          
-                              
-								    <h3><b>Orden de Cintas</b></h3>
-                                     <select multiple="multiple" name="org_primary" size="4" class="form-control select select-primary select-block mbl">
-                                     <option>Color A</option>
-                                     <option>Color B</option>
-                                     <option>Color F</option>
-                                     <option>Color C</option>
-                                     <option>Color B</option>
-                                     <option>Color Z</option>
-                                     </select>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!-- /.modal-dialog -->
 
  <div id="modal-switch" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -131,16 +99,29 @@
               </div>
             </div>
             <div class="modal-footer">  
-                <button type="button" class="btn btn-primary" data-dismiss="modal" onserverclick="CambioDeStatus_Click">Aceptar</button>  <!-- onserverclick="CambioDeStatus_Click" --> 
+                <asp:Button runat="server" class="btn btn-primary" OnClick="cambiarStatus" Text="Aceptar" />
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
            </div>
           </div>
         </div>
       </div>
-    
+    </form>
     
     <script type="text/javascript">
           $(document).ready(function () {
+
+              $(".statusToggle").click(function () {
+                  //$(this).find("input").val()
+                  if ($(this).find("input").is(":checked")) {
+                      $("[id$='estatusActual']").val("1");
+                  }
+                  else {
+                      $("[id$='estatusActual']").val("0");
+                  }
+                  $("[id$='OrgIdStatus']").val($(this).find("input").val());
+
+              })
+
 
               var table = $('#tablaOrg').DataTable({
               /*  "language": {

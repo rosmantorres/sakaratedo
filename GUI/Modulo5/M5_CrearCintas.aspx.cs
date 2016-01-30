@@ -5,10 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DominioSKD;
-using LogicaNegociosSKD.Modulo5;
-using LogicaNegociosSKD.Modulo3;
 using Interfaz_Presentadores.Modulo5;
 using Interfaz_Contratos.Modulo5;
+using System.Globalization;
+using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo5
 {
@@ -23,13 +23,13 @@ namespace templateApp.GUI.Modulo5
             ((SKD)Page.Master).IdModulo = "5";
 
             // Controlador
-
+            this.presentador = new PresentadorCrearCintas(this);
             if (!IsPostBack)
             {
-                // la vista herda de la interfaz contrato esa ok para implementar esos metodos, sip
+                // la vista herda de la interfaz contrato 
                 //el presentador al final recive un tipo de dato IContratoCrearCinta
                 // la vista ES UN IContratoCrearCinta 
-                this.presentador = new PresentadorCrearCintas(this);
+              
                 this.presentador.llenarCombo();
                 this.ListOrg.DataSource = options;
                 this.ListOrg.DataTextField = "value";
@@ -46,46 +46,85 @@ namespace templateApp.GUI.Modulo5
             this.options.Add(id, nombre);
         }
 
-        public int obtenerIdOrganizacion()
+        public int obtenerIdOrganizacion
         {
-            return Int32.Parse(this.ListOrg.SelectedValue); 
+            get { return Int32.Parse(this.ListOrg.SelectedValue); }
         }
 
-        public string obtenerNombreOrganizacion()
+        public string obtenerNombreOrganizacion
         {
-            return this.ListOrg.Text;
+            get {return this.ListOrg.SelectedItem.Text;}
         }
 
-        public string obtenerColorCinta()
+        public string obtenerColorCinta
         {
-            return this.color.Value;
+           get { return this.color.Value;}
         }
 
-        public string obtenerRango()
+        public string obtenerRango
         {
-            return this.ran.Value;
+            get { return this.ran.Value; }
         }
 
-        public string obtenerCategoria()
+        public string obtenerCategoria
         {
-            return this.cate.Value;
+            get { return this.cate.Value; }
         }
 
-        public string obtenerSignificado()
+        public string obtenerSignificado
         {
-            return this.signi.Value;
+            get { return this.signi.Value; }
         }
 
-        public string obtenerOrden()
+        public string obtenerOrden
         {
-            return this.ord.Value;
+            get { return this.ord.Value; }
+        }
+        public void alertaCamposVacios()
+        {
+                this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+                this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+                this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + RecursoInterfazMod5.camposVacios + RecursoInterfazMod5.alertaHtmlFinal;
+                this.alert.Visible = true;
+        }
+        public void alertaAgregarFallidoOrden(ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Message + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaAgregarFallidoRepetida(ExcepcionesSKD.Modulo5.CintaRepetidaException ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Message + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void Respuesta()
+        {
+            this.Response.Redirect(RecursoInterfazMod5.agregarExito);
+        }
+        public void alertaExpresiones()
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + RecursoInterfazMod5.expresionesRegulares + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaAgregarFallido(Exception ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Message + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
         }
         #endregion
 
 
         protected void btnCrearCinta(object sender, EventArgs e){
 
-            this.presentador.agregarValoresCinta(); 
+            this.presentador.agregarValoresCinta();
         }
 
     }

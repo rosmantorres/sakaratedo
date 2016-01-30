@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +7,6 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using DominioSKD;
-using LogicaNegociosSKD.Modulo5;
-using LogicaNegociosSKD.Modulo3;
 using Interfaz_Contratos.Modulo5;
 using Interfaz_Presentadores.Modulo5;
 
@@ -17,8 +14,7 @@ namespace templateApp.GUI.Modulo5
 {
     public partial class M5_ListarCintas : System.Web.UI.Page, IContratoListarCintas
     {
-      //  private LogicaNegociosSKD.Modulo5.LogicaCinta logica = new LogicaNegociosSKD.Modulo5.LogicaCinta();
-//        List<DominioSKD.Cinta> lista;
+
 
         private PresentadorLlenarCintas presentador;
 
@@ -26,17 +22,14 @@ namespace templateApp.GUI.Modulo5
         {
             ((SKD)Page.Master).IdModulo = "5";
 
-            
+            this.presentador = new PresentadorLlenarCintas(this);
             if (!IsPostBack)
             {
-
-                this.presentador = new PresentadorLlenarCintas(this);
-                this.presentador.LlenarInformacion();
+                this.presentador.llenarComboOrganizacion();            
+               //this.presentador.LlenarInformacion();
             }
            
-        }
-
-      
+        } 
 
        #region IContratos
         public void llenarId(string id)
@@ -74,7 +67,6 @@ namespace templateApp.GUI.Modulo5
         public void llenarBotones(int id)
         {
             this.tabla.Text += RecursoInterfazMod5.AbrirTD;
-            this.tabla.Text += RecursoInterfazMod5.BotonInfo + id + RecursoInterfazMod5.BotonCerrar;
             this.tabla.Text += RecursoInterfazMod5.BotonModificar + id + RecursoInterfazMod5.BotonCerrar;
         }
 
@@ -91,7 +83,38 @@ namespace templateApp.GUI.Modulo5
             this.tabla.Text += RecursoInterfazMod5.CerrarTD;
             this.tabla.Text += RecursoInterfazMod5.CerrarTR;
         }
+        public int obtenerIdCinta
+        {
+            get { return Int32.Parse(this.cintaIdStatus.Value); }
+        }
+        public int obtenerStatusCinta
+        {
+            get { return Int32.Parse(this.estatusActual.Value); }
+        }
+        public string obtenerNombreOrg
+        {
+            get { return this.nombreOrg.Value; }
+        }
+        public void agregarOrganizacionCombo(string id, string nombre)
+        {
+            this.listaOrg.Items.Add(new ListItem(nombre, id));
+        }
+        public string obtenerIdOrg
+        {
+            get { return this.listaOrg.SelectedValue; }
+        }
         #endregion
+
+        protected void organizacionSeleccionada(object sender, EventArgs e)
+        {
+            this.presentador.LlenarInformacion();    
+        }
+
+        protected void cambiarStatus(object sender, EventArgs e)
+        {
+            this.presentador.cambiarStatus();
+            this.Response.Redirect(Request.RawUrl);
+        }
 
 
     }

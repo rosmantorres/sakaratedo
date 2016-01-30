@@ -77,7 +77,84 @@ namespace templateApp.GUI.Modulo3 {
                 return ResourceManager.GetString("AbrirTR", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo3/M3_ConsultarOrganizacion.aspx?success=1.
+        /// </summary>
+        internal static string agregarExito
+        {
+            get
+            {
+                return ResourceManager.GetString("agregarExito", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string alertaError
+        {
+            get
+            {
+                return ResourceManager.GetString("alertaError", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string alertaHtml
+        {
+            get
+            {
+                return ResourceManager.GetString("alertaHtml", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string alertaHtmlFinal
+        {
+            get
+            {
+                return ResourceManager.GetString("alertaHtmlFinal", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string alertaSuccess
+        {
+            get
+            {
+                return ResourceManager.GetString("alertaSuccess", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to class.
+        /// </summary>
+        internal static string alertClase
+        {
+            get
+            {
+                return ResourceManager.GetString("alertClase", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to role.
+        /// </summary>
+        internal static string alertRole
+        {
+            get
+            {
+                return ResourceManager.GetString("alertRole", resourceCulture);
+            }
+        }
+
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
@@ -142,7 +219,18 @@ namespace templateApp.GUI.Modulo3 {
                 return ResourceManager.GetString("BotonModificar", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to Existen campos vacios, todos los campos son obligatorios.
+        /// </summary>
+        internal static string camposVacios
+        {
+            get
+            {
+                return ResourceManager.GetString("camposVacios", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;Solicitar&lt;/a&gt;.
         /// </summary>
@@ -212,6 +300,28 @@ namespace templateApp.GUI.Modulo3 {
         internal static string Tipo {
             get {
                 return ResourceManager.GetString("Tipo", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to alert.
+        /// </summary>
+        internal static string tipoAlerta
+        {
+            get
+            {
+                return ResourceManager.GetString("tipoAlerta", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to expresionesRegulares.
+        /// </summary>
+        internal static string expresionesRegulares
+        {
+            get
+            {
+                return ResourceManager.GetString("expresionesRegulares", resourceCulture);
             }
         }
     }
