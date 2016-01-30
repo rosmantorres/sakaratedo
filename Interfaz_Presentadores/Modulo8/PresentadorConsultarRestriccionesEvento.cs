@@ -64,7 +64,6 @@ namespace Interfaz_Presentadores.Modulo8
             {
                 Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionEvento();
                 lista = command.Ejecutar();
-                this.lista = lista;
                 foreach (DominioSKD.Entidades.Modulo8.RestriccionEvento rest in lista)
                 {
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTR;
