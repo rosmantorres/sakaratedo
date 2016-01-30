@@ -84,8 +84,8 @@ namespace Interfaz_Presentadores.Modulo8
                 throw ex;
             }
             vista.rangoMaximo.DataSource = options;
-            vista.rangoMaximo.DataTextField = "value";
-            vista.rangoMaximo.DataValueField = "key";
+            vista.rangoMaximo.DataTextField = RecursoPresentadorM8.value;
+            vista.rangoMaximo.DataValueField = RecursoPresentadorM8.key;
             vista.rangoMaximo.DataBind();
 
         }
@@ -135,8 +135,8 @@ namespace Interfaz_Presentadores.Modulo8
                 throw ex;
             }
             vista.eventos.DataSource = options;
-            vista.eventos.DataTextField = "value";
-            vista.eventos.DataValueField = "key";
+            vista.eventos.DataTextField = RecursoPresentadorM8.value;
+            vista.eventos.DataValueField = RecursoPresentadorM8.key;
             vista.eventos.DataBind();
 
         }
@@ -145,12 +145,12 @@ namespace Interfaz_Presentadores.Modulo8
         {
             vista.sexo.Enabled = true;
             Dictionary<string, string> optionsSexo = new Dictionary<string, string>();
-            optionsSexo.Add("Masculino", "M");
-            optionsSexo.Add("Femenino", "F");
-            optionsSexo.Add("Ambos Sexos", "B");
+            optionsSexo.Add(RecursoPresentadorM8.Masculino, RecursoPresentadorM8.M);
+            optionsSexo.Add(RecursoPresentadorM8.Femenino, RecursoPresentadorM8.F);
+            optionsSexo.Add(RecursoPresentadorM8.AmbosSexos, RecursoPresentadorM8.B);
             vista.sexo.DataSource = optionsSexo;
-            vista.sexo.DataTextField = "key";
-            vista.sexo.DataValueField = "value";
+            vista.sexo.DataTextField = RecursoPresentadorM8.key;
+            vista.sexo.DataValueField = RecursoPresentadorM8.value;
             vista.sexo.DataBind();
         }
 
@@ -168,10 +168,10 @@ namespace Interfaz_Presentadores.Modulo8
 
             vista.edadMinima.DataSource = optionsEdad;
             vista.edadMaxima.DataSource = optionsEdad;
-            vista.edadMinima.DataTextField = "key";
-            vista.edadMinima.DataValueField = "value";
-            vista.edadMaxima.DataTextField = "key";
-            vista.edadMaxima.DataValueField = "value";
+            vista.edadMinima.DataTextField = RecursoPresentadorM8.key;
+            vista.edadMinima.DataValueField = RecursoPresentadorM8.value;
+            vista.edadMaxima.DataTextField = RecursoPresentadorM8.key;
+            vista.edadMaxima.DataValueField = RecursoPresentadorM8.value;
             vista.edadMinima.DataBind();
             vista.edadMaxima.DataBind();
         }
