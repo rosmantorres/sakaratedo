@@ -59,7 +59,7 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + evento.Nombre.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_RecursosPresentador.CerrarTD;
-                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
+                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString(M7_RecursosPresentador.FormatoFecha) + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + evento.Ubicacion.Estado.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
                         vista.laTabla += M7_RecursosPresentador.BotonInfoEventosInscritos + evento.Id + M7_RecursosPresentador.BotonCerrar;
@@ -79,7 +79,7 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + competencia.Nombre.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + competencia.TipoCompetencia.ToString() + M7_RecursosPresentador.CerrarTD;
-                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
+                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString(M7_RecursosPresentador.FormatoFecha) + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + competencia.Ubicacion.Estado.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
                         vista.laTabla += M7_RecursosPresentador.BotonInfoCompetenciaInscrita + competencia.Id + M7_RecursosPresentador.BotonCerrar;

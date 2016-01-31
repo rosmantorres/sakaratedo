@@ -67,8 +67,8 @@ namespace Interfaz_Presentadores.Modulo7
                     estadoFinal = "No Activa";
                 }*/
                 
-                vista.fechaCreacionMatricula = matricula.FechaCreacion.ToString("MM/dd/yyyy");
-                vista.fechaPagoMatricula = matricula.UltimaFechaPago.ToString("MM/dd/yyyy");
+                vista.fechaCreacionMatricula = matricula.FechaCreacion.ToString(M7_RecursosPresentador.FormatoFecha);
+                vista.fechaPagoMatricula = matricula.UltimaFechaPago.ToString(M7_RecursosPresentador.FormatoFecha);
                 estadoFinal = matricula.Status.ToString();
 
              
