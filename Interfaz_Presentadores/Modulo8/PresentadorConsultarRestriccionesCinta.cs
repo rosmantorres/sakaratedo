@@ -65,24 +65,14 @@ namespace Interfaz_Presentadores.Modulo8
                 vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
                     + RecursoPresentadorM8.alertaHtmlFinal;
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            catch (FormatException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            
         }
 
         public List<Entidad> LlenarTabla()
         {
             try
             {
+                this.lista = null;
                 Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionCinta();
                 lista = command.Ejecutar();
             }
@@ -94,18 +84,7 @@ namespace Interfaz_Presentadores.Modulo8
                 vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
                     + RecursoPresentadorM8.alertaHtmlFinal;
             }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            catch (FormatException ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            
             return lista;
         }
 

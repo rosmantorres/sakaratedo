@@ -313,20 +313,24 @@ namespace DatosSKD.DAO.Modulo8
                 }
                 catch (SqlException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                             RecursoGeneralBD.Mensaje, ex);
                 }
                 catch (FormatException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
                          RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw ex;
                 }
                 catch (Exception ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
