@@ -128,23 +128,6 @@ namespace Interfaz_Presentadores.Modulo8
             }
         }
 
-        public List<Entidad> LlenarTabla()
-        {
-            try
-            {
-                this.lista = null;
-                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionEvento();
-                lista = command.Ejecutar();
-            }
-            catch (ExcepcionesSKD.ExceptionSKD ex)
-            {
-                vista.alertaClase = RecursoPresentadorM8.alertaError;
-                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
-                    + RecursoPresentadorM8.alertaHtmlFinal;
-
-            }
-            return lista;
-        }
+       
     }
 }
