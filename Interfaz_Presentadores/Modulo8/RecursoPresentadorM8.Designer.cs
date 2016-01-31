@@ -432,6 +432,24 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &amp;emax=.
+        /// </summary>
+        internal static string Emax {
+            get {
+                return ResourceManager.GetString("Emax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;emin=.
+        /// </summary>
+        internal static string Emin {
+            get {
+                return ResourceManager.GetString("Emin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to F.
         /// </summary>
         internal static string F {
@@ -558,6 +576,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nombre del Evento:  .
+        /// </summary>
+        internal static string nombreEvento {
+            get {
+                return ResourceManager.GetString("nombreEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 0123456789.
         /// </summary>
         internal static string Numbers {
@@ -608,6 +635,23 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string Status {
             get {
                 return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+<<<<<<< Updated upstream
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-off&quot; href=&quot;interfazRestriccionesHorario.aspx?idPlan=.
+        /// </summary>
+        internal static string StatusEvento {
+            get {
+                return ResourceManager.GetString("StatusEvento", resourceCulture);
+=======
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-off&quot; href=&quot;interfazRestriccionesEventos.aspx?idPlan=.
+        /// </summary>
+        internal static string StatusRC {
+            get {
+                return ResourceManager.GetString("StatusRC", resourceCulture);
+>>>>>>> Stashed changes
             }
         }
         

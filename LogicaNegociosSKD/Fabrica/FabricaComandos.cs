@@ -207,6 +207,11 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarTodosRestriccionCompetencia();
         }
 
+        public Comando<Boolean> CrearComandoEliminarLogicoRestriccionCompetencia(Entidad laRestCompetencia)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarLogicoRestriccionCompetencia(laRestCompetencia);
+        }
+
         #endregion
 
         #region Comandos Restriccion Avance de Cinta
@@ -266,6 +271,16 @@ namespace LogicaNegociosSKD.Fabrica
         public static Comando<Boolean> CrearComandoEliminarRestriccionEvento(Entidad laRestEvento)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarRestriccionEvento(laRestEvento);
+        }
+
+        public static Comando<DominioSKD.Entidad> CrearComandoConsultarUnaRestriccionEvento(Entidad elEvento)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarUnaRestriccionEvento(elEvento);
+        }
+
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoEventosQuePuedeParticiparAtleta(Entidad laPersona)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEventosQuePuedeParticiparAtleta(laPersona);
         }
         #endregion
         

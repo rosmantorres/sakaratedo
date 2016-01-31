@@ -394,6 +394,15 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to status.
+        /// </summary>
+        internal static string AliasStatus {
+            get {
+                return ResourceManager.GetString("AliasStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to statusCompetencia.
         /// </summary>
         internal static string AliasStatusCompetencia {
@@ -511,7 +520,7 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M8_ConsultarRestriccionCompetencia.
+        ///   Looks up a localized string similar to M8_ConsultarTodosRestriccionCompetencia.
         /// </summary>
         internal static string ConsultarTodasRestriccionCompetencia {
             get {
@@ -525,6 +534,15 @@ namespace DatosSKD.DAO.Modulo8 {
         internal static string ConsultarTodasRestriccionCompetencia1 {
             get {
                 return ResourceManager.GetString("ConsultarTodasRestriccionCompetencia1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M8_EliminarLogicoRestriccionCompetencia.
+        /// </summary>
+        internal static string EiminarLogicoRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("EiminarLogicoRestriccionCompetencia", resourceCulture);
             }
         }
         
@@ -975,6 +993,15 @@ namespace DatosSKD.DAO.Modulo8 {
         internal static string ParamSexo1 {
             get {
                 return ResourceManager.GetString("ParamSexo1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @rest_comp_status.
+        /// </summary>
+        internal static string ParamStatus {
+            get {
+                return ResourceManager.GetString("ParamStatus", resourceCulture);
             }
         }
         

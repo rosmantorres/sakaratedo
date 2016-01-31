@@ -281,6 +281,7 @@
   <data name="edadErrada" xml:space="preserve">
     <value>Edad minima no puede ser mayor a la maxima</value>
   </data>
+<<<<<<< Updated upstream
   <data name="Numbers" xml:space="preserve">
     <value>0123456789</value>
   </data>
@@ -313,5 +314,21 @@
   </data>
   <data name="innerHtmlAlertModificarRCi" xml:space="preserve">
     <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Restriccion Cinta Modificada Exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="StatusEvento" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesHorario.aspx?idPlan=</value>
+  </data>
+  <data name="Emax" xml:space="preserve">
+    <value>&amp;emax=</value>
+  </data>
+  <data name="Emin" xml:space="preserve">
+    <value>&amp;emin=</value>
+  </data>
+  <data name="nombreEvento" xml:space="preserve">
+    <value>Nombre del Evento:  </value>
+=======
+  <data name="StatusRC" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
+>>>>>>> Stashed changes
   </data>
 </root>
