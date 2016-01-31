@@ -54,9 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modulo4\IContratoAgregarDojo.cs" />
+    <Compile Include="Modulo4\IContratoAgregarHistorialM.cs" />
     <Compile Include="Modulo4\IContratoDetalleDojo.cs" />
     <Compile Include="Modulo4\IContratoListarDojos.cs" />
+    <Compile Include="Modulo4\IContratoListarHistorialM.cs" />
     <Compile Include="Modulo4\IContratoModificarDojo.cs" />
+    <Compile Include="Modulo4\IContratoModificarHistorialM.cs" />
     <Compile Include="Modulo8\IContratoAgregarRestriccionEvento.cs" />
     <Compile Include="Modulo8\IContratoConsultarRestriccionCompetencia.cs" />
     <Compile Include="Modulo8\IContratoConsultarRestriccionEvento.cs" />

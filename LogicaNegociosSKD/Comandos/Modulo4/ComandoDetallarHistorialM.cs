@@ -10,26 +10,26 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo4
 {
-    public class ComandoDetallarDojo : Comando<Entidad>
+     public class ComandoDetallarHistorialM: Comando<Entidad>
     {
         /// <summary>
         /// /// <summary>
         /// Método que sirve de enlace entre los datos
-        /// y la vista que ejecuta el detalle de un dojo
+        /// y la vista que ejecuta el detalle de un Historial Matricula
         /// </summary>
-        /// <returns>retorna el dojo</returns>
+        /// <returns>retorna el Historial Matricula</returns>
         public override Entidad Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                 , RecursosComandoModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                IDaoDojo daoDojo = FabricaDAOSqlServer.ObtenerDAODojo();
+                IDaoHistorialM daoHistorial = FabricaDAOSqlServer.ObtenerDAOHistorialM();
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                     , RecursosComandoModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
-                return daoDojo.ConsultarXId(this.LaEntidad);
+                
+                return daoHistorial.ConsultarXId(this.LaEntidad);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -37,14 +37,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
+            catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
+            {
+               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
-            {
+           {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;

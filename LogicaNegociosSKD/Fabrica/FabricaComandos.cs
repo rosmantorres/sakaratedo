@@ -134,6 +134,50 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new ComandoModificarDojo();
         }
+        /// <summary>
+        /// Instancia comando para Agregar Historial Matricula
+        /// </summary>
+        /// <returns>True o False</returns>
+        public static Comando<bool> CrearComandoAgregaHistorialM()
+        {
+            return new ComandoAgregarHistorialM();
+        }
+
+        /// <summary>
+        /// Instancia comando para Listar Historial Matricula
+        /// </summary>
+        /// <returns>Lista de Historial Matricula</returns>
+        public static Comando<List<Entidad>> CrearComandoListarHistorialM()
+        {
+            return new ComandoListarHistorialM();
+        }
+
+        /// <summary>
+        /// Instancia comando para Eliminar Historial Matricula
+        /// </summary>
+        /// <returns>True o False</returns>
+        public static Comando<bool> CrearComandoEliminarHistorialM()
+        {
+            return new ComandoEliminarHistorialM();
+        }
+
+        /// <summary>
+        /// Instancia comando para Detallar Historial Matricula
+        /// </summary>
+        /// <returns>Historial Matricula</returns>
+        public static Comando<Entidad> CrearComandoDetallarHistorialM()
+        {
+            return new ComandoDetallarHistorialM();
+        }
+
+        /// <summary>
+        /// Instancia comando para Modificar Historial Matricula
+        /// </summary>
+        /// <returns>True o False</returns>
+        public static Comando<bool> CrearComandoModificarHistorialM()
+        {
+            return new ComandoModificarHistorialM();
+        }
         #endregion
 
         #region Modulo 5

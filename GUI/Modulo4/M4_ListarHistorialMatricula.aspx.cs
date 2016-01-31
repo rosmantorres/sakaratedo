@@ -10,13 +10,11 @@ using templateApp.GUI.Master;
 
 namespace templateApp.GUI.Modulo4
 {
-    public partial class M4_ListarDojos : System.Web.UI.Page, IContratoListarDojos
+    public partial class M4_ListarHistorialMatricula : System.Web.UI.Page, IContratoListarHistorialM
     {
-        
 
-        PresentadorListarDojos _presentador;
+        PresentadorListarHistorialM _presentador;
         private string success;
-        private string detalleString;
         private string eliminarString;
 
         #region Implementacion de Contrato
@@ -25,11 +23,7 @@ namespace templateApp.GUI.Modulo4
             get { return success; }
             set { success = value; }
         }
-        public string DetalleString
-        {
-            get { return detalleString; }
-            set { detalleString = value; }
-        }
+        
         public string EliminarString
         {
             get { return eliminarString; }
@@ -61,46 +55,38 @@ namespace templateApp.GUI.Modulo4
 
         #region Constructor
         /// <summary>
-        /// Es el constructor de la clase M4_ListarDojo
+        /// Es el constructor de la clase M4_ListarHistorialMatricula
         /// </summary>
-        public M4_ListarDojos()
+        public M4_ListarHistorialMatricula()
         {
-            _presentador = new PresentadorListarDojos(this);
+            _presentador = new PresentadorListarHistorialM(this);
         }
 
         #endregion
-
         protected void Page_Load(object sender, EventArgs e)
         {
             ((SKD)Page.Master).IdModulo = "4";
 
             this.Success = Request.QueryString["success"];
-            this.DetalleString = Request.QueryString["dojoDetalle"];
-            this.EliminarString = Request.QueryString["dojoEliminar"];
+            this.EliminarString = Request.QueryString["matriculaEliminar"];
             string RolPersona = (Session[RecursosInterfazMaster.sessionRol].ToString());
             int idlog = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
             if (EliminarString != null)
             {
-                EliminarDojo(EliminarString);
+                EliminarMatricula(eliminarString);
             }
 
-            _presentador.ListarDojos(RolPersona, idlog);
-
-
-
+            _presentador.ListarHistorialM(RolPersona, idlog);
         }
 
-
-
-
-        protected void EliminarDojo(String dojoEliminar)
+        protected void EliminarMatricula(String matriculaEliminar)
         {
-            int idDojo = int.Parse(dojoEliminar);
+            int idHistM= int.Parse(matriculaEliminar);
             try
             {
-                _presentador.EliminarDojo(idDojo);
-                Response.Redirect("M4_ListarDojos.aspx?success=2");
+                _presentador.EliminarMatricula(idHistM);
+                Response.Redirect("M4_ListarHistorialMatricula.aspx?success=2");
 
             }
             catch (Exception ex)
@@ -109,7 +95,5 @@ namespace templateApp.GUI.Modulo4
             }
 
         }
-
-
     }
 }

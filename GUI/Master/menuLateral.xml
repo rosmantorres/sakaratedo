@@ -50,6 +50,12 @@
   <opcion nombre="Agregar Dojo" link="~/GUI/Modulo4/M4_AgregarDojo.aspx">
     <modulo id="4"></modulo>
   </opcion>
+  <opcion nombre="Listar Historial Matricula" link="~/GUI/Modulo4/M4_ListarHistorialMatricula.aspx">
+    <modulo id="4"></modulo>
+  </opcion>
+  <opcion nombre="Agregar Historial Matricula" link="~/GUI/Modulo4/M4_AgregarHistorialMatricula.aspx">
+    <modulo id="4"></modulo>
+  </opcion>
   <!--FIN OPCIONES MODULO 4-->
 
 

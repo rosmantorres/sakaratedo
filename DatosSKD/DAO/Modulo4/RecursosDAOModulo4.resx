@@ -121,7 +121,7 @@
     <value>M4_AgregarDojo</value>
   </data>
   <data name="AgregarHistorialMatricula" xml:space="preserve">
-    <value>M4_AgregarHistorialMatricula</value>
+    <value>M4_AgregarHistorial</value>
   </data>
   <data name="AliasEmailDojo" xml:space="preserve">
     <value>emailDojo</value>
@@ -256,7 +256,7 @@
     <value>M4_ModificarDojo</value>
   </data>
   <data name="ModificarHistorialMatricula" xml:space="preserve">
-    <value>M4_ModificarHistorial</value>
+    <value>M4_ModificarHistorialM</value>
   </data>
   <data name="ParametroDireccion" xml:space="preserve">
     <value>Direccion</value>
@@ -280,10 +280,10 @@
     <value>Longitud</value>
   </data>
   <data name="ParametroModalidad" xml:space="preserve">
-    <value>modalidad_matricula</value>
+    <value>modalidad_historial</value>
   </data>
   <data name="ParametroMontoMatricula" xml:space="preserve">
-    <value>monto_matricula</value>
+    <value>monto_historial</value>
   </data>
   <data name="ParametroNombreCiudad" xml:space="preserve">
     <value>Ciudad</value>

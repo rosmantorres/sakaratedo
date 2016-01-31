@@ -316,7 +316,7 @@
 
                     <div class="box-footer">
                         &nbsp;&nbsp;&nbsp;&nbsp
-                        <asp:Button id="btn_agregarDojo" class="btn btn-primary" type="submit" style="align-content:flex-end" runat="server" OnClick="btn_agregarDojo_Click" Text="Agregar"></asp:Button>
+                        <asp:Button id="btn_agregarDojo" class="btn btn-primary" type="submit" style="align-content:flex-end" runat="server" OnClick="Btn_agregarDojo_Click" Text="Agregar"></asp:Button>
                         &nbsp;&nbsp
                         <a class="btn btn-default" href="M4_ListarDojos.aspx">Cancelar</a>
                     </div>
