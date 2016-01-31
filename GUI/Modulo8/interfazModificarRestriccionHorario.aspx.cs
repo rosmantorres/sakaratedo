@@ -141,13 +141,20 @@ namespace templateApp.GUI.Modulo8
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
+            String idRest = Request.QueryString["idPlan"];
+            String nombre = Request.QueryString["nombre"];
+            String emin = Request.QueryString["emin"];
+            String emax = Request.QueryString["emax"];
+            String sexo = Request.QueryString["sexo"];
+            String descripcion = Request.QueryString["descripcion"];
+
             if (!IsPostBack)
             {
                 ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
-                _presentador.LlenarComboCinta();
-                _presentador.LlenarComboSexo();
-                _presentador.LlenarComboEdades();
-                _presentador.LlenarLabel();
+                _presentador.LlenarComboCinta(descripcion);
+                _presentador.LlenarComboSexo(sexo);
+                _presentador.LlenarComboEdades(emin, emax);
+                _presentador.LlenarLabel(idRest, nombre);
             }
 
         }
@@ -155,15 +162,6 @@ namespace templateApp.GUI.Modulo8
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
             Boolean validar = _presentador.ModificarRest();
-            if (validar)
-            {
-                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario);
-            }
-        }
-
-        protected void btneliminar_Click(object sender, EventArgs e)
-        {
-            Boolean validar = _presentador.EliminarRest();
             if (validar)
             {
                 Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario);

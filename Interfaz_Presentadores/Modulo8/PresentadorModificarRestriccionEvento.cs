@@ -40,7 +40,7 @@ namespace Interfaz_Presentadores.Modulo8
 
         }
 
-        public void LlenarComboCinta()
+        public void LlenarComboCinta(String descripcion)
         {
             LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas comboCinta =
                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCintaTodas();
@@ -88,10 +88,10 @@ namespace Interfaz_Presentadores.Modulo8
             vista.rangoMaximo.DataTextField = RecursoPresentadorM8.value;
             vista.rangoMaximo.DataValueField = RecursoPresentadorM8.key;
             vista.rangoMaximo.DataBind();
-
+            vista.rangoMaximo.SelectedValue = descripcion;
         }
         
-        public void LlenarComboSexo()
+        public void LlenarComboSexo(String sexo)
         {
             vista.sexo.Enabled = true;
             Dictionary<string, string> optionsSexo = new Dictionary<string, string>();
@@ -102,40 +102,15 @@ namespace Interfaz_Presentadores.Modulo8
             vista.sexo.DataTextField = RecursoPresentadorM8.key;
             vista.sexo.DataValueField = RecursoPresentadorM8.value;
             vista.sexo.DataBind();
+            vista.sexo.SelectedValue = sexo;
         }
 
-        public void LlenarLabel()
+        public void LlenarLabel(String idRest, String nombre)
         {
-            DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
-
-            laRestEvento = meterParametrosVistaEnObjeto1(laRestEvento);
-                try
-                {
-                    ComandoModificarRestriccionEvento _comando =
-                    (ComandoModificarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionEvento(laRestEvento);
-                    bool resultado = _comando.Ejecutar();
-
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-                catch (FormatException ex)
-                {
-                    throw ex;
-                }
-                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-                {
-                    throw ex;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                //return true;
+            vista.myLabel.Text = RecursoPresentadorM8.nombreEvento + nombre;
         }
 
-        public void LlenarComboEdades()
+        public void LlenarComboEdades(String emin, String emax)
         {
             int index;
             vista.edadMinima.Enabled = true;
@@ -155,6 +130,9 @@ namespace Interfaz_Presentadores.Modulo8
             vista.edadMaxima.DataValueField = RecursoPresentadorM8.value;
             vista.edadMinima.DataBind();
             vista.edadMaxima.DataBind();
+            vista.edadMinima.SelectedValue = emin;
+            vista.edadMaxima.SelectedValue = emax;
+
         }
 
         public Boolean ModificarRest()
@@ -200,40 +178,6 @@ namespace Interfaz_Presentadores.Modulo8
                     + RecursoPresentadorM8.alertaHtmlFinal;
                 return false;
             }
-        }
-
-        public Boolean EliminarRest()
-        {
-
-            DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
-
-            laRestEvento = meterParametrosVistaEnObjeto1(laRestEvento);
-            
-                try
-                {
-                    LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarRestriccionEvento _comando =
-                        (LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoEliminarRestriccionEvento(laRestEvento);
-                    bool resultado = _comando.Ejecutar();
-
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-                catch (FormatException ex)
-                {
-                    throw ex;
-                }
-                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-                {
-                    throw ex;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
-                return true;
-            
         }
     }
 }

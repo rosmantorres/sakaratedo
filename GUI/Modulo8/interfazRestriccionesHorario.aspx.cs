@@ -56,8 +56,17 @@ namespace templateApp.GUI.Modulo8
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            String success = Request.QueryString["idPlan"];
+            String stat = Request.QueryString["stat"];
+
             ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.interfazRH;
             _presentador.ObtenerVariablesURL();
+            if (success != null)
+            {
+                int id = Convert.ToInt32(success);
+                int sta = Convert.ToInt32(stat);
+                _presentador.CambiarStatus(id, sta);
+            }
 
             if (!IsPostBack)
             {
