@@ -134,7 +134,7 @@ namespace templateApp.GUI.Modulo8
         {
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 try
                 { 
                 _presentador.LlenarComboCinta();
@@ -150,18 +150,18 @@ namespace templateApp.GUI.Modulo8
         {
             if (_presentador.agregarRest() == true)
             {
-                Response.Redirect("../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true");
+                Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta);
             }
 
         }
 
        public void Alerta(string msj)
        {
-           _presentador.Alerta(msj);
-           /* alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+          /* _presentador.Alerta(msj);
+            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
             alert.Attributes["role"] = "alert";
-            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";*/
-       }
+            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+       */}
 
        public bool validarInput(String pword)
        {

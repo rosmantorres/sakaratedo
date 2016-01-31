@@ -182,4 +182,16 @@
   <data name="volverRestriccionHorario" xml:space="preserve">
     <value>../Modulo8/interfazRestriccionesHorario.aspx</value>
   </data>
+  <data name="IdPlan" xml:space="preserve">
+    <value>idPlan</value>
+  </data>
+  <data name="interfazRCi" xml:space="preserve">
+    <value>8.3</value>
+  </data>
+  <data name="ReturnRestCinta" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true</value>
+  </data>
+  <data name="statrec" xml:space="preserve">
+    <value>stat</value>
+  </data>
 </root>

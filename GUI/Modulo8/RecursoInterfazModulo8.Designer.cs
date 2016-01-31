@@ -225,6 +225,24 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to idPlan.
+        /// </summary>
+        internal static string IdPlan {
+            get {
+                return ResourceManager.GetString("IdPlan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8.3.
+        /// </summary>
+        internal static string interfazRCi {
+            get {
+                return ResourceManager.GetString("interfazRCi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 8.1.
         /// </summary>
         internal static string interfazRH {
@@ -239,6 +257,24 @@ namespace templateApp.GUI.Modulo8 {
         internal static string Mod8 {
             get {
                 return ResourceManager.GetString("Mod8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true.
+        /// </summary>
+        internal static string ReturnRestCinta {
+            get {
+                return ResourceManager.GetString("ReturnRestCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stat.
+        /// </summary>
+        internal static string statrec {
+            get {
+                return ResourceManager.GetString("statrec", resourceCulture);
             }
         }
         

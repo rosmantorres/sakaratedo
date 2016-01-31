@@ -24,11 +24,11 @@ namespace templateApp.GUI.Modulo8
         {
             get
             {
-                return Request.QueryString["idPlan"];
+                return Request.QueryString[RecursoInterfazModulo8.IdPlan];
             }
             set
             {
-                this.tiempo_minimo.Value = Request.QueryString["idPlan"]; 
+                this.tiempo_minimo.Value = Request.QueryString[RecursoInterfazModulo8.IdPlan]; 
             }
         }
         
@@ -110,10 +110,10 @@ namespace templateApp.GUI.Modulo8
         
         protected void Page_Load(object sender, EventArgs e)
         {   
-            String idEvento = Request.QueryString["idPlan"];
+            String idEvento = Request.QueryString[RecursoInterfazModulo8.IdPlan];
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 
             }
         }
@@ -123,7 +123,7 @@ namespace templateApp.GUI.Modulo8
         {
             if (_presentador.ModificarRest() == true)
             {
-                Response.Redirect("../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true");
+                Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta);
             }
 
         }
