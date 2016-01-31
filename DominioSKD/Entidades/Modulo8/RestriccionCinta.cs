@@ -176,6 +176,13 @@ namespace DominioSKD.Entidades.Modulo8
             this.tiempoDocente = inputTiempoDocente;
             this.status = inputStatus;
         }
+
+        public RestriccionCinta(int inputId, int inputStatus)
+        {
+            this.idRestriccionCinta = inputId;
+            this.status = inputStatus;
+        }
+        
         #endregion
 
     }

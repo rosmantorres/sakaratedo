@@ -332,6 +332,17 @@ namespace DominioSKD.Fabrica
         {
             return new Entidades.Modulo8.RestriccionCinta(id, inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos, inputStatus);
         }
+        
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputStatus">Integer, bit de status de activacion de la restriccion de cinta</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public static Entidad ObtenerRestriccionCinta(int inputId, int inputStatus)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(inputId, inputStatus);
+        }
 
         #endregion
 
