@@ -211,6 +211,29 @@ namespace DominioSKD.Fabrica
                                       inputRangoMaximo, inputSexo, inputModalidad);
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputId"></param>
+        /// <param name="inputDescripcion"></param>
+        /// <param name="inputEdadMinima"></param>
+        /// <param name="inputEdadMaxima"></param>
+        /// <param name="inputRangoMinimo"></param>
+        /// <param name="inputRangoMaximo"></param>
+        /// <param name="inputSexo"></param>
+        /// <param name="inputModalidad"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public Entidad ObtenerRestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+                                                     int inputRangoMaximo, String inputSexo, String inputModalidad, int status)
+        {
+            return new Entidades.Modulo8.RestriccionCompetencia(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,
+                                      inputRangoMaximo, inputSexo, inputModalidad, status);
+        }
+
+
+
         /// <summary>
         /// Fabrica de Restriccion Competencia con parametros de entrada multiples con id unico.
         /// </summary>
@@ -233,6 +256,10 @@ namespace DominioSKD.Fabrica
             return new Entidades.Modulo8.RestriccionCompetencia(id, inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,
                                       inputRangoMaximo, inputSexo, inputModalidad);
         }
+
+
+
+
 
         #endregion
 

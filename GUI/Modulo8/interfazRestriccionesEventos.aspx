@@ -58,6 +58,7 @@
 					<th >Rango Máximo</th>
 					<th >Sexo</th>
                     <th>Modalidad</th>
+                    <th>Status</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>

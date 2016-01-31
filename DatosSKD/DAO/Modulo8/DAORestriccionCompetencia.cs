@@ -130,7 +130,7 @@ namespace DatosSKD.DAO.Modulo8
         public Boolean Modificar(DominioSKD.Entidad parametro)
         {
             //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+            Boolean resultado = false;
             DominioSKD.Entidades.Modulo8.RestriccionCompetencia laRestriccionCompetencia =
             (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)parametro;
 
@@ -185,7 +185,7 @@ namespace DatosSKD.DAO.Modulo8
 
                 this.EjecutarStoredProcedure(RecursosDAORestriccionCompetencia.ModificarRestriccionCompetencia, parametros);
 
-
+                resultado = true;
 
             }
             catch (SqlException ex)
@@ -217,7 +217,7 @@ namespace DatosSKD.DAO.Modulo8
 
             //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            return true;
+            return resultado;
         }
         #endregion
 
@@ -259,8 +259,8 @@ namespace DatosSKD.DAO.Modulo8
                     int EdadMaxima = int.Parse(row[RecursosDAORestriccionCompetencia.AliasEdadMax].ToString());
                     String Sexo = row[RecursosDAORestriccionCompetencia.AliasSexo].ToString();
                     String Modalidad = row[RecursosDAORestriccionCompetencia.AliasModalidad].ToString();
-
-                    Entidad larestriccionCompetencia = fabricaEntidad.ObtenerRestriccionCompetencia(IdRestriccionComp, Descripcion, RangoMinimo, RangoMaximo, EdadMinima, EdadMaxima, Sexo, Modalidad);
+                    int Status = int.Parse(row[RecursosDAORestriccionCompetencia.AliasStatus].ToString());
+                    Entidad larestriccionCompetencia = fabricaEntidad.ObtenerRestriccionCompetencia(IdRestriccionComp, Descripcion, RangoMinimo, RangoMaximo, EdadMinima, EdadMaxima, Sexo, Modalidad, Status);
                     listaDeRestriccionesCompetencia.Add(larestriccionCompetencia);
 
                 }
@@ -1347,6 +1347,76 @@ namespace DatosSKD.DAO.Modulo8
 
         }
         #endregion
+
+        #region EliminarLogico
+        
+        public Boolean EliminarLogicoRestriccionCompetencia(DominioSKD.Entidad parametro)
+        {
+            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Boolean resultado = false;
+            DominioSKD.Entidades.Modulo8.RestriccionCompetencia laRestriccionCompetencia =
+            (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)parametro;
+
+            try
+            {
+
+                List<Parametro> parametros;
+
+                parametros = new List<Parametro>();
+
+                Parametro elParametro;
+
+                elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamIdRestriccionCompetencia, SqlDbType.Int,
+                laRestriccionCompetencia.IdRestriccionComp.ToString(), false);
+
+                parametros.Add(elParametro);
+
+
+                elParametro = new Parametro(RecursosDAORestriccionCompetencia.ParamStatus, SqlDbType.Int,
+                laRestriccionCompetencia.Status.ToString(), false);
+
+                parametros.Add(elParametro);
+
+
+                this.EjecutarStoredProcedure(RecursosDAORestriccionCompetencia.EiminarLogicoRestriccionCompetencia, parametros);
+
+                resultado = true;
+
+            }
+            catch (SqlException ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (FormatException ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
+                     RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
+            }
+
+            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDRestriccionCompetencia.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            return resultado;
+        }
+
+        #endregion
+
 
     }
 

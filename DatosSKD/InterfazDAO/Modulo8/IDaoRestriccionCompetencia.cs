@@ -113,7 +113,7 @@ namespace DatosSKD.InterfazDAO.Modulo8
         Boolean EliminarListaCompetenciaRestriccionCompetencia(DominioSKD.Entidad parametro1, List<DominioSKD.Entidad> parametro2);
         #endregion 
 
-        #region ConsultarCompetencias
+            #region ConsultarCompetencias
         /// <summary>
         /// Firma de metodo para consultar todas las Competencias en la base de datos
         /// </summary>
@@ -123,9 +123,16 @@ namespace DatosSKD.InterfazDAO.Modulo8
 
         #endregion
 
-        #region Eliminar
+            #region Eliminar
         Boolean Eliminar(DominioSKD.Entidad parmetro);
         #endregion
+
+            #region EliminarLogicoRestriccionCompetencia
+
+        Boolean EliminarLogicoRestriccionCompetencia(DominioSKD.Entidad parametro);
+        
+        #endregion
+
         #endregion
     }
 }

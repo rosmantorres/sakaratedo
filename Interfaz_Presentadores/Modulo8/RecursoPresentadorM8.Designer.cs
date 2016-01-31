@@ -639,11 +639,19 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+<<<<<<< Updated upstream
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-off&quot; href=&quot;interfazRestriccionesHorario.aspx?idPlan=.
         /// </summary>
         internal static string StatusEvento {
             get {
                 return ResourceManager.GetString("StatusEvento", resourceCulture);
+=======
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-off&quot; href=&quot;interfazRestriccionesEventos.aspx?idPlan=.
+        /// </summary>
+        internal static string StatusRC {
+            get {
+                return ResourceManager.GetString("StatusRC", resourceCulture);
+>>>>>>> Stashed changes
             }
         }
         
