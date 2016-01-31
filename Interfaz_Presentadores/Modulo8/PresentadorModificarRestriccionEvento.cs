@@ -111,8 +111,8 @@ namespace Interfaz_Presentadores.Modulo8
             laRestEvento = meterParametrosVistaEnObjeto1(laRestEvento);
                 try
                 {
-                    LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento _comando =
-                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionEvento(laRestEvento);
+                    ComandoModificarRestriccionEvento _comando =
+                    (ComandoModificarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionEvento(laRestEvento);
                     bool resultado = _comando.Ejecutar();
 
                 }
