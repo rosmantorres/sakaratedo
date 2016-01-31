@@ -37,7 +37,8 @@ namespace Interfaz_Presentadores.Modulo8
         {
             try
             {
-                this.lista = lista;
+                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionCinta();
+                lista = command.Ejecutar();
                 foreach (DominioSKD.Entidades.Modulo8.RestriccionCinta rest in lista)
                 {
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTR;
