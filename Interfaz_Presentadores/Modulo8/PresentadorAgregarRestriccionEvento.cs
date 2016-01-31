@@ -92,8 +92,8 @@ namespace Interfaz_Presentadores.Modulo8
 
         public void LlenarComboEvento()
         {
-            FabricaComandos fabricaCo = new FabricaComandos();
-            Comando<List<Entidad>> comboEve = fabricaCo.CrearComandoConsultarEventosSinRestriccion();
+            LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarEventosSinRestriccion comboEve =
+                   (LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarEventosSinRestriccion)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarEventosSinRestriccion();
             List<Entidad> listEve = new List<Entidad>();
             Dictionary<string, string> options = new Dictionary<string, string>();
             try
@@ -191,8 +191,8 @@ namespace Interfaz_Presentadores.Modulo8
             {
                 try
                 {
-                    FabricaComandos _fabrica = new FabricaComandos();
-                    Comando<bool> _comando = _fabrica.CrearComandoAgregarRestriccionEvento(laRestEvento);
+                    LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionEvento _comando =
+                        (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionEvento(laRestEvento);
                     bool resultado = _comando.Ejecutar();
                 }
                 catch (ExcepcionesSKD.ExceptionSKD ex)

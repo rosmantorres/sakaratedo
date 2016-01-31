@@ -93,17 +93,41 @@ namespace templateApp.GUI.Modulo8
                 String idEvento = Request.QueryString["idPlan"]; 
             }
         }
+
         public string alertaClase
         {
-            set { alert.Attributes[RecursoInterfazModulo8.alertClase] = value; }
+            set
+            {
+                alert.Attributes[RecursoInterfazModulo8.alertClase] = value;
+            }
         }
+
         public string alertaRol
         {
-            set { alert.Attributes[RecursoInterfazModulo8.alertRole] = value; }
+            set
+            {
+                alert.Attributes[RecursoInterfazModulo8.alertRole] = value;
+            }
         }
+
         public string alerta
         {
-            set { alert.InnerHtml = value; }
+            set
+            {
+                alert.InnerHtml = value;
+            }
+        }
+
+        public Label myLabel
+        {
+            get
+            {
+                return this.labelRest;
+            }
+            set
+            {
+                this.labelRest = value;
+            }
         }
         #endregion
 
@@ -123,6 +147,7 @@ namespace templateApp.GUI.Modulo8
                 _presentador.LlenarComboCinta();
                 _presentador.LlenarComboSexo();
                 _presentador.LlenarComboEdades();
+                _presentador.LlenarLabel();
             }
 
         }
