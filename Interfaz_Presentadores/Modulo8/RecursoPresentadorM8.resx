@@ -281,7 +281,6 @@
   <data name="edadErrada" xml:space="preserve">
     <value>Edad minima no puede ser mayor a la maxima</value>
   </data>
-
   <data name="Numbers" xml:space="preserve">
     <value>0123456789</value>
   </data>
@@ -308,6 +307,11 @@
   </data>
   <data name="value" xml:space="preserve">
     <value>value</value>
-
+  </data>
+  <data name="innerHtmlAlertAgregarRCi" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Restriccion Cinta Agregada Exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="innerHtmlAlertModificarRCi" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Restriccion Cinta Modificada Exitosamente&lt;/div&gt;</value>
   </data>
 </root>

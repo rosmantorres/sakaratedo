@@ -34,7 +34,7 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-    <div id="alerta" runat="server">
+    <div id="alert" runat="server">
 	</div>
 
 	<div class="row">

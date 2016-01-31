@@ -8,11 +8,9 @@ namespace Interfaz_Contratos.Modulo8
 {
     public interface IContratoConsultarResticcionCinta
     {
-
         string RestriccionesCreadas { get; set; }
         string alertaClase { set; }
         string alertaRol { set; }
-        string alert { set; }
-
+        string alerta { set; }
     }
 }

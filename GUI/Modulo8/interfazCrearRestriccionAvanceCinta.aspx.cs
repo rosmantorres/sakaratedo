@@ -29,8 +29,6 @@ namespace templateApp.GUI.Modulo8
            }
        }
 
-      
-
        public string tiempo_Min
         {
             get
@@ -91,23 +89,23 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-       public String alertLocalRol
+       public string alertLocalRol
         {
             set
             {
-                this.alertlocal.InnerText = value;
+                alert.Attributes[RecursoInterfazModulo8.alertRole] = value;
             }
         }
 
-       public String alertLocalClase
+       public string alertLocalClase
         {
             set
             {
-                this.alert.InnerText = value;
+                alert.Attributes[RecursoInterfazModulo8.alertClase] = value;
             }
         }
 
-       public String alertLocal
+       public string alertLocal
         {
             set
             {
@@ -115,11 +113,11 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-       public bool alerta
+       public string alerta
         {
             set
             {
-                this.alert.Visible = value;
+                alert.InnerHtml = value;
             }
         }
         #endregion

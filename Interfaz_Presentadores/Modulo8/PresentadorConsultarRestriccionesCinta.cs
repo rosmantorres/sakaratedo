@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace Interfaz_Presentadores.Modulo8
 {
@@ -29,7 +30,7 @@ namespace Interfaz_Presentadores.Modulo8
         {
             vista.alertaClase = "alert alert-danger alert-dismissible";
             vista.alertaRol = "alert";
-            vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
         public void LlenarInformacion(List<Entidad> lista)
@@ -57,15 +58,18 @@ namespace Interfaz_Presentadores.Modulo8
 
                 }
             }
+            catch (ExcepcionesSKD.ExceptionSKD ex)
+            {
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                    + RecursoPresentadorM8.alertaHtmlFinal;
+            }
             catch (SqlException ex)
             {
                 throw ex;
             }
             catch (FormatException ex)
-            {
-                throw ex;
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 throw ex;
             }
@@ -80,38 +84,29 @@ namespace Interfaz_Presentadores.Modulo8
             try
             {
                 Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionCinta();
-                return command.Ejecutar();
+                lista = command.Ejecutar();
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.ExceptionSKD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                    + RecursoPresentadorM8.alertaHtmlFinal;
+            }
+            catch (SqlException ex)
+            {
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
+            catch (FormatException ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
+            return lista;
         }
 
         public void CambiarStatus(int id, int bitStatus)
@@ -144,6 +139,38 @@ namespace Interfaz_Presentadores.Modulo8
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public void ObtenerVariablesURL()
+        {
+
+            String success = HttpContext.Current.Request.QueryString[RecursoPresentadorM8.strSuccess];
+            String detalleString = HttpContext.Current.Request.QueryString[RecursoPresentadorM8.strEventoDetalle];
+
+
+            if (detalleString != null)
+            {
+
+            }
+
+            if (success != null)
+            {
+                if (success.Equals(RecursoPresentadorM8.idAlertAgregar))
+                {
+                    vista.alertaClase = RecursoPresentadorM8.alertaSuccess;
+                    vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                    vista.alerta = RecursoPresentadorM8.innerHtmlAlertAgregarRCi;
+
+                }
+
+                if (success.Equals(RecursoPresentadorM8.idAlertModificar))
+                {
+                    vista.alertaClase = RecursoPresentadorM8.alertaSuccess;
+                    vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                    vista.alerta = RecursoPresentadorM8.innerHtmlAlertModificarRCi;
+                }
+
             }
         }
     }

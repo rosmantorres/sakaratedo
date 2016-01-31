@@ -477,11 +477,29 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Restriccion Cinta Agregada Exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertAgregarRCi {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertAgregarRCi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento modificado exitosamente&lt;/div&gt;.
         /// </summary>
         internal static string innerHtmlAlertModificar {
             get {
                 return ResourceManager.GetString("innerHtmlAlertModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Restriccion Cinta Modificada Exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertModificarRCi {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertModificarRCi", resourceCulture);
             }
         }
         
