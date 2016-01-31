@@ -267,6 +267,16 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarRestriccionEvento(laRestEvento);
         }
+
+        public static Comando<DominioSKD.Entidad> CrearComandoConsultarUnaRestriccionEvento(Entidad elEvento)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarUnaRestriccionEvento(elEvento);
+        }
+
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoEventosQuePuedeParticiparAtleta(Entidad laPersona)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEventosQuePuedeParticiparAtleta(laPersona);
+        }
         #endregion
         
         #endregion
