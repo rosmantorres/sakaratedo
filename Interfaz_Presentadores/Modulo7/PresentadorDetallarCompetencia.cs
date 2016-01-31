@@ -45,8 +45,8 @@ namespace Interfaz_Presentadores.Modulo7
                 vista.costo_evento = cinta.Costo.ToString();
                 vista.direccion_evento = cinta.Ubicacion.Direccion;
                 vista.estadoUbicacion_evento = cinta.Ubicacion.Estado;
-                vista.fechaFin_evento = cinta.FechaFin.ToString("MM/dd/yyyy");
-                vista.fechaInicio_evento = cinta.FechaInicio.ToString("MM/dd/yyyy");
+                vista.fechaFin_evento = cinta.FechaFin.ToString(M7_RecursosPresentador.FormatoFecha);
+                vista.fechaInicio_evento = cinta.FechaInicio.ToString(M7_RecursosPresentador.FormatoFecha);
                 vista.nombre_evento = cinta.Nombre;
                 vista.tipo_evento = M7_RecursosPresentador.AliasTipoEventoCompetencia;
                 

@@ -79,7 +79,7 @@ namespace templateApp.GUI.Modulo7
                     {
                         try
                         {
-                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();//cambiar por fabrica
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                             presentador.ConsultarCintasObtenidas(idPersona);
                         }

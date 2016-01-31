@@ -36,10 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\bin\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\bin\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
       <!--<HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>-->
     </Reference>
     <Reference Include="System" />

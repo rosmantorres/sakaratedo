@@ -108,7 +108,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return listaDeCompetenciasAsistidas;
@@ -186,7 +186,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return listaDeCompetenciasInscritas;
@@ -268,7 +268,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return listaDeEventoAsistidos;
@@ -349,7 +349,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return listaDeEventoInscritos;
@@ -429,7 +429,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return listaDeHorarioPractica;
@@ -522,7 +522,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return evento;
@@ -592,7 +592,7 @@ namespace DatosSKD.DAO.Modulo7
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return fechaInscripcionCompetencia;
@@ -661,7 +661,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return fechaInscripcion;
@@ -730,7 +730,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return fechaPago;
@@ -805,7 +805,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return listaDeCompetenciasPagas;
@@ -880,7 +880,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return listaDeEventos;
@@ -947,7 +947,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return monto;

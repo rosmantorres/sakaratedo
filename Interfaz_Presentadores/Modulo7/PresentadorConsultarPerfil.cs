@@ -52,7 +52,7 @@ namespace Interfaz_Presentadores.Modulo7
                 vista.direccion = persona.Direccion;
                 vista.emailDojo = dojo.Email_dojo;
                 vista.emailOrganizacion = organizacion.Email;
-                vista.fechaNacimiento= persona.FechaNacimiento.ToString("MM/dd/yyyy");
+                vista.fechaNacimiento= persona.FechaNacimiento.ToString(M7_RecursosPresentador.FormatoFecha);
                 vista.nombreDojo = dojo.Nombre_dojo;
                 vista.nombreOrganizacion = organizacion.Nombre;
                 vista.nombrePersona = persona.Nombre;
