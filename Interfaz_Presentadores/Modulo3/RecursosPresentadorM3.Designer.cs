@@ -124,7 +124,7 @@ namespace Interfaz_Presentadores.Modulo3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ^[0-9]{1,11}$.
+        ///   Looks up a localized string similar to ^[0-9]{1,15}$.
         /// </summary>
         internal static string expresionNumero {
             get {
