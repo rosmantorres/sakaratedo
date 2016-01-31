@@ -87,7 +87,8 @@
               </div>  
           </div>
 				    <a id="btn-cancelar" type="submit" style="margin-top:35px; margin-right:183px; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx">Cancelar</a>
-                  <asp:Button id="btnaceptar" style="margin-top:120px; margin-left:-277px;" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar" href="interfazRestriccionesHorario.aspx?actionSuccess=1"  ></asp:Button>
+                  <asp:Button id="btnaceptar" style="margin-top:120px; margin-left:-277px;" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Modificar" href="interfazRestriccionesHorario.aspx?actionSuccess=1"  ></asp:Button>
+                  <asp:Button id="btneliminar" style="margin-top:120px; margin-left:-177px; background-color:#dd4b39 !important; border-color:#dd4b39 !important;" class="btn btn-primary" OnClick="btneliminar_Click" type="submit" runat="server" Text = "Eliminar" href="interfazRestriccionesHorario.aspx?actionSuccess=1"  ></asp:Button>
                 </div>
 			</div>
 		</div>

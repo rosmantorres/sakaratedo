@@ -169,5 +169,39 @@ namespace Interfaz_Presentadores.Modulo8
                 return false;
             }
         }
+
+        public Boolean EliminarRest()
+        {
+
+            DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
+
+            laRestEvento = meterParametrosVistaEnObjeto1(laRestEvento);
+            
+                try
+                {
+                    FabricaComandos _fabrica = new FabricaComandos();
+                    Comando<bool> _comando = _fabrica.CrearComandoEliminarRestriccionEvento(laRestEvento);
+                    bool resultado = _comando.Ejecutar();
+
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                catch (FormatException ex)
+                {
+                    throw ex;
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    throw ex;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                return true;
+            
+        }
     }
 }

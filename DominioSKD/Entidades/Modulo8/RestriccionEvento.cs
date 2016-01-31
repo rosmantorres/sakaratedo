@@ -22,6 +22,7 @@ namespace DominioSKD.Entidades.Modulo8
         /// <attr name="idEvento">codigo unico identificador del evento</attr>
         /// <attr name="nombreEvento">nombre del evento</attr>
         /// <attr name="listaCintas">atributo que comprende una lista de Objetos tipo cinta que corresponden a cintas 
+        /// <attr name="status">validar si esta o no activo</attr>
         /// asociadas a la restriccion</attr>
         /// </summary>
 
@@ -33,6 +34,7 @@ namespace DominioSKD.Entidades.Modulo8
         private int idEvento;
         private String nombreEvento;
         private List<CintaSimple> listaCintas;
+        private int status;
         #endregion
 
         #region Propiedades
@@ -83,6 +85,11 @@ namespace DominioSKD.Entidades.Modulo8
             get { return listaCintas; }
             set { listaCintas = value; }
         }
+        public int Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
         #endregion
 
         #region Constructores
@@ -100,6 +107,7 @@ namespace DominioSKD.Entidades.Modulo8
             this.idEvento = -1;
             this.nombreEvento = String.Empty;
             this.listaCintas = null;
+            this.status = 1;
         }
 
         /// <summary>
@@ -115,6 +123,7 @@ namespace DominioSKD.Entidades.Modulo8
             this.idEvento = -1;
             this.nombreEvento = String.Empty;
             this.listaCintas = null;
+            this.status = 1;
         }
 
         /// <summary>
@@ -130,6 +139,7 @@ namespace DominioSKD.Entidades.Modulo8
             idEvento = inputIdEvento;
             nombreEvento = inputNombreEvento;
             listaCintas = null;
+            this.status = 1;
         }
 
         /// <summary>
@@ -145,6 +155,7 @@ namespace DominioSKD.Entidades.Modulo8
             idEvento = inputIdEvento;
             nombreEvento = inputNombreEvento;
             listaCintas = null;
+            this.status = 1;
         }
 
         /// <summary>
@@ -161,6 +172,7 @@ namespace DominioSKD.Entidades.Modulo8
             idEvento = inputIdEvento;
             nombreEvento = inputNombreEvento;
             listaCintas = null;
+            this.status = 1;
         }
         #endregion
 
