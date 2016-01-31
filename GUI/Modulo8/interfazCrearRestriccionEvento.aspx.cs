@@ -105,6 +105,41 @@ namespace templateApp.GUI.Modulo8
             }
 
         }
+
+        public string alertLocalRol
+        {
+            set
+            {
+                alert.Attributes[RecursoInterfazModulo8.alertRole] = value;
+            }
+        }
+
+        public string alertLocalClase
+        {
+            set
+            {
+                alert.Attributes[RecursoInterfazModulo8.alertClase] = value;
+            }
+        }
+
+        public string alertLocal
+        {
+            set
+            {
+                this.alertlocal.InnerHtml = value;
+            }
+        }
+
+        public string alerta
+        {
+            set
+            {
+                alert.InnerHtml = value;
+            }
+        }
+
+
+
         //public String alert { set; }
         //public String alertClase { set; }
         //public String alertRol { set; }

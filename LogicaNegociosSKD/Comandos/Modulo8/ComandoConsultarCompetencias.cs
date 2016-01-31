@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
 using System.Data.SqlClient;
+using DatosSKD.Fabrica;
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
     public class ComandoConsultarCompetencias : Comando<List<DominioSKD.Entidad>>
@@ -25,7 +26,10 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
 
             DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
 
-            IDaoRestriccionCompetencia daoRestriccionCompetencia = fabricaDAO.ObtenerDAORestriccionCompetencia();
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+ 
+
+            IDaoRestriccionCompetencia daoRestriccionCompetencia = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCompetencia();
 
             try
             {
