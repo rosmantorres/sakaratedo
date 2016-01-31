@@ -4347,6 +4347,10 @@ as
 go	
 
 
+
+
+
+
 --PROCEDURE MODIFICAR CINTA--
 CREATE PROCEDURE M5_ModificarCinta
 	@idcinta				[int],
@@ -4363,8 +4367,9 @@ as
 	declare @idOrg as int
 
 	
-	select @idOrg = orgcin.ORGANIZACION_org_id from  CINTA cin, ORGANIZACION_CINTA orgcin
-		where orgcin.CINTA_cin_id = cin.cin_id  and cin.cin_id = @idcinta
+	select @idOrg = orgcin.ORGANIZACION_org_id from  CINTA cin, ORGANIZACION_CINTA orgcin, ORGANIZACION org
+	where orgcin.CINTA_cin_id = cin.cin_id and orgcin.ORGANIZACION_org_id = org.org_id 
+	and org.org_nombre = @nombreOrganizacion and cin.cin_id = @idcinta;
 	
 
 	if(@idOrganizacion = @idOrg) --Es decir si no se cambia la org
@@ -4376,11 +4381,10 @@ as
 			cin_significado   = @significadoCinta,
 			cin_orden		  = @ordenCinta	
 			WHERE
-			cin_id = @idCinta;	
-	else if(@idOrganizacion != @idOrg)
-	
-		delete ORGANIZACION_CINTA from ORGANIZACION_CINTA orgcin 
-					where orgcin.ORGANIZACION_org_id = @idOrg and orgcin.CINTA_cin_id = @idcinta;		
+			cin_id = @idcinta	
+
+	if(@idOrganizacion <> @idOrg)	
+
 	UPDATE CINTA
 		SET 
 			cin_color_nombre  = @colorCinta,
@@ -4389,13 +4393,11 @@ as
 			cin_significado   = @significadoCinta,
 			cin_orden		  = @ordenCinta	
 			WHERE
-			cin_id = @idcinta;	
-	
-		INSERT INTO ORGANIZACION_CINTA(ORGANIZACION_org_id,CINTA_cin_id,org_cin_status) VALUES(@idOrganizacion,@idcinta,1);
-	
-	
+			cin_id = @idcinta;
+			
+	UPDATE 	ORGANIZACION_CINTA SET ORGANIZACION_org_id = @idOrganizacion where  CINTA_cin_id = @idcinta;
+		
  end;
- 
  go
 
  --PROCEDURE CONSULTAR ID ORGANIACION--
