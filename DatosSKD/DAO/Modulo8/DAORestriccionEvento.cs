@@ -48,14 +48,12 @@ namespace DatosSKD.DAO.Modulo8
 
             try
             {
-                List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                List<Parametro> parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDAORestriccionEvento.ParamDescripcionRestricionEvento, SqlDbType.VarChar,
                     laRestriccionEvento.Descripcion, false);
-                //parametro recibe: el alias de la accion (en este caso es la descripcion de mi restriccion de cinta que apunta a un atributo que se llama @DescripcionRestriccionCinta), SqlDbType es el tipo de dato que tiene ese atributo en la base de datos (en este caso es varchar), el elemento que se desea poner en ese lugar (aqui se usa la clase dominio), el false lo dejas asi
                 parametros.Add(elParametro);
-                //agregas eso que acabas de hacer a la lista de parametros.
-                //repites hasta que tengas todos los parametros de tu stored procedure asociado
+
                 elParametro = new Parametro(RecursosDAORestriccionEvento.ParamEdadMinimaRestricionEvento, SqlDbType.Int,
                         laRestriccionEvento.EdadMinima.ToString(), false);
                 parametros.Add(elParametro);
@@ -72,9 +70,7 @@ namespace DatosSKD.DAO.Modulo8
                         laRestriccionEvento.IdEvento.ToString(), false);
                 parametros.Add(elParametro);
 
-                //BDConexion laConexion = new BDConexion();// abres la conexion
-                List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.AgregarRestriccionEvento
-                                             , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+                List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.AgregarRestriccionEvento, parametros);
             }
 
             catch (SqlException ex)
