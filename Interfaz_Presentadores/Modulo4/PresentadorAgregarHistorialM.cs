@@ -38,7 +38,7 @@ namespace Interfaz_Presentadores.Modulo4
             {
                 //Se cargan todos los valores tomados de la interfaz al objeto Historial Matricula
 
-                elHistM.Id = vista.Persona;
+                elHistM.Id_historial_matricula = vista.Persona;
                 elHistM.Modalidad_historial_matricula = vista.Modalidad;
                 elHistM.Fecha_historial_matricula = DateTime.Parse(vista.Fecha);
                 elHistM.Monto_historial_matricula = float.Parse(vista.Monto);

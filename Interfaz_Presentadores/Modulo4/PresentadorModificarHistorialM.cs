@@ -88,7 +88,7 @@ namespace Interfaz_Presentadores.Modulo4
                 Comando<Entidad> detallarHistM = FabricaComandos.CrearComandoDetallarHistorialM();
                 detallarHistM.LaEntidad = histM;
                 elHistM = (HistorialM)detallarHistM.Ejecutar();
-                vista.Fecha = elHistM.Fecha_historial_matricula.ToString();
+                vista.Fecha = elHistM.Fecha_historial_matricula.Date.ToString();
                 vista.Modalidad = elHistM.Modalidad_historial_matricula;
                 vista.Monto = elHistM.Monto_historial_matricula.ToString();
                

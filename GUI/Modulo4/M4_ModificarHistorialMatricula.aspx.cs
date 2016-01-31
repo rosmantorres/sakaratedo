@@ -25,6 +25,7 @@ namespace templateApp.GUI.Modulo4
         public string Monto { get { return cmatriHM.Text; } set { cmatriHM.Text = value; } }
         public int Persona { get { return int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()); } }
         public int IdHistM { get { return idHistm; } set { idHistm = value; } }
+
         #endregion
 
         #region Constructor

@@ -5513,3 +5513,1125 @@ Error Number:201,State:4,Class:16
    en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
 ClientConnectionId:1ee966d9-4279-4e1b-8e0b-9214d9fba285
 Error Number:201,State:4,Class:16
+2016-01-31 08:45:40,248 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 08:45:40,260 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 08:45:40,260 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 08:45:40,260 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 08:45:40,266 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 08:45:40,266 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 08:45:40,266 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 08:45:40,266 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 08:45:43,795 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 08:45:43,796 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 08:45:43,796 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:45:43,796 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 08:45:43,802 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 08:45:43,803 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 08:45:43,803 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 08:45:43,803 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 08:45:50,852 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 08:45:50,852 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 08:45:50,852 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:45:50,852 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 08:45:50,860 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 08:45:50,860 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 08:45:50,860 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-01-31 08:45:50,860 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 08:45:50,865 INFO  DaoHistorialM - *******************************************************
+2016-01-31 08:45:50,865 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 08:45:50,865 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:45:50,865 INFO  DaoHistorialM - Metodo: ConsultarXId
+2016-01-31 08:46:40,756 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 08:46:40,756 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 08:46:40,756 INFO  ComandoModificarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:46:40,756 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 08:46:40,759 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 08:46:40,760 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 08:46:40,760 INFO  ComandoModificarHistorialM - Mensaje: Salida del Método
+2016-01-31 08:46:40,760 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 08:46:40,769 INFO  DaoHistorialM - *******************************************************
+2016-01-31 08:46:40,769 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 08:46:40,769 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:46:40,769 INFO  DaoHistorialM - Metodo: Modificar
+2016-01-31 08:47:20,722 ERROR DaoHistorialM - *******************************************************
+2016-01-31 08:47:20,722 ERROR DaoHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 08:47:21,080 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 08:47:21,080 ERROR DaoHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 08:47:21,080 ERROR DaoHistorialM - StackTrace:    en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 198
+   en DatosSKD.DAO.Modulo4.DaoHistorialM.Modificar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 124
+2016-01-31 08:47:21,109 ERROR DaoHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_ModificarHistorialM' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:4f27aeb5-f9e0-48e9-b0a7-90a960d0ae7c
+Error Number:201,State:4,Class:16
+2016-01-31 08:50:57,256 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 08:50:57,263 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 08:50:57,263 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 08:50:57,263 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 08:50:57,295 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 08:50:57,295 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 08:50:57,295 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 08:50:57,295 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 08:50:59,731 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 08:50:59,731 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 08:50:59,731 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:50:59,731 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 08:50:59,735 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 08:50:59,736 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 08:50:59,736 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 08:50:59,736 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 08:51:02,873 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 08:51:02,873 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 08:51:02,873 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:51:02,873 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 08:51:02,877 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 08:51:02,877 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 08:51:02,877 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-01-31 08:51:02,877 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 08:51:02,883 INFO  DaoHistorialM - *******************************************************
+2016-01-31 08:51:02,883 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 08:51:02,884 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:51:02,884 INFO  DaoHistorialM - Metodo: ConsultarXId
+2016-01-31 08:51:16,596 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 08:51:16,597 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 08:51:16,597 INFO  ComandoModificarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:51:16,597 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 08:51:16,602 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 08:51:16,602 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 08:51:16,602 INFO  ComandoModificarHistorialM - Mensaje: Salida del Método
+2016-01-31 08:51:16,602 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 08:51:16,609 INFO  DaoHistorialM - *******************************************************
+2016-01-31 08:51:16,610 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 08:51:16,610 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:51:16,610 INFO  DaoHistorialM - Metodo: Modificar
+2016-01-31 08:51:43,949 ERROR DaoHistorialM - *******************************************************
+2016-01-31 08:51:43,949 ERROR DaoHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 08:51:43,974 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 08:51:43,974 ERROR DaoHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 08:51:43,975 ERROR DaoHistorialM - StackTrace:    en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 198
+   en DatosSKD.DAO.Modulo4.DaoHistorialM.Modificar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 121
+2016-01-31 08:51:44,042 ERROR DaoHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_ModificarHistorialM' expects parameter '@monto_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:dd4da2d5-8ac5-4590-803d-7428432c70df
+Error Number:201,State:4,Class:16
+2016-01-31 08:51:44,580 ERROR ComandoModificarHistorialM - *******************************************************
+2016-01-31 08:51:44,581 ERROR ComandoModificarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 08:51:44,581 ERROR ComandoModificarHistorialM - Origen: DatosSKD
+2016-01-31 08:51:44,581 ERROR ComandoModificarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 08:51:44,587 ERROR ComandoModificarHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Modificar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 145
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoModificarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoModificarHistorialM.cs:línea 30
+2016-01-31 08:51:44,588 ERROR ComandoModificarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_ModificarHistorialM' expects parameter '@monto_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:dd4da2d5-8ac5-4590-803d-7428432c70df
+Error Number:201,State:4,Class:16
+2016-01-31 08:51:44,614 ERROR PresentadorModificarHistorialM - *******************************************************
+2016-01-31 08:51:44,615 ERROR PresentadorModificarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 08:51:44,615 ERROR PresentadorModificarHistorialM - Origen: DatosSKD
+2016-01-31 08:51:44,615 ERROR PresentadorModificarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 08:51:44,628 ERROR PresentadorModificarHistorialM - StackTrace:    en LogicaNegociosSKD.Comandos.Modulo4.ComandoModificarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoModificarHistorialM.cs:línea 36
+   en Interfaz_Presentadores.Modulo4.PresentadorModificarHistorialM.ModificarHistorialMClick() en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorModificarHistorialM.cs:línea 49
+2016-01-31 08:51:44,628 ERROR PresentadorModificarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_ModificarHistorialM' expects parameter '@monto_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:dd4da2d5-8ac5-4590-803d-7428432c70df
+Error Number:201,State:4,Class:16
+2016-01-31 08:51:44,657 ERROR M4_ModificarHistorialMatricula - *******************************************************
+2016-01-31 08:51:44,657 ERROR M4_ModificarHistorialMatricula - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 08:51:44,657 ERROR M4_ModificarHistorialMatricula - Origen: DatosSKD
+2016-01-31 08:51:44,657 ERROR M4_ModificarHistorialMatricula - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 08:51:44,662 ERROR M4_ModificarHistorialMatricula - StackTrace:    en Interfaz_Presentadores.Modulo4.PresentadorModificarHistorialM.ModificarHistorialMClick() en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorModificarHistorialM.cs:línea 55
+   en templateApp.GUI.Modulo4.M4_ModificarHistorialMatricula.Btn_ModificarHistorialM_Click(Object sender, EventArgs e) en c:\Users\Usuario\Documents\GitHub\sakaratedo\GUI\Modulo4\M4_ModificarHistorialMatricula.aspx.cs:línea 69
+2016-01-31 08:51:44,662 ERROR M4_ModificarHistorialMatricula - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_ModificarHistorialM' expects parameter '@monto_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:dd4da2d5-8ac5-4590-803d-7428432c70df
+Error Number:201,State:4,Class:16
+2016-01-31 08:51:44,711 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 08:51:44,711 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 08:51:44,711 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:51:44,711 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 08:51:44,715 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 08:51:44,716 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 08:51:44,716 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 08:51:44,716 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 08:51:48,404 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 08:51:48,405 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 08:51:48,405 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:51:48,405 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 08:51:48,407 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 08:51:48,407 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 08:51:48,407 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-01-31 08:51:48,407 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 08:51:48,412 INFO  DaoHistorialM - *******************************************************
+2016-01-31 08:51:48,414 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 08:51:48,414 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:51:48,414 INFO  DaoHistorialM - Metodo: ConsultarXId
+2016-01-31 08:52:06,639 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 08:52:06,639 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 08:52:06,639 INFO  ComandoModificarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:52:06,639 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 08:52:06,733 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 08:52:06,733 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 08:52:06,733 INFO  ComandoModificarHistorialM - Mensaje: Salida del Método
+2016-01-31 08:52:06,733 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 08:52:06,737 INFO  DaoHistorialM - *******************************************************
+2016-01-31 08:52:06,737 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 08:52:06,737 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 08:52:06,737 INFO  DaoHistorialM - Metodo: Modificar
+2016-01-31 09:11:36,401 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:11:36,417 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:11:36,417 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 09:11:36,418 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:11:36,456 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:11:36,457 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:11:36,457 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 09:11:36,457 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:12:18,765 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:12:18,765 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:12:18,765 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:12:18,765 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:12:18,771 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:12:18,771 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:12:18,771 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:12:18,771 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:12:22,863 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 09:12:22,864 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 09:12:22,864 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:12:22,864 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 09:12:22,869 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 09:12:22,869 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 09:12:22,869 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:12:22,870 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 09:12:22,877 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:12:22,877 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:12:22,877 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:12:22,877 INFO  DaoHistorialM - Metodo: ConsultarXId
+2016-01-31 09:13:03,255 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 09:13:03,256 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 09:13:03,256 INFO  ComandoModificarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:13:03,256 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 09:13:03,260 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 09:13:03,260 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 09:13:03,260 INFO  ComandoModificarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:13:03,260 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 09:13:03,275 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:13:03,275 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:13:03,275 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:13:03,275 INFO  DaoHistorialM - Metodo: Modificar
+2016-01-31 09:13:06,324 ERROR DaoHistorialM - *******************************************************
+2016-01-31 09:13:06,325 ERROR DaoHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:13:06,345 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 09:13:06,345 ERROR DaoHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:13:06,346 ERROR DaoHistorialM - StackTrace:    en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 198
+   en DatosSKD.DAO.Modulo4.DaoHistorialM.Modificar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 121
+2016-01-31 09:13:06,386 ERROR DaoHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_ModificarHistorialM' expects parameter '@monto_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:2990d92f-f025-42c9-ba9a-25f2e776b6c5
+Error Number:201,State:4,Class:16
+2016-01-31 09:13:07,110 ERROR ComandoModificarHistorialM - *******************************************************
+2016-01-31 09:13:07,110 ERROR ComandoModificarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:13:07,110 ERROR ComandoModificarHistorialM - Origen: DatosSKD
+2016-01-31 09:13:07,110 ERROR ComandoModificarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:13:07,118 ERROR ComandoModificarHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Modificar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 145
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoModificarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoModificarHistorialM.cs:línea 30
+2016-01-31 09:13:07,119 ERROR ComandoModificarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_ModificarHistorialM' expects parameter '@monto_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:2990d92f-f025-42c9-ba9a-25f2e776b6c5
+Error Number:201,State:4,Class:16
+2016-01-31 09:13:07,190 ERROR PresentadorModificarHistorialM - *******************************************************
+2016-01-31 09:13:07,190 ERROR PresentadorModificarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:13:07,190 ERROR PresentadorModificarHistorialM - Origen: DatosSKD
+2016-01-31 09:13:07,190 ERROR PresentadorModificarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:13:07,196 ERROR PresentadorModificarHistorialM - StackTrace:    en LogicaNegociosSKD.Comandos.Modulo4.ComandoModificarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoModificarHistorialM.cs:línea 36
+   en Interfaz_Presentadores.Modulo4.PresentadorModificarHistorialM.ModificarHistorialMClick() en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorModificarHistorialM.cs:línea 49
+2016-01-31 09:13:07,196 ERROR PresentadorModificarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_ModificarHistorialM' expects parameter '@monto_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:2990d92f-f025-42c9-ba9a-25f2e776b6c5
+Error Number:201,State:4,Class:16
+2016-01-31 09:13:07,245 ERROR M4_ModificarHistorialMatricula - *******************************************************
+2016-01-31 09:13:07,245 ERROR M4_ModificarHistorialMatricula - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:13:07,245 ERROR M4_ModificarHistorialMatricula - Origen: DatosSKD
+2016-01-31 09:13:07,245 ERROR M4_ModificarHistorialMatricula - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:13:07,252 ERROR M4_ModificarHistorialMatricula - StackTrace:    en Interfaz_Presentadores.Modulo4.PresentadorModificarHistorialM.ModificarHistorialMClick() en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorModificarHistorialM.cs:línea 55
+   en templateApp.GUI.Modulo4.M4_ModificarHistorialMatricula.Btn_ModificarHistorialM_Click(Object sender, EventArgs e) en c:\Users\Usuario\Documents\GitHub\sakaratedo\GUI\Modulo4\M4_ModificarHistorialMatricula.aspx.cs:línea 70
+2016-01-31 09:13:07,252 ERROR M4_ModificarHistorialMatricula - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_ModificarHistorialM' expects parameter '@monto_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:2990d92f-f025-42c9-ba9a-25f2e776b6c5
+Error Number:201,State:4,Class:16
+2016-01-31 09:13:07,317 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:13:07,317 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:13:07,317 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:13:07,317 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:13:07,327 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:13:07,327 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:13:07,327 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:13:07,327 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:13:44,872 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:13:44,873 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:13:44,873 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:13:44,873 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:13:44,875 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:13:44,875 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:13:44,875 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:13:44,875 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:13:44,891 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:13:44,891 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:13:44,891 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:13:44,891 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:13:45,265 ERROR DaoHistorialM - *******************************************************
+2016-01-31 09:13:45,265 ERROR DaoHistorialM - Mensaje: Referencia a objeto no establecida como instancia de un objeto.
+2016-01-31 09:13:45,266 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 09:13:45,266 ERROR DaoHistorialM - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-31 09:13:45,266 ERROR DaoHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 43
+2016-01-31 09:13:45,266 ERROR DaoHistorialM - InnerException: 
+2016-01-31 09:13:45,270 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:13:45,270 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:13:45,270 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-01-31 09:13:45,270 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:13:45,299 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:13:45,299 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:13:45,299 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:13:45,299 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:13:45,301 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:13:45,302 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:13:45,302 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:13:45,302 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:15:36,138 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:15:36,146 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:15:36,146 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 09:15:36,146 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:15:36,154 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:15:36,154 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:15:36,154 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 09:15:36,154 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:15:39,031 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:15:39,031 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:15:39,031 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:15:39,031 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:15:39,034 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:15:39,034 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:15:39,034 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:15:39,034 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:16:03,039 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:16:03,039 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:16:03,039 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:16:03,039 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:16:03,047 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:16:03,047 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:16:03,047 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:16:03,047 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:16:08,585 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:16:08,586 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:16:08,586 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:16:08,586 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:16:11,427 ERROR DaoHistorialM - *******************************************************
+2016-01-31 09:16:11,428 ERROR DaoHistorialM - Mensaje: Referencia a objeto no establecida como instancia de un objeto.
+2016-01-31 09:16:11,440 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 09:16:11,440 ERROR DaoHistorialM - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-31 09:16:11,441 ERROR DaoHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 43
+2016-01-31 09:16:11,441 ERROR DaoHistorialM - InnerException: 
+2016-01-31 09:16:11,445 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:16:11,445 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:16:11,445 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-01-31 09:16:11,445 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:16:11,477 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:16:11,477 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:16:11,477 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:16:11,477 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:16:11,480 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:16:11,480 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:16:11,480 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:16:11,480 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:16:39,957 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:16:39,957 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:16:39,957 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:16:39,957 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:16:39,965 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:16:39,965 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:16:39,965 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:16:39,966 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:18:00,189 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:18:00,189 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:18:00,189 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:18:00,189 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:18:53,558 ERROR DaoHistorialM - *******************************************************
+2016-01-31 09:18:53,558 ERROR DaoHistorialM - Mensaje: Referencia a objeto no establecida como instancia de un objeto.
+2016-01-31 09:18:53,558 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 09:18:53,558 ERROR DaoHistorialM - Metodo: Boolean Agregar(DominioSKD.Entidad)
+2016-01-31 09:18:53,559 ERROR DaoHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 43
+2016-01-31 09:18:53,559 ERROR DaoHistorialM - InnerException: 
+2016-01-31 09:18:53,569 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:18:53,569 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:18:53,569 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-01-31 09:18:53,569 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:18:54,184 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:18:54,184 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:18:54,184 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:18:54,184 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:18:54,206 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:18:54,206 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:18:54,206 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:18:54,206 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:19:00,959 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:19:00,959 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:19:00,959 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:19:00,959 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:21:17,360 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:21:17,369 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:21:17,369 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 09:21:17,369 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:21:17,399 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:21:17,399 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:21:17,399 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 09:21:17,399 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:21:41,448 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:21:41,448 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:21:41,448 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:21:41,448 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:21:41,453 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:21:41,453 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:21:41,453 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:21:41,453 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:21:55,994 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:21:55,995 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:21:55,995 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:21:55,995 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:21:55,996 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:21:55,996 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:21:55,996 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:21:55,996 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:21:58,716 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:21:58,716 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:21:58,716 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:21:58,716 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:26:57,612 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:26:57,627 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:26:57,627 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 09:26:57,627 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:26:57,638 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:26:57,639 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:26:57,639 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 09:26:57,639 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:27:00,011 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:27:00,011 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:27:00,011 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:27:00,011 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:27:00,022 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 09:27:00,024 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 09:27:00,024 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:27:00,024 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 09:27:14,585 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:27:14,587 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:27:14,587 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:27:14,587 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:27:14,592 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:27:14,592 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:27:14,592 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:27:14,592 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:27:16,997 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:27:16,997 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:27:16,997 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:27:16,997 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:28:02,880 ERROR DaoHistorialM - *******************************************************
+2016-01-31 09:28:02,881 ERROR DaoHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:28:02,903 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 09:28:02,903 ERROR DaoHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:28:02,904 ERROR DaoHistorialM - StackTrace:    en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 198
+   en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 49
+2016-01-31 09:28:03,122 ERROR DaoHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M4_AgregarHistorialMatricula'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:a5614765-6014-4117-8a0b-4b0e6c4c97da
+Error Number:2812,State:62,Class:16
+2016-01-31 09:28:03,272 ERROR ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:28:03,272 ERROR ComandoAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:28:03,272 ERROR ComandoAgregarHistorialM - Origen: DatosSKD
+2016-01-31 09:28:03,272 ERROR ComandoAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:28:03,286 ERROR ComandoAgregarHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 79
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 30
+2016-01-31 09:28:03,286 ERROR ComandoAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M4_AgregarHistorialMatricula'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:a5614765-6014-4117-8a0b-4b0e6c4c97da
+Error Number:2812,State:62,Class:16
+2016-01-31 09:28:03,374 ERROR PresentadorAgregarHistorialM - *******************************************************
+2016-01-31 09:28:03,374 ERROR PresentadorAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:28:03,378 ERROR PresentadorAgregarHistorialM - Origen: DatosSKD
+2016-01-31 09:28:03,378 ERROR PresentadorAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:28:03,388 ERROR PresentadorAgregarHistorialM - StackTrace:    en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 36
+   en Interfaz_Presentadores.Modulo4.PresentadorAgregarHistorialM.AgregarHistorialM_Click() en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorAgregarHistorialM.cs:línea 48
+2016-01-31 09:28:03,389 ERROR PresentadorAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M4_AgregarHistorialMatricula'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:a5614765-6014-4117-8a0b-4b0e6c4c97da
+Error Number:2812,State:62,Class:16
+2016-01-31 09:33:01,378 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:33:01,402 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:33:01,402 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 09:33:01,402 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:33:01,440 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:33:01,440 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:33:01,440 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 09:33:01,440 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:33:19,907 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:33:19,908 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:33:19,908 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:33:19,908 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:33:19,918 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:33:19,918 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:33:19,918 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:33:19,918 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:33:22,397 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:33:22,398 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:33:22,398 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:33:22,398 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 09:33:35,995 ERROR DaoHistorialM - *******************************************************
+2016-01-31 09:33:35,995 ERROR DaoHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:33:36,006 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 09:33:36,006 ERROR DaoHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:33:36,007 ERROR DaoHistorialM - StackTrace:    en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 198
+   en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 45
+2016-01-31 09:33:36,065 ERROR DaoHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M4_AgregarHistorialMatricula'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:49b3cc2d-ddc1-451c-934e-0e26e95bfa34
+Error Number:2812,State:62,Class:16
+2016-01-31 09:33:36,168 ERROR ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:33:36,168 ERROR ComandoAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:33:36,168 ERROR ComandoAgregarHistorialM - Origen: DatosSKD
+2016-01-31 09:33:36,169 ERROR ComandoAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:33:36,180 ERROR ComandoAgregarHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 75
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 30
+2016-01-31 09:33:36,180 ERROR ComandoAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M4_AgregarHistorialMatricula'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:49b3cc2d-ddc1-451c-934e-0e26e95bfa34
+Error Number:2812,State:62,Class:16
+2016-01-31 09:33:36,230 ERROR PresentadorAgregarHistorialM - *******************************************************
+2016-01-31 09:33:36,230 ERROR PresentadorAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 09:33:36,230 ERROR PresentadorAgregarHistorialM - Origen: DatosSKD
+2016-01-31 09:33:36,230 ERROR PresentadorAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 09:33:36,246 ERROR PresentadorAgregarHistorialM - StackTrace:    en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 36
+   en Interfaz_Presentadores.Modulo4.PresentadorAgregarHistorialM.AgregarHistorialM_Click() en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorAgregarHistorialM.cs:línea 48
+2016-01-31 09:33:36,247 ERROR PresentadorAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M4_AgregarHistorialMatricula'.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:49b3cc2d-ddc1-451c-934e-0e26e95bfa34
+Error Number:2812,State:62,Class:16
+2016-01-31 09:43:46,544 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:43:46,557 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:43:46,557 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 09:43:46,557 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:43:46,568 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 09:43:46,568 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 09:43:46,568 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 09:43:46,568 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 09:43:59,699 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:43:59,699 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:43:59,699 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:43:59,699 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:43:59,702 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 09:43:59,702 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 09:43:59,702 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 09:43:59,702 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 09:44:02,745 INFO  DaoHistorialM - *******************************************************
+2016-01-31 09:44:02,745 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 09:44:02,745 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 09:44:02,745 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 11:03:52,815 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:03:52,822 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:03:52,822 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 11:03:52,822 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:03:52,831 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:03:52,831 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:03:52,831 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 11:03:52,831 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:04:06,115 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:04:06,115 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:04:06,115 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:04:06,115 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:04:06,121 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:04:06,121 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:04:06,121 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 11:04:06,121 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:04:08,620 INFO  DaoHistorialM - *******************************************************
+2016-01-31 11:04:08,620 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 11:04:08,620 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:04:08,620 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 11:05:57,826 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:05:57,834 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:05:57,834 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 11:05:57,834 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:05:57,865 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:05:57,865 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:05:57,865 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 11:05:57,865 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:06:12,034 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:06:12,034 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:06:12,034 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:06:12,034 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:06:12,036 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:06:12,036 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:06:12,036 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 11:06:12,036 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:06:14,908 INFO  DaoHistorialM - *******************************************************
+2016-01-31 11:06:14,908 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 11:06:14,908 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:06:14,908 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 11:10:10,121 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:10:10,131 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:10:10,131 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 11:10:10,131 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:10:10,143 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:10:10,143 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:10:10,143 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 11:10:10,143 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:10:39,283 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:10:39,284 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:10:39,284 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:10:39,284 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:10:39,286 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:10:39,286 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:10:39,286 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 11:10:39,286 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:10:42,324 INFO  DaoHistorialM - *******************************************************
+2016-01-31 11:10:42,324 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 11:10:42,324 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:10:42,324 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 11:28:19,241 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:28:19,249 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:28:19,249 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 11:28:19,249 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:28:19,258 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:28:19,259 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:28:19,259 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 11:28:19,259 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:28:31,226 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:28:31,226 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:28:31,226 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:28:31,226 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:28:31,233 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:28:31,233 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:28:31,233 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 11:28:31,233 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:28:35,617 INFO  DaoHistorialM - *******************************************************
+2016-01-31 11:28:35,618 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 11:28:35,618 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:28:35,618 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 11:33:11,401 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:33:11,408 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:33:11,408 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 11:33:11,408 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:33:11,418 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:33:11,418 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:33:11,418 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 11:33:11,418 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:33:25,342 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:33:25,342 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:33:25,342 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:33:25,342 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:33:25,345 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:33:25,345 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:33:25,345 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 11:33:25,345 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:33:27,761 INFO  DaoHistorialM - *******************************************************
+2016-01-31 11:33:27,761 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 11:33:27,761 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:33:27,761 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 11:36:55,594 ERROR DaoHistorialM - *******************************************************
+2016-01-31 11:36:55,594 ERROR DaoHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 11:36:55,606 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 11:36:55,606 ERROR DaoHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 11:36:55,606 ERROR DaoHistorialM - StackTrace:    en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 198
+   en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 42
+2016-01-31 11:36:55,639 ERROR DaoHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_AgregarHistorial' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:ab319195-3aaa-48a9-979b-9915ac57c7cd
+Error Number:201,State:4,Class:16
+2016-01-31 11:36:55,659 ERROR ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:36:55,659 ERROR ComandoAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 11:36:55,659 ERROR ComandoAgregarHistorialM - Origen: DatosSKD
+2016-01-31 11:36:55,659 ERROR ComandoAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 11:36:55,670 ERROR ComandoAgregarHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 72
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 30
+2016-01-31 11:36:55,670 ERROR ComandoAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_AgregarHistorial' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:ab319195-3aaa-48a9-979b-9915ac57c7cd
+Error Number:201,State:4,Class:16
+2016-01-31 11:36:55,689 ERROR PresentadorAgregarHistorialM - *******************************************************
+2016-01-31 11:36:55,689 ERROR PresentadorAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 11:36:55,689 ERROR PresentadorAgregarHistorialM - Origen: DatosSKD
+2016-01-31 11:36:55,689 ERROR PresentadorAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 11:36:55,693 ERROR PresentadorAgregarHistorialM - StackTrace:    en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 36
+   en Interfaz_Presentadores.Modulo4.PresentadorAgregarHistorialM.AgregarHistorialM_Click() en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorAgregarHistorialM.cs:línea 48
+2016-01-31 11:36:55,693 ERROR PresentadorAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_AgregarHistorial' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:ab319195-3aaa-48a9-979b-9915ac57c7cd
+Error Number:201,State:4,Class:16
+2016-01-31 11:37:37,835 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:37:37,835 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:37:37,835 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:37:37,835 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:37:37,838 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:37:37,838 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:37:37,838 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 11:37:37,838 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:37:43,716 INFO  DaoHistorialM - *******************************************************
+2016-01-31 11:37:43,716 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 11:37:43,716 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:37:43,716 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 11:38:05,876 ERROR DaoHistorialM - *******************************************************
+2016-01-31 11:38:05,876 ERROR DaoHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 11:38:05,876 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 11:38:05,876 ERROR DaoHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 11:38:05,877 ERROR DaoHistorialM - StackTrace:    en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 198
+   en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 42
+2016-01-31 11:38:05,877 ERROR DaoHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_AgregarHistorial' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:ab319195-3aaa-48a9-979b-9915ac57c7cd
+Error Number:201,State:4,Class:16
+2016-01-31 11:38:05,936 ERROR ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:38:05,936 ERROR ComandoAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 11:38:05,936 ERROR ComandoAgregarHistorialM - Origen: DatosSKD
+2016-01-31 11:38:05,936 ERROR ComandoAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 11:38:05,936 ERROR ComandoAgregarHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 72
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 30
+2016-01-31 11:38:05,937 ERROR ComandoAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_AgregarHistorial' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:ab319195-3aaa-48a9-979b-9915ac57c7cd
+Error Number:201,State:4,Class:16
+2016-01-31 11:38:05,965 ERROR PresentadorAgregarHistorialM - *******************************************************
+2016-01-31 11:38:05,965 ERROR PresentadorAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 11:38:05,965 ERROR PresentadorAgregarHistorialM - Origen: DatosSKD
+2016-01-31 11:38:05,965 ERROR PresentadorAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 11:38:05,966 ERROR PresentadorAgregarHistorialM - StackTrace:    en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 36
+   en Interfaz_Presentadores.Modulo4.PresentadorAgregarHistorialM.AgregarHistorialM_Click() en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorAgregarHistorialM.cs:línea 48
+2016-01-31 11:38:05,966 ERROR PresentadorAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_AgregarHistorial' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:ab319195-3aaa-48a9-979b-9915ac57c7cd
+Error Number:201,State:4,Class:16
+2016-01-31 11:39:00,943 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:39:00,943 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:39:00,943 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:39:00,943 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:39:00,951 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 11:39:00,952 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 11:39:00,952 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 11:39:00,952 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 11:39:03,310 INFO  DaoHistorialM - *******************************************************
+2016-01-31 11:39:03,310 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 11:39:03,310 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 11:39:03,310 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 11:41:43,150 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:41:43,159 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:41:43,159 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 11:41:43,159 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 11:41:43,170 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 11:41:43,171 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 11:41:43,171 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 11:41:43,171 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 12:01:16,629 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-31 12:01:16,629 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-31 12:01:16,630 INFO  ComandoAgregarDojo - Mensaje: Entrada en el Método
+2016-01-31 12:01:16,630 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-31 12:01:16,635 INFO  ComandoAgregarDojo - *******************************************************
+2016-01-31 12:01:16,636 INFO  ComandoAgregarDojo - Clase: ComandoAgregarDojo
+2016-01-31 12:01:16,636 INFO  ComandoAgregarDojo - Mensaje: Salida del Método
+2016-01-31 12:01:16,636 INFO  ComandoAgregarDojo - Metodo: Ejecutar
+2016-01-31 12:01:16,641 INFO  DaoDojo - *******************************************************
+2016-01-31 12:01:16,641 INFO  DaoDojo - Clase: DaoDojo
+2016-01-31 12:01:16,641 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-01-31 12:01:16,641 INFO  DaoDojo - Metodo: Agregar
+2016-01-31 12:01:16,666 INFO  DaoDojo - *******************************************************
+2016-01-31 12:01:16,666 INFO  DaoDojo - Clase: DaoDojo
+2016-01-31 12:01:16,666 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-31 12:01:16,666 INFO  DaoDojo - Metodo: BuscarRifDojo
+2016-01-31 12:01:16,795 INFO  DaoDojo - *******************************************************
+2016-01-31 12:01:16,795 INFO  DaoDojo - Clase: DaoDojo
+2016-01-31 12:01:16,795 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-31 12:01:16,795 INFO  DaoDojo - Metodo: Agregar
+2016-01-31 12:01:16,847 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 12:01:16,847 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 12:01:16,847 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 12:01:16,847 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 12:01:16,849 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 12:01:16,849 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 12:01:16,849 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 12:01:16,849 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 12:01:44,734 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 12:01:44,734 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 12:01:44,734 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:01:44,734 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 12:01:44,741 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 12:01:44,742 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 12:01:44,742 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:01:44,742 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 12:01:47,721 INFO  DaoHistorialM - *******************************************************
+2016-01-31 12:01:47,721 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 12:01:47,722 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:01:47,722 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 12:01:55,962 ERROR DaoHistorialM - *******************************************************
+2016-01-31 12:01:55,962 ERROR DaoHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 12:01:55,985 ERROR DaoHistorialM - Origen: DatosSKD
+2016-01-31 12:01:55,985 ERROR DaoHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 12:01:55,985 ERROR DaoHistorialM - StackTrace:    en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 198
+   en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 42
+2016-01-31 12:01:56,013 ERROR DaoHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_AgregarHistorial' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:572c3645-d91e-4cf9-addb-f70512f08cdf
+Error Number:201,State:4,Class:16
+2016-01-31 12:01:56,041 ERROR ComandoAgregarHistorialM - *******************************************************
+2016-01-31 12:01:56,041 ERROR ComandoAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 12:01:56,041 ERROR ComandoAgregarHistorialM - Origen: DatosSKD
+2016-01-31 12:01:56,041 ERROR ComandoAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 12:01:56,045 ERROR ComandoAgregarHistorialM - StackTrace:    en DatosSKD.DAO.Modulo4.DaoHistorialM.Agregar(Entidad parametro) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo4\DaoHistorialM.cs:línea 72
+   en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 30
+2016-01-31 12:01:56,046 ERROR ComandoAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_AgregarHistorial' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:572c3645-d91e-4cf9-addb-f70512f08cdf
+Error Number:201,State:4,Class:16
+2016-01-31 12:01:56,069 ERROR PresentadorAgregarHistorialM - *******************************************************
+2016-01-31 12:01:56,069 ERROR PresentadorAgregarHistorialM - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 12:01:56,069 ERROR PresentadorAgregarHistorialM - Origen: DatosSKD
+2016-01-31 12:01:56,069 ERROR PresentadorAgregarHistorialM - Metodo: System.Collections.Generic.List`1[DatosSKD.Resultado] EjecutarStoredProcedure(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 12:01:56,072 ERROR PresentadorAgregarHistorialM - StackTrace:    en LogicaNegociosSKD.Comandos.Modulo4.ComandoAgregarHistorialM.Ejecutar() en c:\Users\Usuario\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo4\ComandoAgregarHistorialM.cs:línea 36
+   en Interfaz_Presentadores.Modulo4.PresentadorAgregarHistorialM.AgregarHistorialM_Click() en c:\Users\Usuario\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorAgregarHistorialM.cs:línea 48
+2016-01-31 12:01:56,073 ERROR PresentadorAgregarHistorialM - InnerException: System.Data.SqlClient.SqlException (0x80131904): Procedure or function 'M4_AgregarHistorial' expects parameter '@modalidad_historial', which was not supplied.
+   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en DatosSKD.BDConexion.EjecutarStoredProcedure(String query, List`1 parametros) en c:\Users\Usuario\Documents\GitHub\sakaratedo\DatosSKD\BDConexion.cs:línea 167
+ClientConnectionId:572c3645-d91e-4cf9-addb-f70512f08cdf
+Error Number:201,State:4,Class:16
+2016-01-31 12:34:44,515 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 12:34:44,537 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 12:34:44,538 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 12:34:44,538 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 12:34:44,549 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 12:34:44,550 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 12:34:44,550 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 12:34:44,550 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 12:35:36,354 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 12:35:36,354 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 12:35:36,354 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:35:36,354 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 12:35:36,358 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-01-31 12:35:36,358 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-01-31 12:35:36,358 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:35:36,358 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-01-31 12:35:41,232 INFO  DaoHistorialM - *******************************************************
+2016-01-31 12:35:41,234 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 12:35:41,234 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:35:41,234 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 12:35:43,922 INFO  DaoHistorialM - *******************************************************
+2016-01-31 12:35:43,922 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 12:35:43,922 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-01-31 12:35:43,922 INFO  DaoHistorialM - Metodo: Agregar
+2016-01-31 12:35:44,137 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 12:35:44,137 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 12:35:44,137 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:35:44,137 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 12:35:44,141 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 12:35:44,141 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 12:35:44,141 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:35:44,141 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 12:44:46,259 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 12:44:46,266 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 12:44:46,266 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 12:44:46,266 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 12:44:46,279 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 12:44:46,279 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 12:44:46,279 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 12:44:46,279 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 12:44:50,493 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 12:44:50,493 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 12:44:50,493 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:44:50,493 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 12:44:50,496 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 12:44:50,496 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 12:44:50,496 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:44:50,496 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 12:44:53,339 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 12:44:53,339 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 12:44:53,340 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:44:53,340 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 12:44:53,342 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 12:44:53,342 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 12:44:53,342 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:44:53,342 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 12:44:53,346 INFO  DaoHistorialM - *******************************************************
+2016-01-31 12:44:53,346 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 12:44:53,346 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:44:53,346 INFO  DaoHistorialM - Metodo: ConsultarXId
+2016-01-31 12:45:17,223 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 12:45:17,223 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 12:45:17,223 INFO  ComandoModificarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:45:17,223 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 12:45:17,226 INFO  ComandoModificarHistorialM - *******************************************************
+2016-01-31 12:45:17,226 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-01-31 12:45:17,226 INFO  ComandoModificarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:45:17,226 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-01-31 12:45:17,257 INFO  DaoHistorialM - *******************************************************
+2016-01-31 12:45:17,258 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 12:45:17,258 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:45:17,258 INFO  DaoHistorialM - Metodo: Modificar
+2016-01-31 12:45:17,269 INFO  DaoHistorialM - *******************************************************
+2016-01-31 12:45:17,269 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 12:45:17,269 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-01-31 12:45:17,269 INFO  DaoHistorialM - Metodo: Modificar
+2016-01-31 12:45:17,314 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 12:45:17,314 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 12:45:17,314 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:45:17,314 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 12:45:17,317 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 12:45:17,317 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 12:45:17,317 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:45:17,317 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 12:51:24,582 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 12:51:24,582 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 12:51:24,582 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:51:24,582 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 12:51:24,584 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 12:51:24,584 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 12:51:24,584 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:51:24,585 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 12:51:24,587 INFO  DaoHistorialM - *******************************************************
+2016-01-31 12:51:24,587 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 12:51:24,587 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:51:24,587 INFO  DaoHistorialM - Metodo: ConsultarXId
+2016-01-31 12:51:38,165 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 12:51:38,165 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 12:51:38,165 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:51:38,165 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 12:51:38,167 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 12:51:38,167 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 12:51:38,167 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:51:38,167 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 12:51:41,023 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 12:51:41,024 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 12:51:41,024 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:51:41,024 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 12:51:41,027 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 12:51:41,028 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 12:51:41,028 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:51:41,028 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 12:51:41,030 INFO  DaoHistorialM - *******************************************************
+2016-01-31 12:51:41,030 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 12:51:41,030 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:51:41,030 INFO  DaoHistorialM - Metodo: ConsultarXId
+2016-01-31 12:51:51,133 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 12:51:51,133 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 12:51:51,133 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:51:51,133 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 12:51:51,151 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 12:51:51,151 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 12:51:51,151 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-01-31 12:51:51,151 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 12:51:51,153 INFO  DaoHistorialM - *******************************************************
+2016-01-31 12:51:51,153 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 12:51:51,153 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 12:51:51,153 INFO  DaoHistorialM - Metodo: ConsultarXId

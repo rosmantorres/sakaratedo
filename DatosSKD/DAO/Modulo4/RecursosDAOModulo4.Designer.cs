@@ -70,7 +70,7 @@ namespace DatosSKD.DAO.Modulo4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a M4_AgregarHistorialMatricula.
+        ///   Busca una cadena traducida similar a M4_AgregarHistorial.
         /// </summary>
         internal static string AgregarHistorialMatricula {
             get {
@@ -538,7 +538,7 @@ namespace DatosSKD.DAO.Modulo4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a modalidad_matricula.
+        ///   Busca una cadena traducida similar a modalidad_historial.
         /// </summary>
         internal static string ParametroModalidad {
             get {
@@ -547,7 +547,7 @@ namespace DatosSKD.DAO.Modulo4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a monto_matricula.
+        ///   Busca una cadena traducida similar a monto_historial.
         /// </summary>
         internal static string ParametroMontoMatricula {
             get {

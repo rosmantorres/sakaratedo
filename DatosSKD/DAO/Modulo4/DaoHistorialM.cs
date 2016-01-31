@@ -25,7 +25,6 @@ namespace DatosSKD.DAO.Modulo4
                 HistorialM elHistMat = (HistorialM)FabricaEntidades.ObtenerHistorialMatricula();
                 elHistMat = (HistorialM)parametro;
 
-                ///Se listan todos los parametros para crear el nuevo dojo
                 List<Parametro> parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDAOModulo4.ParametroFechaVigenteHistorial, SqlDbType.DateTime,
@@ -36,12 +35,12 @@ namespace DatosSKD.DAO.Modulo4
                     elHistMat.Modalidad_historial_matricula.ToString(), false);
                 parametros.Add(elParametro);
 
-                elParametro = new Parametro(RecursosDAOModulo4.ParametroMontoMatricula, SqlDbType.VarChar,
+                elParametro = new Parametro(RecursosDAOModulo4.ParametroMontoMatricula, SqlDbType.Float,
                     elHistMat.Monto_historial_matricula.ToString(), false);
                 parametros.Add(elParametro);
 
                 elParametro = new Parametro(RecursosDAOModulo4.ParamIdDojo, SqlDbType.Int,
-                    elHistMat.Dojo_historial_matricula.Id.ToString(), false);
+                    elHistMat.Id_historial_matricula.ToString(), false);
                 parametros.Add(elParametro);
 
 
@@ -50,6 +49,7 @@ namespace DatosSKD.DAO.Modulo4
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
+
 
             }
             catch (SqlException ex)
@@ -125,6 +125,7 @@ namespace DatosSKD.DAO.Modulo4
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return true;
+
 
             }
             catch (SqlException ex)
