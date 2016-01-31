@@ -19,5 +19,6 @@ namespace Interfaz_Contratos.Modulo8
         string alertaClase { set; }
         string alertaRol { set; }
         string alerta { set; }
+        Label myLabel { get;  set; }
     }
 }

@@ -104,6 +104,37 @@ namespace Interfaz_Presentadores.Modulo8
             vista.sexo.DataBind();
         }
 
+        public void LlenarLabel()
+        {
+            DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
+
+            laRestEvento = meterParametrosVistaEnObjeto1(laRestEvento);
+                try
+                {
+                    ComandoModificarRestriccionEvento _comando =
+                    (ComandoModificarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionEvento(laRestEvento);
+                    bool resultado = _comando.Ejecutar();
+
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                catch (FormatException ex)
+                {
+                    throw ex;
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    throw ex;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                //return true;
+        }
+
         public void LlenarComboEdades()
         {
             int index;
@@ -132,12 +163,13 @@ namespace Interfaz_Presentadores.Modulo8
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
 
             laRestEvento = meterParametrosVistaEnObjeto1(laRestEvento);
+
             if (laRestEvento.EdadMaxima >= laRestEvento.EdadMinima)
             {
                 try
                 {
-                    FabricaComandos _fabrica = new FabricaComandos();
-                    Comando<bool> _comando = _fabrica.CrearComandoModificarRestriccionEvento(laRestEvento);
+                    LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento _comando =
+                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionEvento(laRestEvento);
                     bool resultado = _comando.Ejecutar();
                 
                 }
@@ -179,8 +211,8 @@ namespace Interfaz_Presentadores.Modulo8
             
                 try
                 {
-                    FabricaComandos _fabrica = new FabricaComandos();
-                    Comando<bool> _comando = _fabrica.CrearComandoEliminarRestriccionEvento(laRestEvento);
+                    LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarRestriccionEvento _comando =
+                        (LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoEliminarRestriccionEvento(laRestEvento);
                     bool resultado = _comando.Ejecutar();
 
                 }

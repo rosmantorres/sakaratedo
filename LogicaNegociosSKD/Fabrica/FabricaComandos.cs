@@ -243,12 +243,12 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Restriccion Evento
-        public Comando<List<DominioSKD.Entidad>> CrearComandoConsultarEventosSinRestriccion()
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarEventosSinRestriccion()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarEventosSinRestriccion();
         }
 
-        public Comando<Boolean> CrearComandoAgregarRestriccionEvento(Entidad laRestEvento)
+        public static Comando<Boolean> CrearComandoAgregarRestriccionEvento(Entidad laRestEvento)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionEvento(laRestEvento);
         }
@@ -258,12 +258,12 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionEvento();
         }
         
-        public Comando<Boolean> CrearComandoModificarRestriccionEvento(Entidad laRestEvento)
+        public static Comando<Boolean> CrearComandoModificarRestriccionEvento(Entidad laRestEvento)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento(laRestEvento);
         }
 
-        public Comando<Boolean> CrearComandoEliminarRestriccionEvento(Entidad laRestEvento)
+        public static Comando<Boolean> CrearComandoEliminarRestriccionEvento(Entidad laRestEvento)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarRestriccionEvento(laRestEvento);
         }
