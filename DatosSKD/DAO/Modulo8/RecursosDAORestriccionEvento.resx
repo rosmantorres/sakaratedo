@@ -221,4 +221,10 @@
     <value>Error de parseo</value>
     <comment>Mejsaje de error de parseo</comment>
   </data>
+  <data name="AliasStatus" xml:space="preserve">
+    <value>res_eve_status</value>
+  </data>
+  <data name="ParamStatus" xml:space="preserve">
+    <value>@res_eve_status</value>
+  </data>
 </root>

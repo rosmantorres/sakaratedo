@@ -43,7 +43,7 @@ namespace PruebasUnitariasSKD.Modulo8
         [Test]
         public void PruebaAgregarRestriccionEvento()
         {
-            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionEvento("Negra", 10, 15, "M", 7, "PUevento");
+            entidad = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionEvento("Negra", 10, 15, "M", 7, "PUevento",1);
             IDaoRestriccionEvento DAO = FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
             a = DAO.AgregarRestriccionEvento(entidad);
             Assert.IsTrue(a);

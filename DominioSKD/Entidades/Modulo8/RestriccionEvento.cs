@@ -107,7 +107,7 @@ namespace DominioSKD.Entidades.Modulo8
             this.idEvento = -1;
             this.nombreEvento = String.Empty;
             this.listaCintas = null;
-            this.status = 1;
+            this.status = 0;
         }
 
         /// <summary>
@@ -123,13 +123,14 @@ namespace DominioSKD.Entidades.Modulo8
             this.idEvento = -1;
             this.nombreEvento = String.Empty;
             this.listaCintas = null;
-            this.status = 1;
+            this.status = 0;
         }
 
         /// <summary>
         /// Constructor público sin el id de la restriccion de la clase RestriccionEvento y sin identificador unico
         /// </summary>
-        public RestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento) : base(0)
+        public RestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
+            : base(0)
         {
             idRestEvento = -1;
             descripcion = inputDescripcion;
@@ -139,13 +140,14 @@ namespace DominioSKD.Entidades.Modulo8
             idEvento = inputIdEvento;
             nombreEvento = inputNombreEvento;
             listaCintas = null;
-            this.status = 1;
+            status = inputStatus;
         }
 
         /// <summary>
         /// Constructor público con todos los atributos de la tupla de la clase RestriccionEvento y con identificador unico
         /// </summary>
-        public RestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento) : base(0)
+        public RestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
+            : base(0)
         {
             idRestEvento = inputId;
             descripcion = inputDescripcion;
@@ -155,13 +157,13 @@ namespace DominioSKD.Entidades.Modulo8
             idEvento = inputIdEvento;
             nombreEvento = inputNombreEvento;
             listaCintas = null;
-            this.status = 1;
+            status = inputStatus;
         }
 
         /// <summary>
         /// Constructor público con todos los atributos de la tupla de la clase RestriccionEvento y con identificador unico
         /// </summary>
-        public RestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        public RestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
         {
             base.Id = id;
             idRestEvento = inputId;
@@ -172,7 +174,7 @@ namespace DominioSKD.Entidades.Modulo8
             idEvento = inputIdEvento;
             nombreEvento = inputNombreEvento;
             listaCintas = null;
-            this.status = 1;
+            status = inputStatus;
         }
         #endregion
 

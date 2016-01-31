@@ -187,6 +187,15 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to res_eve_status.
+        /// </summary>
+        internal static string AliasStatus {
+            get {
+                return ResourceManager.GetString("AliasStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SKD_00_004.
         /// </summary>
         internal static string CodigoErrorFormato {
@@ -363,6 +372,15 @@ namespace DatosSKD.DAO.Modulo8 {
         internal static string ParamSexoRestricionEvento {
             get {
                 return ResourceManager.GetString("ParamSexoRestricionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @res_eve_status.
+        /// </summary>
+        internal static string ParamStatus {
+            get {
+                return ResourceManager.GetString("ParamStatus", resourceCulture);
             }
         }
     }

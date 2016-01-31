@@ -340,11 +340,12 @@ namespace DominioSKD.Fabrica
         /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
         /// <param name="inputIdEvento">Integer, id del evento</param>
         /// <param name="inputNombreEvento">String, nombre del evento</param>
+        /// <param name="inputStatus">Integer, estado de la restriccion evento</param>
         /// <returns> Objeto tipo Entidad</returns>
 
-        public static Entidad ObtenerRestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        public static Entidad ObtenerRestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
         {
-            return new Entidades.Modulo8.RestriccionEvento(inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento);
+            return new Entidades.Modulo8.RestriccionEvento(inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento, inputStatus);
         }
 
         /// <summary>
@@ -358,10 +359,11 @@ namespace DominioSKD.Fabrica
         /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
         /// <param name="inputIdEvento">Integer, id del evento</param>
         /// <param name="inputNombreEvento">String, nombre del evento</param>
+        /// <param name="inputStatus">Integer, estado de la restriccion evento</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public static Entidad ObtenerRestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        public static Entidad ObtenerRestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
         {
-            return new Entidades.Modulo8.RestriccionEvento(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento);
+            return new Entidades.Modulo8.RestriccionEvento(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento, inputStatus);
         }
 
         /// <summary>
@@ -376,11 +378,12 @@ namespace DominioSKD.Fabrica
         /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
         /// <param name="inputIdEvento">Integer, id del evento</param>
         /// <param name="inputNombreEvento">String, nombre del evento</param>
+        /// <param name="inputStatus">Integer, estado de la restriccion evento</param>
         /// <returns>  Objeto tipo Entidad</returns>
 
-        public static Entidad ObtenerRestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        public static Entidad ObtenerRestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
         {
-            return new Entidades.Modulo8.RestriccionEvento(id, inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento);
+            return new Entidades.Modulo8.RestriccionEvento(id, inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento, inputStatus);
         }
 
         #endregion
