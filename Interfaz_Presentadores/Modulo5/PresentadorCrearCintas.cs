@@ -9,6 +9,7 @@ using LogicaNegociosSKD.Comandos.Modulo5;
 using LogicaNegociosSKD;
 using DominioSKD;
 using DominioSKD.Fabrica;
+using System.Text.RegularExpressions;
 
 namespace Interfaz_Presentadores.Modulo5
 {
@@ -57,6 +58,33 @@ namespace Interfaz_Presentadores.Modulo5
         }
 
         /// <summary>
+        /// Método para validar la informacion de la cinta antes de agregarla 
+        /// </summary>
+        public void ValidarExpresionesReg(DominioSKD.Entidades.Modulo5.Cinta laCinta, string ordenString)
+        {
+            //Validar las expresionnes regulares
+            Regex rex = new Regex(RecursoPresentadorM5.expresionNombre);
+            Regex rex2 = new Regex(RecursoPresentadorM5.expresionNumero);
+            Regex rex3 = new Regex(RecursoPresentadorM5.expresionNombreNumero);
+
+            if (!rex.IsMatch(laCinta.Color_nombre))
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                                     RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Color, new Exception());
+            else if (!rex3.IsMatch(laCinta.Rango))
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                     RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Rango, new Exception());
+            else if (!rex.IsMatch(laCinta.Clasificacion))
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                    RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Clasificacion, new Exception());
+            else if (!rex.IsMatch(laCinta.Significado))
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                     RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Significado, new Exception());
+             else if (!rex2.IsMatch(ordenString))
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                   RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Orden, new Exception());
+        }
+
+        /// <summary>
         /// Método para obtener los valores de la vista y ejecutar el comando para agregar la cinta
         /// </summary>
         public void agregarValoresCinta()
@@ -66,30 +94,38 @@ namespace Interfaz_Presentadores.Modulo5
 
             //Se llena una lista de todos los valores que se piden por pantalla para validar si estan vacios
             List<String> laListaDeInputs = new List<String>();
-            laListaDeInputs.Add(this.vista.obtenerColorCinta());
-            laListaDeInputs.Add(this.vista.obtenerRango());
-            laListaDeInputs.Add(this.vista.obtenerCategoria());
-            laListaDeInputs.Add(this.vista.obtenerSignificado());
-            laListaDeInputs.Add(this.vista.obtenerOrden().ToString());
-            laListaDeInputs.Add(this.vista.obtenerNombreOrganizacion());
+            laListaDeInputs.Add(this.vista.obtenerColorCinta);
+            laListaDeInputs.Add(this.vista.obtenerRango);
+            laListaDeInputs.Add(this.vista.obtenerCategoria);
+            laListaDeInputs.Add(this.vista.obtenerSignificado);
+            laListaDeInputs.Add(this.vista.obtenerOrden.ToString());
+            laListaDeInputs.Add(this.vista.obtenerNombreOrganizacion);
 
+            
             if (Validaciones.ValidarCamposVacios(laListaDeInputs))
-            {
+            {                
+
                 try
                 {
-                    laCinta.Color_nombre = this.vista.obtenerColorCinta();
-                    laCinta.Rango = this.vista.obtenerRango();
-                    laCinta.Clasificacion = this.vista.obtenerCategoria();
-                    laCinta.Significado = this.vista.obtenerSignificado();
-                    laCinta.Orden = this.vista.obtenerOrden();
-                    laOrganizacion.Id_organizacion = this.vista.obtenerIdOrganizacion();
-                    laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion();
+                    string ordenString;
+
+                    laCinta.Color_nombre = this.vista.obtenerColorCinta;
+                    laCinta.Rango = this.vista.obtenerRango;
+                    laCinta.Clasificacion = this.vista.obtenerCategoria;
+                    laCinta.Significado = this.vista.obtenerSignificado;
+                    ordenString = this.vista.obtenerOrden;
+                    laOrganizacion.Id_organizacion = this.vista.obtenerIdOrganizacion;
+                    laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion;
                     laCinta.Organizacion = laOrganizacion;
+  
+                    this.ValidarExpresionesReg(laCinta, ordenString);
+                        laCinta.Orden = Int32.Parse(ordenString);
 
                     Comando<bool> _comando = FabricaComandos.ObtenerEjecutarAgregarCinta(laCinta);
                     bool resultado = _comando.Ejecutar();
                     if (resultado)
                         this.vista.Respuesta();
+
                 }
                 catch (ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
                 {
@@ -98,6 +134,10 @@ namespace Interfaz_Presentadores.Modulo5
                 catch (ExcepcionesSKD.Modulo5.CintaRepetidaException ex)
                 {
                     this.vista.alertaAgregarFallidoRepetida(ex);
+                }
+                catch (Exception ex)
+                {
+                    this.vista.alertaAgregarFallido(ex);
                 }
             }
             else

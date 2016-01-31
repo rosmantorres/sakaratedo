@@ -21,7 +21,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private CompetenciaM7 idCompetencia;
-        private FabricaDAOSqlServer fabricaSql;
         private DaoCompetencia baseDeDatosCompetencia;
         #endregion
 
@@ -32,8 +31,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [SetUp]
         public void Init()
         {
-            fabricaSql = new FabricaDAOSqlServer();
-            baseDeDatosCompetencia = fabricaSql.ObtenerDaoCompetenciaM7();
+            baseDeDatosCompetencia = FabricaDAOSqlServer.ObtenerDaoCompetenciaM7();
             idCompetencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
             idCompetencia.Id = 8;
         }
@@ -45,7 +43,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idCompetencia = null;
-            fabricaSql = null;
             baseDeDatosCompetencia = null;
         }
         #endregion

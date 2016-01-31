@@ -8,6 +8,7 @@ using DominioSKD;
 using Interfaz_Presentadores.Modulo5;
 using Interfaz_Contratos.Modulo5;
 using System.Globalization;
+using ExcepcionesSKD;
 
 namespace templateApp.GUI.Modulo5
 {
@@ -45,39 +46,39 @@ namespace templateApp.GUI.Modulo5
             this.options.Add(id, nombre);
         }
 
-        public int obtenerIdOrganizacion()
+        public int obtenerIdOrganizacion
         {
-            return Int32.Parse(this.ListOrg.SelectedValue); 
+            get { return Int32.Parse(this.ListOrg.SelectedValue); }
         }
 
-        public string obtenerNombreOrganizacion()
+        public string obtenerNombreOrganizacion
         {
-            return this.ListOrg.SelectedItem.Text;
+            get {return this.ListOrg.SelectedItem.Text;}
         }
 
-        public string obtenerColorCinta()
+        public string obtenerColorCinta
         {
-            return this.color.Value;
+           get { return this.color.Value;}
         }
 
-        public string obtenerRango()
+        public string obtenerRango
         {
-            return this.ran.Value;
+            get { return this.ran.Value; }
         }
 
-        public string obtenerCategoria()
+        public string obtenerCategoria
         {
-            return this.cate.Value;
+            get { return this.cate.Value; }
         }
 
-        public string obtenerSignificado()
+        public string obtenerSignificado
         {
-            return this.signi.Value;
+            get { return this.signi.Value; }
         }
 
-        public int obtenerOrden()
+        public string obtenerOrden
         {
-            return Int32.Parse(this.ord.Value);
+            get { return this.ord.Value; }
         }
         public void alertaCamposVacios()
         {
@@ -103,6 +104,20 @@ namespace templateApp.GUI.Modulo5
         public void Respuesta()
         {
             this.Response.Redirect(RecursoInterfazMod5.agregarExito);
+        }
+        public void alertaExpresiones()
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + RecursoInterfazMod5.expresionesRegulares + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaAgregarFallido(Exception ex)
+        {
+            this.alert.Attributes[RecursoInterfazMod5.alertClase] = RecursoInterfazMod5.alertaError;
+            this.alert.Attributes[RecursoInterfazMod5.alertRole] = RecursoInterfazMod5.tipoAlerta;
+            this.alert.InnerHtml = RecursoInterfazMod5.alertaHtml + ex.Message + RecursoInterfazMod5.alertaHtmlFinal;
+            this.alert.Visible = true;
         }
         #endregion
 

@@ -150,6 +150,7 @@
                     showOn: 'button',
                     buttonImage: 'css/images/calendar.gif',
                     buttonText: 'Mostrar Fecha',
+                    //dateFormat: 'dd/m/yy',
                     onClose: function (selectedDate) {
                         $("#fechaFin").datepicker("option", "minDate", selectedDate);
                     }
@@ -163,6 +164,7 @@
                     showOn: 'button',
                     buttonImage: 'css/images/calendar.gif',
                     buttonText: 'Mostrar Fecha',
+                    //dateFormat: 'dd/m/yy',
                     onClose: function (selectedDate) {
                         $("#fechaInicio").datepicker("option", "maxDate", selectedDate);
                     }

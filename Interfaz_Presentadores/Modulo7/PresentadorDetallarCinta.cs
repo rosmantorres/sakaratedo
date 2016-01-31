@@ -20,7 +20,6 @@ namespace Interfaz_Presentadores.Modulo7
     /// </summary>
     public class PresentadorDetallarCinta
     {
-        private FabricaComandos fabricaComandos;
         private IContratoDetallarCinta vista;
         /// <summary>
         /// Constructor del presentador
@@ -41,8 +40,7 @@ namespace Interfaz_Presentadores.Modulo7
         {           
             try
             {
-                fabricaComandos = new FabricaComandos();
-                ComandoConsultarDetallarCinta comandoDetallarCinta =(ComandoConsultarDetallarCinta)fabricaComandos.ObtenerComandoConsultarDetallarCinta();
+                ComandoConsultarDetallarCinta comandoDetallarCinta =(ComandoConsultarDetallarCinta)FabricaComandos.ObtenerComandoConsultarDetallarCinta();
                 comandoDetallarCinta.LaEntidad = idCinta;
                 comandoDetallarCinta.IdPersona = (PersonaM7)idPersona;
                 Tuple<Entidad, DateTime> tupla = comandoDetallarCinta.Ejecutar();

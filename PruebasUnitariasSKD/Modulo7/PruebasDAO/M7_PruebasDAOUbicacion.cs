@@ -21,7 +21,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private UbicacionM7 idUbicacion;
-        private FabricaDAOSqlServer fabricaSql;
         private DaoUbicacion baseDeDatosUbicacion;
         #endregion
 
@@ -33,8 +32,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Init()
         {
             idUbicacion = (UbicacionM7)FabricaEntidades.ObtenerUbicacionM7();        
-            fabricaSql = new FabricaDAOSqlServer();
-            baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
+            baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
             idUbicacion.Id = 6;
         }
 
@@ -45,7 +43,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idUbicacion = null;
-            fabricaSql = null;
             baseDeDatosUbicacion = null;
         }
         #endregion

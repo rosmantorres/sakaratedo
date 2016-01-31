@@ -55,7 +55,7 @@ namespace Interfaz_Presentadores.Modulo16
                 Comando<Entidad> comandoListarMensualidades = FabricaComandos.CrearComandoConsultarTodasMensualidades();
 
                 // casteamos el parametro
-                PersonaM1 param = new PersonaM1();
+                PersonaM1 param = (PersonaM1)FabricaEntidades.ObtenerPersonaModulo16();
                 param._Id = persona;
                 comandoListarMensualidades.LaEntidad = param;
 
@@ -217,7 +217,7 @@ namespace Interfaz_Presentadores.Modulo16
                     M16_Recursointerfaz.MENSAJE_ENTRADA_LOGGER, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                     string id = e.CommandName;
-                    Matricula matricula = new Matricula();
+                    DominioSKD.Entidades.Modulo6.Matricula matricula = (DominioSKD.Entidades.Modulo6.Matricula)FabricaEntidades.ObtenerMatricula();
                     matricula.Id = int.Parse(id);
                     
                     // Casteamos

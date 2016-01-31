@@ -24,7 +24,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         #region Atributos
         private PersonaM7 idPersona;
         private FabricaEntidades fabricaEntidades;
-        private FabricaDAOSqlServer fabricaSql;
         private DaoEvento baseDeDatosEvento;
         #endregion
 
@@ -35,9 +34,8 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [SetUp]
         public void Init()
         {
-            fabricaSql = new FabricaDAOSqlServer();
             fabricaEntidades = new FabricaEntidades();
-            baseDeDatosEvento = fabricaSql.ObtenerDaoEventoM7();
+            baseDeDatosEvento = FabricaDAOSqlServer.ObtenerDaoEventoM7();
             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
         }
@@ -50,8 +48,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             idPersona = null;
             fabricaEntidades = null;
-            fabricaSql = null;
-            baseDeDatosEvento = null;
         }
         #endregion
         /// <summary>

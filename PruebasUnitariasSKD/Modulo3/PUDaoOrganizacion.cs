@@ -173,6 +173,18 @@ namespace PruebasUnitariasSKD.Modulo3
             Assert.IsNotNull(resultado);
 
         }
+        /// <summary>
+        /// Método de prueba para Modificar el status de una organizaciones en DAO
+        /// </summary>
+        [Test]
+        public void PruebaModificarStatusOrganizacion()
+        {
+            bool resultado;
+            IDaoOrganizacion miDaoOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacion();
+            resultado = miDaoOrganizacion.ModificarStatus(miEntidadModificar);
+            Assert.IsTrue(resultado);
+
+        }
         #endregion
     }
 }

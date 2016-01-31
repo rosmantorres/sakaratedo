@@ -340,6 +340,15 @@ namespace DatosSKD.DAO.Modulo10 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SKD_00_004.
+        /// </summary>
+        internal static string CodigoErrorFormato {
+            get {
+                return ResourceManager.GetString("CodigoErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
         internal static string Concatenar0 {
@@ -354,6 +363,33 @@ namespace DatosSKD.DAO.Modulo10 {
         internal static string FormatoFecha {
             get {
                 return ResourceManager.GetString("FormatoFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string MensajeErrorFormato {
+            get {
+                return ResourceManager.GetString("MensajeErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salida del Método.
+        /// </summary>
+        internal static string MensajeFinInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeFinInfoLogger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Entrada en el Método.
+        /// </summary>
+        internal static string MensajeInicioInfoLogger {
+            get {
+                return ResourceManager.GetString("MensajeInicioInfoLogger", resourceCulture);
             }
         }
         
@@ -606,6 +642,15 @@ namespace DatosSKD.DAO.Modulo10 {
         internal static string SeparadorFecha {
             get {
                 return ResourceManager.GetString("SeparadorFecha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
     }

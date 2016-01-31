@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarModificarStatusOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarConsultarCintasXOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarModificarStatusCinta.cs" />
     <Compile Include="Comandos\Modulo8\ComandoAgregarListaCompetenciaRestriccionCompetencia.cs" />
     <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionEvento.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarEventosSinRestriccion.cs" />
@@ -348,7 +351,6 @@
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo4\" />
     <Folder Include="Comandos\Modulo6\" />
-    <Folder Include="Comandos\Modulo8\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

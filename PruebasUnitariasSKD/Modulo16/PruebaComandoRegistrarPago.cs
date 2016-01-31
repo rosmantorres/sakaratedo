@@ -38,8 +38,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private ComandoRegistrarPago pruebaComandoVacio3;
         private ComandoRegistrarPago pruebaComandoVacio4;
         private Comando<bool> ComandoAgregarItem;
-        private Comando<bool> ComandoRegistrarPago;        
-        private FabricaEntidades fabrica;
+        private Comando<bool> ComandoRegistrarPago;
         private Entidad pago;        
         List<String> datoPago;
         #endregion
@@ -50,9 +49,6 @@ namespace PruebasUnitariasSKD.Modulo16
         [SetUp]
         public void Iniciar()
         {
-            //La fabrica
-            fabrica = new FabricaEntidades();
-
             //Dos implementos distintos
             this.implemento = (Implemento)FabricaEntidades.ObtenerImplemento();
             this.implemento.Id = 1;
@@ -300,8 +296,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.pruebaComandoVacio3 = null;
             this.pruebaComandoVacio4 = null;
             this.ComandoAgregarItem = null;
-            this.ComandoRegistrarPago = null;            
-            this.fabrica = null;
+            this.ComandoRegistrarPago = null;
             this.pago = null;
             this.datoPago = null;
         }
