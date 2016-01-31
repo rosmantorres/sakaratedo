@@ -70,6 +70,15 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M8_Agregar_Restriccion_Cinta_Simple.
+        /// </summary>
+        internal static string AgregarRestriccionCintaSimple {
+            get {
+                return ResourceManager.GetString("AgregarRestriccionCintaSimple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to color.
         /// </summary>
         internal static string AliasColorCinta {

@@ -540,6 +540,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 0123456789.
+        /// </summary>
+        internal static string Numbers {
+            get {
+                return ResourceManager.GetString("Numbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;rangomax=.
         /// </summary>
         internal static string RangoMax {

@@ -141,7 +141,6 @@
   <opcion nombre="Agregar Rest. de Avance de Cinta" link="~/GUI/Modulo8/interfazCrearRestriccionAvanceCinta.aspx">
     <modulo id="8.3"></modulo>
   </opcion>
-
   <!--FIN OPCIONES MODULO 8-->
 
 

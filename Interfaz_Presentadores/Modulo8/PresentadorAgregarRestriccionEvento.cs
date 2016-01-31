@@ -41,8 +41,8 @@ namespace Interfaz_Presentadores.Modulo8
 
         public void LlenarComboCinta()
         {
-            FabricaComandos fabricaCo = new FabricaComandos();
-            Comando<List<Entidad>> comboCinta = fabricaCo.CrearComandoConsultarCintaTodas();
+            LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas comboCinta =
+                   (LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCintaTodas();
             List<Entidad> listCinta = new List<Entidad>();
             Dictionary<string, string> options = new Dictionary<string, string>();
             try

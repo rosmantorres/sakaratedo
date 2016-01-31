@@ -21,6 +21,7 @@ namespace Interfaz_Presentadores.Modulo8
     public class PresentadorAgregarRestriccionCinta
     {
         private IContratoAgregarRestriccionCinta vista;
+        ValidacionesM8 validarCampos = new ValidacionesM8();
 
         public PresentadorAgregarRestriccionCinta(IContratoAgregarRestriccionCinta laVista)
         {
@@ -57,13 +58,13 @@ namespace Interfaz_Presentadores.Modulo8
 
         public void LlenarComboCinta()
         {
-            FabricaComandos fabricaCo = new FabricaComandos();
-            Comando<List<Entidad>> comboCinta = fabricaCo.CrearComandoConsultarCintaTodas();
-            List<Entidad> listCinta = new List<Entidad>();
             Dictionary<string, string> options = new Dictionary<string, string>();
-            options.Add("-1", "Selecciona una opcion");
             try
             {
+                LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas comboCinta =
+                   (LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCintaTodas();
+                List<Entidad> listCinta = new List<Entidad>();
+                options.Add("-1", "Selecciona una opcion");
                 listCinta = comboCinta.Ejecutar();
                 foreach (DominioSKD.Entidades.Modulo5.Cinta item in listCinta)
                 {
@@ -113,21 +114,30 @@ namespace Interfaz_Presentadores.Modulo8
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
             try
             {
-                laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
-                /*laRestCinta.Descripcion = this.vista.descripcion_rest_cinta;
-                laRestCinta.Id = Int32.Parse(this.vista.comboRestCinta.SelectedValue);
-                laRestCinta.PuntosMinimos = Int32.Parse(this.vista.puntaje_min);
-                laRestCinta.TiempoDocente = Int32.Parse(this.vista.horas_docen);
-                laRestCinta.TiempoMaximo = Int32.Parse(this.vista.tiempo_Max);
-                laRestCinta.TiempoMinimo = Int32.Parse(this.vista.tiempo_Min);*/
+                List<String> campos = new List<String>();
+                campos.Add(vista.horas_docen);
+                campos.Add(vista.puntaje_min);
+                campos.Add(vista.tiempo_Max);
+                campos.Add(vista.tiempo_Min);
 
-
-                //FabricaComandos _fabrica = new FabricaComandos();
-                LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta _comando =
-                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCinta(laRestCinta);
-                
-                bool resultado = _comando.Ejecutar();
-                return resultado;
+                if (validarCampos.ValidarCamposVacios(campos))
+                {
+                    if (validarCampos.ValidarCaracteres(vista.horas_docen) &&
+                        validarCampos.ValidarCaracteres(vista.puntaje_min) &&
+                        validarCampos.ValidarCaracteres(vista.tiempo_Max) &&
+                        validarCampos.ValidarCaracteres(vista.tiempo_Min))
+                    {
+                        laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
+                        LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta _comando =
+                        (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCinta(laRestCinta);
+                        bool resultado = _comando.Ejecutar();
+                        return resultado;
+                    }
+                    else
+                        return false;
+                }
+                else 
+                    return false;
             }
             
             catch (SqlException ex)

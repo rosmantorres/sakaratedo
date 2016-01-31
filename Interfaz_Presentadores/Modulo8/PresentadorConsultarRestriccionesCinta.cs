@@ -125,9 +125,9 @@ namespace Interfaz_Presentadores.Modulo8
                     bitStatus = 1;
                 laRestCinta.Status = bitStatus;
                 laRestCinta.IdRestriccionCinta = id;
-                FabricaComandos _fabrica = new FabricaComandos();
-                Comando<bool> _comando = _fabrica.CrearComandoStatusRestriccionCinta(laRestCinta);
-                bool resultado = _comando.Ejecutar();
+                LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta _comando =
+                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoStatusRestriccionCinta(laRestCinta);
+               bool resultado = _comando.Ejecutar();
             }
             catch (SqlException ex)
             {
