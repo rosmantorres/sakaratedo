@@ -39,10 +39,6 @@ namespace DominioSKD.Fabrica
         {
             return new Entidades.Modulo2.Rol();
         }
-        public List<Entidad> ObtenerListaRol_M2()
-        {
-            return new List<Entidades.Modulo2.Rol>().Cast<Entidad>().ToList();
-        }
         public Entidad ObtenerRol_M2(int elId, String elNombre, String laDescripcion, DateTime laFecha)
         {
             return new Entidades.Modulo2.Rol(elId, elNombre, laDescripcion, laFecha);

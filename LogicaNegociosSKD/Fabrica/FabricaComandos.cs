@@ -51,11 +51,11 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new Comandos.Modulo2.ComandoEliminarRol();
         }
-        public Comando<List<Entidad>> ObtenerRolesDeSistema()
+        public Comando<List<DominioSKD.Entidades.Modulo2.Rol>> ObtenerRolesDeSistema()
         {
             return new Comandos.Modulo2.ComandoRolesDeSistema();
         }
-        public Comando<List<Entidad>> ObtenerRolesUsuario()
+        public Comando<List<DominioSKD.Entidades.Modulo2.Rol>> ObtenerRolesUsuario()
         {
             return new Comandos.Modulo2.ComandoRolesUsuario();
         }
