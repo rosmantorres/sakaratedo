@@ -86,11 +86,11 @@ namespace templateApp.GUI.Modulo8
         {
             get
             {
-                return Request.QueryString["idPlan"];
+                return Request.QueryString[RecursoInterfazModulo8.idP];
             }
             set
             {
-                String idEvento = Request.QueryString["idPlan"]; 
+                String idEvento = Request.QueryString[RecursoInterfazModulo8.idP]; 
             }
         }
 
@@ -141,12 +141,12 @@ namespace templateApp.GUI.Modulo8
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            String idRest = Request.QueryString["idPlan"];
-            String nombre = Request.QueryString["nombre"];
-            String emin = Request.QueryString["emin"];
-            String emax = Request.QueryString["emax"];
-            String sexo = Request.QueryString["sexo"];
-            String descripcion = Request.QueryString["descripcion"];
+            String idRest = Request.QueryString[RecursoInterfazModulo8.idP];
+            String nombre = Request.QueryString[RecursoInterfazModulo8.nombre];
+            String emin = Request.QueryString[RecursoInterfazModulo8.emin];
+            String emax = Request.QueryString[RecursoInterfazModulo8.emax];
+            String sexo = Request.QueryString[RecursoInterfazModulo8.sexo];
+            String descripcion = Request.QueryString[RecursoInterfazModulo8.descripcion];
 
             if (!IsPostBack)
             {

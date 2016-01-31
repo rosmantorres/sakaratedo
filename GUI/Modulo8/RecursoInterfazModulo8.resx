@@ -200,4 +200,19 @@
   <data name="stat" xml:space="preserve">
     <value>stat</value>
   </data>
+  <data name="descripcion" xml:space="preserve">
+    <value>descripcion</value>
+  </data>
+  <data name="emax" xml:space="preserve">
+    <value>emax</value>
+  </data>
+  <data name="emin" xml:space="preserve">
+    <value>emin</value>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="sexo" xml:space="preserve">
+    <value>sexo</value>
+  </data>
 </root>
