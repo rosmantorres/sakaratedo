@@ -106,7 +106,8 @@ namespace PruebasUnitariasSKD.Modulo8
             LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta _comando =
                         (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCinta(laRestCinta);
             bool resultado = _comando.Ejecutar();
-            Assert.IsTrue(resultado);           
+            Assert.IsTrue(resultado,"Comando Agregado Correctamente");
+            //Assert.IsFalse(resultado, "Comando no Agregado");
         }
 
         [Test]
@@ -115,8 +116,47 @@ namespace PruebasUnitariasSKD.Modulo8
             List<Entidad> lista;
             LogicaNegociosSKD.Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionCinta();
             lista = command.Ejecutar();
-            //Assert.IsInstanceOfType(List<Entidad>," Error De Tipo de Dato ");
+            Assert.IsNotNull(lista," Objeto LLeno ");
+            //Assert.IsEmpty(lista);
+            //Assert.IsInstanceOfType(lista, List, "");
 
+        }
+        [Test]
+        public void pruebaComandoConsultarCintaTodas()
+        {
+            LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas comboCinta =
+                   (LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCintaTodas();
+            List<Entidad> listCinta = new List<Entidad>();
+            listCinta = comboCinta.Ejecutar();
+            Assert.IsNotNull(listCinta, " Objeto LLeno ");
+        }
+
+        [Test]
+        public void pruebaComandoModificarRCinta()
+        {
+            DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
+            
+            laRestCinta.IdRestriccionCinta = 42;
+            laRestCinta.PuntosMinimos = 2;
+            laRestCinta.TiempoDocente = 1;
+            laRestCinta.TiempoMinimo = 3;
+            LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta _comando =
+                     (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionCinta(laRestCinta);
+            bool resultado = _comando.Ejecutar();
+            Assert.IsTrue(resultado, " Consulta Correcta");
+        }
+
+        [Test]
+        public void pruebaComandoModificarStatusCinta()
+        {
+            DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
+            int bitStatus = 1;
+            laRestCinta.Status = bitStatus;
+            laRestCinta.IdRestriccionCinta = 42;
+            LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta _comando =
+                (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoStatusRestriccionCinta(laRestCinta);
+            bool resultado = _comando.Ejecutar();
+            Assert.IsTrue(resultado, " Consulta Correcta");
         }
         #endregion
 
