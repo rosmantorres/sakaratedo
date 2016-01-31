@@ -35,7 +35,6 @@ namespace Interfaz_Presentadores.Modulo8
             retriccionEvento.Sexo = vista.sexo.SelectedValue.ToString();
             retriccionEvento.Descripcion = vista.rangoMaximo.SelectedItem.ToString();
 
-            //generarDescripcion();
             return retriccionEvento;
 
         }

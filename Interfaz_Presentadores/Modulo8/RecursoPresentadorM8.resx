@@ -325,14 +325,17 @@
   </data>
   <data name="nombreEvento" xml:space="preserve">
     <value>Nombre del Evento:  </value>
-</data>
-  <data name="StatusRC" xml:space="preserve">
-    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
   </data>
   <data name="StatusRC" xml:space="preserve">
     <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
   </data>
   <data name="AgregarExitoRestriccionCompetencia" xml:space="preserve">
     <value>../Modulo8/interfazRestriccionesEventos.aspx?success=1</value>
+  </data>
+  <data name="Activa" xml:space="preserve">
+    <value>Activa</value>
+  </data>
+  <data name="Inactiva" xml:space="preserve">
+    <value>Inactiva</value>
   </data>
 </root>

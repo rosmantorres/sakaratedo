@@ -79,6 +79,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activa.
+        /// </summary>
+        internal static string Activa {
+            get {
+                return ResourceManager.GetString("Activa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEventos.aspx?success=1.
         /// </summary>
         internal static string AgregarExitoRestriccionCompetencia {
@@ -491,6 +500,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string idAlertModificar {
             get {
                 return ResourceManager.GetString("idAlertModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactiva.
+        /// </summary>
+        internal static string Inactiva {
+            get {
+                return ResourceManager.GetString("Inactiva", resourceCulture);
             }
         }
         

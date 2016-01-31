@@ -75,9 +75,9 @@ namespace Interfaz_Presentadores.Modulo8
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Descripcion.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Sexo.ToString() + RecursoPresentadorM8.CerrarTD;
                     if (rest.Status == 1)
-                        vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + "Activa" + RecursoPresentadorM8.CerrarTD;
+                        vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + RecursoPresentadorM8.Activa + RecursoPresentadorM8.CerrarTD;
                     else
-                        vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + "Inactiva" + RecursoPresentadorM8.CerrarTD;
+                        vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + RecursoPresentadorM8.Inactiva + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificarRegistroEvento + rest.IdRestEvento + RecursoPresentadorM8.Nombre + rest.NombreEvento + RecursoPresentadorM8.Emin + rest.EdadMinima + RecursoPresentadorM8.Emax + rest.EdadMaxima + RecursoPresentadorM8.Sexo + rest.Sexo + RecursoPresentadorM8.Descripcion + rest.Descripcion + RecursoPresentadorM8.BotonCerrar;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.StatusEvento + rest.IdRestEvento + RecursoPresentadorM8.RestriccionStatus + rest.Status + RecursoPresentadorM8.BotonCerrar;
