@@ -260,9 +260,12 @@ namespace DatosSKD.DAO.Modulo8
                     String Sexo = row[RecursosDAORestriccionCompetencia.AliasSexo].ToString();
                     String Modalidad = row[RecursosDAORestriccionCompetencia.AliasModalidad].ToString();
                     int Status = int.Parse(row[RecursosDAORestriccionCompetencia.AliasStatus].ToString());
-                    Entidad larestriccionCompetencia = fabricaEntidad.ObtenerRestriccionCompetencia(IdRestriccionComp, Descripcion, RangoMinimo, RangoMaximo, EdadMinima, EdadMaxima, Sexo, Modalidad, Status);
+                    FabricaEntidades fabrica = new FabricaEntidades();
+                    Entidad larestriccionCompetencia = DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia(IdRestriccionComp, Descripcion, RangoMinimo, RangoMaximo, EdadMinima, EdadMaxima, Sexo, Modalidad, Status);
+                    
                     listaDeRestriccionesCompetencia.Add(larestriccionCompetencia);
 
+  
                 }
 
             }

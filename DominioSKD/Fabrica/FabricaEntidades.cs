@@ -154,7 +154,7 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <returns> Objeto Tipo Entidad </returns>
 
-        public Entidad ObtenerRestriccionCompetencia()
+        public static Entidad ObtenerRestriccionCompetencia()
         {
             return new Entidades.Modulo8.RestriccionCompetencia();
         }
@@ -165,7 +165,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Parametro referente al id unico de la restriccion</param>
         /// <returns>Objeto tipo Entidad</returns>
         
-        public Entidad ObtenerRestriccionCompetencia(int inputId)
+        public static Entidad ObtenerRestriccionCompetencia(int inputId)
         {
             return new Entidades.Modulo8.RestriccionCompetencia(inputId);
         }
@@ -183,7 +183,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputModalidad">String, modalidades que comprende la competencia. {Kumite,Kata,Ambos}</param>
         /// <returns> Objeto tipo Entidad</returns>
         
-        public Entidad ObtenerRestriccionCompetencia(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+        public static Entidad ObtenerRestriccionCompetencia(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
                                                      int inputRangoMaximo, String inputSexo, String inputModalidad)
         {
             return new Entidades.Modulo8.RestriccionCompetencia(inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,
@@ -204,7 +204,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputModalidad">String, modalidades que comprende la competencia. {Kumite,Kata,Ambos}</param>
         /// <returns> Objeto tipo Entidad</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerRestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+        public static Entidad ObtenerRestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
                                                      int inputRangoMaximo, String inputSexo, String inputModalidad)
         {
             return new Entidades.Modulo8.RestriccionCompetencia(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,
@@ -225,7 +225,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputModalidad"></param>
         /// <param name="status"></param>
         /// <returns></returns>
-        public Entidad ObtenerRestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+        public static Entidad ObtenerRestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
                                                      int inputRangoMaximo, String inputSexo, String inputModalidad, int status)
         {
             return new Entidades.Modulo8.RestriccionCompetencia(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,
@@ -250,7 +250,7 @@ namespace DominioSKD.Fabrica
         /// <returns> Objeto tipo Entidad</param>
         /// <returns>  Objeto tipo Entidad</returns>
         
-        public Entidad ObtenerRestriccionCompetencia(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+        public static Entidad ObtenerRestriccionCompetencia(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
                                                      int inputRangoMaximo, String inputSexo, String inputModalidad)
         {
             return new Entidades.Modulo8.RestriccionCompetencia(id, inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,

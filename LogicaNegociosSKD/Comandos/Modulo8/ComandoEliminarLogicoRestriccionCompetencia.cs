@@ -8,6 +8,7 @@ using DominioSKD;
 using ExcepcionesSKD.Modulo8;
 using System.Data.SqlClient;
 using ExcepcionesSKD;
+using DatosSKD.Fabrica;
 
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
@@ -32,8 +33,9 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             Boolean resultado = false;
 
             DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
-
-            IDaoRestriccionCompetencia daoRestriccionCompetencia = fabricaDAO.ObtenerDAORestriccionCompetencia();
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
+            
+            IDaoRestriccionCompetencia daoRestriccionCompetencia = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCompetencia();
 
             try
             {
