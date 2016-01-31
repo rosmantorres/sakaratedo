@@ -272,8 +272,8 @@
     <EmbeddedResource Include="Modulo5\RecursoPresentadorM5.resx" />
     <EmbeddedResource Include="Modulo8\RecursoPresentadorM8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursoPresentadorM8.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>RecursoPresentadorM8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo9\M9_RecursoInterfazPresentador.resx">
       <Generator>ResXFileCodeGenerator</Generator>

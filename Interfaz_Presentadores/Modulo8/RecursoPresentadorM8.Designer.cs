@@ -79,6 +79,24 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activa.
+        /// </summary>
+        internal static string Activa {
+            get {
+                return ResourceManager.GetString("Activa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEventos.aspx?success=1.
+        /// </summary>
+        internal static string AgregarExitoRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("AgregarExitoRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
         /// </summary>
         internal static string Alerta_Clase_Error1 {
@@ -486,6 +504,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inactiva.
+        /// </summary>
+        internal static string Inactiva {
+            get {
+                return ResourceManager.GetString("Inactiva", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento agregado exitosamente&lt;/div&gt;.
         /// </summary>
         internal static string innerHtmlAlertAgregar {
@@ -608,6 +635,42 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string RangoMin {
             get {
                 return ResourceManager.GetString("RangoMin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restriccion de .
+        /// </summary>
+        internal static string restAgregada {
+            get {
+                return ResourceManager.GetString("restAgregada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to , creada correctamente..
+        /// </summary>
+        internal static string restAgregada2 {
+            get {
+                return ResourceManager.GetString("restAgregada2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restriccion .
+        /// </summary>
+        internal static string restModificada {
+            get {
+                return ResourceManager.GetString("restModificada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to , modificada correctamente..
+        /// </summary>
+        internal static string restModificada2 {
+            get {
+                return ResourceManager.GetString("restModificada2", resourceCulture);
             }
         }
         

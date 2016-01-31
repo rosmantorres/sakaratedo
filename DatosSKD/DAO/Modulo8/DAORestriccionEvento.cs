@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using DominioSKD;
 using DominioSKD.Entidades.Modulo8;
+using ExcepcionesSKD;
 
 namespace DatosSKD.DAO.Modulo8
 {
@@ -40,7 +41,7 @@ namespace DatosSKD.DAO.Modulo8
         /// Metodo para agregar una restriccion de evento a la base de datos.
         /// </summary>
         /// <param name="parametro">objeto de tipo RestriccionEvento para agregar en bd</param>
-        /// <returns>true si fue eliminado</returns>
+        /// <returns>true si fue agregado</returns>
         public Boolean AgregarRestriccionEvento(DominioSKD.Entidad parametro)
         {
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestriccionEvento =
@@ -48,14 +49,12 @@ namespace DatosSKD.DAO.Modulo8
 
             try
             {
-                List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                List<Parametro> parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDAORestriccionEvento.ParamDescripcionRestricionEvento, SqlDbType.VarChar,
-                    laRestriccionEvento.Descripcion, false);
-                //parametro recibe: el alias de la accion (en este caso es la descripcion de mi restriccion de cinta que apunta a un atributo que se llama @DescripcionRestriccionCinta), SqlDbType es el tipo de dato que tiene ese atributo en la base de datos (en este caso es varchar), el elemento que se desea poner en ese lugar (aqui se usa la clase dominio), el false lo dejas asi
+                        laRestriccionEvento.Descripcion, false);
                 parametros.Add(elParametro);
-                //agregas eso que acabas de hacer a la lista de parametros.
-                //repites hasta que tengas todos los parametros de tu stored procedure asociado
+
                 elParametro = new Parametro(RecursosDAORestriccionEvento.ParamEdadMinimaRestricionEvento, SqlDbType.Int,
                         laRestriccionEvento.EdadMinima.ToString(), false);
                 parametros.Add(elParametro);
@@ -72,35 +71,30 @@ namespace DatosSKD.DAO.Modulo8
                         laRestriccionEvento.IdEvento.ToString(), false);
                 parametros.Add(elParametro);
 
-                //BDConexion laConexion = new BDConexion();// abres la conexion
                 List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.AgregarRestriccionEvento
-                                             , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+                                             , parametros);
             }
 
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
                      RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -146,28 +140,24 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
                      RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -177,7 +167,7 @@ namespace DatosSKD.DAO.Modulo8
 
         #region ConsultarEventosSinsRestriccion
         /// <summary>
-        /// Metodo para consultar los eventos que no tienen restricciones aun.
+        /// Metodo para consultar los eventos que no tienen restricciones creadas y activas.
         /// </summary>
         /// <returns>Lista de EventoSimple que no tienen Restriccion</returns>
         public List<Entidad> ConsultarEventosSinRestriccion()
@@ -205,28 +195,24 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
                      RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -236,7 +222,7 @@ namespace DatosSKD.DAO.Modulo8
 
         #region ConsultarRestriccionEvento
         /// <summary>
-        /// Metodo para consultar la RestriccionEvento de un evento especifico en la base de datos.
+        /// Metodo para consultar la RestriccionEvento de un evento especifico en la base de datos y activo.
         /// </summary>
         /// <param name="parametro">EventoSimple a consultar restriccion con su id</param>
         /// <returns>Objeto de tipo RestriccionEvento con todos los datos</returns>
@@ -278,28 +264,24 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
                      RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -309,10 +291,10 @@ namespace DatosSKD.DAO.Modulo8
 
         #region EliminarRestriccionEvento
         /// <summary>
-        /// Metodo para eliminar una restriccion de evento en la base de datos.
+        /// Metodo para cambiar status de una restriccion de evento en la base de datos.
         /// </summary>
         /// <param name="parametro"> int id de la RestriccioEvento para ser modificado en bd</param>
-        /// <returns>true si fue eliminado</returns>
+        /// <returns>true si fue modificado</returns>
         public Boolean EliminarRestriccionEvento(DominioSKD.Entidad parametro)
         {
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestriccionEvento =
@@ -320,7 +302,7 @@ namespace DatosSKD.DAO.Modulo8
 
             try
             {
-                List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                List<Parametro> parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDAORestriccionEvento.ParamIdRestriccionEvento, SqlDbType.Int,
                     laRestriccionEvento.IdRestEvento.ToString(), false);
@@ -331,35 +313,30 @@ namespace DatosSKD.DAO.Modulo8
                             laRestriccionEvento.Status.ToString(), false);
                 parametros.Add(elParametro);
 
-                //laConexion = new BDConexion();// abres la conexion
                 List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.EliminarRestriccionEvento
-                                             , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+                                             , parametros);
             }
 
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
                      RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -373,7 +350,7 @@ namespace DatosSKD.DAO.Modulo8
         /// Metodo para consultar eventos que puede asistir un atleta.
         /// </summary>
         /// <param name="parametro">int id de la persona a consultar eventos que puede asistir</param>
-        /// <returns>Lista de EventoSimple a los que puede asistir</returns>
+        /// <returns>Lista de EventoSimple a los que puede asistir(id,nombre)</returns>
         public List<Entidad> EventosQuePuedeAsistirAtleta(int parametro)
         {
             List<Parametro> parametros = new List<Parametro>();
@@ -408,28 +385,24 @@ namespace DatosSKD.DAO.Modulo8
             }
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
                      RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -449,16 +422,14 @@ namespace DatosSKD.DAO.Modulo8
                     (DominioSKD.Entidades.Modulo8.RestriccionEvento)parametro;
             try
             {
-                List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                List<Parametro> parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDAORestriccionEvento.ParamIdRestriccionEvento, SqlDbType.Int,
-                    laRestriccionEvento.IdRestEvento.ToString(), false);
-                //parametro recibe: el alias de la accion (en este caso es la descripcion de mi restriccion de cinta que apunta a un atributo que se llama @DescripcionRestriccionCinta), SqlDbType es el tipo de dato que tiene ese atributo en la base de datos (en este caso es varchar), el elemento que se desea poner en ese lugar (aqui se usa la clase dominio), el false lo dejas asi
+                        laRestriccionEvento.IdRestEvento.ToString(), false);
                 parametros.Add(elParametro);
-                //agregas eso que acabas de hacer a la lista de parametros.
-                //repites hasta que tengas todos los parametros de tu stored procedure asociado
+
                 elParametro = new Parametro(RecursosDAORestriccionEvento.ParamDescripcionRestricionEvento, SqlDbType.VarChar,
-                    laRestriccionEvento.Descripcion, false);
+                        laRestriccionEvento.Descripcion, false);
                 parametros.Add(elParametro);
 
                 elParametro = new Parametro(RecursosDAORestriccionEvento.ParamEdadMinimaRestricionEvento, SqlDbType.Int,
@@ -477,36 +448,30 @@ namespace DatosSKD.DAO.Modulo8
                         laRestriccionEvento.IdEvento.ToString(), false);
                 parametros.Add(elParametro);
 
-
-                //BDConexion laConexion = new BDConexion();// abres la conexion
                 List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionEvento.ModificarRestriccionEvento
-                                             , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+                                             , parametros);
             }
 
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionEvento.CodigoErrorFormato,
                      RecursosDAORestriccionEvento.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Console.Out.WriteLine("1" + " " + ex.Message);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 

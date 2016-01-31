@@ -176,6 +176,11 @@ namespace Interfaz_Presentadores.Modulo8
             vista.edadMaxima.DataBind();
         }
 
+        public String nombreEvento()
+        {
+            return this.vista.eventos.SelectedItem.ToString();
+        }
+
         public Boolean agregarRest()
         {
             

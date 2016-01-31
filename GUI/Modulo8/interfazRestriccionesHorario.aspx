@@ -47,6 +47,7 @@
 			    <th>Edad Maxima</th>
                 <th>Cinta</th>
                 <th>Sexo</th>
+                <th>Status</th>
 			    <th style="text-align:right;">Acciones</th>
 			</tr>
 		   </thead>

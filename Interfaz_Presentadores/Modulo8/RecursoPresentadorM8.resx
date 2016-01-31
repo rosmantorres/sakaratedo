@@ -281,7 +281,6 @@
   <data name="edadErrada" xml:space="preserve">
     <value>Edad minima no puede ser mayor a la maxima</value>
   </data>
-
   <data name="Numbers" xml:space="preserve">
     <value>0123456789</value>
   </data>
@@ -326,9 +325,29 @@
   </data>
   <data name="nombreEvento" xml:space="preserve">
     <value>Nombre del Evento:  </value>
-</data>
+  </data>
   <data name="StatusRC" xml:space="preserve">
     <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
-
+  </data>
+  <data name="AgregarExitoRestriccionCompetencia" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesEventos.aspx?success=1</value>
+  </data>
+  <data name="Activa" xml:space="preserve">
+    <value>Activa</value>
+  </data>
+  <data name="Inactiva" xml:space="preserve">
+    <value>Inactiva</value>
+  </data>
+  <data name="restAgregada" xml:space="preserve">
+    <value>Restriccion de </value>
+  </data>
+  <data name="restAgregada2" xml:space="preserve">
+    <value>, creada correctamente.</value>
+  </data>
+  <data name="restModificada" xml:space="preserve">
+    <value>Restriccion </value>
+  </data>
+  <data name="restModificada2" xml:space="preserve">
+    <value>, modificada correctamente.</value>
   </data>
 </root>

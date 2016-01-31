@@ -40,7 +40,7 @@ namespace Interfaz_Presentadores.Modulo8
         public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto()
         {
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabrica.ObtenerRestriccionCompetencia();
+            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia();
             restriccionCompetencia.Id = int.Parse(vista.id);
             restriccionCompetencia.IdRestriccionComp = int.Parse(vista.id);
             restriccionCompetencia.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);

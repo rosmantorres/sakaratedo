@@ -119,7 +119,7 @@ namespace templateApp.GUI.Modulo8
         {
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 _presentador.LlenarComboCinta();
                 _presentador.LlenarComboEvento();
                 _presentador.LlenarComboSexo();
@@ -133,7 +133,8 @@ namespace templateApp.GUI.Modulo8
             Boolean validar = _presentador.agregarRest();
             if (validar)
             {
-                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario);
+                //String Evento = nombreEvento();
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario + _presentador.nombreEvento());
             }
         }
     }

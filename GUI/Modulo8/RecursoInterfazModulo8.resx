@@ -180,7 +180,7 @@
     <value>8</value>
   </data>
   <data name="volverRestriccionHorario" xml:space="preserve">
-    <value>../Modulo8/interfazRestriccionesHorario.aspx</value>
+    <value>../Modulo8/interfazRestriccionesHorario.aspx?stat=</value>
   </data>
   <data name="IdPlan" xml:space="preserve">
     <value>idPlan</value>
@@ -217,5 +217,26 @@
   </data>
   <data name="tipoAlerta" xml:space="preserve">
     <value>alert</value>
+</data>
+  <data name="idP" xml:space="preserve">
+    <value>idPlan</value>
+  </data>
+  <data name="stat" xml:space="preserve">
+    <value>stat</value>
+  </data>
+  <data name="descripcion" xml:space="preserve">
+    <value>descripcion</value>
+  </data>
+  <data name="emax" xml:space="preserve">
+    <value>emax</value>
+  </data>
+  <data name="emin" xml:space="preserve">
+    <value>emin</value>
+  </data>
+  <data name="nombre" xml:space="preserve">
+    <value>nombre</value>
+  </data>
+  <data name="sexo" xml:space="preserve">
+    <value>sexo</value>
   </data>
 </root>

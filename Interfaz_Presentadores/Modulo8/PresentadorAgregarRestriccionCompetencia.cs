@@ -8,6 +8,7 @@ using Interfaz_Contratos.Modulo8;
 using ExcepcionesSKD.Modulo8;
 using System.Data.SqlClient;
 using ExcepcionesSKD;
+using System.Web;
 //using System.Windows;
 
 
@@ -34,12 +35,13 @@ namespace Interfaz_Presentadores.Modulo8
                 DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
                 LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia comando =
                 (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCompetencia();
-                DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabricaEntidad.ObtenerRestriccionCompetencia();
+                DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia();
                 //comando.Parametro = elObjeto;
                 restriccionCompetencia = meterParametrosVistaEnObjeto();
                 comando.Parametro = restriccionCompetencia;
                 resultado = comando.Ejecutar();
-
+                if (resultado == true)
+                    HttpContext.Current.Response.Redirect(RecursoPresentadorM8.AgregarExitoRestriccionCompetencia);
 
 
             }
@@ -178,7 +180,7 @@ namespace Interfaz_Presentadores.Modulo8
         public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto()
         {
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabrica.ObtenerRestriccionCompetencia();
+            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia();
             restriccionCompetencia.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
             restriccionCompetencia.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
             restriccionCompetencia.RangoMinimo = int.Parse(vista.rangoMinimo.SelectedValue);

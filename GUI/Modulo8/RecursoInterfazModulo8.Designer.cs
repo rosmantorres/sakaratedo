@@ -288,6 +288,42 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to descripcion.
+        /// </summary>
+        internal static string descripcion {
+            get {
+                return ResourceManager.GetString("descripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emax.
+        /// </summary>
+        internal static string emax {
+            get {
+                return ResourceManager.GetString("emax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emin.
+        /// </summary>
+        internal static string emin {
+            get {
+                return ResourceManager.GetString("emin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idPlan.
+        /// </summary>
+        internal static string idP {
+            get {
+                return ResourceManager.GetString("idP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to idPlan.
         /// </summary>
         internal static string IdPlan {
@@ -324,11 +360,38 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to nombre.
+        /// </summary>
+        internal static string nombre {
+            get {
+                return ResourceManager.GetString("nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true.
         /// </summary>
         internal static string ReturnRestCinta {
             get {
                 return ResourceManager.GetString("ReturnRestCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sexo.
+        /// </summary>
+        internal static string sexo {
+            get {
+                return ResourceManager.GetString("sexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stat.
+        /// </summary>
+        internal static string stat {
+            get {
+                return ResourceManager.GetString("stat", resourceCulture);
             }
         }
         
@@ -351,7 +414,7 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx.
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx?stat=.
         /// </summary>
         internal static string volverRestriccionHorario {
             get {

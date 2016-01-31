@@ -30,16 +30,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
         public override Boolean Ejecutar()
         {
 
-            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
             try
             {
                 FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
                 IDaoRestriccionEvento miRestCintaDAO = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
 
                 miRestCintaDAO.AgregarRestriccionEvento(this.LaEntidad);
-                //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
+                
                 return false;
 
             }
