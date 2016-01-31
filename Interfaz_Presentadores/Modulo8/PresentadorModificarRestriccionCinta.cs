@@ -19,6 +19,7 @@ namespace Interfaz_Presentadores.Modulo8
     public class PresentadorModificarRestriccionCinta
     {
         private IContratoModificarRestriccionCinta vista;
+        ValidacionesM8 validarCampos = new ValidacionesM8();
 
         public PresentadorModificarRestriccionCinta(IContratoModificarRestriccionCinta laVista)
         {
@@ -50,17 +51,37 @@ namespace Interfaz_Presentadores.Modulo8
 
         }
 
-        public void ModificarRest()
+        public Boolean ModificarRest()
         {
             DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
 
             laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
   
             try 
-            {            
-                LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta _comando =
-                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionCinta(laRestCinta);
-                bool resultado = _comando.Ejecutar();
+            {
+                List<String> campos = new List<String>();
+                campos.Add(vista.horas_docen);
+                campos.Add(vista.puntaje_min);
+                campos.Add(vista.tiempo_Min);
+
+                if (validarCampos.ValidarCamposVacios(campos))
+                {
+                    if (validarCampos.ValidarCaracteres(vista.horas_docen) &&
+                        validarCampos.ValidarCaracteres(vista.puntaje_min) &&
+                        validarCampos.ValidarCaracteres(vista.tiempo_Min))
+                    {
+                        laRestCinta = meterParametrosVistaEnObjeto(laRestCinta);
+                        LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta _comando =
+                     (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionCinta(laRestCinta);
+                        bool resultado = _comando.Ejecutar();
+                        return resultado;
+                    }
+                    else
+                        return false;
+                }
+                else
+                    return false;
+
             }
             catch (SqlException ex)
             {

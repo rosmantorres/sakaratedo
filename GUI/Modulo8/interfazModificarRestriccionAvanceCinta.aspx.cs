@@ -121,7 +121,10 @@ namespace templateApp.GUI.Modulo8
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            _presentador.ModificarRest();
+            if (_presentador.ModificarRest() == true)
+            {
+                Response.Redirect("../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true");
+            }
 
         }
         
