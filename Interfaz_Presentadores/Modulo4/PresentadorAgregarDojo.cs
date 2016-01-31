@@ -39,7 +39,10 @@ namespace Interfaz_Presentadores.Modulo4
             Random r = new Random();
             string lat = (r.Next(0, 180000) / 1000).ToString();
             string lon = (r.Next(-180000, 0) / 1000).ToString();
-
+            string tlf = "";
+            tlf = vista.Telefono.Remove(0,1);
+            tlf = tlf.Remove(4,1);
+            tlf = tlf.Remove(7,1);
             try
             {
                 //Se cargan todos los valores tomados de la interfaz al objeto dojo
@@ -48,7 +51,7 @@ namespace Interfaz_Presentadores.Modulo4
                 elDojo.Logo_dojo = vista.Logo;
                 elDojo.Rif_dojo = vista.Rif;
                 elDojo.Nombre_dojo = vista.Nombre;
-                elDojo.Telefono_dojo = int.Parse(vista.Telefono);
+                elDojo.Telefono_dojo = int.Parse(tlf);
                 elDojo.Email_dojo = vista.Email;
                 ubi.Latitud = lat;
                 ubi.Longitud = lon;
