@@ -159,7 +159,7 @@
     <value>El campo Clasificacion solo permite expresiones alfanumericos</value>
   </data>
   <data name="Mensaje_Error_Expresion_Regular_Orden" xml:space="preserve">
-    <value>El campo Orden solo permite numeros</value>
+    <value>El campo Orden solo permite numeros hasta una longitud de 2</value>
   </data>
   <data name="Mensaje_Error_Expresion_Regular_Rango" xml:space="preserve">
     <value>El campo Rango solo permite expresiones alfanumericos y numeros</value>

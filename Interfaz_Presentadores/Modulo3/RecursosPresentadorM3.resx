@@ -122,13 +122,13 @@
     <comment>Codigo de error para una lista vacia</comment>
   </data>
   <data name="expresionNombre" xml:space="preserve">
-    <value>^[A-Za-z\s-_]{2,100}$</value>
+    <value>^[A-Za-z-_\s]{2,100}$</value>
   </data>
   <data name="expresionNombreNumero" xml:space="preserve">
     <value>^[A-Z0-9a-z]{2,100}$</value>
   </data>
   <data name="expresionNumero" xml:space="preserve">
-    <value>^[0-9]{1,15}$</value>
+    <value>^[0-9]{1,10}$</value>
   </data>
   <data name="expresionSQL" xml:space="preserve">
     <value>/\w*((\%27)|(\'))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/ix</value>
