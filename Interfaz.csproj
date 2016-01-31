@@ -87,10 +87,6 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include=".jshintrc" />
-    <Content Include="App_Data\BaseDeDatosSKD.mdf" />
-    <Content Include="App_Data\BaseDeDatosSKD_log.ldf">
-      <DependentUpon>BaseDeDatosSKD.mdf</DependentUpon>
-    </Content>
     <Content Include="bootstrap\css\bootstrap.css.map" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -365,6 +361,10 @@
     <Content Include="plugins\jquery_validate\package.json" />
     <Content Include="plugins\jquery_validate\README.md" />
     <Content Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2188,6 +2188,11 @@
     <Compile Include="GUI\Master\SKD.Master.designer.cs">
       <DependentUpon>SKD.Master</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
@@ -2272,6 +2277,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

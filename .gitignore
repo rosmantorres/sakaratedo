@@ -239,3 +239,5 @@ DatosSKD/DatosSKD.csproj
 >>>>>>> Stashed changes
 *.csproj
 *.config
+Web.config
+Interfaz.csproj
