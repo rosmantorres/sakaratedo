@@ -79,6 +79,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEventos.aspx?success=1.
+        /// </summary>
+        internal static string AgregarExitoRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("AgregarExitoRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
         /// </summary>
         internal static string Alerta_Clase_Error1 {

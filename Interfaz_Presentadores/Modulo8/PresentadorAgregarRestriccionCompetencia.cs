@@ -8,6 +8,7 @@ using Interfaz_Contratos.Modulo8;
 using ExcepcionesSKD.Modulo8;
 using System.Data.SqlClient;
 using ExcepcionesSKD;
+using System.Web;
 //using System.Windows;
 
 
@@ -39,7 +40,8 @@ namespace Interfaz_Presentadores.Modulo8
                 restriccionCompetencia = meterParametrosVistaEnObjeto();
                 comando.Parametro = restriccionCompetencia;
                 resultado = comando.Ejecutar();
-
+                if (resultado == true)
+                    HttpContext.Current.Response.Redirect(RecursoPresentadorM8.AgregarExitoRestriccionCompetencia);
 
 
             }
