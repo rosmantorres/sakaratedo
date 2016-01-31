@@ -127,6 +127,9 @@
     <Compile Include="Modulo3\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo3\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo3\OrganizacionExistenteException.cs" />
+    <Compile Include="Modulo4\DojoExistenteException.cs" />
+    <Compile Include="Modulo4\HistorialMatriculaExistenteException.cs" />
+    <Compile Include="Modulo4\HistorialMatriculaInexistenteException.cs" />
     <Compile Include="Modulo5\CintaRepetidaException.cs" />
     <Compile Include="Modulo5\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo5\ListaVaciaExcepcion.cs" />

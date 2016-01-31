@@ -20,6 +20,18 @@ namespace templateApp.GUI.Modulo4
         /// <summary>
         /// Se implementan todos los metodos que indica el contrato
         /// </summary>
+        public string AlertaClase
+        {
+            set { alert1.Attributes[M4_RecursoInterfaz.alertClase] = value; }
+        }
+        public string AlertaRol
+        {
+            set { alert1.Attributes[M4_RecursoInterfaz.alertRole] = value; }
+        }
+        public string Alerta
+        {
+            set { alert1.InnerHtml = value; }
+        }
         public string Logo
         {
             get

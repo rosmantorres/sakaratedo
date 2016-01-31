@@ -23,5 +23,8 @@ namespace Interfaz_Contratos.Modulo4
         bool StatusAct { get; }
         bool StatusIn { get; }
         int Persona { get; }
+        string AlertaClase { set; }
+        string AlertaRol { set; }
+        string Alerta { set; }
     }
 }

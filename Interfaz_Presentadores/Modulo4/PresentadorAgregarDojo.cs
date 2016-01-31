@@ -69,14 +69,19 @@ namespace Interfaz_Presentadores.Modulo4
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;
+                vista.AlertaClase = M4_RecursosPresentador.alertaError;
+                vista.AlertaRol = M4_RecursosPresentador.tipoAlerta;
+                vista.Alerta = M4_RecursosPresentador.alertaHtml
+                    + ex.Mensaje + M4_RecursosPresentador.alertaHtmlFinal;
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                vista.AlertaClase = M4_RecursosPresentador.alertaError;
+                vista.AlertaRol = M4_RecursosPresentador.tipoAlerta;
+                vista.Alerta = M4_RecursosPresentador.alertaHtml
+                    + ex.Mensaje + M4_RecursosPresentador.alertaHtmlFinal;
             }
         }
 

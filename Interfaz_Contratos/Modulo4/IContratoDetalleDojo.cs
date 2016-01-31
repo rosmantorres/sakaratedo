@@ -21,5 +21,8 @@ namespace Interfaz_Contratos.Modulo4
         string StatusIn { set; }
         string NombreOrg { set; }
         string Estilo { set; }
+        string AlertaClase { set; }
+        string AlertaRol { set; }
+        string Alerta { set; }
     }
 }

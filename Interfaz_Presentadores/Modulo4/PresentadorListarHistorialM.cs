@@ -141,12 +141,21 @@ namespace Interfaz_Presentadores.Modulo4
 
 
              }
-             catch (Exception ex)
+             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
              {
-                 vista.AlertaClase = "alert alert-info alert-dismissible";
-                 vista.AlertaRol = "alert";
-                 vista.Alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>No se encontraron registros asociados a su solicitud</div>";
-
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 vista.AlertaClase = M4_RecursosPresentador.alertaError;
+                 vista.AlertaRol = M4_RecursosPresentador.tipoAlerta;
+                 vista.Alerta = M4_RecursosPresentador.alertaHtml
+                     + ex.Mensaje + M4_RecursosPresentador.alertaHtmlFinal;
+             }
+             catch (ExcepcionesSKD.ExceptionSKD ex)
+             {
+                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                 vista.AlertaClase = M4_RecursosPresentador.alertaError;
+                 vista.AlertaRol = M4_RecursosPresentador.tipoAlerta;
+                 vista.Alerta = M4_RecursosPresentador.alertaHtml
+                     + ex.Mensaje + M4_RecursosPresentador.alertaHtmlFinal;
              }
 
          }
@@ -169,14 +178,18 @@ namespace Interfaz_Presentadores.Modulo4
              catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
              {
                  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                 throw ex;
+                 vista.AlertaClase = M4_RecursosPresentador.alertaError;
+                 vista.AlertaRol = M4_RecursosPresentador.tipoAlerta;
+                 vista.Alerta = M4_RecursosPresentador.alertaHtml
+                     + ex.Mensaje + M4_RecursosPresentador.alertaHtmlFinal;
              }
              catch (ExcepcionesSKD.ExceptionSKD ex)
              {
                  Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                 throw ex;
+                 vista.AlertaClase = M4_RecursosPresentador.alertaError;
+                 vista.AlertaRol = M4_RecursosPresentador.tipoAlerta;
+                 vista.Alerta = M4_RecursosPresentador.alertaHtml
+                     + ex.Mensaje + M4_RecursosPresentador.alertaHtmlFinal;
              }
          }
     }

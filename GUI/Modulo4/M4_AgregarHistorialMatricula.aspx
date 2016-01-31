@@ -66,7 +66,8 @@
         <%-- ENCABEZADO DEL FORMULARIO --%>
             <%-- COMIENZO DEL FORMULARIO --%>
                 <form role="form" name="agregar_historial_matricula" id="agregar_historial_matricula" method="post" runat="server">
-                     
+                         <div id="alert1" runat="server">
+    </div>
                     
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                         

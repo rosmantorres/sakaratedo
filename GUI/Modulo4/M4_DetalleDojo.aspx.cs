@@ -57,6 +57,18 @@ namespace templateApp.GUI.Modulo4
             {
                 set { estiloDojo.Text = value; }
             }
+            public string AlertaClase
+            {
+                set { alert1.Attributes[M4_RecursoInterfaz.alertClase] = value; }
+            }
+            public string AlertaRol
+            {
+                set { alert1.Attributes[M4_RecursoInterfaz.alertRole] = value; }
+            }
+            public string Alerta
+            {
+                set { alert1.InnerHtml = value; }
+            }
             #endregion
 
 
