@@ -119,7 +119,7 @@ namespace templateApp.GUI.Modulo8
         {
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 _presentador.LlenarComboCinta();
                 _presentador.LlenarComboEvento();
                 _presentador.LlenarComboSexo();
