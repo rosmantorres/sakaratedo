@@ -45,7 +45,7 @@ namespace templateApp.GUI.Modulo5
         public int obtenerIdOrganizacion
         {
             get { return Int32.Parse(this.ListOrg.SelectedValue); }
-            set { this.ListOrg.Items.FindByValue(value.ToString()).Selected = true; }
+            set { this.ListOrg.SelectedValue = value.ToString(); }
         }
 
         public string obtenerNombreOrganizacion

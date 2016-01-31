@@ -77,7 +77,7 @@
                  <asp:listitem value ="Apure">Apure</asp:listitem>
                  <asp:listitem value ="Aragua">Aragua</asp:listitem>
                  <asp:listitem value ="Barinas">Barinas</asp:listitem>
-                 <asp:listitem value ="Bolívar">Bolívar</asp:listitem>
+                 <asp:listitem value ="Bolivar">Bolívar</asp:listitem>
                  <asp:listitem value ="Carabobo">Carabobo</asp:listitem>
                  <asp:listitem value ="Cojedes">Cojedes</asp:listitem>
                  <asp:listitem value ="Delta Amacuro">Delta Amacuro</asp:listitem>
