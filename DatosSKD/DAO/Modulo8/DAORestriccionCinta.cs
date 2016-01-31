@@ -10,6 +10,7 @@ using DominioSKD.Entidades.Modulo8;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
 using DominioSKD.Fabrica;
+using ExcepcionesSKD.Modulo8;
 
 namespace DatosSKD.DAO.Modulo8
 {
@@ -152,20 +153,24 @@ namespace DatosSKD.DAO.Modulo8
 
                 catch (SqlException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                             RecursoGeneralBD.Mensaje, ex);
                 }
                 catch (FormatException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
                          RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw ex;
                 }
                 catch (Exception ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
@@ -209,20 +214,24 @@ namespace DatosSKD.DAO.Modulo8
                 }
                 catch (SqlException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                             RecursoGeneralBD.Mensaje, ex);
                 }
                 catch (FormatException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
                          RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw ex;
                 }
                 catch (Exception ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
@@ -258,23 +267,27 @@ namespace DatosSKD.DAO.Modulo8
                  }
                  catch (SqlException ex)
                  {
+                     Console.Out.WriteLine("1" + " " + ex.Message);
                      throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                              RecursoGeneralBD.Mensaje, ex);
                  }
                  catch (FormatException ex)
                  {
+                     Console.Out.WriteLine("1" + " " + ex.Message);
                      throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
                           RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                  }
                  catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                  {
+                     Console.Out.WriteLine("1" + " " + ex.Message);
                      throw ex;
                  }
                  catch (Exception ex)
                  {
+                     Console.Out.WriteLine("1" + " " + ex.Message);
                      throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                  }
-
+                
 
                 return ListaCinta;
 
@@ -368,23 +381,26 @@ namespace DatosSKD.DAO.Modulo8
                     List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionCinta.EliminarRestriccionCinta
                                         , parametros);
                 }
-
                 catch (SqlException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                             RecursoGeneralBD.Mensaje, ex);
                 }
                 catch (FormatException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
                          RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw ex;
                 }
                 catch (Exception ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 
@@ -392,7 +408,8 @@ namespace DatosSKD.DAO.Modulo8
             }
             #endregion
 
-            #region Agregar Restriccion Cinta Simple
+            
+        #region Agregar Restriccion Cinta Simple
             /// <summary>
             /// Metodo para agregar una restriccion de cinta a la base de datos.
             /// </summary>
@@ -432,23 +449,26 @@ namespace DatosSKD.DAO.Modulo8
                     List<Resultado> resultados = this.EjecutarStoredProcedure(RecursosDAORestriccionCinta.AgregarRestriccionCintaSimple
                                         , parametros);
                 }
-
                 catch (SqlException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                             RecursoGeneralBD.Mensaje, ex);
                 }
                 catch (FormatException ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.Modulo8.FormatoIncorrectoException(RecursosDAORestriccionCompetencia.Codigo_Error_Formato,
                          RecursosDAORestriccionCompetencia.Mensaje_Error_Formato, ex);
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw ex;
                 }
                 catch (Exception ex)
                 {
+                    Console.Out.WriteLine("1" + " " + ex.Message);
                     throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
                 }
 

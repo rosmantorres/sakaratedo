@@ -18,10 +18,10 @@ namespace Interfaz_Contratos.Modulo8
         string horas_docen { get; set; }
         string puntaje_min { get; set; }
         DropDownList comboRestCinta { get; }
-        string alertLocalRol { set; }
-        string alertLocalClase { set; }
-        string alertLocal { set; }
-        string alerta { set; }
+        /*void alertaCamposVacios();
+        void alertaAgregarFallidoOrden(ExcepcionesSKD.Modulo8.RestriccionRepetidaException ex);
+        void alertaAgregarFallidoRepetida(ExcepcionesSKD.Modulo8.RestriccionExistenteException ex);*/
+        void Respuesta();
         //List<Cinta> cintasRelacionadas { get; set; }
     }
 }

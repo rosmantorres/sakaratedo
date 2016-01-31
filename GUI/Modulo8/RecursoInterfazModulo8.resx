@@ -194,4 +194,28 @@
   <data name="statrec" xml:space="preserve">
     <value>stat</value>
   </data>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="alertaSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="alertClase1" xml:space="preserve">
+    <value>class</value>
+  </data>
+  <data name="alertRole1" xml:space="preserve">
+    <value>role</value>
+  </data>
+  <data name="camposVacios" xml:space="preserve">
+    <value>Existen campos vacios, todos los campos son obligatorios</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
 </root>
