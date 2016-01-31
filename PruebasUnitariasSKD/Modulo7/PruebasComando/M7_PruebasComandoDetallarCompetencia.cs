@@ -21,7 +21,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     {
         #region Atributos
         private CompetenciaM7 idCompetencia;
-        private FabricaComandos fabricaComandos;
         private ComandoConsultarDetallarCompetencia detalleCompetencia;
         #endregion
 
@@ -32,8 +31,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [SetUp]
         public void Init()
         {
-            fabricaComandos = new FabricaComandos();
-            detalleCompetencia = (ComandoConsultarDetallarCompetencia)fabricaComandos.ObtenerComandoConsultarDetallarCompetencia();
+            detalleCompetencia = (ComandoConsultarDetallarCompetencia)FabricaComandos.ObtenerComandoConsultarDetallarCompetencia();
             idCompetencia = (CompetenciaM7)FabricaEntidades.ObtenerCompetenciaM7();
             idCompetencia.Id = 2;
             detalleCompetencia.LaEntidad = idCompetencia;
@@ -45,7 +43,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [TearDown]
         public void Clean()
         {
-            fabricaComandos = null;
             detalleCompetencia = null;
             idCompetencia = null;
         }

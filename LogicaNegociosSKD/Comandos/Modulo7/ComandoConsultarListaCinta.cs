@@ -23,8 +23,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         /// <returns>Retorna tupla con listas de cinta y lista de sus fechas de obtención</returns>
         public override Tuple<List<Entidad>, List<DateTime>> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoCinta baseDeDatosCinta = fabrica.ObtenerDaoCintaM7();
+            DaoCinta baseDeDatosCinta = FabricaDAOSqlServer.ObtenerDaoCintaM7();
             List<Entidad> cintas = new List<Entidad>();
             PersonaM7 idPersona = (PersonaM7)LaEntidad;
             Tuple<List<Entidad>, List<DateTime>> tupla;

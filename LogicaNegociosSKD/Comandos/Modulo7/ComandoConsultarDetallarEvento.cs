@@ -24,8 +24,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         /// <returns>Retorna entidad de evento</returns>
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();
+            DaoEvento baseDeDatosEvento = FabricaDAOSqlServer.ObtenerDaoEventoM7();
             EventoM7 idEvento = (EventoM7)LaEntidad;
             EventoM7 evento;
             try

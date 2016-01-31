@@ -14,7 +14,6 @@ namespace Interfaz_Presentadores.Modulo7
     /// </summary>
     public class PresentadorDetallarEventoPago
     {
-        private FabricaComandos fabricaComandos;
         private IContratoDetallarEvento vista;
         /// <summary>
         /// Constructor del presentador
@@ -34,8 +33,7 @@ namespace Interfaz_Presentadores.Modulo7
         {
             try
             {
-                fabricaComandos = new FabricaComandos();
-                ComandoConsultarDetallarEvento comandoDetallarEventoPago = (ComandoConsultarDetallarEvento)fabricaComandos.ObtenerComandoConsultarDetallarEventoPago();
+                ComandoConsultarDetallarEvento comandoDetallarEventoPago = (ComandoConsultarDetallarEvento)FabricaComandos.ObtenerComandoConsultarDetallarEventoPago();
                 comandoDetallarEventoPago.LaEntidad = idEvento;
                 EventoM7 evento = (EventoM7)comandoDetallarEventoPago.Ejecutar();
                

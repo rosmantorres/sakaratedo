@@ -20,8 +20,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         /// <returns>Retorna tupla con listas de matricula,  sus listas de estados y montos pagos</returns>
         public override Tuple<List<Entidad>, List<Boolean>, List<float>> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoMatricula baseDeDatosMatricula = fabrica.ObtenerDaoMatriculaM7();        
+            DaoMatricula baseDeDatosMatricula = FabricaDAOSqlServer.ObtenerDaoMatriculaM7();        
             List<Entidad> matriculas = new List<Entidad>();
             PersonaM7 idPersona = (PersonaM7)LaEntidad;
             Tuple<List<Entidad> ,List<Boolean>, List<float>> tupla;

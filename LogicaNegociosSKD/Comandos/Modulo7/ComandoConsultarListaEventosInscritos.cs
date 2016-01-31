@@ -23,8 +23,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
             /// <returns>Retorta tupla con listas de evento, competencia y listas de las fechas de dichos eventos</returns>
             public override Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>> Ejecutar()
             {
-                FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();
+                DaoEvento baseDeDatosEvento = FabricaDAOSqlServer.ObtenerDaoEventoM7();
                 List<Entidad> eventos = new List<Entidad>();
                 List<Entidad> competencias = new List<Entidad>();
                 PersonaM7 idPersona = (PersonaM7)LaEntidad;

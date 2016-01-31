@@ -17,7 +17,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private PersonaM7 idPersona;
-        private FabricaDAOSqlServer fabricaSql;
         private DaoCinta baseDeDatosCinta;
         private CintaM7 cinta;
         CintaM7 idCinta;
@@ -31,8 +30,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Init()
         {
             idCinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();
-            fabricaSql = new FabricaDAOSqlServer();
-            baseDeDatosCinta = fabricaSql.ObtenerDaoCintaM7();
+            baseDeDatosCinta = FabricaDAOSqlServer.ObtenerDaoCintaM7();
             cinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();
             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
@@ -47,7 +45,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         {
             idPersona = null;
             cinta = null;
-            fabricaSql = null;
             baseDeDatosCinta = null;
         }
         #endregion

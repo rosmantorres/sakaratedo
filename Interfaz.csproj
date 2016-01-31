@@ -284,14 +284,14 @@
     <Content Include="GUI\Modulo7\css\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="GUI\Modulo7\css\jquery-ui-1.10.4.custom.css" />
     <Content Include="GUI\Modulo7\css\jquery-ui.css" />
+    <Content Include="GUI\Modulo7\css\js\daterange.js" />
+    <Content Include="GUI\Modulo7\css\js\jquery-ui.js" />
+    <Content Include="GUI\Modulo7\css\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_DetallarHorarioPractica.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetenciaPaga.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetenciaInscrita.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoInscrito.aspx" />
-    <Content Include="GUI\Modulo7\css\js\daterange.js" />
-    <Content Include="GUI\Modulo7\css\js\jquery-ui.js" />
-    <Content Include="GUI\Modulo7\css\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_DetalleCinta.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoPago.aspx" />
