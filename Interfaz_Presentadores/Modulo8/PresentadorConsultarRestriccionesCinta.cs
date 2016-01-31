@@ -33,7 +33,7 @@ namespace Interfaz_Presentadores.Modulo8
             vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
-        public void LlenarInformacion(List<Entidad> lista)
+        public void LlenarInformacion()
         {
             try
             {
@@ -69,27 +69,7 @@ namespace Interfaz_Presentadores.Modulo8
             
         }
 
-        public List<Entidad> LlenarTabla()
-        {
-            try
-            {
-                this.lista = null;
-                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionCinta();
-                lista = command.Ejecutar();
-            }
-            catch (ExcepcionesSKD.ExceptionSKD ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                vista.alertaClase = RecursoPresentadorM8.alertaError;
-                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
-                    + RecursoPresentadorM8.alertaHtmlFinal;
-            }
-            
-            return lista;
-        }
-
-        public void CambiarStatus(int id, int bitStatus)
+       public void CambiarStatus(int id, int bitStatus)
         {
             try
             {

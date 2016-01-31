@@ -74,8 +74,8 @@ namespace templateApp.GUI.Modulo8
 
             if (!IsPostBack)
             {
-                List<Entidad> listaRestricciones = _presentador.LlenarTabla();
-                _presentador.LlenarInformacion(listaRestricciones);
+                
+                _presentador.LlenarInformacion();
             }
 
         }
