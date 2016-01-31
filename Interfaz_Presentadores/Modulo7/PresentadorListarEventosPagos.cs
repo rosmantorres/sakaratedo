@@ -33,12 +33,10 @@ namespace Interfaz_Presentadores.Modulo7
         /// </summary>
         public void ConsultarListaEventosPagos(Entidad idPersona)
         {
-            FabricaComandos fabricaComandos = new FabricaComandos();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             try
             {
                 Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>>> comandoListaEventosPagos = 
-                    fabricaComandos.ObtenerComandoConsultarListaEventosPagos();
+                    FabricaComandos.ObtenerComandoConsultarListaEventosPagos();
 
                
                 comandoListaEventosPagos.LaEntidad = idPersona;

@@ -35,12 +35,10 @@ namespace Interfaz_Presentadores.Modulo7
         /// </summary>
         public void ConsultarEventosInscritos(Entidad idPersona)
         {
-            FabricaComandos fabricaComandos = new FabricaComandos();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             try
             {
                 Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> comandoListaEventosInscritos = 
-                    fabricaComandos.ObtenerComandoConsultarListaEventosInscritos();
+                    FabricaComandos.ObtenerComandoConsultarListaEventosInscritos();
 
                 comandoListaEventosInscritos.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>> tupla = comandoListaEventosInscritos.Ejecutar();

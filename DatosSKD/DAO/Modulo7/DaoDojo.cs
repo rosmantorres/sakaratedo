@@ -48,8 +48,7 @@ namespace DatosSKD.DAO.Modulo7
         {
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
-            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
+            DaoUbicacion baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
             DojoM7 idDojo = (DojoM7)parametro;
             DojoM7 dojo;
 

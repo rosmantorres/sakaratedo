@@ -21,7 +21,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     {
         #region Atributos
         private PersonaM7 idPersona;
-        private FabricaComandos fabricaComandos;
         private ComandoConsultarListaEventosAsistidos eventosAsistidos;
         #endregion
 
@@ -32,8 +31,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [SetUp]
         public void Init()
         {
-            fabricaComandos = new FabricaComandos();
-            eventosAsistidos = (ComandoConsultarListaEventosAsistidos)fabricaComandos.ObtenerComandoConsultarListaEventosAsistidos();
+            eventosAsistidos = (ComandoConsultarListaEventosAsistidos)FabricaComandos.ObtenerComandoConsultarListaEventosAsistidos();
             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
             eventosAsistidos.LaEntidad = idPersona;
@@ -45,7 +43,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [TearDown]
         public void Clean()
         {
-            fabricaComandos = null;
             eventosAsistidos = null;
             idPersona = null;
         }

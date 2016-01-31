@@ -24,13 +24,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         /// <returns>Retorta tupla con persona, dojo, ubicacion dojo, organizacion, ubicacion organziacion y ultima cinta </returns>
         public override Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
-            DaoPersona baseDeDatosPersona = fabrica.ObtenerDaoPersonaM7();
-            DaoDojo baseDeDatosDojo = fabrica.ObtenerDaoDojoM7();
-            DaoOrganizacion baseDeDatosOrganizacion= fabrica.ObtenerDaoOrganizacionM7();
-            DaoCinta baseDeDatosCinta = fabrica.ObtenerDaoCintaM7();
-            DaoUbicacion baseDeDatosUbicacion = fabrica.ObtenerDaoUbicacionM7();
+            DaoPersona baseDeDatosPersona = FabricaDAOSqlServer.ObtenerDaoPersonaM7();
+            DaoDojo baseDeDatosDojo = FabricaDAOSqlServer.ObtenerDaoDojoM7();
+            DaoOrganizacion baseDeDatosOrganizacion= FabricaDAOSqlServer.ObtenerDaoOrganizacionM7();
+            DaoCinta baseDeDatosCinta = FabricaDAOSqlServer.ObtenerDaoCintaM7();
+            DaoUbicacion baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
 
             PersonaM7 persona;
             DojoM7 dojo;
