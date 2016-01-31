@@ -75,7 +75,7 @@ namespace Interfaz_Presentadores.Modulo8
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Descripcion.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.Sexo.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD; vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificarRegistroEvento + rest.IdRestEvento + RecursoPresentadorM8.BotonCerrar;
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.BotonDesactivarPlanilla + rest.Id + RecursoPresentadorM8.BotonCerrar;
+                    //vista.RestriccionesCreadas += RecursoPresentadorM8.BotonDesactivarPlanilla + rest.Id + RecursoPresentadorM8.BotonCerrar;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTR;
                 }

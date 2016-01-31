@@ -53,6 +53,7 @@
     <Compile Include="Comandos\Modulo8\ComandoConsultarCintaTodas.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionEvento.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarTodosRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoEliminarRestriccionEvento.cs" />
     <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCinta.cs" />
     <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs" />
     <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCompetencia.cs" />

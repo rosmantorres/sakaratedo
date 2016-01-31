@@ -135,5 +135,14 @@ namespace templateApp.GUI.Modulo8
                 Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario);
             }
         }
+
+        protected void btneliminar_Click(object sender, EventArgs e)
+        {
+            Boolean validar = _presentador.EliminarRest();
+            if (validar)
+            {
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario);
+            }
+        }
     }
 }
