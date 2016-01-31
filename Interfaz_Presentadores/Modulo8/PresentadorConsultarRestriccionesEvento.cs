@@ -130,11 +130,10 @@ namespace Interfaz_Presentadores.Modulo8
 
         public List<Entidad> LlenarTabla()
         {
-            this.lista = null;
-            Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionEvento();
             try
             {
-
+                this.lista = null;
+                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionEvento();
                 lista = command.Ejecutar();
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
