@@ -227,6 +227,15 @@ namespace templateApp.GUI.Modulo8 {
         /// <summary>
         ///   Looks up a localized string similar to idPlan.
         /// </summary>
+        internal static string idP {
+            get {
+                return ResourceManager.GetString("idP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idPlan.
+        /// </summary>
         internal static string IdPlan {
             get {
                 return ResourceManager.GetString("IdPlan", resourceCulture);
@@ -266,6 +275,15 @@ namespace templateApp.GUI.Modulo8 {
         internal static string ReturnRestCinta {
             get {
                 return ResourceManager.GetString("ReturnRestCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stat.
+        /// </summary>
+        internal static string stat {
+            get {
+                return ResourceManager.GetString("stat", resourceCulture);
             }
         }
         

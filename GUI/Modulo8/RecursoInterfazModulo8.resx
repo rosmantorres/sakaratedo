@@ -194,4 +194,10 @@
   <data name="statrec" xml:space="preserve">
     <value>stat</value>
   </data>
+  <data name="idP" xml:space="preserve">
+    <value>idPlan</value>
+  </data>
+  <data name="stat" xml:space="preserve">
+    <value>stat</value>
+  </data>
 </root>

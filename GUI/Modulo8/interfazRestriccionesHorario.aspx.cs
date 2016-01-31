@@ -56,8 +56,8 @@ namespace templateApp.GUI.Modulo8
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String success = Request.QueryString["idPlan"];
-            String stat = Request.QueryString["stat"];
+            String success = Request.QueryString[RecursoInterfazModulo8.idP];
+            String stat = Request.QueryString[RecursoInterfazModulo8.stat];
 
             ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.interfazRH;
             _presentador.ObtenerVariablesURL();
