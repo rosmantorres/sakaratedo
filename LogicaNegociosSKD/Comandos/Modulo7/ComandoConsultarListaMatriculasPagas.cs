@@ -12,6 +12,9 @@ using DominioSKD.Entidades.Modulo7;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
+    /// <summary>
+    /// Comando para listar cintas las matriculas pagas por un atleta
+    /// </summary>
     public class ComandoConsultarListaMatriculasPagas : Comando<Tuple<List<Entidad>, List<Boolean>, List<float>>>
     {
         /// <summary>

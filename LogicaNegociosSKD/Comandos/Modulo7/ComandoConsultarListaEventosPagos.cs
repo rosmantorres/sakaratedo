@@ -13,6 +13,9 @@ using DominioSKD.Fabrica;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
+    /// <summary>
+    /// Comando para listar eventos pagos de un atleta
+    /// </summary>
     public class ComandoConsultarListaEventosPagos : Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>>>
     {
         /// <summary>

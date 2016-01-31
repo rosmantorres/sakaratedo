@@ -62,7 +62,7 @@ namespace templateApp.GUI.Modulo7
                 String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                    (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -75,7 +75,7 @@ namespace templateApp.GUI.Modulo7
                         try
                         {
 
-                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();//cambiar por fabrica
+                            idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
                             idPersona.Id = int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
                             presentador.ConsultarListaMatriculasPagas(idPersona);
 

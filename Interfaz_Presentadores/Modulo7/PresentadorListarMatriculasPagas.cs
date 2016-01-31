@@ -14,6 +14,9 @@ using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
+    /// <summary>
+    /// Presentador para listar las matriculas que han sido canceladas
+    /// </summary>
     public class PresentadorListarMatriculasPagas
     {
         private IContratoListarMatriculasPagas vista;
