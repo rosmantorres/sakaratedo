@@ -8,9 +8,6 @@ using ExcepcionesSKD.Modulo16.ExcepcionesDeDatos;
 using ExcepcionesSKD.Modulo16;
 using ExcepcionesSKD;
 using DatosSKD.DAO.Modulo16;
-using DominioSKD;
-
-
 
 namespace LogicaNegociosSKD.Comandos.Modulo16
 {
@@ -145,6 +142,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo16
                 throw e;
             }
             catch (CarritoConPagoException e)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
+                throw e;
+            }
+            catch (PersonaNoValidaException e)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, e);
                 throw e;

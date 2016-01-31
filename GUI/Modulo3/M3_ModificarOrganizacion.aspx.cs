@@ -20,36 +20,43 @@ namespace templateApp.GUI.Modulo3
 
             ((SKD)Page.Master).IdModulo = "3";
             this.presentador = new PresentadorModificarOrganizacion(this);
+            this.presentador.llenarModificar();
         }
 
         #region Contrato
-        public int obtenerIdOrg()
+        public int obtenerIdOrg
         {
-            return Int32.Parse(Request.QueryString["idOrg"]);
+            get { return Int32.Parse(Request.QueryString["idOrg"]); }
         }
-        public string obtenerNombreOrg()
+        public string obtenerNombreOrg
         {
-            return this.nombre.Value;
+            get { return this.nombre.Value; }
+            set { this.nombre.Value = value;}
         }
-        public string obtenerEmail()
+        public string obtenerEmail
         {
-            return this.email.Value;
+            get { return this.email.Value; }
+            set { this.email.Value = value; }
         }
-        public string obtenerTelefono()
+        public string obtenerTelefono
         {
-            return this.telefono.Value;
+            get { return this.telefono.Value; }
+            set { this.telefono.Value = value; }
         }
-        public string obtenerDireccion()
+        public string obtenerDireccion
         {
-            return this.direccion.Value;
+            get { return this.direccion.Value; }
+            set { this.direccion.Value = value; }
         }
-        public string obtenerEstado()
+        public string obtenerEstado
         {
-            return this.ListEstados.SelectedValue;
+            get { return this.ListEstados.SelectedValue; }
+            set { this.ListEstados.Items.FindByValue(value).Selected = true; }
         }
-        public string obtenerTecnica()
+        public string obtenerTecnica
         {
-            return this.ListTecnica.SelectedValue;
+            get { return this.ListTecnica.SelectedValue; }
+            set { this.ListTecnica.Items.FindByValue(value).Selected = true; }
         }
         public void alertaModificarFallidoEstiloOrg(ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
         {
@@ -61,6 +68,20 @@ namespace templateApp.GUI.Modulo3
         public void Respuesta()
         {
             this.Response.Redirect(M3_RecursoInterfaz.agregarExito);
+        }
+        public void alertaExpresiones()
+        {
+            this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
+            this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + M3_RecursoInterfaz.expresionesRegulares + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.Visible = true;
+        }
+        public void alertaModificarFallido(Exception ex)
+        {
+            this.alert.Attributes[M3_RecursoInterfaz.alertClase] = M3_RecursoInterfaz.alertaError;
+            this.alert.Attributes[M3_RecursoInterfaz.alertRole] = M3_RecursoInterfaz.tipoAlerta;
+            this.alert.InnerHtml = M3_RecursoInterfaz.alertaHtml + ex.Message + M3_RecursoInterfaz.alertaHtmlFinal;
+            this.alert.Visible = true;
         }
         #endregion
 

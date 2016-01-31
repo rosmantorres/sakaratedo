@@ -221,7 +221,6 @@
         <div id="alertlocal" runat="server">
         </div>
 
-        <%-- <h4 class="modal-title" id ="preciofinal"></h4> --%>
         <br />
         <div class="form-group">
             <!-- El form iba aqui -->             
@@ -233,7 +232,9 @@
                      
                             <asp:Literal runat="server" ID="precioFinal" ></asp:Literal>
                             <h3>Seleccione tipo de pago</h3>
-                                <select id="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px" onchange="example()">
+
+                                <select id="DropDownList1" name="DropDownList1" runat="server" class="combobox" style="width:100px; height:35px"   onchange="example()">
+
                                 <option value="-1">Seleccione</option>
                                 <option value="1">Tarjeta</option>
                                 <option value="2">Deposito</option>
@@ -249,80 +250,22 @@
         <h4 class="modal-title">Información del pago:</h4>
         <div class="form-group">
 	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
-		        <input id="DatoPago" type="text" placeholder="Ingrese el dato de su tipo de pago" class="form-control" name="Text1" runat="server"/>
+		        <input id="DatoPago" onkeyup="onchangeExample();" onchange="onchangeExample();" onblur="onchangeExample();" type="text" readonly="readonly" placeholder="Ingrese el dato de su tipo de pago" class="form-control" name="Text1" runat="server"/>
 		    </div>
             </div>
             <br />
         <h4 class="modal-title">Monto a debitar (solamente use comas para los decimales y no se use puntos para las unidades de mil)</h4>
         <div class="form-group">
 	        <div id="div_uario" class="col-sm-10 col-md-10 col-lg-10">
-		        <input id="Monto" type="text" placeholder="Ingrese el monto" class="form-control" name="Text2" runat="server"/>
+		        <input id="Monto" onkeyup="onchangeExample();" onchange="onchangeExample();" onblur="onchangeExample();" type="text" readonly="readonly" placeholder="Ingrese el monto" class="form-control" name="Text2" runat="server"/>
 		    </div>
 	    </div>
-     <%--  <h4 class="modal-title">Tarjeta Credito/Debito</h4>
-        <div class="form-group">
-	        <div id="div_usuao" class="col-sm-10 col-md-10 col-lg-10">
-		        <input id="Text1" Disabled="disabled" type="text" placeholder="Numero de la Tarjeta" class="form-control" name="Text1" runat="server"/>
-		    </div>
-	    </div>
-        <div class="form-group">
-	        <div id="div_uario" class="col-sm-10 col-md-10 col-lg-10">
-		        <input id="Text2" Disabled="disabled" type="text" placeholder="Nombre del Tarjeta Habiente" class="form-control" name="Text2" runat="server"/>
-		    </div>
-	    </div>
-        <div class="form-group">
-	        <div id="div_usuario" class="col-sm-10 col-md-10 col-lg-10">
-		        <input id="Text3" Disabled="disabled" type="text" placeholder="Fecha de Vencimiento" class="form-control" name="Text3" runat="server"/>
-		    </div>
-	    </div>
-        <div class="form-group">
-	        <div id="div_email" class="col-sm-5 col-md-5 col-lg-5">
-		        <input id="Text4" Disabled="disabled" type="password" placeholder="Codigo de Seguridad" class="form-control" name="Text4" runat="server"/>
-		    </div>
-	    </div>
-        
-        <h4 class="modal-title">Deposito Bancario</h4>
-
-        <div class="form-group">
-			<div id="div_confirm_pswd" class="col-sm-10 col-md-10 col-lg-10">
-				    <input id="Text5" Disabled="disabled" type="text" placeholder="Numero del Deposito" class="form-control" name="Text5" runat="server"/>
-            </div>
-		</div>
-       
-        <div class="form-group">
-			<div id="div_pregunta" class="col-sm-10 col-md-10 col-lg-10">
-				<input id="Text6" Disabled="disabled" type="text" placeholder="Banco Emisor" class="form-control" name="Text6"  runat="server"/>
-			</div>
-		</div>
-
-        <div class="form-group">
-			<div id="div_preg" class="col-sm-5 col-md-5 col-lg-5">
-				<input id="Text7" Disabled="disabled" type="text" placeholder="Monto" class="form-control" name="Text7"  runat="server"/>
-			</div>
-		</div>
-
-        <h4 class="modal-title">Transferencia</h4>
-
-        <div class="form-group">
-			<div id="div_respuesta" class="col-sm-10 col-md-10 col-lg-10">
-				<input id="Text8" Disabled="disabled" type="text" placeholder="Codigo de Confirmacion" class="form-control" name="Text8"  runat="server"/>
-			</div>
-		</div>
-
-        <div class="form-group">
-			<div id="div_respuestas" class="col-sm-10 col-md-10 col-lg-10">
-				<input id="Text9" Disabled="disabled" type="text" placeholder="Banco Emisor" class="form-control" name="Text9"  runat="server"/>
-			</div>
-		</div>
-        <div class="form-group">
-			<div id="div_respuess" class="col-sm-5 col-md-5 col-lg-5">
-				<input id="Text10" Disabled="disabled" type="text" placeholder="Monto" class="form-control" name="Text10"  runat="server"/>
-			</div>
-		</div>--%>
          <div class="form-group">
 		    <div class="box-footer">
                 <br />			
-                <asp:Button ID="BotonPagar" runat="server" Text="Procesar Pago" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
+
+                <asp:Button ID="BotonPagar" disabled="disabled" runat="server" Text="Procesar Pago" OnClick ="RegistrarPago" class="btn btn-primary" style="align-content:flex-end"/>
+
                 <a class="btn btn-default" href="M16_VerCarrito.aspx">Cancelar</a>
 			</div>
 	    </div>
@@ -332,7 +275,9 @@
 			</div>
 		</div>
        </div>
-         <script src="JS/ValidacionesJS.js"></script>
+
+         <script src="JS/ValidacionesJS.js"></script>         
+
      </form>
     
 </asp:Content>

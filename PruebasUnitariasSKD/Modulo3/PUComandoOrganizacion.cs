@@ -136,6 +136,17 @@ namespace PruebasUnitariasSKD.Modulo3
             Assert.IsNotNull(resultado);
 
         }
+
+        /// <summary>
+        /// Método de prueba para Ejecutar el comando Modificar el status de una Organizacion
+        /// </summary>
+        [Test]
+        public void ejecutarElComandoModificarStatus()
+        {
+            this.miComando = FabricaComandos.ObtenerEjecutarModificarStatusOrganizacion(miEntidadOrganizacionModificar);
+            bool resultado = this.miComando.Ejecutar();
+            Assert.IsTrue(resultado);
+        }
         #endregion
     }
 }

@@ -10,6 +10,7 @@ using LogicaNegociosSKD;
 using DominioSKD;
 using DominioSKD.Fabrica;
 using LogicaNegociosSKD.Fabrica;
+using System.Text.RegularExpressions;
 using System.Web.UI;
 
 namespace Interfaz_Presentadores.Modulo9
@@ -126,53 +127,80 @@ namespace Interfaz_Presentadores.Modulo9
             laListaDeInputs.Add(vista.iDescripcionEvento);
             if (Validaciones.ValidarCamposVacios(laListaDeInputs))
             {
-                if (vista.iComboTipoEvento.SelectedIndex != 0)
+                Regex rex = new Regex(M9_RecursoInterfazPresentador.expresionNombre);
+                if (rex.IsMatch(vista.iNombreEvento))
                 {
-                    try
+                    if (vista.iComboTipoEvento.SelectedIndex != 0)
                     {
-                        int size = vista.iComboTipoEvento.Items.Count;
-                        int index = vista.iComboTipoEvento.SelectedIndex + 1;
-                        Comando<bool> comandoModificarEvento;
-                        FabricaEntidades laFabrica = new FabricaEntidades();
-                        DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
-                        DominioSKD.Entidades.Modulo9.TipoEvento elTipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)FabricaEntidades.ObtenerTipoEvento();
-                        DominioSKD.Entidades.Modulo9.Horario elHorario = (DominioSKD.Entidades.Modulo9.Horario)FabricaEntidades.ObtenerHorario();
-                        elEvento.Nombre = vista.iNombreEvento;
-                        elEvento.Costo = float.Parse(vista.iCostoEvento);
-                        elTipoEvento.Nombre = vista.iComboTipoEvento.SelectedItem.Text;
-                        elTipoEvento.Id = vista.iComboTipoEvento.SelectedIndex;
-                        elEvento.TipoEvento = elTipoEvento;
-                        elHorario.FechaInicio = Convert.ToDateTime(vista.iFechaInicio);
-                        elHorario.FechaFin = Convert.ToDateTime(vista.iFechaFin);
-                        elHorario.HoraInicioS = vista.iHoraInicio;
-                        elHorario.HoraFinS = vista.iHoraFin;
-                        elEvento.Horario = elHorario;
-                        elEvento.Id = int.Parse(modificarString);
- 
-                        elEvento.Descripcion = vista.iDescripcionEvento;
-                        if (vista.iStatusActivoBool == true)
-                            elEvento.Estado = true;
-                        else
-                            elEvento.Estado = false;
-                        comandoModificarEvento = FabricaComandos.ObtenerComandoModificarEvento(elEvento);
-                        if (comandoModificarEvento.Ejecutar() == true)
-                            HttpContext.Current.Response.Redirect(M9_RecursoInterfazPresentador.modificarExito);
+                        if (int.Parse(vista.iCostoEvento) > -1)
+                        {
+                            try
+                            {
+                                int size = vista.iComboTipoEvento.Items.Count;
+                                int index = vista.iComboTipoEvento.SelectedIndex + 1;
+                                Comando<bool> comandoModificarEvento;
+                                FabricaEntidades laFabrica = new FabricaEntidades();
+                                DominioSKD.Entidades.Modulo9.Evento elEvento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
+                                DominioSKD.Entidades.Modulo9.TipoEvento elTipoEvento = (DominioSKD.Entidades.Modulo9.TipoEvento)FabricaEntidades.ObtenerTipoEvento();
+                                DominioSKD.Entidades.Modulo9.Horario elHorario = (DominioSKD.Entidades.Modulo9.Horario)FabricaEntidades.ObtenerHorario();
+                                elEvento.Nombre = vista.iNombreEvento;
+                                elEvento.Costo = float.Parse(vista.iCostoEvento);
+                                elTipoEvento.Nombre = vista.iComboTipoEvento.SelectedItem.Text;
+                                elTipoEvento.Id = vista.iComboTipoEvento.SelectedIndex;
+                                elEvento.TipoEvento = elTipoEvento;
+                                if (vista.iFechaInicio == "")
+                                    elHorario.FechaInicio = DateTime.Now;
+                                else
+                                    elHorario.FechaInicio = Convert.ToDateTime(vista.iFechaInicio);
+                                if (vista.iFechaFin == "")
+                                    elHorario.FechaFin = DateTime.Now;
+                                else
+                                    elHorario.FechaFin = Convert.ToDateTime(vista.iFechaFin);
+                                elHorario.HoraInicioS = vista.iHoraInicio;
+                                elHorario.HoraFinS = vista.iHoraFin;
+                                elEvento.Horario = elHorario;
+                                elEvento.Id = int.Parse(modificarString);
+
+                                elEvento.Descripcion = vista.iDescripcionEvento;
+                                if (vista.iStatusActivoBool == true)
+                                    elEvento.Estado = true;
+                                else
+                                    elEvento.Estado = false;
+                                comandoModificarEvento = FabricaComandos.ObtenerComandoModificarEvento(elEvento);
+                                if (comandoModificarEvento.Ejecutar() == true)
+                                    HttpContext.Current.Response.Redirect(M9_RecursoInterfazPresentador.modificarExito);
+                            }
+                            catch (ExcepcionesSKD.ExceptionSKD ex)
+                            {
+                                vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
+                                vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
+                                vista.alerta = M9_RecursoInterfazPresentador.alertaHtml
+                                    + ex.Mensaje + M9_RecursoInterfazPresentador.alertaHtmlFinal;
+                            }
+                        }
+                        else{
+                            vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
+                            vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
+                            vista.alerta = M9_RecursoInterfazPresentador.alertaHtml
+                            + M9_RecursoInterfazPresentador.costoInvalido
+                            + M9_RecursoInterfazPresentador.alertaHtmlFinal;
+                        }
                     }
-                    catch (ExcepcionesSKD.ExceptionSKD ex)
+                    else
                     {
                         vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
-                        vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
                         vista.alerta = M9_RecursoInterfazPresentador.alertaHtml
-                            + ex.Mensaje + M9_RecursoInterfazPresentador.alertaHtmlFinal;
+                            + M9_RecursoInterfazPresentador.comboVacio
+                            + M9_RecursoInterfazPresentador.alertaHtmlFinal;
                     }
-
-
                 }
-                else {
+                else
+                {
                     vista.alertaClase = M9_RecursoInterfazPresentador.alertaError;
+                    vista.alertaRol = M9_RecursoInterfazPresentador.tipoAlerta;
                     vista.alerta = M9_RecursoInterfazPresentador.alertaHtml
-                        + M9_RecursoInterfazPresentador.comboVacio
-                        + M9_RecursoInterfazPresentador.alertaHtmlFinal;
+                    + M9_RecursoInterfazPresentador.nombreInvalido
+                    + M9_RecursoInterfazPresentador.alertaHtmlFinal;
                 }
             }
             else
@@ -186,4 +214,5 @@ namespace Interfaz_Presentadores.Modulo9
         }
     }
 }
+
 

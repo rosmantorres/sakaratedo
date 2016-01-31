@@ -40,7 +40,6 @@ namespace PruebasUnitariasSKD.Modulo16
         private Matricula matricula;
         private Carrito Carrito;
         private DominioSKD.Entidades.Modulo9.Evento evento;
-        FabricaEntidades fabrica;
         #endregion
 
         /// <summary>
@@ -48,9 +47,7 @@ namespace PruebasUnitariasSKD.Modulo16
         /// </summary>
         [SetUp]
         public void Iniciar()
-        {
-            //La fabrica
-            fabrica = new FabricaEntidades();          
+        {            
 
             //Las Personas
             this.persona = FabricaEntidades.ObtenerPersona();
@@ -68,14 +65,14 @@ namespace PruebasUnitariasSKD.Modulo16
             this.implemento.Precio_Implemento = 4500;
 
             //Eventos
-            this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
+            this.evento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
             this.evento.Id = 1;
             this.evento.Costo = 0;
 
             //Matricula
             this.matricula = (Matricula)FabricaEntidades.ObtenerMatricula();
-            this.matricula.Id = 1;
-            this.matricula.Costo = 5000;
+            this.matricula.Id = 37;
+            this.matricula.Costo = 4250;
 
             //Iniciamos los atributos para la prueba de vacio
             this.PruebaComandoVacio = FabricaComandos.CrearComandoVerCarrito();
@@ -183,8 +180,8 @@ namespace PruebasUnitariasSKD.Modulo16
 
             //Obtenemos la Matricula y verificamos sus valores
             this.matricula = this.Carrito.Listamatricula.ElementAt(0).Key as Matricula;
-            Assert.AreEqual(this.matricula.Id, 1);
-            Assert.AreEqual(this.matricula.Costo, 5000);            
+            Assert.AreEqual(this.matricula.Id, 37);
+            Assert.AreEqual(this.matricula.Costo, 4250);            
             Assert.AreEqual(this.Carrito.Listamatricula.ElementAt(0).Value, 1);
         }
 
@@ -216,8 +213,8 @@ namespace PruebasUnitariasSKD.Modulo16
             Assert.AreEqual(this.Carrito.Listaevento.ElementAt(0).Value, 6);
 
             this.matricula = this.Carrito.Listamatricula.ElementAt(0).Key as Matricula;
-            Assert.AreEqual(this.matricula.Id, 1);
-            Assert.AreEqual(this.matricula.Costo, 5000);           
+            Assert.AreEqual(this.matricula.Id, 37);
+            Assert.AreEqual(this.matricula.Costo, 4250);           
             Assert.AreEqual(this.Carrito.Listamatricula.ElementAt(0).Value, 1);
         }
 
@@ -268,7 +265,6 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula = null;
             this.Carrito = null;
             this.evento = null;
-            this.fabrica = null;       
         }
     }
 }

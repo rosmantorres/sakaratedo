@@ -4,26 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using LogicaNegociosSKD.Modulo1;
-using LogicaNegociosSKD.Modulo2;
-using DominioSKD;
+using Interfaz_Presentadores.Modulo2;
+using LogicaNegociosSKD.Comandos.Modulo1;
+using LogicaNegociosSKD.Fabrica;
+using DominioSKD.Fabrica;
+using DominioSKD.Entidades.Modulo1;
+
+
 namespace PruebasUnitariasSKD.Modulo1
 {
     [TestFixture]
     class PruebasUnitariasLogicaN
     {
-        AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
-        [SetUp]
-        protected void parametros()
-        {
-        }
+        Encriptacion cripto = new Encriptacion();
+        private FabricaComandos laFabrica = new FabricaComandos();
+        private FabricaEntidades laFabricaE = new FabricaEntidades();
 
         // Prueba unitaria del metodo IniciarSesion() de forma erronea
         [Test]
         public void PruebaInicioSesionFallida()
         {
-            logicaLogin lg = new logicaLogin();
-            string[] resp = lg.iniciarSesion(RecursosPU_Mod1.pruebaErrorCorreo, RecursosPU_Mod1.PruebaErrorClave);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Nombre_usuario=RecursosPU_Mod1.pruebaErrorCorreo;
+            Login.Contrasena = RecursosPU_Mod1.PruebaErrorClave;
+            ComandoIniciarSesion lg = (ComandoIniciarSesion)laFabrica.ObtenerIniciarSesion();
+            lg.LaEntidad = Login;
+            string[] resp = lg.Ejecutar();
             Assert.AreEqual(resp, null);
 
         }
@@ -31,18 +37,26 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void PruebaInicioSesionCorrecto()
         {
-            logicaLogin lg = new logicaLogin();
-            string[] resp = lg.iniciarSesion(RecursosPU_Mod1.pruebainicioCorreo, RecursosPU_Mod1.PruebaCorrectoClave);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Nombre_usuario = RecursosPU_Mod1.pruebainicioCorreo;
+            Login.Contrasena = RecursosPU_Mod1.PruebaRestablecerClave;
+            ComandoIniciarSesion lg = (ComandoIniciarSesion)laFabrica.ObtenerIniciarSesion();
+            lg.LaEntidad = Login;
+            string[] resp = lg.Ejecutar();
             Assert.AreEqual(resp[1], RecursosPU_Mod1.pruebainicioCorreo);
 
         }
         // Prueba unitaria de la excepcion del metodo EnviarCorreo()
         [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
+        [ExpectedException(typeof(FormatException))]
         public void PruebaEnviarCorreoFallidoEXC()
         {
-            logicaLogin lg = new logicaLogin();
-            bool resp = lg.EnviarCorreo(null);
+            
+             Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.PersonaUsuario._CorreoElectronico=RecursosPU_Mod1.usuario;
+            ComandoEnviarCorreo lg = (ComandoEnviarCorreo)laFabrica.ObtenerEnviarCorreo();
+            lg.LaEntidad = Login;
+            bool resp = lg.Ejecutar();
             resp.ToString();
 
         }
@@ -51,8 +65,12 @@ namespace PruebasUnitariasSKD.Modulo1
         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
         public void PruebaIniciarSesionFallidoEXC()
         {
-            logicaLogin lg = new logicaLogin();
-            string[] resp = lg.iniciarSesion(null, null);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Nombre_usuario = null;
+            Login.Contrasena = null;
+            ComandoIniciarSesion lg = (ComandoIniciarSesion)laFabrica.ObtenerIniciarSesion();
+            lg.LaEntidad = Login;
+            string[] resp = lg.Ejecutar();
             resp.ToString();
 
         }
@@ -61,8 +79,11 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void PruebaEnviarCorreoCorrecto()
         {
-            logicaLogin lg = new logicaLogin();
-            bool resp = lg.EnviarCorreo(RecursosPU_Mod1.PruebaCorrectoResultado);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.PersonaUsuario._CorreoElectronico = RecursosPU_Mod1.PruebaCorrectoResultado;
+            ComandoEnviarCorreo lg = (ComandoEnviarCorreo)laFabrica.ObtenerEnviarCorreo();
+            lg.LaEntidad = Login;
+            bool resp = lg.Ejecutar();
             Assert.AreEqual(resp, true);
 
         }
@@ -71,8 +92,6 @@ namespace PruebasUnitariasSKD.Modulo1
 
         public void PruebaHashCorrecto()
         {
-
-
             Assert.AreEqual(cripto.hash(RecursosPU_Mod1.pruebaHash2), cripto.hash(RecursosPU_Mod1.pruebaHash));
 
         }
@@ -87,11 +106,11 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void PruebaValidarCorreoCorrecto()
         {
-            logicaLogin lg = new logicaLogin();
-            string _respuesta;
-
-
-            _respuesta = lg.validarCorreo(RecursosPU_Mod1.PruebaCorrectoResultado);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.PersonaUsuario._CorreoElectronico = RecursosPU_Mod1.PruebaCorrectoResultado;
+            ComandoConsultarCorreo lg = (ComandoConsultarCorreo)laFabrica.ObtenerConsultarCorreo();
+            lg.LaEntidad = Login;
+            string _respuesta = lg.Ejecutar();
 
             Assert.AreNotEqual(null, _respuesta);
         }
@@ -99,11 +118,12 @@ namespace PruebasUnitariasSKD.Modulo1
         [Test]
         public void PruebaValidarCorreoFallido()
         {
-            logicaLogin lg = new logicaLogin();
-            string _respuesta;
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.PersonaUsuario._CorreoElectronico = RecursosPU_Mod1.pruebaErrorCorreo;
+            ComandoConsultarCorreo lg = (ComandoConsultarCorreo)laFabrica.ObtenerConsultarCorreo();
+            lg.LaEntidad = Login;
+            string _respuesta = lg.Ejecutar();
 
-
-            _respuesta = lg.validarCorreo(RecursosPU_Mod1.pruebaErrorCorreo);
             Assert.AreEqual(null, _respuesta);
         }
         [Test]
@@ -111,19 +131,22 @@ namespace PruebasUnitariasSKD.Modulo1
         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
         public void PruebaValidarCorreoFallidoexc()
         {
-            logicaLogin lg = new logicaLogin();
-            string _respuesta;
-            _respuesta = lg.validarCorreo(null);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.PersonaUsuario._CorreoElectronico = null;
+            ComandoConsultarCorreo lg = (ComandoConsultarCorreo)laFabrica.ObtenerConsultarCorreo();
+            lg.LaEntidad = Login;
+            string _respuesta = lg.Ejecutar();
         }
         // Prueba unitaria del metodo restablecerContrasena(string usuarioID, string contraseña) de forma Erronea
         [Test]
         public void PruebaValidarRestablecerContrasena()
         {
-            logicaRestablecer lgr = new logicaRestablecer();
-            bool _respuesta;
-
-
-            _respuesta = lgr.restablecerContrasena(RecursosPU_Mod1.id2, RecursosPU_Mod1.PruebaRestablecerClave);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Id =2;
+            Login.Contrasena = RecursosPU_Mod1.PruebaRestablecerClave;
+            ComandoRestablecerContraseña lg = (ComandoRestablecerContraseña)laFabrica.ObtenerRestablecerContraseña();
+            lg.LaEntidad = Login;
+            bool _respuesta = lg.Ejecutar();
             Assert.AreEqual(true, _respuesta);
         }
         // Prueba unitaria de la excepcion del metodo restablecerContrasena()
@@ -131,42 +154,14 @@ namespace PruebasUnitariasSKD.Modulo1
         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
         public void PruebaValidarRestablecerContrasenaexc()
         {
-            logicaRestablecer lgr = new logicaRestablecer();
-            bool _respuesta;
-            _respuesta = lgr.restablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Id = 1;
+            Login.Contrasena = null;
+            ComandoRestablecerContraseña lg = (ComandoRestablecerContraseña)laFabrica.ObtenerRestablecerContraseña();
+            lg.LaEntidad = Login;
+            bool _respuesta = lg.Ejecutar();
 
         }
-        // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena)
-        [Test]
-        public void PruebaValidarCaracteres()
-        {
-            logicaRestablecer lgr = new logicaRestablecer();
-            bool _respuesta;
-
-
-            _respuesta = lgr.ValidarCaracteres(RecursosPU_Mod1.Descripcion);
-            Assert.AreEqual(true, _respuesta);
-        }
-        // Prueba unitaria del metodo   public bool ValidarCaracteres(String cadena) EXC
-        [Test]
-        [ExpectedException(typeof(NullReferenceException))]
-        public void PruebaValidarCaracteresEXC()
-        {
-            logicaRestablecer lgr = new logicaRestablecer();
-            bool _respuesta;
-            _respuesta = lgr.ValidarCaracteres(null);
-        }
-        [Test]
-        public void PruebaValidarCaracteres2()
-        {
-            logicaLogin lg = new logicaLogin();
-            bool _respuesta;
-
-
-            _respuesta = lg.ValidarCaracteres(RecursosPU_Mod1.usuario, true);
-            Assert.AreEqual(true, _respuesta);
-        }
-
 
     }
 }

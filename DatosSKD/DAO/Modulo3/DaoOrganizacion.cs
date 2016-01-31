@@ -36,7 +36,7 @@ namespace DatosSKD.DAO.Modulo3
                 {
                     if (ValidarEstilo(laOrganizacion))
                     {
-                List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                List<Parametro> parametros = new List<Parametro>(); 
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo3.ParamNombreOrg, SqlDbType.VarChar, laOrganizacion.Nombre,false);
                 parametros.Add(elParametro);
@@ -51,9 +51,9 @@ namespace DatosSKD.DAO.Modulo3
                 elParametro = new Parametro(RecursosDaoModulo3.ParamEstiloOrg, SqlDbType.VarChar, laOrganizacion.Estilo, false);
                 parametros.Add(elParametro);
 
-                //BDConexion laConexion = new BDConexion();// abres la conexion
+
                 this.EjecutarStoredProcedure(RecursosDaoModulo3.AgregarOrganizacion
-                                             , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
+                                             , parametros);
                     }// Fin if    
                     else
                     {
@@ -68,7 +68,7 @@ namespace DatosSKD.DAO.Modulo3
                                    RecursosDaoModulo3.Mensaje_Organizacion_Existente, new Exception());
                 }
             }
-             catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+             catch (SqlException ex) 
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
@@ -105,7 +105,7 @@ namespace DatosSKD.DAO.Modulo3
 
                     if (ValidarEstilo(laOrganizacion))
                     {
-                List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                List<Parametro> parametros = new List<Parametro>(); 
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo3.ParamIdOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(), false);
                 parametros.Add(elParametro);
@@ -122,10 +122,11 @@ namespace DatosSKD.DAO.Modulo3
                 elParametro = new Parametro(RecursosDaoModulo3.ParamEstiloOrg, SqlDbType.VarChar, laOrganizacion.Estilo, false);
                 parametros.Add(elParametro);
 
-                //BDConexion laConexion = new BDConexion();// abres la conexion
+
                 this.EjecutarStoredProcedure(RecursosDaoModulo3.ModificarOrganizacion
-                                             , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
-                     }// Fin if    
+                                             , parametros);
+                    
+                    }// Fin if    
                      else
                      {
                          throw new ExcepcionesSKD.Modulo3.EstiloInexistenteException(RecursosDaoModulo3.Codigo_Estilo_Inexistente,
@@ -133,7 +134,7 @@ namespace DatosSKD.DAO.Modulo3
                      }
                 
             }
-            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            catch (SqlException ex) 
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
@@ -164,21 +165,16 @@ namespace DatosSKD.DAO.Modulo3
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-           // BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
 
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
 
-            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
-            //PREGUNTAR POR EL ID
-            laOrganizacion.Id_organizacion= parametro.Id;
+            laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
 
             try
             {
-               // laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-              //  Organizacion laOrganizacion = new Organizacion();
 
                 elParametro = new Parametro(RecursosDaoModulo3.ParamIdEliminarOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(),
                                             false);
@@ -235,7 +231,6 @@ namespace DatosSKD.DAO.Modulo3
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-           // BDConexion laConexion;
             List<Entidad> laListaOrganizaciones = new List<Entidad>();
             List<Parametro> parametros;
 
@@ -243,7 +238,7 @@ namespace DatosSKD.DAO.Modulo3
 
             try
             {
-                //laConexion = new BDConexion();
+
                 parametros = new List<Parametro>();
 
 
@@ -260,6 +255,7 @@ namespace DatosSKD.DAO.Modulo3
                     laOrganizacion.Direccion = row[RecursosDaoModulo3.AliasDireccionOrg].ToString();
                     laOrganizacion.Estado = row[RecursosDaoModulo3.AliasEstadoOrg].ToString();
                     laOrganizacion.Estilo = row[RecursosDaoModulo3.AliasNombreEstilo].ToString();
+                    laOrganizacion.Status = bool.Parse(row[RecursosDaoModulo3.AliasStatusOrg].ToString());
 
                     laListaOrganizaciones.Add(laOrganizacion);
 
@@ -307,14 +303,13 @@ namespace DatosSKD.DAO.Modulo3
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            //BDConexion laConexion;
             List<Parametro> parametros;
 
             List<Entidad> laListaOrganizaciones = new List<Entidad>();
             DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion;
             try
             {
-               // laConexion = new BDConexion();
+
                 parametros = new List<Parametro>();
 
 
@@ -322,7 +317,7 @@ namespace DatosSKD.DAO.Modulo3
 
                 foreach (DataRow row in dt.Rows)
                 {
-                   // laListaOrganizaciones.Add(new Organizacion(Int32.Parse(row[RecursosDaoModulo3.AliasIdOrg].ToString()), row[RecursosDaoModulo3.AliasNombreOrg].ToString()));
+                     
                     laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3();
 
                     laOrganizacion.Id_organizacion = int.Parse(row[RecursosDaoModulo3.AliasIdOrg].ToString());
@@ -377,14 +372,12 @@ namespace DatosSKD.DAO.Modulo3
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool retorno = false;
-          //  BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
 
-              //  laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo3.ParamNombreOrg, SqlDbType.VarChar
@@ -400,7 +393,7 @@ namespace DatosSKD.DAO.Modulo3
                 foreach (Resultado elResultado in resultados)
                 {
                     if (elResultado.etiqueta == RecursosDaoModulo3.ParamSalidaNumOrganizacion)
-                        if (int.Parse(elResultado.valor) == 1) // Significa q el nombre en esa organizacion esta repetido si esta repetido
+                        if (int.Parse(elResultado.valor) == 1) 
                             retorno = true;
                         else
                         {
@@ -445,14 +438,12 @@ namespace DatosSKD.DAO.Modulo3
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool retorno = false;
-            //BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
 
-               // laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo3.ParamEstiloOrg, SqlDbType.VarChar
@@ -505,6 +496,46 @@ namespace DatosSKD.DAO.Modulo3
             return retorno;
 
 
+        }
+
+        /// <summary>
+        /// Método Modificar el status de una Organizacion especifica en la Base de Datos 
+        /// </summary>
+        /// <param name="parametro">Organizacion</param>
+        /// <returns>True si lo modifica, False si no</returns>
+        public bool ModificarStatus(Entidad parametro)
+        {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo3.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            try
+            {
+                DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
+
+
+                    List<Parametro> parametros = new List<Parametro>(); 
+
+                    Parametro elParametro = new Parametro(RecursosDaoModulo3.ParamIdOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(), false);
+                    parametros.Add(elParametro);
+
+                    this.EjecutarStoredProcedure(RecursosDaoModulo3.ModificarStatusOrganizacion
+                                                 , parametros);
+
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo3.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+                    return true;
+            }
+            catch (SqlException ex) 
+            {
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
+            }
+           
         }
         #endregion
     }

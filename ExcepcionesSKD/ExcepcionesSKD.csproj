@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
@@ -100,6 +106,7 @@
     <Compile Include="Modulo16\CarritoConPagoException.cs" />
     <Compile Include="Modulo16\CarritoSinEventoException.cs" />
     <Compile Include="Modulo16\CarritoSinInventarioException.cs" />
+    <Compile Include="Modulo16\CarritoVacioException.cs" />
     <Compile Include="Modulo16\ErrorEnHTTPException.cs" />
     <Compile Include="Modulo16\ItemInvalidoException.cs" />
     <Compile Include="Modulo16\LogicaagregarEventoaCarritoException.cs" />
@@ -117,10 +124,12 @@
     <Compile Include="Modulo1\InicioSesionException.cs" />
     <Compile Include="Modulo2\RolesException.cs" />
     <Compile Include="Modulo3\EstiloInexistenteException.cs" />
+    <Compile Include="Modulo3\ExpresionesRegularesException.cs" />
     <Compile Include="Modulo3\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo3\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo3\OrganizacionExistenteException.cs" />
     <Compile Include="Modulo5\CintaRepetidaException.cs" />
+    <Compile Include="Modulo5\ExpresionesRegularesException.cs" />
     <Compile Include="Modulo5\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo5\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo5\OrdenCintaRepetidoException.cs" />
@@ -130,6 +139,10 @@
     <Compile Include="Modulo4\DojoInexistenteException.cs" />
     <Compile Include="Modulo4\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo7\ObjetoNuloException.cs" />
+    <Compile Include="Modulo8\FormatoIncorrectoException.cs" />
+    <Compile Include="Modulo8\RestriccionExistenteException.cs" />
+    <Compile Include="Modulo8\RestriccionInexistenteException.cs" />
+    <Compile Include="Modulo8\RestriccionRepetidaException.cs" />
     <Compile Include="ParametroInvalidoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -138,7 +151,6 @@
     <Folder Include="Modulo11\" />
     <Folder Include="Modulo13\" />
     <Folder Include="Modulo6\" />
-    <Folder Include="Modulo8\" />
     <Folder Include="Modulo9\" />
   </ItemGroup>
   <ItemGroup>

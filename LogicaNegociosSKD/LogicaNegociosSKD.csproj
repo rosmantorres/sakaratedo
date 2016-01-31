@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CKEditor.NET">
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +46,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comando.cs" />
+    <Compile Include="Comandos\Modulo3\EjecutarModificarStatusOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarConsultarCintasXOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo5\EjecutarModificarStatusCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarListaCompetenciaRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionEvento.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarEventosSinRestriccion.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarCintaTodas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionEvento.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodosRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarCompetencias.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasAsociadas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoConsultarTodasLasCompetenciasNoAsociadas.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoEliminarListaCompetenciaRestriccionCompetencia.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarCompetencia.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarHorarioPractica.cs" />
     <Compile Include="Comandos\Modulo7\ComandoConsultarDetallarMatricula.cs" />
@@ -108,9 +131,16 @@
     <Compile Include="Comandos\Modulo11\ComandoModificarResultadoAscenso.cs" />
     <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKata.cs" />
     <Compile Include="Comandos\Modulo11\ComandoModificarResultadoKumite.cs" />
+    <Compile Include="Comandos\Modulo15\RecursosComandoModulo15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo15.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo16\ComandoAgregarItem.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasFacturas.cs" />
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionEvento.cs" />
     <Compile Include="Comandos\Modulo9\ComandoConsultarTodosEventos.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosProductos.cs" />
     <Compile Include="Comandos\Modulo9\ComandoDetallarEvento.cs" />
@@ -181,8 +211,8 @@
     <Compile Include="Comandos\Modulo2\ComandoEliminarRol.cs" />
     <Compile Include="Comandos\Modulo2\ComandoRolesDeSistema.cs" />
     <Compile Include="Comandos\Modulo2\ComandoRolesUsuario.cs" />
-    <Compile Include="Comandos\Modulo2\RecursosLogicaModulo2.Designer.cs">
-      <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
+    <Compile Include="Comandos\Modulo2\RecursosComandoModulo2.Designer.cs">
+      <DependentUpon>RecursosComandoModulo2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -228,30 +258,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo15\RecursosLogicaModulo15.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo15.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo1\logicaLogin.cs" />
-    <Compile Include="Modulo1\logicaRestablecer.cs" />
-    <Compile Include="Modulo1\RecursosLogicaModulo1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo1.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo2\AlgoritmoDeEncriptacion.cs" />
-    <Compile Include="Modulo2\logicaRol.cs" />
-    <Compile Include="Modulo2\RecursosLogicaModulo2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo2.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo4\RecursosLogicaModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\LogicaListar.cs" />
+    <Compile Include="Modulo6\RecursosLogicaModulo6.Designer.cs" />
     <Compile Include="Modulo8\RecursosLogicaModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -274,6 +287,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Comandos\Modulo15\RecursosComandoModulo15.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo15.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo7\RecursosComandoModulo7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo7.Designer.cs</LastGenOutput>
@@ -302,9 +319,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comandos\Modulo2\RecursosLogicaModulo2.resx">
+    <EmbeddedResource Include="Comandos\Modulo2\RecursosComandoModulo2.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
+      <LastGenOutput>RecursosComandoModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo9\RecursosComandosModulo9.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -318,33 +335,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo15\RecursosLogicaModulo15.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo15.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo1\RecursosLogicaModulo1.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo2\RecursosLogicaModulo2.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo2.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo4\RecursosLogicaModulo4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo6\RecursosLogicaModulo6.resx" />
     <EmbeddedResource Include="Modulo8\RecursosLogicaModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo8.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\" />
     <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo13\" />
     <Folder Include="Comandos\Modulo4\" />
     <Folder Include="Comandos\Modulo6\" />
-    <Folder Include="Comandos\Modulo8\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2,6 +2,7 @@
 using DatosSKD.InterfazDAO.Modulo10;
 using DominioSKD;
 using DominioSKD.Fabrica;
+using ExcepcionesSKD;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -22,6 +23,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de eventos</returns>
         public List<Entidad> ListarEventosAsistidos()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> listaEventos = new List<Entidad>();
             List<Parametro> parametros;
 
@@ -46,21 +48,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                /*throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
-                     RecursosBDModulo9.MensajeErrorFormato, ex);*/
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -73,6 +78,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de competencias</returns>
         public List<Entidad> ListarCompetenciasAsistidas()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> listaCompetencia = new List<Entidad>();
             List<Parametro> parametros;
 
@@ -94,21 +100,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                /*throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
-                     RecursosBDModulo9.MensajeErrorFormato, ex);*/
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -122,6 +131,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de atletas</returns>
         public List<Entidad> ListaAsistentesEvento(string idEvento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> personas = new List<Entidad>();
             try
             {
@@ -141,21 +151,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return personas;
@@ -168,6 +181,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de atletas</returns>
         public List<Entidad> ListaNoAsistentesEvento(string idEvento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> personas = new List<Entidad>();
             try
             {
@@ -187,21 +201,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return personas;
@@ -222,6 +239,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de atletas</returns>
         public List<Entidad> ListaAsistentesCompetencia(string idCompetencia)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> personas = new List<Entidad>();
             try
             {
@@ -241,21 +259,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return personas;
@@ -268,6 +289,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de atletas</returns>
         public List<Entidad> ListaNoAsistentesCompetencia(string idCompetencia)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> personas = new List<Entidad>();
             try
             {
@@ -287,21 +309,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return personas;
@@ -314,6 +339,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>true si se pudo modificar</returns>
         public bool ModificarAsistenciaEvento(List<Entidad> listaEntidad)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             int cont = 0;
             try
             {
@@ -333,30 +359,36 @@ namespace DatosSKD.DAO.Modulo10
 
                 if (listaEntidad.Count.Equals(cont))
                 {
-                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
                 }
                 else
                 {
-                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
                 }
             }
             catch (SqlException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
         }
 
@@ -367,6 +399,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>Una Competencia</returns>
         public Entidad ConsultarCompetenciasXId(string idCompetencia)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
             Entidad competencia = FabricaEntidades.ObtenerCompetencia();
             string diaFecha;
@@ -396,21 +429,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return competencia;
@@ -423,6 +459,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>true si se pudo modificar</returns>
         public bool ModificarAsistenciaCompetencia(List<Entidad> listaEntidad)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             int cont = 0;
             try
             {
@@ -443,30 +480,36 @@ namespace DatosSKD.DAO.Modulo10
 
                 if (listaEntidad.Count.Equals(cont))
                 {
-                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
                 }
                 else
                 {
-                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
                 }
             }
             catch (SqlException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
         }
 
@@ -477,6 +520,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de atletas</returns>
         public List<Entidad> ListaAtletasInscritosEvento(string idEvento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> personas = new List<Entidad>();
             try
             {
@@ -496,21 +540,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return personas;
@@ -523,6 +570,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de atletas</returns>
         public List<Entidad> ListaInasistentesPlanilla(string idEvento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> inscripciones = new List<Entidad>();
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
 
@@ -558,21 +606,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return inscripciones;
@@ -585,6 +636,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>true si se pudo agregar</returns>
         public bool AgregarAsistenciaEvento(List<Entidad> listaEntidad)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             int cont = 0;
             try
             {
@@ -603,31 +655,37 @@ namespace DatosSKD.DAO.Modulo10
 
                 if (listaEntidad.Count.Equals(cont))
                 {
-                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
                 }
                 else
                 {
-                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
                 }
 
             }
             catch (SqlException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
         }
 
@@ -638,6 +696,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>true si se pudo agregar</returns>
         public bool AgregarAsistenciaCompetencia(List<Entidad> listaEntidad)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             int cont = 0;
             try
             {
@@ -656,31 +715,37 @@ namespace DatosSKD.DAO.Modulo10
 
                 if (listaEntidad.Count.Equals(cont))
                 {
-                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return true;
                 }
                 else
                 {
-                    //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
+                    Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
                     return false;
                 }
 
             }
             catch (SqlException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
+                    RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
         }
 
@@ -690,6 +755,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de horario</returns>
         public List<Entidad> ListarHorariosCompetencia()
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> listaHorarios = new List<Entidad>();
             List<Parametro> parametros;
 
@@ -707,33 +773,26 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
-                     RecursosBDModulo9.MensajeErrorFormato, ex);*/
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw ex;*/
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);*/
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
 
             return listaHorarios;
@@ -746,6 +805,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de competencias</returns>
         public List<Entidad> CompetenciasPorFecha(string fechaInicio)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
             List<Entidad> listaEventos = new List<Entidad>();
             List<Parametro> parametros = new List<Parametro>();
@@ -766,33 +826,26 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
-                     RecursosBDModulo9.MensajeErrorFormato, ex);*/
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                //Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
-                /*Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-
-                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);*/
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
-            //Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosBDModulo9.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             return listaEventos;
         }
@@ -804,6 +857,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de atletas</returns>
         public List<Entidad> ListaAtletasInscritosCompetencia(string idCompetencia)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> personas = new List<Entidad>();
             try
             {
@@ -823,21 +877,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return personas;
@@ -850,6 +907,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>lista de atletas</returns>
         public List<Entidad> ListaInasistentesPlanillaCompetencia(string idCompetencia)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
             List<Entidad> inscripciones = new List<Entidad>();
             try
@@ -883,21 +941,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return inscripciones;
@@ -910,6 +971,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>Una Competencia</returns>
         public Entidad ConsultarCompetenciaXIdDetalle(string idCompetencia)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             Entidad competencia;
             string diaFecha;
             string mesFecha;
@@ -949,21 +1011,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo10.CodigoErrorFormato,
-                //     RecursosBDModulo10.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return competencia;
@@ -976,6 +1041,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>Un Evento</returns>
         public Entidad ConsultarEventoXID(string idEvento)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             Entidad evento;
             try
             {
@@ -1006,19 +1072,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
             return evento;
@@ -1030,6 +1101,7 @@ namespace DatosSKD.DAO.Modulo10
         /// <returns>Lista de Entidad tipo Horario</returns>
         public List<Entidad> TodasLasFechasEventoM10() 
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> listaHorarios = new List<Entidad>();
             try
             {
@@ -1049,21 +1121,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                //throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo9.CodigoErrorFormato,
-                //     RecursosBDModulo9.MensajeErrorFormato, ex);
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
@@ -1072,6 +1147,7 @@ namespace DatosSKD.DAO.Modulo10
 
         public List<Entidad> EventosPorRangosdeFechaM10(string fechaInicio)
         {
+            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDAOModulo10.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             List<Entidad> listaEventos = new List<Entidad>();
             List<Parametro> parametros = new List<Parametro>();
             Parametro parametro = new Parametro(RecursosDAOModulo10.AliasFechaInicio, SqlDbType.Date, fechaInicio, false);
@@ -1104,19 +1180,24 @@ namespace DatosSKD.DAO.Modulo10
             }
             catch (SqlException ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosDAOModulo10.CodigoErrorFormato,
+                     RecursosDAOModulo10.MensajeErrorFormato, ex);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 

@@ -39,6 +39,10 @@ namespace DominioSKD.Fabrica
         {
             return new Entidades.Modulo2.Rol();
         }
+        public List<Entidad> ObtenerListaRol_M2()
+        {
+            return new List<Entidades.Modulo2.Rol>().Cast<Entidad>().ToList();
+        }
         public Entidad ObtenerRol_M2(int elId, String elNombre, String laDescripcion, DateTime laFecha)
         {
             return new Entidades.Modulo2.Rol(elId, elNombre, laDescripcion, laFecha);
@@ -234,6 +238,220 @@ namespace DominioSKD.Fabrica
                                       inputRangoMaximo, inputSexo, inputModalidad);
         }
 
+        #endregion
+
+        #region Fabricas Restriccion Cinta
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta sin parametros de entrada
+        /// </summary>
+        /// <returns> Objeto Tipo Entidad </returns>
+
+        public static Entidad ObtenerRestriccionCinta()
+        {
+            return new Entidades.Modulo8.RestriccionCinta();
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametro de entrada identificador de la restriccion
+        /// </summary>
+        /// <param name="inputId"> Parametro referente al id unico de la restriccion</param>
+        /// <returns>Objeto tipo Entidad</returns>
+
+        public static Entidad ObtenerRestriccionCinta(int inputId)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(inputId);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametros de entrada multiples sin id unico.
+        /// </summary>
+        /// <param name="inputDescripcion"> String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputTiempoMinimo">Integer,tiempo minimo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
+        /// <returns> Objeto tipo Entidad</returns>
+
+        public static Entidad ObtenerRestriccionCinta(String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputDescripcion">String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputTiempoMinimo">Integer,tiempo minimo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public static Entidad ObtenerRestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="id">Integer, identificador unico del objeto</param>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputDescripcion">String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputTiempoMinimo">Integer,tiempo minimo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
+        /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+
+        public static Entidad ObtenerRestriccionCinta(int id, int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(id, inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos);
+        }
+
+        #endregion
+
+        #region Fabricas Restriccion Evento
+        /// <summary>
+        /// Fabrica de Restriccion Evento sin parametros de entrada
+        /// </summary>
+        /// <returns> Objeto Tipo Entidad </returns>
+
+        public static Entidad ObtenerRestriccionEvento()
+        {
+            return new Entidades.Modulo8.RestriccionEvento();
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Evento con parametro de entrada identificador de la restriccion
+        /// </summary>
+        /// <param name="inputId"> Parametro referente al id unico de la restriccion del evento</param>
+        /// <returns>Objeto tipo Entidad</returns>
+
+        public static Entidad ObtenerRestriccionEvento(int inputId)
+        {
+            return new Entidades.Modulo8.RestriccionEvento(inputId);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Evento con parametros de entrada multiples sin id unico.
+        /// </summary>
+        /// <param name="inputDescripcion"> String, descripcion breve de los parametros de la restriccion del evento</param>
+        /// <param name="inputEdadMinima">Integer,edad minima con la que se puede participar en el evento</param>
+        /// <param name="inputEdadMaxima">Integer, edad maxima con la que se puede participar en el evento</param>
+        /// <param name="inputSexo">String, sexo permitido en el evento {M,F,B} M para solo atletas masculinos, 
+        /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
+        /// <param name="inputIdEvento">Integer, id del evento</param>
+        /// <param name="inputNombreEvento">String, nombre del evento</param>
+        /// <returns> Objeto tipo Entidad</returns>
+
+        public static Entidad ObtenerRestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        {
+            return new Entidades.Modulo8.RestriccionEvento(inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Evento con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputDescripcion">String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputEdadMinima">Integer,edad minima con la que se puede participar en el evento</param>
+        /// <param name="inputEdadMaxima">Integer, edad maxima con la que se puede participar en el evento</param>
+        /// <param name="inputSexo">String, sexo permitido en el evento {M,F,B} M para solo atletas masculinos, 
+        /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
+        /// <param name="inputIdEvento">Integer, id del evento</param>
+        /// <param name="inputNombreEvento">String, nombre del evento</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public static Entidad ObtenerRestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        {
+            return new Entidades.Modulo8.RestriccionEvento(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento);
+        }
+
+        /// <summary>
+        /// Fabrica de Restriccion Evento con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="id">Integer, identificador unico del objeto</param>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputDescripcion">String, descripcion breve de los parametros de la restriccion</param>
+        /// <param name="inputEdadMinima">Integer,edad minima con la que se puede participar en el evento</param>
+        /// <param name="inputEdadMaxima">Integer, edad maxima con la que se puede participar en el evento</param>
+        /// <param name="inputSexo">String, sexo permitido en el evento {M,F,B} M para solo atletas masculinos, 
+        /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
+        /// <param name="inputIdEvento">Integer, id del evento</param>
+        /// <param name="inputNombreEvento">String, nombre del evento</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+
+        public static Entidad ObtenerRestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        {
+            return new Entidades.Modulo8.RestriccionEvento(id, inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento);
+        }
+
+        #endregion
+
+        #region Fabricas EventoSimple
+        /// <summary>
+        /// Fabrica de EventoSimple sin parametros de entrada
+        /// </summary>
+        /// <returns> Objeto Tipo Entidad </returns>
+        public Entidad ObtenerEventoSimple()
+        {
+            return new Entidades.Modulo8.EventoSimple();
+        }
+
+        /// <summary>
+        /// Fabrica de EventoSimple con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del evento en bd </param>
+        /// <param name="inputNombre">String, nombre del evento</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public Entidad ObtenerEventoSimple(int inputId, String inputNombre)
+        {
+            return new Entidades.Modulo8.EventoSimple(inputId, inputNombre);
+        }
+
+        /// <summary>
+        /// Fabrica de EventoSimple con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="id">Integer, identificador unico del objeto</param>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del evento en bd </param>
+        /// <param name="inputNombre">String, nombre del evento</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public Entidad ObtenerEventoSimple(int id, int inputId, String inputNombre)
+        {
+            return new Entidades.Modulo8.EventoSimple(id, inputId, inputNombre);
+        }
+        #endregion
+
+        #region Fabricas CintaSimple
+        /// <summary>
+        /// Fabrica de CintaSimple sin parametros de entrada
+        /// </summary>
+        /// <returns> Objeto Tipo Entidad </returns>
+        public Entidad obtenerCintaSimple()
+        {
+            return new Entidades.Modulo8.CintaSimple();
+        }
+
+        /// <summary>
+        /// Fabrica de CintaSimple con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="inputId"> Integer, atributo correspondiente al id de la cinta en bd </param>
+        /// <param name="inputColor">String, color de la cinta</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public Entidad ObtenerCintaSimple(int inputId, String inputColor)
+        {
+            return new Entidades.Modulo8.CintaSimple(inputId, inputColor);
+        }
+
+        /// <summary>
+        /// Fabrica de CintaSimple con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="id">Integer, identificador unico del objeto</param>
+        /// <param name="inputId"> Integer, atributo correspondiente al id de la cinta en bd </param>
+        /// <param name="inputColor">String, color de la cinta</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public Entidad ObtenerCintaSimple(int id, int inputId, String inputColor)
+        {
+            return new Entidades.Modulo8.CintaSimple(id, inputId, inputColor);
+        }
         #endregion
 
         #endregion
@@ -641,6 +859,11 @@ namespace DominioSKD.Fabrica
             return new Pago();
         }
 
+
+        public static Entidad ObtenerPersonaModulo16()
+        {
+            return new Entidades.Modulo1.PersonaM1();
+        }
         #endregion
     }
 }
