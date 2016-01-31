@@ -657,6 +657,24 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restriccion .
+        /// </summary>
+        internal static string restModificada {
+            get {
+                return ResourceManager.GetString("restModificada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to , modificada correctamente..
+        /// </summary>
+        internal static string restModificada2 {
+            get {
+                return ResourceManager.GetString("restModificada2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;stat=.
         /// </summary>
         internal static string RestriccionStatus {

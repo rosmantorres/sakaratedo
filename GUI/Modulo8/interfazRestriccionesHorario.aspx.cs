@@ -63,9 +63,16 @@ namespace templateApp.GUI.Modulo8
             _presentador.ObtenerVariablesURL();
             if (success != null)
             {
-                int id = Convert.ToInt32(success);
-                int sta = Convert.ToInt32(stat);
-                _presentador.CambiarStatus(id, sta);
+                if (stat != null)
+                {
+                    int id = Convert.ToInt32(success);
+                    int sta = Convert.ToInt32(stat);
+                    _presentador.CambiarStatus(id, sta);
+                }
+                else
+                {
+                    _presentador.MostrarModificado(success);
+                }
             }
             if (success == null )
             {

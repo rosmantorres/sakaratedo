@@ -104,6 +104,15 @@ namespace Interfaz_Presentadores.Modulo8
                 + RecursoPresentadorM8.alertaHtmlFinal;
         }
 
+        public void MostrarModificado(String eventoAgregado)
+        {
+            vista.alertaClase = RecursoPresentadorM8.alertaError;
+            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+            vista.alerta = RecursoPresentadorM8.alertaHtml
+                + RecursoPresentadorM8.restModificada + eventoAgregado + RecursoPresentadorM8.restModificada2
+                + RecursoPresentadorM8.alertaHtmlFinal;
+        }
+
         public void CambiarStatus(int id, int bitStatus)
         {
             try

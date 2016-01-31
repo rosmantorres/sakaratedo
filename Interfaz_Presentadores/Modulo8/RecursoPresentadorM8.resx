@@ -325,9 +325,6 @@
   </data>
   <data name="nombreEvento" xml:space="preserve">
     <value>Nombre del Evento:  </value>
-</data>
-  <data name="StatusRC" xml:space="preserve">
-    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
   </data>
   <data name="StatusRC" xml:space="preserve">
     <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
@@ -346,5 +343,11 @@
   </data>
   <data name="restAgregada2" xml:space="preserve">
     <value>, creada correctamente.</value>
+  </data>
+  <data name="restModificada" xml:space="preserve">
+    <value>Restriccion </value>
+  </data>
+  <data name="restModificada2" xml:space="preserve">
+    <value>, modificada correctamente.</value>
   </data>
 </root>
