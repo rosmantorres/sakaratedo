@@ -95,6 +95,15 @@ namespace Interfaz_Presentadores.Modulo8
             }
         }
 
+        public void MostrarAgregado(String eventoAgregado)
+        {
+            vista.alertaClase = RecursoPresentadorM8.alertaError;
+            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+            vista.alerta = RecursoPresentadorM8.alertaHtml
+                + RecursoPresentadorM8.restAgregada + eventoAgregado + RecursoPresentadorM8.restAgregada2
+                + RecursoPresentadorM8.alertaHtmlFinal;
+        }
+
         public void CambiarStatus(int id, int bitStatus)
         {
             try

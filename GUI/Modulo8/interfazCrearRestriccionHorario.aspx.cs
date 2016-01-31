@@ -133,7 +133,8 @@ namespace templateApp.GUI.Modulo8
             Boolean validar = _presentador.agregarRest();
             if (validar)
             {
-                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario);
+                //String Evento = nombreEvento();
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario + _presentador.nombreEvento());
             }
         }
     }

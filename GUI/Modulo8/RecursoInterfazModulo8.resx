@@ -180,7 +180,7 @@
     <value>8</value>
   </data>
   <data name="volverRestriccionHorario" xml:space="preserve">
-    <value>../Modulo8/interfazRestriccionesHorario.aspx</value>
+    <value>../Modulo8/interfazRestriccionesHorario.aspx?stat=</value>
   </data>
   <data name="IdPlan" xml:space="preserve">
     <value>idPlan</value>

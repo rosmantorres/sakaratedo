@@ -342,7 +342,7 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx.
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx?stat=.
         /// </summary>
         internal static string volverRestriccionHorario {
             get {

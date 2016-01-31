@@ -338,4 +338,10 @@
   <data name="Inactiva" xml:space="preserve">
     <value>Inactiva</value>
   </data>
+  <data name="restAgregada" xml:space="preserve">
+    <value>Restriccion de </value>
+  </data>
+  <data name="restAgregada2" xml:space="preserve">
+    <value>, creada correctamente.</value>
+  </data>
 </root>

@@ -67,6 +67,14 @@ namespace templateApp.GUI.Modulo8
                 int sta = Convert.ToInt32(stat);
                 _presentador.CambiarStatus(id, sta);
             }
+            if (success == null )
+            {
+                if (stat != null)
+                {
+                    _presentador.MostrarAgregado(stat);
+                }
+            }
+
 
             if (!IsPostBack)
             {
