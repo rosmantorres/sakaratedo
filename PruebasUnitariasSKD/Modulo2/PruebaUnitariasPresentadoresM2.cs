@@ -30,13 +30,13 @@ namespace PruebasUnitariasSKD.Modulo2
                 ValidacionesM2 lg = new ValidacionesM2();
 
                 ComandoRolesDeSistema _respuesta = (ComandoRolesDeSistema)laFabrica.ObtenerRolesDeSistema();
-                List<Entidad> RolesSis = _respuesta.Ejecutar();
+                List<Rol> RolesSis = _respuesta.Ejecutar();
                 Cuenta usuario = (Cuenta)laFabricaE.ObtenerCuenta_M1();
                 usuario.Id = 1;
                 ComandoRolesUsuario _respuesta2 = (ComandoRolesUsuario)laFabrica.ObtenerRolesUsuario();
                 _respuesta2.LaEntidad = usuario;
-                List<Entidad> RolesUsu = _respuesta2.Ejecutar();
-               List<Entidad> filtrado = lg.filtrarRoles(RolesUsu, RolesSis);
+                List<Rol> RolesUsu = _respuesta2.Ejecutar();
+               List<Rol> filtrado = lg.filtrarRoles(RolesUsu, RolesSis);
                Assert.AreNotEqual(filtrado, RolesSis);
             }
 
@@ -47,13 +47,13 @@ namespace PruebasUnitariasSKD.Modulo2
                 ValidacionesM2 lg = new ValidacionesM2();
 
                 ComandoRolesDeSistema _respuesta = (ComandoRolesDeSistema)laFabrica.ObtenerRolesDeSistema();
-                List<Entidad> RolesSis = _respuesta.Ejecutar();
+                List<Rol> RolesSis = _respuesta.Ejecutar();
                 Cuenta usuario = (Cuenta)laFabricaE.ObtenerCuenta_M1();
                 usuario.Id = 1;
                 ComandoRolesUsuario _respuesta2 = (ComandoRolesUsuario)laFabrica.ObtenerRolesUsuario();
                 _respuesta2.LaEntidad = usuario;
-                List<Entidad> RolesUsu = _respuesta2.Ejecutar();
-                List<Entidad> filtrado = lg.filtrarRoles(null, null);
+                List<Rol> RolesUsu = _respuesta2.Ejecutar();
+                List<Rol> filtrado = lg.filtrarRoles(null, null);
             }
 
             [Test]
@@ -61,8 +61,8 @@ namespace PruebasUnitariasSKD.Modulo2
             {
                 ValidacionesM2 lg = new ValidacionesM2();
                 ComandoRolesDeSistema _respuesta = (ComandoRolesDeSistema)laFabrica.ObtenerRolesDeSistema();
-                List<Entidad> RolesSis = _respuesta.Ejecutar();
-                List<Entidad> Validacion = lg.validarPrioridad(RolesSis, RecursosPU_Mod2.Rol);                            
+                List<Rol> RolesSis = _respuesta.Ejecutar();
+                List<Rol> Validacion = lg.validarPrioridad(RolesSis, RecursosPU_Mod2.Rol);                            
                 Assert.AreEqual(RolesSis, Validacion);
             }
 
@@ -72,8 +72,8 @@ namespace PruebasUnitariasSKD.Modulo2
             {
                 ValidacionesM2 lg = new ValidacionesM2();
                 ComandoRolesDeSistema _respuesta = (ComandoRolesDeSistema)laFabrica.ObtenerRolesDeSistema();
-                List<Entidad> RolesSis = _respuesta.Ejecutar();
-                List<Entidad> Validacion = lg.validarPrioridad(RolesSis, RecursosPU_Mod2.Descripcion);                            
+                List<Rol> RolesSis = _respuesta.Ejecutar();
+                List<Rol> Validacion = lg.validarPrioridad(RolesSis, RecursosPU_Mod2.Descripcion);                            
                 Assert.AreEqual(RolesSis, Validacion);
             }
 
@@ -115,8 +115,8 @@ namespace PruebasUnitariasSKD.Modulo2
             {
                 ValidacionesM2 lg = new ValidacionesM2();
                 ComandoRolesDeSistema _respuesta = (ComandoRolesDeSistema)laFabrica.ObtenerRolesDeSistema();
-                List<Entidad> RolesSis = _respuesta.Ejecutar();
-                List<Entidad>_respuesta2 = lg.rolNoEditable(RolesSis, RecursosPU_Mod2.Rol);
+                List<Rol> RolesSis = _respuesta.Ejecutar();
+                List<Rol>_respuesta2 = lg.rolNoEditable(RolesSis, RecursosPU_Mod2.Rol);
                 Assert.IsNotNull(_respuesta2);
             }
 
@@ -126,8 +126,8 @@ namespace PruebasUnitariasSKD.Modulo2
             {
                 ValidacionesM2 lg = new ValidacionesM2();
                 ComandoRolesDeSistema _respuesta = (ComandoRolesDeSistema)laFabrica.ObtenerRolesDeSistema();
-                List<Entidad> RolesSis = _respuesta.Ejecutar();
-                List<Entidad> _respuesta2 = lg.rolNoEditable(RolesSis, RecursosPU_Mod2.Descripcion);
+                List<Rol> RolesSis = _respuesta.Ejecutar();
+                List<Rol> _respuesta2 = lg.rolNoEditable(RolesSis, RecursosPU_Mod2.Descripcion);
             }
 
             [Test]
