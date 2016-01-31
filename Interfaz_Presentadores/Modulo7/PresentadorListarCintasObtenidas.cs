@@ -34,11 +34,9 @@ namespace Interfaz_Presentadores.Modulo7
         /// </summary>
         public void ConsultarCintasObtenidas(Entidad idPersona)
         {
-            FabricaComandos fabricaComandos = new FabricaComandos();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             try
             {
-                Comando<Tuple<List<Entidad>, List<DateTime>>> comandoListaCintasObtenidas = fabricaComandos.ObtenerComandoConsultarListaCinta();
+                Comando<Tuple<List<Entidad>, List<DateTime>>> comandoListaCintasObtenidas = FabricaComandos.ObtenerComandoConsultarListaCinta();
                 comandoListaCintasObtenidas.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<DateTime>> tupla = comandoListaCintasObtenidas.Ejecutar();
 

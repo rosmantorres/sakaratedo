@@ -50,8 +50,7 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametro = new Parametro();
             PersonaM7 idPersona = (PersonaM7)persona;
             List<Entidad> listaDeCompetenciasAsistidas = new List<Entidad>();
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
-            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
+            DaoUbicacion baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
 
             try
             {
@@ -127,8 +126,7 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametro = new Parametro();
             PersonaM7 idPersona = (PersonaM7)persona;
             List<Entidad> listaDeCompetenciasInscritas = new List<Entidad>();
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
-            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
+            DaoUbicacion baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
 
             try
             {
@@ -206,11 +204,10 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametro = new Parametro();
             List<Entidad> listaDeEventoAsistidos = new List<Entidad>();
             PersonaM7 idPersona = (PersonaM7)persona;
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
 
-            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
-            DaoHorario baseDeDatosHorario = fabricaSql.ObtenerDaoHorarioM7();
-            DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
+            DaoUbicacion baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
+            DaoHorario baseDeDatosHorario = FabricaDAOSqlServer.ObtenerDaoHorarioM7();
+            DaoTipoEvento baseDeDatosTipoEvento = FabricaDAOSqlServer.ObtenerDaoTipoEventoM7();
 
             try
             {
@@ -288,11 +285,10 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametro = new Parametro();
             List<Entidad> listaDeEventoInscritos = new List<Entidad>();
             PersonaM7 idPersona = (PersonaM7)persona;
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
 
-            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
-            DaoHorario baseDeDatosHorario = fabricaSql.ObtenerDaoHorarioM7();
-            DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
+            DaoUbicacion baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
+            DaoHorario baseDeDatosHorario = FabricaDAOSqlServer.ObtenerDaoHorarioM7();
+            DaoTipoEvento baseDeDatosTipoEvento = FabricaDAOSqlServer.ObtenerDaoTipoEventoM7();
 
             try
             {
@@ -370,11 +366,10 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametro = new Parametro();
             List<Entidad> listaDeHorarioPractica = new List<Entidad>();
             PersonaM7 idPersona = (PersonaM7)persona;
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
 
-            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
-            DaoHorario baseDeDatosHorario = fabricaSql.ObtenerDaoHorarioM7();
-            DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
+            DaoUbicacion baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
+            DaoHorario baseDeDatosHorario = FabricaDAOSqlServer.ObtenerDaoHorarioM7();
+            DaoTipoEvento baseDeDatosTipoEvento = FabricaDAOSqlServer.ObtenerDaoTipoEventoM7();
 
             try
             {
@@ -462,11 +457,10 @@ namespace DatosSKD.DAO.Modulo7
             FabricaEntidades fabricaEntidades = new FabricaEntidades();
             EventoM7 idEvento = (EventoM7)parametro;
             EventoM7 evento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
 
-            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
-            DaoHorario baseDeDatosHorario = fabricaSql.ObtenerDaoHorarioM7();
-            DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
+            DaoUbicacion baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
+            DaoHorario baseDeDatosHorario = FabricaDAOSqlServer.ObtenerDaoHorarioM7();
+            DaoTipoEvento baseDeDatosTipoEvento = FabricaDAOSqlServer.ObtenerDaoTipoEventoM7();
 
             try
             {
@@ -750,12 +744,9 @@ namespace DatosSKD.DAO.Modulo7
         public List<Entidad> ListarCompetenciasPaga(Entidad persona)
         {
             List<Parametro> parametros;
-            Parametro parametroQuery = new Parametro();
-
-          
+            Parametro parametroQuery = new Parametro();        
             List<Entidad> listaDeCompetenciasPagas= new List<Entidad>();
             PersonaM7 idPersona = (PersonaM7)persona;
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
 
             try
             {
@@ -832,8 +823,7 @@ namespace DatosSKD.DAO.Modulo7
             Parametro parametroQuery = new Parametro();
             List<Entidad> listaDeEventos = new List<Entidad>();
             PersonaM7 idPersona = (PersonaM7)persona;
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
-            DaoTipoEvento baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
+            DaoTipoEvento baseDeDatosTipoEvento = FabricaDAOSqlServer.ObtenerDaoTipoEventoM7();
 
             try
             {

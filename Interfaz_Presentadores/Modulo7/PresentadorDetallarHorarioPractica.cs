@@ -15,7 +15,6 @@ namespace Interfaz_Presentadores.Modulo7
 {
     public class PresentadorDetallarHorarioPractica
     {
-        private FabricaComandos fabricaComandos;
         private IContratoDetallarHorarioPractica vista;
         /// <summary>
         /// Constructor del presentador
@@ -34,8 +33,7 @@ namespace Interfaz_Presentadores.Modulo7
         {
             try
             {
-                fabricaComandos = new FabricaComandos();
-                ComandoConsultarDetallarHorarioPractica comandoDetallarEvento = (ComandoConsultarDetallarHorarioPractica)fabricaComandos.ObtenerComandoConsultarDetallarHorarioPractica();
+                ComandoConsultarDetallarHorarioPractica comandoDetallarEvento = (ComandoConsultarDetallarHorarioPractica)FabricaComandos.ObtenerComandoConsultarDetallarHorarioPractica();
                 comandoDetallarEvento.LaEntidad = idEvento;
                 EventoM7 evento = (EventoM7)comandoDetallarEvento.Ejecutar();
 

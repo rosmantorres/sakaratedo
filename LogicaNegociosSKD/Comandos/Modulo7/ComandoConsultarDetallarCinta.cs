@@ -38,8 +38,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         /// <returns>Retorna entidad de cinta</returns>
         public override Tuple<Entidad, DateTime> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoCinta baseDeDatosCinta = fabrica.ObtenerDaoCintaM7();
+            DaoCinta baseDeDatosCinta = FabricaDAOSqlServer.ObtenerDaoCintaM7();
             Tuple <Entidad, DateTime> tupla;
             DateTime fechaObtencionCinta;           
             CintaM7 idCinta = (CintaM7)LaEntidad;

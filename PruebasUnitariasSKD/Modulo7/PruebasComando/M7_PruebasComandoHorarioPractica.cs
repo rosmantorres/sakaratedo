@@ -22,7 +22,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     {
         #region Atributos
         private PersonaM7 idPersona;
-        private FabricaComandos fabricaComandos;
         private ComandoConsultarListaHorarioPractica horarioPractica;
         #endregion
 
@@ -33,8 +32,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [SetUp]
         public void Init()
         {
-            fabricaComandos = new FabricaComandos();
-            horarioPractica = (ComandoConsultarListaHorarioPractica)fabricaComandos.ObtenerComandoConsultarListaHorarioPractica();
+            horarioPractica = (ComandoConsultarListaHorarioPractica)FabricaComandos.ObtenerComandoConsultarListaHorarioPractica();
             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
             horarioPractica.LaEntidad = idPersona;
@@ -46,7 +44,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [TearDown]
         public void Clean()
         {
-            fabricaComandos = null;
             horarioPractica = null;
             idPersona = null;
         }

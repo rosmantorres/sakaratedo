@@ -35,12 +35,10 @@ namespace Interfaz_Presentadores.Modulo7
         /// </summary>
         public void ConsultarHorarioPractica(Entidad idPersona)
         {
-            FabricaComandos fabricaComandos = new FabricaComandos();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             try
             {
                 Comando<Tuple<List<Entidad>>> comandoListaHorarioPractica = 
-                    fabricaComandos.ObtenerComandoConsultarListaHorarioPractica();
+                    FabricaComandos.ObtenerComandoConsultarListaHorarioPractica();
 
                 comandoListaHorarioPractica.LaEntidad = idPersona;
                 Tuple<List<Entidad>> tupla = comandoListaHorarioPractica.Ejecutar();

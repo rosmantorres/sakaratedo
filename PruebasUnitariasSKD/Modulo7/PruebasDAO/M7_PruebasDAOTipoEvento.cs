@@ -21,7 +21,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private TipoEventoM7 idTipoEvento;
-        private FabricaDAOSqlServer fabricaSql;
         private DaoTipoEvento baseDeDatosTipoEvento;
         #endregion
 
@@ -32,8 +31,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [SetUp]
         public void Init()
         {
-            fabricaSql = new FabricaDAOSqlServer();
-            baseDeDatosTipoEvento = fabricaSql.ObtenerDaoTipoEventoM7();
+            baseDeDatosTipoEvento = FabricaDAOSqlServer.ObtenerDaoTipoEventoM7();
             idTipoEvento = (TipoEventoM7)FabricaEntidades.ObtenerTipoEventoM7();
             idTipoEvento.Id = 2;
         }
@@ -45,7 +43,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idTipoEvento = null;
-            fabricaSql = null;
             baseDeDatosTipoEvento = null;
         }
         #endregion
