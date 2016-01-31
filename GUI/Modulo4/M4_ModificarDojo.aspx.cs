@@ -124,14 +124,6 @@ namespace templateApp.GUI.Modulo4
             }
         }
 
-
-
-
-
-
-
-
-
         /// <summary>
         /// El metodo que perite la llamada del presentador para 
         /// modificar el Dojo

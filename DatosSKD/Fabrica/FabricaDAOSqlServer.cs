@@ -60,6 +60,14 @@ namespace DatosSKD.Fabrica
         {
             return new DaoDojo();
         }
+        /// <summary>
+        /// Método que instancia el DAO de Historial Matricula
+        /// </summary>
+        /// <returns>DaoHistorialM</returns>
+        public static IDaoHistorialM ObtenerDAOHistorialM()
+        {
+            return new DaoHistorialM();
+        }
         #endregion
 
         #region Modulo 5

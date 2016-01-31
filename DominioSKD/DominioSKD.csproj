@@ -75,6 +75,7 @@
     <Compile Include="Correo.cs" />
     <Compile Include="DocumentoIdentidad.cs" />
     <Compile Include="Entidad.cs" />
+    <Compile Include="Entidades\Modulo4\HistorialM.cs" />
     <Compile Include="Entidades\Modulo8\RestriccionCinta.cs" />
     <Compile Include="Entidades\Modulo15\Implemento.cs" />
     <Compile Include="Entidades\Modulo15\Usuario.cs" />

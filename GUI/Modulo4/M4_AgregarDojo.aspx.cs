@@ -101,7 +101,7 @@ namespace templateApp.GUI.Modulo4
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btn_agregarDojo_Click(object sender, EventArgs e)
+        protected void Btn_agregarDojo_Click(object sender, EventArgs e)
         {
             _presentador.AgregarDojo_Click();
             Response.Redirect("M4_ListarDojos.aspx?success=1");

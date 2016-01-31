@@ -466,7 +466,7 @@ namespace DatosSKD.DAO.Modulo4 {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a M4_ModificarHistorial.
+        ///   Busca una cadena traducida similar a M4_ModificarHistorialM.
         /// </summary>
         internal static string ModificarHistorialMatricula {
             get {

@@ -256,7 +256,7 @@
     <value>M4_ModificarDojo</value>
   </data>
   <data name="ModificarHistorialMatricula" xml:space="preserve">
-    <value>M4_ModificarHistorial</value>
+    <value>M4_ModificarHistorialM</value>
   </data>
   <data name="ParametroDireccion" xml:space="preserve">
     <value>Direccion</value>

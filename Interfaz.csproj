@@ -258,9 +258,12 @@
     <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
     <Content Include="GUI\Modulo4\M4_AgregarDojo.aspx" />
+    <Content Include="GUI\Modulo4\M4_AgregarHistorialMatricula.aspx" />
     <Content Include="GUI\Modulo4\M4_DetalleDojo.aspx" />
     <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
+    <Content Include="GUI\Modulo4\M4_ListarHistorialMatricula.aspx" />
     <Content Include="GUI\Modulo4\M4_ModificarDojo.aspx" />
+    <Content Include="GUI\Modulo4\M4_ModificarHistorialMatricula.aspx" />
     <Content Include="GUI\Modulo5\M5_ListarCintas.aspx" />
     <Content Include="GUI\Modulo5\M5_ModificarCintas.aspx" />
     <Content Include="GUI\Modulo5\M5_CrearCintas.aspx" />
@@ -1885,6 +1888,13 @@
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.designer.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo4\M4_AgregarHistorialMatricula.aspx.cs">
+      <DependentUpon>M4_AgregarHistorialMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_AgregarHistorialMatricula.aspx.designer.cs">
+      <DependentUpon>M4_AgregarHistorialMatricula.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo4\M4_DetalleDojo.aspx.cs">
       <DependentUpon>M4_DetalleDojo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1899,12 +1909,26 @@
     <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.designer.cs">
       <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo4\M4_ListarHistorialMatricula.aspx.cs">
+      <DependentUpon>M4_ListarHistorialMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_ListarHistorialMatricula.aspx.designer.cs">
+      <DependentUpon>M4_ListarHistorialMatricula.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo4\M4_ModificarDojo.aspx.cs">
       <DependentUpon>M4_ModificarDojo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_ModificarDojo.aspx.designer.cs">
       <DependentUpon>M4_ModificarDojo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_ModificarHistorialMatricula.aspx.cs">
+      <DependentUpon>M4_ModificarHistorialMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_ModificarHistorialMatricula.aspx.designer.cs">
+      <DependentUpon>M4_ModificarHistorialMatricula.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo4\M4_RecursoInterfaz.Designer.cs">
       <AutoGen>True</AutoGen>

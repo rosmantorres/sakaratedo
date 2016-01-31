@@ -101,14 +101,23 @@ namespace DominioSKD.Fabrica
             return new List<DojoM4>();
         }
 
-       /* public static Entidad ObtenerHistorialMatricula()
+        /// <summary>
+        /// instancia Historial Matricula
+        /// </summary>
+        /// <returns>entidad Historial Matricula</returns>
+        public static Entidad ObtenerHistorialMatricula()
         {
-            return new Historial_Matricula();
+            return new HistorialM();
         }
-        public static List<Historial_Matricula> ObtenerListaHistorialMatricula()
+
+        /// <summary>
+        /// instancia lista de Historial Matricula
+        /// </summary>
+        /// <returns>lista Historial Matricula</returns>
+        public static List<HistorialM> ObtenerListaHistorialMatricula()
         {
-            return new List<Historial_Matricula>();
-        }*/
+            return new List<HistorialM>();
+        }
 
 
         /// <summary>

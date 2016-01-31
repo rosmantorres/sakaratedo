@@ -1,6 +1,5 @@
 ﻿using DatosSKD.Fabrica;
 using DatosSKD.InterfazDAO.Modulo4;
-using DominioSKD;
 using ExcepcionesSKD;
 using System;
 using System.Collections.Generic;
@@ -10,26 +9,25 @@ using System.Threading.Tasks;
 
 namespace LogicaNegociosSKD.Comandos.Modulo4
 {
-    public class ComandoDetallarDojo : Comando<Entidad>
+    public class ComandoModificarHistorialM: Comando<bool>
     {
         /// <summary>
-        /// /// <summary>
         /// Método que sirve de enlace entre los datos
-        /// y la vista que ejecuta el detalle de un dojo
+        /// y la vista que ejecuta en modificar el Historial Matricula
         /// </summary>
-        /// <returns>retorna el dojo</returns>
-        public override Entidad Ejecutar()
+        /// <returns>retorna true si se modificó y false si no se modificó</returns>
+        public override bool Ejecutar()
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                 , RecursosComandoModulo4.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
             try
             {
-                IDaoDojo daoDojo = FabricaDAOSqlServer.ObtenerDAODojo();
+                IDaoHistorialM daoHistorial = FabricaDAOSqlServer.ObtenerDAOHistorialM();
 
                 Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name
                     , RecursosComandoModulo4.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-                return daoDojo.ConsultarXId(this.LaEntidad);
+                return daoHistorial.Modificar(this.LaEntidad);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -51,6 +49,5 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
             }
 
         }
-
     }
 }

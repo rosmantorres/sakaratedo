@@ -58,9 +58,12 @@
       <DependentUpon>M4_RecursosPresentador.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo4\PresentadorAgregarDojo.cs" />
+    <Compile Include="Modulo4\PresentadorAgregarHistorialM.cs" />
     <Compile Include="Modulo4\PresentadorDetallarDojo.cs" />
     <Compile Include="Modulo4\PresentadorListarDojos.cs" />
+    <Compile Include="Modulo4\PresentadorListarHistorialM.cs" />
     <Compile Include="Modulo4\PresentadorModificarDojo.cs" />
+    <Compile Include="Modulo4\PresentadorModificarHistorialM.cs" />
     <Compile Include="Modulo8\PresentadorAgregarRestriccionCinta.cs" />
     <Compile Include="Modulo8\PresentadorAgregarRestriccionCompetencia.cs" />
     <Compile Include="Modulo11\PresentadorDetalleResultado.cs" />

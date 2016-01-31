@@ -48,10 +48,15 @@
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarModificarStatusOrganizacion.cs" />
     <Compile Include="Comandos\Modulo4\ComandoAgregarDojo.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoAgregarHistorialM.cs" />
     <Compile Include="Comandos\Modulo4\ComandoDetallarDojo.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoDetallarHistorialM.cs" />
     <Compile Include="Comandos\Modulo4\ComandoEliminarDojo.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoEliminarHistorialM.cs" />
     <Compile Include="Comandos\Modulo4\ComandoListarDojos.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoListarHistorialM.cs" />
     <Compile Include="Comandos\Modulo4\ComandoModificarDojo.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoModificarHistorialM.cs" />
     <Compile Include="Comandos\Modulo4\RecursosComandoModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
