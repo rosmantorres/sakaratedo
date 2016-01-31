@@ -41,7 +41,7 @@ namespace DatosSKD.DAO.Modulo8
         /// Metodo para agregar una restriccion de evento a la base de datos.
         /// </summary>
         /// <param name="parametro">objeto de tipo RestriccionEvento para agregar en bd</param>
-        /// <returns>true si fue eliminado</returns>
+        /// <returns>true si fue agregado</returns>
         public Boolean AgregarRestriccionEvento(DominioSKD.Entidad parametro)
         {
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestriccionEvento =
@@ -167,7 +167,7 @@ namespace DatosSKD.DAO.Modulo8
 
         #region ConsultarEventosSinsRestriccion
         /// <summary>
-        /// Metodo para consultar los eventos que no tienen restricciones aun.
+        /// Metodo para consultar los eventos que no tienen restricciones creadas y activas.
         /// </summary>
         /// <returns>Lista de EventoSimple que no tienen Restriccion</returns>
         public List<Entidad> ConsultarEventosSinRestriccion()
@@ -222,7 +222,7 @@ namespace DatosSKD.DAO.Modulo8
 
         #region ConsultarRestriccionEvento
         /// <summary>
-        /// Metodo para consultar la RestriccionEvento de un evento especifico en la base de datos.
+        /// Metodo para consultar la RestriccionEvento de un evento especifico en la base de datos y activo.
         /// </summary>
         /// <param name="parametro">EventoSimple a consultar restriccion con su id</param>
         /// <returns>Objeto de tipo RestriccionEvento con todos los datos</returns>
@@ -291,10 +291,10 @@ namespace DatosSKD.DAO.Modulo8
 
         #region EliminarRestriccionEvento
         /// <summary>
-        /// Metodo para eliminar una restriccion de evento en la base de datos.
+        /// Metodo para cambiar status de una restriccion de evento en la base de datos.
         /// </summary>
         /// <param name="parametro"> int id de la RestriccioEvento para ser modificado en bd</param>
-        /// <returns>true si fue eliminado</returns>
+        /// <returns>true si fue modificado</returns>
         public Boolean EliminarRestriccionEvento(DominioSKD.Entidad parametro)
         {
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestriccionEvento =
@@ -350,7 +350,7 @@ namespace DatosSKD.DAO.Modulo8
         /// Metodo para consultar eventos que puede asistir un atleta.
         /// </summary>
         /// <param name="parametro">int id de la persona a consultar eventos que puede asistir</param>
-        /// <returns>Lista de EventoSimple a los que puede asistir</returns>
+        /// <returns>Lista de EventoSimple a los que puede asistir(id,nombre)</returns>
         public List<Entidad> EventosQuePuedeAsistirAtleta(int parametro)
         {
             List<Parametro> parametros = new List<Parametro>();

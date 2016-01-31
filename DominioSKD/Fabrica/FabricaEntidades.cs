@@ -465,7 +465,7 @@ namespace DominioSKD.Fabrica
         /// Fabrica de CintaSimple sin parametros de entrada
         /// </summary>
         /// <returns> Objeto Tipo Entidad </returns>
-        public Entidad obtenerCintaSimple()
+        public static Entidad obtenerCintaSimple()
         {
             return new Entidades.Modulo8.CintaSimple();
         }
@@ -476,7 +476,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Integer, atributo correspondiente al id de la cinta en bd </param>
         /// <param name="inputColor">String, color de la cinta</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerCintaSimple(int inputId, String inputColor)
+        public static Entidad ObtenerCintaSimple(int inputId, String inputColor)
         {
             return new Entidades.Modulo8.CintaSimple(inputId, inputColor);
         }
@@ -488,7 +488,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Integer, atributo correspondiente al id de la cinta en bd </param>
         /// <param name="inputColor">String, color de la cinta</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerCintaSimple(int id, int inputId, String inputColor)
+        public static Entidad ObtenerCintaSimple(int id, int inputId, String inputColor)
         {
             return new Entidades.Modulo8.CintaSimple(id, inputId, inputColor);
         }
