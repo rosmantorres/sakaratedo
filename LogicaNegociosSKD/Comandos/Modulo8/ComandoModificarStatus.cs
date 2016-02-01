@@ -6,25 +6,23 @@ using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
 using System.Data.SqlClient;
-using DatosSKD.Fabrica;
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
-    public class ComandoEliminarListaCompetenciaRestriccionCompetencia : Comando<Boolean>
+    public class ComandoModificarStatusCinta : Comando<Boolean>
     {
-        private Entidad RestriccionCompetencia;
+        private Entidad parametro;
 
-        public Entidad LaRestriccionCompetencia
+        public Entidad Parametro
         {
-            get { return RestriccionCompetencia; }
-            set { RestriccionCompetencia = value; }
+            get { return parametro; }
+            set { parametro = value; }
         }
-        private List<Entidad> listaCompetencias;
 
-        public List<Entidad> ListaCompetencias
+        public ComandoModificarStatusCinta(Entidad nuevaEntidad)
+            : base()
         {
-            get { return listaCompetencias; }
-            set { listaCompetencias = value; }
+            this.LaEntidad = nuevaEntidad;
         }
 
         public override Boolean Ejecutar()
@@ -33,15 +31,12 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
 
             DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
 
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-         
-
-            IDaoRestriccionCompetencia daoRestriccionCompetencia = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCompetencia();
+            IDaoRestriccionCinta daoRestriccionCinta = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCinta();
 
             try
             {
 
-                resultado = daoRestriccionCompetencia.EliminarListaCompetenciaRestriccionCompetencia(this.RestriccionCompetencia, this.listaCompetencias);
+                resultado = daoRestriccionCinta.StatusRestriccionCinta(this.LaEntidad);
 
             }
             catch (SqlException ex)
@@ -64,6 +59,5 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             return resultado;
 
         }
-
     }
 }

@@ -26,8 +26,11 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             Boolean resultado = false;
             
             FabricaDAOSqlServer fabricaDAO = new FabricaDAOSqlServer();
+
+            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
             
-            IDaoRestriccionCompetencia daoRestriccionCompetencia = fabricaDAO.ObtenerDAORestriccionCompetencia();
+
+            IDaoRestriccionCompetencia daoRestriccionCompetencia = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCompetencia();
 
             try
             {

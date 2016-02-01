@@ -70,6 +70,15 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to M8_Agregar_Restriccion_Cinta_Simple.
+        /// </summary>
+        internal static string AgregarRestriccionCintaSimple {
+            get {
+                return ResourceManager.GetString("AgregarRestriccionCintaSimple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to color.
         /// </summary>
         internal static string AliasColorCinta {
@@ -111,6 +120,15 @@ namespace DatosSKD.DAO.Modulo8 {
         internal static string AliasPuntosMinCintas {
             get {
                 return ResourceManager.GetString("AliasPuntosMinCintas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to resStatus.
+        /// </summary>
+        internal static string AliasStatus {
+            get {
+                return ResourceManager.GetString("AliasStatus", resourceCulture);
             }
         }
         
@@ -178,7 +196,7 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to M8_Eliminar_Restriccion_Cinta.
+        ///   Looks up a localized string similar to M8_EliminarRestriccionCinta.
         /// </summary>
         internal static string EliminarRestriccionCinta {
             get {
@@ -255,6 +273,15 @@ namespace DatosSKD.DAO.Modulo8 {
         internal static string ParamPuntosMinimos {
             get {
                 return ResourceManager.GetString("ParamPuntosMinimos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @status.
+        /// </summary>
+        internal static string ParamStatus {
+            get {
+                return ResourceManager.GetString("ParamStatus", resourceCulture);
             }
         }
         

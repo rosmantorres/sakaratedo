@@ -86,11 +86,47 @@ namespace templateApp.GUI.Modulo8
         {
             get
             {
-                return Request.QueryString["idPlan"];
+                return Request.QueryString[RecursoInterfazModulo8.idP];
             }
             set
             {
-                String idEvento = Request.QueryString["idPlan"]; 
+                String idEvento = Request.QueryString[RecursoInterfazModulo8.idP]; 
+            }
+        }
+
+        public string alertaClase
+        {
+            set
+            {
+                alert.Attributes[RecursoInterfazModulo8.alertClase] = value;
+            }
+        }
+
+        public string alertaRol
+        {
+            set
+            {
+                alert.Attributes[RecursoInterfazModulo8.alertRole] = value;
+            }
+        }
+
+        public string alerta
+        {
+            set
+            {
+                alert.InnerHtml = value;
+            }
+        }
+
+        public Label myLabel
+        {
+            get
+            {
+                return this.labelRest;
+            }
+            set
+            {
+                this.labelRest = value;
             }
         }
         #endregion
@@ -105,20 +141,31 @@ namespace templateApp.GUI.Modulo8
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
+            String idRest = Request.QueryString[RecursoInterfazModulo8.idP];
+            String nombre = Request.QueryString[RecursoInterfazModulo8.nombre];
+            String emin = Request.QueryString[RecursoInterfazModulo8.emin];
+            String emax = Request.QueryString[RecursoInterfazModulo8.emax];
+            String sexo = Request.QueryString[RecursoInterfazModulo8.sexo];
+            String descripcion = Request.QueryString[RecursoInterfazModulo8.descripcion];
+
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
-                _presentador.LlenarComboCinta();
-                _presentador.LlenarComboSexo();
-                _presentador.LlenarComboEdades();
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
+                _presentador.LlenarComboCinta(descripcion);
+                _presentador.LlenarComboSexo(sexo);
+                _presentador.LlenarComboEdades(emin, emax);
+                _presentador.LlenarLabel(idRest, nombre);
             }
 
         }
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            _presentador.ModificarRest();
-            Response.Redirect("../Modulo8/interfazRestriccionesHorario.aspx");
+            Boolean validar = _presentador.ModificarRest();
+            if (validar)
+            {
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario2 + Request.QueryString[RecursoInterfazModulo8.nombre]);
+            }
         }
     }
 }

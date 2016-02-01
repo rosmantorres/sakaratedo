@@ -118,11 +118,11 @@
 
   <!--OPCIONES DE MODULO 8-->
 
-  <opcion nombre="Gestión de Rest. de Horarios" link="~/GUI/Modulo8/interfazRestriccionesHorario.aspx">
+  <opcion nombre="Gestión de Rest. de Eventos" link="~/GUI/Modulo8/interfazRestriccionesHorario.aspx">
     <modulo id="8.0"></modulo>
   </opcion>
 
-  <opcion nombre="Gestión de Rest. de Eventos" link="~/GUI/Modulo8/interfazRestriccionesEventos.aspx">
+  <opcion nombre="Gestión de Rest. de Competencias" link="~/GUI/Modulo8/interfazRestriccionesEventos.aspx">
     <modulo id="8.0"></modulo>
   </opcion>
 
@@ -130,11 +130,11 @@
     <modulo id="8.0"></modulo>
   </opcion>
 
-  <opcion nombre="Agregar Rest. de Horario" link="~/GUI/Modulo8/interfazCrearRestriccionHorario.aspx">
+  <opcion nombre="Agregar Rest. de Evento" link="~/GUI/Modulo8/interfazCrearRestriccionHorario.aspx">
     <modulo id="8.1"></modulo>
   </opcion>
 
-  <opcion nombre="Agregar Rest. de Evento" link="~/GUI/Modulo8/interfazCrearRestriccionEvento.aspx">
+  <opcion nombre="Agregar Rest. de ompetencia" link="~/GUI/Modulo8/interfazCrearRestriccionEvento.aspx">
     <modulo id="8.2"></modulo>
   </opcion>
 

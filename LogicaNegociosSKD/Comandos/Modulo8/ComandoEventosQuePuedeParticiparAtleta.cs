@@ -5,36 +5,41 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
+using DatosSKD.DAO.Modulo8;
+using ExcepcionesSKD;
 using System.Data.SqlClient;
-using DatosSKD.Fabrica;
+
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
-    public class ComandoConsultarCompetencias : Comando<List<DominioSKD.Entidad>>
+    public class ComandoEventosQuePuedeParticiparAtleta : Comando<List<DominioSKD.Entidad>>
     {
+        private Entidad parametro;
 
-        //private Entidad RestriccionCompetencia;
+        public Entidad Parametro
+        {
+            get { return parametro; }
+            set { parametro = value; }
+        }
 
-        //public Entidad LaRestriccionCompetencia
-        //{
-        //    get { return RestriccionCompetencia; }
-        //    set { RestriccionCompetencia = value; }
-        //}
+        public ComandoEventosQuePuedeParticiparAtleta(Entidad nuevaEntidad) 
+            :base()
+        {
+            this.LaEntidad = nuevaEntidad;
+        }
 
         public override List<DominioSKD.Entidad> Ejecutar()
         {
-            List<DominioSKD.Entidad> resultado;
+            List<DominioSKD.Entidad> resultado = new List<Entidad>(); ;
 
             DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
 
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
- 
-
-            IDaoRestriccionCompetencia daoRestriccionCompetencia = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCompetencia();
 
             try
             {
-
-                resultado = daoRestriccionCompetencia.ConsultarCompetencias();
+                //Deberia recibir una entidad de tipo persona, lo mantengo von int para hacer las pruebas unitarias
+                int parametro = 1;
+                IDaoRestriccionEvento daoRestriccionEvento = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
+                resultado = daoRestriccionEvento.EventosQuePuedeAsistirAtleta(parametro);
 
             }
             catch (SqlException ex)
@@ -57,5 +62,6 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             return resultado;
 
         }
+
     }
 }

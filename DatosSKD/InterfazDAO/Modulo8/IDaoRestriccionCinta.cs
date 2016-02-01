@@ -18,6 +18,15 @@ namespace DatosSKD.InterfazDAO.Modulo8
         Boolean AgregarRestriccionCinta(DominioSKD.Entidad parametro);
 
         /// <summary>
+        /// Firma de metodo que agrega una restriccion de cinta simple
+        /// dada una configuracion de parametros especifica.
+        /// </summary>
+        /// <param name="parametro">Tipo: RestriccionCinta,
+        /// objeto con la informacion de una restriccion para cintas</param>
+        /// <returns>Retorna un Boolean una vez realizada la operacion</returns>
+        Boolean AgregarRestriccionCintaSimple(DominioSKD.Entidad parametro);
+
+        /// <summary>
         /// Firma de metodo que Modificar una restriccion de cinta
         /// dada una configuracion de parametros especifica.
         /// </summary>
@@ -52,5 +61,14 @@ namespace DatosSKD.InterfazDAO.Modulo8
         /// objeto con la informacion de una restriccion para cintas</param>
         /// <returns>Retorna un Boolean una vez realizada la operacion</returns>
         List<DominioSKD.Entidad> ConsultarRestriccionCintaDT();
+
+        /// <summary>
+        /// Firma de metodo que cambia una restriccion de cinta
+        /// de status activado a dsactivado.
+        /// </summary>
+        /// <param name="parametro">Tipo: RestriccionCinta,
+        /// objeto con la informacion de una restriccion para cintas</param>
+        /// <returns>Retorna un Boolean una vez realizada la operacion</returns>
+        Boolean StatusRestriccionCinta(DominioSKD.Entidad parametro);
     }
 }

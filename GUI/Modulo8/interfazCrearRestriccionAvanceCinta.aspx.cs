@@ -29,8 +29,6 @@ namespace templateApp.GUI.Modulo8
            }
        }
 
-      
-
        public string tiempo_Min
         {
             get
@@ -91,37 +89,52 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-       public String alertLocalRol
-        {
-            set
-            {
-                this.alertlocal.InnerText = value;
-            }
-        }
-
-       public String alertLocalClase
-        {
-            set
-            {
-                this.alert.InnerText = value;
-            }
-        }
-
-       public String alertLocal
-        {
-            set
-            {
-                this.alertlocal.InnerHtml = value;
-            }
-        }
-
-       public bool alerta
-        {
-            set
-            {
-                this.alert.Visible = value;
-            }
-        }
+      /* public void alertaCamposVacios()
+       {
+           this.alert.Attributes[RecursoInterfazModulo8.alertClase] = RecursoInterfazModulo8.alertaError;
+           this.alert.Attributes[RecursoInterfazModulo8.alertRole] = RecursoInterfazModulo8.tipoAlerta;
+           this.alert.InnerHtml = RecursoInterfazModulo8.alertaHtml + RecursoInterfazModulo8.camposVacios + RecursoInterfazModulo8.alertaHtmlFinal;
+           this.alert.Visible = true;
+       }
+       public void alertaAgregarFallidoOrden(ExcepcionesSKD.Modulo8.RestriccionExistenteException ex)
+       {
+           this.alert.Attributes[RecursoInterfazModulo8.alertClase] = RecursoInterfazModulo8.alertaError;
+           this.alert.Attributes[RecursoInterfazModulo8.alertRole] = RecursoInterfazModulo8.tipoAlerta;
+           this.alert.InnerHtml = RecursoInterfazModulo8.alertaHtml + ex.Message + RecursoInterfazModulo8.alertaHtmlFinal;
+           this.alert.Visible = true;
+       }
+       public void alertaAgregarFallidoRepetida(ExcepcionesSKD.Modulo8.RestriccionRepetidaException ex)
+       {
+           this.alert.Attributes[RecursoInterfazModulo8.alertClase] = RecursoInterfazModulo8.alertaError;
+           this.alert.Attributes[RecursoInterfazModulo8.alertRole] = RecursoInterfazModulo8.tipoAlerta;
+           this.alert.InnerHtml = RecursoInterfazModulo8.alertaHtml + ex.Message + RecursoInterfazModulo8.alertaHtmlFinal;
+           this.alert.Visible = true;
+       }*/
+       public void Respuesta()
+       {
+           this.Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta);
+       }
+       public string alertaClase
+       {
+           set
+           {
+               this.alert.Attributes["class"] = value;
+           }
+       }
+       public string alertaRol
+       {
+           set
+           {
+               this.alert.Attributes["role"] = value;
+           }
+       }
+       public string alerta
+       {
+           set
+           {
+               this.alert.InnerHtml = value;
+           }
+       }
         #endregion
 
 
@@ -132,38 +145,38 @@ namespace templateApp.GUI.Modulo8
 		}
         #endregion
 
-       protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 try
-                { 
-                _presentador.LlenarComboCinta();
+                {
+                    _presentador.LlenarComboCinta();
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
-                    Alerta(ex.Message);
+                    _presentador.Alerta(ex.Message);
                 }
             }
         }
+        
                
        protected void btnaceptar_Click(object sender, EventArgs e)
         {
             if (_presentador.agregarRest() == true)
             {
-                Response.Redirect("../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true");
+                Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta);
             }
 
         }
-
-       public void Alerta(string msj)
+       /*public void Alerta(string msj)
        {
-           _presentador.Alerta(msj);
-           /* alert.Attributes["class"] = "alert alert-danger alert-dismissible";
+          /* _presentador.Alerta(msj);
+            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
             alert.Attributes["role"] = "alert";
-            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";*/
-       }
+            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+       }*/
 
        public bool validarInput(String pword)
        {

@@ -33,16 +33,11 @@
 
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
-
-    <div id="alerta" runat="server">
+    <%--  --%>
+    <div id="alert" runat="server">
 	</div>
 
-	<div class="row">
-			<div class="col-xs-12">
-			  <div class="box">
-				<div class="box-header">
-				  <h3 class="box-title">Lista de Restricciones de Avance de Cinta</h3>
-				</div><!-- /.box-header -->
+	
 
 <form role="form" name="consultar_planilla" id="consular_planillas" runat="server">
 	<div class="box-body table-responsive">
@@ -51,10 +46,11 @@
 		<thead>
 				<tr>
 					<th>ID</th>
-					<th>Cinta</th>
-					<th >Tiempo Mínimo (meses)</th>
+					<th>Descripcion</th>
+					<th>Tiempo Mínimo (meses)</th>
 					<th>Puntaje Mínimo</th>
-					<th >Mínimo Horas Docentes</th>
+					<th>Mínimo Horas Docentes</th>
+					<th>Status</th>
 					<th style="text-align:right;">Acciones</th>
 				</tr>
 			</thead>

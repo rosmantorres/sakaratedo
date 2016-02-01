@@ -13,13 +13,13 @@ namespace templateApp.GUI.Modulo8 {
     public partial class interfazRestriccionesHorario {
         
         /// <summary>
-        /// alerta control.
+        /// alert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alerta;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
         /// consular_planillas control.

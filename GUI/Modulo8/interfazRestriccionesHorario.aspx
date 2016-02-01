@@ -25,8 +25,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="titulo" runat="server">Gestión de Restricciones de Horarios</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="subtitulo" runat="server">Restricciones de Horarios</asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="contenidoCentral" runat="server">
-   <div id="alerta" runat="server">
-	</div>
+   <div id="alert" runat="server">
+   </div>
   <div class="row">
    <div class="col-xs-12">
 	 <div class="box">
@@ -47,6 +47,7 @@
 			    <th>Edad Maxima</th>
                 <th>Cinta</th>
                 <th>Sexo</th>
+                <th>Status</th>
 			    <th style="text-align:right;">Acciones</th>
 			</tr>
 		   </thead>
@@ -85,45 +86,45 @@
 	  </div><!-- /.modal-delete -->
 
 		<script type="text/javascript">
-			$(document).ready(function () {
+		    $(document).ready(function () {
 
-			    var table = $('#RestriccionesCintas').DataTable({
-					"language": {
-						"url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
-					}
-				});
-				var req;
-				var tr;
+		        var table = $('#RestriccionesCintas').DataTable({
+		            "language": {
+		                "url": "http://cdn.datatables.net/plug-ins/1.10.9/i18n/Spanish.json"
+		            }
+		        });
+		        var req;
+		        var tr;
 
-				$('#RestriccionesCintas tbody').on('click', 'a', function () {
-					if ($(this).parent().hasClass('selected')) {
-						req = $(this).parent().prev().prev().prev().prev().text();
-						tr = $(this).parents('tr');//se guarda la fila seleccionada
-						$(this).parent().removeClass('selected');
+		        $('#RestriccionesCintas tbody').on('click', 'a', function () {
+		            if ($(this).parent().hasClass('selected')) {
+		                req = $(this).parent().prev().prev().prev().prev().text();
+		                tr = $(this).parents('tr');//se guarda la fila seleccionada
+		                $(this).parent().removeClass('selected');
 
-					}
-					else {
-						req = $(this).parent().prev().prev().prev().prev().text();
-						tr = $(this).parents('tr');//se guarda la fila seleccionada
-						table.$('tr.selected').removeClass('selected');
-						$(this).parent().addClass('selected');
-					}
-				});
-
-
-
-				$('#modal-delete').on('show.bs.modal', function (event) {
-					var modal = $(this)
-					modal.find('.modal-title').text('Eliminar Restricción  ')
-					modal.find('#req').text(req)
-				})
-				$('#btn-eliminar').on('click', function () {
-					table.row(tr).remove().draw();//se elimina la fila de la tabla
-					$('#modal-delete').modal('hide');//se esconde el modal
-				});
+		            }
+		            else {
+		                req = $(this).parent().prev().prev().prev().prev().text();
+		                tr = $(this).parents('tr');//se guarda la fila seleccionada
+		                table.$('tr.selected').removeClass('selected');
+		                $(this).parent().addClass('selected');
+		            }
+		        });
 
 
-			});
+
+		        $('#modal-delete').on('show.bs.modal', function (event) {
+		            var modal = $(this)
+		            modal.find('.modal-title').text('Eliminar Restricción  ')
+		            modal.find('#req').text(req)
+		        })
+		        $('#btn-eliminar').on('click', function () {
+		            table.row(tr).remove().draw();//se elimina la fila de la tabla
+		            $('#modal-delete').modal('hide');//se esconde el modal
+		        });
+
+
+		    });
 
 		</script>
 	

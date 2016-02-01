@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace Interfaz_Presentadores.Modulo8
 {
@@ -25,18 +26,14 @@ namespace Interfaz_Presentadores.Modulo8
             this.vista = vista;
         }
 
-        public void Alerta(string msj)
-        {
-            vista.alertaClase = "alert alert-danger alert-dismissible";
-            vista.alertaRol = "alert";
-            vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
-        }
+       
 
-        public void LlenarInformacion(List<Entidad> lista)
+        public void LlenarInformacion()
         {
             try
             {
-                this.lista = lista;
+                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionCinta();
+                lista = command.Ejecutar();
                 foreach (DominioSKD.Entidades.Modulo8.RestriccionCinta rest in lista)
                 {
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTR;
@@ -45,78 +42,95 @@ namespace Interfaz_Presentadores.Modulo8
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.TiempoMinimo.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.PuntosMinimos.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + rest.TiempoDocente.ToString() + RecursoPresentadorM8.CerrarTD;
-                    /*vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD;
-                    foreach (string dat in plani.Dato)
-                    {
-                        vista.RestriccionesCreadas += dat + RecursoPresentadorM8.linea;
-                    }
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTD;*/
+                    if (rest.Status == 1)
+                        vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + "Activa" + RecursoPresentadorM8.CerrarTD;
+                    else
+                        vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD + "Inactiva" + RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.AbrirTD;
-                    //vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificar + rest.Id + RecursoPresentadorM8.Nombre + plani.Nombre + RecursoPresentadorM8.Tipo + plani.TipoPlanilla + RecursoPresentadorM8.BotonCerrar;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.BotonModificarRegistro + rest.IdRestriccionCinta + RecursoPresentadorM8.Nombre + rest.Descripcion + RecursoPresentadorM8.BotonCerrar;
-                    /*if (plani.Status)
-                        vista.RestriccionesCreadas += RecursoPresentadorM8.BotonActivarPlanilla + plani.ID + RecursoPresentadorM8.BotonCerrar;
-                    else*/
-                    vista.RestriccionesCreadas += RecursoPresentadorM8.BotonDesactivarPlanilla + rest.IdRestriccionCinta + RecursoPresentadorM8.BotonCerrar;
+                    vista.RestriccionesCreadas += RecursoPresentadorM8.Status + rest.IdRestriccionCinta +RecursoPresentadorM8.RestriccionStatus + rest.Status + RecursoPresentadorM8.BotonCerrar;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTD;
                     vista.RestriccionesCreadas += RecursoPresentadorM8.CerrarTR;
 
                 }
             }
-            catch (SqlException ex)
+            catch (ExcepcionesSKD.ExceptionSKD ex)
             {
-                throw ex;
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                    + RecursoPresentadorM8.alertaHtmlFinal;
             }
-            catch (FormatException ex)
-            {
-                throw ex;
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            
         }
-
-        public List<Entidad> LlenarTabla()
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = "alert alert-danger alert-dismissible";
+            vista.alertaRol = "alert";
+            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+        }
+       public void CambiarStatus(int id, int bitStatus)
         {
             try
             {
-                Comando<List<Entidad>> command = FabricaComandos.CrearComandoConsultarRestriccionCinta();
-                return command.Ejecutar();
+                DominioSKD.Entidades.Modulo8.RestriccionCinta laRestCinta = new DominioSKD.Entidades.Modulo8.RestriccionCinta();
+                if (bitStatus == 1)
+                    bitStatus = 0;
+                else
+                    bitStatus = 1;
+                laRestCinta.Status = bitStatus;
+                laRestCinta.IdRestriccionCinta = id;
+                LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta _comando =
+                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoStatusRestriccionCinta(laRestCinta);
+               bool resultado = _comando.Ejecutar();
+            }
+            catch (SqlException ex)
+            {
+                Alerta(ex.Message);
+            }
+            catch (FormatException ex)
+            {
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
-            }
-            catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
-            {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
-                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
+            }
+        }
+
+        public void ObtenerVariablesURL()
+        {
+
+            String success = HttpContext.Current.Request.QueryString[RecursoPresentadorM8.strSuccess];
+            String detalleString = HttpContext.Current.Request.QueryString[RecursoPresentadorM8.strEventoDetalle];
+
+
+            if (detalleString != null)
+            {
+
+            }
+
+            if (success != null)
+            {
+                if (success.Equals(RecursoPresentadorM8.idAlertAgregar))
+                {
+                    vista.alertaClase = RecursoPresentadorM8.alertaSuccess;
+                    vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                    vista.alerta = RecursoPresentadorM8.innerHtmlAlertAgregarRCi;
+
+                }
+
+                if (success.Equals(RecursoPresentadorM8.idAlertModificar))
+                {
+                    vista.alertaClase = RecursoPresentadorM8.alertaSuccess;
+                    vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                    vista.alerta = RecursoPresentadorM8.innerHtmlAlertModificarRCi;
+                }
+
             }
         }
     }

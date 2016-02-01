@@ -71,6 +71,10 @@
     <Compile Include="Comandos\Modulo8\ComandoConsultarCintaTodas.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarRestriccionEvento.cs" />
     <Compile Include="Comandos\Modulo8\ComandoConsultarTodosRestriccionCompetencia.cs" />
+
+    <Compile Include="Comandos\Modulo8\ComandoConsultarUnaRestriccionEvento.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoEliminarLogicoRestriccionCompetencia.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoEliminarRestriccionEvento.cs" />
     <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCinta.cs" />
     <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCinta.cs" />
     <Compile Include="Comandos\Modulo8\ComandoAgregarRestriccionCompetencia.cs" />
@@ -156,6 +160,8 @@
     <Compile Include="Comandos\Modulo16\ComandoConsultarTodasMensualidades.cs" />
     <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionCompetencia.cs" />
     <Compile Include="Comandos\Modulo8\ComandoModificarRestriccionEvento.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoModificarStatus.cs" />
+    <Compile Include="Comandos\Modulo8\ComandoEventosQuePuedeParticiparAtleta.cs" />
     <Compile Include="Comandos\Modulo9\ComandoConsultarTodosEventos.cs" />
     <Compile Include="Comandos\Modulo15\ComandoConsultarTodosProductos.cs" />
     <Compile Include="Comandos\Modulo9\ComandoDetallarEvento.cs" />

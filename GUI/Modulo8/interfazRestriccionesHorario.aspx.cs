@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-//using LogicaNegociosSKD.Modulo14;
+using LogicaNegociosSKD;
 using ExcepcionesSKD;
 using Interfaz_Contratos.Modulo8;
 using Interfaz_Presentadores.Modulo8;
 using DominioSKD;
+using System.Text.RegularExpressions;
+using System.Globalization;
+using templateApp.GUI.Master;
 
 
 namespace templateApp.GUI.Modulo8
@@ -20,25 +23,18 @@ namespace templateApp.GUI.Modulo8
         #region Contratos
         public string alertaClase
         {
-            set
-            {
-                this.alerta.Attributes["class"] = value;
-            }
+            set { alert.Attributes[RecursoInterfazModulo8.alertClase] = value; }
         }
         public string alertaRol
         {
-            set
-            {
-                this.alerta.Attributes["role"] = value;
-            }
+            set { alert.Attributes[RecursoInterfazModulo8.alertRole] = value; }
         }
-        public string alert
+
+        public string alerta
         {
-            set
-            {
-                this.alerta.InnerHtml = value;
-            }
+            set { alert.InnerHtml = value; }
         }
+
         public string RestriccionesCreadas
         {
             get
@@ -60,44 +56,36 @@ namespace templateApp.GUI.Modulo8
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            String success = Request.QueryString[RecursoInterfazModulo8.idP];
+            String stat = Request.QueryString[RecursoInterfazModulo8.stat];
 
-            ((SKD)Page.Master).IdModulo = "8.1";
-
-            if (!IsPostBack)
-            {
-
-                List<Entidad> listaRestricciones = _presentador.LlenarTabla();
-                _presentador.LlenarInformacion(listaRestricciones);
-            }
-
-
-
-            String success = Request.QueryString["actionSuccess"];
-
+            ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.interfazRH;
+            _presentador.ObtenerVariablesURL();
             if (success != null)
             {
-                if (success.Equals("1"))
+                if (stat != null)
                 {
-                    alerta.Attributes["class"] = "alert alert-success alert-dismissible";
-                    alerta.Attributes["role"] = "alert";
-                    alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción agregada exitosamente</div>";
+                    int id = Convert.ToInt32(success);
+                    int sta = Convert.ToInt32(stat);
+                    _presentador.CambiarStatus(id, sta);
                 }
                 else
                 {
-                    if (success.Equals("2"))
-                    {
-                        alerta.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alerta.Attributes["role"] = "alert";
-                        alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción eliminada exitosamente</div>";
-                    }
-                    else
-                        if (success.Equals("3"))
-                        {
-                            alerta.Attributes["class"] = "alert alert-success alert-dismissible";
-                            alerta.Attributes["role"] = "alert";
-                            alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción modificada exitosamente</div>";
-                        }
+                    _presentador.MostrarModificado(success);
                 }
+            }
+            if (success == null )
+            {
+                if (stat != null)
+                {
+                    _presentador.MostrarAgregado(stat);
+                }
+            }
+
+
+            if (!IsPostBack)
+            {
+                _presentador.LlenarInformacion();
             }
 
         }

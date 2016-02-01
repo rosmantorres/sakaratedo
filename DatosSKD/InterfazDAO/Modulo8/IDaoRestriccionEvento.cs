@@ -31,21 +31,6 @@ namespace DatosSKD.InterfazDAO.Modulo8
         Boolean EliminarRestriccionEvento(DominioSKD.Entidad parametro);
 
         /// <summary>
-        /// Firma Metodo para agregar las cintas de una RestriccionEvento en la base de datos.
-        /// </summary>
-        /// <param name="parametro1"> objeto RestriccionEvento para agregar su id en RH_Cinta</param>
-        /// <param name="parametro2"> int del Id de la Cinta para ser agregado su id a la RestriccionEvento</param>
-        /// <returns>true si fue agregado</returns>
-        Boolean AgregarRh_Cinta(DominioSKD.Entidad parametro1, DominioSKD.Entidad parametro2);
-
-        /// <summary>
-        /// Firma Metodo para eliminar las cintas de RestriccionEvento en la base de datos en RH_Cinta.
-        /// </summary>
-        /// <param name="parametro"> objeto RestriccionEvento para eliminar sus cintas relacionadas en bd</param>
-        /// <returns>true si fue eliminado</returns>
-        Boolean EliminarRh_Cinta(DominioSKD.Entidad parametro);
-
-        /// <summary>
         /// Firma Metodo para consultar la RestriccionEvento de un evento especifico en la base de datos.
         /// </summary>
         /// <param name="parametro">EventoSimple a consultar restriccion con su id</param>
@@ -63,13 +48,6 @@ namespace DatosSKD.InterfazDAO.Modulo8
         /// </summary>
         /// <returns>Lista de EventoSimple que no tienen Restriccion</returns>
         List<Entidad> ConsultarEventosSinRestriccion();
-
-        /// <summary>
-        /// Firma Metodo para consultar la RestriccionEvento de un evento especifico en la base de datos.
-        /// </summary>
-        /// <param name="parametro">RestriccionEvento para buscar con su id las cintas que tiene</param>
-        /// <returns>Lista de CintaSimple relacionadas a la restriccionEvento</returns>
-        List<Entidad> ConsultarCintasRestriccionEvento(DominioSKD.Entidad parametro);
 
         /// <summary>
         /// Firma Metodo para consultar eventos que puede asistir un atleta.
