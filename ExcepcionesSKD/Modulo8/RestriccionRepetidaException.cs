@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExcepcionesSKD.Modulo12
+namespace ExcepcionesSKD.Modulo8
 {
     public class RestriccionRepetidaException : ExceptionSKD
     {

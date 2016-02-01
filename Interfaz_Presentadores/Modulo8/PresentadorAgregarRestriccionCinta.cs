@@ -72,14 +72,20 @@ namespace Interfaz_Presentadores.Modulo8
                 }
                 options.Add("-2", "OTRO");
             }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            catch (ExcepcionesSKD.Modulo8.RestriccionRepetidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                /*vista.alertLocalClase = RecursoPresentadorM8.alertaError;
+                vista.alertLocalRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                    + RecursoPresentadorM8.alertaHtmlFinal;*/
+                //vista.alertaAgregarFallidoOrden(ex);
                 throw ex;
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
                 throw ex;
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
@@ -150,10 +156,11 @@ namespace Interfaz_Presentadores.Modulo8
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw ex;
+                throw ex;  
             }
             catch (Exception ex)
             {
+
                 throw ex;
             }
         }
@@ -162,7 +169,7 @@ namespace Interfaz_Presentadores.Modulo8
         {
             //vista.alertLocalClase = RecursoPresentadorM8.Alerta_Clase_Error;
             //vista.alertLocalRol = RecursoPresentadorM8.Alerta_Rol;
-            vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+            //vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
     }
