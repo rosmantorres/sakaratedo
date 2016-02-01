@@ -2003,6 +2003,7 @@ Error Number:2812,State:62,Class:16
 ClientConnectionId:965db426-e050-490b-97b5-740beac0f27a
 Error Number:2812,State:62,Class:16
 >>>>>>> fd28240094e61dc43bf0a6fecacc90c7271b679e
+<<<<<<< Updated upstream
 2016-01-31 01:23:19,588 ERROR PresentadorConsultarRestriccionesCinta - *******************************************************
 2016-01-31 01:23:19,600 ERROR PresentadorConsultarRestriccionesCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
 2016-01-31 01:23:19,662 ERROR PresentadorConsultarRestriccionesCinta - Origen: LogicaNegociosSKD
@@ -2010,6 +2011,15 @@ Error Number:2812,State:62,Class:16
 2016-01-31 01:23:19,670 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 48
    at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Cesar\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 87
 2016-01-31 01:23:19,693 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+=======
+2016-01-31 05:38:09,329 ERROR PresentadorConsultarRestriccionesCinta - *******************************************************
+2016-01-31 05:38:09,347 ERROR PresentadorConsultarRestriccionesCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 05:38:09,351 ERROR PresentadorConsultarRestriccionesCinta - Origen: LogicaNegociosSKD
+2016-01-31 05:38:09,352 ERROR PresentadorConsultarRestriccionesCinta - Metodo: System.Collections.Generic.List`1[DominioSKD.Entidad] Ejecutar()
+2016-01-31 05:38:09,352 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\sesm\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 48
+   at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\sesm\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 83
+2016-01-31 05:38:09,356 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+>>>>>>> Stashed changes
    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -2026,6 +2036,7 @@ Error Number:2812,State:62,Class:16
    at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+<<<<<<< Updated upstream
    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
 ClientConnectionId:b6be863f-0a55-4149-b5ce-0dc575a90661
 Error Number:2812,State:62,Class:16
@@ -2036,6 +2047,26 @@ Error Number:2812,State:62,Class:16
 2016-01-31 01:24:58,023 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 48
    at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Cesar\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 87
 2016-01-31 01:24:58,027 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+=======
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:30fac02b-a4f6-4eb6-9cda-0ee66402abad
+Error Number:2812,State:62,Class:16
+2016-01-31 11:20:24,736 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-31 11:20:24,743 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-31 11:20:24,743 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-31 11:20:24,743 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-31 11:20:24,781 INFO  DaoCinta - *******************************************************
+2016-01-31 11:20:24,781 INFO  DaoCinta - Clase: DaoCinta
+2016-01-31 11:20:24,781 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-31 11:20:24,781 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-31 11:20:25,244 ERROR DaoCinta - *******************************************************
+2016-01-31 11:20:25,244 ERROR DaoCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 11:20:25,246 ERROR DaoCinta - Origen: DatosSKD
+2016-01-31 11:20:25,246 ERROR DaoCinta - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 11:20:25,246 ERROR DaoCinta - StackTrace:    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 300
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 292
+2016-01-31 11:20:25,248 ERROR DaoCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M5_ConsultarCintas'.
+>>>>>>> Stashed changes
    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -2052,6 +2083,7 @@ Error Number:2812,State:62,Class:16
    at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+<<<<<<< Updated upstream
    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
 ClientConnectionId:6cf553d0-0def-480d-8021-c0a792751fa7
 Error Number:2812,State:62,Class:16
@@ -2062,6 +2094,18 @@ Error Number:2812,State:62,Class:16
 2016-01-31 01:25:53,652 ERROR PresentadorConsultarRestriccionesCinta - StackTrace:    at LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta.Ejecutar() in c:\Users\Cesar\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo8\ComandoConsultarRestriccionCinta.cs:line 48
    at Interfaz_Presentadores.Modulo8.PresentadorConsultarRestriccionesCinta.LlenarTabla() in c:\Users\Cesar\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo8\PresentadorConsultarRestriccionesCinta.cs:line 87
 2016-01-31 01:25:53,652 ERROR PresentadorConsultarRestriccionesCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M8_Consultar_Restriccion_Cinta'.
+=======
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:4552e05a-0b6a-4d0e-8c7a-fe9f702bc217
+Error Number:2812,State:62,Class:16
+2016-01-31 11:20:25,322 ERROR EjecutarConsultarTodosCinta - *******************************************************
+2016-01-31 11:20:25,322 ERROR EjecutarConsultarTodosCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 11:20:25,322 ERROR EjecutarConsultarTodosCinta - Origen: DatosSKD
+2016-01-31 11:20:25,322 ERROR EjecutarConsultarTodosCinta - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 11:20:25,325 ERROR EjecutarConsultarTodosCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 328
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarConsultarTodosCinta.Ejecutar() in c:\Users\sesm\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarConsultarTodosCinta.cs:line 28
+2016-01-31 11:20:25,325 ERROR EjecutarConsultarTodosCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M5_ConsultarCintas'.
+>>>>>>> Stashed changes
    at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
    at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
@@ -2078,6 +2122,7 @@ Error Number:2812,State:62,Class:16
    at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
    at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+<<<<<<< Updated upstream
    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
 ClientConnectionId:e892f75e-7271-4c24-a832-b67cb1280c05
 Error Number:2812,State:62,Class:16
@@ -2236,6 +2281,10 @@ Error Number:2812,State:62,Class:16
    at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
 ClientConnectionId:12097687-ad6d-489b-b7b8-9301560fca89
+=======
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:4552e05a-0b6a-4d0e-8c7a-fe9f702bc217
+>>>>>>> Stashed changes
 Error Number:2812,State:62,Class:16
 2016-01-31 19:21:16,200 INFO  EjecutarConsultarTodosCinta - *******************************************************
 2016-01-31 19:21:16,205 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta

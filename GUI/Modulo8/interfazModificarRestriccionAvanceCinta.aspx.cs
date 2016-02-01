@@ -68,35 +68,25 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-       public String alertLocalRol
+        public string alertaClase
         {
             set
             {
-                this.alertlocal.InnerText = value;
+                this.alert.Attributes["class"] = value;
             }
         }
-
-        public String alertLocalClase
+        public string alertaRol
         {
             set
             {
-                this.alert.InnerText = value;
+                this.alert.Attributes["role"] = value;
             }
         }
-
-        public String alertLocal
+        public string alerta
         {
             set
             {
-                this.alertlocal.InnerHtml = value;
-            }
-        }
-
-        public bool alerta
-        {
-            set
-            {
-                this.alert.Visible = value;
+                this.alert.InnerHtml = value;
             }
         }
         #endregion

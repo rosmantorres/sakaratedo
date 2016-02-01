@@ -40,9 +40,10 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-     <div id="alert" runat="server">
+     <div id="alerta" runat="server">
     </div>
   
+
 <form role="form" name="agregar_restriccion" id="agregar_restriccion" method="post"   runat="server">
 <%--    <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
       <div class="form-group  col-sm-12 col-md-12 col-lg-12" >

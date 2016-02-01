@@ -139,7 +139,12 @@ namespace Interfaz_Presentadores.Modulo8
             vista.sexo.DataBind();
         }
 
-
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = "alert alert-danger alert-dismissible";
+            vista.alertaRol = "alert";
+            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+        }
         public void LlenarComboModalidad()
         {
             vista.modalidad.Enabled = true;

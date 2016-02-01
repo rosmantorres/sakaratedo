@@ -103,9 +103,9 @@ namespace Interfaz_Presentadores.Modulo8
 
         public void Alerta(string msj)
         {
-            //vista.alertLocalClase = RecursoPresentadorM8.Alerta_Clase_Error;
-            //vista.alertLocalRol = RecursoPresentadorM8.Alerta_Rol;
-            vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+            vista.alertaClase = "alert alert-danger alert-dismissible";
+            vista.alertaRol = "alert";
+            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
 
