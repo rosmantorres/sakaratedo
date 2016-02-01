@@ -17,10 +17,12 @@ namespace templateApp.GUI.Modulo3
         protected void Page_Load(object sender, EventArgs e)
         {
             String idOrg = Request.QueryString["idOrg"];
-
-            ((SKD)Page.Master).IdModulo = "3";
             this.presentador = new PresentadorModificarOrganizacion(this);
-            this.presentador.llenarModificar();
+            ((SKD)Page.Master).IdModulo = "3";
+            if (!IsPostBack)
+            {
+                this.presentador.llenarModificar();
+            }
         }
 
         #region Contrato
@@ -51,12 +53,12 @@ namespace templateApp.GUI.Modulo3
         public string obtenerEstado
         {
             get { return this.ListEstados.SelectedValue; }
-            set { this.ListEstados.Items.FindByValue(value).Selected = true; }
+            set { this.ListEstados.SelectedValue = value; }
         }
         public string obtenerTecnica
         {
             get { return this.ListTecnica.SelectedValue; }
-            set { this.ListTecnica.Items.FindByValue(value).Selected = true; }
+            set { this.ListTecnica.SelectedValue = value; }
         }
         public void alertaModificarFallidoEstiloOrg(ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
         {

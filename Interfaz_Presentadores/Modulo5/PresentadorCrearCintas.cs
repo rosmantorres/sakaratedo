@@ -60,7 +60,7 @@ namespace Interfaz_Presentadores.Modulo5
         /// <summary>
         /// Método para validar la informacion de la cinta antes de agregarla 
         /// </summary>
-        public bool ValidarExpresionesReg(DominioSKD.Entidades.Modulo5.Cinta laCinta, string ordenString)
+        public void ValidarExpresionesReg(DominioSKD.Entidades.Modulo5.Cinta laCinta, string ordenString)
         {
             //Validar las expresionnes regulares
             Regex rex = new Regex(RecursoPresentadorM5.expresionNombre);
@@ -68,17 +68,20 @@ namespace Interfaz_Presentadores.Modulo5
             Regex rex3 = new Regex(RecursoPresentadorM5.expresionNombreNumero);
 
             if (!rex.IsMatch(laCinta.Color_nombre))
-                return false;
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                                     RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Color, new Exception());
             else if (!rex3.IsMatch(laCinta.Rango))
-                return false;
-            else if (!rex.IsMatch(laCinta.Significado))
-                return false;
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                     RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Rango, new Exception());
             else if (!rex.IsMatch(laCinta.Clasificacion))
-                return false;
-            else if (!rex2.IsMatch(ordenString))
-                return false;
-            else
-               return true;
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                    RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Clasificacion, new Exception());
+            else if (!rex.IsMatch(laCinta.Significado))
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                     RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Significado, new Exception());
+             else if (!rex2.IsMatch(ordenString))
+                throw new ExcepcionesSKD.Modulo5.ExpresionesRegularesException(RecursoPresentadorM5.Codigo_Error_Expresion_Regular,
+                   RecursoPresentadorM5.Mensaje_Error_Expresion_Regular_Orden, new Exception());
         }
 
         /// <summary>
@@ -98,11 +101,9 @@ namespace Interfaz_Presentadores.Modulo5
             laListaDeInputs.Add(this.vista.obtenerOrden.ToString());
             laListaDeInputs.Add(this.vista.obtenerNombreOrganizacion);
 
-
-
+            
             if (Validaciones.ValidarCamposVacios(laListaDeInputs))
-            {
-                
+            {                
 
                 try
                 {
@@ -117,7 +118,7 @@ namespace Interfaz_Presentadores.Modulo5
                     laOrganizacion.Nombre = this.vista.obtenerNombreOrganizacion;
                     laCinta.Organizacion = laOrganizacion;
   
-                    if (ValidarExpresionesReg(laCinta, ordenString)) {
+                    this.ValidarExpresionesReg(laCinta, ordenString);
                         laCinta.Orden = Int32.Parse(ordenString);
 
                     Comando<bool> _comando = FabricaComandos.ObtenerEjecutarAgregarCinta(laCinta);
@@ -125,11 +126,6 @@ namespace Interfaz_Presentadores.Modulo5
                     if (resultado)
                         this.vista.Respuesta();
 
-                    }
-                    else
-                    {
-                        this.vista.alertaExpresiones();
-                    }
                 }
                 catch (ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex)
                 {

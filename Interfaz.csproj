@@ -288,14 +288,14 @@
     <Content Include="GUI\Modulo7\css\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="GUI\Modulo7\css\jquery-ui-1.10.4.custom.css" />
     <Content Include="GUI\Modulo7\css\jquery-ui.css" />
+    <Content Include="GUI\Modulo7\css\js\daterange.js" />
+    <Content Include="GUI\Modulo7\css\js\jquery-ui.js" />
+    <Content Include="GUI\Modulo7\css\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_DetallarHorarioPractica.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetenciaPaga.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetenciaInscrita.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoInscrito.aspx" />
-    <Content Include="GUI\Modulo7\css\js\daterange.js" />
-    <Content Include="GUI\Modulo7\css\js\jquery-ui.js" />
-    <Content Include="GUI\Modulo7\css\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_DetalleCinta.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoPago.aspx" />
@@ -369,6 +369,10 @@
     <Content Include="plugins\jquery_validate\package.json" />
     <Content Include="plugins\jquery_validate\README.md" />
     <Content Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Properties\PublishProfiles\Sakaratedo Web.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1601,9 +1605,9 @@
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_RecursoInterfaz.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>M11_RecursoInterfaz.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.cs">
       <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
@@ -2226,6 +2230,11 @@
     <Compile Include="GUI\Master\SKD.Master.designer.cs">
       <DependentUpon>SKD.Master</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
@@ -2315,6 +2324,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

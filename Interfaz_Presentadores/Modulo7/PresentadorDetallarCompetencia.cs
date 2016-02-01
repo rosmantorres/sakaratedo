@@ -18,7 +18,6 @@ namespace Interfaz_Presentadores.Modulo7
     /// </summary>
     public class PresentadorDetallarCompetencia
     {
-        private FabricaComandos fabricaComandos;
         private IContratoDetallarCompetencia vista;
         /// <summary>
         /// Constructor del presentador
@@ -38,8 +37,7 @@ namespace Interfaz_Presentadores.Modulo7
         {
             try
             {
-                fabricaComandos = new FabricaComandos();
-                ComandoConsultarDetallarCompetencia comandoDetallarCompetencia = (ComandoConsultarDetallarCompetencia)fabricaComandos.ObtenerComandoConsultarDetallarCompetencia();
+                ComandoConsultarDetallarCompetencia comandoDetallarCompetencia = (ComandoConsultarDetallarCompetencia)FabricaComandos.ObtenerComandoConsultarDetallarCompetencia();
                 comandoDetallarCompetencia.LaEntidad = idCompetencia;
                 CompetenciaM7 cinta = (CompetenciaM7)comandoDetallarCompetencia.Ejecutar();
 

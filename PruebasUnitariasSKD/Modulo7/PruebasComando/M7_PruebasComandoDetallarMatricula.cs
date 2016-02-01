@@ -22,7 +22,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         #region Atributos
         private MatriculaM7 idMatricula;
         private PersonaM7 idPersona;
-        private FabricaComandos fabricaComandos;
         private ComandoConsultarDetallarMatricula detalleMatricula;
        
         #endregion
@@ -34,8 +33,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [SetUp]
         public void Init()
         {
-            fabricaComandos = new FabricaComandos();
-            detalleMatricula = (ComandoConsultarDetallarMatricula)fabricaComandos.ObtenerComandoConsultarDetallarMatricula();
+            detalleMatricula = (ComandoConsultarDetallarMatricula)FabricaComandos.ObtenerComandoConsultarDetallarMatricula();
             idMatricula = (MatriculaM7)FabricaEntidades.ObtenerMatriculaM7();
             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idMatricula.Id = 2;
@@ -51,7 +49,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [TearDown]
         public void Clean()
         {
-            fabricaComandos = null;
             detalleMatricula = null;
             idMatricula = null;
         }

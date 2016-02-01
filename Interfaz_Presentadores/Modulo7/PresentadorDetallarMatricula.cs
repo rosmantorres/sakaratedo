@@ -23,7 +23,6 @@ namespace Interfaz_Presentadores.Modulo7
     /// </summary>
     public class PresentadorDetallarMatricula
     {
-        private FabricaComandos fabricaComandos;
         private IContratoDetallarMatricula vista;
         /// <summary>
         /// Constructor del presentador
@@ -42,8 +41,7 @@ namespace Interfaz_Presentadores.Modulo7
         {           
             try
             {
-               fabricaComandos = new FabricaComandos();
-                ComandoConsultarDetallarMatricula comandoDetallarMatricula =(ComandoConsultarDetallarMatricula)fabricaComandos.ObtenerComandoConsultarDetallarMatricula();
+                ComandoConsultarDetallarMatricula comandoDetallarMatricula =(ComandoConsultarDetallarMatricula)FabricaComandos.ObtenerComandoConsultarDetallarMatricula();
                 comandoDetallarMatricula.LaEntidad = idMatricula;
                 comandoDetallarMatricula.IdPersona = (PersonaM7)idPersona;
                 MatriculaM7 matricula = (MatriculaM7)comandoDetallarMatricula.Ejecutar();

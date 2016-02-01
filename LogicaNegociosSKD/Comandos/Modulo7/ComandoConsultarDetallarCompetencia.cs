@@ -23,8 +23,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         /// <returns>Retorna entidad de competencia</returns>
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoCompetencia baseDeDatosCompetencia= fabrica.ObtenerDaoCompetenciaM7();
+            DaoCompetencia baseDeDatosCompetencia= FabricaDAOSqlServer.ObtenerDaoCompetenciaM7();
             CompetenciaM7 idCompetencia = (CompetenciaM7)LaEntidad;
             CompetenciaM7 competencia;
             try

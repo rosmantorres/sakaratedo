@@ -17,7 +17,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     {
         #region Atributos
         private CintaM7 idCinta;
-        private FabricaComandos fabricaComandos;
         private ComandoConsultarDetallarCinta detalleCinta;
         #endregion
 
@@ -28,8 +27,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [SetUp]
         public void Init()
         {
-            fabricaComandos = new FabricaComandos();
-            detalleCinta  = (ComandoConsultarDetallarCinta)fabricaComandos.ObtenerComandoConsultarDetallarCinta();
+            detalleCinta  = (ComandoConsultarDetallarCinta)FabricaComandos.ObtenerComandoConsultarDetallarCinta();
             detalleCinta.IdPersona.Id = 6;
             idCinta = (CintaM7)FabricaEntidades.ObtenerCintaM7();//cambiar por fabrica
             idCinta.Id = 2;
@@ -42,7 +40,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [TearDown]
         public void Clean()
         {
-            fabricaComandos = null;
             detalleCinta = null;
             idCinta = null;
         }

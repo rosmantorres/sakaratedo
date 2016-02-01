@@ -105,8 +105,6 @@ namespace Interfaz_Presentadores.Modulo5
         /// </summary>
         private void asignarInformacionCombo(List<Entidad> listaOrganizaciones)
         {
-
-            //this.vista.agregarOrganizacionCombo(RecursoPresentadorM5.valorNulo, RecursoPresentadorM5.opcionDefecto);
             foreach (Entidad entidad in listaOrganizaciones)
             {
                 DominioSKD.Entidades.Modulo3.Organizacion org = (DominioSKD.Entidades.Modulo3.Organizacion)entidad;
@@ -114,8 +112,6 @@ namespace Interfaz_Presentadores.Modulo5
                 this.vista.agregarOrganizacionCombo(org.Id_organizacion.ToString(), org.Nombre);
 
             }
-            //this.vista.agregarOrganizacionCombo(RecursoPresentadorM5.valorOtro, RecursoPresentadorM5.opcionOtro);
-
         }
 
     }
