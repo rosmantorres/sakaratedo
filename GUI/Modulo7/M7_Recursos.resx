@@ -207,6 +207,9 @@
   <data name="CerrarUL" xml:space="preserve">
     <value>&lt;/ul&gt;</value>
   </data>
+  <data name="CintaDetalle" xml:space="preserve">
+    <value>cintaDetalle</value>
+  </data>
   <data name="Codigo_Lista_Nula" xml:space="preserve">
     <value>SKD_00_012</value>
   </data>
@@ -215,6 +218,12 @@
   </data>
   <data name="Codigo_Objeto_Nulo" xml:space="preserve">
     <value>SKD_00_011</value>
+  </data>
+  <data name="CompetenciaDetalle" xml:space="preserve">
+    <value>compDetalle</value>
+  </data>
+  <data name="CompetenciaDetalle1" xml:space="preserve">
+    <value>compDetalle1</value>
   </data>
   <data name="DetalleStringCompetenciaInscDetalle" xml:space="preserve">
     <value>CompInscDetalle</value>
@@ -231,6 +240,18 @@
   <data name="DetalleStringHorarioPractica" xml:space="preserve">
     <value>horarioDetalle</value>
   </data>
+  <data name="EventoDetalle" xml:space="preserve">
+    <value>eventoDetalle</value>
+  </data>
+  <data name="EventoDetalle1" xml:space="preserve">
+    <value>eventDetalle</value>
+  </data>
+  <data name="ImpDetalle" xml:space="preserve">
+    <value>impDetalle</value>
+  </data>
+  <data name="MatriculaDetalle" xml:space="preserve">
+    <value>matriculaDetalle</value>
+  </data>
   <data name="MensajeListaNulaLogger" xml:space="preserve">
     <value>La lista que retorno el metodo es nula</value>
   </data>
@@ -241,6 +262,9 @@
     <value>El número del parametro es invalido, debe ser un entero positivo</value>
   </data>
   <data name="Modulo" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="NumeroModulo" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="RolAtleta" xml:space="preserve">

@@ -51,10 +51,10 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 
         #region Test
         /// <summary>
-        /// Método para probar que el evento obtenido no esta vacio
+        /// Método para probar que el horario obtenido no esta vacio
         /// </summary>
         [Test]
-        public void PruebaEvento()
+        public void PruebaHorario()
         {
             EventoM7 evento = (EventoM7)detalleHorario.Ejecutar();
             Assert.GreaterOrEqual("Clase Regular", evento.Nombre);

@@ -13,6 +13,9 @@ using DominioSKD.Fabrica;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
+    /// <summary>
+    /// Comando para detallar las matriculas de un atleta
+    /// </summary>
     public class ComandoConsultarDetallarMatricula : Comando<Entidad>
     {
         
