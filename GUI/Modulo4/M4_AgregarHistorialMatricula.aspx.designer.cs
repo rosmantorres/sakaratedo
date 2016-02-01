@@ -31,6 +31,15 @@ namespace templateApp.GUI.Modulo4 {
         protected global::System.Web.UI.WebControls.TextBox dateHM;
         
         /// <summary>
+        /// Control rfvVigengia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvVigengia;
+        
+        /// <summary>
         /// Control modalidadHM.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace templateApp.GUI.Modulo4 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList modalidadHM;
+        
+        /// <summary>
+        /// Control rfvModalidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvModalidad;
         
         /// <summary>
         /// Control cmatriHM.

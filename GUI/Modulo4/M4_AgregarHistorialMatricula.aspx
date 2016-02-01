@@ -7,8 +7,8 @@
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     <script src="../../../plugins/datepicker/bootstrap-datepicker.js"></script>  
 
-    <script src="M4_js/M4_JQuery-2.2.0.js" type="text/javascript"></script>
-    <script src="M4_js/M4_JQuery.maskedinput.js" type="text/javascript"></script>
+   <!-- <script src="M4_js/M4_JQuery-2.2.0.js" type="text/javascript"></script>
+    <script src="M4_js/M4_JQuery.maskedinput.js" type="text/javascript"></script>-->
     <script src="M4_js/M4_JQuery.validate.js" type="text/javascript"></script>
     
 </asp:Content>
@@ -80,6 +80,13 @@
                             <div class="input-group input-append date" id="datePickerfecha">
                                 <asp:TextBox runat="server" type="text" name="dateHM" id="dateHM" class="form-control" ></asp:TextBox>
                                 <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                            <!--    <asp:requiredfieldvalidator 
+                                    id="rfvVigengia" 
+                                    runat="server" 
+                                    Display="Static" 
+                                    ControlToValidate="dateHM" 
+                                    ErrorMessage="Debe Seleccionar Fecha Vigencia"
+                                    EnableClientScript="True" /> -->
                             </div>
                         </div>
                         <%-- FIN DATE PICKER FECHA --%>
@@ -87,16 +94,24 @@
                         <br/>
 
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
-                            <h3>Modalidad de Pago:</h3>
+                           <h3>Modalidad de Pago:</h3>
                            <asp:DropDownList ID="modalidadHM"  class="btn btn-default dropdown-toggle" runat="server">
-                               <asp:ListItem Selected="True" Value="">Seleccionar Modalidad: </asp:ListItem>
+                               <asp:ListItem>Seleccionae Modalidad:</asp:ListItem>
                                 <asp:ListItem Value="Anual">Anual</asp:ListItem>
                                 <asp:ListItem Value="Semestral">Semestral</asp:ListItem>
                                 <asp:ListItem Value="Trimestral">Trimestral</asp:ListItem>
                                 <asp:ListItem Value="Mensual">Mensual</asp:ListItem>
                                 <asp:ListItem Value="Quincenal">Quincenal</asp:ListItem>
                                 <asp:ListItem Value="Semanal">Semanal</asp:ListItem>
-                             </asp:DropDownList>        
+                             </asp:DropDownList>
+                             <asp:requiredfieldvalidator 
+                                id="rfvModalidad" 
+                                runat="server" 
+                                Display="Static" 
+                                ControlToValidate="modalidadHM" 
+                                ErrorMessage="Debe Seleccionar Modalidad"
+                                EnableClientScript="True" 
+                                InitialValue="Seleccione Modalidad:" />       
                         </div>
 
                         <br/>
@@ -117,7 +132,7 @@
                                 Display="Static" 
                                 ControlToValidate="cmatriHM" 
                                 ErrorMessage="Formato de Monto Matricula no valido" 
-                                ValidationExpression="^\d*$"
+                                ValidationExpression="(^\d{1,3}(?:\,\d{1,2})?$)"
                                 EnableClientScript="True"  />
                         </div>
 
