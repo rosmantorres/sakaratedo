@@ -26,12 +26,6 @@ namespace Interfaz_Presentadores.Modulo8
             
         }
 
-        public void Alerta(string msj)
-        {
-            vista.alertaClase = "alert alert-danger alert-dismissible";
-            vista.alertaRol = "alert";
-            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
-        }
         public DominioSKD.Entidades.Modulo8.RestriccionEvento meterParametrosVistaEnObjeto1(DominioSKD.Entidades.Modulo8.RestriccionEvento laRestriccion)
         {
             DominioSKD.Entidades.Modulo8.RestriccionEvento retriccionEvento = laRestriccion;
@@ -62,32 +56,32 @@ namespace Interfaz_Presentadores.Modulo8
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             vista.rangoMaximo.DataSource = options;
             vista.rangoMaximo.DataTextField = RecursoPresentadorM8.value;
@@ -158,23 +152,19 @@ namespace Interfaz_Presentadores.Modulo8
                 }
                 catch (SqlException ex)
                 {
-                    Alerta(ex.Message);
-                    return false;
+                    throw ex;
                 }
                 catch (FormatException ex)
                 {
-                    Alerta(ex.Message);
-                    return false;
+                    throw ex;
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
-                    Alerta(ex.Message);
-                    return false;
+                    throw ex;
                 }
                 catch (Exception ex)
                 {
-                    Alerta(ex.Message);
-                    return false;
+                    throw ex;
                 }
                 return true;
             }

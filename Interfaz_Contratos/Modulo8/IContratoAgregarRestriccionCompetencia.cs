@@ -23,10 +23,11 @@ namespace Interfaz_Contratos.Modulo8
         DropDownList edadMaxima { get; set; }
         DropDownList sexo { get; set; }
         DropDownList modalidad { get; set; }
-        string alertaClase { set; }
-        string alertaRol { set; }
-        string alert { set; }
-    }
+        string alertLocalRol { set; }
+        string alertLocalClase { set; }
+        string alertLocal { set; }
+        string alerta { set; }
+        
         //String alert { set; }
         //String alertClase { set; }
         //String alertRol { set; }
@@ -39,5 +40,5 @@ namespace Interfaz_Contratos.Modulo8
         //String edadMaxima { get; set; }
         //String sexo { get; set; }
         //String modalidad { get; set; }
-    
+    }
 }

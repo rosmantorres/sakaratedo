@@ -37,7 +37,12 @@
     <div id="alert" runat="server">
 	</div>
 
-	
+	<div class="row">
+			<div class="col-xs-12">
+			  <div class="box">
+				<div class="box-header">
+				  <h3 class="box-title">Lista de Restricciones de Avance de Cinta</h3>
+				</div><!-- /.box-header -->
 
 <form role="form" name="consultar_planilla" id="consular_planillas" runat="server">
 	<div class="box-body table-responsive">

@@ -28,14 +28,7 @@ namespace Interfaz_Presentadores.Modulo8
           
             this.vista = laVista;
             
-        }
-
-        public void Alerta(string msj)
-        {
-            vista.alertaClase = "alert alert-danger alert-dismissible";
-            vista.alertaRol = "alert";
-            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
-        }
+        }          
 
         public DominioSKD.Entidades.Modulo8.RestriccionCinta meterParametrosVistaEnObjeto(DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccion)
         {
@@ -82,46 +75,38 @@ namespace Interfaz_Presentadores.Modulo8
             catch (ExcepcionesSKD.Modulo8.RestriccionRepetidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-<<<<<<< Updated upstream
                 /*vista.alertLocalClase = RecursoPresentadorM8.alertaError;
                 vista.alertLocalRol = RecursoPresentadorM8.tipoAlerta;
                 vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
                     + RecursoPresentadorM8.alertaHtmlFinal;*/
                 //vista.alertaAgregarFallidoOrden(ex);
                 throw ex;
-=======
-                Alerta(ex.Message);
->>>>>>> Stashed changes
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-<<<<<<< Updated upstream
 
                 throw ex;
-=======
-                Alerta(ex.Message);
->>>>>>> Stashed changes
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                Alerta(ex.Message);
+                throw ex;
             }
             vista.comboRestCinta.DataSource = options;
             vista.comboRestCinta.DataTextField = "value";
@@ -163,17 +148,14 @@ namespace Interfaz_Presentadores.Modulo8
             
             catch (SqlException ex)
             {
-                Alerta(ex.Message);
-                return false;
+                throw ex;
             }
             catch (FormatException ex)
             {
-                Alerta(ex.Message);
-                return false;
+                throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-<<<<<<< Updated upstream
                 throw ex;  
             }
             catch (Exception ex)
@@ -189,19 +171,6 @@ namespace Interfaz_Presentadores.Modulo8
             //vista.alertLocalRol = RecursoPresentadorM8.Alerta_Rol;
             //vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
-=======
-                Alerta(ex.Message);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                Alerta(ex.Message);
-                return false;
-            }
-        }
-
-        
->>>>>>> Stashed changes
 
     }
 }

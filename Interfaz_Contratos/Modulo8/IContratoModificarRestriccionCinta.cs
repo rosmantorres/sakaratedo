@@ -15,8 +15,9 @@ namespace Interfaz_Contratos.Modulo8
         string tiempo_Min { get; set; }
         string horas_docen { get; set; }
         string puntaje_min { get; set; }
-        string alertaClase { set; }
-        string alertaRol { set; }
-        string alerta { set; }
+        String alertLocalRol { set; }
+        String alertLocalClase { set; }
+        String alertLocal { set; }
+        bool alerta { set; }
     }
 }
