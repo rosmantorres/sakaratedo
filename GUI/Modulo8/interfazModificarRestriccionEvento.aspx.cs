@@ -118,28 +118,6 @@ namespace templateApp.GUI.Modulo8
             }
 
         }
-
-        public string alertaClase
-        {
-            set
-            {
-                this.alert.Attributes["class"] = value;
-            }
-        }
-        public string alertaRol
-        {
-            set
-            {
-                this.alert.Attributes["role"] = value;
-            }
-        }
-        public string alerta
-        {
-            set
-            {
-                this.alert.InnerHtml = value;
-            }
-        }
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {

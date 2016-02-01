@@ -18,7 +18,27 @@ namespace templateApp.GUI.Modulo8
         private PresentadorConsultarRestriccionesCinta _presentador;
 
         #region Contratos
-        
+        public string alertaClase
+        {
+            set
+            {
+                alert.Attributes[RecursoInterfazModulo8.alertClase] = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                alert.Attributes[RecursoInterfazModulo8.alertRole] = value;
+            }
+        }
+        public string alerta
+        {
+            set
+            {
+                alert.InnerHtml = value; 
+            }
+        }
         public string RestriccionesCreadas
         {
             get
@@ -31,27 +51,6 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-        public string alertaClase
-        {
-            set
-            {
-                this.alert.Attributes["class"] = value;
-            }
-        }
-        public string alertaRol
-        {
-            set
-            {
-                this.alert.Attributes["role"] = value;
-            }
-        }
-        public string alerta
-        {
-            set
-            {
-                this.alert.InnerHtml = value;
-            }
-        }
         #endregion
 
         public interfazRestriccionesAvanceCinta()
