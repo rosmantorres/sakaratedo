@@ -47,6 +47,21 @@
   <ItemGroup>
     <Compile Include="Comando.cs" />
     <Compile Include="Comandos\Modulo3\EjecutarModificarStatusOrganizacion.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoAgregarDojo.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoAgregarHistorialM.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoDetallarDojo.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoDetallarHistorialM.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoEliminarDojo.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoEliminarHistorialM.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoListarDojos.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoListarHistorialM.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoModificarDojo.cs" />
+    <Compile Include="Comandos\Modulo4\ComandoModificarHistorialM.cs" />
+    <Compile Include="Comandos\Modulo4\RecursosComandoModulo4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosComandoModulo4.resx</DependentUpon>
+    </Compile>
     <Compile Include="Comandos\Modulo5\EjecutarConsultarCintasXOrganizacion.cs" />
     <Compile Include="Comandos\Modulo5\EjecutarModificarStatusCinta.cs" />
     <Compile Include="Comandos\Modulo8\ComandoAgregarListaCompetenciaRestriccionCompetencia.cs" />
@@ -258,11 +273,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosLogicaModulo11.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo4\RecursosLogicaModulo4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosLogicaModulo4.resx</DependentUpon>
-    </Compile>
     <Compile Include="Modulo6\LogicaListar.cs" />
     <Compile Include="Modulo6\RecursosLogicaModulo6.Designer.cs" />
     <Compile Include="Modulo8\RecursosLogicaModulo8.Designer.cs">
@@ -290,6 +300,10 @@
     <EmbeddedResource Include="Comandos\Modulo15\RecursosComandoModulo15.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosComandoModulo15.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comandos\Modulo4\RecursosComandoModulo4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosComandoModulo4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Comandos\Modulo7\RecursosComandoModulo7.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -335,10 +349,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosLogicaModulo11.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulo4\RecursosLogicaModulo4.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosLogicaModulo4.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modulo6\RecursosLogicaModulo6.resx" />
     <EmbeddedResource Include="Modulo8\RecursosLogicaModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -349,7 +359,6 @@
     <Folder Include="bin\" />
     <Folder Include="Comandos\Master\" />
     <Folder Include="Comandos\Modulo13\" />
-    <Folder Include="Comandos\Modulo4\" />
     <Folder Include="Comandos\Modulo6\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

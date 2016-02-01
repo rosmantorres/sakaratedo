@@ -63,6 +63,13 @@
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
     <Compile Include="DAO\DAOGeneral.cs" />
+    <Compile Include="DAO\Modulo4\DaoDojo.cs" />
+    <Compile Include="DAO\Modulo4\DaoHistorialM.cs" />
+    <Compile Include="DAO\Modulo4\RecursosDAOModulo4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAOModulo4.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Modulo8\DAORestriccionCinta.cs" />
     <Compile Include="DAO\Modulo8\DAORestriccionCompetencia.cs" />
     <Compile Include="DAO\Modulo8\DAORestriccionEvento.cs" />
@@ -86,6 +93,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoExepcion.resx</DependentUpon>
     </Compile>
+    <Compile Include="InterfazDAO\Modulo4\IDaoDojo.cs" />
+    <Compile Include="InterfazDAO\Modulo4\IDaoHistorialM.cs" />
     <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCinta.cs" />
     <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCompetencia.cs" />
     <Compile Include="DAO\Modulo10\DaoAsistencia.cs" />
@@ -238,6 +247,10 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DAO\Modulo4\RecursosDAOModulo4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionCinta.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAORestriccionCinta.Designer.cs</LastGenOutput>
@@ -352,17 +365,9 @@
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
     <Folder Include="DAO\Modulo13\" />
-    <Folder Include="DAO\Modulo4\" />
     <Folder Include="DAO\Modulo6\" />
-    <Folder Include="DAO\Modulo7\" />
     <Folder Include="InterfazDAO\Modulo13\" />
-    <Folder Include="InterfazDAO\Modulo4\" />
     <Folder Include="InterfazDAO\Modulo6\" />
-    <Folder Include="InterfazDAO\Modulo7\" />
-    <Folder Include="DAO\Modulo8\" />
-
-
-    <Folder Include="InterfazDAO\Modulo8\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\menuLateral.xml" />
