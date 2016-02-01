@@ -13,13 +13,13 @@ namespace templateApp.GUI.Modulo8 {
     public partial class interfazCrearRestriccionEvento {
         
         /// <summary>
-        /// alert control.
+        /// alerta control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alerta;
         
         /// <summary>
         /// agregar_restriccion control.
@@ -29,15 +29,6 @@ namespace templateApp.GUI.Modulo8 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm agregar_restriccion;
-        
-        /// <summary>
-        /// alertlocal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertlocal;
         
         /// <summary>
         /// divcomboCintaMenor control.

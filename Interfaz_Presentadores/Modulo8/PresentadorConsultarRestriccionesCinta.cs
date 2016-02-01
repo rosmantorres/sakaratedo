@@ -86,19 +86,19 @@ namespace Interfaz_Presentadores.Modulo8
             }
             catch (SqlException ex)
             {
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
-                throw ex;
+                Alerta(ex.Message);
             }
         }
 

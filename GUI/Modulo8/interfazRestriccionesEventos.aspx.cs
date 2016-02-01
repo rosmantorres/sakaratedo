@@ -31,6 +31,38 @@ namespace templateApp.GUI.Modulo8
                 this.tabla.Text = value;
             }
         }
+
+        public Label labelReporte
+        {
+
+            get
+            {
+                return this.labelReporte;
+            }
+
+        }
+
+        public string alertaClase
+        {
+            set
+            {
+                this.alert.Attributes["class"] = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                this.alert.Attributes["role"] = value;
+            }
+        }
+        public string alerta
+        {
+            set
+            {
+                this.alert.InnerHtml = value;
+            }
+        }
         #endregion
 
         #region constructor
@@ -45,6 +77,7 @@ namespace templateApp.GUI.Modulo8
             String success = Request.QueryString["idPlan"];
             String stat = Request.QueryString["stat"];
             ((SKD)Page.Master).IdModulo = "8.2";
+
             
             if (success != null)
             {
@@ -59,6 +92,7 @@ namespace templateApp.GUI.Modulo8
                 List<Entidad> listaRestricciones = _presentador.LlenarTabla();
                 _presentador.cargarInformacion(listaRestricciones);
             }
+
         }
     }
 }

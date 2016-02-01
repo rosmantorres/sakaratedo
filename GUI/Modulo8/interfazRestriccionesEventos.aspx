@@ -34,8 +34,11 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
 
-    <div id="alert" runat="server">
-	</div>
+   <div id="alert" runat="server">
+    </div>
+    <div id="labelExcepcion" runat="server">
+    <asp:label id="labelRep" runat="server" Text="" > </asp:label>
+    </div>
 
 	<div class="row">
 			<div class="col-xs-12">
