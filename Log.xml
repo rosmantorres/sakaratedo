@@ -6969,3 +6969,39 @@ Error Number:8146,State:2,Class:16
 2016-01-31 17:13:50,172 INFO  DaoCompetencia - Clase: DaoCompetencia
 2016-01-31 17:13:50,172 INFO  DaoCompetencia - Mensaje: Salida del Método
 2016-01-31 17:13:50,172 INFO  DaoCompetencia - Metodo: M12ListarCintas
+2016-01-31 22:03:40,023 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 22:03:40,075 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 22:03:40,075 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-01-31 22:03:40,075 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 22:03:40,109 INFO  ComandoListarDojos - *******************************************************
+2016-01-31 22:03:40,109 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-01-31 22:03:40,109 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-01-31 22:03:40,109 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-01-31 22:03:40,169 INFO  DaoDojo - *******************************************************
+2016-01-31 22:03:40,169 INFO  DaoDojo - Clase: DaoDojo
+2016-01-31 22:03:40,169 INFO  DaoDojo - Mensaje: Salida del Método
+2016-01-31 22:03:40,170 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-01-31 22:11:19,543 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 22:11:19,543 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 22:11:19,543 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 22:11:19,544 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 22:11:19,556 INFO  ComandoListarHistorialM - *******************************************************
+2016-01-31 22:11:19,557 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-01-31 22:11:19,557 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-01-31 22:11:19,557 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-01-31 22:11:19,628 INFO  DaoHistorialM - *******************************************************
+2016-01-31 22:11:19,628 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 22:11:19,628 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-01-31 22:11:19,628 INFO  DaoHistorialM - Metodo: ConsultarTodos
+2016-01-31 22:11:23,810 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 22:11:23,810 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 22:11:23,810 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-01-31 22:11:23,810 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 22:11:23,816 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-01-31 22:11:23,817 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-01-31 22:11:23,817 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-01-31 22:11:23,817 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-01-31 22:11:23,829 INFO  DaoHistorialM - *******************************************************
+2016-01-31 22:11:23,829 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-01-31 22:11:23,829 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-01-31 22:11:23,829 INFO  DaoHistorialM - Metodo: ConsultarXId
