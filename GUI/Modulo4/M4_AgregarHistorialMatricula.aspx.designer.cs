@@ -58,6 +58,24 @@ namespace templateApp.GUI.Modulo4 {
         protected global::System.Web.UI.WebControls.TextBox cmatriHM;
         
         /// <summary>
+        /// Control rfvCHMatri.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCHMatri;
+        
+        /// <summary>
+        /// Control revCHMatri.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCHMatri;
+        
+        /// <summary>
         /// Control btn_agregarHistorialMatricula.
         /// </summary>
         /// <remarks>

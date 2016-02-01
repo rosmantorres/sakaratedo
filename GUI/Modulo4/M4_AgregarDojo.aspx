@@ -10,8 +10,14 @@
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     <script src="../../../plugins/datepicker/bootstrap-datepicker.js"></script>  
     
-     
+    <script src="M4_js/M4_JQuery-2.2.0.js" type="text/javascript"></script>
+    <script src="M4_js/M4_JQuery.maskedinput.js" type="text/javascript"></script>
+    <script src="M4_js/M4_JQuery.validate.js" type="text/javascript"></script>
+
     <script type="text/javascript">
+
+        
+
         function initialize() {
             var latitude;
             var longitude;
@@ -52,6 +58,7 @@
         google.maps.event.addDomListener(window, 'load', initialize);
    </script>
 
+    
 </asp:Content>
 
 <asp:Content ID="Content5" ContentPlaceHolderID="breads" runat="server">
@@ -117,6 +124,7 @@
                         <div class="box-body col-sm-10 col-md-10 col-lg-10 ">
                             <asp:Image id="logDojo" Height="100" ImageUrl="Imagenes/Aikido.png" runat="server" Width="150" style="margin: 5px 900px 5px 5px;float: left;"/>
                             <asp:TextBox id="logoDojos" name="logoDojos" type="file" class="file"  runat="server"></asp:TextBox>
+                            
                         </div>
                     
                         <br/>
@@ -124,6 +132,13 @@
                         <div class="box-body col-sm-10 col-md-10 col-lg-10 ">
                             <h3>Rif Del Dojo:</h3>
                             <asp:TextBox runat="server" type="text" name="rifDojo" id="rifDojo" placeholder="*RIF" class="form-control" ></asp:TextBox>
+                            <asp:requiredfieldvalidator 
+                                id="rfvRif" 
+                                runat="server" 
+                                Display="Static" 
+                                ControlToValidate="rifDojo" 
+                                ErrorMessage="Falta Ingreso de Rif"
+                                EnableClientScript="True" />
                         </div>
 
                         <br/>
@@ -131,13 +146,42 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                           <h3>Nombre Del Dojo:</h3>
                           <asp:TextBox runat="server" type="text" name="nombreDojo" id="nombreDojo" placeholder="*Nombre" class="form-control" ></asp:TextBox>
-                          
+                          <asp:requiredfieldvalidator 
+                              id="rfvNombre" 
+                              runat="server" 
+                              Display="Static" 
+                              ControlToValidate="nombreDojo" 
+                              ErrorMessage="Falta Ingreso de Nombre" 
+                              EnableClientScript="True" />
+                           <asp:regularexpressionvalidator 
+                                id="revNombre" 
+                                runat="server" 
+                                Display="Static" 
+                                ControlToValidate="nombreDojo" 
+                                ErrorMessage="Formato de Nombre no valido" 
+                                ValidationExpression="^[a-zA-Z ]+$"
+                                EnableClientScript="True"  />
                         </div>
                         <br/>
 
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Número Telefónico:</h3>
                             <asp:TextBox runat="server" type="text" name="numeroDojo" id="numeroDojo" placeholder="*Número-Telefono" class="form-control" ></asp:TextBox>
+                            <asp:requiredfieldvalidator 
+                                id="rfvTlf" 
+                                runat="server" 
+                                Display="Static" 
+                                ControlToValidate="numeroDojo" 
+                                ErrorMessage="Falta Ingreso de Teléfono" 
+                                EnableClientScript="True" />
+                          <!--  <asp:regularexpressionvalidator 
+                                id="revFono" 
+                                runat="server" 
+                                Display="Static" 
+                                ControlToValidate="numeroDojo" 
+                                ErrorMessage="Formato de teléfono no valido" 
+                                ValidationExpression="\(\d{3}\)\-\d{2}\-\d{3}" 
+                                EnableClientScript="True" /> -->
                         </div>
 
                         <br/>
@@ -145,8 +189,21 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Email:</h3>
                             <asp:TextBox runat="server" type="email" name="emailDojo" id="emailDojo" placeholder="*Email" class="form-control" ></asp:TextBox>
-                            
-                        
+                            <asp:requiredfieldvalidator 
+                                 id="rfvEmail" 
+                                 runat="server" 
+                                 Display="Static" 
+                                 ControlToValidate="ciudadDojo" 
+                                 ErrorMessage="Falta Ingreso de Email"
+                                 EnableClientScript="True" />
+                            <asp:RegularExpressionValidator 
+                                id="revEmail" 
+                                ControlToValidate="emailDojo"
+                                ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                                Display="Static"
+                                ErrorMessage="No es una direccion de correo valida"
+                                EnableClientScript="True" 
+                                runat="server"/>
                         </div>
                         
                         <br/>
@@ -155,8 +212,8 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Estado:</h3>
                                     <div class="dropdown" runat="server" id="divComboCintaHasta">
-                                       <asp:DropDownList ID="estadoDojo"  class="btn btn-default dropdown-toggle" runat="server">
-                                            <asp:ListItem Selected="True" Value="">Seleccionar Estado: </asp:ListItem>
+                                       <asp:DropDownList ID="estadoDojo"  class="btn btn-default dropdown-toggle" runat="server" AppendDataBoundItems="True">
+                                            <asp:ListItem>Seleccionar Estado: </asp:ListItem>
                                             <asp:ListItem Value="Amazonas">Amazonas</asp:ListItem>
                                             <asp:ListItem Value="Anzoátegui">Anzoátegui</asp:ListItem>
                                             <asp:ListItem Value="Apure">Apure</asp:ListItem>
@@ -182,6 +239,14 @@
                                             <asp:ListItem Value="Yaracuy">Yaracuy</asp:ListItem>
                                             <asp:ListItem Value="Zulia">Zulia</asp:ListItem>
                                        </asp:DropDownList>
+                                       <asp:requiredfieldvalidator 
+                                            id="rfvEstado" 
+                                            runat="server" 
+                                            Display="Static" 
+                                            ControlToValidate="ciudadDojo" 
+                                            ErrorMessage="Falta Ingreso de Ciudad"
+                                            EnableClientScript="True" 
+                                            InitialValue="::Seleccione Estado:" />
                                     </div>
                 
                         </div>
@@ -191,13 +256,39 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Ciudad:</h3>
                              <asp:TextBox runat="server" type="text" name="ciudadDojo" id="ciudadDojo" placeholder="*Ciudad" class="form-control" ></asp:TextBox>          
+                             <asp:requiredfieldvalidator 
+                                 id="rfvCiudad" 
+                                 runat="server" 
+                                 Display="Static" 
+                                 ControlToValidate="ciudadDojo" 
+                                 ErrorMessage="Falta Ingreso de Ciudad"
+                                 EnableClientScript="True" />
+                            <asp:RegularExpressionValidator 
+                                id="revCiudad" 
+                                ControlToValidate="ciudadDojo"
+                                ValidationExpression="^[a-zA-Z ]+$"
+                                Display="Static"
+                                ErrorMessage="No es una ciudad valida"
+                                EnableClientScript="True" 
+                                runat="server"/>
+                            
+                        
                         </div>
 
                         <br/>
 
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Dirección Dojo:</h3>
-                            <asp:TextBox runat="server" type="text" name="direccionDojo" id="direccionDojo" placeholder="Direccion" class="form-control" ></asp:TextBox>
+                            <asp:TextBox runat="server" type="text" name="direccionDojo" id="direccionDojo" placeholder="Direccion" class="form-control"></asp:TextBox>
+                            <asp:RegularExpressionValidator 
+                                id="revDir" 
+                                ControlToValidate="ciudadDojo"
+                                ValidationExpression="^[A-Za-z0-9 ]+$"
+                                Display="Static"
+                                ErrorMessage="No es un formato valido"
+                                EnableClientScript="True" 
+                                runat="server"/>
+                                
                         </div>
 
                         <br/>
@@ -215,7 +306,7 @@
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                             <h3>Status:</h3>
                             <label class="radio-inline">
-                                <asp:RadioButton runat="server" Text="Activo" type="radio" GroupName="statusDojo" name="statusDojo"  id="statusDojoA"  />
+                                <asp:RadioButton runat="server" Text="Activo" type="radio" GroupName="statusDojo" name="statusDojo"  id="statusDojoA" Checked="true"  />
                             </label>
                             <label class="radio-inline">
                                 <asp:RadioButton runat="server" Text="Inactivo" type="radio" GroupName="statusDojo" name="statusDojo"  id="statusDojoI"  />
@@ -238,6 +329,34 @@
     
       <!-- Declaración de las alertas-->
      <script type="text/javascript">
+
+         //$().ready(function () {
+         //    $("#agregar_dojo").validate({ debug: false });
+        // });
+
+         jQuery(function ($) {
+             $('#<%=rifDojo.ClientID%>').mask("J-99999999-9");
+         });
+
+         //jQuery(function ($) {
+           //  $('#<%=nombreDojo.ClientID%>').mask("aaa?aaaaaaaaaaaa");
+         //});
+
+         jQuery(function ($) {
+             $('#<%=numeroDojo.ClientID%>').mask("(9999)999-9999");
+         });
+
+         //jQuery(function ($) {
+           //  $.mask.definitions['~'] = '\w+';
+         //$('#<%=emailDojo.ClientID%>').mask("~@~.~");
+         //});
+
+         
+         //jQuery(function ($) {
+           //  $('#<%=ciudadDojo.ClientID%>').mask("aaa?aaaaaaaaaaaa");
+         //});
+
+         
 
 
          $(document).ready(function () {
@@ -272,10 +391,10 @@
                      valor = "El campo Nombre  es obligatorio </br>";
                      estado = true;
                  }
-                 if ($("#emailDojo").val() == "") {
-                     valor = valor + "El campo Rif es obligatorio </br>";
-                     estado = true;
-                 }
+              //   if ($("#emailDojo").val() == "") {
+                //     valor = valor + "El campo Email es obligatorio </br>";
+                  //   estado = true;
+                // }
 
 
 
@@ -330,6 +449,8 @@
              });
 
          });
+
+         
 
     </script>
     
