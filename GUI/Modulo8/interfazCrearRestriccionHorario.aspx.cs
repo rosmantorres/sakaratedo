@@ -91,6 +91,19 @@ namespace templateApp.GUI.Modulo8
                 this.comboEvento = value;
             }
         }
+        public string alertaClase
+        {
+            set { alert.Attributes[RecursoInterfazModulo8.alertClase] = value; }
+        }
+        public string alertaRol
+        {
+            set { alert.Attributes[RecursoInterfazModulo8.alertRole] = value; }
+        }
+        public string alerta
+        {
+            set { alert.InnerHtml = value; }
+        }
+      
         #endregion
 
 
@@ -106,7 +119,7 @@ namespace templateApp.GUI.Modulo8
         {
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 _presentador.LlenarComboCinta();
                 _presentador.LlenarComboEvento();
                 _presentador.LlenarComboSexo();
@@ -117,8 +130,12 @@ namespace templateApp.GUI.Modulo8
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            _presentador.agregarRest();
-            Response.Redirect("../Modulo8/interfazRestriccionesHorario.aspx");
+            Boolean validar = _presentador.agregarRest();
+            if (validar)
+            {
+                //String Evento = nombreEvento();
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario + _presentador.nombreEvento());
+            }
         }
     }
 }

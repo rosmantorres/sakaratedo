@@ -79,6 +79,78 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string alertaError {
+            get {
+                return ResourceManager.GetString("alertaError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string alertaHtml {
+            get {
+                return ResourceManager.GetString("alertaHtml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string alertaHtmlFinal {
+            get {
+                return ResourceManager.GetString("alertaHtmlFinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string alertaSuccess {
+            get {
+                return ResourceManager.GetString("alertaSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to class.
+        /// </summary>
+        internal static string alertClase {
+            get {
+                return ResourceManager.GetString("alertClase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to class.
+        /// </summary>
+        internal static string alertClase1 {
+            get {
+                return ResourceManager.GetString("alertClase1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to role.
+        /// </summary>
+        internal static string alertRole {
+            get {
+                return ResourceManager.GetString("alertRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to role.
+        /// </summary>
+        internal static string alertRole1 {
+            get {
+                return ResourceManager.GetString("alertRole1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
         /// </summary>
@@ -180,6 +252,15 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Existen campos vacios, todos los campos son obligatorios.
+        /// </summary>
+        internal static string camposVacios {
+            get {
+                return ResourceManager.GetString("camposVacios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;Solicitar&lt;/a&gt;.
         /// </summary>
         internal static string CerrarSolicitud {
@@ -203,6 +284,150 @@ namespace templateApp.GUI.Modulo8 {
         internal static string CerrarTR {
             get {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to descripcion.
+        /// </summary>
+        internal static string descripcion {
+            get {
+                return ResourceManager.GetString("descripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emax.
+        /// </summary>
+        internal static string emax {
+            get {
+                return ResourceManager.GetString("emax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to emin.
+        /// </summary>
+        internal static string emin {
+            get {
+                return ResourceManager.GetString("emin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idPlan.
+        /// </summary>
+        internal static string idP {
+            get {
+                return ResourceManager.GetString("idP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to idPlan.
+        /// </summary>
+        internal static string IdPlan {
+            get {
+                return ResourceManager.GetString("IdPlan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8.3.
+        /// </summary>
+        internal static string interfazRCi {
+            get {
+                return ResourceManager.GetString("interfazRCi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8.1.
+        /// </summary>
+        internal static string interfazRH {
+            get {
+                return ResourceManager.GetString("interfazRH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 8.
+        /// </summary>
+        internal static string Mod8 {
+            get {
+                return ResourceManager.GetString("Mod8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to nombre.
+        /// </summary>
+        internal static string nombre {
+            get {
+                return ResourceManager.GetString("nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true.
+        /// </summary>
+        internal static string ReturnRestCinta {
+            get {
+                return ResourceManager.GetString("ReturnRestCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to sexo.
+        /// </summary>
+        internal static string sexo {
+            get {
+                return ResourceManager.GetString("sexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stat.
+        /// </summary>
+        internal static string stat {
+            get {
+                return ResourceManager.GetString("stat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to stat.
+        /// </summary>
+        internal static string statrec {
+            get {
+                return ResourceManager.GetString("statrec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert.
+        /// </summary>
+        internal static string tipoAlerta {
+            get {
+                return ResourceManager.GetString("tipoAlerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx?stat=.
+        /// </summary>
+        internal static string volverRestriccionHorario {
+            get {
+                return ResourceManager.GetString("volverRestriccionHorario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx?idPlan=.
+        /// </summary>
+        internal static string volverRestriccionHorario2 {
+            get {
+                return ResourceManager.GetString("volverRestriccionHorario2", resourceCulture);
             }
         }
     }

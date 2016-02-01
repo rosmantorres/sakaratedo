@@ -17,12 +17,12 @@ namespace Interfaz_Presentadores.Modulo2
         /// <param name="usuarioRol">Lista de los roles que el usuario tiene asignado</param>
         /// <param name="sistemaRol">Lista de los roles de sistema</param>
         /// <returns>Lista de roles que el usuario no tiene asignado</returns>
-        public  List<Entidad> filtrarRoles(List<Entidad> usuarioRol, List<Entidad> sistemaRol)
+        public  List<Rol> filtrarRoles(List<Rol> usuarioRol, List<Rol> sistemaRol)
         {
             bool diferente;
             try
             {
-                List<Entidad> respuesta = new List<Entidad>();
+                List<Rol> respuesta = new List<Rol>();
                 foreach (Rol rolSistema in sistemaRol)
                 {
                     diferente = true;
@@ -48,10 +48,10 @@ namespace Interfaz_Presentadores.Modulo2
         /// <param name="Roles">lista de roles con sus atributos</param>
         /// <param name="usuarioRol">usuario al que se le validaran los roles</param>
         /// <returns>lista de roles del usuario con la validacion de sus prioridades</returns>
-        public List<Entidad> validarPrioridad(List<Entidad> Roles, string usuarioRol)
+        public List<Rol> validarPrioridad(List<Rol> Roles, string usuarioRol)
         {
 
-            List<Entidad> respuesta = new List<Entidad>();
+            List<Rol> respuesta = new List<Rol>();
             try
             {
                 foreach (Rol rol in Roles)
@@ -98,10 +98,10 @@ namespace Interfaz_Presentadores.Modulo2
         /// <param name="Roles"></param>
         /// <param name="usuarioRol"></param>
         /// <returns></returns>
-        public  List<Entidad> rolNoEditable(List<Entidad> Roles, string usuarioRol)
+        public  List<Rol> rolNoEditable(List<Rol> Roles, string usuarioRol)
         {
 
-            List<Entidad> respuesta = new List<Entidad>();
+            List<Rol> respuesta = new List<Rol>();
             try
             {
                 foreach (Rol rol in Roles)

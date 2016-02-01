@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazCrearRestriccionEvento.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazCrearRestriccionEvento" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/GUI/Master/SKD.Master" AutoEventWireup="true" CodeBehind="interfazModificarRestriccionEvento.aspx.cs" Inherits="templateApp.GUI.Modulo8.interfazModificarRestriccionEvento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="breads" runat="server">
@@ -35,11 +35,11 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">
 
-<<<<<<< Updated upstream
+
     Modificar  Restricciones de Competencias
-=======
+
     Agregar Restricciones de Competencias
->>>>>>> Stashed changes
+
 
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">

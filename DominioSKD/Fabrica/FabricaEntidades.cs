@@ -8,6 +8,7 @@ using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Entidades.Modulo4;
 
 namespace DominioSKD.Fabrica
 {
@@ -39,10 +40,6 @@ namespace DominioSKD.Fabrica
         {
             return new Entidades.Modulo2.Rol();
         }
-        public List<Entidad> ObtenerListaRol_M2()
-        {
-            return new List<Entidades.Modulo2.Rol>().Cast<Entidad>().ToList();
-        }
         public Entidad ObtenerRol_M2(int elId, String elNombre, String laDescripcion, DateTime laFecha)
         {
             return new Entidades.Modulo2.Rol(elId, elNombre, laDescripcion, laFecha);
@@ -73,7 +70,69 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 4
- 
+        /// <summary>
+        /// instancia dojo
+        /// </summary>
+        /// <returns>entidad dojo</returns>
+        public static Entidad ObtenerDojo_M4()
+        {
+            return new DojoM4();
+        }
+
+        /// <summary>
+        /// instancia lista de entidad
+        /// </summary>
+        /// <returns>lista de entidad</returns>
+        public static List<Entidad> ObtenerListaEntidad_M4()
+        {
+            return new List<Entidad>();
+        }
+
+        /// <summary>
+        /// instancia lista de dojo
+        /// </summary>
+        /// <returns>lista dojo</returns>
+        public static List<DojoM4> ObtenerListaDojos_M4()
+        {
+            return new List<DojoM4>();
+        }
+
+        /// <summary>
+        /// instancia Historial Matricula
+        /// </summary>
+        /// <returns>entidad Historial Matricula</returns>
+        public static Entidad ObtenerHistorialMatricula()
+        {
+            return new HistorialM();
+        }
+
+        /// <summary>
+        /// instancia lista de Historial Matricula
+        /// </summary>
+        /// <returns>lista Historial Matricula</returns>
+        public static List<HistorialM> ObtenerListaHistorialMatricula()
+        {
+            return new List<HistorialM>();
+        }
+
+
+        /// <summary>
+        /// Instancia una Organizacion
+        /// </summary>
+        /// <returns>entidad org</returns>
+        public static Entidad ObtenerOrganizacion_M4()
+        {
+            return new Organizacion();
+        }
+
+        /// <summary>
+        /// Instancia Ubicacion
+        /// </summary>
+        /// <returns>entidad ubicacion</returns>
+        public static Entidad ObtenerUbicacion_M4()
+        {
+            return new Ubicacion();
+        }
         #endregion
 
         #region Modulo 5
@@ -158,7 +217,7 @@ namespace DominioSKD.Fabrica
         /// </summary>
         /// <returns> Objeto Tipo Entidad </returns>
 
-        public Entidad ObtenerRestriccionCompetencia()
+        public static Entidad ObtenerRestriccionCompetencia()
         {
             return new Entidades.Modulo8.RestriccionCompetencia();
         }
@@ -169,7 +228,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Parametro referente al id unico de la restriccion</param>
         /// <returns>Objeto tipo Entidad</returns>
         
-        public Entidad ObtenerRestriccionCompetencia(int inputId)
+        public static Entidad ObtenerRestriccionCompetencia(int inputId)
         {
             return new Entidades.Modulo8.RestriccionCompetencia(inputId);
         }
@@ -187,7 +246,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputModalidad">String, modalidades que comprende la competencia. {Kumite,Kata,Ambos}</param>
         /// <returns> Objeto tipo Entidad</returns>
         
-        public Entidad ObtenerRestriccionCompetencia(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+        public static Entidad ObtenerRestriccionCompetencia(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
                                                      int inputRangoMaximo, String inputSexo, String inputModalidad)
         {
             return new Entidades.Modulo8.RestriccionCompetencia(inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,
@@ -208,12 +267,35 @@ namespace DominioSKD.Fabrica
         /// <param name="inputModalidad">String, modalidades que comprende la competencia. {Kumite,Kata,Ambos}</param>
         /// <returns> Objeto tipo Entidad</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerRestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+        public static Entidad ObtenerRestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
                                                      int inputRangoMaximo, String inputSexo, String inputModalidad)
         {
             return new Entidades.Modulo8.RestriccionCompetencia(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,
                                       inputRangoMaximo, inputSexo, inputModalidad);
         }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inputId"></param>
+        /// <param name="inputDescripcion"></param>
+        /// <param name="inputEdadMinima"></param>
+        /// <param name="inputEdadMaxima"></param>
+        /// <param name="inputRangoMinimo"></param>
+        /// <param name="inputRangoMaximo"></param>
+        /// <param name="inputSexo"></param>
+        /// <param name="inputModalidad"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public static Entidad ObtenerRestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+                                                     int inputRangoMaximo, String inputSexo, String inputModalidad, int status)
+        {
+            return new Entidades.Modulo8.RestriccionCompetencia(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,
+                                      inputRangoMaximo, inputSexo, inputModalidad, status);
+        }
+
+
 
         /// <summary>
         /// Fabrica de Restriccion Competencia con parametros de entrada multiples con id unico.
@@ -231,12 +313,16 @@ namespace DominioSKD.Fabrica
         /// <returns> Objeto tipo Entidad</param>
         /// <returns>  Objeto tipo Entidad</returns>
         
-        public Entidad ObtenerRestriccionCompetencia(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+        public static Entidad ObtenerRestriccionCompetencia(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
                                                      int inputRangoMaximo, String inputSexo, String inputModalidad)
         {
             return new Entidades.Modulo8.RestriccionCompetencia(id, inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputRangoMinimo,
                                       inputRangoMaximo, inputSexo, inputModalidad);
         }
+
+
+
+
 
         #endregion
 
@@ -270,11 +356,12 @@ namespace DominioSKD.Fabrica
         /// <param name="inputTiempoMinimo">Integer,tiempo minimo con el que se puede optar a una cinta</param>
         /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
         /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
+        /// <param name="inputStatus">Integer, bit de status de activacion de la restriccion de cinta</param>
         /// <returns> Objeto tipo Entidad</returns>
 
-        public static Entidad ObtenerRestriccionCinta(String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        public static Entidad ObtenerRestriccionCinta(String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos, int inputStatus)
         {
-            return new Entidades.Modulo8.RestriccionCinta(inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos);
+            return new Entidades.Modulo8.RestriccionCinta(inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos, inputStatus);
         }
 
         /// <summary>
@@ -285,10 +372,11 @@ namespace DominioSKD.Fabrica
         /// <param name="inputTiempoMinimo">Integer,tiempo minimo con el que se puede optar a una cinta</param>
         /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
         /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
+        /// <param name="inputStatus">Integer, bit de status de activacion de la restriccion de cinta</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public static Entidad ObtenerRestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        public static Entidad ObtenerRestriccionCinta(int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos, int inputStatus)
         {
-            return new Entidades.Modulo8.RestriccionCinta(inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos);
+            return new Entidades.Modulo8.RestriccionCinta(inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos, inputStatus);
         }
 
         /// <summary>
@@ -300,11 +388,23 @@ namespace DominioSKD.Fabrica
         /// <param name="inputTiempoMinimo">Integer,tiempo minimo con el que se puede optar a una cinta</param>
         /// <param name="inputTiempoMaximo">Integer, tiempo maximo con el que se puede optar a una cinta</param>
         /// <param name="inputTiempoDocente">Integer, Tiempo como docente a cumplir para avanzar de cinta</param>
+        /// <param name="inputStatus">Integer, bit de status de activacion de la restriccion de cinta</param>
         /// <returns>  Objeto tipo Entidad</returns>
 
-        public static Entidad ObtenerRestriccionCinta(int id, int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos)
+        public static Entidad ObtenerRestriccionCinta(int id, int inputId, String inputDescripcion, int inputTiempoMinimo, int inputTiempoMaximo, int inputTiempoDocente, int inputPuntosMinimos, int inputStatus)
         {
-            return new Entidades.Modulo8.RestriccionCinta(id, inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos);
+            return new Entidades.Modulo8.RestriccionCinta(id, inputId, inputDescripcion, inputTiempoMinimo, inputTiempoMaximo, inputTiempoDocente, inputPuntosMinimos, inputStatus);
+        }
+        
+        /// <summary>
+        /// Fabrica de Restriccion Cinta con parametros de entrada multiples con id unico.
+        /// </summary>
+        /// <param name="inputId"> Integer, atributo correspondiente al id del objeto en bd </param>
+        /// <param name="inputStatus">Integer, bit de status de activacion de la restriccion de cinta</param>
+        /// <returns>  Objeto tipo Entidad</returns>
+        public static Entidad ObtenerRestriccionCinta(int inputId, int inputStatus)
+        {
+            return new Entidades.Modulo8.RestriccionCinta(inputId, inputStatus);
         }
 
         #endregion
@@ -341,11 +441,12 @@ namespace DominioSKD.Fabrica
         /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
         /// <param name="inputIdEvento">Integer, id del evento</param>
         /// <param name="inputNombreEvento">String, nombre del evento</param>
+        /// <param name="inputStatus">Integer, estado de la restriccion evento</param>
         /// <returns> Objeto tipo Entidad</returns>
 
-        public static Entidad ObtenerRestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        public static Entidad ObtenerRestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
         {
-            return new Entidades.Modulo8.RestriccionEvento(inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento);
+            return new Entidades.Modulo8.RestriccionEvento(inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento, inputStatus);
         }
 
         /// <summary>
@@ -359,10 +460,11 @@ namespace DominioSKD.Fabrica
         /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
         /// <param name="inputIdEvento">Integer, id del evento</param>
         /// <param name="inputNombreEvento">String, nombre del evento</param>
+        /// <param name="inputStatus">Integer, estado de la restriccion evento</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public static Entidad ObtenerRestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        public static Entidad ObtenerRestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
         {
-            return new Entidades.Modulo8.RestriccionEvento(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento);
+            return new Entidades.Modulo8.RestriccionEvento(inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento, inputStatus);
         }
 
         /// <summary>
@@ -377,11 +479,12 @@ namespace DominioSKD.Fabrica
         /// F solo para atletas femeninos, B para atletas de ambos sexos</param>
         /// <param name="inputIdEvento">Integer, id del evento</param>
         /// <param name="inputNombreEvento">String, nombre del evento</param>
+        /// <param name="inputStatus">Integer, estado de la restriccion evento</param>
         /// <returns>  Objeto tipo Entidad</returns>
 
-        public static Entidad ObtenerRestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        public static Entidad ObtenerRestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
         {
-            return new Entidades.Modulo8.RestriccionEvento(id, inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento);
+            return new Entidades.Modulo8.RestriccionEvento(id, inputId, inputDescripcion, inputEdadMinima, inputEdadMaxima, inputSexo, inputIdEvento, inputNombreEvento, inputStatus);
         }
 
         #endregion
@@ -391,7 +494,7 @@ namespace DominioSKD.Fabrica
         /// Fabrica de EventoSimple sin parametros de entrada
         /// </summary>
         /// <returns> Objeto Tipo Entidad </returns>
-        public Entidad ObtenerEventoSimple()
+        public static Entidad ObtenerEventoSimple()
         {
             return new Entidades.Modulo8.EventoSimple();
         }
@@ -402,7 +505,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Integer, atributo correspondiente al id del evento en bd </param>
         /// <param name="inputNombre">String, nombre del evento</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerEventoSimple(int inputId, String inputNombre)
+        public static Entidad ObtenerEventoSimple(int inputId, String inputNombre)
         {
             return new Entidades.Modulo8.EventoSimple(inputId, inputNombre);
         }
@@ -414,7 +517,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Integer, atributo correspondiente al id del evento en bd </param>
         /// <param name="inputNombre">String, nombre del evento</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerEventoSimple(int id, int inputId, String inputNombre)
+        public static Entidad ObtenerEventoSimple(int id, int inputId, String inputNombre)
         {
             return new Entidades.Modulo8.EventoSimple(id, inputId, inputNombre);
         }
@@ -425,7 +528,7 @@ namespace DominioSKD.Fabrica
         /// Fabrica de CintaSimple sin parametros de entrada
         /// </summary>
         /// <returns> Objeto Tipo Entidad </returns>
-        public Entidad obtenerCintaSimple()
+        public static Entidad obtenerCintaSimple()
         {
             return new Entidades.Modulo8.CintaSimple();
         }
@@ -436,7 +539,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Integer, atributo correspondiente al id de la cinta en bd </param>
         /// <param name="inputColor">String, color de la cinta</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerCintaSimple(int inputId, String inputColor)
+        public static Entidad ObtenerCintaSimple(int inputId, String inputColor)
         {
             return new Entidades.Modulo8.CintaSimple(inputId, inputColor);
         }
@@ -448,7 +551,7 @@ namespace DominioSKD.Fabrica
         /// <param name="inputId"> Integer, atributo correspondiente al id de la cinta en bd </param>
         /// <param name="inputColor">String, color de la cinta</param>
         /// <returns>  Objeto tipo Entidad</returns>
-        public Entidad ObtenerCintaSimple(int id, int inputId, String inputColor)
+        public static Entidad ObtenerCintaSimple(int id, int inputId, String inputColor)
         {
             return new Entidades.Modulo8.CintaSimple(id, inputId, inputColor);
         }

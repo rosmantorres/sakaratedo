@@ -26,6 +26,12 @@ namespace Interfaz_Presentadores.Modulo8
             
         }
 
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = "alert alert-danger alert-dismissible";
+            vista.alertaRol = "alert";
+            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+        }
         public DominioSKD.Entidades.Modulo8.RestriccionEvento meterParametrosVistaEnObjeto1(DominioSKD.Entidades.Modulo8.RestriccionEvento laRestriccion)
         {
             DominioSKD.Entidades.Modulo8.RestriccionEvento retriccionEvento = laRestriccion;
@@ -35,18 +41,16 @@ namespace Interfaz_Presentadores.Modulo8
             retriccionEvento.Sexo = vista.sexo.SelectedValue.ToString();
             retriccionEvento.Descripcion = vista.rangoMaximo.SelectedItem.ToString();
 
-            //generarDescripcion();
             return retriccionEvento;
 
         }
 
-        public void LlenarComboCinta()
+        public void LlenarComboCinta(String descripcion)
         {
-            FabricaComandos fabricaCo = new FabricaComandos();
-            Comando<List<Entidad>> comboCinta = fabricaCo.CrearComandoConsultarCintaTodas();
+            LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas comboCinta =
+                   (LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCintaTodas();
             List<Entidad> listCinta = new List<Entidad>();
             Dictionary<string, string> options = new Dictionary<string, string>();
-            options.Add("-1", "Selecciona una opcion");
             try
             {
                 listCinta = comboCinta.Ejecutar();
@@ -54,59 +58,64 @@ namespace Interfaz_Presentadores.Modulo8
                 {
                     options.Add(item.Id_cinta.ToString(), item.Color_nombre);
                 }
-                options.Add("-2", "OTRO");
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             vista.rangoMaximo.DataSource = options;
-            vista.rangoMaximo.DataTextField = "value";
-            vista.rangoMaximo.DataValueField = "key";
+            vista.rangoMaximo.DataTextField = RecursoPresentadorM8.value;
+            vista.rangoMaximo.DataValueField = RecursoPresentadorM8.key;
             vista.rangoMaximo.DataBind();
-
+            vista.rangoMaximo.SelectedValue = descripcion;
         }
         
-        public void LlenarComboSexo()
+        public void LlenarComboSexo(String sexo)
         {
             vista.sexo.Enabled = true;
             Dictionary<string, string> optionsSexo = new Dictionary<string, string>();
-            optionsSexo.Add("Masculino", "M");
-            optionsSexo.Add("Femenino", "F");
-            optionsSexo.Add("Ambos Sexos", "B");
+            optionsSexo.Add(RecursoPresentadorM8.Masculino, RecursoPresentadorM8.M);
+            optionsSexo.Add(RecursoPresentadorM8.Femenino, RecursoPresentadorM8.F);
+            optionsSexo.Add(RecursoPresentadorM8.AmbosSexos, RecursoPresentadorM8.B);
             vista.sexo.DataSource = optionsSexo;
-            vista.sexo.DataTextField = "key";
-            vista.sexo.DataValueField = "value";
+            vista.sexo.DataTextField = RecursoPresentadorM8.key;
+            vista.sexo.DataValueField = RecursoPresentadorM8.value;
             vista.sexo.DataBind();
+            vista.sexo.SelectedValue = sexo;
         }
 
-        public void LlenarComboEdades()
+        public void LlenarLabel(String idRest, String nombre)
+        {
+            vista.myLabel.Text = RecursoPresentadorM8.nombreEvento + nombre;
+        }
+
+        public void LlenarComboEdades(String emin, String emax)
         {
             int index;
             vista.edadMinima.Enabled = true;
@@ -120,42 +129,52 @@ namespace Interfaz_Presentadores.Modulo8
 
             vista.edadMinima.DataSource = optionsEdad;
             vista.edadMaxima.DataSource = optionsEdad;
-            vista.edadMinima.DataTextField = "key";
-            vista.edadMinima.DataValueField = "value";
-            vista.edadMaxima.DataTextField = "key";
-            vista.edadMaxima.DataValueField = "value";
+            vista.edadMinima.DataTextField = RecursoPresentadorM8.key;
+            vista.edadMinima.DataValueField = RecursoPresentadorM8.value;
+            vista.edadMaxima.DataTextField = RecursoPresentadorM8.key;
+            vista.edadMaxima.DataValueField = RecursoPresentadorM8.value;
             vista.edadMinima.DataBind();
             vista.edadMaxima.DataBind();
+            vista.edadMinima.SelectedValue = emin;
+            vista.edadMaxima.SelectedValue = emax;
+
         }
 
-        public void ModificarRest()
+        public Boolean ModificarRest()
         {
 
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
 
             laRestEvento = meterParametrosVistaEnObjeto1(laRestEvento);
 
-            try
+            if (laRestEvento.EdadMaxima >= laRestEvento.EdadMinima)
             {
-                FabricaComandos _fabrica = new FabricaComandos();
-                Comando<bool> _comando = _fabrica.CrearComandoModificarRestriccionEvento(laRestEvento);
-                bool resultado = _comando.Ejecutar();
+                try
+                {
+                    LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento _comando =
+                    (LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoModificarRestriccionEvento(laRestEvento);
+                    bool resultado = _comando.Ejecutar();
+                
+                }
+
+                catch (ExcepcionesSKD.ExceptionSKD ex)
+                {
+                    vista.alertaClase = RecursoPresentadorM8.alertaError;
+                    vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                    vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                        + RecursoPresentadorM8.alertaHtmlFinal;
+                    return false;
+                }
+                return true;
             }
-            catch (SqlException ex)
+            else
             {
-                throw ex;
-            }
-            catch (FormatException ex)
-            {
-                throw ex;
-            }
-            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-            {
-                throw ex;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                vista.alertaClase = RecursoPresentadorM8.alertaError;
+                vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                vista.alerta = RecursoPresentadorM8.alertaHtml
+                    + RecursoPresentadorM8.edadErrada
+                    + RecursoPresentadorM8.alertaHtmlFinal;
+                return false;
             }
         }
     }

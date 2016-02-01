@@ -12,8 +12,7 @@ using Interfaz_Presentadores.Modulo1;
 namespace templateApp.GUI.Modulo1
 {
     public partial class Index : System.Web.UI.Page , IContratoM1Inicio
-    {
-        
+    {        
         private PresentadorM1Inicio presentador;
         
         String IContratoM1Inicio.UserNameEtq

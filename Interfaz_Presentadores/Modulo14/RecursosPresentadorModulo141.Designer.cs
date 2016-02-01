@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Interfaz_Presentadores.Modulo14 {
+namespace Interfaz_Presentadores.Modulo14
+{
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,1005 +23,1227 @@ namespace Interfaz_Presentadores.Modulo14 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class RecursosPresentadorModulo14 {
-        
+    public class RecursosPresentadorModulo14
+    {
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal RecursosPresentadorModulo14() {
+        internal RecursosPresentadorModulo14()
+        {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+        public static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if (object.ReferenceEquals(resourceMan, null))
+                {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Interfaz_Presentadores.Modulo14.RecursosPresentadorModulo14", typeof(RecursosPresentadorModulo14).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
-            get {
+        public static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
                 return resourceCulture;
             }
-            set {
+            set
+            {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;td&gt;.
         /// </summary>
-        public static string AbrirTD {
-            get {
+        public static string AbrirTD
+        {
+            get
+            {
                 return ResourceManager.GetString("AbrirTD", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;tr&gt;.
         /// </summary>
-        public static string AbrirTR {
-            get {
+        public static string AbrirTR
+        {
+            get
+            {
                 return ResourceManager.GetString("AbrirTR", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to alert alert-info alert-dismissible.
         /// </summary>
-        public static string Alert_Clase_Success {
-            get {
+        public static string Alert_Clase_Success
+        {
+            get
+            {
                 return ResourceManager.GetString("Alert_Clase_Success", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
         /// </summary>
-        public static string Alerta_Clase_Error {
-            get {
+        public static string Alerta_Clase_Error
+        {
+            get
+            {
                 return ResourceManager.GetString("Alerta_Clase_Error", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No seleccionaste ningun dato.
         /// </summary>
-        public static string Alerta_DatoVacio {
-            get {
+        public static string Alerta_DatoVacio
+        {
+            get
+            {
                 return ResourceManager.GetString("Alerta_DatoVacio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
         /// </summary>
-        public static string Alerta_Html {
-            get {
+        public static string Alerta_Html
+        {
+            get
+            {
                 return ResourceManager.GetString("Alerta_Html", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;/div&gt;.
         /// </summary>
-        public static string Alerta_HtmlFinal {
-            get {
+        public static string Alerta_HtmlFinal
+        {
+            get
+            {
                 return ResourceManager.GetString("Alerta_HtmlFinal", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No ingresaste nombre del tipo de planilla.
         /// </summary>
-        public static string Alerta_NombreTipoVacio {
-            get {
+        public static string Alerta_NombreTipoVacio
+        {
+            get
+            {
                 return ResourceManager.GetString("Alerta_NombreTipoVacio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No ingresaste el nombre de la planilla.
         /// </summary>
-        public static string Alerta_PlanillaVacio {
-            get {
+        public static string Alerta_PlanillaVacio
+        {
+            get
+            {
                 return ResourceManager.GetString("Alerta_PlanillaVacio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Seguro que deseas solicitar esta planilla?.
         /// </summary>
-        public static string Alerta_Pregunta {
-            get {
+        public static string Alerta_Pregunta
+        {
+            get
+            {
                 return ResourceManager.GetString("Alerta_Pregunta", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to alert.
         /// </summary>
-        public static string Alerta_Rol {
-            get {
+        public static string Alerta_Rol
+        {
+            get
+            {
                 return ResourceManager.GetString("Alerta_Rol", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No seleccionaste tipo de planilla.
         /// </summary>
-        public static string Alerta_TipoVacio {
-            get {
+        public static string Alerta_TipoVacio
+        {
+            get
+            {
                 return ResourceManager.GetString("Alerta_TipoVacio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No ingresaste ninguna fecha de reincorporacion.
         /// </summary>
-        public static string AlertaFechaReincorporacionVacio {
-            get {
+        public static string AlertaFechaReincorporacionVacio
+        {
+            get
+            {
                 return ResourceManager.GetString("AlertaFechaReincorporacionVacio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No ingresaste ninguna fecha de retiro.
         /// </summary>
-        public static string AlertaFechaRetiroVacio {
-            get {
+        public static string AlertaFechaRetiroVacio
+        {
+            get
+            {
                 return ResourceManager.GetString("AlertaFechaRetiroVacio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to No ingresaste el motivo.
         /// </summary>
-        public static string AlertaMotivoVacio {
-            get {
+        public static string AlertaMotivoVacio
+        {
+            get
+            {
                 return ResourceManager.GetString("AlertaMotivoVacio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot;checked id=&quot;.
         /// </summary>
-        public static string BotonActivarPlanilla {
-            get {
+        public static string BotonActivarPlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonActivarPlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;&lt;/a&gt;.
         /// </summary>
-        public static string BotonCerrar {
-            get {
+        public static string BotonCerrar
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonCerrar", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &gt;&lt;/a&gt;.
         /// </summary>
-        public static string BotonCerrar1 {
-            get {
+        public static string BotonCerrar1
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonCerrar1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;make-switch switch-mini&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-switch&quot; &gt;
         ///                            &lt;input type=&quot;checkbox&quot; data-toggle=&quot;toggle&quot; data-on=&quot;ON&quot; data-off=&quot;OFF &quot; id=&quot;.
         /// </summary>
-        public static string BotonDesactivarPlanilla {
-            get {
+        public static string BotonDesactivarPlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonDesactivarPlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-danger glyphicon glyphicon-remove-circle&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idEliminar=.
         /// </summary>
-        public static string BotonEliminarSolicitud {
-            get {
+        public static string BotonEliminarSolicitud
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonEliminarSolicitud", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal-info&quot; href=&quot;.
         /// </summary>
-        public static string BotonInfo {
-            get {
+        public static string BotonInfo
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonInfo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a class=&quot;btn btn-primary glyphicon glyphicon-info-sign&quot; href=&quot;M14_ConsultarPlanillasSolicitadas.aspx?idSolici=.
         /// </summary>
-        public static string BotonInfoSolicitud {
-            get {
+        public static string BotonInfoSolicitud
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonInfoSolicitud", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ConsultarPlanillas.aspx?idPlan=.
         /// </summary>
-        public static string BotonModificar {
-            get {
+        public static string BotonModificar
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonModificar", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-edit&quot; href=&quot;M14_ModificarPlanillaCreada.aspx?idPlan=.
         /// </summary>
-        public static string BotonModificarRegistro {
-            get {
+        public static string BotonModificarRegistro
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonModificarRegistro", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-default glyphicon glyphicon-pencil&quot; href=&quot;M14_ModificarPlanillaSolicitada.aspx?idSol=.
         /// </summary>
-        public static string BotonModificarSolicitud {
-            get {
+        public static string BotonModificarSolicitud
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonModificarSolicitud", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary&quot; href=&quot;M14_SolicitudPlanilla.aspx?idPlan=.
         /// </summary>
-        public static string BotonSolicitarPlanilla {
-            get {
+        public static string BotonSolicitarPlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("BotonSolicitarPlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $CATEGORIA_cat&lt;br/&gt;.
         /// </summary>
-        public static string CategoriaCat {
-            get {
+        public static string CategoriaCat
+        {
+            get
+            {
                 return ResourceManager.GetString("CategoriaCat", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $CATEGORIA_comp&lt;br/&gt;.
         /// </summary>
-        public static string CategoriaComp {
-            get {
+        public static string CategoriaComp
+        {
+            get
+            {
                 return ResourceManager.GetString("CategoriaComp", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &quot;&gt;Solicitar&lt;/a&gt;.
         /// </summary>
-        public static string CerrarSolicitud {
-            get {
+        public static string CerrarSolicitud
+        {
+            get
+            {
                 return ResourceManager.GetString("CerrarSolicitud", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;/td&gt;.
         /// </summary>
-        public static string CerrarTD {
-            get {
+        public static string CerrarTD
+        {
+            get
+            {
                 return ResourceManager.GetString("CerrarTD", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;/tr&gt;.
         /// </summary>
-        public static string CerrarTR {
-            get {
+        public static string CerrarTR
+        {
+            get
+            {
                 return ResourceManager.GetString("CerrarTR", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $comp_costo&lt;br/&gt;.
         /// </summary>
-        public static string CompCosto {
-            get {
+        public static string CompCosto
+        {
+            get
+            {
                 return ResourceManager.GetString("CompCosto", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to COMPETENCIA.
         /// </summary>
-        public static string Competencia {
-            get {
+        public static string Competencia
+        {
+            get
+            {
                 return ResourceManager.GetString("Competencia", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $comp_fecha_fin&lt;br/&gt;.
         /// </summary>
-        public static string CompFechaFin {
-            get {
+        public static string CompFechaFin
+        {
+            get
+            {
                 return ResourceManager.GetString("CompFechaFin", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $comp_fecha_ini&lt;br/&gt;.
         /// </summary>
-        public static string CompFechaIni {
-            get {
+        public static string CompFechaIni
+        {
+            get
+            {
                 return ResourceManager.GetString("CompFechaIni", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $comp_nombre&lt;br/&gt;.
         /// </summary>
-        public static string CompNombre {
-            get {
+        public static string CompNombre
+        {
+            get
+            {
                 return ResourceManager.GetString("CompNombre", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $comp_tipo&lt;br/&gt;.
         /// </summary>
-        public static string CompTipo {
-            get {
+        public static string CompTipo
+        {
+            get
+            {
                 return ResourceManager.GetString("CompTipo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to diseno.
         /// </summary>
-        public static string CookieDis {
-            get {
+        public static string CookieDis
+        {
+            get
+            {
                 return ResourceManager.GetString("CookieDis", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to id.
         /// </summary>
-        public static string CookieId {
-            get {
+        public static string CookieId
+        {
+            get
+            {
                 return ResourceManager.GetString("CookieId", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to idIns.
         /// </summary>
-        public static string CookieIdIns {
-            get {
+        public static string CookieIdIns
+        {
+            get
+            {
                 return ResourceManager.GetString("CookieIdIns", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to idPlanilla.
         /// </summary>
-        public static string CookieIdPlanilla {
-            get {
+        public static string CookieIdPlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("CookieIdPlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to nombre.
         /// </summary>
-        public static string CookieNombre {
-            get {
+        public static string CookieNombre
+        {
+            get
+            {
                 return ResourceManager.GetString("CookieNombre", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Planilla.
         /// </summary>
-        public static string CookiePlanilla {
-            get {
+        public static string CookiePlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("CookiePlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Solicitud.
         /// </summary>
-        public static string CookieSolicitud {
-            get {
+        public static string CookieSolicitud
+        {
+            get
+            {
                 return ResourceManager.GetString("CookieSolicitud", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to tipo.
         /// </summary>
-        public static string CookieTipo {
-            get {
+        public static string CookieTipo
+        {
+            get
+            {
                 return ResourceManager.GetString("CookieTipo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Datos de la Solicitud&lt;br/&gt;.
         /// </summary>
-        public static string DatosPlanilla {
-            get {
+        public static string DatosPlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("DatosPlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $doj_email&lt;br/&gt;.
         /// </summary>
-        public static string DojEmail {
-            get {
+        public static string DojEmail
+        {
+            get
+            {
                 return ResourceManager.GetString("DojEmail", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $doj_nombre&lt;br/&gt;.
         /// </summary>
-        public static string DojNombre {
-            get {
+        public static string DojNombre
+        {
+            get
+            {
                 return ResourceManager.GetString("DojNombre", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to DOJO.
         /// </summary>
-        public static string Dojo {
-            get {
+        public static string Dojo
+        {
+            get
+            {
                 return ResourceManager.GetString("Dojo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $doj_rif&lt;br/&gt;.
         /// </summary>
-        public static string DojRif {
-            get {
+        public static string DojRif
+        {
+            get
+            {
                 return ResourceManager.GetString("DojRif", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $doj_telefono&lt;br/&gt;.
         /// </summary>
-        public static string DojTlf {
-            get {
+        public static string DojTlf
+        {
+            get
+            {
                 return ResourceManager.GetString("DojTlf", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to --.
         /// </summary>
-        public static string Espacio {
-            get {
+        public static string Espacio
+        {
+            get
+            {
                 return ResourceManager.GetString("Espacio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $eve_costo&lt;br/&gt;.
         /// </summary>
-        public static string EveCosto {
-            get {
+        public static string EveCosto
+        {
+            get
+            {
                 return ResourceManager.GetString("EveCosto", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $eve_descripcion&lt;br/&gt;.
         /// </summary>
-        public static string EveDescrip {
-            get {
+        public static string EveDescrip
+        {
+            get
+            {
                 return ResourceManager.GetString("EveDescrip", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $eve_nombre&lt;br/&gt;.
         /// </summary>
-        public static string EveNombre {
-            get {
+        public static string EveNombre
+        {
+            get
+            {
                 return ResourceManager.GetString("EveNombre", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to EVENTO.
         /// </summary>
-        public static string Evento {
-            get {
+        public static string Evento
+        {
+            get
+            {
                 return ResourceManager.GetString("Evento", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $fecha_creacionDelaPlanilla&lt;br/&gt;.
         /// </summary>
-        public static string FechaCreacionPlanilla {
-            get {
+        public static string FechaCreacionPlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("FechaCreacionPlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $fecha_reincorporacion&lt;br/&gt;.
         /// </summary>
-        public static string FechaRein {
-            get {
+        public static string FechaRein
+        {
+            get
+            {
                 return ResourceManager.GetString("FechaRein", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $fecha_retiro&lt;br/&gt;.
         /// </summary>
-        public static string FechaRetiro {
-            get {
+        public static string FechaRetiro
+        {
+            get
+            {
                 return ResourceManager.GetString("FechaRetiro", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $HORARIO_hor&lt;br/&gt;.
         /// </summary>
-        public static string HorarioHor {
-            get {
+        public static string HorarioHor
+        {
+            get
+            {
                 return ResourceManager.GetString("HorarioHor", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &amp;idDis=.
         /// </summary>
-        public static string IdDis {
-            get {
+        public static string IdDis
+        {
+            get
+            {
                 return ResourceManager.GetString("IdDis", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &amp;idIns=.
         /// </summary>
-        public static string idIns {
-            get {
+        public static string idIns
+        {
+            get
+            {
                 return ResourceManager.GetString("idIns", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to idPlan.
         /// </summary>
-        public static string idPlan {
-            get {
+        public static string idPlan
+        {
+            get
+            {
                 return ResourceManager.GetString("idPlan", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &amp;idPlanilla=.
         /// </summary>
-        public static string IdPlanilla {
-            get {
+        public static string IdPlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("IdPlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to idSol.
         /// </summary>
-        public static string idSol {
-            get {
+        public static string idSol
+        {
+            get
+            {
                 return ResourceManager.GetString("idSol", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;br/&gt;.
         /// </summary>
-        public static string linea {
-            get {
+        public static string linea
+        {
+            get
+            {
                 return ResourceManager.GetString("linea", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $mat_activa&lt;br/&gt;.
         /// </summary>
-        public static string MatActiva {
-            get {
+        public static string MatActiva
+        {
+            get
+            {
                 return ResourceManager.GetString("MatActiva", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $mat_fecha_creacion&lt;br/&gt;.
         /// </summary>
-        public static string MatFechaCrea {
-            get {
+        public static string MatFechaCrea
+        {
+            get
+            {
                 return ResourceManager.GetString("MatFechaCrea", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $mat_fecha_ultimo_pago&lt;br/&gt;.
         /// </summary>
-        public static string MatFechaUltPago {
-            get {
+        public static string MatFechaUltPago
+        {
+            get
+            {
                 return ResourceManager.GetString("MatFechaUltPago", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $mat_identificador&lt;br/&gt;.
         /// </summary>
-        public static string MatIdenti {
-            get {
+        public static string MatIdenti
+        {
+            get
+            {
                 return ResourceManager.GetString("MatIdenti", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $mat_precio&lt;br/&gt;.
         /// </summary>
-        public static string MatPrecio {
-            get {
+        public static string MatPrecio
+        {
+            get
+            {
                 return ResourceManager.GetString("MatPrecio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to MATRICULA.
         /// </summary>
-        public static string Matricula {
-            get {
+        public static string Matricula
+        {
+            get
+            {
                 return ResourceManager.GetString("Matricula", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $motivo&lt;br/&gt;.
         /// </summary>
-        public static string Motivo {
-            get {
+        public static string Motivo
+        {
+            get
+            {
                 return ResourceManager.GetString("Motivo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Diseño de Plantilla Modificado satisfactoriamente.
         /// </summary>
-        public static string MsjDiseñoPlanillaModificado {
-            get {
+        public static string MsjDiseñoPlanillaModificado
+        {
+            get
+            {
                 return ResourceManager.GetString("MsjDiseñoPlanillaModificado", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Eliminación de Solicitud satisfactoria.
         /// </summary>
-        public static string MSJEliminacionSolicitud {
-            get {
+        public static string MSJEliminacionSolicitud
+        {
+            get
+            {
                 return ResourceManager.GetString("MSJEliminacionSolicitud", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Error no se pudo Eliminar la Solicitud. Intente más tarde.
         /// </summary>
-        public static string MsjErrorEliminacionSolicitud {
-            get {
+        public static string MsjErrorEliminacionSolicitud
+        {
+            get
+            {
                 return ResourceManager.GetString("MsjErrorEliminacionSolicitud", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Error no se pudo guardar el diseño. Intente más tarde.
         /// </summary>
-        public static string MsjErrorNoGuardada {
-            get {
+        public static string MsjErrorNoGuardada
+        {
+            get
+            {
                 return ResourceManager.GetString("MsjErrorNoGuardada", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Error no se pudo Modificar el diseño. Intente más tarde.
         /// </summary>
-        public static string MsjErrorPLanillaModificado {
-            get {
+        public static string MsjErrorPLanillaModificado
+        {
+            get
+            {
                 return ResourceManager.GetString("MsjErrorPLanillaModificado", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Diseño de Plantilla guardado satisfactoriamente.
         /// </summary>
-        public static string MsjPlanillaGuardada {
-            get {
+        public static string MsjPlanillaGuardada
+        {
+            get
+            {
                 return ResourceManager.GetString("MsjPlanillaGuardada", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &amp;nombre=.
         /// </summary>
-        public static string Nombre {
-            get {
+        public static string Nombre
+        {
+            get
+            {
                 return ResourceManager.GetString("Nombre", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 1.
         /// </summary>
-        public static string Numero1 {
-            get {
+        public static string Numero1
+        {
+            get
+            {
                 return ResourceManager.GetString("Numero1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 14.
         /// </summary>
-        public static string NumeroModulo {
-            get {
+        public static string NumeroModulo
+        {
+            get
+            {
                 return ResourceManager.GetString("NumeroModulo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to ORGANIZACION.
         /// </summary>
-        public static string Organizacion {
-            get {
+        public static string Organizacion
+        {
+            get
+            {
                 return ResourceManager.GetString("Organizacion", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $org_direccion&lt;br/&gt;.
         /// </summary>
-        public static string OrgDireccion {
-            get {
+        public static string OrgDireccion
+        {
+            get
+            {
                 return ResourceManager.GetString("OrgDireccion", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $org_email&lt;br/&gt;.
         /// </summary>
-        public static string OrgEmail {
-            get {
+        public static string OrgEmail
+        {
+            get
+            {
                 return ResourceManager.GetString("OrgEmail", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $org_nombre&lt;br/&gt;.
         /// </summary>
-        public static string OrgNombre {
-            get {
+        public static string OrgNombre
+        {
+            get
+            {
                 return ResourceManager.GetString("OrgNombre", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $org_telefono&lt;br/&gt;.
         /// </summary>
-        public static string OrgTelefono {
-            get {
+        public static string OrgTelefono
+        {
+            get
+            {
                 return ResourceManager.GetString("OrgTelefono", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to M14_DisenoPlanilla.aspx.
         /// </summary>
-        public static string PaginaDisenoPlanilla {
-            get {
+        public static string PaginaDisenoPlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("PaginaDisenoPlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to M14_MostrarPlanilla.aspx.
         /// </summary>
-        public static string PaginaMostrarPlanilla {
-            get {
+        public static string PaginaMostrarPlanilla
+        {
+            get
+            {
                 return ResourceManager.GetString("PaginaMostrarPlanilla", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to ________________________________&lt;br/&gt;.
         /// </summary>
-        public static string ParteSuperior {
-            get {
+        public static string ParteSuperior
+        {
+            get
+            {
                 return ResourceManager.GetString("ParteSuperior", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $per_apellido&lt;br/&gt;.
         /// </summary>
-        public static string PerApellido {
-            get {
+        public static string PerApellido
+        {
+            get
+            {
                 return ResourceManager.GetString("PerApellido", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $per_direccion&lt;br/&gt;.
         /// </summary>
-        public static string PerDir {
-            get {
+        public static string PerDir
+        {
+            get
+            {
                 return ResourceManager.GetString("PerDir", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $per_estatura&lt;br/&gt;.
         /// </summary>
-        public static string PerEstatura {
-            get {
+        public static string PerEstatura
+        {
+            get
+            {
                 return ResourceManager.GetString("PerEstatura", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $per_fecha_nacimiento&lt;br/&gt;.
         /// </summary>
-        public static string PerFechaNac {
-            get {
+        public static string PerFechaNac
+        {
+            get
+            {
                 return ResourceManager.GetString("PerFechaNac", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $per_imagen&lt;br/&gt;.
         /// </summary>
-        public static string PerImagen {
-            get {
+        public static string PerImagen
+        {
+            get
+            {
                 return ResourceManager.GetString("PerImagen", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $per_nacionalidad&lt;br/&gt;.
         /// </summary>
-        public static string PerNacionalidad {
-            get {
+        public static string PerNacionalidad
+        {
+            get
+            {
                 return ResourceManager.GetString("PerNacionalidad", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $per_nombre&lt;br/&gt;.
         /// </summary>
-        public static string PerNombre {
-            get {
+        public static string PerNombre
+        {
+            get
+            {
                 return ResourceManager.GetString("PerNombre", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $per_num_doc_id&lt;br/&gt;.
         /// </summary>
-        public static string PerNumDoc {
-            get {
+        public static string PerNumDoc
+        {
+            get
+            {
                 return ResourceManager.GetString("PerNumDoc", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $per_peso&lt;br/&gt;.
         /// </summary>
-        public static string PerPeso {
-            get {
+        public static string PerPeso
+        {
+            get
+            {
                 return ResourceManager.GetString("PerPeso", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to PERSONA.
         /// </summary>
-        public static string Persona {
-            get {
+        public static string Persona
+        {
+            get
+            {
                 return ResourceManager.GetString("Persona", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to idEliminar.
         /// </summary>
-        public static string QueryIdEliminar {
-            get {
+        public static string QueryIdEliminar
+        {
+            get
+            {
                 return ResourceManager.GetString("QueryIdEliminar", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to idPlan.
         /// </summary>
-        public static string QueryIdPlan {
-            get {
+        public static string QueryIdPlan
+        {
+            get
+            {
                 return ResourceManager.GetString("QueryIdPlan", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to idSolici.
         /// </summary>
-        public static string QueryIdSolici {
-            get {
+        public static string QueryIdSolici
+        {
+            get
+            {
                 return ResourceManager.GetString("QueryIdSolici", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-off&quot; href=&quot;M14_ConsultarPlanillas.aspx?idPlan=.
         /// </summary>
-        public static string Status {
-            get {
+        public static string Status
+        {
+            get
+            {
                 return ResourceManager.GetString("Status", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to nombre.
         /// </summary>
-        public static string String1 {
-            get {
+        public static string String1
+        {
+            get
+            {
                 return ResourceManager.GetString("String1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &amp;tipo=.
         /// </summary>
-        public static string Tipo {
-            get {
+        public static string Tipo
+        {
+            get
+            {
                 return ResourceManager.GetString("Tipo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to $TIPO_EVENTO&lt;br/&gt;.
         /// </summary>
-        public static string TipoEvento {
-            get {
+        public static string TipoEvento
+        {
+            get
+            {
                 return ResourceManager.GetString("TipoEvento", resourceCulture);
             }
         }

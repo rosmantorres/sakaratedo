@@ -33,17 +33,35 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
+
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+
+    <!--=======
+    <Reference Include="nunit.core">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>..\packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+>>>>>>> e8ac3154aec28d056bea24d3a4ad8b0913ba08cd-->
+      <!--<HintPath>..\bin\log4net.dll</HintPath>-->
+
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.4\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\bin\log4net.dll</HintPath>
+
     </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
@@ -155,6 +173,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod3.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo4\PruebasComando\M4_PruebasComandoDojo.cs" />
+    <Compile Include="Modulo4\PruebasComando\M4_PruebasComandoHistotialM.cs" />
+    <Compile Include="Modulo4\PruebasDAO\M4_PruebasDAODojo.cs" />
+    <Compile Include="Modulo4\PruebasDAO\M4_PruebasDAOHistorialM.cs" />
     <Compile Include="Modulo4\RecursosPU_Mod4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,6 +221,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod7.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo8\PruebaDAORestriccionEvento.cs" />
     <Compile Include="Modulo8\PruebasRestCinta.cs" />
     <Compile Include="Modulo8\PruebaDAORestriccionCompetencia.cs" />
     <Compile Include="Modulo8\RecursosPU_Mod8.Designer.cs">

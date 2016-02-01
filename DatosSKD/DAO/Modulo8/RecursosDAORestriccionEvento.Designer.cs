@@ -187,6 +187,24 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to res_eve_status.
+        /// </summary>
+        internal static string AliasStatus {
+            get {
+                return ResourceManager.GetString("AliasStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_00_004.
+        /// </summary>
+        internal static string CodigoErrorFormato {
+            get {
+                return ResourceManager.GetString("CodigoErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_AtletasCumplenRestriccionEvento.
         /// </summary>
         internal static string ConsultarAtletasCumplanRE {
@@ -268,6 +286,15 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error de parseo.
+        /// </summary>
+        internal static string MensajeErrorFormato {
+            get {
+                return ResourceManager.GetString("MensajeErrorFormato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to M8_Modificar_Restriccion_Evento.
         /// </summary>
         internal static string ModificarRestriccionEvento {
@@ -345,6 +372,15 @@ namespace DatosSKD.DAO.Modulo8 {
         internal static string ParamSexoRestricionEvento {
             get {
                 return ResourceManager.GetString("ParamSexoRestricionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @res_eve_status.
+        /// </summary>
+        internal static string ParamStatus {
+            get {
+                return ResourceManager.GetString("ParamStatus", resourceCulture);
             }
         }
     }

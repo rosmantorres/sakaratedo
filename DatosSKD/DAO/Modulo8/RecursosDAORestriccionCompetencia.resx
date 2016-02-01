@@ -228,6 +228,9 @@
   <data name="AliasSexo1" xml:space="preserve">
     <value>sexo</value>
   </data>
+  <data name="AliasStatus" xml:space="preserve">
+    <value>status</value>
+  </data>
   <data name="AliasStatusCompetencia" xml:space="preserve">
     <value>statusCompetencia</value>
   </data>
@@ -268,10 +271,13 @@
     <value>M8_ConsultarTodasLasCompetenciasNoAsociadas</value>
   </data>
   <data name="ConsultarTodasRestriccionCompetencia" xml:space="preserve">
-    <value>M8_ConsultarRestriccionCompetencia</value>
+    <value>M8_ConsultarTodosRestriccionCompetencia</value>
   </data>
   <data name="ConsultarTodasRestriccionCompetencia1" xml:space="preserve">
     <value>M8_ConsultarRestriccionCompetencia</value>
+  </data>
+  <data name="EiminarLogicoRestriccionCompetencia" xml:space="preserve">
+    <value>M8_EliminarLogicoRestriccionCompetencia</value>
   </data>
   <data name="EliminarCompetenciaRestriccionCompetencia" xml:space="preserve">
     <value>M8_EliminarCompetenciaRestriccionCompetencia</value>
@@ -422,6 +428,9 @@
   </data>
   <data name="ParamSexo1" xml:space="preserve">
     <value>@rest_comp_sexo</value>
+  </data>
+  <data name="ParamStatus" xml:space="preserve">
+    <value>@rest_comp_status</value>
   </data>
   <data name="RestornarIdRestriccionCompetencia" xml:space="preserve">
     <value>M8_RetornarIdRestriccionCompetencia</value>

@@ -40,7 +40,7 @@ namespace Interfaz_Presentadores.Modulo8
         public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto()
         {
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabrica.ObtenerRestriccionCompetencia();
+            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia();
             restriccionCompetencia.Id = int.Parse(vista.id);
             restriccionCompetencia.IdRestriccionComp = int.Parse(vista.id);
             restriccionCompetencia.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
@@ -139,7 +139,12 @@ namespace Interfaz_Presentadores.Modulo8
             vista.sexo.DataBind();
         }
 
-
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = "alert alert-danger alert-dismissible";
+            vista.alertaRol = "alert";
+            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+        }
         public void LlenarComboModalidad()
         {
             vista.modalidad.Enabled = true;

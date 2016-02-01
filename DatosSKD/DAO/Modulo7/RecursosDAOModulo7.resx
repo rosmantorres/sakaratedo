@@ -468,4 +468,7 @@
   <data name="ParamIdCompetenciaPaga" xml:space="preserve">
     <value>@com_id</value>
   </data>
+  <data name="MensajeExceptionSKD" xml:space="preserve">
+    <value>No se pudo completar la operacion</value>
+  </data>
 </root>

@@ -14,6 +14,7 @@ using LogicaNegociosSKD.Comandos.Modulo15;
 using LogicaNegociosSKD.Comandos.Modulo10;
 using LogicaNegociosSKD.Comandos.Modulo11;
 using LogicaNegociosSKD.Comandos.Modulo9;
+using LogicaNegociosSKD.Comandos.Modulo4;
 
 namespace LogicaNegociosSKD.Fabrica
 {
@@ -51,11 +52,11 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new Comandos.Modulo2.ComandoEliminarRol();
         }
-        public Comando<List<Entidad>> ObtenerRolesDeSistema()
+        public Comando<List<DominioSKD.Entidades.Modulo2.Rol>> ObtenerRolesDeSistema()
         {
             return new Comandos.Modulo2.ComandoRolesDeSistema();
         }
-        public Comando<List<Entidad>> ObtenerRolesUsuario()
+        public Comando<List<DominioSKD.Entidades.Modulo2.Rol>> ObtenerRolesUsuario()
         {
             return new Comandos.Modulo2.ComandoRolesUsuario();
         }
@@ -89,6 +90,94 @@ namespace LogicaNegociosSKD.Fabrica
         #endregion
 
         #region Modulo 4
+        /// <summary>
+        /// Instancia comando para Agregar Dojo
+        /// </summary>
+        /// <returns>True o False</returns>
+        public static Comando<bool> CrearComandoAgregarDojo()
+        {
+            return new ComandoAgregarDojo();
+        }
+
+        /// <summary>
+        /// Instancia comando para Listar Dojo
+        /// </summary>
+        /// <returns>Lista de Dojos</returns>
+        public static Comando<List<Entidad>> CrearComandoListarDojos()
+        {
+            return new ComandoListarDojos();
+        }
+
+        /// <summary>
+        /// Instancia comando para Eliminar Dojo
+        /// </summary>
+        /// <returns>True o False</returns>
+        public static Comando<bool> CrearComandoEliminarDojo()
+        {
+            return new ComandoEliminarDojo();
+        }
+
+        /// <summary>
+        /// Instancia comando para Detallar Dojo
+        /// </summary>
+        /// <returns>Dojo</returns>
+        public static Comando<Entidad> CrearComandoDetallarDojo()
+        {
+            return new ComandoDetallarDojo();
+        }
+
+        /// <summary>
+        /// Instancia comando para Modificar Dojo
+        /// </summary>
+        /// <returns>True o False</returns>
+        public static Comando<bool> CrearComandoModificarDojo()
+        {
+            return new ComandoModificarDojo();
+        }
+        /// <summary>
+        /// Instancia comando para Agregar Historial Matricula
+        /// </summary>
+        /// <returns>True o False</returns>
+        public static Comando<bool> CrearComandoAgregaHistorialM()
+        {
+            return new ComandoAgregarHistorialM();
+        }
+
+        /// <summary>
+        /// Instancia comando para Listar Historial Matricula
+        /// </summary>
+        /// <returns>Lista de Historial Matricula</returns>
+        public static Comando<List<Entidad>> CrearComandoListarHistorialM()
+        {
+            return new ComandoListarHistorialM();
+        }
+
+        /// <summary>
+        /// Instancia comando para Eliminar Historial Matricula
+        /// </summary>
+        /// <returns>True o False</returns>
+        public static Comando<bool> CrearComandoEliminarHistorialM()
+        {
+            return new ComandoEliminarHistorialM();
+        }
+
+        /// <summary>
+        /// Instancia comando para Detallar Historial Matricula
+        /// </summary>
+        /// <returns>Historial Matricula</returns>
+        public static Comando<Entidad> CrearComandoDetallarHistorialM()
+        {
+            return new ComandoDetallarHistorialM();
+        }
+
+        /// <summary>
+        /// Instancia comando para Modificar Historial Matricula
+        /// </summary>
+        /// <returns>True o False</returns>
+        public static Comando<bool> CrearComandoModificarHistorialM()
+        {
+            return new ComandoModificarHistorialM();
+        }
         #endregion
 
         #region Modulo 5
@@ -219,6 +308,11 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarTodosRestriccionCompetencia();
         }
 
+        public Comando<Boolean> CrearComandoEliminarLogicoRestriccionCompetencia(Entidad laRestCompetencia)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarLogicoRestriccionCompetencia(laRestCompetencia);
+        }
+
         #endregion
 
         #region Comandos Restriccion Avance de Cinta
@@ -227,32 +321,40 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta(laRestCinta);
         }
 
+        /*public static Comando<Boolean> CrearComandoAgregarRestriccionCintaSimple(Entidad laRestCinta)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCintaSimple(laRestCinta);
+        }*/
+
         public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarRestriccionCinta()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta();
         }
 
-        public Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCintaTodas()
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCintaTodas()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas();
         }
 
-        public Comando<Boolean> CrearComandoModificarRestriccionCinta(Entidad laRestCinta)
+        public static Comando<Boolean> CrearComandoModificarRestriccionCinta(Entidad laRestCinta)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta(laRestCinta);
         }
 
-
+        public static Comando<Boolean> CrearComandoStatusRestriccionCinta(Entidad laRestCinta)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta(laRestCinta);
+        }
 
         #endregion
 
         #region Restriccion Evento
-        public Comando<List<DominioSKD.Entidad>> CrearComandoConsultarEventosSinRestriccion()
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarEventosSinRestriccion()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarEventosSinRestriccion();
         }
 
-        public Comando<Boolean> CrearComandoAgregarRestriccionEvento(Entidad laRestEvento)
+        public static Comando<Boolean> CrearComandoAgregarRestriccionEvento(Entidad laRestEvento)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionEvento(laRestEvento);
         }
@@ -262,14 +364,27 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionEvento();
         }
         
-        public Comando<Boolean> CrearComandoModificarRestriccionEvento(Entidad laRestEvento)
+        public static Comando<Boolean> CrearComandoModificarRestriccionEvento(Entidad laRestEvento)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento(laRestEvento);
         }
+
+        public static Comando<Boolean> CrearComandoEliminarRestriccionEvento(Entidad laRestEvento)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarRestriccionEvento(laRestEvento);
+        }
+
+        public static Comando<DominioSKD.Entidad> CrearComandoConsultarUnaRestriccionEvento(Entidad elEvento)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarUnaRestriccionEvento(elEvento);
+        }
+
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoEventosQuePuedeParticiparAtleta(Entidad laPersona)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEventosQuePuedeParticiparAtleta(laPersona);
+        }
         #endregion
-
-
-
+        
         #endregion
 
         #region Modulo 9

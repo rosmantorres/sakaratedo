@@ -31,6 +31,38 @@ namespace templateApp.GUI.Modulo8
                 this.tabla.Text = value;
             }
         }
+
+        public Label labelReporte
+        {
+
+            get
+            {
+                return this.labelReporte;
+            }
+
+        }
+
+        public string alertaClase
+        {
+            set
+            {
+                this.alert.Attributes["class"] = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                this.alert.Attributes["role"] = value;
+            }
+        }
+        public string alerta
+        {
+            set
+            {
+                this.alert.InnerHtml = value;
+            }
+        }
         #endregion
 
         #region constructor
@@ -42,39 +74,25 @@ namespace templateApp.GUI.Modulo8
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            String success = Request.QueryString["idPlan"];
+            String stat = Request.QueryString["stat"];
             ((SKD)Page.Master).IdModulo = "8.2";
+
+            
+            if (success != null)
+            {
+                int id = Convert.ToInt32(success);
+                int sta = Convert.ToInt32(stat);
+                _presentador.CambiarStatus(id, sta);
+                
+            }
+
             if (!IsPostBack)
             {
                 List<Entidad> listaRestricciones = _presentador.LlenarTabla();
                 _presentador.cargarInformacion(listaRestricciones);
             }
-            String success = Request.QueryString["actionSuccess"];
 
-            if (success != null)
-            {
-                if (success.Equals("1"))
-                {
-                    alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                    alert.Attributes["role"] = "alert";
-                    alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción agregada exitosamente</div>";
-                }
-                else
-                {
-                    if (success.Equals("2"))
-                    {
-                        alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alert.Attributes["role"] = "alert";
-                        alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción eliminada exitosamente</div>";
-                    }
-                    else
-                        if (success.Equals("3"))
-                        {
-                            alert.Attributes["class"] = "alert alert-success alert-dismissible";
-                            alert.Attributes["role"] = "alert";
-                            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción modificada exitosamente</div>";
-                        }
-                }
-            }
         }
     }
 }

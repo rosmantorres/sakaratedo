@@ -257,7 +257,7 @@ namespace DatosSKD.DAO.Modulo2
         /// </summary>
         /// <param name="idUsuario">id del usuario que leconsultaran los roles</param>
         /// <returns> lista de roles del usuario con sus respectivos atributos</returns>
-        public List<Entidad> consultarRolesUsuario(string idUsuario)
+        public List<Rol> consultarRolesUsuario(string idUsuario)
         {
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -265,7 +265,7 @@ namespace DatosSKD.DAO.Modulo2
             try
             {
                 parametros = new List<Parametro>();
-                List<Entidad> losRoles = new List<Entidad>();
+                List<Rol> losRoles = new List<Rol>();
                 elParametro = new Parametro(RecursosBDM2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
                 parametros.Add(elParametro);
                 DataTable dt = this.EjecutarStoredProcedureTuplas(RecursosBDM2.ConsultarRolesUsuario, parametros);

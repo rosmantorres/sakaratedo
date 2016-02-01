@@ -22,6 +22,7 @@ namespace DominioSKD.Entidades.Modulo8
         /// <attr name="idEvento">codigo unico identificador del evento</attr>
         /// <attr name="nombreEvento">nombre del evento</attr>
         /// <attr name="listaCintas">atributo que comprende una lista de Objetos tipo cinta que corresponden a cintas 
+        /// <attr name="status">validar si esta o no activo</attr>
         /// asociadas a la restriccion</attr>
         /// </summary>
 
@@ -33,6 +34,7 @@ namespace DominioSKD.Entidades.Modulo8
         private int idEvento;
         private String nombreEvento;
         private List<CintaSimple> listaCintas;
+        private int status;
         #endregion
 
         #region Propiedades
@@ -83,6 +85,11 @@ namespace DominioSKD.Entidades.Modulo8
             get { return listaCintas; }
             set { listaCintas = value; }
         }
+        public int Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
         #endregion
 
         #region Constructores
@@ -100,6 +107,7 @@ namespace DominioSKD.Entidades.Modulo8
             this.idEvento = -1;
             this.nombreEvento = String.Empty;
             this.listaCintas = null;
+            this.status = 0;
         }
 
         /// <summary>
@@ -115,12 +123,14 @@ namespace DominioSKD.Entidades.Modulo8
             this.idEvento = -1;
             this.nombreEvento = String.Empty;
             this.listaCintas = null;
+            this.status = 0;
         }
 
         /// <summary>
         /// Constructor público sin el id de la restriccion de la clase RestriccionEvento y sin identificador unico
         /// </summary>
-        public RestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento) : base(0)
+        public RestriccionEvento(String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
+            : base(0)
         {
             idRestEvento = -1;
             descripcion = inputDescripcion;
@@ -130,12 +140,14 @@ namespace DominioSKD.Entidades.Modulo8
             idEvento = inputIdEvento;
             nombreEvento = inputNombreEvento;
             listaCintas = null;
+            status = inputStatus;
         }
 
         /// <summary>
         /// Constructor público con todos los atributos de la tupla de la clase RestriccionEvento y con identificador unico
         /// </summary>
-        public RestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento) : base(0)
+        public RestriccionEvento(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
+            : base(0)
         {
             idRestEvento = inputId;
             descripcion = inputDescripcion;
@@ -145,12 +157,13 @@ namespace DominioSKD.Entidades.Modulo8
             idEvento = inputIdEvento;
             nombreEvento = inputNombreEvento;
             listaCintas = null;
+            status = inputStatus;
         }
 
         /// <summary>
         /// Constructor público con todos los atributos de la tupla de la clase RestriccionEvento y con identificador unico
         /// </summary>
-        public RestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento)
+        public RestriccionEvento(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, String inputSexo, int inputIdEvento, String inputNombreEvento, int inputStatus)
         {
             base.Id = id;
             idRestEvento = inputId;
@@ -161,6 +174,7 @@ namespace DominioSKD.Entidades.Modulo8
             idEvento = inputIdEvento;
             nombreEvento = inputNombreEvento;
             listaCintas = null;
+            status = inputStatus;
         }
         #endregion
 

@@ -18,27 +18,7 @@ namespace templateApp.GUI.Modulo8
         private PresentadorConsultarRestriccionesCinta _presentador;
 
         #region Contratos
-        public string alertaClase
-        {
-            set
-            {
-                this.alerta.Attributes["class"] = value;
-            }
-        }
-        public string alertaRol
-        {
-            set
-            {
-                this.alerta.Attributes["role"] = value;
-            }
-        }
-        public string alert
-        {
-            set
-            {
-                this.alerta.InnerHtml = value;
-            }
-        }
+        
         public string RestriccionesCreadas
         {
             get
@@ -51,6 +31,27 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
+        public string alertaClase
+        {
+            set
+            {
+                this.alert.Attributes["class"] = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                this.alert.Attributes["role"] = value;
+            }
+        }
+        public string alerta
+        {
+            set
+            {
+                this.alert.InnerHtml = value;
+            }
+        }
         #endregion
 
         public interfazRestriccionesAvanceCinta()
@@ -60,44 +61,22 @@ namespace templateApp.GUI.Modulo8
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            String success = Request.QueryString[RecursoInterfazModulo8.IdPlan];
+            String stat = Request.QueryString[RecursoInterfazModulo8.statrec];
 
-            ((SKD)Page.Master).IdModulo = "8.3";
+            ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.interfazRCi;
+            _presentador.ObtenerVariablesURL();
+            if (success != null)
+            {
+                int id = Convert.ToInt32(success);
+                int sta = Convert.ToInt32(stat);
+                _presentador.CambiarStatus(id, sta);
+            }
 
             if (!IsPostBack)
             {
-
-                List<Entidad> listaRestricciones = _presentador.LlenarTabla();
-                _presentador.LlenarInformacion(listaRestricciones);
-            }
-
-
-
-            String success = Request.QueryString["actionSuccess"];
-
-            if (success != null)
-            {
-                if (success.Equals("1"))
-                {
-                    alerta.Attributes["class"] = "alert alert-success alert-dismissible";
-                    alerta.Attributes["role"] = "alert";
-                    alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción agregada exitosamente</div>";
-                }
-                else
-                {
-                    if (success.Equals("2"))
-                    {
-                        alerta.Attributes["class"] = "alert alert-success alert-dismissible";
-                        alerta.Attributes["role"] = "alert";
-                        alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción eliminada exitosamente</div>";
-                    }
-                    else
-                        if (success.Equals("3"))
-                        {
-                            alerta.Attributes["class"] = "alert alert-success alert-dismissible";
-                            alerta.Attributes["role"] = "alert";
-                            alerta.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>Restricción modificada exitosamente</div>";
-                        }
-                }
+                
+                _presentador.LlenarInformacion();
             }
 
         }

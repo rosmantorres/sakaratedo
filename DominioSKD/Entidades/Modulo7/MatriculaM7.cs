@@ -8,7 +8,7 @@ namespace DominioSKD.Entidades.Modulo7
 {
 
     /// <summary>
-    /// Clase que representa una matricula de un Atleta con en un Dojo
+    /// Clase que representa una matricula de un Atleta 
     /// </summary>
     public class MatriculaM7 : Entidad
     {
