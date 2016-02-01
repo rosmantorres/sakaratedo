@@ -485,6 +485,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to S_16_17.
+        /// </summary>
+        internal static string CODIGO_EXCEPCION_CARRITO_VACIO {
+            get {
+                return ResourceManager.GetString("CODIGO_EXCEPCION_CARRITO_VACIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to S_16_15.
         /// </summary>
         internal static string CODIGO_EXCEPCION_DATO_PAGO {
@@ -1241,6 +1250,15 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error, no se puede realizar pagos en donde no existan items en el carrito..
+        /// </summary>
+        internal static string MENSAJE_EXCEPCION_CARRITO_VACIO {
+            get {
+                return ResourceManager.GetString("MENSAJE_EXCEPCION_CARRITO_VACIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error, los datos que ha introducido de su pago no son validos, no pueden contener letras ni caracteres especiales.
         /// </summary>
         internal static string MENSAJE_EXCEPCION_DATO_PAGO {
@@ -1268,7 +1286,7 @@ namespace Interfaz_Presentadores.Modulo16 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Se ha introducido un monto para pagar el cual es menor a 0 o igual a 0.
+        ///   Looks up a localized string similar to Se ha introducido un monto para pagar el cual es menor a 0 o mayor al adeudado.
         /// </summary>
         internal static string MENSAJE_EXCEPCION_MONTO_INVALIDO {
             get {

@@ -216,6 +216,9 @@
   <data name="Codigo_Objeto_Nulo" xml:space="preserve">
     <value>SKD_00_011</value>
   </data>
+  <data name="FormatoFecha" xml:space="preserve">
+    <value>MM/dd/yyyy</value>
+  </data>
   <data name="MensajeListaNulaLogger" xml:space="preserve">
     <value>La lista que retorno el metodo es nula</value>
   </data>

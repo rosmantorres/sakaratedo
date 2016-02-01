@@ -170,7 +170,7 @@ namespace templateApp.GUI.Modulo7
                 String rolUsuario = Session[GUI.Master.RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Atleta", "Representante", "Atleta(Menor)" });
+                   (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)
@@ -178,8 +178,8 @@ namespace templateApp.GUI.Modulo7
                 }
                 if (permitido)
                 {
-                    ((SKD)Page.Master).IdModulo = "7";
-                    String detalleStringCompetencia = Request.QueryString["compDetalle"];
+                    ((SKD)Page.Master).IdModulo = M7_Recursos.NumeroModulo;
+                    String detalleStringCompetencia = Request.QueryString[M7_Recursos.CompetenciaDetalle];
 
                     if (!IsPostBack) // verificar si la pagina se muestra por primera vez
                     {

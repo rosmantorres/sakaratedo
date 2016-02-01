@@ -18,6 +18,6 @@ namespace DatosSKD.InterfazDAO.Modulo5
 
         List<Entidad> ListarCintasXOrganizacion(Entidad parametro);
 
-        
+        bool ModificarStatus(Entidad parametro);
     }
 }

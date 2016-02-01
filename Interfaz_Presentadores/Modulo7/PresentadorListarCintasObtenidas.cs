@@ -34,11 +34,9 @@ namespace Interfaz_Presentadores.Modulo7
         /// </summary>
         public void ConsultarCintasObtenidas(Entidad idPersona)
         {
-            FabricaComandos fabricaComandos = new FabricaComandos();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             try
             {
-                Comando<Tuple<List<Entidad>, List<DateTime>>> comandoListaCintasObtenidas = fabricaComandos.ObtenerComandoConsultarListaCinta();
+                Comando<Tuple<List<Entidad>, List<DateTime>>> comandoListaCintasObtenidas = FabricaComandos.ObtenerComandoConsultarListaCinta();
                 comandoListaCintasObtenidas.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<DateTime>> tupla = comandoListaCintasObtenidas.Ejecutar();
 
@@ -56,7 +54,7 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + cinta.Color_nombre.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + cinta.Rango.ToString() + M7_RecursosPresentador.CerrarTD;
-                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
+                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString(M7_RecursosPresentador.FormatoFecha) + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + cinta.Clasificacion.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
                         vista.laTabla += M7_RecursosPresentador.BotonInfoCintas + cinta.Id + M7_RecursosPresentador.BotonCerrar;

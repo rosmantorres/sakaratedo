@@ -22,7 +22,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     {
         #region Atributos
         private EventoM7 idEvento;
-        private FabricaComandos fabricaComandos;
         private ComandoConsultarDetallarHorarioPractica detalleHorario;
         #endregion
 
@@ -33,8 +32,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [SetUp]
         public void Init()
         {
-            fabricaComandos = new FabricaComandos();
-            detalleHorario = (ComandoConsultarDetallarHorarioPractica)fabricaComandos.ObtenerComandoConsultarDetallarHorarioPractica();
+            detalleHorario = (ComandoConsultarDetallarHorarioPractica)FabricaComandos.ObtenerComandoConsultarDetallarHorarioPractica();
             idEvento = (EventoM7)FabricaEntidades.ObtenerEventoM7();
             idEvento.Id = 1;
             detalleHorario.LaEntidad = idEvento;
@@ -46,7 +44,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [TearDown]
         public void Clean()
         {
-            fabricaComandos = null;
             detalleHorario = null;
             idEvento = null;
         }
@@ -54,10 +51,10 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
 
         #region Test
         /// <summary>
-        /// Método para probar que el evento obtenido no esta vacio
+        /// Método para probar que el horario obtenido no esta vacio
         /// </summary>
         [Test]
-        public void PruebaEvento()
+        public void PruebaHorario()
         {
             EventoM7 evento = (EventoM7)detalleHorario.Ejecutar();
             Assert.GreaterOrEqual("Clase Regular", evento.Nombre);

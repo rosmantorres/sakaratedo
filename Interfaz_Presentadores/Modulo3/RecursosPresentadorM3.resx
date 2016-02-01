@@ -121,8 +121,50 @@
     <value>SKD_001</value>
     <comment>Codigo de error para una lista vacia</comment>
   </data>
+  <data name="expresionNombre" xml:space="preserve">
+    <value>^[A-Za-z-_\s]{2,100}$</value>
+  </data>
+  <data name="expresionNombreNumero" xml:space="preserve">
+    <value>^[A-Z0-9a-z]{2,100}$</value>
+  </data>
+  <data name="expresionNumero" xml:space="preserve">
+    <value>^[0-9]{1,10}$</value>
+  </data>
+  <data name="expresionSQL" xml:space="preserve">
+    <value>/\w*((\%27)|(\'))((\%6F)|o|(\%4F))((\%72)|r|(\%52))/ix</value>
+  </data>
   <data name="Mensaje_Error_Lista_Vacia" xml:space="preserve">
     <value>La Lista Que Devuelve Esta Vacia</value>
     <comment>Mensaje de error cuando una lista devuelta esta vacia</comment>
+  </data>
+  <data name="expresionesCorreo" xml:space="preserve">
+    <value>^[A-Z0-9a-z@.-_]{2,100}$</value>
+  </data>
+  <data name="arroba" xml:space="preserve">
+    <value>@</value>
+  </data>
+  <data name="expresionDireccion" xml:space="preserve">
+    <value>^[A-Z0-9a-z,.\s-_]{2,100}$</value>
+  </data>
+  <data name="Codigo_Error_Expresion_Regular" xml:space="preserve">
+    <value>SKD_002</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Nombre" xml:space="preserve">
+    <value>El campo Nombre solo permite expresiones alfanumericos y los caractares "-" y "_"</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Direccion" xml:space="preserve">
+    <value>El campo Direccion solo permite expresiones alfanumericos , numeros y los caractares "-"  "."  "_" y ","</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Email" xml:space="preserve">
+    <value>El campo Email solo permite expresiones alfanumericos , numeros y los caractares "-",  "." y "_". Debe contener @</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Estado" xml:space="preserve">
+    <value>El campo Estado solo permite expresiones alfanumericos</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Estilo" xml:space="preserve">
+    <value>El campo Estilo solo permite expresiones alfanumericos y los caractares "-" y "_"</value>
+  </data>
+  <data name="Mensaje_Error_Expresion_Regular_Telefono" xml:space="preserve">
+    <value>El campo Telefono solo permite numeros.</value>
   </data>
 </root>

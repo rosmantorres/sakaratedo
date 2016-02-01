@@ -46,11 +46,15 @@
             <div class="box-header">
                  <h3 class="box-title">Lista de Cintas</h3>
             </div><!-- /.box-header -->
-
+            
+            <asp:DropDownList ID="listaOrg" AutoPostBack="true" runat="server" OnSelectedIndexChanged="organizacionSeleccionada">
+                <asp:ListItem Value="-1">Seleccione una Organizaci&oacute;n</asp:ListItem>
+            </asp:DropDownList>
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <input id="cintaIdStatus" type="hidden" runat="server" />
     <input id="estatusActual" type="hidden" runat="server" />
+    <input id="nombreOrg" type="hidden" runat="server" />
 <!--<div class="form-group col-sm-10 col-md-10 col-lg-10">  -->
 <div class="box-body table-responsive"> 
 <table id="ListaCintas" class="table table-bordered table-striped dataTable">
@@ -116,6 +120,7 @@
                     $("[id$='estatusActual']").val("0");
                 }
                 $("[id$='cintaIdStatus']").val($(this).find("input").val());
+                $("[id$='nombreOrg']").val($(this).closest("td").prev("td").html());
 
             })
 

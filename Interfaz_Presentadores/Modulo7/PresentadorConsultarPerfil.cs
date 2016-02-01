@@ -18,7 +18,6 @@ namespace Interfaz_Presentadores.Modulo7
     /// </summary>
     public class PresentadorConsultarPerfil
     {
-        private FabricaComandos fabricaComandos;
         private IContratoConsultarPerfil vista;
         /// <summary>
         /// Constructor del presentador
@@ -37,8 +36,7 @@ namespace Interfaz_Presentadores.Modulo7
         {
             try
             {
-                fabricaComandos = new FabricaComandos();
-                ComandoConsultarPerfil comandoDetallarPersona = (ComandoConsultarPerfil)fabricaComandos.ObtenerComandoConsultarPerfil();
+                ComandoConsultarPerfil comandoDetallarPersona = (ComandoConsultarPerfil)FabricaComandos.ObtenerComandoConsultarPerfil();
                 comandoDetallarPersona.LaEntidad = idPersona;
                 Tuple <Entidad, Entidad, Entidad, Entidad, String, Entidad> tupla = comandoDetallarPersona.Ejecutar();
 
@@ -54,7 +52,7 @@ namespace Interfaz_Presentadores.Modulo7
                 vista.direccion = persona.Direccion;
                 vista.emailDojo = dojo.Email_dojo;
                 vista.emailOrganizacion = organizacion.Email;
-                vista.fechaNacimiento= persona.FechaNacimiento.ToString("MM/dd/yyyy");
+                vista.fechaNacimiento= persona.FechaNacimiento.ToString(M7_RecursosPresentador.FormatoFecha);
                 vista.nombreDojo = dojo.Nombre_dojo;
                 vista.nombreOrganizacion = organizacion.Nombre;
                 vista.nombrePersona = persona.Nombre;

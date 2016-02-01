@@ -14,7 +14,6 @@ namespace Interfaz_Presentadores.Modulo7
     /// </summary>
     public class PresentadorDetallarEventoPago
     {
-        private FabricaComandos fabricaComandos;
         private IContratoDetallarEvento vista;
         /// <summary>
         /// Constructor del presentador
@@ -34,8 +33,7 @@ namespace Interfaz_Presentadores.Modulo7
         {
             try
             {
-                fabricaComandos = new FabricaComandos();
-                ComandoConsultarDetallarEvento comandoDetallarEventoPago = (ComandoConsultarDetallarEvento)fabricaComandos.ObtenerComandoConsultarDetallarEventoPago();
+                ComandoConsultarDetallarEvento comandoDetallarEventoPago = (ComandoConsultarDetallarEvento)FabricaComandos.ObtenerComandoConsultarDetallarEventoPago();
                 comandoDetallarEventoPago.LaEntidad = idEvento;
                 EventoM7 evento = (EventoM7)comandoDetallarEventoPago.Ejecutar();
                
@@ -52,8 +50,8 @@ namespace Interfaz_Presentadores.Modulo7
                 {
                     vista.estado_evento = M7_RecursosPresentador.AliasEventoInactivo;
                 }
-                vista.fechaFin_evento = evento.Horario.FechaFin.ToString("MM/dd/yyyy");
-                vista.fechaInicio_evento = evento.Horario.FechaInicio.ToString("MM/dd/yyyy");
+                vista.fechaFin_evento = evento.Horario.FechaFin.ToString(M7_RecursosPresentador.FormatoFecha);
+                vista.fechaInicio_evento = evento.Horario.FechaInicio.ToString(M7_RecursosPresentador.FormatoFecha);
                 vista.horaFin_evento = evento.Horario.HoraFin.ToString();
                 vista.horaInicio_evento = evento.Horario.HoraInicio.ToString();
                 vista.nombre_evento = evento.Nombre;

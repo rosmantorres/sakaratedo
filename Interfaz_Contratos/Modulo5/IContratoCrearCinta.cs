@@ -12,18 +12,19 @@ namespace Interfaz_Contratos.Modulo5
     { 
         
         void agregarOrganizacionCombo(string id, string nombre);
-        int obtenerIdOrganizacion();
-        string obtenerNombreOrganizacion();
-        string obtenerColorCinta();
-        string obtenerRango();
-        string obtenerCategoria();
-        string obtenerSignificado();
-        int obtenerOrden();
+        int obtenerIdOrganizacion { get; }
+        string obtenerNombreOrganizacion { get; }
+        string obtenerColorCinta { get; }
+        string obtenerRango { get; }
+        string obtenerCategoria { get; }
+        string obtenerSignificado { get; }
+        string obtenerOrden { get; }
         void alertaCamposVacios();
         void alertaAgregarFallidoOrden(ExcepcionesSKD.Modulo5.OrdenCintaRepetidoException ex);
         void alertaAgregarFallidoRepetida(ExcepcionesSKD.Modulo5.CintaRepetidaException ex);
         void Respuesta();
-
+        void alertaExpresiones();
+        void alertaAgregarFallido(Exception ex);
 
     }
 }

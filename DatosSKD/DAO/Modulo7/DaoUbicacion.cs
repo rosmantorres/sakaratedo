@@ -97,7 +97,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return ubicacion;

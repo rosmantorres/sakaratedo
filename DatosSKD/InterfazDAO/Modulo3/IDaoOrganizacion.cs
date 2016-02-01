@@ -15,6 +15,7 @@ namespace DatosSKD.InterfazDAO.Modulo3
 
         List<Entidad> ComboOrganizaciones();
 
+        bool ModificarStatus(Entidad parametro);
         
     }
 }

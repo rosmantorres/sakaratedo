@@ -21,7 +21,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private DojoM7 idDojo;
-        private FabricaDAOSqlServer fabricaSql;
         private DaoDojo baseDeDatosDojo;
         #endregion
 
@@ -32,8 +31,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [SetUp]
         public void Init()
         {
-            fabricaSql = new FabricaDAOSqlServer();
-            baseDeDatosDojo = fabricaSql.ObtenerDaoDojoM7();
+            baseDeDatosDojo = FabricaDAOSqlServer.ObtenerDaoDojoM7();
             idDojo = (DojoM7)FabricaEntidades.ObtenerDojoM7();
             idDojo.Id = 1;
         }
@@ -45,7 +43,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idDojo = null;
-            fabricaSql = null;
             baseDeDatosDojo = null;
         }
         #endregion

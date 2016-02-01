@@ -43,6 +43,7 @@ CREATE
     cin_clasificacion            VARCHAR (100) NOT NULL ,
     cin_significado              VARCHAR (150) NOT NULL ,
     cin_orden                    INTEGER NOT NULL ,
+	cin_status					 BIT,
     CONSTRAINT CINTA_PK PRIMARY KEY CLUSTERED (cin_id)
 WITH
   (
@@ -382,6 +383,7 @@ CREATE
     org_email     VARCHAR (100) NOT NULL ,
     org_estado    VARCHAR (100) NOT NULL ,
     ESTILO_est_id INTEGER NOT NULL ,
+	org_status    BIT,
     CONSTRAINT ORGANIZACION_PK PRIMARY KEY CLUSTERED (org_id)
 WITH
   (

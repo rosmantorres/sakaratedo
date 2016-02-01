@@ -106,6 +106,7 @@
     <Compile Include="Modulo16\CarritoConPagoException.cs" />
     <Compile Include="Modulo16\CarritoSinEventoException.cs" />
     <Compile Include="Modulo16\CarritoSinInventarioException.cs" />
+    <Compile Include="Modulo16\CarritoVacioException.cs" />
     <Compile Include="Modulo16\ErrorEnHTTPException.cs" />
     <Compile Include="Modulo16\ItemInvalidoException.cs" />
     <Compile Include="Modulo16\LogicaagregarEventoaCarritoException.cs" />
@@ -123,10 +124,15 @@
     <Compile Include="Modulo1\InicioSesionException.cs" />
     <Compile Include="Modulo2\RolesException.cs" />
     <Compile Include="Modulo3\EstiloInexistenteException.cs" />
+    <Compile Include="Modulo3\ExpresionesRegularesException.cs" />
     <Compile Include="Modulo3\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo3\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo3\OrganizacionExistenteException.cs" />
+    <Compile Include="Modulo4\DojoExistenteException.cs" />
+    <Compile Include="Modulo4\HistorialMatriculaExistenteException.cs" />
+    <Compile Include="Modulo4\HistorialMatriculaInexistenteException.cs" />
     <Compile Include="Modulo5\CintaRepetidaException.cs" />
+    <Compile Include="Modulo5\ExpresionesRegularesException.cs" />
     <Compile Include="Modulo5\FormatoIncorrectoException.cs" />
     <Compile Include="Modulo5\ListaVaciaExcepcion.cs" />
     <Compile Include="Modulo5\OrdenCintaRepetidoException.cs" />

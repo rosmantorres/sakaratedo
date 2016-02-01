@@ -153,6 +153,18 @@ namespace PruebasUnitariasSKD.Modulo5
 
         }
 
+        /// <summary>
+        /// Método de prueba para Ejecutar el comando Modificar status de una Cinta
+        /// </summary>
+        [Test]
+        public void ejecutarElComandoModificarStatus()
+        {
+            this.miComando = FabricaComandos.ObtenerEjecutarModificarStatusCinta(miEntidadCintaModificar);
+            bool resultado = this.miComando.Ejecutar();
+            Assert.IsTrue(resultado);
+
+        }
+
         #endregion
     }
 }

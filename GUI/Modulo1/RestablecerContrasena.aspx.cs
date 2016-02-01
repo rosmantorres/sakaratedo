@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaNegociosSKD.Modulo1;
-using LogicaNegociosSKD.Modulo2;
 using templateApp.GUI.Master;
 using Interfaz_Presentadores.Modulo1;
 using Interfaz_Contratos.Modulo1;
@@ -18,7 +16,6 @@ namespace templateApp.GUI.Modulo1
         string IdUser = "";
         string value;
         private PresentadorM1Restablecer presentador;
-        AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
 
         String IContratoM1Restablecer.ClaveEtq
         {

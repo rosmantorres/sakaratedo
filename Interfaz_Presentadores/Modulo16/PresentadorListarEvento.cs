@@ -54,7 +54,7 @@ namespace Interfaz_Presentadores.Modulo16
                 Comando<Entidad> comandoListarEventos = FabricaComandos.CrearComandoConsultarTodosEventos();
 
                 // Casteamos el parametro
-                PersonaM1 param = new PersonaM1();
+                PersonaM1 param = (PersonaM1)FabricaEntidades.ObtenerPersonaModulo16();
                 param._Id = persona;
                 comandoListarEventos.LaEntidad = param;
 
@@ -224,7 +224,7 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 string id = e.CommandName;
-                Evento evento = new Evento();
+                DominioSKD.Evento evento = (DominioSKD.Evento)FabricaEntidades.ObtenerEventoCompletos();
                 evento.Id = int.Parse(id);
 
                 //Casteamos
@@ -397,7 +397,6 @@ namespace Interfaz_Presentadores.Modulo16
                     System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 //Persona que eventualmente la buscaremos por el session
-                FabricaEntidades fabrica = new FabricaEntidades();
                 Entidad persona = (Persona)FabricaEntidades.ObtenerPersona();
                 persona.Id= int.Parse(HttpContext.Current.Session[RecursosInterfazMaster.sessionUsuarioID].ToString());
 
@@ -406,7 +405,8 @@ namespace Interfaz_Presentadores.Modulo16
                 String[] datos = aux.ID.Split('-');
 
                 //Creo el evento asignandole su ID                
-                Evento evento = (Evento)FabricaEntidades.ObtenerEvento();
+                DominioSKD.Entidades.Modulo9.Evento evento
+                    = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
                 evento.Id = int.Parse(datos[1]);
 
                 //Respuesta de la accion de agregar y la cantidad que se desea de ese item

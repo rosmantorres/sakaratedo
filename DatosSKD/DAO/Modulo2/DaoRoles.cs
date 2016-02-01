@@ -10,7 +10,7 @@ using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Configuration;
-using DatosSKD.Modulo1;
+using DatosSKD.DAO.Modulo1;
 using DatosSKD.InterfazDAO.Modulo2;
 using DominioSKD.Fabrica;
 
@@ -45,14 +45,14 @@ namespace DatosSKD.DAO.Modulo2
                 List<Entidad> losRoles = new List<Entidad>();
 
                 DataTable dt = this.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo2.ConsultarRolesSistema, parametros);
+                               RecursosBDM2.ConsultarRolesSistema, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
                     Rol elRol =(Rol) laFabrica.ObtenerRol_M2();
-                    elRol.Id_rol = int.Parse(row[RecursosBDModulo2.AliasIdRol].ToString());
-                    elRol.Nombre = row[RecursosBDModulo2.AliasNombreRol].ToString();
-                    elRol.Descripcion = row[RecursosBDModulo2.AliasDescripcionRol].ToString();
+                    elRol.Id_rol = int.Parse(row[RecursosBDM2.AliasIdRol].ToString());
+                    elRol.Nombre = row[RecursosBDM2.AliasNombreRol].ToString();
+                    elRol.Descripcion = row[RecursosBDM2.AliasDescripcionRol].ToString();
                     losRoles.Add(elRol);
                 }
 
@@ -66,8 +66,8 @@ namespace DatosSKD.DAO.Modulo2
             }
             catch (FormatException e)
             {
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo1.Codigo_Error_Formato,
-                     RecursosBDModulo1.Mensaje_Error_Formato, e);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDM1.Codigo_Error_Formato,
+                     RecursosBDM1.Mensaje_Error_Formato, e);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {
@@ -106,49 +106,49 @@ namespace DatosSKD.DAO.Modulo2
 
                 string idUsuario = "0";
 
-                elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, id_usuario.ToString(), false);
+                elParametro = new Parametro(RecursosBDM1.AliasIdUsuario, SqlDbType.Int, id_usuario.ToString(), false);
                 parametros.Add(elParametro);
                 DataTable dt = this.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo2.ConsultarNombreUsuarioContrasena_ID, parametros);
+                               RecursosBDM2.ConsultarNombreUsuarioContrasena_ID, parametros);
 
 
                 foreach (DataRow row in dt.Rows)
                 {
 
-                    idUsuario = (row[RecursosBDModulo1.AliasIdUsuario].ToString());
-                    laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
-                    laCuenta.Imagen = row[RecursosBDModulo1.AliasImagen].ToString();
+                    idUsuario = (row[RecursosBDM1.AliasIdUsuario].ToString());
+                    laCuenta.Nombre_usuario = row[RecursosBDM1.AliasNombreUsuario].ToString();
+                    laCuenta.Imagen = row[RecursosBDM1.AliasImagen].ToString();
 
                 }
 
                 DataTable dt1 = this.EjecutarStoredProcedureTuplas(
-                RecursosBDModulo2.ConsultarRolesUsuario, parametros);
+                RecursosBDM2.ConsultarRolesUsuario, parametros);
                 List<Rol> listaRol = new List<Rol>();
                 foreach (DataRow row in dt1.Rows)
                 {
 
                     Rol elRol = (Rol) laFabrica.ObtenerRol_M2();
-                    elRol.Id_rol = int.Parse(row[RecursosBDModulo1.AliasIdRol].ToString());
-                    elRol.Nombre = row[RecursosBDModulo1.AliasNombreRol].ToString();
-                    elRol.Descripcion = row[RecursosBDModulo1.AliasDescripcionRol].ToString();
-                    elRol.Fecha_creacion = (DateTime)row[RecursosBDModulo1.AliasFechaCreacion];
+                    elRol.Id_rol = int.Parse(row[RecursosBDM1.AliasIdRol].ToString());
+                    elRol.Nombre = row[RecursosBDM1.AliasNombreRol].ToString();
+                    elRol.Descripcion = row[RecursosBDM1.AliasDescripcionRol].ToString();
+                    elRol.Fecha_creacion = (DateTime)row[RecursosBDM1.AliasFechaCreacion];
                     listaRol.Add(elRol);
                 }
 
                 laCuenta.Roles = listaRol;
 
-                elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, idUsuario, false);
+                elParametro = new Parametro(RecursosBDM1.AliasIdUsuario, SqlDbType.Int, idUsuario, false);
                 parametros2.Add(elParametro);
                 DataTable dt2 = this.EjecutarStoredProcedureTuplas(
-                                RecursosBDModulo1.consultarPersona, parametros2);
+                                RecursosBDM1.consultarPersona, parametros2);
 
                 PersonaM1 laPersona = (PersonaM1) laFabrica.ObtenerPersona_M1();
                 foreach (DataRow row in dt2.Rows)
                 {
 
-                    laPersona._Id = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
-                    laPersona._Nombre = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
-                    laPersona._Apellido = row[RecursosBDModulo1.aliasApellidoUsuario].ToString();
+                    laPersona._Id = int.Parse(row[RecursosBDM1.AliasIdUsuario].ToString());
+                    laPersona._Nombre = row[RecursosBDM1.AliasNombreUsuario].ToString();
+                    laPersona._Apellido = row[RecursosBDM1.aliasApellidoUsuario].ToString();
                 }
                 laCuenta.PersonaUsuario = laPersona;
                 return laCuenta;
@@ -161,8 +161,8 @@ namespace DatosSKD.DAO.Modulo2
             }
             catch (FormatException e)
             {
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo1.Codigo_Error_Formato,
-                     RecursosBDModulo1.Mensaje_Error_Formato, e);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDM1.Codigo_Error_Formato,
+                     RecursosBDM1.Mensaje_Error_Formato, e);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {
@@ -190,11 +190,11 @@ namespace DatosSKD.DAO.Modulo2
             try
             {
                 parametros = new List<Parametro>();
-                elParametro = new Parametro(RecursosBDModulo2.AliasIdRol, SqlDbType.VarChar, idRol, false);
+                elParametro = new Parametro(RecursosBDM2.AliasIdRol, SqlDbType.VarChar, idRol, false);
                 parametros.Add(elParametro);
-                elParametro = new Parametro(RecursosBDModulo2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
+                elParametro = new Parametro(RecursosBDM2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
                 parametros.Add(elParametro);
-                this.EjecutarStoredProcedureTuplas(RecursosBDModulo2.AgregarRolProcedure, parametros);
+                this.EjecutarStoredProcedureTuplas(RecursosBDM2.AgregarRolProcedure, parametros);
                 return true;
 
             }
@@ -229,11 +229,11 @@ namespace DatosSKD.DAO.Modulo2
             try
             {
                 parametros = new List<Parametro>();
-                elParametro = new Parametro(RecursosBDModulo2.AliasIdRol, SqlDbType.VarChar, idRol, false);
+                elParametro = new Parametro(RecursosBDM2.AliasIdRol, SqlDbType.VarChar, idRol, false);
                 parametros.Add(elParametro);
-                elParametro = new Parametro(RecursosBDModulo2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
+                elParametro = new Parametro(RecursosBDM2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
                 parametros.Add(elParametro);
-                this.EjecutarStoredProcedureTuplas(RecursosBDModulo2.EliminarRolProcedure, parametros);
+                this.EjecutarStoredProcedureTuplas(RecursosBDM2.EliminarRolProcedure, parametros);
                 return true;
 
             }
@@ -266,16 +266,16 @@ namespace DatosSKD.DAO.Modulo2
             {
                 parametros = new List<Parametro>();
                 List<Rol> losRoles = new List<Rol>();
-                elParametro = new Parametro(RecursosBDModulo2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
+                elParametro = new Parametro(RecursosBDM2.aliasIdUsuario, SqlDbType.VarChar, idUsuario, false);
                 parametros.Add(elParametro);
-                DataTable dt = this.EjecutarStoredProcedureTuplas(RecursosBDModulo2.ConsultarRolesUsuario, parametros);
+                DataTable dt = this.EjecutarStoredProcedureTuplas(RecursosBDM2.ConsultarRolesUsuario, parametros);
                 foreach (DataRow row in dt.Rows)
                 {
                     Rol rol = (Rol)laFabrica.ObtenerRol_M2();
-                    rol.Id_rol = int.Parse(row[RecursosBDModulo2.AliasIdRol].ToString());
-                    rol.Descripcion = row[RecursosBDModulo2.AliasDescripcionRol].ToString();
-                    rol.Nombre = row[RecursosBDModulo2.AliasNombreRol].ToString();
-                    rol.Fecha_creacion = (DateTime)row[RecursosBDModulo2.aliasFechaCreacion];
+                    rol.Id_rol = int.Parse(row[RecursosBDM2.AliasIdRol].ToString());
+                    rol.Descripcion = row[RecursosBDM2.AliasDescripcionRol].ToString();
+                    rol.Nombre = row[RecursosBDM2.AliasNombreRol].ToString();
+                    rol.Fecha_creacion = (DateTime)row[RecursosBDM2.aliasFechaCreacion];
                     losRoles.Add(rol);
 
                 }
@@ -291,8 +291,8 @@ namespace DatosSKD.DAO.Modulo2
             }
             catch (FormatException e)
             {
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo1.Codigo_Error_Formato,
-                     RecursosBDModulo1.Mensaje_Error_Formato, e);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDM1.Codigo_Error_Formato,
+                     RecursosBDM1.Mensaje_Error_Formato, e);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {

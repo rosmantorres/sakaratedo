@@ -8,7 +8,7 @@ namespace ExcepcionesSKD.Modulo16
 {
     /// <summary>
     /// Clase que se encarga de controlar la excepcion cuando el usuario ingresa una cantidad a pagar que es negativa
-    /// o inclusive 0 
+    ///  
     /// </summary>
     public class MontoInvalidoException:ExceptionSKD
     {

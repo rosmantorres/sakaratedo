@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using DatosSKD.Modulo1;
-using DatosSKD.Modulo2;
 using PruebasUnitariasSKD.Modulo1;
 using DominioSKD.Entidades.Modulo1;
 using ExcepcionesSKD;
+using DatosSKD.DAO.Modulo1;
+using DatosSKD.Fabrica;
+
 
 
 namespace PruebasUnitariasSKD.Modulo1
@@ -16,17 +17,13 @@ namespace PruebasUnitariasSKD.Modulo1
     [TestFixture]
     class PruebasUnitariasDatos
     {
-        [SetUp]
-        protected void parametros()
-        {
-
-        }
+        FabricaDAOSqlServer laFabrica = new FabricaDAOSqlServer();       
         // Prueba unitaria del metodo  ReestablecerContrasena(string usuarioId,string contraseña)
         [Test]
         public void PruebaReestablecerContrasena()
         {
-
-            BDRestablecer conexionBD = new BDRestablecer();
+            
+            DaoRestablecer conexionBD = (DaoRestablecer) laFabrica.ObtenerDaoRestablecer();
             bool True = conexionBD.RestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaCorrectoClave);
             Assert.AreEqual(True, true);
 
@@ -37,7 +34,7 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarCorreoUsuario()
         {
 
-            BDLogin conexionBD = new BDLogin();
+            DaoLogin conexionBD = (DaoLogin)laFabrica.ObtenerDaoLogin();
             String True = conexionBD.ValidarCorreoUsuario(RecursosPU_Mod1.PruebaCorrectoResultado);
             Assert.AreNotEqual(True, null);
 
@@ -49,7 +46,7 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarCorreoUsuarioExc()
         {
 
-            BDLogin conexionBD = new BDLogin();
+            DaoLogin conexionBD = (DaoLogin)laFabrica.ObtenerDaoLogin();
             String True = conexionBD.ValidarCorreoUsuario(RecursosPU_Mod1.emailerrordoble);
 
         }
@@ -58,8 +55,8 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaObtenerUsuario()
         {
 
-            BDLogin conexionBD = new BDLogin();
-            Cuenta user = conexionBD.ObtenerUsuario(RecursosPU_Mod1.usuario);
+            DaoLogin conexionBD = (DaoLogin)laFabrica.ObtenerDaoLogin();
+            Cuenta user = (Cuenta)conexionBD.ObtenerUsuario(RecursosPU_Mod1.usuario);
             Assert.AreEqual(user.Nombre_usuario, RecursosPU_Mod1.usuario);
 
         }
@@ -70,8 +67,8 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaObtenerUsuarioEXC()
         {
 
-            BDLogin conexionBD = new BDLogin();
-            Cuenta user = conexionBD.ObtenerUsuario(null);
+            DaoLogin conexionBD = (DaoLogin)laFabrica.ObtenerDaoLogin();
+            Cuenta user = (Cuenta)conexionBD.ObtenerUsuario(null);
 
         }
         [Test]
@@ -79,7 +76,7 @@ namespace PruebasUnitariasSKD.Modulo1
         {
             bool _respuesta;
 
-            BDRestablecer conexionBD = new BDRestablecer();
+            DaoRestablecer conexionBD = (DaoRestablecer)laFabrica.ObtenerDaoRestablecer();
             _respuesta = conexionBD.RestablecerContrasena(RecursosPU_Mod1.Id, RecursosPU_Mod1.PruebaRestablecerClave);
             Assert.AreEqual(true, _respuesta);
         }
@@ -89,7 +86,7 @@ namespace PruebasUnitariasSKD.Modulo1
         public void PruebaValidarRestablecerContrasenaexc()
         {
             bool _respuesta;
-            BDRestablecer conexionBD = new BDRestablecer();
+            DaoRestablecer conexionBD = (DaoRestablecer)laFabrica.ObtenerDaoRestablecer();
             _respuesta = conexionBD.RestablecerContrasena(null, RecursosPU_Mod1.PruebaRestablecerClave);
         }
 

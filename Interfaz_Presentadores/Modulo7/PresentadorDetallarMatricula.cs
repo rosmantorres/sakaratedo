@@ -23,7 +23,6 @@ namespace Interfaz_Presentadores.Modulo7
     /// </summary>
     public class PresentadorDetallarMatricula
     {
-        private FabricaComandos fabricaComandos;
         private IContratoDetallarMatricula vista;
         /// <summary>
         /// Constructor del presentador
@@ -42,8 +41,7 @@ namespace Interfaz_Presentadores.Modulo7
         {           
             try
             {
-               fabricaComandos = new FabricaComandos();
-                ComandoConsultarDetallarMatricula comandoDetallarMatricula =(ComandoConsultarDetallarMatricula)fabricaComandos.ObtenerComandoConsultarDetallarMatricula();
+                ComandoConsultarDetallarMatricula comandoDetallarMatricula =(ComandoConsultarDetallarMatricula)FabricaComandos.ObtenerComandoConsultarDetallarMatricula();
                 comandoDetallarMatricula.LaEntidad = idMatricula;
                 comandoDetallarMatricula.IdPersona = (PersonaM7)idPersona;
                 MatriculaM7 matricula = (MatriculaM7)comandoDetallarMatricula.Ejecutar();
@@ -59,18 +57,9 @@ namespace Interfaz_Presentadores.Modulo7
                     vista.estadoMatricula = M7_RecursosPresentador.AliasMatriculaInactiva;
                 }
 
-                /*if (matricula.Status.Equals(true))
-
-                {
-                    estadoFinal = "Activa";
-                }
-                else
-                {
-                    estadoFinal = "No Activa";
-                }*/
                 
-                vista.fechaCreacionMatricula = matricula.FechaCreacion.ToString("MM/dd/yyyy");
-                vista.fechaPagoMatricula = matricula.UltimaFechaPago.ToString("MM/dd/yyyy");
+                vista.fechaCreacionMatricula = matricula.FechaCreacion.ToString(M7_RecursosPresentador.FormatoFecha);
+                vista.fechaPagoMatricula = matricula.UltimaFechaPago.ToString(M7_RecursosPresentador.FormatoFecha);
                 estadoFinal = matricula.Status.ToString();
 
              

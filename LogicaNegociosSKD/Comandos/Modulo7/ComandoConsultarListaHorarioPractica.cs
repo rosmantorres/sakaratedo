@@ -24,8 +24,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         /// <returns>Retorta tupla con listas del evento horario de clase</returns>
         public override Tuple<List<Entidad>> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoEvento baseDeDatosEvento = fabrica.ObtenerDaoEventoM7();
+            DaoEvento baseDeDatosEvento = FabricaDAOSqlServer.ObtenerDaoEventoM7();
             List<Entidad> eventos = new List<Entidad>();
             PersonaM7 idPersona = (PersonaM7)LaEntidad;
             Tuple<List<Entidad>> tupla;

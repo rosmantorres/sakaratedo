@@ -56,8 +56,8 @@ namespace templateApp.GUI.Modulo7
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "7";
-            String detalleString = Request.QueryString["impDetalle"];
+            ((SKD)Page.Master).IdModulo = M7_Recursos.NumeroModulo;
+            String detalleString = Request.QueryString[M7_Recursos.ImpDetalle];
 
             #region Llenar Data Table con Eventos
             try

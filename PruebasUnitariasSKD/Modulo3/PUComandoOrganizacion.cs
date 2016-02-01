@@ -131,10 +131,21 @@ namespace PruebasUnitariasSKD.Modulo3
         [Test]
         public void ejecutarElComandoConsultarXIdOrganizacion()
         {
-            this.miComandoEntidad = FabricaComandos.ObtenerEjecutarConsultarXIdCinta(miEntidad);
+            this.miComandoEntidad = FabricaComandos.ObtenerEjecutarConsultarXIdOrganizacion(miEntidad);
             Entidad resultado = this.miComandoEntidad.Ejecutar();
             Assert.IsNotNull(resultado);
 
+        }
+
+        /// <summary>
+        /// Método de prueba para Ejecutar el comando Modificar el status de una Organizacion
+        /// </summary>
+        [Test]
+        public void ejecutarElComandoModificarStatus()
+        {
+            this.miComando = FabricaComandos.ObtenerEjecutarModificarStatusOrganizacion(miEntidadOrganizacionModificar);
+            bool resultado = this.miComando.Ejecutar();
+            Assert.IsTrue(resultado);
         }
         #endregion
     }

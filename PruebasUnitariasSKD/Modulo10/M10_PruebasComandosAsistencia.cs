@@ -1,6 +1,5 @@
 ﻿using DominioSKD.Entidades.Modulo10;
 using DominioSKD.Entidades.Modulo12;
-using LogicaNegociosSKD.Modulo10;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
