@@ -136,7 +136,8 @@
                                 runat="server" 
                                 Display="Static" 
                                 ControlToValidate="rifDojo" 
-                                ErrorMessage="Falta Ingreso de Rif" />
+                                ErrorMessage="Falta Ingreso de Rif"
+                                EnableClientScript="True" />
                         </div>
 
                         <br/>
@@ -149,7 +150,8 @@
                               runat="server" 
                               Display="Static" 
                               ControlToValidate="nombreDojo" 
-                              ErrorMessage="Falta Ingreso de Nombre" />
+                              ErrorMessage="Falta Ingreso de Nombre" 
+                              EnableClientScript="True" />
                            <asp:regularexpressionvalidator 
                                 id="revNombre" 
                                 runat="server" 

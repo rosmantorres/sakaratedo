@@ -6,6 +6,10 @@
     <script src="M4_js/M4_Alert.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     <script src="../../../plugins/datepicker/bootstrap-datepicker.js"></script>  
+
+    <script src="M4_js/M4_JQuery-2.2.0.js" type="text/javascript"></script>
+    <script src="M4_js/M4_JQuery.maskedinput.js" type="text/javascript"></script>
+    <script src="M4_js/M4_JQuery.validate.js" type="text/javascript"></script>
     
 </asp:Content>
 
@@ -99,7 +103,22 @@
                     
                         <div class="form-group col-sm-10 col-md-10 col-lg-10">
                            <h3>Monto Matricula:</h3>
-                            <asp:TextBox runat="server" type="text" name="cmatriHM" id="cmatriHM" placeholder="*Costo Matricula" class="form-control" ></asp:TextBox>
+                            <asp:TextBox runat="server" type="number"  name="cmatriHM" id="cmatriHM" placeholder="*Costo Matricula" class="form-control" ></asp:TextBox>
+                            <asp:requiredfieldvalidator 
+                                id="rfvCHMatri" 
+                                runat="server" 
+                                Display="Static" 
+                                ControlToValidate="cmatriHM" 
+                                ErrorMessage="Falta Ingreso Monto Matricula" 
+                                EnableClientScript="True" />
+                            <asp:regularexpressionvalidator 
+                                id="revCHMatri" 
+                                runat="server" 
+                                Display="Static" 
+                                ControlToValidate="cmatriHM" 
+                                ErrorMessage="Formato de Monto Matricula no valido" 
+                                ValidationExpression="^\d*$"
+                                EnableClientScript="True"  />
                         </div>
 
                     </div>
