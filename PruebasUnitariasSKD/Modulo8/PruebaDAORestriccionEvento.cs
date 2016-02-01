@@ -45,7 +45,7 @@ namespace PruebasUnitariasSKD.Modulo8
         }
         #endregion
 
-        #region Pruebas Unitarias
+        #region Pruebas Unitarias Datos
 
         [Test]
         public void PruebaConsultarEventosConRestriccion()
@@ -106,6 +106,29 @@ namespace PruebasUnitariasSKD.Modulo8
             entidad2 = DAO.ConsultarRestriccionEvento(entidad3);
             Assert.NotNull(entidad2);
         }
+        #endregion
+
+        #region Pruebas Unitarias Logica
+        [Test]
+        public void PruebaComandoAgregarRestriccionEvento()
+        {
+            DominioSKD.Entidades.Modulo8.RestriccionEvento laRest = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
+            laRest.IdRestEvento = 1;
+            laRest.Descripcion = "Negra";
+            laRest.EdadMinima = 10;
+            laRest.EdadMaxima = 15;
+            laRest.Sexo = "M";
+            laRest.IdEvento = 9;
+            laRest.Status = 0;
+
+            LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionEvento _comando =
+                        (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionEvento(laRest);
+            bool resultado = _comando.Ejecutar();
+            Assert.IsTrue(resultado);
+        }
+
+
+
         #endregion
     }
 }

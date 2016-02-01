@@ -36,8 +36,8 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
                 IDaoRestriccionEvento miRestCintaDAO = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
 
                 miRestCintaDAO.AgregarRestriccionEvento(this.LaEntidad);
-                
-                return false;
+
+                return true;
 
             }
             catch (SqlException ex)
