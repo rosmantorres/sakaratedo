@@ -106,7 +106,7 @@ namespace Interfaz_Presentadores.Modulo3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ^[A-Za-z\s-_]{2,100}$.
+        ///   Looks up a localized string similar to ^[A-Za-z-_\s]{2,100}$.
         /// </summary>
         internal static string expresionNombre {
             get {
@@ -124,7 +124,7 @@ namespace Interfaz_Presentadores.Modulo3 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ^[0-9]{1,2}$.
+        ///   Looks up a localized string similar to ^[0-9]{1,10}$.
         /// </summary>
         internal static string expresionNumero {
             get {

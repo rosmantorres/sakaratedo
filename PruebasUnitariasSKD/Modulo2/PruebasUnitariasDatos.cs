@@ -23,7 +23,7 @@ namespace PruebasUnitariasSKD.Modulo2
       [Test]
         public void PruebaValidarconsultarRolesUsuario()
         {
-            List<Entidad> _respuesta;
+            List<Rol> _respuesta;
             DaoRoles conexionBD = (DaoRoles)laFabrica.ObtenerDaoRoles();
             _respuesta = conexionBD.consultarRolesUsuario(RecursosPU_Mod1.Id);
             Assert.AreNotEqual(null, _respuesta);
@@ -33,7 +33,7 @@ namespace PruebasUnitariasSKD.Modulo2
         public void PruebaValidarObtenerRolesDeSistema()
         {
             DaoRoles conexionBD = (DaoRoles)laFabrica.ObtenerDaoRoles();
-            List<Entidad> _respuesta = conexionBD.ConsultarTodos();
+            List<Rol> _respuesta = conexionBD.ConsultarTodos().Cast<Rol>().ToList();
             Assert.AreNotEqual(null, _respuesta);
 
         }
@@ -42,7 +42,7 @@ namespace PruebasUnitariasSKD.Modulo2
         [ExpectedException(typeof(ExcepcionesSKD.ExceptionSKD))]
         public void PruebaValidarconsultarRolesUsuarioEXC()
         {
-            List<Entidad> _respuesta;
+            List<Rol> _respuesta;
             DaoRoles conexionBD = (DaoRoles)laFabrica.ObtenerDaoRoles();
             _respuesta = conexionBD.consultarRolesUsuario(null);
 

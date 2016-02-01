@@ -19,6 +19,8 @@ using DatosSKD.DAO.Modulo11;
 using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.InterfazDAO.Modulo3;
 using DatosSKD.InterfazDAO.Modulo5;
+using DatosSKD.InterfazDAO.Modulo4;
+using DatosSKD.DAO.Modulo4;
 
 namespace DatosSKD.Fabrica
 {
@@ -50,6 +52,22 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 4
+        /// <summary>
+        /// Método que instancia el DAO de Dojo
+        /// </summary>
+        /// <returns>DaoDojo</returns>
+        public static IDaoDojo ObtenerDAODojo()
+        {
+            return new DaoDojo();
+        }
+        /// <summary>
+        /// Método que instancia el DAO de Historial Matricula
+        /// </summary>
+        /// <returns>DaoHistorialM</returns>
+        public static IDaoHistorialM ObtenerDAOHistorialM()
+        {
+            return new DaoHistorialM();
+        }
         #endregion
 
         #region Modulo 5

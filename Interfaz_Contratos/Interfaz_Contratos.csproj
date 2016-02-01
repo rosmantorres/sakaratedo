@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CKEditor.NET">
-      <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+      <HintPath>..\..\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
@@ -53,6 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo4\IContratoAgregarDojo.cs" />
+    <Compile Include="Modulo4\IContratoAgregarHistorialM.cs" />
+    <Compile Include="Modulo4\IContratoDetalleDojo.cs" />
+    <Compile Include="Modulo4\IContratoListarDojos.cs" />
+    <Compile Include="Modulo4\IContratoListarHistorialM.cs" />
+    <Compile Include="Modulo4\IContratoModificarDojo.cs" />
+    <Compile Include="Modulo4\IContratoModificarHistorialM.cs" />
     <Compile Include="Modulo8\IContratoAgregarRestriccionEvento.cs" />
     <Compile Include="Modulo8\IContratoConsultarRestriccionCompetencia.cs" />
     <Compile Include="Modulo8\IContratoConsultarRestriccionEvento.cs" />
@@ -133,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modulo13\" />
-    <Folder Include="Modulo4\" />
     <Folder Include="Modulo6\" />
   </ItemGroup>
   <ItemGroup>

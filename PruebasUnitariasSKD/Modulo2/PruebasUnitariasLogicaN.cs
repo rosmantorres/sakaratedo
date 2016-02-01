@@ -30,7 +30,7 @@ namespace PruebasUnitariasSKD.Modulo2
             Login.Id = 1;
           ComandoRolesUsuario  lg = (ComandoRolesUsuario)laFabrica.ObtenerRolesUsuario();
           lg.LaEntidad = Login;
-          List<Entidad> _respuesta = lg.Ejecutar();
+          List<Rol> _respuesta = lg.Ejecutar();
             Assert.AreNotEqual(null, _respuesta);
 
         }
@@ -43,7 +43,7 @@ namespace PruebasUnitariasSKD.Modulo2
             Login = null;
             ComandoRolesUsuario lg = (ComandoRolesUsuario)laFabrica.ObtenerRolesUsuario();
             lg.LaEntidad = Login;
-            List<Entidad> _respuesta = lg.Ejecutar();
+            List<Rol> _respuesta = lg.Ejecutar();
         }
         // Prueba unitaria  del metodo prioridadRol()
    

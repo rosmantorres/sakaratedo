@@ -8,6 +8,7 @@ using DominioSKD.Entidades.Modulo15;
 using DominioSKD.Entidades.Modulo16;
 using DominioSKD.Entidades.Modulo6;
 using DominioSKD.Entidades.Modulo7;
+using DominioSKD.Entidades.Modulo4;
 
 namespace DominioSKD.Fabrica
 {
@@ -39,10 +40,6 @@ namespace DominioSKD.Fabrica
         {
             return new Entidades.Modulo2.Rol();
         }
-        public List<Entidad> ObtenerListaRol_M2()
-        {
-            return new List<Entidades.Modulo2.Rol>().Cast<Entidad>().ToList();
-        }
         public Entidad ObtenerRol_M2(int elId, String elNombre, String laDescripcion, DateTime laFecha)
         {
             return new Entidades.Modulo2.Rol(elId, elNombre, laDescripcion, laFecha);
@@ -73,7 +70,69 @@ namespace DominioSKD.Fabrica
         #endregion
 
         #region Modulo 4
- 
+        /// <summary>
+        /// instancia dojo
+        /// </summary>
+        /// <returns>entidad dojo</returns>
+        public static Entidad ObtenerDojo_M4()
+        {
+            return new DojoM4();
+        }
+
+        /// <summary>
+        /// instancia lista de entidad
+        /// </summary>
+        /// <returns>lista de entidad</returns>
+        public static List<Entidad> ObtenerListaEntidad_M4()
+        {
+            return new List<Entidad>();
+        }
+
+        /// <summary>
+        /// instancia lista de dojo
+        /// </summary>
+        /// <returns>lista dojo</returns>
+        public static List<DojoM4> ObtenerListaDojos_M4()
+        {
+            return new List<DojoM4>();
+        }
+
+        /// <summary>
+        /// instancia Historial Matricula
+        /// </summary>
+        /// <returns>entidad Historial Matricula</returns>
+        public static Entidad ObtenerHistorialMatricula()
+        {
+            return new HistorialM();
+        }
+
+        /// <summary>
+        /// instancia lista de Historial Matricula
+        /// </summary>
+        /// <returns>lista Historial Matricula</returns>
+        public static List<HistorialM> ObtenerListaHistorialMatricula()
+        {
+            return new List<HistorialM>();
+        }
+
+
+        /// <summary>
+        /// Instancia una Organizacion
+        /// </summary>
+        /// <returns>entidad org</returns>
+        public static Entidad ObtenerOrganizacion_M4()
+        {
+            return new Organizacion();
+        }
+
+        /// <summary>
+        /// Instancia Ubicacion
+        /// </summary>
+        /// <returns>entidad ubicacion</returns>
+        public static Entidad ObtenerUbicacion_M4()
+        {
+            return new Ubicacion();
+        }
         #endregion
 
         #region Modulo 5
