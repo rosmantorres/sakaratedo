@@ -49,7 +49,7 @@ namespace Interfaz_Presentadores.Modulo7
                 
                 vista.clasificacionCinta = cinta.Clasificacion;
                 vista.colorCinta = cinta.Color_nombre;
-                vista.fechaObtencionCinta = fechaObtencionCinta.ToString("MM/dd/yyyy");
+                vista.fechaObtencionCinta = fechaObtencionCinta.ToString(M7_RecursosPresentador.FormatoFecha);
                 vista.ordenCinta = cinta.Orden.ToString();
                 vista.rangoCinta = cinta.Rango;
                 vista.significadoCinta = cinta.Significado;

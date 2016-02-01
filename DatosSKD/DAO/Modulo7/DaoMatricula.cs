@@ -107,7 +107,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return matricula;
@@ -171,7 +171,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return estadoMatricula;
@@ -245,7 +245,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return listaDeMatriculas;
@@ -309,7 +309,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return idMatricula;
@@ -376,7 +376,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return monto;

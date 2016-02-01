@@ -214,8 +214,8 @@ namespace templateApp.GUI.Modulo7
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "7";
-            String detalleStringEvento = Request.QueryString["eventoDetalle"];
+            ((SKD)Page.Master).IdModulo = M7_Recursos.NumeroModulo;
+            String detalleStringEvento = Request.QueryString[M7_Recursos.EventoDetalle];
 
             try
             {

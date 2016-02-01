@@ -220,16 +220,16 @@ namespace templateApp.GUI.Modulo7
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "7";
-            String detalleStringEvento = Request.QueryString["eventoDetalle"];
-            String detalleStringCompetencia = Request.QueryString["compDetalle1"];
+            ((SKD)Page.Master).IdModulo = M7_Recursos.NumeroModulo;
+            String detalleStringEvento = Request.QueryString[M7_Recursos.EventoDetalle];
+            String detalleStringCompetencia = Request.QueryString[M7_Recursos.CompetenciaDetalle1];
 
             try
             {
                 String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();
                 Boolean permitido = false;
                 List<String> rolesPermitidos = new List<string>
-                    (new string[] { "Sistema", "Dojo", "Organización", "Atleta", "Representante", "Atleta(Menor)" });
+                      (new string[] { M7_Recursos.RolSistema, M7_Recursos.RolAtleta, M7_Recursos.RolRepresentante, M7_Recursos.RolAtletaMenor });
                 foreach (String rol in rolesPermitidos)
                 {
                     if (rol == rolUsuario)

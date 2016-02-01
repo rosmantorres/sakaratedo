@@ -14,6 +14,9 @@ using DominioSKD.Entidades.Modulo7;
 
 namespace Interfaz_Presentadores.Modulo7
 {
+    /// <summary>
+    /// Presentador para listar las matriculas que han sido canceladas
+    /// </summary>
     public class PresentadorListarMatriculasPagas
     {
         private IContratoListarMatriculasPagas vista;
@@ -63,8 +66,8 @@ namespace Interfaz_Presentadores.Modulo7
                         }
                 
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + estadoFinal.ToString() + M7_RecursosPresentador.CerrarTD;
-                        vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.FechaCreacion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
-                        vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.UltimaFechaPago.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
+                        vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.FechaCreacion.ToString(M7_RecursosPresentador.FormatoFecha) + M7_RecursosPresentador.CerrarTD;
+                        vista.laTabla += M7_RecursosPresentador.AbrirTD + matricula.UltimaFechaPago.ToString(M7_RecursosPresentador.FormatoFecha) + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + montoPago.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
                         vista.laTabla += M7_RecursosPresentador.BotonInfoPagosDeMatricula + matricula.Id + M7_RecursosPresentador.BotonCerrar;

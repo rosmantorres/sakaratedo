@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Interfaz_Contratos.Modulo7
 {
     /// <summary>
-    /// Contrato para listar eventos asistidos
+    /// Contrato para listar horario practica
     /// </summary>
     public interface IContratoListarHorarioPractica
     {

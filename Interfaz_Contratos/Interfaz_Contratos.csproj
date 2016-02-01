@@ -39,7 +39,7 @@
       <HintPath>..\..\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\bin\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\Downloads\itextsharp.dll</HintPath>
       <!--<HintPath>..\..\..\..\Downloads\CKEditor.NET.dll</HintPath>-->
     </Reference>
     <Reference Include="System" />
