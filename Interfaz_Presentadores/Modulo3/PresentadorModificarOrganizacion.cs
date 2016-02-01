@@ -32,21 +32,21 @@ namespace Interfaz_Presentadores.Modulo3
 
             Comando<Entidad> _comando = FabricaComandos.ObtenerEjecutarConsultarXIdOrganizacion(organizacion);
             Entidad _miEntidad = _comando.Ejecutar();
-            DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)_miEntidad;
+            DominioSKD.Entidades.Modulo3.Organizacion laOrg = (DominioSKD.Entidades.Modulo3.Organizacion)_miEntidad;
 
 
-            this.vista.obtenerNombreOrg = laOrganizacion.Nombre;
-            this.vista.obtenerEmail = laOrganizacion.Email;
-            this.vista.obtenerTelefono = laOrganizacion.Telefono.ToString();
-            this.vista.obtenerDireccion = laOrganizacion.Direccion;
-            this.vista.obtenerEstado = laOrganizacion.Estado;
-            this.vista.obtenerTecnica = laOrganizacion.Estilo;
+            this.vista.obtenerNombreOrg = laOrg.Nombre;
+            this.vista.obtenerEmail = laOrg.Email;
+            this.vista.obtenerTelefono = laOrg.Telefono.ToString();
+            this.vista.obtenerDireccion = laOrg.Direccion;
+            this.vista.obtenerEstado = laOrg.Estado;
+            this.vista.obtenerTecnica = laOrg.Estilo;
         }
 
         /// <summary>
         /// Método para validar la informacion de la organizacion antes de agregarla 
         /// </summary>
-        public bool ValidarExpresionesReg(DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion, string telefono)
+        public void ValidarExpresionesReg(DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion, string telefono)
         {
             //Validar las expresionnes regulares
             Regex rexNombre = new Regex(RecursosPresentadorM3.expresionNombre);
@@ -56,19 +56,24 @@ namespace Interfaz_Presentadores.Modulo3
             Regex rexDireccion = new Regex(RecursosPresentadorM3.expresionDireccion);
 
             if (!rexNombre.IsMatch(laOrganizacion.Nombre))
-                return false;
+                throw new ExcepcionesSKD.Modulo3.ExpresionesRegularesException(RecursosPresentadorM3.Codigo_Error_Expresion_Regular,
+                                      RecursosPresentadorM3.Mensaje_Error_Expresion_Regular_Nombre, new Exception());
             else if (!rexCorreo.IsMatch(laOrganizacion.Email) || !laOrganizacion.Email.Contains(RecursosPresentadorM3.arroba))
-                return false;
-            else if (!rexDireccion.IsMatch(laOrganizacion.Direccion))
-                return false;
-            else if (!rexNombre.IsMatch(laOrganizacion.Estado))
-                return false;
-            else if (!rexNombre.IsMatch(laOrganizacion.Estilo))
-                return false;
+                throw new ExcepcionesSKD.Modulo3.ExpresionesRegularesException(RecursosPresentadorM3.Codigo_Error_Expresion_Regular,
+                                      RecursosPresentadorM3.Mensaje_Error_Expresion_Regular_Email, new Exception());
             else if (!resNumero.IsMatch(telefono))
-                return false;
-            else
-                return true;
+                throw new ExcepcionesSKD.Modulo3.ExpresionesRegularesException(RecursosPresentadorM3.Codigo_Error_Expresion_Regular,
+                                        RecursosPresentadorM3.Mensaje_Error_Expresion_Regular_Telefono, new Exception());
+            else if (!rexDireccion.IsMatch(laOrganizacion.Direccion))
+                throw new ExcepcionesSKD.Modulo3.ExpresionesRegularesException(RecursosPresentadorM3.Codigo_Error_Expresion_Regular,
+                                        RecursosPresentadorM3.Mensaje_Error_Expresion_Regular_Direccion, new Exception());
+            else if (!rexNombre.IsMatch(laOrganizacion.Estado))
+                throw new ExcepcionesSKD.Modulo3.ExpresionesRegularesException(RecursosPresentadorM3.Codigo_Error_Expresion_Regular,
+                                        RecursosPresentadorM3.Mensaje_Error_Expresion_Regular_Estado, new Exception());
+            else if (!rexNombre.IsMatch(laOrganizacion.Estilo))
+                throw new ExcepcionesSKD.Modulo3.ExpresionesRegularesException(RecursosPresentadorM3.Codigo_Error_Expresion_Regular,
+                                        RecursosPresentadorM3.Mensaje_Error_Expresion_Regular_Estilo, new Exception());
+
         }
 
         /// <summary>
@@ -91,19 +96,15 @@ namespace Interfaz_Presentadores.Modulo3
             laOrganizacion.Estilo = this.vista.obtenerTecnica;
 
 
-             if (ValidarExpresionesReg(laOrganizacion, telefonoString)) {
-
+             this.ValidarExpresionesReg(laOrganizacion, telefonoString);
                      laOrganizacion.Telefono = Int32.Parse(telefonoString);
+
             Comando<bool> _comando = FabricaComandos.ObtenerEjecutarModificarOrganizacion(laOrganizacion);
             bool resultado = _comando.Ejecutar();
 
             if (resultado)
                 this.vista.Respuesta();
-             }
-             else
-             {
-                 this.vista.alertaExpresiones();
-             }
+             
             }
           catch (ExcepcionesSKD.Modulo3.EstiloInexistenteException ex)
           {

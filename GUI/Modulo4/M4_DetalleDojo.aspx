@@ -25,6 +25,13 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="subtitulo" runat="server">Detalle Dojo
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="contenidoCentral" runat="server">
+    <%-- INICIO DE ALERTA DE FALTA DE CONTENIDO --%>
+        <div id="alert"  >
+            <div id="contenido_alerta">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+        </div>
+    <%-- FIN DE ALERTA DE FALTA DE CONTENIDO --%>
       <!-- general form elements -->
    <div class="box box-primary">
       <div class="box-header with-border">
@@ -33,6 +40,8 @@
       <!-- /.box-header -->
       <!-- form start -->
       <form runat="server" role="form" name="detalle_dojo" id="detalle_dojo" method="post">
+              <div id="alert1" runat="server">
+    </div>
          <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
             <div class="panel-group col-sm-12 col-md-12 col-lg-12">
                <div class="panel panel-primary">

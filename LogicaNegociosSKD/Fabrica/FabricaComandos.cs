@@ -52,11 +52,11 @@ namespace LogicaNegociosSKD.Fabrica
         {
             return new Comandos.Modulo2.ComandoEliminarRol();
         }
-        public Comando<List<Entidad>> ObtenerRolesDeSistema()
+        public Comando<List<DominioSKD.Entidades.Modulo2.Rol>> ObtenerRolesDeSistema()
         {
             return new Comandos.Modulo2.ComandoRolesDeSistema();
         }
-        public Comando<List<Entidad>> ObtenerRolesUsuario()
+        public Comando<List<DominioSKD.Entidades.Modulo2.Rol>> ObtenerRolesUsuario()
         {
             return new Comandos.Modulo2.ComandoRolesUsuario();
         }
@@ -212,59 +212,59 @@ namespace LogicaNegociosSKD.Fabrica
 
         #region Modulo 7
 
-        public Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> ObtenerComandoConsultarListaEventosInscritos()
+        public static Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> ObtenerComandoConsultarListaEventosInscritos()
         {
             return new ComandoConsultarListaEventosInscritos();
         }
-        public Comando<Tuple<List<Entidad>>> ObtenerComandoConsultarListaHorarioPractica()
+        public static Comando<Tuple<List<Entidad>>> ObtenerComandoConsultarListaHorarioPractica()
         {
             return new ComandoConsultarListaHorarioPractica();
         }
-        public Comando<Entidad> ObtenerComandoConsultarDetallarHorarioPractica()
+        public static Comando<Entidad> ObtenerComandoConsultarDetallarHorarioPractica()
         {
             return new ComandoConsultarDetallarHorarioPractica();
         }
-        public Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> ObtenerComandoConsultarListaEventosAsistidos()
+        public static Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> ObtenerComandoConsultarListaEventosAsistidos()
         {
             return new ComandoConsultarListaEventosAsistidos();
         }
 
-        public Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>>> ObtenerComandoConsultarListaEventosPagos()
+        public static Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<float>, List<DateTime>>> ObtenerComandoConsultarListaEventosPagos()
         {
             return new ComandoConsultarListaEventosPagos();
         }
 
-        public Comando<Tuple<List<Entidad>, List<Boolean>, List<float>>> ObtenerComandoConsultarListaMatriculasPagas()
+        public static Comando<Tuple<List<Entidad>, List<Boolean>, List<float>>> ObtenerComandoConsultarListaMatriculasPagas()
         {
             return new ComandoConsultarListaMatriculasPagas();
         }
 
-        public Comando<Tuple<List<Entidad>, List<DateTime>>> ObtenerComandoConsultarListaCinta()
+        public static Comando<Tuple<List<Entidad>, List<DateTime>>> ObtenerComandoConsultarListaCinta()
         {
             return new ComandoConsultarListaCinta();
         }
-        public Comando<Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad>> ObtenerComandoConsultarPerfil()
+        public static Comando<Tuple<Entidad, Entidad, Entidad, Entidad, String, Entidad>> ObtenerComandoConsultarPerfil()
         {
             return new ComandoConsultarPerfil();
         }
-        public Comando<Tuple<Entidad, DateTime>> ObtenerComandoConsultarDetallarCinta()
+        public static Comando<Tuple<Entidad, DateTime>> ObtenerComandoConsultarDetallarCinta()
         {
             return new ComandoConsultarDetallarCinta();
         }
-        public Comando<Entidad> ObtenerComandoConsultarDetallarEvento()
+        public static Comando<Entidad> ObtenerComandoConsultarDetallarEvento()
         {
             return new ComandoConsultarDetallarEvento();
         }
 
-        public Comando<Entidad> ObtenerComandoConsultarDetallarEventoPago()
+        public static Comando<Entidad> ObtenerComandoConsultarDetallarEventoPago()
         {
             return new ComandoConsultarDetallarEvento();
         }
-        public Comando<Entidad> ObtenerComandoConsultarDetallarMatricula()
+        public static Comando<Entidad> ObtenerComandoConsultarDetallarMatricula()
         {
             return new ComandoConsultarDetallarMatricula();
         }
-        public Comando<Entidad> ObtenerComandoConsultarDetallarCompetencia()
+        public static Comando<Entidad> ObtenerComandoConsultarDetallarCompetencia()
         {
             return new ComandoConsultarDetallarCompetencia();
         }

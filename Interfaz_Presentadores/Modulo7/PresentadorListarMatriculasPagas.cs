@@ -28,12 +28,10 @@ namespace Interfaz_Presentadores.Modulo7
 
         public void ConsultarListaMatriculasPagas(Entidad idPersona)
         {
-            FabricaComandos fabricaComandos = new FabricaComandos();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             try
             {
                 Comando<Tuple<List<Entidad>, List<Boolean>, List<float>>> comandoListaMatriculasPagas = 
-                fabricaComandos.ObtenerComandoConsultarListaMatriculasPagas();
+                FabricaComandos.ObtenerComandoConsultarListaMatriculasPagas();
                 comandoListaMatriculasPagas.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<Boolean>, List<float>> tupla = comandoListaMatriculasPagas.Ejecutar();
 

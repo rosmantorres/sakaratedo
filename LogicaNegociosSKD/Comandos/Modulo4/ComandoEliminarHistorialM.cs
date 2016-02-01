@@ -33,7 +33,13 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
-               throw ex;
+                throw ex;
+            }
+            catch (ExcepcionesSKD.Modulo4.HistorialMatriculaInexistenteException ex)
+            {
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+
+                throw ex;
             }
             catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
             {
@@ -46,7 +52,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
-            }
+            }  
 
         }
     }

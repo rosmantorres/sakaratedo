@@ -201,4 +201,16 @@
   <data name="MedioAspSelect" xml:space="preserve">
     <value>"&gt;</value>
   </data>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
+  </data>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
+  </data>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
 </root>

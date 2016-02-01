@@ -16,7 +16,7 @@ namespace DatosSKD.InterfazDAO.Modulo2
        
         bool AgregarRol(string idUsuario, string idRol);
       
-        List<Entidad> consultarRolesUsuario(string idUsuario);
+        List<Rol> consultarRolesUsuario(string idUsuario);
        
 
     }

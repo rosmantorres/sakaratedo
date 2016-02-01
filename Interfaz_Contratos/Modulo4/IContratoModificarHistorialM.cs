@@ -16,6 +16,9 @@ namespace Interfaz_Contratos.Modulo4
         string Modalidad { get; set; }
         string Monto { get; set; }
         int Persona { get; }
-        int IdHistM { get; set; } 
+        int IdHistM { get; set; }
+        string AlertaClase { set; }
+        string AlertaRol { set; }
+        string Alerta { set; }
     }
 }

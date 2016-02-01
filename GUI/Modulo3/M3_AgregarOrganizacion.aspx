@@ -77,7 +77,7 @@
                  <asp:listitem value ="Apure">Apure</asp:listitem>
                  <asp:listitem value ="Aragua">Aragua</asp:listitem>
                  <asp:listitem value ="Barinas">Barinas</asp:listitem>
-                 <asp:listitem value ="Bolívar">Bolívar</asp:listitem>
+                 <asp:listitem value ="Bolivar">Bolívar</asp:listitem>
                  <asp:listitem value ="Carabobo">Carabobo</asp:listitem>
                  <asp:listitem value ="Cojedes">Cojedes</asp:listitem>
                  <asp:listitem value ="Delta Amacuro">Delta Amacuro</asp:listitem>
@@ -103,7 +103,7 @@
     <div class="col-sm-8 col-md-8 col-lg-84">
        <div class="dropdown" runat="server" id="div1"  >
                  <asp:DropDownList ID="ListTecnica" style="margin-top:3%" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
-                 <asp:listitem value ="-1">Seleccionar Tecnica</asp:listitem>
+                 <asp:listitem value ="Seleccionar Tecnica">Seleccionar Tecnica</asp:listitem>
                  <asp:listitem value ="Cobra-do">Cobra-do</asp:listitem>
                  <asp:listitem value ="Sistema libre de Karate">Sistema libre de Karate</asp:listitem>
                  <asp:listitem value ="Shotokan">Shotokan</asp:listitem>

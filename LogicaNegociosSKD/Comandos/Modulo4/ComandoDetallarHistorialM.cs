@@ -37,20 +37,20 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo12.CompetenciaExistenteException ex)
+            catch (ExcepcionesSKD.Modulo4.HistorialMatriculaInexistenteException ex)
             {
-               Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo12.FormatoIncorrectoException ex)
+            catch (ExcepcionesSKD.Modulo4.FormatoIncorrectoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKD ex)
-           {
+            {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 
                 throw ex;

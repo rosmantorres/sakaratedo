@@ -35,10 +35,10 @@ namespace Interfaz_Presentadores.Modulo2
         private Cuenta cuentaComando = (Cuenta)laFabricaE.ObtenerCuenta_M1();
         private Rol rolComando = (Rol)laFabricaE.ObtenerRol_M2();
 
-        private List<Entidad> losRolesDeSistema = laFabricaE.ObtenerListaRol_M2();
-        private List<Entidad> rolesDePersona = laFabricaE.ObtenerListaRol_M2();
-        private List<Entidad> rolSinPermiso = laFabricaE.ObtenerListaRol_M2();
-        private List<Entidad> rolesFiltrados = laFabricaE.ObtenerListaRol_M2();//los roles que el usuario aun no tiene permiso
+        private List<Rol> losRolesDeSistema = new List<Rol>();
+        private List<Rol> rolesDePersona = new List<Rol>();
+        private List<Rol> rolSinPermiso = new List<Rol>();
+        private List<Rol> rolesFiltrados = new List<Rol>();//los roles que el usuario aun no tiene permiso
         
         private String InfoRol=RecursosInterfazPresentadorM2.InfoRol;
         private String EliminarRolEtq=RecursosInterfazPresentadorM2.EliminarRolEtq;
@@ -51,7 +51,7 @@ namespace Interfaz_Presentadores.Modulo2
         private String trFin=RecursosInterfazPresentadorM2.trFin;
         #endregion
 
-        public void RolesUsuario(List<Entidad> Roles,String tipo){
+        public void RolesUsuario(List<Rol> Roles,String tipo){
             String respuesta="";
             String RolEtq="";
             String trInicial=trIni;
@@ -105,9 +105,9 @@ namespace Interfaz_Presentadores.Modulo2
                         ComandoCuentaUsuario cuentaConsultada = (ComandoCuentaUsuario)laFabrica.ObtenerCuentaUsuario();
                         cuentaConsultada.LaEntidad = cuentaComando;
                         cuenta =(Cuenta)cuentaConsultada.Ejecutar();
-                        rolesDePersona = cuenta.Roles.Cast<Entidad>().ToList();
+                        rolesDePersona = cuenta.Roles;
                     }
-                    List<Entidad> rolesDePersonaE = rolesDePersona.Cast<Entidad>().ToList();
+                    List<Rol> rolesDePersonaE = rolesDePersona;
                     rolSinPermiso = validaciones.rolNoEditable(rolesDePersonaE,
                             HttpContext.Current.Session[RecursosInterfazMaster.sessionRol].ToString());
                     rolesDePersona = validaciones.validarPrioridad(rolesDePersona,

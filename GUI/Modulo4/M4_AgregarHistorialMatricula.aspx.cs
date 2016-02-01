@@ -23,6 +23,18 @@ namespace templateApp.GUI.Modulo4
         public string Modalidad { get { return modalidadHM.Text; } }
         public string Monto { get { return cmatriHM.Text; } }
         public int Persona { get { return int.Parse(Session[RecursosInterfazMaster.sessionUsuarioID].ToString()); } }
+        public string AlertaClase
+        {
+            set { alert1.Attributes[M4_RecursoInterfaz.alertClase] = value; }
+        }
+        public string AlertaRol
+        {
+            set { alert1.Attributes[M4_RecursoInterfaz.alertRole] = value; }
+        }
+        public string Alerta
+        {
+            set { alert1.InnerHtml = value; }
+        }
         #endregion
 
          #region Constructor

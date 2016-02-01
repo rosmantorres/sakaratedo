@@ -35,7 +35,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo4
 
                 throw ex;
             }
-            catch (ExcepcionesSKD.Modulo4.DojoInexistenteException ex)
+            catch (ExcepcionesSKD.Modulo4.DojoExistenteException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
 

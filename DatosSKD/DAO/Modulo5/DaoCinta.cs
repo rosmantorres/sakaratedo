@@ -45,7 +45,7 @@ namespace DatosSKD.DAO.Modulo5
                         if (!ValidarOrdenCinta(laCinta))
                         { 
                
-                        List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                        List<Parametro> parametros = new List<Parametro>(); 
 
                         Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamColorCinta, SqlDbType.VarChar, laCinta.Color_nombre, false);
                         parametros.Add(elParametro);
@@ -62,11 +62,9 @@ namespace DatosSKD.DAO.Modulo5
                         elParametro = new Parametro(RecursosDaoModulo5.ParamNomOrg, SqlDbType.VarChar, laCinta.Organizacion.Nombre, false);
                         parametros.Add(elParametro);
 
-                    //  BDConexion laConexion = new BDConexion();// abres la conexion
                         string query = RecursosDaoModulo5.AgregarCinta;
                         List<Resultado> resultados = this.EjecutarStoredProcedure(query
-                                        , parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
-                
+                                        , parametros);
                         }
                         else
                         {
@@ -86,7 +84,7 @@ namespace DatosSKD.DAO.Modulo5
                                     RecursosDaoModulo5.Mensaje_Organizacion_Inexistente, new Exception());
                 }
             } // Fin Try
-            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            catch (SqlException ex) 
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
@@ -130,7 +128,7 @@ namespace DatosSKD.DAO.Modulo5
                        if (!ValidarOrdenCinta(laCinta))
                        {
 
-                            List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                            List<Parametro> parametros = new List<Parametro>(); 
 
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamModificarCinta, SqlDbType.Int, laCinta.Id_cinta.ToString(), false);
@@ -150,11 +148,10 @@ namespace DatosSKD.DAO.Modulo5
                 elParametro = new Parametro(RecursosDaoModulo5.ParamNomOrg, SqlDbType.VarChar, laCinta.Organizacion.Nombre, false);
                 parametros.Add(elParametro);
 
-             //  BDConexion laConexion = new BDConexion();// abres la conexion
+
                 
                 string query = RecursosDaoModulo5.ModificarCinta;
-                List<Resultado> resultados = this.EjecutarStoredProcedure(query, parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
-
+                List<Resultado> resultados = this.EjecutarStoredProcedure(query, parametros);
                      }
                      else
                      {
@@ -169,7 +166,7 @@ namespace DatosSKD.DAO.Modulo5
                                 RecursosDaoModulo5.Mensaje_Organizacion_Inexistente, new Exception());
              }
             } // Fin Try
-            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            catch (SqlException ex) 
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
@@ -201,7 +198,6 @@ namespace DatosSKD.DAO.Modulo5
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-           // BDConexion laConexion;
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
           
@@ -211,9 +207,8 @@ namespace DatosSKD.DAO.Modulo5
 
             try
             {
-               // laConexion = new BDConexion();
+
                 parametros = new List<Parametro>();
-          //      Cinta laCinta = new Cinta();
 
                 elParametro = new Parametro(RecursosDaoModulo5.ParamIdCinta, SqlDbType.Int, laCinta.Id_cinta.ToString(),
                                             false);
@@ -236,11 +231,13 @@ namespace DatosSKD.DAO.Modulo5
 
 
                 }
+                
+                Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
                 return laCinta;
 
             }
-            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            catch (SqlException ex) 
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
@@ -265,8 +262,6 @@ namespace DatosSKD.DAO.Modulo5
                 throw new ExcepcionesSKD.ExceptionSKD(RecursoGeneralBD.Mensaje_Generico_Error, ex);
             }
 
-            Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeFinInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
-
         }
         /// <summary>
         /// Método Consulta la Lista de Todas las Cintas en la Base de Datos
@@ -276,7 +271,7 @@ namespace DatosSKD.DAO.Modulo5
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-           // BDConexion laConexion;
+
             List<Entidad> laListaCintas = new List<Entidad>();
             List<Parametro> parametros;
             string status;
@@ -284,7 +279,7 @@ namespace DatosSKD.DAO.Modulo5
 
             try
             {
-              //  laConexion = new BDConexion();
+
                 parametros = new List<Parametro>();
 
 
@@ -303,18 +298,15 @@ namespace DatosSKD.DAO.Modulo5
                     laCinta.Orden = int.Parse(row[RecursosDaoModulo5.AliasOrdenCinta].ToString());                
                     laCinta.Organizacion = (DominioSKD.Entidades.Modulo3.Organizacion)FabricaEntidades.ObtenerOrganizacion_M3(int.Parse(row[RecursosDaoModulo5.AliasIdOrganizacion].ToString())
                                                                         , row[RecursosDaoModulo5.AliasNombreOrg].ToString());
-                    status = row[RecursosDaoModulo5.AliasStatusCinta].ToString();
-                    if (status == "True")
-                        laCinta.Status = true;
-                    else
-                        laCinta.Status = false;
+                    laCinta.Status = bool.Parse(row[RecursosDaoModulo5.AliasStatusCinta].ToString());
+
 
                     laListaCintas.Add(laCinta);
 
                 }
 
             }
-            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            catch (SqlException ex) 
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
@@ -356,14 +348,12 @@ namespace DatosSKD.DAO.Modulo5
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
  
             bool retorno = false;
-          //  BDConexion laConexion;
             List<Parametro> parametros;
             SqlConnection conect = Conectar();
             try
             {
                 DominioSKD.Entidades.Modulo3.Organizacion laOrganizacion = (DominioSKD.Entidades.Modulo3.Organizacion)parametro;
 
-               // laConexion = new BDConexion();
                 
                 parametros = new List<Parametro>();
 
@@ -432,14 +422,12 @@ namespace DatosSKD.DAO.Modulo5
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool retorno = false;
-            //BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-              //  laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamOrdenCinta, SqlDbType.Int
@@ -509,14 +497,12 @@ namespace DatosSKD.DAO.Modulo5
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool retorno = false;
-            //BDConexion laConexion;
             List<Parametro> parametros;
 
             try
             {
                 DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-              //  laConexion = new BDConexion();
                 parametros = new List<Parametro>();
 
                 Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamColorCinta, SqlDbType.VarChar
@@ -585,7 +571,6 @@ namespace DatosSKD.DAO.Modulo5
         {
             Logger.EscribirInfo(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, RecursosDaoModulo5.MensajeInicioInfoLogger, System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            //BDConexion laConexion;
             List<Entidad> laListaCintas = new List<Entidad>();
             List<Parametro> parametros;
             Parametro elParametro = new Parametro();
@@ -596,9 +581,8 @@ namespace DatosSKD.DAO.Modulo5
 
             try
             {
-                //laConexion = new BDConexion();
+
                 parametros = new List<Parametro>();
-                // Organizacion laOrganizacion = new Organizacion();
 
                 elParametro = new Parametro(RecursosDaoModulo5.ParamIdOrg, SqlDbType.Int, laOrganizacion.Id_organizacion.ToString(), false);
                 parametros.Add(elParametro);
@@ -624,7 +608,7 @@ namespace DatosSKD.DAO.Modulo5
                 }
 
             }
-            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            catch (SqlException ex) 
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);
@@ -668,7 +652,7 @@ namespace DatosSKD.DAO.Modulo5
             {
                 DominioSKD.Entidades.Modulo5.Cinta laCinta = (DominioSKD.Entidades.Modulo5.Cinta)parametro;
 
-                        List<Parametro> parametros = new List<Parametro>(); //declaras lista de parametros
+                        List<Parametro> parametros = new List<Parametro>(); 
 
 
                         Parametro elParametro = new Parametro(RecursosDaoModulo5.ParamModificarCinta, SqlDbType.Int, laCinta.Id_cinta.ToString(), false);
@@ -676,14 +660,13 @@ namespace DatosSKD.DAO.Modulo5
                         elParametro = new Parametro(RecursosDaoModulo5.ParamNomOrg, SqlDbType.VarChar, laCinta.Organizacion.Nombre, false);
                         parametros.Add(elParametro);
 
-                        //  BDConexion laConexion = new BDConexion();// abres la conexion
+                        
 
                         string query = RecursosDaoModulo5.ModificarStatusCinta;
-                        List<Resultado> resultados = this.EjecutarStoredProcedure(query, parametros);//ejecutas el stored procedure que quieres pasandole la lista de parametros
-
+                        List<Resultado> resultados = this.EjecutarStoredProcedure(query, parametros);
 
             } // Fin Try
-            catch (SqlException ex) //es mi primera excepcion, puede tener muchas
+            catch (SqlException ex) 
             {
                 throw new ExcepcionesSKD.ExceptionSKDConexionBD(RecursoGeneralBD.Codigo,
                     RecursoGeneralBD.Mensaje, ex);

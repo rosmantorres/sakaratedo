@@ -24,5 +24,8 @@ namespace Interfaz_Contratos.Modulo4
         string Direccion { get; set; }
         bool StatusAct { get; set; }
         bool StatusIn { get; set; }
+        string AlertaClase { set; }
+        string AlertaRol { set; }
+        string Alerta { set; }
     }
 }

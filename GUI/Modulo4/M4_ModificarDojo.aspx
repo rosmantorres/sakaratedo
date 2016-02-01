@@ -116,7 +116,8 @@
     <!-- ENCABEZADO DEL FORMULARIO -->
             <!-- COMIENZO DEL FORMULARIO -->
                 <form role="form" name="modificar_dojo" id="modificar_dojo" method="post" runat="server">
-                    
+                    <div id="alert1" runat="server">
+    </div>
                     <div class="box-body col-sm-12 col-md-12 col-lg-12 ">
                         <div class="box-body col-sm-10 col-md-10 col-lg-10 ">
                             <asp:Image id="logDojo" Height="100" ImageUrl="Imagenes/Aikido.png" runat="server" Width="150" style="margin: 5px 900px 5px 5px;float: left;"/> 

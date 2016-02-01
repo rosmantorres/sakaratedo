@@ -107,6 +107,17 @@ namespace Interfaz_Presentadores.Modulo5 {
             }
         }
 
+        /// <summary>
+        ///   Looks up a localized string similar to SKD_002.
+        /// </summary>
+        internal static string Codigo_Error_Expresion_Regular
+        {
+            get
+            {
+                return ResourceManager.GetString("Codigo_Error_Expresion_Regular", resourceCulture);
+            }
+        }
+
          /// <summary>
         ///   Looks up a localized string similar to Mensaje_Error_Lista_Vacia.
         /// </summary>
@@ -118,10 +129,63 @@ namespace Interfaz_Presentadores.Modulo5 {
             }
         }
 
-
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Color Cinta solo permite expresiones alfanumericos.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Color
+        {
+            get
+            {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Color", resourceCulture);
+            }
+        }
 
         /// <summary>
-        ///   Looks up a localized string similar to expresionNombre.
+        ///   Looks up a localized string similar to El campo Rango solo permite expresiones alfanumericos y numeros.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Rango
+        {
+            get
+            {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Rango", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Significado solo permite expresiones alfanumericos.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Significado
+        {
+            get
+            {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Significado", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Clasificacion solo permite expresiones alfanumericos.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Clasificacion
+        {
+            get
+            {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Clasificacion", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to El campo Orden solo permite numeros.
+        /// </summary>
+        internal static string Mensaje_Error_Expresion_Regular_Orden
+        {
+            get
+            {
+                return ResourceManager.GetString("Mensaje_Error_Expresion_Regular_Orden", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ^[A-Za-z\s]{2,100}$.
         /// </summary>
         internal static string expresionNombre
         {
@@ -132,7 +196,7 @@ namespace Interfaz_Presentadores.Modulo5 {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to expresionNumero.
+        ///   Looks up a localized string similar to ^[0-9]{1,2}$.
         /// </summary>
         internal static string expresionNumero
         {
@@ -143,7 +207,7 @@ namespace Interfaz_Presentadores.Modulo5 {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to expresionNombreNumero.
+        ///   Looks up a localized string similar to ^[A-Z0-9a-z\s]{2,100}$.
         /// </summary>
         internal static string expresionNombreNumero
         {

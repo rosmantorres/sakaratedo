@@ -131,7 +131,7 @@ namespace PruebasUnitariasSKD.Modulo3
         [Test]
         public void ejecutarElComandoConsultarXIdOrganizacion()
         {
-            this.miComandoEntidad = FabricaComandos.ObtenerEjecutarConsultarXIdCinta(miEntidad);
+            this.miComandoEntidad = FabricaComandos.ObtenerEjecutarConsultarXIdOrganizacion(miEntidad);
             Entidad resultado = this.miComandoEntidad.Ejecutar();
             Assert.IsNotNull(resultado);
 

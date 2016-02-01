@@ -21,7 +21,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
     {
         #region Atributos
         private PersonaM7 idPersona;
-        private FabricaComandos fabricaComandos;
         private ComandoConsultarListaMatriculasPagas matriculasPagas;
         #endregion
 
@@ -32,8 +31,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [SetUp]
         public void Init()
         {
-            fabricaComandos = new FabricaComandos();
-            matriculasPagas = (ComandoConsultarListaMatriculasPagas)fabricaComandos.ObtenerComandoConsultarListaMatriculasPagas();
+            matriculasPagas = (ComandoConsultarListaMatriculasPagas)FabricaComandos.ObtenerComandoConsultarListaMatriculasPagas();
             idPersona = (PersonaM7)FabricaEntidades.ObtenerPersonaM7();
             idPersona.Id = 6;
             matriculasPagas.LaEntidad = idPersona;
@@ -45,7 +43,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasComando
         [TearDown]
         public void Clean()
         {
-            fabricaComandos = null;
             matriculasPagas = null;
             idPersona = null;
         }

@@ -21,7 +21,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private OrganizacionM7 idOrganizacion;
-        private FabricaDAOSqlServer fabricaSql;
         private DaoOrganizacion baseDeDatosOrganizacion;
         #endregion
 
@@ -32,8 +31,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [SetUp]
         public void Init()
         {
-            fabricaSql = new FabricaDAOSqlServer();
-            baseDeDatosOrganizacion = fabricaSql.ObtenerDaoOrganizacionM7();
+            baseDeDatosOrganizacion = FabricaDAOSqlServer.ObtenerDaoOrganizacionM7();
             idOrganizacion = (OrganizacionM7)FabricaEntidades.ObtenerOrganizacionM7();
             idOrganizacion.Id = 1;
         }
@@ -45,7 +43,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idOrganizacion = null;
-            fabricaSql = null;
             baseDeDatosOrganizacion = null;
         }
         #endregion
