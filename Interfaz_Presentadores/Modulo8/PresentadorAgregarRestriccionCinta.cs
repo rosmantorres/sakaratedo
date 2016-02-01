@@ -82,26 +82,17 @@ namespace Interfaz_Presentadores.Modulo8
             catch (ExcepcionesSKD.Modulo8.RestriccionRepetidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-<<<<<<< Updated upstream
                 /*vista.alertLocalClase = RecursoPresentadorM8.alertaError;
                 vista.alertLocalRol = RecursoPresentadorM8.tipoAlerta;
                 vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
                     + RecursoPresentadorM8.alertaHtmlFinal;*/
                 //vista.alertaAgregarFallidoOrden(ex);
                 throw ex;
-=======
-                Alerta(ex.Message);
->>>>>>> Stashed changes
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-<<<<<<< Updated upstream
-
                 throw ex;
-=======
-                Alerta(ex.Message);
->>>>>>> Stashed changes
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
@@ -173,36 +164,21 @@ namespace Interfaz_Presentadores.Modulo8
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-<<<<<<< Updated upstream
-                throw ex;  
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public void Alerta(string msj)
-        {
-            //vista.alertLocalClase = RecursoPresentadorM8.Alerta_Clase_Error;
-            //vista.alertLocalRol = RecursoPresentadorM8.Alerta_Rol;
-            //vista.alertLocal = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
-        }
-=======
                 Alerta(ex.Message);
-                return false;
+                return false;  
             }
             catch (Exception ex)
             {
+
                 Alerta(ex.Message);
                 return false;
             }
         }
 
         
->>>>>>> Stashed changes
+                
+            }
+           
+        }
 
-    }
-}
 

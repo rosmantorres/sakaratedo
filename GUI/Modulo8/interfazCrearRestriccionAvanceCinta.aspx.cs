@@ -89,7 +89,6 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-<<<<<<< Updated upstream
       /* public void alertaCamposVacios()
        {
            this.alert.Attributes[RecursoInterfazModulo8.alertClase] = RecursoInterfazModulo8.alertaError;
@@ -114,7 +113,7 @@ namespace templateApp.GUI.Modulo8
        public void Respuesta()
        {
            this.Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta);
-=======
+       }
        public string alertaClase
        {
            set
@@ -135,7 +134,6 @@ namespace templateApp.GUI.Modulo8
            {
                this.alert.InnerHtml = value;
            }
->>>>>>> Stashed changes
        }
         #endregion
 
@@ -147,23 +145,22 @@ namespace templateApp.GUI.Modulo8
 		}
         #endregion
 
-       protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
-                _presentador.LlenarComboCinta();
-<<<<<<< Updated upstream
-                
-=======
+                try
+                {
+                    _presentador.LlenarComboCinta();
                 }
                 catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
                 {
                     _presentador.Alerta(ex.Message);
                 }
->>>>>>> Stashed changes
             }
         }
+        
                
        protected void btnaceptar_Click(object sender, EventArgs e)
         {
@@ -173,8 +170,6 @@ namespace templateApp.GUI.Modulo8
             }
 
         }
-
-<<<<<<< Updated upstream
        /*public void Alerta(string msj)
        {
           /* _presentador.Alerta(msj);
@@ -182,9 +177,6 @@ namespace templateApp.GUI.Modulo8
             alert.Attributes["role"] = "alert";
             alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
        }*/
-=======
-       
->>>>>>> Stashed changes
 
        public bool validarInput(String pword)
        {

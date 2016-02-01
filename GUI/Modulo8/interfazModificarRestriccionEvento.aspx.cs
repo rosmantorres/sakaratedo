@@ -36,8 +36,6 @@ namespace templateApp.GUI.Modulo8
             }
         }
         public String descripcion { get; set; }
-        //ListBox competenciasRelacionadas { get; set; }
-        //ListBox competeciasNoRelacionadas { get; set; }
         public DropDownList rangoMinimo
         {
             get
