@@ -164,7 +164,7 @@ namespace templateApp.GUI.Modulo8
             Boolean validar = _presentador.ModificarRest();
             if (validar)
             {
-                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario);
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario2 + Request.QueryString[RecursoInterfazModulo8.nombre]);
             }
         }
     }

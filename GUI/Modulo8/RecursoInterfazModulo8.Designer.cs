@@ -349,5 +349,14 @@ namespace templateApp.GUI.Modulo8 {
                 return ResourceManager.GetString("volverRestriccionHorario", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesHorario.aspx?idPlan=.
+        /// </summary>
+        internal static string volverRestriccionHorario2 {
+            get {
+                return ResourceManager.GetString("volverRestriccionHorario2", resourceCulture);
+            }
+        }
     }
 }

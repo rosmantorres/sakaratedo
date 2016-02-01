@@ -215,4 +215,7 @@
   <data name="sexo" xml:space="preserve">
     <value>sexo</value>
   </data>
+  <data name="volverRestriccionHorario2" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesHorario.aspx?idPlan=</value>
+  </data>
 </root>
