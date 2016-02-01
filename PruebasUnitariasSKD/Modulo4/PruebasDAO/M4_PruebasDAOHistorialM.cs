@@ -17,7 +17,7 @@ namespace PruebasUnitariasSKD.Modulo4.PruebasDAO
     /// Clase que contiene las pruebas unitarias para DaoHistorialM
     /// </summary>
     [TestFixture]
-    public class PruebasDAOHistorialM
+    public class M4_PruebasDAOHistorialM
     {
         #region Atributos
         private HistorialM idHist;
@@ -134,6 +134,14 @@ namespace PruebasUnitariasSKD.Modulo4.PruebasDAO
             Assert.IsTrue(baseDeDatosHist.Agregar(elHistM));
 
         }
+        [Test]
+        public void PruebaEliminarHistorialMatricula()
+        {
+            HistorialM elHistM = (HistorialM)FabricaEntidades.ObtenerHistorialMatricula();
+            elHistM.Id_historial_matricula = 20;
+            Assert.IsTrue(baseDeDatosHist.Eliminar(elHistM));
+        }
+
 
     }
 }

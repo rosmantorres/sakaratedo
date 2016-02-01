@@ -66,8 +66,11 @@ namespace templateApp.GUI.Modulo4
         /// <param name="e"></param>
         protected void Btn_agregarHistorialM_Click(object sender, EventArgs e)
         {
-            _presentador.AgregarHistorialM_Click();
-            Response.Redirect("M4_ListarHistorialMatricula.aspx?success=1");
+            if (IsValid)
+            {
+                _presentador.AgregarHistorialM_Click();
+                Response.Redirect("M4_ListarHistorialMatricula.aspx?success=1");
+            }
         }
     }
 }

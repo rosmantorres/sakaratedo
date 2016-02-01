@@ -111,7 +111,9 @@ namespace PruebasUnitariasSKD.Modulo4.PruebasDAO
             List<Entidad> listaDojos = baseDeDatosDojo.ConsultarTodosOrganizacion(idDojo);
             Assert.NotNull(listaDojos);
         }
-
+        /// <summary>
+        /// Método para probar que se Agrega Un Dojo 
+        /// </summary>
         [Test]
         public void PruebaAgregarDojo()
         {
@@ -135,13 +137,16 @@ namespace PruebasUnitariasSKD.Modulo4.PruebasDAO
             elDojo.Status_dojo = true;
             Assert.IsTrue(baseDeDatosDojo.Agregar(elDojo));
         }
+        /// <summary>
+        /// Método para probrar que se modifica un Dojo
+        /// </summary>
         [Test]
         public void PruebaModificarDojo()
         {
             DojoM4 elDojo = (DojoM4)FabricaEntidades.ObtenerDojo_M4();
             Ubicacion ubi = (Ubicacion)FabricaEntidades.ObtenerUbicacion_M4();
 
-            elDojo.Id = 5010;
+            elDojo.Id = 10;
             elDojo.Logo_dojo = "Kaizen.jpg";
             elDojo.Rif_dojo = "J-124332790";
             elDojo.Nombre_dojo = "KaizenDo 2";
@@ -156,6 +161,9 @@ namespace PruebasUnitariasSKD.Modulo4.PruebasDAO
             elDojo.Status_dojo = true;
             Assert.IsTrue(baseDeDatosDojo.Modificar(elDojo));
         }
+        /// <summary>
+        /// Método para probar que se elimina un Dojo
+        /// </summary>
         [Test]
         public void PruebaEliminarDojo()
         {

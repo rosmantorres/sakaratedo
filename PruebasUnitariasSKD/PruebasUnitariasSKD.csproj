@@ -152,8 +152,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosPU_Mod3.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo4\PruebasComando\M4_PruebasComandoDojo.cs" />
+    <Compile Include="Modulo4\PruebasComando\M4_PruebasComandoHistotialM.cs" />
     <Compile Include="Modulo4\PruebasDAO\M4_PruebasDAODojo.cs" />
-    <Compile Include="Modulo4\PruebasDAO\PruebasDAOHistorialM.cs" />
+    <Compile Include="Modulo4\PruebasDAO\M4_PruebasDAOHistorialM.cs" />
     <Compile Include="Modulo4\RecursosPU_Mod4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
