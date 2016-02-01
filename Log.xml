@@ -2297,3 +2297,63 @@ Error Number:2812,State:62,Class:16
    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
 ClientConnectionId:b1eb49e3-bd61-4f90-a124-4b1b4720d65d
 Error Number:2812,State:62,Class:16
+2016-01-31 22:57:04,185 INFO  EjecutarConsultarTodosCinta - *******************************************************
+2016-01-31 22:57:04,191 INFO  EjecutarConsultarTodosCinta - Clase: EjecutarConsultarTodosCinta
+2016-01-31 22:57:04,191 INFO  EjecutarConsultarTodosCinta - Mensaje: Entrada en el Método
+2016-01-31 22:57:04,191 INFO  EjecutarConsultarTodosCinta - Metodo: Ejecutar
+2016-01-31 22:57:04,221 INFO  DaoCinta - *******************************************************
+2016-01-31 22:57:04,221 INFO  DaoCinta - Clase: DaoCinta
+2016-01-31 22:57:04,221 INFO  DaoCinta - Mensaje: Entrada en el Método
+2016-01-31 22:57:04,221 INFO  DaoCinta - Metodo: ConsultarTodos
+2016-01-31 22:57:04,534 ERROR DaoCinta - *******************************************************
+2016-01-31 22:57:04,534 ERROR DaoCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 22:57:04,536 ERROR DaoCinta - Origen: DatosSKD
+2016-01-31 22:57:04,536 ERROR DaoCinta - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 22:57:04,536 ERROR DaoCinta - StackTrace:    at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 300
+   at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 292
+2016-01-31 22:57:04,586 ERROR DaoCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M5_ConsultarCintas'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:ee849e23-719d-491e-8421-120dad0ca626
+Error Number:2812,State:62,Class:16
+2016-01-31 22:57:04,635 ERROR EjecutarConsultarTodosCinta - *******************************************************
+2016-01-31 22:57:04,635 ERROR EjecutarConsultarTodosCinta - Mensaje: Error con la Conexion en la Base de Datos, no se pudo abrir la conexion
+2016-01-31 22:57:04,635 ERROR EjecutarConsultarTodosCinta - Origen: DatosSKD
+2016-01-31 22:57:04,635 ERROR EjecutarConsultarTodosCinta - Metodo: System.Data.DataTable EjecutarStoredProcedureTuplas(System.String, System.Collections.Generic.List`1[DatosSKD.Parametro])
+2016-01-31 22:57:04,638 ERROR EjecutarConsultarTodosCinta - StackTrace:    at DatosSKD.DAO.Modulo5.DaoCinta.ConsultarTodos() in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo5\DaoCinta.cs:line 328
+   at LogicaNegociosSKD.Comandos.Modulo5.EjecutarConsultarTodosCinta.Ejecutar() in c:\Users\sesm\Documents\GitHub\sakaratedo\LogicaNegociosSKD\Comandos\Modulo5\EjecutarConsultarTodosCinta.cs:line 28
+2016-01-31 22:57:04,638 ERROR EjecutarConsultarTodosCinta - InnerException: System.Data.SqlClient.SqlException (0x80131904): Could not find stored procedure 'M5_ConsultarCintas'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at DatosSKD.DAOGeneral.EjecutarStoredProcedureTuplas(String query, List`1 parametros) in c:\Users\sesm\Documents\GitHub\sakaratedo\DatosSKD\DAO\DAOGeneral.cs:line 288
+ClientConnectionId:ee849e23-719d-491e-8421-120dad0ca626
+Error Number:2812,State:62,Class:16
