@@ -230,7 +230,7 @@ namespace templateApp.GUI.Modulo7
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "7";
+            ((SKD)Page.Master).IdModulo = M7_Recursos.NumeroModulo;
             try
             {
                 String rolUsuario = Session[RecursosInterfazMaster.sessionRol].ToString();

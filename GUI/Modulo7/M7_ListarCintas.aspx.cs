@@ -56,9 +56,9 @@ namespace templateApp.GUI.Modulo7
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "7";
+            ((SKD)Page.Master).IdModulo = M7_Recursos.NumeroModulo;
 
-            String detalleString = Request.QueryString["compDetalle"];
+            String detalleString = Request.QueryString[M7_Recursos.CompetenciaDetalle];
                        
         #region Llenar DataTable con Cintas
 

@@ -220,9 +220,9 @@ namespace templateApp.GUI.Modulo7
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            ((SKD)Page.Master).IdModulo = "7";
-            String detalleStringEvento = Request.QueryString["eventoDetalle"];
-            String detalleStringCompetencia = Request.QueryString["compDetalle1"];
+            ((SKD)Page.Master).IdModulo = M7_Recursos.NumeroModulo;
+            String detalleStringEvento = Request.QueryString[M7_Recursos.EventoDetalle];
+            String detalleStringCompetencia = Request.QueryString[M7_Recursos.CompetenciaDetalle1];
 
             try
             {
