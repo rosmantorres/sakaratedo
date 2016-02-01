@@ -48,31 +48,39 @@ namespace Interfaz_Presentadores.Modulo8
             catch (RestriccionExistenteException ex)
             {
 
-                throw ex;
+                Alerta(ex.Message);
+                return false;
+
 
             }
             catch (SqlException ex)
             {
 
 
-                throw ex;
+                Alerta(ex.Message);
+                return false;
+
 
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Alerta(ex.Message);
+                return false;
+
 
             }
             catch (ExceptionSKDConexionBD ex)
             {
 
-                throw ex;
+                Alerta(ex.Message);
+                return false;
+
 
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                Alerta(ex.Message);
+                return false;
 
             }
             return resultado;
@@ -295,6 +303,13 @@ namespace Interfaz_Presentadores.Modulo8
                                      + " Sexo: " + vista.sexo.SelectedValue.ToString()
                                      + " Modalidad: " + vista.modalidad.SelectedValue.ToString());
 
+        }
+
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = "alert alert-danger alert-dismissible";
+            vista.alertaRol = "alert";
+            vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
 

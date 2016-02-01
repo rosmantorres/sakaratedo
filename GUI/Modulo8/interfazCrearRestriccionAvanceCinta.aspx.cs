@@ -89,6 +89,7 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
+<<<<<<< Updated upstream
       /* public void alertaCamposVacios()
        {
            this.alert.Attributes[RecursoInterfazModulo8.alertClase] = RecursoInterfazModulo8.alertaError;
@@ -113,6 +114,28 @@ namespace templateApp.GUI.Modulo8
        public void Respuesta()
        {
            this.Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta);
+=======
+       public string alertaClase
+       {
+           set
+           {
+               this.alert.Attributes["class"] = value;
+           }
+       }
+       public string alertaRol
+       {
+           set
+           {
+               this.alert.Attributes["role"] = value;
+           }
+       }
+       public string alerta
+       {
+           set
+           {
+               this.alert.InnerHtml = value;
+           }
+>>>>>>> Stashed changes
        }
         #endregion
 
@@ -130,7 +153,15 @@ namespace templateApp.GUI.Modulo8
             {
                 ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 _presentador.LlenarComboCinta();
+<<<<<<< Updated upstream
                 
+=======
+                }
+                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+                {
+                    _presentador.Alerta(ex.Message);
+                }
+>>>>>>> Stashed changes
             }
         }
                
@@ -143,6 +174,7 @@ namespace templateApp.GUI.Modulo8
 
         }
 
+<<<<<<< Updated upstream
        /*public void Alerta(string msj)
        {
           /* _presentador.Alerta(msj);
@@ -150,6 +182,9 @@ namespace templateApp.GUI.Modulo8
             alert.Attributes["role"] = "alert";
             alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
        }*/
+=======
+       
+>>>>>>> Stashed changes
 
        public bool validarInput(String pword)
        {

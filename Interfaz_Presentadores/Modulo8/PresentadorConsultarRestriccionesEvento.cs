@@ -130,20 +130,27 @@ namespace Interfaz_Presentadores.Modulo8
             }
             catch (SqlException ex)
             {
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
-                throw ex;
+                Alerta(ex.Message);
             }
+        }
+
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = "alert alert-danger alert-dismissible";
+            vista.alertaRol = "alert";
+            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
        
