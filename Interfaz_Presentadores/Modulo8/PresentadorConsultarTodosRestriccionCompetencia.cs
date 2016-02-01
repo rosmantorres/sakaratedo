@@ -62,7 +62,7 @@ namespace Interfaz_Presentadores.Modulo8
             }
             catch (Exception ex)
             {
-
+                Alerta(ex.Message);
 
             }
 
@@ -78,7 +78,7 @@ namespace Interfaz_Presentadores.Modulo8
 
             catch (Exception ex)
             {
-                
+                Alerta(ex.Message);
                 return null;
             }
         }
@@ -109,19 +109,23 @@ namespace Interfaz_Presentadores.Modulo8
             }
             catch (SqlException ex)
             {
-                throw ex;
+                Alerta(ex.Message);
+                return false;
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Alerta(ex.Message);
+                return false;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
-                throw ex;
+                Alerta(ex.Message);
+                return false;
             }
             catch (Exception ex)
             {
-                throw ex;
+                Alerta(ex.Message);
+                return false;
             }
 
             

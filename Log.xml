@@ -2362,3 +2362,27 @@ Error Number:2812,State:62,Class:16
    at System.Data.DataRow.get_Item(String columnName)
    at DatosSKD.DAO.Modulo8.DAORestriccionEvento.ConsultarEventosConRestriccion() in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionEvento.cs:line 134
 2016-01-31 22:53:16,611 ERROR DAORestriccionEvento - InnerException: 
+2016-01-31 23:17:44,111 ERROR DAORestriccionEvento - *******************************************************
+2016-01-31 23:17:44,117 ERROR DAORestriccionEvento - Mensaje: Column 'res_eve_status' does not belong to table .
+2016-01-31 23:17:44,119 ERROR DAORestriccionEvento - Origen: System.Data
+2016-01-31 23:17:44,119 ERROR DAORestriccionEvento - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-01-31 23:17:44,119 ERROR DAORestriccionEvento - StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosSKD.DAO.Modulo8.DAORestriccionEvento.ConsultarEventosConRestriccion() in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionEvento.cs:line 134
+2016-01-31 23:17:44,119 ERROR DAORestriccionEvento - InnerException: 
+2016-01-31 23:17:48,532 ERROR DAORestriccionEvento - *******************************************************
+2016-01-31 23:17:48,532 ERROR DAORestriccionEvento - Mensaje: Column 'res_eve_status' does not belong to table .
+2016-01-31 23:17:48,532 ERROR DAORestriccionEvento - Origen: System.Data
+2016-01-31 23:17:48,532 ERROR DAORestriccionEvento - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-01-31 23:17:48,532 ERROR DAORestriccionEvento - StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosSKD.DAO.Modulo8.DAORestriccionEvento.ConsultarEventosConRestriccion() in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionEvento.cs:line 134
+2016-01-31 23:17:48,532 ERROR DAORestriccionEvento - InnerException: 
+2016-01-31 23:17:51,361 ERROR DAORestriccionEvento - *******************************************************
+2016-01-31 23:17:51,361 ERROR DAORestriccionEvento - Mensaje: Column 'res_eve_status' does not belong to table .
+2016-01-31 23:17:51,361 ERROR DAORestriccionEvento - Origen: System.Data
+2016-01-31 23:17:51,361 ERROR DAORestriccionEvento - Metodo: System.Data.DataColumn GetDataColumn(System.String)
+2016-01-31 23:17:51,361 ERROR DAORestriccionEvento - StackTrace:    at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at DatosSKD.DAO.Modulo8.DAORestriccionEvento.ConsultarEventosConRestriccion() in c:\Users\Cesar\Documents\GitHub\sakaratedo\DatosSKD\DAO\Modulo8\DAORestriccionEvento.cs:line 134
+2016-01-31 23:17:51,361 ERROR DAORestriccionEvento - InnerException: 
