@@ -156,24 +156,13 @@ namespace Interfaz_Presentadores.Modulo8
                     bool resultado = _comando.Ejecutar();
                 
                 }
-                catch (SqlException ex)
+
+                catch (ExcepcionesSKD.ExceptionSKD ex)
                 {
-                    Alerta(ex.Message);
-                    return false;
-                }
-                catch (FormatException ex)
-                {
-                    Alerta(ex.Message);
-                    return false;
-                }
-                catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
-                {
-                    Alerta(ex.Message);
-                    return false;
-                }
-                catch (Exception ex)
-                {
-                    Alerta(ex.Message);
+                    vista.alertaClase = RecursoPresentadorM8.alertaError;
+                    vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+                    vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
+                        + RecursoPresentadorM8.alertaHtmlFinal;
                     return false;
                 }
                 return true;
