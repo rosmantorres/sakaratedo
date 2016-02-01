@@ -188,7 +188,7 @@ namespace Interfaz_Presentadores.Modulo4
             try
             {
 
-                DominioSKD.Dojo elDojo = (DominioSKD.Dojo)FabricaEntidades.ObtenerDojo_M4();
+                DojoM4 elDojo = (DojoM4)FabricaEntidades.ObtenerDojo_M4();
                 elDojo.Id = id;
                 Comando<bool> eliminarDojo = FabricaComandos.CrearComandoEliminarDojo();
                 eliminarDojo.LaEntidad = elDojo;

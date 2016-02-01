@@ -383,7 +383,6 @@ namespace DatosSKD.DAO.Modulo4
             {
                 laConexion = new BDConexion();
                 parametros = new List<Parametro>();
-                DojoM4 elDojo = (DojoM4)FabricaEntidades.ObtenerDojo_M4();
                 HistorialM elHistMat = (HistorialM)FabricaEntidades.ObtenerHistorialMatricula();
                 elHistMat = (HistorialM)parametro;
 
@@ -401,10 +400,6 @@ namespace DatosSKD.DAO.Modulo4
                     elHistMat.Fecha_historial_matricula = DateTime.Parse(row[RecursosDAOModulo4.AliasFechaMatricula].ToString());
                     elHistMat.Modalidad_historial_matricula = row[RecursosDAOModulo4.AliasModalidad].ToString();
                     elHistMat.Monto_historial_matricula = int.Parse(row[RecursosDAOModulo4.AliasMonto].ToString());
-                    elDojo.Id = int.Parse(row[RecursosDAOModulo4.AliasIdDojo].ToString());
-                    elDojo.Nombre_dojo = row[RecursosDAOModulo4.AliasNombreDojo].ToString();
-                    elHistMat.Dojo_historial_matricula = elDojo;
-
                     laListaDeMatriculas.Add(elHistMat);
 
                 }
