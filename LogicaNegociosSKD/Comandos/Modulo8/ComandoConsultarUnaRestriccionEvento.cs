@@ -5,36 +5,39 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
+using DatosSKD.DAO.Modulo8;
+using ExcepcionesSKD;
 using System.Data.SqlClient;
-using DatosSKD.Fabrica;
+
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
-    public class ComandoConsultarCompetencias : Comando<List<DominioSKD.Entidad>>
+    public class ComandoConsultarUnaRestriccionEvento : Comando<DominioSKD.Entidad>
     {
+        private Entidad parametro;
 
-        //private Entidad RestriccionCompetencia;
-
-        //public Entidad LaRestriccionCompetencia
-        //{
-        //    get { return RestriccionCompetencia; }
-        //    set { RestriccionCompetencia = value; }
-        //}
-
-        public override List<DominioSKD.Entidad> Ejecutar()
+        public Entidad Parametro
         {
-            List<DominioSKD.Entidad> resultado;
+            get { return parametro; }
+            set { parametro = value; }
+        }
+
+        public ComandoConsultarUnaRestriccionEvento(Entidad nuevaEntidad) 
+            :base()
+        {
+            this.LaEntidad = nuevaEntidad;
+        }
+
+        public override DominioSKD.Entidad Ejecutar()
+        {
+            DominioSKD.Entidad resultado;
 
             DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
 
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
- 
-
-            IDaoRestriccionCompetencia daoRestriccionCompetencia = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCompetencia();
 
             try
             {
-
-                resultado = daoRestriccionCompetencia.ConsultarCompetencias();
+                IDaoRestriccionEvento daoRestriccionEvento = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionEvento();
+                resultado = daoRestriccionEvento.ConsultarRestriccionEvento(this.LaEntidad);
 
             }
             catch (SqlException ex)
@@ -57,5 +60,6 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             return resultado;
 
         }
+
     }
 }

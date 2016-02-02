@@ -79,6 +79,24 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activa.
+        /// </summary>
+        internal static string Activa {
+            get {
+                return ResourceManager.GetString("Activa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEventos.aspx?success=1.
+        /// </summary>
+        internal static string AgregarExitoRestriccionCompetencia {
+            get {
+                return ResourceManager.GetString("AgregarExitoRestriccionCompetencia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
         /// </summary>
         internal static string Alerta_Clase_Error1 {
@@ -151,6 +169,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to alert alert-danger alert-dismissible.
+        /// </summary>
+        internal static string alertaError {
+            get {
+                return ResourceManager.GetString("alertaError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No ingresaste ninguna fecha de reincorporacion.
         /// </summary>
         internal static string AlertaFechaReincorporacionVacio {
@@ -169,11 +196,56 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;.
+        /// </summary>
+        internal static string alertaHtml {
+            get {
+                return ResourceManager.GetString("alertaHtml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;/div&gt;.
+        /// </summary>
+        internal static string alertaHtmlFinal {
+            get {
+                return ResourceManager.GetString("alertaHtmlFinal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No ingresaste el motivo.
         /// </summary>
         internal static string AlertaMotivoVacio {
             get {
                 return ResourceManager.GetString("AlertaMotivoVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string alertaSuccess {
+            get {
+                return ResourceManager.GetString("alertaSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ambos Sexos.
+        /// </summary>
+        internal static string AmbosSexos {
+            get {
+                return ResourceManager.GetString("AmbosSexos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to B.
+        /// </summary>
+        internal static string B {
+            get {
+                return ResourceManager.GetString("B", resourceCulture);
             }
         }
         
@@ -351,6 +423,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Edad minima no puede ser mayor a la maxima.
+        /// </summary>
+        internal static string edadErrada {
+            get {
+                return ResourceManager.GetString("edadErrada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;edadmaxima=.
         /// </summary>
         internal static string EdadMax {
@@ -369,11 +450,137 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &amp;emax=.
+        /// </summary>
+        internal static string Emax {
+            get {
+                return ResourceManager.GetString("Emax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;emin=.
+        /// </summary>
+        internal static string Emin {
+            get {
+                return ResourceManager.GetString("Emin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to F.
+        /// </summary>
+        internal static string F {
+            get {
+                return ResourceManager.GetString("F", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Femenino.
+        /// </summary>
+        internal static string Femenino {
+            get {
+                return ResourceManager.GetString("Femenino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1.
+        /// </summary>
+        internal static string idAlertAgregar {
+            get {
+                return ResourceManager.GetString("idAlertAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2.
+        /// </summary>
+        internal static string idAlertModificar {
+            get {
+                return ResourceManager.GetString("idAlertModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactiva.
+        /// </summary>
+        internal static string Inactiva {
+            get {
+                return ResourceManager.GetString("Inactiva", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento agregado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertAgregar {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertAgregar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Restriccion Cinta Agregada Exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertAgregarRCi {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertAgregarRCi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento modificado exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertModificar {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertModificar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Restriccion Cinta Modificada Exitosamente&lt;/div&gt;.
+        /// </summary>
+        internal static string innerHtmlAlertModificarRCi {
+            get {
+                return ResourceManager.GetString("innerHtmlAlertModificarRCi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to key.
+        /// </summary>
+        internal static string key {
+            get {
+                return ResourceManager.GetString("key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;br/&gt;.
         /// </summary>
         internal static string linea {
             get {
                 return ResourceManager.GetString("linea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to M.
+        /// </summary>
+        internal static string M {
+            get {
+                return ResourceManager.GetString("M", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Masculino.
+        /// </summary>
+        internal static string Masculino {
+            get {
+                return ResourceManager.GetString("Masculino", resourceCulture);
             }
         }
         
@@ -396,6 +603,24 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nombre del Evento:  .
+        /// </summary>
+        internal static string nombreEvento {
+            get {
+                return ResourceManager.GetString("nombreEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0123456789.
+        /// </summary>
+        internal static string Numbers {
+            get {
+                return ResourceManager.GetString("Numbers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;rangomax=.
         /// </summary>
         internal static string RangoMax {
@@ -414,11 +639,119 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restriccion de .
+        /// </summary>
+        internal static string restAgregada {
+            get {
+                return ResourceManager.GetString("restAgregada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to , creada correctamente..
+        /// </summary>
+        internal static string restAgregada2 {
+            get {
+                return ResourceManager.GetString("restAgregada2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restriccion .
+        /// </summary>
+        internal static string restModificada {
+            get {
+                return ResourceManager.GetString("restModificada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to , modificada correctamente..
+        /// </summary>
+        internal static string restModificada2 {
+            get {
+                return ResourceManager.GetString("restModificada2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &amp;stat=.
+        /// </summary>
+        internal static string RestriccionStatus {
+            get {
+                return ResourceManager.GetString("RestriccionStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;sexo=.
         /// </summary>
         internal static string Sexo {
             get {
                 return ResourceManager.GetString("Sexo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-off&quot; href=&quot;interfazRestriccionesAvanceCinta.aspx?idPlan=.
+        /// </summary>
+        internal static string Status {
+            get {
+                return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-off&quot; href=&quot;interfazRestriccionesHorario.aspx?idPlan=.
+        /// </summary>
+        internal static string StatusEvento {
+            get {
+                return ResourceManager.GetString("StatusEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;a  class=&quot;btn btn-primary glyphicon glyphicon-off&quot; href=&quot;interfazRestriccionesEventos.aspx?idPlan=.
+        /// </summary>
+        internal static string StatusRC {
+            get {
+                return ResourceManager.GetString("StatusRC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to restEventoDetalle.
+        /// </summary>
+        internal static string strEventoDetalle {
+            get {
+                return ResourceManager.GetString("strEventoDetalle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to success.
+        /// </summary>
+        internal static string strSuccess {
+            get {
+                return ResourceManager.GetString("strSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert.
+        /// </summary>
+        internal static string tipoAlerta {
+            get {
+                return ResourceManager.GetString("tipoAlerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to value.
+        /// </summary>
+        internal static string value {
+            get {
+                return ResourceManager.GetString("value", resourceCulture);
             }
         }
     }

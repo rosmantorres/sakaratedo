@@ -105,10 +105,28 @@ namespace templateApp.GUI.Modulo8
             }
 
         }
-        //public String alert { set; }
-        //public String alertClase { set; }
-        //public String alertRol { set; }
-        
+        public string alertaClase
+        {
+            set
+            {
+                this.alerta.Attributes["class"] = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                this.alerta.Attributes["role"] = value;
+            }
+        }
+        public string alert
+        {
+            set
+            {
+                this.alerta.InnerHtml = value;
+            }
+        }
+
         
         
         

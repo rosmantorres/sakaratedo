@@ -29,6 +29,8 @@ namespace DominioSKD.Entidades.Modulo8
         /// a competencias asociadas a la restriccion</attr>
         /// <attr name="listaCintas">atributo que comprende una lista de Objetos tipo cinta que corresponden a cintas 
         /// asociadas a la restriccion</attr>
+        /// <attr name="status">atributo que corresponde al estatus de la restriccion si se encuentra activa (1) o
+        /// desactivada (0)</attr>
         /// </summary>
 
         private int idRestriccionComp;
@@ -43,6 +45,7 @@ namespace DominioSKD.Entidades.Modulo8
         private String modalidad;
         private List<Competencia> listaCompetencias;
         private List<Cinta> listaCintas;
+        private int status;
         #endregion
 
         #region Propiedades
@@ -119,6 +122,14 @@ namespace DominioSKD.Entidades.Modulo8
             set { listaCintas = value; }
         }
 
+        public int Status
+        {
+
+            get { return status; }
+            set { status = value; }
+
+        }
+
         #endregion
 
         #region Constructores
@@ -141,6 +152,7 @@ namespace DominioSKD.Entidades.Modulo8
             this.modalidad = String.Empty;
             this.listaCompetencias = null;
             this.listaCintas = null;
+            this.status = -1;
         }
 
         /// <summary>
@@ -161,7 +173,32 @@ namespace DominioSKD.Entidades.Modulo8
             this.modalidad = String.Empty;
             this.listaCompetencias = null;
             this.listaCintas = null;
+            this.status = -1;
         }
+
+        /// <summary>
+        /// Constructor público solo con el id de la restriccion de la clase RestriccionCompetencia y sin identificador unico
+        /// </summary>
+        public RestriccionCompetencia(int inputId, int status)
+            : base(0)
+        {
+            this.idRestriccionComp = inputId;
+            this.descripcion = String.Empty;
+            this.edadMinima = 0;
+            this.edadMaxima = 0;
+            this.rangoMinimo = 1;
+            this.rangoMaximo = 20;
+            this.fechaEdadMin = new DateTime();
+            this.fechaEdadMax = new DateTime();
+            this.sexo = String.Empty;
+            this.modalidad = String.Empty;
+            this.listaCompetencias = null;
+            this.listaCintas = null;
+            status = status;
+
+        }
+
+
 
         /// <summary>
         /// Constructor público sin el id de la restriccion de la clase RestriccionCompetencia y sin identificador unico
@@ -182,6 +219,7 @@ namespace DominioSKD.Entidades.Modulo8
             modalidad = inputModalidad;
             listaCompetencias = null;
             listaCintas = null;
+            status = -1;
         }
 
         /// <summary>
@@ -203,7 +241,32 @@ namespace DominioSKD.Entidades.Modulo8
             modalidad = inputModalidad;
             listaCompetencias = null;
             listaCintas = null;
+            status = -1;
         }
+
+        /// <summary>
+        /// Constructor público con todos los atributos de la tupla de la clase RestriccionCompetencia y sin identificador unico
+        /// </summary>
+        public RestriccionCompetencia(int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+                                      int inputRangoMaximo, String inputSexo, String inputModalidad, int status)
+            : base(0)
+        {
+            idRestriccionComp = inputId;
+            descripcion = inputDescripcion;
+            edadMinima = inputEdadMinima;
+            edadMaxima = inputEdadMaxima;
+            rangoMinimo = inputRangoMinimo;
+            rangoMaximo = inputRangoMaximo;
+            fechaEdadMin = new DateTime();
+            fechaEdadMax = new DateTime();
+            sexo = inputSexo;
+            modalidad = inputModalidad;
+            listaCompetencias = null;
+            listaCintas = null;
+            this.status = status;
+        }
+
+
 
 
         /// <summary>
@@ -225,7 +288,32 @@ namespace DominioSKD.Entidades.Modulo8
             modalidad = inputModalidad;
             listaCompetencias = null;
             listaCintas = null;
+            status = -1;
         }
+
+        /// <summary>
+        /// Constructor público con todos los atributos de la tupla de la clase RestriccionCompetencia y con identificador unico
+        /// </summary>
+        public RestriccionCompetencia(int id, int inputId, String inputDescripcion, int inputEdadMinima, int inputEdadMaxima, int inputRangoMinimo,
+                                      int inputRangoMaximo, String inputSexo, String inputModalidad, int status)
+        {
+            base.Id = id;
+            idRestriccionComp = inputId;
+            descripcion = inputDescripcion;
+            edadMinima = inputEdadMinima;
+            edadMaxima = inputEdadMaxima;
+            rangoMinimo = inputRangoMinimo;
+            rangoMaximo = inputRangoMaximo;
+            fechaEdadMin = new DateTime();
+            fechaEdadMax = new DateTime();
+            sexo = inputSexo;
+            modalidad = inputModalidad;
+            listaCompetencias = null;
+            listaCintas = null;
+            this.status = status;
+            
+        }
+
         #endregion
 
     }

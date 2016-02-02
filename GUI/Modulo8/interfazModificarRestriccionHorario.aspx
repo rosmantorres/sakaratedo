@@ -45,21 +45,22 @@
   
 <form  role="form" name="agregar_restriccion" id="agregar_restriccion" method="post"   runat="server">  
 
- 
   
  <div class="container">
+     <asp:Label ID="labelRest" runat="server" style="font-size:20px;"/>
 	<div class="row" style="margin-top: 5%">
 		<div class="col-md-3">
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
-					
+					<p style="margin-top:50px;">Seleccione la edad mínima</p>
 					<div class="dropdown" runat="server" id="divEdadMin" contenteditable="false" draggable="false" >
-                        <asp:DropDownList style="width:265px; height:35px; margin-top: 5%" ID="comboEdadMinima" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="false" >
+                        <asp:DropDownList style="width:265px; height:35px; margin-top: -10px;" ID="comboEdadMinima" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="false" >
                         </asp:DropDownList>
                     </div>	
 					
 					<div class="col-sm-8 col-md-8 col-lg-84">
-                        <div class="dropdown" runat="server" id="div1"  style="margin-top:10px; margin-left:-15px;">
+                        <p style="margin-top:30px; margin-left:-15px;">Seleccione el sexo:</p>
+                        <div class="dropdown" runat="server" id="div1"  style="margin-top:-10px; margin-left:-15px;">
                             <asp:DropDownList ID="comboSexo" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
                             </asp:DropDownList>
                          </div>  
@@ -72,19 +73,21 @@
         <div class="col-md-3">
 			<div class="form-group">
 				<div class="icon-addon addon-lg">
+                    <p style="margin-top:50px;">Seleccione la edad máxima:</p>
 					<div class="dropdown" runat="server" id="divEdadMax" contenteditable="false" >
-                        <asp:DropDownList ID="comboEdadMaxima" style="width:265px; height:35px; margin-top: 5%" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="false" >
+                        <asp:DropDownList ID="comboEdadMaxima" style="width:265px; height:35px; margin-top: -10px;" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="false" >
                         </asp:DropDownList>
                     </div>	
 					
 					<div class="col-sm-8 col-md-8 col-lg-84">
-             <div class="dropdown" runat="server" id="combocintama" style="margin-top:10px; margin-left:-15px;">
+                        <p style="margin-top:30px; margin-left:-15px;">Seleccione la cinta:</p>
+                        <div class="dropdown" runat="server" id="combocintama" style="margin-top:-10px; margin-left:-15px;">
                  <asp:DropDownList ID="comboCintaMayor" name="dropdowlist" class="btn btn-default dropdown-toggle" runat="server" AutoPostBack="true" >
                  </asp:DropDownList>
               </div>  
           </div>
-				    <a id="btn-cancelar" type="submit" style="margin-top:11px; margin-right:183px; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx">Cancelar</a>
-                  <asp:Button id="btnaceptar" style="margin-top:55px; margin-left:-277px;" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Agregar" href="interfazRestriccionesHorario.aspx?actionSuccess=1"  ></asp:Button>
+				    <a id="btn-cancelar" type="submit" style="margin-top:35px; margin-right:185px; height:35px" class="btn btn-default pull-right" href="interfazRestriccionesHorario.aspx">Cancelar</a>
+                  <asp:Button id="btnaceptar" style="margin-top:120px; margin-left:-285px;" class="btn btn-primary" OnClick="btnaceptar_Click" type="submit" runat="server" Text = "Modificar" href="interfazRestriccionesHorario.aspx?actionSuccess=1"  ></asp:Button>
                 </div>
 			</div>
 		</div>

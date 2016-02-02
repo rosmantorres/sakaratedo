@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
-using System.Data.SqlClient;
 using DatosSKD.Fabrica;
+using ExcepcionesSKD;
+using System.Data;
+using System.Data.SqlClient;
 
 
 namespace LogicaNegociosSKD.Comandos.Modulo8
 {
-    public class ComandoConsultarTodosRestriccionCompetencia : Comando<List<Entidad>>
+    public class ComandoAgregarRestriccionCintaSimple : Comando<Boolean>
     {
 
         private Entidad parametro;
@@ -21,21 +23,21 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             get { return parametro; }
             set { parametro = value; }
         }
-        public override List<Entidad> Ejecutar()
+
+        public ComandoAgregarRestriccionCintaSimple(Entidad nuevaEntidad)
+            : base()
         {
-            List<Entidad> resultado = new List<Entidad>();
+            this.LaEntidad = nuevaEntidad;
+        }
 
-            DatosSKD.Fabrica.FabricaDAOSqlServer fabricaDAO = new DatosSKD.Fabrica.FabricaDAOSqlServer();
-
-            
+        public override Boolean Ejecutar()
+        {
             try
             {
-
                 FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-                
-                IDaoRestriccionCompetencia daoRestriccionCompetencia = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCompetencia();
-                resultado = daoRestriccionCompetencia.ConsultarTodos();
-
+                IDaoRestriccionCinta miRestCintaDAO = DatosSKD.Fabrica.FabricaDAOSqlServer.ObtenerDAORestriccionCinta();
+                miRestCintaDAO.AgregarRestriccionCintaSimple(this.LaEntidad);
+                return true;
             }
             catch (SqlException ex)
             {
@@ -54,10 +56,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
                 throw ex;
             }
 
-            return resultado;
 
         }
-
-
     }
 }

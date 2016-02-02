@@ -11,6 +11,6 @@ namespace Interfaz_Contratos.Modulo8
         string RestriccionesCreadas { get; set; }
         string alertaClase { set; }
         string alertaRol { set; }
-        string alert { set; }
+        string alerta { set; }
     }
 }

@@ -239,25 +239,125 @@
   <data name="BotonModificarRegistroCompetencia" xml:space="preserve">
     <value>&lt;a  class="btn btn-default glyphicon glyphicon-edit" href="interfazModificarRestriccionEvento.aspx?idPlan=</value>
   </data>
-  <data name="Descripcion" xml:space="preserve">
-    <value>&amp;descripcion=</value>
+  <data name="Status" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesAvanceCinta.aspx?idPlan=</value>
   </data>
-  <data name="EdadMax" xml:space="preserve">
-    <value>&amp;edadmaxima=</value>
+  <data name="RestriccionStatus" xml:space="preserve">
+    <value>&amp;stat=</value>
   </data>
-  <data name="EdadMin" xml:space="preserve">
-    <value>&amp;edadminima=</value>
+  <data name="alertaError" xml:space="preserve">
+    <value>alert alert-danger alert-dismissible</value>
   </data>
-  <data name="Modalidad" xml:space="preserve">
-    <value>&amp;modalidad=</value>
+  <data name="alertaHtml" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;</value>
   </data>
-  <data name="RangoMax" xml:space="preserve">
-    <value>&amp;rangomax=</value>
+  <data name="alertaHtmlFinal" xml:space="preserve">
+    <value>&lt;/div&gt;</value>
   </data>
-  <data name="RangoMin" xml:space="preserve">
-    <value>&amp;rangomin=</value>
+  <data name="alertaSuccess" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
   </data>
-  <data name="Sexo" xml:space="preserve">
-    <value>&amp;sexo=</value>
+  <data name="idAlertAgregar" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="idAlertModificar" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="innerHtmlAlertAgregar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento agregado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="innerHtmlAlertModificar" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Evento modificado exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="strEventoDetalle" xml:space="preserve">
+    <value>restEventoDetalle</value>
+  </data>
+  <data name="strSuccess" xml:space="preserve">
+    <value>success</value>
+  </data>
+  <data name="tipoAlerta" xml:space="preserve">
+    <value>alert</value>
+  </data>
+  <data name="edadErrada" xml:space="preserve">
+    <value>Edad minima no puede ser mayor a la maxima</value>
+  </data>
+  <data name="Numbers" xml:space="preserve">
+    <value>0123456789</value>
+  </data>
+  <data name="AmbosSexos" xml:space="preserve">
+    <value>Ambos Sexos</value>
+  </data>
+  <data name="B" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="F" xml:space="preserve">
+    <value>F</value>
+  </data>
+  <data name="Femenino" xml:space="preserve">
+    <value>Femenino</value>
+  </data>
+  <data name="key" xml:space="preserve">
+    <value>key</value>
+  </data>
+  <data name="M" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="Masculino" xml:space="preserve">
+    <value>Masculino</value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>value</value>
+  </data>
+  <data name="innerHtmlAlertAgregarRCi" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Restriccion Cinta Agregada Exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="innerHtmlAlertModificarRCi" xml:space="preserve">
+    <value>&lt;div&gt;&lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;Restriccion Cinta Modificada Exitosamente&lt;/div&gt;</value>
+  </data>
+  <data name="StatusEvento" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesHorario.aspx?idPlan=</value>
+  </data>
+  <data name="Emax" xml:space="preserve">
+    <value>&amp;emax=</value>
+  </data>
+  <data name="Emin" xml:space="preserve">
+    <value>&amp;emin=</value>
+  </data>
+  <data name="nombreEvento" xml:space="preserve">
+    <value>Nombre del Evento:  </value>
+
+
+</data>
+  <data name="StatusRC" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
+
+
+  </data>
+  <data name="StatusRC" xml:space="preserve">
+    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
+  </data>
+  <data name="AgregarExitoRestriccionCompetencia" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesEventos.aspx?success=1</value>
+
+  </data>
+  <data name="Activa" xml:space="preserve">
+    <value>Activa</value>
+  </data>
+  <data name="Inactiva" xml:space="preserve">
+    <value>Inactiva</value>
+
+  </data>
+  <data name="restAgregada" xml:space="preserve">
+    <value>Restriccion de </value>
+  </data>
+  <data name="restAgregada2" xml:space="preserve">
+    <value>, creada correctamente.</value>
+  </data>
+  <data name="restModificada" xml:space="preserve">
+    <value>Restriccion </value>
+  </data>
+  <data name="restModificada2" xml:space="preserve">
+    <value>, modificada correctamente.</value>
+
   </data>
 </root>

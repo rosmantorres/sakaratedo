@@ -308,6 +308,11 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarTodosRestriccionCompetencia();
         }
 
+        public Comando<Boolean> CrearComandoEliminarLogicoRestriccionCompetencia(Entidad laRestCompetencia)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarLogicoRestriccionCompetencia(laRestCompetencia);
+        }
+
         #endregion
 
         #region Comandos Restriccion Avance de Cinta
@@ -316,32 +321,40 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCinta(laRestCinta);
         }
 
+        /*public static Comando<Boolean> CrearComandoAgregarRestriccionCintaSimple(Entidad laRestCinta)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCintaSimple(laRestCinta);
+        }*/
+
         public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarRestriccionCinta()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionCinta();
         }
 
-        public Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCintaTodas()
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarCintaTodas()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarCintaTodas();
         }
 
-        public Comando<Boolean> CrearComandoModificarRestriccionCinta(Entidad laRestCinta)
+        public static Comando<Boolean> CrearComandoModificarRestriccionCinta(Entidad laRestCinta)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionCinta(laRestCinta);
         }
 
-
+        public static Comando<Boolean> CrearComandoStatusRestriccionCinta(Entidad laRestCinta)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarStatusCinta(laRestCinta);
+        }
 
         #endregion
 
         #region Restriccion Evento
-        public Comando<List<DominioSKD.Entidad>> CrearComandoConsultarEventosSinRestriccion()
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoConsultarEventosSinRestriccion()
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarEventosSinRestriccion();
         }
 
-        public Comando<Boolean> CrearComandoAgregarRestriccionEvento(Entidad laRestEvento)
+        public static Comando<Boolean> CrearComandoAgregarRestriccionEvento(Entidad laRestEvento)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionEvento(laRestEvento);
         }
@@ -351,14 +364,27 @@ namespace LogicaNegociosSKD.Fabrica
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarRestriccionEvento();
         }
         
-        public Comando<Boolean> CrearComandoModificarRestriccionEvento(Entidad laRestEvento)
+        public static Comando<Boolean> CrearComandoModificarRestriccionEvento(Entidad laRestEvento)
         {
             return new LogicaNegociosSKD.Comandos.Modulo8.ComandoModificarRestriccionEvento(laRestEvento);
         }
+
+        public static Comando<Boolean> CrearComandoEliminarRestriccionEvento(Entidad laRestEvento)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarRestriccionEvento(laRestEvento);
+        }
+
+        public static Comando<DominioSKD.Entidad> CrearComandoConsultarUnaRestriccionEvento(Entidad elEvento)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoConsultarUnaRestriccionEvento(elEvento);
+        }
+
+        public static Comando<List<DominioSKD.Entidad>> CrearComandoEventosQuePuedeParticiparAtleta(Entidad laPersona)
+        {
+            return new LogicaNegociosSKD.Comandos.Modulo8.ComandoEventosQuePuedeParticiparAtleta(laPersona);
+        }
         #endregion
-
-
-
+        
         #endregion
 
         #region Modulo 9

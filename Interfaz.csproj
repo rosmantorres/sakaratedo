@@ -60,9 +60,6 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <!--     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" /> -->
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>

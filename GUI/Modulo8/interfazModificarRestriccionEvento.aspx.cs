@@ -36,8 +36,6 @@ namespace templateApp.GUI.Modulo8
             }
         }
         public String descripcion { get; set; }
-        //ListBox competenciasRelacionadas { get; set; }
-        //ListBox competeciasNoRelacionadas { get; set; }
         public DropDownList rangoMinimo
         {
             get
@@ -117,6 +115,28 @@ namespace templateApp.GUI.Modulo8
                 this.comboModalidad = value;
             }
 
+        }
+
+        public string alertaClase
+        {
+            set
+            {
+                this.alert.Attributes["class"] = value;
+            }
+        }
+        public string alertaRol
+        {
+            set
+            {
+                this.alert.Attributes["role"] = value;
+            }
+        }
+        public string alerta
+        {
+            set
+            {
+                this.alert.InnerHtml = value;
+            }
         }
         #endregion
         protected void Page_Load(object sender, EventArgs e)

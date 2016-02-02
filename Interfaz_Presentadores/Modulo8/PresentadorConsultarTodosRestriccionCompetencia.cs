@@ -11,6 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+
+
 namespace Interfaz_Presentadores.Modulo8
 {
     public class PresentadorConsultarTodosRestriccionCompetencia
@@ -39,23 +42,16 @@ namespace Interfaz_Presentadores.Modulo8
                     vista.restriccionCompetencia += RecursoPresentadorM8.AbrirTD + restriccion.RangoMaximo.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.restriccionCompetencia += RecursoPresentadorM8.AbrirTD + restriccion.Sexo.ToString() + RecursoPresentadorM8.CerrarTD;
                     vista.restriccionCompetencia += RecursoPresentadorM8.AbrirTD + restriccion.Modalidad.ToString() + RecursoPresentadorM8.CerrarTD;
-                    //vista.restriccionCompetencia += RecursosPresentadorModulo14.AbrirTD;
-                    //foreach (string dat in restriccion.Dato)
-                    //{
-                    //    vista.planillaCreadas += dat + RecursosPresentadorModulo14.linea;
-                    //}
-                    //vista.restriccionCompetencia += RecursosPresentadorModulo14.CerrarTD;
+                    if (restriccion.Status == 1)
+                        vista.restriccionCompetencia += RecursoPresentadorM8.AbrirTD + "Activa" + RecursoPresentadorM8.CerrarTD;
+                    else
+                        vista.restriccionCompetencia += RecursoPresentadorM8.AbrirTD + "Inactiva" + RecursoPresentadorM8.CerrarTD;
                     vista.restriccionCompetencia += RecursoPresentadorM8.AbrirTD;
                     vista.restriccionCompetencia += RecursoPresentadorM8.BotonModificarRegistroCompetencia + restriccion.IdRestriccionComp + RecursoPresentadorM8.Descripcion
                         + restriccion.Descripcion + RecursoPresentadorM8.EdadMin + restriccion.EdadMinima + RecursoPresentadorM8.EdadMax + restriccion.EdadMaxima
                         + RecursoPresentadorM8.RangoMin + restriccion.RangoMinimo + RecursoPresentadorM8.RangoMax + restriccion.RangoMaximo
                         + RecursoPresentadorM8.Sexo + restriccion.Sexo + RecursoPresentadorM8.Modalidad + restriccion.Modalidad + RecursoPresentadorM8.BotonCerrar;
-
-                    //vista.restriccionCompetencia += RecursosPresentadorModulo14.BotonModificarRegistro + restriccion.ID + RecursosPresentadorModulo14.Nombre + plani.Nombre + RecursosPresentadorModulo14.Tipo + plani.TipoPlanilla + RecursosPresentadorModulo14.BotonCerrar;
-                    //if (plani.Status)
-                    //    vista.planillaCreadas += RecursosPresentadorModulo14.BotonActivarPlanilla + restriccion.ID + RecursosPresentadorModulo14.BotonCerrar;
-                    //else
-                    //    vista.planillaCreadas += RecursosPresentadorModulo14.BotonDesactivarPlanilla + restriccion.ID + RecursosPresentadorModulo14.BotonCerrar;
+                    vista.restriccionCompetencia += RecursoPresentadorM8.StatusRC + restriccion.IdRestriccionComp + RecursoPresentadorM8.RestriccionStatus + restriccion.Status + RecursoPresentadorM8.BotonCerrar;
                     vista.restriccionCompetencia += RecursoPresentadorM8.CerrarTD;
                     vista.restriccionCompetencia += RecursoPresentadorM8.CerrarTR;
 
@@ -66,7 +62,7 @@ namespace Interfaz_Presentadores.Modulo8
             }
             catch (Exception ex)
             {
-
+                Alerta(ex.Message);
 
             }
 
@@ -82,11 +78,65 @@ namespace Interfaz_Presentadores.Modulo8
 
             catch (Exception ex)
             {
-
-                throw ex;
+                Alerta(ex.Message);
+                return null;
             }
         }
 
+
+        public Boolean CambiarStatus(int id, int bitStatus)
+        {
+            try
+            {
+                DominioSKD.Entidades.Modulo8.RestriccionCompetencia laRestComp = new DominioSKD.Entidades.Modulo8.RestriccionCompetencia();
+                if (bitStatus == 1)
+                    bitStatus = 0;
+                else
+                {
+                    if (bitStatus == 0)
+                        bitStatus = 1;
+                    else
+                        return false;
+                }
+                laRestComp.Status = bitStatus;
+                laRestComp.IdRestriccionComp = id;
+                LogicaNegociosSKD.Fabrica.FabricaComandos fabrica = new LogicaNegociosSKD.Fabrica.FabricaComandos();
+
+                LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarLogicoRestriccionCompetencia comando =
+                (LogicaNegociosSKD.Comandos.Modulo8.ComandoEliminarLogicoRestriccionCompetencia)fabrica.CrearComandoEliminarLogicoRestriccionCompetencia(laRestComp);
+                bool resultado = comando.Ejecutar();
+                return resultado;
+            }
+            catch (SqlException ex)
+            {
+                Alerta(ex.Message);
+                return false;
+            }
+            catch (FormatException ex)
+            {
+                Alerta(ex.Message);
+                return false;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
+                return false;
+            }
+
+            
+        }
+
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = "alert alert-danger alert-dismissible";
+            vista.alertaRol = "alert";
+            vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+        }
 
     }
 }

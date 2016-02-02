@@ -8,6 +8,7 @@ using Interfaz_Contratos.Modulo8;
 using ExcepcionesSKD.Modulo8;
 using System.Data.SqlClient;
 using ExcepcionesSKD;
+using System.Web;
 //using System.Windows;
 
 
@@ -34,43 +35,52 @@ namespace Interfaz_Presentadores.Modulo8
                 DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
                 LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia comando =
                 (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCompetencia();
-                DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabricaEntidad.ObtenerRestriccionCompetencia();
+                DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia();
                 //comando.Parametro = elObjeto;
                 restriccionCompetencia = meterParametrosVistaEnObjeto();
                 comando.Parametro = restriccionCompetencia;
                 resultado = comando.Ejecutar();
-
+                if (resultado == true)
+                    HttpContext.Current.Response.Redirect(RecursoPresentadorM8.AgregarExitoRestriccionCompetencia);
 
 
             }
             catch (RestriccionExistenteException ex)
             {
 
-                throw ex;
+                Alerta(ex.Message);
+                return false;
+
 
             }
             catch (SqlException ex)
             {
 
 
-                throw ex;
+                Alerta(ex.Message);
+                return false;
+
 
             }
             catch (FormatException ex)
             {
-                throw ex;
+                Alerta(ex.Message);
+                return false;
+
 
             }
             catch (ExceptionSKDConexionBD ex)
             {
 
-                throw ex;
+                Alerta(ex.Message);
+                return false;
+
 
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                Alerta(ex.Message);
+                return false;
 
             }
             return resultado;
@@ -100,85 +110,12 @@ namespace Interfaz_Presentadores.Modulo8
 
         }
 
-        //public void LlenarListaCompetenciasNoAsociadas()
-        //{
-        //    LogicaNegociosSKD.Comando<List<DominioSKD.Entidad>> consultarCompetencias =
-        //    LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoConsultarCompetencias();
-        //    List<DominioSKD.Entidad> listaEntidades = consultarCompetencias.Ejecutar();
-        //    List<DominioSKD.Entidades.Modulo12.Competencia> listaCompetencias = listaEntidades.Cast<DominioSKD.Entidades.Modulo12.Competencia>().ToList();
-
-        //    //foreach (DominioSKD.Entidad entidad in listaEntidades)
-        //    //{
-        //    //    listaCompetencias.Add = ((DominioSKD.Entidades.Modulo12.Competencia)entidad);
-        //    //}
-
-        //    vista.competeciasNoRelacionadas.Enabled = true;
-        //    vista.competeciasNoRelacionadas.DataTextField = "nombre";
-
-        //    vista.competeciasNoRelacionadas.DataSource = listaCompetencias;
-        //    vista.competeciasNoRelacionadas.DataBind();
-        //    //foreach (DominioSKD.Entidad competencia in listaCompetencias)
-        //    //{
-
-        //    //    vista.competeciasNoRelacionadas.Items.Add = (DominioSKD.Entidades.Modulo12.Competencia)competencia;
-
-        //    //}
-        //}
-
-
-        //public void agregarListaCompetenciasAsociadas ()
-        //{
-
-        //    //LogicaNegociosSKD.Comando<Boolean> objetoComando = 
-        //    //LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
-
-        //    LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando = 
-        //    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
-
-
-
-        //    //LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
-        //    //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
-
-        //    DominioSKD.Fabrica.FabricaEntidades fabrica = new  DominioSKD.Fabrica.FabricaEntidades();
-        //    DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp;
-        //    restComp = meterParametrosVistaEnObjeto();
-        //    comando.LaRestriccionCompetencia = restComp;
-        //    List<DominioSKD.Entidad> listaCompetencias;
-        //    listaCompetencias = vista.competenciasRelacionadas.Items.Cast<DominioSKD.Entidad>().ToList();
-        //    comando.ListaCompetencias = listaCompetencias;
-        //    comando.Ejecutar();
-        //}
-
-        //public void agregarListaCompetenciasNoAsociadas()
-        //{
-
-        //    //LogicaNegociosSKD.Comando<Boolean> objetoComando = 
-        //    //LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarListaCompetenciaRestriccionCompetencia();
-
-        //    LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
-        //    (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoEliminarListaCompetenciaRestriccionCompetencia();
-
-
-
-        //    //LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia comando =
-        //    //(LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarListaCompetenciaRestriccionCompetencia)objetoComando;
-
-        //    DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-        //    DominioSKD.Entidades.Modulo8.RestriccionCompetencia restComp;
-        //    restComp = meterParametrosVistaEnObjeto();
-        //    comando.LaRestriccionCompetencia = restComp;
-        //    List<DominioSKD.Entidad> listaCompetencias;
-        //    listaCompetencias = vista.competeciasNoRelacionadas.Items.Cast<DominioSKD.Entidad>().ToList();
-        //    comando.ListaCompetencias = listaCompetencias;
-        //    comando.Ejecutar();
-        //}
 
 
         public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto()
         {
             DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)fabrica.ObtenerRestriccionCompetencia();
+            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia();
             restriccionCompetencia.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
             restriccionCompetencia.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
             restriccionCompetencia.RangoMinimo = int.Parse(vista.rangoMinimo.SelectedValue);
@@ -190,21 +127,7 @@ namespace Interfaz_Presentadores.Modulo8
             return restriccionCompetencia;
 
         }
-        //public void llenarComboRangos()
-        //{
-        //    int index;
-        //    vista.rangoMinimo.Enabled = true;
-        //    vista.rangoMaximo.Enabled = true;
-
-        //    for (index=0;index<=20;index++)
-        //    {
-        //        vista.rangoMinimo.Items.Add(index.ToString());
-
-        //        vista.rangoMaximo.Items.Add(index.ToString());
-
-        //    }
-
-        //}
+        
 
         public void LlenarComboRangos()
         {
@@ -293,6 +216,13 @@ namespace Interfaz_Presentadores.Modulo8
                                      + " Sexo: " + vista.sexo.SelectedValue.ToString()
                                      + " Modalidad: " + vista.modalidad.SelectedValue.ToString());
 
+        }
+
+        public void Alerta(string msj)
+        {
+            vista.alertaClase = "alert alert-danger alert-dismissible";
+            vista.alertaRol = "alert";
+            vista.alert = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
 
 

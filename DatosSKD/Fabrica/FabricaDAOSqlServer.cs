@@ -176,7 +176,7 @@ namespace DatosSKD.Fabrica
 
         #region Modulo 8
 
-        public DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionCompetencia ObtenerDAORestriccionCompetencia()
+        public static DatosSKD.InterfazDAO.Modulo8.IDaoRestriccionCompetencia ObtenerDAORestriccionCompetencia()
         {
             return new DatosSKD.DAO.Modulo8.DAORestriccionCompetencia();
         }

@@ -24,11 +24,11 @@ namespace templateApp.GUI.Modulo8
         {
             get
             {
-                return Request.QueryString["idPlan"];
+                return Request.QueryString[RecursoInterfazModulo8.IdPlan];
             }
             set
             {
-                this.tiempo_minimo.Value = Request.QueryString["idPlan"]; 
+                this.tiempo_minimo.Value = Request.QueryString[RecursoInterfazModulo8.IdPlan]; 
             }
         }
         
@@ -68,35 +68,25 @@ namespace templateApp.GUI.Modulo8
             }
         }
 
-       public String alertLocalRol
+        public string alertaClase
         {
             set
             {
-                this.alertlocal.InnerText = value;
+                this.alert.Attributes["class"] = value;
             }
         }
-
-        public String alertLocalClase
+        public string alertaRol
         {
             set
             {
-                this.alert.InnerText = value;
+                this.alert.Attributes["role"] = value;
             }
         }
-
-        public String alertLocal
+        public string alerta
         {
             set
             {
-                this.alertlocal.InnerHtml = value;
-            }
-        }
-
-        public bool alerta
-        {
-            set
-            {
-                this.alert.Visible = value;
+                this.alert.InnerHtml = value;
             }
         }
         #endregion
@@ -110,10 +100,10 @@ namespace templateApp.GUI.Modulo8
         
         protected void Page_Load(object sender, EventArgs e)
         {   
-            String idEvento = Request.QueryString["idPlan"];
+            String idEvento = Request.QueryString[RecursoInterfazModulo8.IdPlan];
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 
             }
         }
@@ -121,7 +111,10 @@ namespace templateApp.GUI.Modulo8
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            _presentador.ModificarRest();
+            if (_presentador.ModificarRest() == true)
+            {
+                Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta);
+            }
 
         }
         

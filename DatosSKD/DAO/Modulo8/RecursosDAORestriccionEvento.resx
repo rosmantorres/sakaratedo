@@ -213,4 +213,18 @@
   <data name="ParamSexoRestricionEvento" xml:space="preserve">
     <value>@sexo</value>
   </data>
+  <data name="CodigoErrorFormato" xml:space="preserve">
+    <value>SKD_00_004</value>
+    <comment>Codigo de error de Parseo</comment>
+  </data>
+  <data name="MensajeErrorFormato" xml:space="preserve">
+    <value>Error de parseo</value>
+    <comment>Mejsaje de error de parseo</comment>
+  </data>
+  <data name="AliasStatus" xml:space="preserve">
+    <value>res_eve_status</value>
+  </data>
+  <data name="ParamStatus" xml:space="preserve">
+    <value>@res_eve_status</value>
+  </data>
 </root>

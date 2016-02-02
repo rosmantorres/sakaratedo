@@ -7,6 +7,7 @@ using DatosSKD.InterfazDAO.Modulo8;
 using DominioSKD;
 using DatosSKD.Fabrica;
 using ExcepcionesSKD;
+using ExcepcionesSKD.Modulo8;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -48,18 +49,22 @@ namespace LogicaNegociosSKD.Comandos.Modulo8
             }
             catch (SqlException ex)
             {
-                throw ex;
+                Console.Out.WriteLine("1" + " " + ex.Message);
+                throw  ex;
             }
             catch (FormatException ex)
             {
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
             catch (Exception ex)
             {
+                Console.Out.WriteLine("1" + " " + ex.Message);
                 throw ex;
             }
 

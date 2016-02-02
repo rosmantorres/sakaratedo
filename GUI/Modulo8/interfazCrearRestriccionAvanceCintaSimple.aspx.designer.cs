@@ -10,7 +10,7 @@
 namespace templateApp.GUI.Modulo8 {
     
     
-    public partial class interfazCrearRestriccionAvanceCinta {
+    public partial class interfazCrearRestriccionAvanceCintaSimple {
         
         /// <summary>
         /// alert control.
@@ -31,22 +31,13 @@ namespace templateApp.GUI.Modulo8 {
         protected global::System.Web.UI.HtmlControls.HtmlForm agregar_restriccion;
         
         /// <summary>
-        /// divcomboCinta control.
+        /// alertlocal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divcomboCinta;
-        
-        /// <summary>
-        /// comboCinta control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList comboCinta;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertlocal;
         
         /// <summary>
         /// id_otro control.
