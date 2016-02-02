@@ -115,11 +115,11 @@ namespace templateApp.GUI.Modulo4
         /// <param name="e"></param>
         protected void Btn_agregarDojo_Click(object sender, EventArgs e)
         {
-            if (IsValid)
-            {
-                _presentador.AgregarDojo_Click();
+            
+               if( _presentador.AgregarDojo_Click())
                 Response.Redirect("M4_ListarDojos.aspx?success=1");
-            }
+               else
+                Response.Redirect("M4_ListarDojos.aspx?success=4");
         }
     }
 }

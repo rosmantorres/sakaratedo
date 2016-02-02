@@ -133,7 +133,7 @@
                                 Display="Static" 
                                 ControlToValidate="cmatriHM" 
                                 ErrorMessage="Formato de Monto Matricula no valido" 
-                                ValidationExpression="(^\d{1,3}(?:\,\d{1,2})?$)"
+                                ValidationExpression="(^\d{1,10}(?:\,\d{1,2})?$)"
                                 EnableClientScript="True"  />
                         </div>
 

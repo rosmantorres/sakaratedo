@@ -71,6 +71,7 @@ namespace templateApp.GUI.Modulo4
                 _presentador.AgregarHistorialM_Click();
                 Response.Redirect("M4_ListarHistorialMatricula.aspx?success=1");
             }
+
         }
     }
 }

@@ -212,7 +212,7 @@
                             <h3>Estado:</h3>
                                     <div class="dropdown" runat="server" id="divComboCintaHasta">
                                        <asp:DropDownList ID="estadoDojo"  class="btn btn-default dropdown-toggle" runat="server" AppendDataBoundItems="True">
-                                            <asp:ListItem>Seleccione Estado: </asp:ListItem>
+                                            <asp:ListItem Value="" Selected="True">Seleccione Estado: </asp:ListItem>
                                             <asp:ListItem Value="Amazonas">Amazonas</asp:ListItem>
                                             <asp:ListItem Value="Anzoátegui">Anzoátegui</asp:ListItem>
                                             <asp:ListItem Value="Apure">Apure</asp:ListItem>
@@ -238,14 +238,14 @@
                                             <asp:ListItem Value="Yaracuy">Yaracuy</asp:ListItem>
                                             <asp:ListItem Value="Zulia">Zulia</asp:ListItem>
                                        </asp:DropDownList>
-                                       <asp:requiredfieldvalidator 
+                                 <!--      <asp:requiredfieldvalidator 
                                             id="rfvEstado" 
                                             runat="server" 
                                             Display="Static" 
                                             ControlToValidate="ciudadDojo" 
                                             ErrorMessage="Falta Ingreso de Ciudad"
                                             EnableClientScript="True" 
-                                            InitialValue="Seleccione Estado:" />
+                                            InitialValue="Seleccione Estado:" />-->
                                     </div>
                 
                         </div>

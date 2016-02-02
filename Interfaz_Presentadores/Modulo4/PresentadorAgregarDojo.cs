@@ -30,7 +30,7 @@ namespace Interfaz_Presentadores.Modulo4
         /// <summary>
         /// Método para agregar un nuevo Dojo
         /// </summary>
-        public void AgregarDojo_Click()
+        public bool AgregarDojo_Click()
         {
             DojoM4 elDojo = (DojoM4)FabricaEntidades.ObtenerDojo_M4();
             DominioSKD.Organizacion org = (DominioSKD.Organizacion)FabricaEntidades.ObtenerOrganizacion_M4();
@@ -40,11 +40,12 @@ namespace Interfaz_Presentadores.Modulo4
             string lat = (r.Next(0, 180000) / 1000).ToString();
             string lon = (r.Next(-180000, 0) / 1000).ToString();
             string tlf = "";
-            tlf = vista.Telefono.Remove(0,1);
-            tlf = tlf.Remove(4,1);
-            tlf = tlf.Remove(7,1);
+            
             try
             {
+                tlf = vista.Telefono.Remove(0, 1);
+                tlf = tlf.Remove(4, 1);
+                tlf = tlf.Remove(7, 1);
                 //Se cargan todos los valores tomados de la interfaz al objeto dojo
                 org.Id = vista.Persona;
                 elDojo.Organizacion = org;
@@ -68,6 +69,7 @@ namespace Interfaz_Presentadores.Modulo4
                 Comando<bool> agregarDojo = FabricaComandos.CrearComandoAgregarDojo();
                 agregarDojo.LaEntidad = elDojo;
                 agregarDojo.Ejecutar();
+                return true;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
@@ -86,6 +88,17 @@ namespace Interfaz_Presentadores.Modulo4
                 vista.Alerta = M4_RecursosPresentador.alertaHtml
                     + ex.Mensaje + M4_RecursosPresentador.alertaHtmlFinal;
             }
+            catch (System.Exception ex)
+            {
+
+                Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
+                vista.AlertaClase = M4_RecursosPresentador.alertaError;
+                vista.AlertaRol = M4_RecursosPresentador.tipoAlerta;
+                vista.Alerta = M4_RecursosPresentador.alertaHtml
+                    + "Campos Vacios" + M4_RecursosPresentador.alertaHtmlFinal;
+                return false;
+            }
+            return false;
         }
 
     }

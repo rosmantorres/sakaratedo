@@ -7394,3 +7394,519 @@ Error Number:8146,State:2,Class:16
 =======
 >>>>>>> 70b7860900e2d231d5475996f597616333e3fb90
 >>>>>>> 558406d8f36ff4e1e1c3aa2567c8a645cab7552b
+2016-02-02 12:00:28,860 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:00:28,865 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:00:28,866 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:00:28,866 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:00:28,876 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:00:28,876 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:00:28,876 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:00:28,876 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:00:28,954 INFO  DaoDojo - *******************************************************
+2016-02-02 12:00:28,954 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:00:28,954 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:00:28,954 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:00:34,585 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:00:34,585 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:00:34,585 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:00:34,585 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:00:34,591 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:00:34,591 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:00:34,591 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:00:34,591 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:00:34,672 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:00:34,672 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:00:34,672 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:00:34,672 INFO  DaoHistorialM - Metodo: ConsultarTodos
+2016-02-02 12:00:40,099 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-02-02 12:00:40,099 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-02-02 12:00:40,099 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:00:40,099 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-02-02 12:00:40,104 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-02-02 12:00:40,104 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-02-02 12:00:40,104 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:00:40,104 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-02-02 12:00:40,108 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:00:40,108 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:00:40,108 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:00:40,108 INFO  DaoHistorialM - Metodo: ConsultarXId
+2016-02-02 12:01:05,346 INFO  ComandoModificarHistorialM - *******************************************************
+2016-02-02 12:01:05,346 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-02-02 12:01:05,346 INFO  ComandoModificarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:01:05,346 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:05,356 INFO  ComandoModificarHistorialM - *******************************************************
+2016-02-02 12:01:05,356 INFO  ComandoModificarHistorialM - Clase: ComandoModificarHistorialM
+2016-02-02 12:01:05,356 INFO  ComandoModificarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:05,356 INFO  ComandoModificarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:05,363 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:01:05,363 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:01:05,363 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:01:05,363 INFO  DaoHistorialM - Metodo: Modificar
+2016-02-02 12:01:05,473 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:01:05,473 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:01:05,473 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:05,473 INFO  DaoHistorialM - Metodo: Modificar
+2016-02-02 12:01:05,496 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:01:05,496 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:01:05,496 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:01:05,496 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:05,500 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:01:05,500 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:01:05,500 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:05,500 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:05,510 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:01:05,510 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:01:05,510 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:05,510 INFO  DaoHistorialM - Metodo: ConsultarTodos
+2016-02-02 12:01:19,978 INFO  ComandoEliminarHistorialM - *******************************************************
+2016-02-02 12:01:19,978 INFO  ComandoEliminarHistorialM - Clase: ComandoEliminarHistorialM
+2016-02-02 12:01:19,978 INFO  ComandoEliminarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:01:19,978 INFO  ComandoEliminarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:19,983 INFO  ComandoEliminarHistorialM - *******************************************************
+2016-02-02 12:01:19,983 INFO  ComandoEliminarHistorialM - Clase: ComandoEliminarHistorialM
+2016-02-02 12:01:19,983 INFO  ComandoEliminarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:19,983 INFO  ComandoEliminarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:19,990 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:01:19,990 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:01:19,990 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:01:19,990 INFO  DaoHistorialM - Metodo: Eliminar
+2016-02-02 12:01:20,128 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:01:20,128 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:01:20,128 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:01:20,128 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:20,134 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:01:20,134 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:01:20,134 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:20,134 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:20,148 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:01:20,148 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:01:20,148 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:20,148 INFO  DaoHistorialM - Metodo: ConsultarTodos
+2016-02-02 12:01:47,607 INFO  ComandoEliminarHistorialM - *******************************************************
+2016-02-02 12:01:47,608 INFO  ComandoEliminarHistorialM - Clase: ComandoEliminarHistorialM
+2016-02-02 12:01:47,608 INFO  ComandoEliminarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:01:47,608 INFO  ComandoEliminarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:47,633 INFO  ComandoEliminarHistorialM - *******************************************************
+2016-02-02 12:01:47,633 INFO  ComandoEliminarHistorialM - Clase: ComandoEliminarHistorialM
+2016-02-02 12:01:47,633 INFO  ComandoEliminarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:47,633 INFO  ComandoEliminarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:47,639 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:01:47,640 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:01:47,640 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:01:47,640 INFO  DaoHistorialM - Metodo: Eliminar
+2016-02-02 12:01:47,685 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:01:47,685 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:01:47,685 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:01:47,685 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:47,690 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:01:47,690 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:01:47,690 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:47,690 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:01:47,698 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:01:47,698 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:01:47,699 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:01:47,699 INFO  DaoHistorialM - Metodo: ConsultarTodos
+2016-02-02 12:03:27,556 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-02-02 12:03:27,557 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-02-02 12:03:27,557 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:03:27,557 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-02-02 12:03:27,566 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-02-02 12:03:27,566 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-02-02 12:03:27,566 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:03:27,566 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-02-02 12:03:27,572 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:03:27,572 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:03:27,572 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:03:27,572 INFO  DaoHistorialM - Metodo: Agregar
+2016-02-02 12:03:27,609 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:03:27,609 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:03:27,609 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:03:27,609 INFO  DaoHistorialM - Metodo: Agregar
+2016-02-02 12:03:27,633 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:03:27,633 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:03:27,633 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:03:27,633 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:03:27,639 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:03:27,639 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:03:27,639 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:03:27,639 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:03:27,649 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:03:27,649 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:03:27,649 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:03:27,649 INFO  DaoHistorialM - Metodo: ConsultarTodos
+2016-02-02 12:04:03,061 INFO  ComandoEliminarHistorialM - *******************************************************
+2016-02-02 12:04:03,062 INFO  ComandoEliminarHistorialM - Clase: ComandoEliminarHistorialM
+2016-02-02 12:04:03,062 INFO  ComandoEliminarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:04:03,062 INFO  ComandoEliminarHistorialM - Metodo: Ejecutar
+2016-02-02 12:04:03,068 INFO  ComandoEliminarHistorialM - *******************************************************
+2016-02-02 12:04:03,068 INFO  ComandoEliminarHistorialM - Clase: ComandoEliminarHistorialM
+2016-02-02 12:04:03,068 INFO  ComandoEliminarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:04:03,068 INFO  ComandoEliminarHistorialM - Metodo: Ejecutar
+2016-02-02 12:04:03,074 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:04:03,074 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:04:03,074 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:04:03,074 INFO  DaoHistorialM - Metodo: Eliminar
+2016-02-02 12:04:03,117 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:04:03,117 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:04:03,117 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:04:03,117 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:04:03,120 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:04:03,120 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:04:03,120 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:04:03,120 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:04:03,126 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:04:03,127 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:04:03,127 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:04:03,127 INFO  DaoHistorialM - Metodo: ConsultarTodos
+2016-02-02 12:04:11,709 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-02-02 12:04:11,710 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-02-02 12:04:11,710 INFO  ComandoDetallarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:04:11,710 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-02-02 12:04:11,715 INFO  ComandoDetallarHistorialM - *******************************************************
+2016-02-02 12:04:11,715 INFO  ComandoDetallarHistorialM - Clase: ComandoDetallarHistorialM
+2016-02-02 12:04:11,715 INFO  ComandoDetallarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:04:11,715 INFO  ComandoDetallarHistorialM - Metodo: Ejecutar
+2016-02-02 12:04:11,720 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:04:11,720 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:04:11,720 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:04:11,720 INFO  DaoHistorialM - Metodo: ConsultarXId
+2016-02-02 12:04:15,442 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:04:15,442 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:04:15,442 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:04:15,442 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:04:15,449 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:04:15,449 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:04:15,449 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:04:15,449 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:04:15,454 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:04:15,454 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:04:15,454 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:04:15,454 INFO  DaoHistorialM - Metodo: ConsultarTodos
+2016-02-02 12:08:19,950 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:08:19,950 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:08:19,950 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:08:19,950 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:08:19,957 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:08:19,957 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:08:19,957 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:08:19,957 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:08:19,969 INFO  DaoDojo - *******************************************************
+2016-02-02 12:08:19,969 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:08:19,969 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:08:19,969 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:08:23,221 INFO  ComandoDetallarDojo - *******************************************************
+2016-02-02 12:08:23,221 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-02-02 12:08:23,221 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-02-02 12:08:23,221 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-02-02 12:08:23,225 INFO  ComandoDetallarDojo - *******************************************************
+2016-02-02 12:08:23,225 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-02-02 12:08:23,225 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-02-02 12:08:23,225 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-02-02 12:08:23,233 INFO  DaoDojo - *******************************************************
+2016-02-02 12:08:23,233 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:08:23,233 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-02-02 12:08:23,233 INFO  DaoDojo - Metodo: ConsultarXId
+2016-02-02 12:08:23,274 INFO  DaoDojo - *******************************************************
+2016-02-02 12:08:23,274 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:08:23,274 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:08:23,274 INFO  DaoDojo - Metodo: ConsultarXId
+2016-02-02 12:08:33,832 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:08:33,832 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:08:33,832 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:08:33,832 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:08:33,841 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:08:33,841 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:08:33,841 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:08:33,841 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:08:33,846 INFO  DaoDojo - *******************************************************
+2016-02-02 12:08:33,846 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:08:33,847 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:08:33,847 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:08:37,298 INFO  ComandoDetallarDojo - *******************************************************
+2016-02-02 12:08:37,298 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-02-02 12:08:37,298 INFO  ComandoDetallarDojo - Mensaje: Entrada en el Método
+2016-02-02 12:08:37,298 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-02-02 12:08:37,304 INFO  ComandoDetallarDojo - *******************************************************
+2016-02-02 12:08:37,304 INFO  ComandoDetallarDojo - Clase: ComandoDetallarDojo
+2016-02-02 12:08:37,304 INFO  ComandoDetallarDojo - Mensaje: Salida del Método
+2016-02-02 12:08:37,304 INFO  ComandoDetallarDojo - Metodo: Ejecutar
+2016-02-02 12:08:37,310 INFO  DaoDojo - *******************************************************
+2016-02-02 12:08:37,310 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:08:37,310 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-02-02 12:08:37,310 INFO  DaoDojo - Metodo: ConsultarXId
+2016-02-02 12:08:37,318 INFO  DaoDojo - *******************************************************
+2016-02-02 12:08:37,318 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:08:37,318 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:08:37,318 INFO  DaoDojo - Metodo: ConsultarXId
+2016-02-02 12:09:16,492 INFO  ComandoModificarDojo - *******************************************************
+2016-02-02 12:09:16,492 INFO  ComandoModificarDojo - Clase: ComandoModificarDojo
+2016-02-02 12:09:16,492 INFO  ComandoModificarDojo - Mensaje: Entrada en el Método
+2016-02-02 12:09:16,492 INFO  ComandoModificarDojo - Metodo: Ejecutar
+2016-02-02 12:09:16,499 INFO  ComandoModificarDojo - *******************************************************
+2016-02-02 12:09:16,499 INFO  ComandoModificarDojo - Clase: ComandoModificarDojo
+2016-02-02 12:09:16,499 INFO  ComandoModificarDojo - Mensaje: Salida del Método
+2016-02-02 12:09:16,499 INFO  ComandoModificarDojo - Metodo: Ejecutar
+2016-02-02 12:09:16,507 INFO  DaoDojo - *******************************************************
+2016-02-02 12:09:16,507 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:09:16,507 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-02-02 12:09:16,507 INFO  DaoDojo - Metodo: Modificar
+2016-02-02 12:09:16,594 INFO  DaoDojo - *******************************************************
+2016-02-02 12:09:16,594 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:09:16,594 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:09:16,594 INFO  DaoDojo - Metodo: Modificar
+2016-02-02 12:09:16,614 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:09:16,614 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:09:16,614 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:09:16,614 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:09:16,618 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:09:16,618 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:09:16,618 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:09:16,618 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:09:16,626 INFO  DaoDojo - *******************************************************
+2016-02-02 12:09:16,627 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:09:16,627 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:09:16,627 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:13:52,862 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:13:52,868 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:13:52,868 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:13:52,868 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:13:52,877 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:13:52,877 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:13:52,877 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:13:52,877 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:13:52,894 INFO  DaoDojo - *******************************************************
+2016-02-02 12:13:52,894 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:13:52,894 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:13:52,894 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:17:25,888 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:17:25,894 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:17:25,894 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:17:25,894 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:17:25,903 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:17:25,903 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:17:25,903 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:17:25,903 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:17:25,924 INFO  DaoDojo - *******************************************************
+2016-02-02 12:17:25,925 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:17:25,925 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:17:25,925 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:20:01,078 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:20:01,084 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:20:01,084 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:20:01,084 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:20:01,091 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:20:01,092 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:20:01,092 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:20:01,092 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:20:01,112 INFO  DaoDojo - *******************************************************
+2016-02-02 12:20:01,112 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:20:01,112 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:20:01,112 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:21:38,092 ERROR PresentadorAgregarDojo - *******************************************************
+2016-02-02 12:21:38,092 ERROR PresentadorAgregarDojo - Mensaje: El índice y el recuento deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: count
+2016-02-02 12:21:38,093 ERROR PresentadorAgregarDojo - Origen: mscorlib
+2016-02-02 12:21:38,093 ERROR PresentadorAgregarDojo - Metodo: System.String Remove(Int32, Int32)
+2016-02-02 12:21:38,093 ERROR PresentadorAgregarDojo - StackTrace:    en System.String.Remove(Int32 startIndex, Int32 count)
+   en Interfaz_Presentadores.Modulo4.PresentadorAgregarDojo.AgregarDojo_Click()
+2016-02-02 12:21:38,093 ERROR PresentadorAgregarDojo - InnerException: 
+2016-02-02 12:21:38,147 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:21:38,147 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:21:38,147 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:21:38,147 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:21:38,153 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:21:38,153 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:21:38,153 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:21:38,153 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:21:38,169 INFO  DaoDojo - *******************************************************
+2016-02-02 12:21:38,169 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:21:38,169 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:21:38,169 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:21:49,519 INFO  ComandoEliminarDojo - *******************************************************
+2016-02-02 12:21:49,519 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-02-02 12:21:49,519 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-02-02 12:21:49,519 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-02-02 12:21:49,526 INFO  ComandoEliminarDojo - *******************************************************
+2016-02-02 12:21:49,527 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-02-02 12:21:49,527 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-02-02 12:21:49,527 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-02-02 12:21:49,532 INFO  DaoDojo - *******************************************************
+2016-02-02 12:21:49,532 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:21:49,532 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-02-02 12:21:49,532 INFO  DaoDojo - Metodo: EliminarDojo
+2016-02-02 12:21:49,670 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:21:49,670 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:21:49,670 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:21:49,670 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:21:49,675 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:21:49,675 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:21:49,675 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:21:49,675 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:21:49,681 INFO  DaoDojo - *******************************************************
+2016-02-02 12:21:49,682 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:21:49,682 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:21:49,682 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:21:59,775 INFO  ComandoEliminarDojo - *******************************************************
+2016-02-02 12:21:59,775 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-02-02 12:21:59,775 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-02-02 12:21:59,776 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-02-02 12:21:59,782 INFO  ComandoEliminarDojo - *******************************************************
+2016-02-02 12:21:59,783 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-02-02 12:21:59,783 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-02-02 12:21:59,783 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-02-02 12:21:59,789 INFO  DaoDojo - *******************************************************
+2016-02-02 12:21:59,789 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:21:59,789 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-02-02 12:21:59,789 INFO  DaoDojo - Metodo: EliminarDojo
+2016-02-02 12:21:59,839 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:21:59,839 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:21:59,839 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:21:59,839 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:21:59,848 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:21:59,848 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:21:59,848 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:21:59,848 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:21:59,857 INFO  DaoDojo - *******************************************************
+2016-02-02 12:21:59,857 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:21:59,857 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:21:59,857 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:22:06,563 INFO  ComandoEliminarDojo - *******************************************************
+2016-02-02 12:22:06,563 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-02-02 12:22:06,563 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-02-02 12:22:06,563 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-02-02 12:22:06,570 INFO  ComandoEliminarDojo - *******************************************************
+2016-02-02 12:22:06,571 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-02-02 12:22:06,571 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-02-02 12:22:06,571 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-02-02 12:22:06,576 INFO  DaoDojo - *******************************************************
+2016-02-02 12:22:06,576 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:22:06,576 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-02-02 12:22:06,576 INFO  DaoDojo - Metodo: EliminarDojo
+2016-02-02 12:22:06,620 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:22:06,620 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:22:06,620 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:22:06,620 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:22:06,625 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:22:06,625 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:22:06,625 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:22:06,625 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:22:06,634 INFO  DaoDojo - *******************************************************
+2016-02-02 12:22:06,634 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:22:06,634 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:22:06,634 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:22:13,205 INFO  ComandoEliminarDojo - *******************************************************
+2016-02-02 12:22:13,205 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-02-02 12:22:13,205 INFO  ComandoEliminarDojo - Mensaje: Entrada en el Método
+2016-02-02 12:22:13,205 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-02-02 12:22:13,213 INFO  ComandoEliminarDojo - *******************************************************
+2016-02-02 12:22:13,213 INFO  ComandoEliminarDojo - Clase: ComandoEliminarDojo
+2016-02-02 12:22:13,213 INFO  ComandoEliminarDojo - Mensaje: Salida del Método
+2016-02-02 12:22:13,213 INFO  ComandoEliminarDojo - Metodo: Ejecutar
+2016-02-02 12:22:13,221 INFO  DaoDojo - *******************************************************
+2016-02-02 12:22:13,221 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:22:13,221 INFO  DaoDojo - Mensaje: Entrada en el Método
+2016-02-02 12:22:13,221 INFO  DaoDojo - Metodo: EliminarDojo
+2016-02-02 12:22:13,264 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:22:13,264 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:22:13,264 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:22:13,264 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:22:13,269 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:22:13,269 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:22:13,269 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:22:13,269 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:22:13,275 INFO  DaoDojo - *******************************************************
+2016-02-02 12:22:13,275 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:22:13,275 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:22:13,275 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:22:21,135 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:22:21,135 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:22:21,135 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:22:21,135 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:22:21,141 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:22:21,141 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:22:21,141 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:22:21,141 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:22:21,153 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:22:21,154 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:22:21,154 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:22:21,154 INFO  DaoHistorialM - Metodo: ConsultarTodos
+2016-02-02 12:22:40,584 ERROR PresentadorAgregarDojo - *******************************************************
+2016-02-02 12:22:40,584 ERROR PresentadorAgregarDojo - Mensaje: El índice y el recuento deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: count
+2016-02-02 12:22:40,584 ERROR PresentadorAgregarDojo - Origen: mscorlib
+2016-02-02 12:22:40,584 ERROR PresentadorAgregarDojo - Metodo: System.String Remove(Int32, Int32)
+2016-02-02 12:22:40,584 ERROR PresentadorAgregarDojo - StackTrace:    en System.String.Remove(Int32 startIndex, Int32 count)
+   en Interfaz_Presentadores.Modulo4.PresentadorAgregarDojo.AgregarDojo_Click()
+2016-02-02 12:22:40,584 ERROR PresentadorAgregarDojo - InnerException: 
+2016-02-02 12:22:40,632 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:22:40,632 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:22:40,632 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:22:40,632 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:22:40,637 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:22:40,638 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:22:40,638 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:22:40,638 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:22:40,644 INFO  DaoDojo - *******************************************************
+2016-02-02 12:22:40,645 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:22:40,645 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:22:40,645 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:28:48,574 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:28:48,580 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:28:48,580 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:28:48,580 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:28:48,590 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:28:48,590 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:28:48,590 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:28:48,590 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:28:48,610 INFO  DaoDojo - *******************************************************
+2016-02-02 12:28:48,610 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:28:48,610 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:28:48,610 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:28:57,053 ERROR PresentadorAgregarDojo - *******************************************************
+2016-02-02 12:28:57,053 ERROR PresentadorAgregarDojo - Mensaje: El índice y el recuento deben hacer referencia a una ubicación en la cadena.
+Nombre del parámetro: count
+2016-02-02 12:28:57,056 ERROR PresentadorAgregarDojo - Origen: mscorlib
+2016-02-02 12:28:57,056 ERROR PresentadorAgregarDojo - Metodo: System.String Remove(Int32, Int32)
+2016-02-02 12:28:57,056 ERROR PresentadorAgregarDojo - StackTrace:    en System.String.Remove(Int32 startIndex, Int32 count)
+   en Interfaz_Presentadores.Modulo4.PresentadorAgregarDojo.AgregarDojo_Click() en c:\Users\JavierA\Documents\GitHub\sakaratedo\Interfaz_Presentadores\Modulo4\PresentadorAgregarDojo.cs:línea 46
+2016-02-02 12:28:57,056 ERROR PresentadorAgregarDojo - InnerException: 
+2016-02-02 12:28:57,080 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:28:57,080 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:28:57,080 INFO  ComandoListarDojos - Mensaje: Entrada en el Método
+2016-02-02 12:28:57,080 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:28:57,086 INFO  ComandoListarDojos - *******************************************************
+2016-02-02 12:28:57,086 INFO  ComandoListarDojos - Clase: ComandoListarDojos
+2016-02-02 12:28:57,086 INFO  ComandoListarDojos - Mensaje: Salida del Método
+2016-02-02 12:28:57,086 INFO  ComandoListarDojos - Metodo: Ejecutar
+2016-02-02 12:28:57,095 INFO  DaoDojo - *******************************************************
+2016-02-02 12:28:57,095 INFO  DaoDojo - Clase: DaoDojo
+2016-02-02 12:28:57,095 INFO  DaoDojo - Mensaje: Salida del Método
+2016-02-02 12:28:57,095 INFO  DaoDojo - Metodo: ConsultarTodos
+2016-02-02 12:29:38,128 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-02-02 12:29:38,128 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-02-02 12:29:38,128 INFO  ComandoAgregarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:29:38,128 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-02-02 12:29:38,135 INFO  ComandoAgregarHistorialM - *******************************************************
+2016-02-02 12:29:38,135 INFO  ComandoAgregarHistorialM - Clase: ComandoAgregarHistorialM
+2016-02-02 12:29:38,135 INFO  ComandoAgregarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:29:38,135 INFO  ComandoAgregarHistorialM - Metodo: Ejecutar
+2016-02-02 12:29:38,146 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:29:38,146 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:29:38,146 INFO  DaoHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:29:38,146 INFO  DaoHistorialM - Metodo: Agregar
+2016-02-02 12:29:38,395 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:29:38,395 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:29:38,395 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:29:38,395 INFO  DaoHistorialM - Metodo: Agregar
+2016-02-02 12:29:38,438 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:29:38,438 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:29:38,438 INFO  ComandoListarHistorialM - Mensaje: Entrada en el Método
+2016-02-02 12:29:38,438 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:29:38,443 INFO  ComandoListarHistorialM - *******************************************************
+2016-02-02 12:29:38,443 INFO  ComandoListarHistorialM - Clase: ComandoListarHistorialM
+2016-02-02 12:29:38,443 INFO  ComandoListarHistorialM - Mensaje: Salida del Método
+2016-02-02 12:29:38,443 INFO  ComandoListarHistorialM - Metodo: Ejecutar
+2016-02-02 12:29:38,451 INFO  DaoHistorialM - *******************************************************
+2016-02-02 12:29:38,451 INFO  DaoHistorialM - Clase: DaoHistorialM
+2016-02-02 12:29:38,451 INFO  DaoHistorialM - Mensaje: Salida del Método
+2016-02-02 12:29:38,451 INFO  DaoHistorialM - Metodo: ConsultarTodos
