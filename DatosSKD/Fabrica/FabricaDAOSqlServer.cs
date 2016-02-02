@@ -19,6 +19,8 @@ using DatosSKD.DAO.Modulo11;
 using DatosSKD.InterfazDAO.Modulo14;
 using DatosSKD.InterfazDAO.Modulo3;
 using DatosSKD.InterfazDAO.Modulo5;
+using DatosSKD.InterfazDAO.Modulo4;
+using DatosSKD.DAO.Modulo4;
 
 namespace DatosSKD.Fabrica
 {
@@ -50,6 +52,22 @@ namespace DatosSKD.Fabrica
         #endregion
 
         #region Modulo 4
+        /// <summary>
+        /// Método que instancia el DAO de Dojo
+        /// </summary>
+        /// <returns>DaoDojo</returns>
+        public static IDaoDojo ObtenerDAODojo()
+        {
+            return new DaoDojo();
+        }
+        /// <summary>
+        /// Método que instancia el DAO de Historial Matricula
+        /// </summary>
+        /// <returns>DaoHistorialM</returns>
+        public static IDaoHistorialM ObtenerDAOHistorialM()
+        {
+            return new DaoHistorialM();
+        }
         #endregion
 
         #region Modulo 5
@@ -68,7 +86,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de cinta de M7
         /// </summary>
         /// <returns>Retorna DaoCinta</returns>
-        public DAO.Modulo7.DaoCinta ObtenerDaoCintaM7()
+        public static DAO.Modulo7.DaoCinta ObtenerDaoCintaM7()
         {
             return new DAO.Modulo7.DaoCinta();
         }
@@ -77,7 +95,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de competencia de M7
         /// </summary>
         /// <returns>Retorna DaoCompetencia</returns>
-        public DAO.Modulo7.DaoCompetencia ObtenerDaoCompetenciaM7()
+        public static DAO.Modulo7.DaoCompetencia ObtenerDaoCompetenciaM7()
         {
             return new DAO.Modulo7.DaoCompetencia();
         }
@@ -86,7 +104,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de dojo de M7
         /// </summary>
         /// <returns>Retorna DaoDojo</returns>
-        public DAO.Modulo7.DaoDojo ObtenerDaoDojoM7()
+        public static DAO.Modulo7.DaoDojo ObtenerDaoDojoM7()
         {
             return new DAO.Modulo7.DaoDojo();
         }
@@ -95,7 +113,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de evento de M7
         /// </summary>
         /// <returns>Retorna DaoEvento</returns>
-        public DAO.Modulo7.DaoEvento ObtenerDaoEventoM7()
+        public static DAO.Modulo7.DaoEvento ObtenerDaoEventoM7()
         {
             return new DAO.Modulo7.DaoEvento();
         }
@@ -104,7 +122,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de horario de M7
         /// </summary>
         /// <returns>Retorna DaoHorario</returns>
-        public DAO.Modulo7.DaoHorario ObtenerDaoHorarioM7()
+        public static DAO.Modulo7.DaoHorario ObtenerDaoHorarioM7()
         {
             return new DAO.Modulo7.DaoHorario();
         }
@@ -113,7 +131,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de matrícula de M7
         /// </summary>
         /// <returns>Retorna DaoMatricula</returns>
-        public DAO.Modulo7.DaoMatricula ObtenerDaoMatriculaM7()
+        public static DAO.Modulo7.DaoMatricula ObtenerDaoMatriculaM7()
         {
             return new DAO.Modulo7.DaoMatricula();
         }
@@ -122,7 +140,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de organización de M7
         /// </summary>
         /// <returns>Retorna DaoOrganizacion</returns>
-        public DAO.Modulo7.DaoOrganizacion ObtenerDaoOrganizacionM7()
+        public static DAO.Modulo7.DaoOrganizacion ObtenerDaoOrganizacionM7()
         {
             return new DAO.Modulo7.DaoOrganizacion();
         }
@@ -131,7 +149,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de persona de M7
         /// </summary>
         /// <returns>Retorna DaoPersona</returns>
-        public DAO.Modulo7.DaoPersona ObtenerDaoPersonaM7()
+        public static DAO.Modulo7.DaoPersona ObtenerDaoPersonaM7()
         {
             return new DAO.Modulo7.DaoPersona();
         }
@@ -140,7 +158,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de TipoEvento de M7
         /// </summary>
         /// <returns>Retorna DaoTipoEvento</returns>
-        public DAO.Modulo7.DaoTipoEvento ObtenerDaoTipoEventoM7()
+        public static DAO.Modulo7.DaoTipoEvento ObtenerDaoTipoEventoM7()
         {
             return new DAO.Modulo7.DaoTipoEvento();
         }
@@ -149,7 +167,7 @@ namespace DatosSKD.Fabrica
         /// Método que instancia el DAO de Ubicación de M7
         /// </summary>
         /// <returns>Retorna DaoUbicacion</returns>
-        public DAO.Modulo7.DaoUbicacion ObtenerDaoUbicacionM7()
+        public static DAO.Modulo7.DaoUbicacion ObtenerDaoUbicacionM7()
         {
             return new DAO.Modulo7.DaoUbicacion();
         }

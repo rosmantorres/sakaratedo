@@ -236,4 +236,7 @@
     <value>carlo</value>
     <comment>nombre</comment>
   </data>
+  <data name="DescripcionInvalida" xml:space="preserve">
+    <value>Prueba-!&gt;</value>
+  </data>
 </root>

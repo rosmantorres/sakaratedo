@@ -1,0 +1,1035 @@
+CREATE PROCEDURE M16_AGREGAR_EVENTO_CARRITO 
+	@idPersona int,
+	@idEvento int,
+	@cantidad int,
+	@precio int,
+	@exito int OUTPUT
+AS
+BEGIN
+
+	--Variable que tendra el ID del carrito
+	DECLARE @idCarrito INT;
+
+	--Si ya tiene un carrito (compra en proceso) agregamos la cantidad que desea el usuario
+	IF EXISTS (SELECT C.com_id FROM COMPRA_CARRITO C WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO')
+	BEGIN
+
+		--Buscamos el ID del carrito
+		SET @idCarrito = (SELECT C.com_id FROM COMPRA_CARRITO C 
+		WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO');
+	        
+		--Se verifica si ese carrito no tiene pagos hechos
+		IF NOT EXISTS (SELECT p.pc_id FROM PAGO_CARRITO p WHERE p.COMPRA_CARRITO_com_id = @idCarrito)
+		BEGIN
+				
+			--Verificamos si ese Item ya esta en el carrito o no
+			IF EXISTS (SELECT D.EVENTO_eve_id FROM DETALLE_COMPRA D 
+			WHERE D.EVENTO_eve_id IS NOT NULL 
+			AND D.COMPRA_CARRITO_com_id = @idCarrito AND D.EVENTO_eve_id = @idEvento)
+
+			--Actualizamos si existe
+			UPDATE DETALLE_COMPRA 
+			SET det_cantidad = det_cantidad + @cantidad 
+			WHERE COMPRA_CARRITO_com_id = @idCarrito AND EVENTO_eve_id = @idEvento;
+
+			--Sino existe lo insertamos
+			ELSE
+				BEGIN
+					--Selecciono el ID del ultimo compra_carrito creado
+					DECLARE @ultimoId2 INT;
+					SET @ultimoId2 = (SELECT MAX(com_id) FROM COMPRA_CARRITO WHERE PERSONA_per_id = @idPersona);
+					INSERT INTO DETALLE_COMPRA VALUES (@ultimoId2,@precio,@cantidad,NULL,NULL,NULL,@idEvento,NULL);
+				END
+			SET @exito = 1;
+		END
+		ELSE
+			SET @exito = 2;			
+	END
+
+	--Si aun no tiene un compra en proceso
+	ELSE
+	BEGIN
+			--Creamos un carrito nuevo y le añadimos un detalle
+			INSERT INTO COMPRA_CARRITO VALUES ('CARRITO',@idPersona);
+
+			--Selecciono el ID del ultimo compra_carrito creado
+			DECLARE @ultimoId INT;
+			SET @ultimoId = (SELECT MAX(com_id) FROM COMPRA_CARRITO WHERE PERSONA_per_id = @idPersona);
+
+			--Creo mi primer detalle de la compra
+			INSERT INTO DETALLE_COMPRA VALUES (@ultimoId,@precio,@cantidad,NULL,NULL,NULL,@idEvento,NULL);
+
+			SET @exito = 1;
+	END	
+END
+
+
+
+
+
+
+
+
+CREATE PROCEDURE M16_AGREGAR_IMPLEMENTO_CARRITO 
+	@idPersona [int],
+	@idImplemento [int],
+	@cantidad [int],
+	@precio [int],
+	@exito [int] OUTPUT
+AS
+	BEGIN				
+			--Obtengo el id del carrito
+			DECLARE @carritoid INT;
+			SET @carritoid = (SELECT C.com_id FROM COMPRA_CARRITO C 
+					WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO');
+
+			--Se verifica si ese carrito no tiene pagos hechos
+			IF NOT EXISTS (SELECT p.pc_id FROM PAGO_CARRITO p WHERE p.COMPRA_CARRITO_com_id = @carritoid)
+			BEGIN
+
+				/*Obtengo el Dojo al cual la Persona esta asociada para saber a cual 
+				dojo se vera afectado su inventario*/
+				DECLARE @idDojo INT;
+				SET @idDojo = (SELECT P.DOJO_doj_id FROM PERSONA P WHERE P.per_id = @idPersona);		
+			
+				--Obtengo todos los inventarios de ese implemento
+				DECLARE @Stocks CURSOR;
+				SET @Stocks = CURSOR FOR SELECT V.inv_id, V.inv_cantidad_total FROM IMPLEMENTO I, INVENTARIO V
+				WHERE I.imp_id = V.IMPLEMENTO_imp_id AND I.imp_id = @idImplemento AND V.DOJO_doj_id = @idDojo;		
+		
+				--Variables que obtendran los datos del cursor
+				DECLARE @cantidadEnstock INT;
+				DECLARE @idInventario INT;
+
+				--Abro el cursor y recorro
+				OPEN @Stocks
+				FETCH NEXT FROM @Stocks INTO @idInventario, @cantidadEnstock;
+				WHILE @@FETCH_STATUS = 0
+				BEGIN
+
+					/*Si la cantidad que el usuario ESTA INSERTANDO EN ESTE MOMENTO 
+					es menor a la cantidad que hay en stock*/
+					IF @cantidadEnstock > = @cantidad
+					BEGIN
+						DECLARE @idCarrito INT;
+
+						--Si ya tiene un carrito (compra en proceso) agregamos la cantidad que desea el usuario
+						IF EXISTS (SELECT C.com_id FROM COMPRA_CARRITO C 
+						WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO')
+							BEGIN
+
+								--Buscamos el ID del carrito
+								SET @idCarrito = (SELECT C.com_id FROM COMPRA_CARRITO C 
+								WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO');
+						
+								--Verificamos si ese Item ya esta en el carrito o no
+								IF EXISTS (SELECT D.IMPLEMENTO_inv_id FROM DETALLE_COMPRA D 
+								WHERE D.IMPLEMENTO_inv_id IS NOT NULL 
+								AND D.COMPRA_CARRITO_com_id = @idCarrito AND D.IMPLEMENTO_inv_id = @idImplemento)
+
+									--Actualizamos si existe
+									UPDATE DETALLE_COMPRA 
+									SET det_cantidad = det_cantidad + @cantidad 
+									WHERE COMPRA_CARRITO_com_id = @idCarrito AND IMPLEMENTO_inv_id = @idImplemento;
+
+								--Sino existe lo insertamos
+								ELSE
+									BEGIN
+										--Selecciono el ID del ultimo compra_carrito creado
+										DECLARE @ultimoId2 INT;
+										SET @ultimoId2 = (SELECT MAX(com_id) FROM COMPRA_CARRITO 
+										WHERE PERSONA_per_id = @idPersona);
+										INSERT INTO DETALLE_COMPRA 
+										VALUES (@ultimoId2,@precio,@cantidad,NULL,NULL,@idImplemento,NULL,NULL);
+									END
+							END
+
+						--Si aun no tiene un compra en proceso
+						ELSE
+							BEGIN
+								--Creamos un carrito nuevo y le añadimos un detalle
+								INSERT INTO COMPRA_CARRITO VALUES ('CARRITO',@idPersona);
+
+								--Selecciono el ID del ultimo compra_carrito creado
+								DECLARE @ultimoId INT;
+								SET @ultimoId = (SELECT MAX(com_id) 
+								FROM COMPRA_CARRITO WHERE PERSONA_per_id = @idPersona);
+
+								--Creo mi primer detalle de la compra
+								INSERT INTO DETALLE_COMPRA 
+								VALUES (@ultimoId,@precio,@cantidad,NULL,NULL,@idImplemento,NULL,NULL);
+
+							END
+						SET @exito = 1;
+						BREAK;
+					END
+					FETCH NEXT FROM @Stocks INTO @idInventario, @cantidadEnstock;
+				END
+
+				--Cierro el cursor
+				CLOSE @stocks;
+				DEALLOCATE @stocks;
+			END
+			ELSE
+				SET @exito = 2;							
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE M16_AGREGAR_MATRICULA_CARRITO 
+	@idPersona int,
+	@idMatricula int,
+	@cantidad int,
+	@precio int,
+	@exito int OUTPUT
+AS
+BEGIN	
+
+	--Si ya tiene un carrito (compra en proceso) agregamos la cantidad que desea el usuario
+	IF EXISTS (SELECT C.com_id FROM COMPRA_CARRITO C WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO')
+	BEGIN
+
+		--Buscamos el ID del carrito
+		DECLARE @idCarrito INT;
+		SET @idCarrito = (SELECT C.com_id FROM COMPRA_CARRITO C 
+		WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO');
+			
+		--Se verifica si ese carrito no tiene pagos hechos
+		IF NOT EXISTS (SELECT p.pc_id FROM PAGO_CARRITO p WHERE p.COMPRA_CARRITO_com_id = @idCarrito)
+		BEGIN		
+			--Verificamos si ese Item ya esta en el carrito o no
+			IF EXISTS (SELECT D.MATRICULA_mat_id FROM DETALLE_COMPRA D 
+			WHERE D.MATRICULA_mat_id IS NOT NULL 
+			AND D.COMPRA_CARRITO_com_id = @idCarrito AND D.MATRICULA_mat_id = @idMatricula)
+				--Actualizamos si existe
+				UPDATE DETALLE_COMPRA 
+				SET det_cantidad = det_cantidad + @cantidad 
+				WHERE COMPRA_CARRITO_com_id = @idCarrito AND MATRICULA_mat_id = @idMatricula;
+
+			--Sino existe lo insertamos
+			ELSE
+				BEGIN
+					--Selecciono el ID del ultimo compra_carrito creado
+					DECLARE @ultimoId2 INT;
+					SET @ultimoId2 = (SELECT MAX(com_id) FROM COMPRA_CARRITO WHERE PERSONA_per_id = @idPersona);
+					INSERT INTO DETALLE_COMPRA 
+					VALUES (@ultimoId2,@precio,@cantidad,@idMatricula,NULL,NULL,NULL,NULL);
+				END
+			
+			SET @exito = 1;
+		END
+		ELSE
+			SET @exito = 2;
+	END
+
+	--Si aun no tiene un compra en proceso
+	ELSE
+		BEGIN
+			--Creamos un carrito nuevo y le añadimos un detalle
+			INSERT INTO COMPRA_CARRITO VALUES ('CARRITO',@idPersona);
+
+			--Selecciono el ID del ultimo compra_carrito creado
+			DECLARE @ultimoId INT;
+			SET @ultimoId = (SELECT MAX(com_id) FROM COMPRA_CARRITO WHERE PERSONA_per_id = @idPersona);
+
+			--Creo mi primer detalle de la compra
+			INSERT INTO DETALLE_COMPRA VALUES (@ultimoId,@precio,@cantidad,@idMatricula,NULL,NULL,NULL,NULL);
+
+			SET @exito = 1;
+		END	
+END
+
+
+
+
+
+
+
+
+
+/* Consulta la informacion del evento dado el ID del evento en especifico */
+CREATE PROCEDURE M16_CONSULTAR_EVENTO_ID
+		@iditem INTEGER
+AS
+BEGIN
+	--Selecciono la informacion del evento
+	SELECT eve_nombre as impNombre, eve_costo as impPrecio
+	FROM EVENTO WHERE eve_id = @iditem;
+END
+
+
+
+
+
+
+
+
+
+
+
+/* Consulta toda la informacion de un inventario dado el ID */
+CREATE PROCEDURE M16_CONSULTAR_INVENTARIO_ID
+		@iditem INTEGER
+AS
+BEGIN
+	--Selecciono la informacion del implemento
+	SELECT imp_imagen as impImagen, imp_nombre as impNombre,
+	imp_tipo as impTipo, imp_marca as impMarca, imp_precio as impPrecio
+	FROM implemento WHERE imp_id = @iditem;
+END
+
+
+
+
+
+
+
+
+
+
+/* Consulta la informacion de la matricula dado el ID de la matricula en especifico */
+CREATE PROCEDURE M16_CONSULTAR_MATRICULA_ID
+		@iditem INTEGER
+AS
+BEGIN
+	--Selecciono la informacion de la matricula
+	SELECT M.mat_identificador AS idIdentificadorMatricla, 
+	        M.mat_fecha_creacion AS fechaInicio,
+		    M.mat_fecha_ultimo_pago AS fechaTope,
+			M.mat_precio as impPrecio
+	 		
+	FROM  	MATRICULA M WHERE mat_id = @iditem;
+END
+
+
+
+
+
+
+
+/* Eliminar Item */
+CREATE PROCEDURE M16_ELIMINAR_ITEM
+		@idusuario int,
+		@iditem int,
+		@tipoitem int,
+	 	@exito int OUTPUT
+AS
+BEGIN
+
+	--Si ya tiene un carrito (compra en proceso) procedemos a ver que desea eliminar el usuario
+	IF EXISTS (SELECT C.com_id FROM COMPRA_CARRITO C WHERE C.PERSONA_per_id = @idusuario AND C.com_estado = 'CARRITO')
+	BEGIN
+
+		--Buscamos el ID del carrito de la persona correspondiente
+		DECLARE @idcarrito INTEGER;
+		SET @idcarrito = (SELECT com_id FROM COMPRA_CARRITO 
+		WHERE PERSONA_per_id = @idusuario AND com_estado = 'CARRITO');
+
+		--Se verifica si ese carrito no tiene pagos hechos
+		IF NOT EXISTS (SELECT p.pc_id FROM PAGO_CARRITO p WHERE p.COMPRA_CARRITO_com_id = @idCarrito)
+		BEGIN
+			
+			--Evaluamos a que tipo de item nos estamos refiriendo y lo eliminamos
+			IF (@tipoitem = 1)
+			BEGIN
+				--Verificamos si ese Item (implemento) ya esta en el carrito o no
+				IF EXISTS (SELECT D.IMPLEMENTO_inv_id FROM DETALLE_COMPRA D WHERE D.IMPLEMENTO_inv_id IS NOT NULL
+							AND D.COMPRA_CARRITO_com_id = @idCarrito AND D.IMPLEMENTO_inv_id = @iditem)
+				BEGIN
+
+					--Si ya esta eliminamos	
+					DELETE FROM DETALLE_COMPRA WHERE COMPRA_CARRITO_com_id = @idcarrito AND IMPLEMENTO_inv_id =@iditem;
+
+					--Devolvemos la transaccion como exitosa
+					SET @exito = 1;
+				END
+			END				
+			ELSE IF (@tipoitem = 2)
+			BEGIN
+
+				--Verificamos si ese Item (matricula) ya esta en el carrito o no
+				IF EXISTS (SELECT D.MATRICULA_mat_id FROM DETALLE_COMPRA D WHERE D.MATRICULA_mat_id IS NOT NULL 
+						AND D.COMPRA_CARRITO_com_id = @idCarrito AND D.MATRICULA_mat_id = @iditem)
+				BEGIN
+
+					--Si ya esta eliminamos		
+					DELETE FROM DETALLE_COMPRA WHERE COMPRA_CARRITO_com_id = @idcarrito AND MATRICULA_mat_id = @iditem;
+
+					--Devolvemos la transaccion como exitosa
+					SET @exito = 1;
+				END
+			END			
+			ELSE IF (@tipoitem = 3)
+			BEGIN		
+				
+				--Verificamos si ese Item (evento) ya esta en el carrito o no
+				IF EXISTS (SELECT D.EVENTO_eve_id FROM DETALLE_COMPRA D	WHERE D.EVENTO_eve_id IS NOT NULL 
+						AND D.COMPRA_CARRITO_com_id = @idCarrito AND D.EVENTO_eve_id = @iditem)
+				BEGIN
+
+					--Si ya esta eliminamos
+					DELETE FROM DETALLE_COMPRA WHERE COMPRA_CARRITO_com_id = @idcarrito AND EVENTO_eve_id = @iditem;
+
+					--Devolvemos la transaccion como exitosa
+					SET @exito = 1;
+				END			
+			END
+			--Si el carrito se quedo sin detalles lo eliminamos
+			IF NOT EXISTS (SELECT det_id FROM DETALLE_COMPRA WHERE COMPRA_CARRITO_com_id = @idcarrito)
+				DELETE FROM COMPRA_CARRITO WHERE com_id = @idcarrito;		
+		END
+		ELSE
+			SET @exito = 2;
+	END		
+END
+
+
+
+
+
+
+
+CREATE PROCEDURE M16_MODIFICAR_CANTIDAD_EVENTO
+				@idPersona int,
+				@idEvento int,
+				@cantidad int,
+				@exito int OUTPUT
+AS
+BEGIN		
+		--Si el usuario tiene un carrito procedere a modificar el valor
+		IF EXISTS (SELECT C.com_id FROM COMPRA_CARRITO C 
+		WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO')
+		BEGIN
+
+			--Busco el ID del carrito
+			DECLARE @idCarrito INT;
+			SET @idCarrito = (SELECT C.com_id FROM COMPRA_CARRITO C 
+			WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO');
+
+			--Se verifica si ese carrito no tiene pagos hechos
+			IF NOT EXISTS (SELECT p.pc_id FROM PAGO_CARRITO p WHERE p.COMPRA_CARRITO_com_id = @idCarrito)
+			BEGIN
+
+				--Actualizo la cantidad que hay actualmente
+				UPDATE DETALLE_COMPRA SET det_cantidad = @cantidad 
+				WHERE COMPRA_CARRITO_com_id = @idCarrito AND EVENTO_eve_id = @idEvento;
+		
+				--Indico que la operacion se realizo con exito
+				SET @exito= 1;
+			END
+			ELSE
+				SET @exito = 2;	
+		END
+END
+
+
+
+
+
+
+
+
+CREATE PROCEDURE M16_MODIFICAR_CANTIDAD_IMPLEMENTO
+				@idPersona int,
+				@idImplemento int,
+				@cantidad int,
+				@exito int OUTPUT
+AS
+BEGIN
+	
+	--Verificamos si tiene un carrito
+	IF EXISTS (SELECT C.com_id FROM COMPRA_CARRITO C 
+	WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO')
+	BEGIN
+			
+			--Obtengo el id del carrito
+			DECLARE @carritoid INT;
+			SET @carritoid = (SELECT C.com_id FROM COMPRA_CARRITO C 
+					WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO');
+
+			--Se verifica si ese carrito no tiene pagos hechos
+			IF NOT EXISTS (SELECT p.pc_id FROM PAGO_CARRITO p WHERE p.COMPRA_CARRITO_com_id = @carritoid)
+			BEGIN
+
+				--Obtengo el Dojo al cual la Persona esta asociada para saber a cual dojo se vera afectado su inventario
+				DECLARE @Dojo INT;
+				SET @Dojo = (SELECT P.DOJO_doj_id FROM PERSONA P WHERE P.per_id = @idPersona);
+	
+				--Obtengo la cantidad que hay en el stock de ese implemento
+				DECLARE @cantidadEnstock INT;
+				SET @cantidadEnstock = (SELECT V.inv_cantidad_total AS cantidadInventario 
+				FROM IMPLEMENTO I, INVENTARIO V 
+				WHERE I.imp_id = V.IMPLEMENTO_imp_id AND I.imp_id = @idImplemento AND V.DOJO_doj_id = @Dojo);
+	
+				--Si la cantidad que el usuario ESTA INSERTANDO EN ESTE MOMENTO es menor a la cantidad que hay en stock	
+				IF @cantidadEnstock > = @cantidad
+					BEGIN
+						--Busco el ID del carrito
+						DECLARE @idCarrito INT;
+						SET @idCarrito = (SELECT C.com_id FROM COMPRA_CARRITO C 
+						WHERE C.PERSONA_per_id = @idPersona AND C.com_estado = 'CARRITO');
+
+						--Actualizo la cantidad que hay actualmente
+						UPDATE DETALLE_COMPRA SET det_cantidad = @cantidad 
+						WHERE COMPRA_CARRITO_com_id = @idCarrito AND IMPLEMENTO_inv_id =@idImplemento;
+
+						SET @exito= 1;			
+					END
+				ELSE
+					BEGIN
+						SET @exito = 0;
+					END
+			END
+			ELSE
+				SET @exito = 2;		
+	END		
+END
+
+
+
+
+
+
+/* Procedimiento que retorna el total de todos los pagos hechos en un carrito abierto*/
+CREATE PROCEDURE M16_MONTOS_PAGADOS
+		@idusuario INT,
+		@exito FLOAT OUTPUT
+AS
+ BEGIN
+	
+	--Por defecto siempre entraremos con 0 y devolveremos 0 en caso de no haber carrito o no haber pagos previos
+	SET @exito = 0;
+
+	--Verifico que esa persona tiene un carrito
+	IF EXISTS (SELECT C.com_id FROM COMPRA_CARRITO C 
+				WHERE C.PERSONA_per_id = @idusuario AND C.com_estado = 'CARRITO')
+	BEGIN
+
+		--Obtengo el ID del carrito
+		DECLARE @idCarrito INT;
+		set @idCarrito = (SELECT C.com_id FROM COMPRA_CARRITO C 
+				WHERE C.PERSONA_per_id = @idusuario AND C.com_estado = 'CARRITO');
+
+		--Nos aseguramos que ya tenga un pago para devolver la suma de estos, sino, devolvera 0
+		if EXISTS (SELECT P.pc_id FROM PAGO_CARRITO P WHERE P.COMPRA_CARRITO_com_id = @idCarrito)
+		BEGIN
+			--Obtengo la cantidad total pagada del carrito
+			DECLARE @suma FLOAT;
+			SET @suma = (SELECT SUM(pc_monto) FROM PAGO_CARRITO WHERE COMPRA_CARRITO_com_id = @idCarrito);
+
+			--Devolvemos la suma
+			SET @exito = @suma;
+		END		
+	END   
+END
+
+
+
+
+
+
+
+/* Registrar Pago Actualizado para las 2:57 AM 21/01/2016 */
+CREATE PROCEDURE M16_REGISTRAR_PAGO
+		@idusuario int,
+		@monto float,
+		@pago [varchar] (100),
+		@datopago [varchar] (100),
+		@exito int OUTPUT
+		
+AS
+BEGIN
+	
+	--Verifico que esa persona tiene un carrito
+	IF EXISTS (SELECT C.com_id FROM COMPRA_CARRITO C 
+				WHERE C.PERSONA_per_id = @idusuario AND C.com_estado = 'CARRITO')
+	BEGIN
+
+		/*Variable que utilizaremos para saber si existe algun inventario que pueda satisfacer la demanda del cliente
+		si vale 0 significara que existe un inventario capaz de hacerlo o simplemente que no existen implementos 
+		en el carrito, si vale 1 significa que si existen implementos en el carrito pero no se puede satisfacer 
+		su demanda, por lo tanto la transaccion no puede continuar su proceso y el usuario debe elegir un monto diferente*/
+		DECLARE @incompleto INT;
+		SET @incompleto = 0;
+
+		-----------------------------------------------------OBTENER MONTO TOTAL COMPRA-----------------------------------------
+		
+		--Obtengo el ID del carrito
+		DECLARE @idCarrito INT;
+		set @idCarrito = (SELECT C.com_id FROM COMPRA_CARRITO C 
+				WHERE C.PERSONA_per_id = @idusuario AND C.com_estado = 'CARRITO');
+
+		--Cursor que obtiene el precio y la cantidad de cada item en el carrito del usuario
+		DECLARE @items CURSOR;
+		SET @items = CURSOR FOR SELECT D.det_precio, D.det_cantidad FROM DETALLE_COMPRA D 
+		WHERE D.COMPRA_CARRITO_com_id = @idCarrito;
+
+		--Variables que tendran precio y cantidad de cada item al recorrer el cursor
+		DECLARE @precio INT;
+		DECLARE @cantidadsumar INT;
+		
+		--Variable con el monto total de lo que hay en el carrito
+		DECLARE @montoTotal INT;
+		SET @montoTotal = 0; 
+
+		--Abro el cursor y recorro
+		OPEN @items
+		FETCH NEXT FROM @items INTO @precio, @cantidadsumar;
+		WHILE @@FETCH_STATUS = 0
+		BEGIN
+
+			--Multiplico y anexo al total
+			SET @montoTotal = @montoTotal + (@precio * @cantidadsumar);
+			FETCH NEXT FROM @items INTO @precio, @cantidadsumar;
+		END
+
+		--Cierro el cursor
+		CLOSE @items;
+		DEALLOCATE @items;
+
+		--Convierto el monto de todo el carrito en float y se trabajara con esto a partir de este momento
+		DECLARE @montoFloat FLOAT;
+		SET @montoFloat = CAST(@montoTotal AS FLOAT);	
+
+		--Verifico si el carrito ya tiene pagos previos o no
+		IF EXISTS (SELECT P.pc_id FROM PAGO_CARRITO P WHERE P.COMPRA_CARRITO_com_id = @idCarrito)
+		BEGIN
+
+			--Variable que contendra el monto total de todos los pagos realizados
+			DECLARE @pagoRealizado FLOAT;
+			SET @pagoRealizado = (SELECT SUM(P.pc_monto) FROM PAGO_CARRITO P
+								  WHERE P.COMPRA_CARRITO_com_id = @idCarrito);			
+
+			--Obtengo el monto que queda a pagar
+			SET @montoFloat = @montoFloat - @pagoRealizado;
+
+		END
+		ELSE
+		BEGIN
+					
+			--Nos aseguramos que el monto insertado sea mayor a 0
+			IF (@monto >= 0)
+			BEGIN				
+				-----------------------------------------------------ACTUALIZAR INVENTARIO-----------------------------------------			
+	
+				--Si se compraron implementos los obtengo de la compra para actualizar la cantidad de cada uno
+				DECLARE @implementos CURSOR;
+				SET @implementos = CURSOR FOR SELECT D.IMPLEMENTO_inv_id, D.det_cantidad AS CANTIDAD 
+				FROM COMPRA_CARRITO C, DETALLE_COMPRA D
+				WHERE C.PERSONA_per_id = @idUsuario AND D.IMPLEMENTO_inv_id IS NOT NULL AND C.com_id = D.COMPRA_CARRITO_com_id AND 
+				C.com_estado = 'CARRITO';
+
+				--Obtengo el Dojo al cual la Persona esta asociada para saber a cual dojo se vera afectado su inventario
+				DECLARE @idDojo INT;
+				SET @idDojo = (SELECT P.DOJO_doj_id FROM PERSONA P WHERE P.per_id = @idUsuario);
+	
+
+				--Variables que contendran los id de los implementos y la cantidad comprada
+				DECLARE @idimplemento INT, @cantidad INT;
+
+				--Recorro cada uno de los implementos y cantidad que haya en el carrito para actualizar en el inventario
+				OPEN @implementos
+				FETCH NEXT FROM @implementos INTO @idimplemento, @cantidad;
+				WHILE @@FETCH_STATUS = 0
+				BEGIN
+					DECLARE @inventarios CURSOR;
+					DECLARE @cantidad2 INT;
+					DECLARE @inventarioid2 INT;
+
+					--Obtengo la cantidad en stock de ese implemento en el dojo de la persona
+					SET @inventarios = CURSOR FOR SELECT V.inv_cantidad_total AS cantidad, V.inv_id as inventarioid 
+					FROM IMPLEMENTO I, INVENTARIO V  
+					WHERE I.imp_id = V.IMPLEMENTO_imp_id AND I.imp_id = @idimplemento AND V.DOJO_doj_id = @idDojo;
+					OPEN @inventarios
+					FETCH NEXT FROM @inventarios INTO @cantidad2, @inventarioid2;
+					WHILE @@FETCH_STATUS = 0
+					BEGIN
+						IF (@cantidad2 >= @cantidad)
+						BEGIN
+						--Actualizo la tabla INVENTARIO de modulo 15 e indico que la demanda fue satisfecha
+							UPDATE INVENTARIO SET inv_cantidad_total = inv_cantidad_total-@cantidad 
+							WHERE IMPLEMENTO_imp_id = @idimplemento AND inv_id = @inventarioid2;
+							SET @incompleto = 0;
+							BREAK; 
+						END
+						ELSE
+							--Indico que si hay implementos pero su demanda no es satisfecha por este inventario
+							SET @incompleto = 1;
+					FETCH NEXT FROM @inventarios INTO @cantidad2, @inventarioid2;
+					END
+					CLOSE @inventarios;
+					DEALLOCATE @inventarios;				
+					FETCH NEXT FROM @implementos INTO @idimplemento, @cantidad;
+				 END;
+
+				 --Cierro el cursor
+				 CLOSE @implementos;
+				 DEALLOCATE @implementos;		
+				 		
+			END--End IF MENOR
+		END --End IF MAYOR
+
+		--Si el monto insertado es mayor que 0 y existe un inventario capaz de satisfacer la demanda
+		IF (@monto >= 0 AND @incompleto = 0)
+		BEGIN
+			
+			--Se registra la transaccion realizada como un nuevo pago
+			INSERT INTO PAGO_CARRITO VALUES (@monto,GETDATE(),@pago,@datopago,@idCarrito);
+
+			--Si el pago ya cubre con el total se cambia el estado del carrito
+			IF (@monto >= @montoFloat)
+			BEGIN
+
+				-------------------------------------------------INSERTO EN INSCRIPCION--------------------------------------------		
+				--Obtengo todos los eventos de la persona que estan en el carrito
+				DECLARE @eventos CURSOR;
+				SET @eventos = CURSOR FOR SELECT EVENTO_eve_id, det_cantidad FROM COMPRA_CARRITO, DETALLE_COMPRA
+				WHERE COMPRA_CARRITO.PERSONA_per_id = @idUsuario 
+				AND COMPRA_CARRITO.com_id = DETALLE_COMPRA.COMPRA_CARRITO_com_id
+				AND EVENTO_eve_id IS NOT NULL AND COMPRA_CARRITO.com_estado= 'CARRITO';
+	
+				--Variable que contendra el id del evento al recorrer la lista
+				DECLARE @evento int;
+				DECLARE @cantidadEvento int;
+				--Recorro cada uno de los eventos que haya en el carrito para insertar en inscripcion tantas veces como hayan
+				OPEN @eventos
+				FETCH NEXT FROM @eventos INTO @evento, @cantidadEvento;
+				WHILE @@FETCH_STATUS = 0
+				BEGIN
+					DECLARE @aux INT;
+					SET @aux = 1;
+					WHILE @aux < = @cantidadEvento
+					BEGIN
+						--Inserto en la tabla inscripcion
+						INSERT INTO INSCRIPCION VALUES (@idusuario,GETDATE(),NULL,@evento);
+						SET @aux = @aux +1;
+					END
+					FETCH NEXT FROM @eventos INTO @evento, @cantidadEvento;
+				END;
+
+				--Cierro el cursor
+				CLOSE @eventos;
+				DEALLOCATE @eventos;
+
+				-------------------------------------------------------------------------------------------------------------------
+				 ---------------------------------------------------REGISTRAR PAGO CARRITO-----------------------------------------
+
+				--Actualizo el estado de la compra para indicar que ya se pago
+				UPDATE COMPRA_CARRITO SET com_estado = 'PAGADO' 
+				WHERE PERSONA_per_id = @idUsuario AND com_estado = 'CARRITO';
+
+				-------------------------------------------------------------------------------------------------------------------
+			END
+
+			--Retorno como exitosa la transaccion
+			SET @exito = 1
+		END
+
+	END --End de Persona con carrito
+END
+
+
+
+
+
+
+
+
+/* Selecciono ID de los eventos agregados al carrito */
+CREATE PROCEDURE M16_SELECCIONAR_ID_EVENTO
+		@idusuario INTEGER
+AS
+BEGIN
+	--Busco el carrito actual del Usuario
+	DECLARE @idcompra INTEGER;
+	SET @idcompra = (SELECT com_id FROM COMPRA_CARRITO WHERE PERSONA_per_id = @idusuario AND com_estado = 'CARRITO');
+
+	--Selecciono los ID sin repetirse
+	SELECT DISTINCT EVENTO_eve_id AS idEvento, det_cantidad AS cantidad FROM DETALLE_COMPRA 
+	WHERE COMPRA_CARRITO_com_id = @idcompra AND EVENTO_eve_id IS NOT NULL;
+END
+
+
+
+
+
+
+
+
+
+
+
+/* Selecciono ID de los Inventarios agregados al carrito */
+CREATE PROCEDURE M16_SELECCIONAR_ID_INVENTARIO
+		@idusuario INTEGER
+AS
+BEGIN
+	--Busco el carrito actual del Usuario
+	DECLARE @idcompra INTEGER;
+	SET @idcompra = (SELECT com_id FROM COMPRA_CARRITO WHERE PERSONA_per_id = @idusuario AND com_estado = 'CARRITO');
+
+	--Selecciono los ID sin repetirse
+	SELECT DISTINCT IMPLEMENTO_inv_id AS idImplemento, det_cantidad AS cantidad FROM DETALLE_COMPRA 
+	WHERE COMPRA_CARRITO_com_id = @idcompra and IMPLEMENTO_inv_id IS NOT NULL;
+END
+
+
+
+
+
+
+
+
+
+
+ 
+--------------------- STORE PROCEDURE CARRITO DE COMPRA /MODIFICAR / ELIMINAR / REGISTRAR PAGO
+
+/* Selecciono ID de las matriculas agregadas al carrito */
+CREATE PROCEDURE M16_SELECCIONAR_ID_MATRICULA
+		@idusuario INTEGER
+AS
+BEGIN
+	--Busco el carrito actual del Usuario
+	DECLARE @idcompra INTEGER;
+	SET @idcompra = (SELECT com_id FROM COMPRA_CARRITO WHERE PERSONA_per_id = @idusuario AND com_estado = 'CARRITO');
+
+	--Selecciono los ID sin repetirse
+	SELECT DISTINCT MATRICULA_mat_id as idMatricula, det_cantidad as cantidad
+	 FROM DETALLE_COMPRA WHERE COMPRA_CARRITO_com_id = @idcompra and MATRICULA_mat_id IS NOT NULL;
+END
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Listar todas las matriculas morosas por el usuario logueado */
+CREATE PROCEDURE M16_MATRICULAS_MOROSAS
+@per_id [int]
+AS
+BEGIN
+
+SELECT	 M.mat_id as mat_id,
+		 M.mat_identificador as mat_identificador, 
+		 M.mat_precio as mat_precio, 
+		 M.mat_fecha_ultimo_pago as FechaPago, 
+		 tablaMes.MesQueDebe as MesDeudor, 
+		 tablaMes.AnioqueDebe as AnioDeudor
+FROM MATRICULA M,
+	-- TablaMes 
+	(select	DATEPART(mm,mat_fecha_ultimo_pago) AS MesQueDebe, 
+			DATEPART(YYYY,mat_fecha_ultimo_pago) AS AnioqueDebe 
+	 from MATRICULA
+	 where mat_id in (select M.mat_id -- lista los id de las matriculas que no ha pagado
+					  from MATRICULA M
+					  where M.mat_id not in (Select D.MATRICULA_mat_id AS idMatricula -- Muestra los id de las matriculas que ha sido pagadas por el usuario logueado
+							From COMPRA_CARRITO C, DETALLE_COMPRA D 
+							Where	C.PERSONA_per_id = @per_id AND 
+									C.com_id = D.COMPRA_CARRITO_com_id AND 
+									C.com_estado = 'PAGADO' 
+							Group By D.MATRICULA_mat_id) AND
+		   M.PERSONA_per_id =@per_id)) tablaMes 
+	-- Fin TablaMes muestra el mes y el anio que debe segun la matricula
+
+WHERE M.mat_id not in (select D.MATRICULA_mat_id
+					   from	  COMPRA_CARRITO C, DETALLE_COMPRA D 
+					   where  C.PERSONA_per_id = @per_id AND 
+						      C.com_estado = 'PAGADO' and 
+						      C.com_id = D.COMPRA_CARRITO_com_id
+				       Group By D.MATRICULA_mat_id) AND
+	  M.PERSONA_per_id =@per_id;
+
+END
+
+
+	  /* Detallar la matricula dado el id */
+CREATE PROCEDURE M16_DETALLAR_MATRICULA
+@mat_id [int]
+AS
+BEGIN
+
+	select	M.mat_id as mat_id,
+			M.mat_identificador as mat_identificador,
+			M.mat_precio as mat_precio, 
+			M.mat_fecha_ultimo_pago as FechaPago,
+			D.doj_nombre as djNombre
+	from 	matricula M, Dojo D
+	where	M.mat_id = @mat_id and
+			M.DOJO_doj_id = D.doj_id;
+
+END
+
+
+ CREATE PROCEDURE M16_CONSULTARCOMPRA
+@per_id [int]
+AS
+ BEGIN
+    SELECT	com_id as idCompra,		
+		com_estado as estado
+	 		
+	FROM  COMPRA_CARRITO
+	WHERE PERSONA_per_id = @per_id and
+		  com_estado ='PAGADO';
+ END
+ 
+ 
+ CREATE PROCEDURE M16_CONSULTARFACTURAPRODUCTOS
+@per_id      [int]
+AS
+ BEGIN
+	select  IM.imp_nombre as prodNombre, 
+		DC.det_cantidad as cantProducto, 
+		IM.imp_precio as precUnitario, 
+		DC.det_cantidad*IM.imp_precio as totalProducto
+from	DETALLE_COMPRA DC, IMPLEMENTO IM 
+where	COMPRA_CARRITO_com_id =@per_id  and 
+		DC.IMPLEMENTO_inv_id is not null and
+		DC.IMPLEMENTO_inv_id = IM.imp_id;
+END
+
+
+CREATE PROCEDURE M16_CONSULTARFACTURAEVENTOS
+@per_id      [int]
+AS
+ BEGIN
+	 select  EV.eve_nombre as evenNombre, 
+			DC.det_cantidad as cantEvento, 
+			EV.eve_costo as precUnitario,
+			DC.det_cantidad*EV.eve_costo as totalEvento
+	from	DETALLE_COMPRA DC, EVENTO EV
+	where	DC.COMPRA_CARRITO_com_id =@per_id and 
+			DC.EVENTO_eve_id is not null and
+			DC.EVENTO_eve_id = EV.eve_id;
+END
+
+
+CREATE PROCEDURE M16_CONSULTARFACTURAMATRICULAS
+@per_id      [int]
+AS
+ BEGIN
+	select	MA.mat_identificador as matNombre,
+			DC.det_cantidad as cantMatricula, 
+			MA.mat_precio as precUnitario,
+			DC.det_cantidad*MA.mat_precio as totalMatricula
+	from	DETALLE_COMPRA DC, MATRICULA MA
+	where	DC.COMPRA_CARRITO_com_id =@per_id and 
+			DC.MATRICULA_mat_id is not null and
+			DC.MATRICULA_mat_id = MA.mat_id;
+END
+
+
+-- Forma parte del detalle de la factura
+CREATE PROCEDURE M16_CONSULTARFACTURADATOS
+@per_id      [int]
+AS
+ BEGIN
+	 select DISTINCT  DC.COMPRA_CARRITO_com_id as idfactura,
+				PC.pc_fecha_pago as fechaPago,
+				PC.pc_tipo_pago as tipoPago,
+				PC.pc_monto as montoPago
+	from		DETALLE_COMPRA DC, PAGO_CARRITO PC
+	where		DC.COMPRA_CARRITO_com_id = @per_id  and
+				DC.COMPRA_CARRITO_com_id = PC.COMPRA_CARRITO_com_id 
+	group by	DC.COMPRA_CARRITO_com_id,
+				PC.pc_fecha_pago,
+				PC.pc_tipo_pago,
+				PC.pc_monto;		
+END
+
+
+
+/* Consulta la informacion parcial del inventario por dojo */
+CREATE PROCEDURE M16_CONSULTAR_INVENTARIO_TOTAL_DOJOS
+  @per_id [int]
+AS
+BEGIN
+	--Selecciono la informacion parcial de los implementos agrupados por dojos de acuerdo al usuario
+	Select  IM.imp_id as idImplemento,
+			IM.imp_nombre as impNombre,
+			IM.imp_tipo as impTipo, 
+			IM.imp_marca as impMarca, 
+			IM.imp_precio as impPrecio,
+			IV.inv_cantidad_total as impCantidadTotal,
+			DJ.doj_nombre as djNombre 
+	From	IMPLEMENTO IM, INVENTARIO IV, DOJO DJ, PERSONA P
+	where	IV.IMPLEMENTO_imp_id = IM.imp_id and
+			IV.DOJO_doj_id = DJ.doj_id and 
+			P.DOJO_doj_id = DJ.doj_id and
+			P.per_id = @per_id;
+END
+
+
+ CREATE PROCEDURE M16_DETALLARIMPLEMENTO
+	@iditem [int]
+AS
+ BEGIN
+	select	imp_imagen as impImagen,
+		imp_nombre as impNombre,
+		imp_tipo as impTipo, 
+		imp_marca as impMarca, 
+		imp_color as impColor,
+		imp_talla as impTalla,
+		imp_estatus as impEstatus,
+		imp_precio as impPrecio,
+		imp_descripcion as impDescripcion 
+from IMPLEMENTO
+where imp_id =@iditem
+END
+
+
+-- Muestra la lista de eventos que puede ver un asuario de acuerdo a las restricciones basadas en la edad
+CREATE PROCEDURE M16_CONSULTAREVENTOS
+@per_id      [int]
+AS
+ BEGIN
+	SELECT	DISTINCT C.eve_id as idEvento,
+					C.eve_nombre as impNombre,
+					C.eve_descripcion as impDescripcion,
+					C.eve_costo as impPrecio 
+	FROM PERSONA P, RESTRICCION_EVENTO RC, EVENTO C
+	WHERE	P.per_id = @per_id  AND
+			RC.EVENTO_eve_id = c.eve_id AND	  
+			(RC.res_eve_sexo = P.per_sexo  OR  RC.res_eve_sexo = 'c')
+	GROUP BY P.per_fecha_nacimiento, 
+			P.per_id, rc.res_eve_edad_max, 
+			RC.res_eve_edad_min , 
+			RC.EVENTO_eve_id,
+			C.eve_id,
+			C.eve_nombre,
+			C.eve_descripcion,
+			C.eve_costo
+	HAVING  DATEDIFF(YEAR,p.per_fecha_nacimiento,GETDATE() ) >= rc.res_eve_edad_min and 
+			DATEDIFF(YEAR,p.per_fecha_nacimiento,GETDATE() ) <= rc.res_eve_edad_max
+END
+
+
+CREATE PROCEDURE M16_DETALLAREVENTO
+	@iditem [int]
+AS
+ BEGIN
+	select 	eve_id as idEvento,
+			eve_nombre as impNombre,
+			eve_costo as impPrecio, 
+			eve_descripcion as impDescripcion
+	from	EVENTO
+	where	eve_id =@iditem
+END

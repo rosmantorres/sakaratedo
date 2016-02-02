@@ -13,6 +13,15 @@ namespace templateApp.GUI.Modulo3 {
     public partial class M3_ConsultarOrganizacion {
         
         /// <summary>
+        /// consulta_org control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm consulta_org;
+        
+        /// <summary>
         /// alert control.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,32 @@ namespace templateApp.GUI.Modulo3 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl alert;
         
         /// <summary>
-        /// consulta_org control.
+        /// ScriptManager1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm consulta_org;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// OrgIdStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden OrgIdStatus;
+        
+        /// <summary>
+        /// estatusActual control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden estatusActual;
+        
         
         /// <summary>
         /// tabla control.

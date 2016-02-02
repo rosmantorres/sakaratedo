@@ -6,8 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using templateApp.GUI.Modulo1;
 using templateApp.GUI.Master;
-using LogicaNegociosSKD.Modulo1;
-using LogicaNegociosSKD.Modulo2;
 using Interfaz_Contratos.Modulo1;
 using Interfaz_Presentadores.Modulo1;
 

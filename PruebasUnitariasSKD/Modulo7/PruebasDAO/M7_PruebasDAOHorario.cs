@@ -21,7 +21,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
     {
         #region Atributos
         private HorarioM7 idHorario;
-        private FabricaDAOSqlServer fabricaSql;
         private DaoHorario baseDeDatosHorario;
         #endregion
 
@@ -32,8 +31,7 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         [SetUp]
         public void Init()
         {
-            fabricaSql = new FabricaDAOSqlServer();
-            baseDeDatosHorario = fabricaSql.ObtenerDaoHorarioM7();
+            baseDeDatosHorario = FabricaDAOSqlServer.ObtenerDaoHorarioM7();
             idHorario = (HorarioM7)FabricaEntidades.ObtenerHorarioM7();
             idHorario.Id = 6;
         }
@@ -45,7 +43,6 @@ namespace PruebasUnitariasSKD.Modulo7.PruebasDAO
         public void Clean()
         {
             idHorario = null;
-            fabricaSql = null;
             baseDeDatosHorario = null;
         }
         #endregion

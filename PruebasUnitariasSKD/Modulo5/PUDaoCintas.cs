@@ -17,7 +17,7 @@ using ExcepcionesSKD.Modulo5;
 
 namespace PruebasUnitariasSKD.Modulo5
 {
-	/// <summary>
+    /// <summary>
     /// Clase que contiene las pruebas unitarias para DaoCinta
     /// </summary>
     [TestFixture]
@@ -48,7 +48,7 @@ namespace PruebasUnitariasSKD.Modulo5
             miEntidadCinta = FabricaEntidades.ObtenerCinta_M5(1, "Blanco", "1er Kyu", "Nivel inferior", 1, "Principiante", org, true);
             miEntidadValidarCinta = FabricaEntidades.ObtenerCinta_M5("Blanco", "1er Kyu", "Nivel inferior", 6, "Principiante", org, true);
             miEntidadCintaModificar = FabricaEntidades.ObtenerCinta_M5(1, "Naranja", "1er Kyu", "Nivel inferior", 3, "Principiante", org, true);
-            miEntidadCintaAgregar = FabricaEntidades.ObtenerCinta_M5("Negro", "1er Kyu", "Nivel inferior", 5, "Principiante", org, true);
+            miEntidadCintaAgregar = FabricaEntidades.ObtenerCinta_M5("Negro", "1er Kyu", "Nivel inferior", 7, "Principiante", org, true);
             miEntidadCintaXId = FabricaEntidades.ObtenerCinta_M5(1, "Blanco");
         }
 
@@ -78,8 +78,7 @@ namespace PruebasUnitariasSKD.Modulo5
             bool resultado;
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ValidarOrganizacion(miEntidad);
-            Assert.IsFalse(resultado);
-           
+            Assert.IsTrue(resultado);
         }
         /// <summary>
         /// Método para probar la exception de Organizacion inexistente para Agregar y Modificar en DAO
@@ -148,8 +147,7 @@ namespace PruebasUnitariasSKD.Modulo5
             List<Entidad> resultado;
             IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
             resultado = miDaoCinta.ListarCintasXOrganizacion(miEntidad);
-            Assert.IsEmpty(resultado);
-
+            Assert.GreaterOrEqual(resultado.Count, 1);
         }
         /// <summary>
         /// Método de prueba para Agregar una Cinta en DAO
@@ -199,8 +197,22 @@ namespace PruebasUnitariasSKD.Modulo5
             Assert.IsNotNull(resultado);
 
         }
+
+        /// <summary>
+        /// Método de prueba para modificar el status de una Cinta en DAO
+        /// </summary>
+        [Test]
+        public void PruebaModificarStatusCinta()
+        {
+            bool resultado;
+            IDaoCinta miDaoCinta = FabricaDAOSqlServer.ObtenerDaoCinta();
+            resultado = miDaoCinta.ModificarStatus(miEntidadCintaModificar);
+            Assert.IsTrue(resultado);
+
+        }
+
         #endregion
-        
+
     }
 
 }

@@ -13,6 +13,9 @@ using DominioSKD.Fabrica;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
+    /// <summary>
+    /// Comando para detallar las matriculas de un atleta
+    /// </summary>
     public class ComandoConsultarDetallarMatricula : Comando<Entidad>
     {
         
@@ -36,8 +39,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
     
         public override Entidad Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoMatricula baseDeDatosMatricula = fabrica.ObtenerDaoMatriculaM7();
+            DaoMatricula baseDeDatosMatricula = FabricaDAOSqlServer.ObtenerDaoMatriculaM7();
             MatriculaM7 idMatricula = (MatriculaM7)LaEntidad;
             MatriculaM7 matricula;
 

@@ -35,12 +35,10 @@ namespace Interfaz_Presentadores.Modulo7
         /// </summary>
         public void ConsultarEventosInscritos(Entidad idPersona)
         {
-            FabricaComandos fabricaComandos = new FabricaComandos();
-            FabricaEntidades fabricaEntidades = new FabricaEntidades();
             try
             {
                 Comando<Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>>> comandoListaEventosInscritos = 
-                    fabricaComandos.ObtenerComandoConsultarListaEventosInscritos();
+                    FabricaComandos.ObtenerComandoConsultarListaEventosInscritos();
 
                 comandoListaEventosInscritos.LaEntidad = idPersona;
                 Tuple<List<Entidad>, List<Entidad>, List<DateTime>, List<DateTime>> tupla = comandoListaEventosInscritos.Ejecutar();
@@ -61,7 +59,7 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + evento.Nombre.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + evento.TipoEvento.Nombre.ToString() + M7_RecursosPresentador.CerrarTD;
-                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
+                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString(M7_RecursosPresentador.FormatoFecha) + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + evento.Ubicacion.Estado.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
                         vista.laTabla += M7_RecursosPresentador.BotonInfoEventosInscritos + evento.Id + M7_RecursosPresentador.BotonCerrar;
@@ -81,7 +79,7 @@ namespace Interfaz_Presentadores.Modulo7
                         vista.laTabla += M7_RecursosPresentador.AbrirTR;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + competencia.Nombre.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + competencia.TipoCompetencia.ToString() + M7_RecursosPresentador.CerrarTD;
-                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString("MM/dd/yyyy") + M7_RecursosPresentador.CerrarTD;
+                        vista.laTabla += M7_RecursosPresentador.AbrirTD + fechaInscripcion.ToString(M7_RecursosPresentador.FormatoFecha) + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD + competencia.Ubicacion.Estado.ToString() + M7_RecursosPresentador.CerrarTD;
                         vista.laTabla += M7_RecursosPresentador.AbrirTD;
                         vista.laTabla += M7_RecursosPresentador.BotonInfoCompetenciaInscrita + competencia.Id + M7_RecursosPresentador.BotonCerrar;

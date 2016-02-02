@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using LogicaNegociosSKD.Modulo1;
-using LogicaNegociosSKD.Modulo2;
-using DominioSKD.Entidades.Modulo1;
+using Interfaz_Presentadores.Modulo2;
 using DominioSKD.Entidades.Modulo2;
+using DominioSKD.Entidades.Modulo1;
+using LogicaNegociosSKD.Comandos.Modulo2;
+using LogicaNegociosSKD.Fabrica;
+using DominioSKD;
+using DominioSKD.Fabrica;
 
 namespace PruebasUnitariasSKD.Modulo2
 {
@@ -15,21 +18,19 @@ namespace PruebasUnitariasSKD.Modulo2
 
     class PruebasUnitariasLogicaN
     {
-        AlgoritmoDeEncriptacion cripto = new AlgoritmoDeEncriptacion();
-
-        [SetUp]
-        protected void parametros()
-        {
-
-        }
-
+        Encriptacion cripto = new Encriptacion();
+        private FabricaComandos laFabrica = new FabricaComandos();
+        private FabricaEntidades laFabricaE = new FabricaEntidades();
 
         // Prueba unitaria de la excepcion del metodo consultarRolesUsuario()
         [Test]
         public void PruebaValidarconsultarRolesUsuario()
         {
-            List<Rol> _respuesta;
-            _respuesta = logicaRol.consultarRolesUsuario(RecursosPU_Mod2.Id);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Id = 1;
+          ComandoRolesUsuario  lg = (ComandoRolesUsuario)laFabrica.ObtenerRolesUsuario();
+          lg.LaEntidad = Login;
+          List<Rol> _respuesta = lg.Ejecutar();
             Assert.AreNotEqual(null, _respuesta);
 
         }
@@ -38,56 +39,38 @@ namespace PruebasUnitariasSKD.Modulo2
         [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
         public void PruebaValidarconsultarRolesUsuarioEXC()
         {
-            List<Rol> _respuesta;
-            _respuesta = logicaRol.consultarRolesUsuario(null);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login = null;
+            ComandoRolesUsuario lg = (ComandoRolesUsuario)laFabrica.ObtenerRolesUsuario();
+            lg.LaEntidad = Login;
+            List<Rol> _respuesta = lg.Ejecutar();
         }
         // Prueba unitaria  del metodo prioridadRol()
-        [Test]
-        public void PruebaprioridadRol()
-        {
-
-            int _respuesta = logicaRol.prioridadRol(RecursosPU_Mod2.Rol);
-            int _respuesta1 = logicaRol.prioridadRol(RecursosPU_Mod2.Rol2);
-            int _respuesta2 = logicaRol.prioridadRol(RecursosPU_Mod2.Rol3);
-            int _respuesta3 = logicaRol.prioridadRol(RecursosPU_Mod2.Rol4);
-            int _respuesta4 = logicaRol.prioridadRol(RecursosPU_Mod2.Rol5);
-            int _respuesta5 = logicaRol.prioridadRol(RecursosPU_Mod2.Rol6);
-            int _respuesta6 = logicaRol.prioridadRol(RecursosPU_Mod2.Rol7);
-            int _respuesta7 = logicaRol.prioridadRol(RecursosPU_Mod2.Rol8);
-            int _respuesta8 = logicaRol.prioridadRol(RecursosPU_Mod2.Rol9);
-            Assert.AreEqual(1, _respuesta);
-            Assert.AreEqual(1, _respuesta1);
-            Assert.AreEqual(2, _respuesta2);
-            Assert.AreEqual(2, _respuesta3);
-            Assert.AreEqual(3, _respuesta4);
-            Assert.AreEqual(3, _respuesta5);
-            Assert.AreEqual(4, _respuesta6);
-            Assert.AreEqual(5, _respuesta7);
-            Assert.AreEqual(6, _respuesta8);
-
-        }
+   
         // Prueba unitaria de la excepcion del metodo prioridadRol() Exc
-        [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
-        public void PruebaprioridadRolExc()
-        {
-            int _respuesta;
-            _respuesta = logicaRol.prioridadRol(RecursosPU_Mod2.RolInvalido);
-
-        }
+     
         // Prueba unitaria  del metodo agregarRol(),consultarRolesUsuario() y eliminarRol();
         [Test]
         public void PruebaagregarEliminarConsultarRol()
         {
-            List<Rol> RolesUsuario = logicaRol.consultarRolesUsuario(RecursosPU_Mod2.Id);
-            bool _respuesta = logicaRol.agregarRol("1", "3");
+            List<Rol> listaRol = new List<Rol>();
+            Rol elRol = (Rol)laFabricaE.ObtenerRol_M2();
+            elRol.Id = 3;
+            listaRol.Add(elRol);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Roles = listaRol;
+            Login.Id = 1;
+
+            ComandoAgregarRol lg = (ComandoAgregarRol)laFabrica.ObtenerAgregarRol();
+            lg.LaEntidad = Login;
+            bool _respuesta = _respuesta = lg.Ejecutar();
+
             Assert.AreEqual(true, _respuesta);
 
-            bool _respuesta2 = logicaRol.eliminarRol("1", "3");
+            ComandoEliminarRol lg2 = (ComandoEliminarRol)laFabrica.ObtenerEliminarRol();
+            lg2.LaEntidad = Login;
+            bool _respuesta2  = lg2.Ejecutar();
             Assert.AreEqual(true, _respuesta2);
-
-            List<Rol> RolesUsuario2 = logicaRol.consultarRolesUsuario(RecursosPU_Mod2.Id);
-            Assert.AreEqual(RolesUsuario.Count, RolesUsuario2.Count);
 
         }
         // Prueba unitaria  del metodo eliminarRol();Exc
@@ -95,116 +78,43 @@ namespace PruebasUnitariasSKD.Modulo2
         [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
         public void PruebaEliminarRolEXC()
         {
-            bool _respuesta2 = logicaRol.eliminarRol(null, "3");
-            Assert.AreEqual(false, _respuesta2);
-        }
-        [Test]
-        public void PreubaEncriptadoYdesencriptado()
-        {
-            string Archivo;
-            Archivo = cripto.EncriptarCadenaDeCaracteres(RecursosPU_Mod2.Id, RecursosLogicaModulo2.claveDES);
-            Console.WriteLine(cripto.hash("12345"));
-            Archivo = cripto.DesencriptarCadenaDeCaracteres(Archivo, RecursosLogicaModulo2.claveDES);
-        }
+            List<Rol> listaRol = new List<Rol>();
+            
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Roles = listaRol;
+            Login.Id = 1;
 
-        // Prueba unitaria  del metodo cargarRoles()
-        [Test]
-        public void PruebaValidarcargarRoles()
-        {
-            List<Rol> _respuesta;
-            _respuesta = logicaRol.cargarRoles();
-            Assert.AreNotEqual(null, _respuesta);
-
+            ComandoEliminarRol lg2 = (ComandoEliminarRol)laFabrica.ObtenerEliminarRol();
+            lg2.LaEntidad = Login;
+            bool _respuesta2 = lg2.Ejecutar();
         }
+    
         [Test]
         [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
         public void PruebaAgregaryelimanarRolEXC()
         {
-            bool _respuesta;
-            bool _respuesta2;
-            _respuesta = logicaRol.agregarRol(null, null);
-            _respuesta2 = logicaRol.eliminarRol(null, null);
-
+            List<Rol> listaRol = new List<Rol>();
+            
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Id = 1;
+            ComandoAgregarRol lg = (ComandoAgregarRol)laFabrica.ObtenerAgregarRol();
+            lg.LaEntidad = Login;
+            bool _respuesta1 = lg.Ejecutar();
+            ComandoEliminarRol lg2 = (ComandoEliminarRol)laFabrica.ObtenerEliminarRol();
+            lg2.LaEntidad = Login;
+            bool _respuesta2 = lg2.Ejecutar();
         }
-        // Prueba unitaria  del metodo validarPrioridad()
-        [Test]
-        public void PruebaValidarRoles()
-        {
-            List<Rol> _respuesta;
-            List<Rol> _respuesta2;
-            _respuesta = logicaRol.cargarRoles();
-            _respuesta2 = logicaRol.validarPrioridad(_respuesta, RecursosPU_Mod2.Rol);
-            Assert.AreEqual(_respuesta, _respuesta2);
-        }
-        // Prueba unitaria  del metodo validarPrioridad() EXC
-        [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
-        public void PruebaValidarRolesEXC()
-        {
-            List<Rol> _respuesta;
-            List<Rol> _respuesta2;
-            _respuesta = logicaRol.cargarRoles();
-            _respuesta2 = logicaRol.validarPrioridad(_respuesta, RecursosPU_Mod2.Descripcion);
-            Assert.AreEqual(_respuesta, _respuesta2);
-        }
-        // Prueba unitaria  del metodo rolNoEditable()
-        [Test]
-        public void PruebaValidarrolNoEditable()
-        {
-            List<Rol> _respuesta;
-            List<Rol> _respuesta2;
-            _respuesta = logicaRol.cargarRoles();
-            _respuesta2 = logicaRol.rolNoEditable(_respuesta, RecursosPU_Mod2.Rol);
-            Assert.IsNotNull(_respuesta2);
-        }
-        // Prueba unitaria  del metodo rolNoEditable() EXC
-        [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
-        public void PruebaValidarrolNoEditableEXC()
-        {
-            List<Rol> _respuesta;
-            List<Rol> _respuesta2;
-            _respuesta = logicaRol.cargarRoles();
-            _respuesta2 = logicaRol.rolNoEditable(_respuesta, RecursosPU_Mod2.Descripcion);
-        }
-        // Prueba unitaria  del metodo cuentaAConsultar()
         [Test]
         public void PruebaValidarcuentaAConsultar()
         {
-            Cuenta _respuesta;
-            _respuesta = logicaRol.cuentaAConsultar(35);
+            Cuenta Login = (Cuenta)laFabricaE.ObtenerCuenta_M1();
+            Login.Id = 35;
+            ComandoCuentaUsuario lg = (ComandoCuentaUsuario)laFabrica.ObtenerCuentaUsuario();
+            lg.LaEntidad = Login;
+            Cuenta _respuesta = (Cuenta)lg.Ejecutar();
             Assert.AreEqual(_respuesta.Nombre_usuario, RecursosPU_Mod2.usuario);
         }
-        // Prueba unitaria  del metodo filtrarRoles()
-        [Test]
-        public void PruebaValidafiltrarRoles()
-        {
-            List<Rol> _respuesta;
-            List<Rol> _respuesta2;
-            List<Rol> _respuesta3;
-          List<Rol> respuesta = new List<Rol>();
-
-
-            _respuesta = logicaRol.cargarRoles();
-            _respuesta2 = logicaRol.consultarRolesUsuario("1");
-            _respuesta3 = logicaRol.filtrarRoles(_respuesta2, _respuesta);
-            Assert.AreNotEqual(_respuesta3,respuesta);
-        }
-        // Prueba unitaria  del metodo filtrarRoles() EXCEPCION
-        [Test]
-        [ExpectedException(typeof(ExcepcionesSKD.Modulo2.RolesException))]
-        public void PruebaValidafiltrarRolesEXC()
-        {
-            List<Rol> _respuesta;
-            List<Rol> _respuesta2;
-            List<Rol> _respuesta3;
-            List<Rol> respuesta = new List<Rol>();
-
-
-            _respuesta = logicaRol.cargarRoles();
-            _respuesta2 = logicaRol.consultarRolesUsuario("1");
-            _respuesta3 = logicaRol.filtrarRoles(null, _respuesta);
-        }
+      
 
 
     }

@@ -12,6 +12,9 @@ using DominioSKD.Entidades.Modulo7;
 
 namespace LogicaNegociosSKD.Comandos.Modulo7
 {
+    /// <summary>
+    /// Comando para listar cintas las matriculas pagas por un atleta
+    /// </summary>
     public class ComandoConsultarListaMatriculasPagas : Comando<Tuple<List<Entidad>, List<Boolean>, List<float>>>
     {
         /// <summary>
@@ -20,8 +23,7 @@ namespace LogicaNegociosSKD.Comandos.Modulo7
         /// <returns>Retorna tupla con listas de matricula,  sus listas de estados y montos pagos</returns>
         public override Tuple<List<Entidad>, List<Boolean>, List<float>> Ejecutar()
         {
-            FabricaDAOSqlServer fabrica = new FabricaDAOSqlServer();
-            DaoMatricula baseDeDatosMatricula = fabrica.ObtenerDaoMatriculaM7();        
+            DaoMatricula baseDeDatosMatricula = FabricaDAOSqlServer.ObtenerDaoMatriculaM7();        
             List<Entidad> matriculas = new List<Entidad>();
             PersonaM7 idPersona = (PersonaM7)LaEntidad;
             Tuple<List<Entidad> ,List<Boolean>, List<float>> tupla;

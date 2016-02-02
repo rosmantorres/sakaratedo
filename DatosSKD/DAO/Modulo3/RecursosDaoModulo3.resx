@@ -139,6 +139,9 @@
   <data name="AliasNombreOrg" xml:space="preserve">
     <value>nombreOrganizacion</value>
   </data>
+  <data name="AliasStatusOrg" xml:space="preserve">
+    <value>estatus</value>
+  </data>
   <data name="AliasTelefonoOrg" xml:space="preserve">
     <value>telefonoOrganiacion</value>
   </data>
@@ -193,6 +196,10 @@
   <data name="ModificarOrganizacion" xml:space="preserve">
     <value>M3_ModificarOrganizacion</value>
     <comment>funcion para modificar organiacion</comment>
+  </data>
+  <data name="ModificarStatusOrganizacion" xml:space="preserve">
+    <value>M3_ModificarStatusOrganizacion</value>
+    <comment>Procedure para modificar el status de una organizacion</comment>
   </data>
   <data name="ParamEmailOrg" xml:space="preserve">
     <value>@emailOrganizacion</value>

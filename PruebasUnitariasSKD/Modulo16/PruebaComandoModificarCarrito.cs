@@ -42,8 +42,7 @@ namespace PruebasUnitariasSKD.Modulo16
         private Comando<bool> ComandoModificarCarrito3;
         private Comando<bool> ComandoModificarCarrito4;
         private Comando<bool> ComandoModificarCarrito5;
-        private Comando<bool> ComandoModificarCarrito6;
-        FabricaEntidades fabrica;        
+        private Comando<bool> ComandoModificarCarrito6;      
         #endregion
 
         /// <summary>
@@ -72,13 +71,9 @@ namespace PruebasUnitariasSKD.Modulo16
             this.matricula.Costo = 5000;
 
             //Evento
-
-            /*this.evento = (DominioSKD.Entidades.Modulo9.Evento)fabrica.ObtenerEvento();
-=======
             this.evento = (DominioSKD.Entidades.Modulo9.Evento)FabricaEntidades.ObtenerEvento();
->>>>>>> e8ac3154aec28d056bea24d3a4ad8b0913ba08cd
             this.evento.Id = 1;
-            this.evento.Costo = 0;  */          
+            this.evento.Costo = 0;         
 
             //Iniciamos los atributos para la prueba de vacio
             this.PruebaComandoVacio = FabricaComandos.CrearComandoModificarCarrito();
@@ -212,8 +207,7 @@ namespace PruebasUnitariasSKD.Modulo16
             this.ComandoModificarCarrito3 = null;
             this.ComandoModificarCarrito4 = null;
             this.ComandoModificarCarrito5 = null;
-            this.ComandoModificarCarrito6 = null;
-            this.fabrica = null;    
+            this.ComandoModificarCarrito6 = null;    
             this.evento = null;
         }
     }

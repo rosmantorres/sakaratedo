@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DominioSKD.Entidades.Modulo2;
+using DominioSKD;
 
 namespace Interfaz_Presentadores.Modulo2
 {

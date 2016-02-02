@@ -203,4 +203,7 @@
   <data name="falloOrden" xml:space="preserve">
     <value>El Orden de la Cinta esta Repetido para esa Organizacion</value>
   </data>
+  <data name="expresionesRegulares" xml:space="preserve">
+    <value>Existen campos con valores incorrectos, solo se permiten valores alfanumericos</value>
+  </data>
 </root>

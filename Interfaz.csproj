@@ -41,7 +41,7 @@
   <ItemGroup>
     <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Downloads\CKEditor.NET.dll</HintPath>
+      <HintPath>..\CKEditor.NET.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -60,9 +60,6 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <!--     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" /> -->
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\..\..\..\Program Files (x86)\NUnit 2.6.4\bin\framework\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -258,8 +255,12 @@
     <Content Include="GUI\Modulo3\M3_ConsultarOrganizacion.aspx" />
     <Content Include="GUI\Modulo3\M3_ModificarOrganizacion.aspx" />
     <Content Include="GUI\Modulo4\M4_AgregarDojo.aspx" />
+    <Content Include="GUI\Modulo4\M4_AgregarHistorialMatricula.aspx" />
+    <Content Include="GUI\Modulo4\M4_DetalleDojo.aspx" />
     <Content Include="GUI\Modulo4\M4_ListarDojos.aspx" />
-    <Content Include="GUI\Modulo4\M4_ModificaDojo.aspx" />
+    <Content Include="GUI\Modulo4\M4_ListarHistorialMatricula.aspx" />
+    <Content Include="GUI\Modulo4\M4_ModificarDojo.aspx" />
+    <Content Include="GUI\Modulo4\M4_ModificarHistorialMatricula.aspx" />
     <Content Include="GUI\Modulo5\M5_ListarCintas.aspx" />
     <Content Include="GUI\Modulo5\M5_ModificarCintas.aspx" />
     <Content Include="GUI\Modulo5\M5_CrearCintas.aspx" />
@@ -284,14 +285,14 @@
     <Content Include="GUI\Modulo7\css\images\ui-icons_cd0a0a_256x240.png" />
     <Content Include="GUI\Modulo7\css\jquery-ui-1.10.4.custom.css" />
     <Content Include="GUI\Modulo7\css\jquery-ui.css" />
+    <Content Include="GUI\Modulo7\css\js\daterange.js" />
+    <Content Include="GUI\Modulo7\css\js\jquery-ui.js" />
+    <Content Include="GUI\Modulo7\css\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_DetallarHorarioPractica.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetenciaPaga.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetencia.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleCompetenciaInscrita.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoInscrito.aspx" />
-    <Content Include="GUI\Modulo7\css\js\daterange.js" />
-    <Content Include="GUI\Modulo7\css\js\jquery-ui.js" />
-    <Content Include="GUI\Modulo7\css\js\jquery.ui.datepicker-es.js" />
     <Content Include="GUI\Modulo7\M7_DetalleCinta.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleMatriculaPaga.aspx" />
     <Content Include="GUI\Modulo7\M7_DetalleEventoPago.aspx" />
@@ -365,6 +366,11 @@
     <Content Include="plugins\jquery_validate\package.json" />
     <Content Include="plugins\jquery_validate\README.md" />
     <Content Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\PublishProfiles\Sakaratedo Web.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1596,9 +1602,9 @@
       <DependentUpon>M11_ModificarResultadoCompetencia.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo11\M11_RecursoInterfaz.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>M11_RecursoInterfaz.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="GUI\Modulo12\M12_AgregarCompetencias.aspx.cs">
       <DependentUpon>M12_AgregarCompetencias.aspx</DependentUpon>
@@ -1883,6 +1889,20 @@
     <Compile Include="GUI\Modulo4\M4_AgregarDojo.aspx.designer.cs">
       <DependentUpon>M4_AgregarDojo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Modulo4\M4_AgregarHistorialMatricula.aspx.cs">
+      <DependentUpon>M4_AgregarHistorialMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_AgregarHistorialMatricula.aspx.designer.cs">
+      <DependentUpon>M4_AgregarHistorialMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_DetalleDojo.aspx.cs">
+      <DependentUpon>M4_DetalleDojo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_DetalleDojo.aspx.designer.cs">
+      <DependentUpon>M4_DetalleDojo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.cs">
       <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1890,12 +1910,31 @@
     <Compile Include="GUI\Modulo4\M4_ListarDojos.aspx.designer.cs">
       <DependentUpon>M4_ListarDojos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Modulo4\M4_ModificaDojo.aspx.cs">
-      <DependentUpon>M4_ModificaDojo.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo4\M4_ListarHistorialMatricula.aspx.cs">
+      <DependentUpon>M4_ListarHistorialMatricula.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GUI\Modulo4\M4_ModificaDojo.aspx.designer.cs">
-      <DependentUpon>M4_ModificaDojo.aspx</DependentUpon>
+    <Compile Include="GUI\Modulo4\M4_ListarHistorialMatricula.aspx.designer.cs">
+      <DependentUpon>M4_ListarHistorialMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_ModificarDojo.aspx.cs">
+      <DependentUpon>M4_ModificarDojo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_ModificarDojo.aspx.designer.cs">
+      <DependentUpon>M4_ModificarDojo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_ModificarHistorialMatricula.aspx.cs">
+      <DependentUpon>M4_ModificarHistorialMatricula.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_ModificarHistorialMatricula.aspx.designer.cs">
+      <DependentUpon>M4_ModificarHistorialMatricula.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Modulo4\M4_RecursoInterfaz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M4_RecursoInterfaz.resx</DependentUpon>
     </Compile>
     <Compile Include="GUI\Modulo5\M5_ListarCintas.aspx.cs">
       <DependentUpon>M5_ListarCintas.aspx</DependentUpon>
@@ -2188,6 +2227,11 @@
     <Compile Include="GUI\Master\SKD.Master.designer.cs">
       <DependentUpon>SKD.Master</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
@@ -2227,6 +2271,10 @@
       <LastGenOutput>RecursosInterfazModulo1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo3\M3_RecursoInterfaz.resx" />
+    <EmbeddedResource Include="GUI\Modulo4\M4_RecursoInterfaz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>M4_RecursoInterfaz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Modulo5\RecursoInterfazMod5.resx" />
     <EmbeddedResource Include="GUI\Modulo7\M7_Recursos.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -2273,6 +2321,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

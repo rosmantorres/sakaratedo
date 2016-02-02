@@ -13,20 +13,17 @@ using LogicaNegociosSKD.Comandos.Modulo2;
 using DominioSKD.Fabrica;
 using DominioSKD.Entidades.Modulo2;
 using DominioSKD.Entidades.Modulo1;
+using DominioSKD;
 
 namespace Interfaz_Presentadores.Modulo2
 {
     public class PresentadorM2
     {
         #region variables
-        private List<Rol> losRolesDeSistema = new List<Rol>();
-        private List<Rol> rolesDePersona = new List<Rol>();
-        private List<Rol> rolesFiltrados = new List<Rol>();//los roles que el usuario aun no tiene permiso
         private string rolID = "";
         private int rolSelected = 0;
         private int cont = 0;
         private HiddenField Hidden = new HiddenField();
-        private List<Rol> rolSinPermiso = new List<Rol>();
         private Encriptacion cripto = new Encriptacion();
         private String idUsuarioURL;
 
@@ -38,6 +35,11 @@ namespace Interfaz_Presentadores.Modulo2
         private Cuenta cuentaComando = (Cuenta)laFabricaE.ObtenerCuenta_M1();
         private Rol rolComando = (Rol)laFabricaE.ObtenerRol_M2();
 
+        private List<Rol> losRolesDeSistema = new List<Rol>();
+        private List<Rol> rolesDePersona = new List<Rol>();
+        private List<Rol> rolSinPermiso = new List<Rol>();
+        private List<Rol> rolesFiltrados = new List<Rol>();//los roles que el usuario aun no tiene permiso
+        
         private String InfoRol=RecursosInterfazPresentadorM2.InfoRol;
         private String EliminarRolEtq=RecursosInterfazPresentadorM2.EliminarRolEtq;
         private String AgregarRolEtq=RecursosInterfazPresentadorM2.AgregarRolEtq;
@@ -98,23 +100,20 @@ namespace Interfaz_Presentadores.Modulo2
                     if (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM2.parametroIDUsuario] != null)
                     {
                         idUsuarioURL = cripto.DesencriptarCadenaDeCaracteres
-                             (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM2.parametroIDUsuario], RecursosLogicaModulo2.claveDES);
+                             (HttpContext.Current.Request.QueryString[RecursosInterfazPresentadorM2.parametroIDUsuario], RecursosInterfazPresentadorM2.claveDES);
                         cuentaComando.Id = int.Parse(idUsuarioURL);
-                       /* ComandoRolesUsuario rolesUsuario = (ComandoRolesUsuario)laFabrica.ObtenerRolesUsuario();
-                        rolesUsuario.LaEntidad = cuentaComando;
-                        rolesDePersona = rolesUsuario.Ejecutar().Cast<Rol>().ToList();//que hago aqui ?????*/
                         ComandoCuentaUsuario cuentaConsultada = (ComandoCuentaUsuario)laFabrica.ObtenerCuentaUsuario();
                         cuentaConsultada.LaEntidad = cuentaComando;
                         cuenta =(Cuenta)cuentaConsultada.Ejecutar();
                         rolesDePersona = cuenta.Roles;
                     }
-
-                    rolSinPermiso = validaciones.rolNoEditable(rolesDePersona,
+                    List<Rol> rolesDePersonaE = rolesDePersona;
+                    rolSinPermiso = validaciones.rolNoEditable(rolesDePersonaE,
                             HttpContext.Current.Session[RecursosInterfazMaster.sessionRol].ToString());
                     rolesDePersona = validaciones.validarPrioridad(rolesDePersona,
                         HttpContext.Current.Session[RecursosInterfazMaster.sessionRol].ToString());
                     ComandoRolesDeSistema rolesSistema = (ComandoRolesDeSistema)laFabrica.ObtenerRolesDeSistema();
-                    losRolesDeSistema = rolesSistema.Ejecutar().Cast<Rol>().ToList();
+                    losRolesDeSistema = rolesSistema.Ejecutar();
                     rolesFiltrados = validaciones.filtrarRoles(rolesDePersona, losRolesDeSistema);
                     rolesFiltrados = validaciones.validarPrioridad(rolesFiltrados,
                         HttpContext.Current.Session[RecursosInterfazMaster.sessionRol].ToString());

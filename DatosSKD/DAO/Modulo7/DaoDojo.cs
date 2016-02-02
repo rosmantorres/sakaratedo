@@ -48,8 +48,7 @@ namespace DatosSKD.DAO.Modulo7
         {
             List<Parametro> parametros;
             Parametro parametroQuery = new Parametro();
-            FabricaDAOSqlServer fabricaSql = new FabricaDAOSqlServer();
-            DaoUbicacion baseDeDatosUbicacion = fabricaSql.ObtenerDaoUbicacionM7();
+            DaoUbicacion baseDeDatosUbicacion = FabricaDAOSqlServer.ObtenerDaoUbicacionM7();
             DojoM7 idDojo = (DojoM7)parametro;
             DojoM7 dojo;
 
@@ -106,7 +105,7 @@ namespace DatosSKD.DAO.Modulo7
             }
             catch (Exception ex)
             {
-                throw new ExceptionSKD("No se pudo completar la operacion", ex);
+                throw new ExceptionSKD(RecursosDAOModulo7.MensajeExceptionSKD, ex);
             }
 
             return dojo;

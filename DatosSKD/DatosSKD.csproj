@@ -63,6 +63,13 @@
   <ItemGroup>
     <Compile Include="BDConexion.cs" />
     <Compile Include="DAO\DAOGeneral.cs" />
+    <Compile Include="DAO\Modulo4\DaoDojo.cs" />
+    <Compile Include="DAO\Modulo4\DaoHistorialM.cs" />
+    <Compile Include="DAO\Modulo4\RecursosDAOModulo4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosDAOModulo4.resx</DependentUpon>
+    </Compile>
     <Compile Include="DAO\Modulo8\DAORestriccionCinta.cs" />
     <Compile Include="DAO\Modulo8\DAORestriccionCompetencia.cs" />
     <Compile Include="DAO\Modulo8\DAORestriccionEvento.cs" />
@@ -86,6 +93,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursoExepcion.resx</DependentUpon>
     </Compile>
+    <Compile Include="InterfazDAO\Modulo4\IDaoDojo.cs" />
+    <Compile Include="InterfazDAO\Modulo4\IDaoHistorialM.cs" />
     <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCinta.cs" />
     <Compile Include="InterfazDAO\Modulo8\IDaoRestriccionCompetencia.cs" />
     <Compile Include="DAO\Modulo10\DaoAsistencia.cs" />
@@ -157,8 +166,8 @@
     <Compile Include="DAO\Modulo1\DaoLogin.cs" />
     <Compile Include="DAO\Modulo1\DaoRestablecer.cs" />
     <Compile Include="DAO\Modulo2\DaoRoles.cs" />
-    <Compile Include="DAO\Modulo2\RecursosBDModulo2.Designer.cs">
-      <DependentUpon>RecursosBDModulo2.resx</DependentUpon>
+    <Compile Include="DAO\Modulo2\RecursosBDM2.Designer.cs">
+      <DependentUpon>RecursosBDM2.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -206,29 +215,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo15.resx</DependentUpon>
     </Compile>
-    <Compile Include="Modulo1\BDLogin.cs" />
-    <Compile Include="Modulo1\BDRestablecer.cs" />
-    <Compile Include="DAO\Modulo1\RecursosBDModulo1.Designer.cs">
+    <Compile Include="DAO\Modulo1\RecursosBDM1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo1.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Modulo1\RecursosBDModulo1.Designer.cs">
-      <DependentUpon>RecursosBDModulo1.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Modulo2\BDRoles.cs" />
-    <Compile Include="Modulo2\RecursosBDModulo2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RecursosBDModulo2.resx</DependentUpon>
+      <DependentUpon>RecursosBDM1.resx</DependentUpon>
     </Compile>
     <Compile Include="Modulo4\RecursosBDModulo4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosBDModulo4.resx</DependentUpon>
     </Compile>
+    <Compile Include="Modulo6\BDListarUsuarios.cs" />
+    <Compile Include="Modulo6\RecursosBDModulo6.Designer.cs" />
     <Compile Include="Modulo8\RecursosBDModulo8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -249,6 +247,10 @@
     <Compile Include="Resultado.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DAO\Modulo4\RecursosDAOModulo4.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RecursosDAOModulo4.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo8\RecursosDAORestriccionCinta.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosDAORestriccionCinta.Designer.cs</LastGenOutput>
@@ -277,9 +279,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo16.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="DAO\Modulo2\RecursosBDModulo2.resx">
+    <EmbeddedResource Include="DAO\Modulo2\RecursosBDM2.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo2.Designer.cs</LastGenOutput>
+      <LastGenOutput>RecursosBDM2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DAO\Modulo14\RecursosDAOModulo14.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -311,22 +313,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo15.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="DAO\Modulo1\RecursosBDModulo1.resx">
+    <EmbeddedResource Include="DAO\Modulo1\RecursosBDM1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo1\RecursosBDModulo1.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Modulo2\RecursosBDModulo2.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>RecursosBDModulo2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulo4\RecursosBDModulo4.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo4.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulo6\RecursosBDModulo6.resx" />
     <EmbeddedResource Include="Modulo8\RecursosBDModulo8.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>RecursosBDModulo8.Designer.cs</LastGenOutput>
@@ -370,17 +365,9 @@
   <ItemGroup>
     <Folder Include="BaseDeDatos\" />
     <Folder Include="DAO\Modulo13\" />
-    <Folder Include="DAO\Modulo4\" />
     <Folder Include="DAO\Modulo6\" />
-    <Folder Include="DAO\Modulo7\" />
     <Folder Include="InterfazDAO\Modulo13\" />
-    <Folder Include="InterfazDAO\Modulo4\" />
     <Folder Include="InterfazDAO\Modulo6\" />
-    <Folder Include="InterfazDAO\Modulo7\" />
-    <Folder Include="DAO\Modulo8\" />
-
-
-    <Folder Include="InterfazDAO\Modulo8\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master\menuLateral.xml" />

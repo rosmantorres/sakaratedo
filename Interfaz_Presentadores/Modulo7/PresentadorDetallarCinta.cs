@@ -20,7 +20,6 @@ namespace Interfaz_Presentadores.Modulo7
     /// </summary>
     public class PresentadorDetallarCinta
     {
-        private FabricaComandos fabricaComandos;
         private IContratoDetallarCinta vista;
         /// <summary>
         /// Constructor del presentador
@@ -41,8 +40,7 @@ namespace Interfaz_Presentadores.Modulo7
         {           
             try
             {
-                fabricaComandos = new FabricaComandos();
-                ComandoConsultarDetallarCinta comandoDetallarCinta =(ComandoConsultarDetallarCinta)fabricaComandos.ObtenerComandoConsultarDetallarCinta();
+                ComandoConsultarDetallarCinta comandoDetallarCinta =(ComandoConsultarDetallarCinta)FabricaComandos.ObtenerComandoConsultarDetallarCinta();
                 comandoDetallarCinta.LaEntidad = idCinta;
                 comandoDetallarCinta.IdPersona = (PersonaM7)idPersona;
                 Tuple<Entidad, DateTime> tupla = comandoDetallarCinta.Ejecutar();
@@ -51,7 +49,7 @@ namespace Interfaz_Presentadores.Modulo7
                 
                 vista.clasificacionCinta = cinta.Clasificacion;
                 vista.colorCinta = cinta.Color_nombre;
-                vista.fechaObtencionCinta = fechaObtencionCinta.ToString("MM/dd/yyyy");
+                vista.fechaObtencionCinta = fechaObtencionCinta.ToString(M7_RecursosPresentador.FormatoFecha);
                 vista.ordenCinta = cinta.Orden.ToString();
                 vista.rangoCinta = cinta.Rango;
                 vista.significadoCinta = cinta.Significado;

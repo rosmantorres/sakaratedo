@@ -24,8 +24,9 @@ namespace templateApp.GUI.Modulo5
 
             this.presentador = new PresentadorLlenarCintas(this);
             if (!IsPostBack)
-            {                
-                this.presentador.LlenarInformacion();
+            {
+                this.presentador.llenarComboOrganizacion();            
+               //this.presentador.LlenarInformacion();
             }
            
         } 
@@ -82,21 +83,37 @@ namespace templateApp.GUI.Modulo5
             this.tabla.Text += RecursoInterfazMod5.CerrarTD;
             this.tabla.Text += RecursoInterfazMod5.CerrarTR;
         }
-        public int obtenerIdCinta()
+        public int obtenerIdCinta
         {
-            return Int32.Parse(this.cintaIdStatus.Value);
+            get { return Int32.Parse(this.cintaIdStatus.Value); }
         }
-        public int obtenerStatusCinta()
+        public int obtenerStatusCinta
         {
-            return Int32.Parse(this.estatusActual.Value);
+            get { return Int32.Parse(this.estatusActual.Value); }
+        }
+        public string obtenerNombreOrg
+        {
+            get { return this.nombreOrg.Value; }
+        }
+        public void agregarOrganizacionCombo(string id, string nombre)
+        {
+            this.listaOrg.Items.Add(new ListItem(nombre, id));
+        }
+        public string obtenerIdOrg
+        {
+            get { return this.listaOrg.SelectedValue; }
         }
         #endregion
 
+        protected void organizacionSeleccionada(object sender, EventArgs e)
+        {
+            this.presentador.LlenarInformacion();    
+        }
 
         protected void cambiarStatus(object sender, EventArgs e)
         {
             this.presentador.cambiarStatus();
-
+            this.Response.Redirect(Request.RawUrl);
         }
 
 

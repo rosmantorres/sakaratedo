@@ -61,21 +61,21 @@ namespace DatosSKD.DAO.Modulo1
                 //laConexion3 = new BDConexion();
                 parametros = new List<Parametro>();
                 parametros2 = new List<Parametro>();
-                string idUsuario = RecursosBDModulo1.idInicial;
+                string idUsuario = RecursosBDM1.idInicial;
                 Cuenta laCuenta =(Cuenta) laFabrica.ObtenerCuenta_M1();
 
 
-                elParametro = new Parametro(RecursosBDModulo1.AliasNombreUsuario, SqlDbType.VarChar, nombre_usuario, false);
+                elParametro = new Parametro(RecursosBDM1.AliasNombreUsuario, SqlDbType.VarChar, nombre_usuario, false);
                 parametros.Add(elParametro);
                 DataTable dt = this.EjecutarStoredProcedureTuplas(
-                                RecursosBDModulo1.ConsultarNombreUsuarioContrasena, parametros);
+                                RecursosBDM1.ConsultarNombreUsuarioContrasena, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    laCuenta.Nombre_usuario = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
-                    laCuenta.Contrasena = row[RecursosBDModulo1.AliasContrasena].ToString();
-                    laCuenta.Imagen = row[RecursosBDModulo1.AliasImagen].ToString();
-                    idUsuario = row[RecursosBDModulo1.AliasIdUsuario].ToString();
+                    laCuenta.Nombre_usuario = row[RecursosBDM1.AliasNombreUsuario].ToString();
+                    laCuenta.Contrasena = row[RecursosBDM1.AliasContrasena].ToString();
+                    laCuenta.Imagen = row[RecursosBDM1.AliasImagen].ToString();
+                    idUsuario = row[RecursosBDM1.AliasIdUsuario].ToString();
 
                 }
 
@@ -84,34 +84,34 @@ namespace DatosSKD.DAO.Modulo1
                 //Llenar el usuario
 
                 DataTable dt1 = this.EjecutarStoredProcedureTuplas(
-                RecursosBDModulo1.ConsultarRolesUsuario, parametros);
+                RecursosBDM1.ConsultarRolesUsuario, parametros);
                 List<Rol> listaRol = new List<Rol>();
                 foreach (DataRow row in dt1.Rows)
                 {
 
                     Rol elRol = new Rol();
-                    elRol.Id_rol = int.Parse(row[RecursosBDModulo1.AliasIdRol].ToString());
-                    elRol.Nombre = row[RecursosBDModulo1.AliasNombreRol].ToString();
-                    elRol.Descripcion = row[RecursosBDModulo1.AliasDescripcionRol].ToString();
-                    elRol.Fecha_creacion = (DateTime)row[RecursosBDModulo1.AliasFechaCreacion];
+                    elRol.Id_rol = int.Parse(row[RecursosBDM1.AliasIdRol].ToString());
+                    elRol.Nombre = row[RecursosBDM1.AliasNombreRol].ToString();
+                    elRol.Descripcion = row[RecursosBDM1.AliasDescripcionRol].ToString();
+                    elRol.Fecha_creacion = (DateTime)row[RecursosBDM1.AliasFechaCreacion];
                     listaRol.Add(elRol);
                 }
 
                 laCuenta.Roles = listaRol;
 
 
-                elParametro = new Parametro(RecursosBDModulo1.AliasIdUsuario, SqlDbType.Int, idUsuario, false);
+                elParametro = new Parametro(RecursosBDM1.AliasIdUsuario, SqlDbType.Int, idUsuario, false);
                 parametros2.Add(elParametro);
                 DataTable dt2 = this.EjecutarStoredProcedureTuplas(
-                                RecursosBDModulo1.consultarPersona, parametros2);
+                                RecursosBDM1.consultarPersona, parametros2);
 
                 PersonaM1 laPersona = (PersonaM1) laFabrica.ObtenerPersona_M1();
                 foreach (DataRow row in dt2.Rows)
                 {
 
-                    laPersona._Id = int.Parse(row[RecursosBDModulo1.AliasIdUsuario].ToString());
-                    laPersona._Nombre = row[RecursosBDModulo1.AliasNombreUsuario].ToString();
-                    laPersona._Apellido = row[RecursosBDModulo1.aliasApellidoUsuario].ToString();
+                    laPersona._Id = int.Parse(row[RecursosBDM1.AliasIdUsuario].ToString());
+                    laPersona._Nombre = row[RecursosBDM1.AliasNombreUsuario].ToString();
+                    laPersona._Apellido = row[RecursosBDM1.aliasApellidoUsuario].ToString();
                 }
                 laCuenta.PersonaUsuario = laPersona;
 
@@ -125,8 +125,8 @@ namespace DatosSKD.DAO.Modulo1
             }
             catch (FormatException e)
             {
-                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDModulo1.Codigo_Error_Formato,
-                     RecursosBDModulo1.Mensaje_Error_Formato, e);
+                throw new ExcepcionesSKD.Modulo12.FormatoIncorrectoException(RecursosBDM1.Codigo_Error_Formato,
+                     RecursosBDM1.Mensaje_Error_Formato, e);
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD e)
             {
@@ -154,21 +154,21 @@ namespace DatosSKD.DAO.Modulo1
                 parametros = new List<Parametro>();
                 List<String> elCorreo = new List<String>();
 
-                elParametro = new Parametro(RecursosBDModulo1.aliasCorreoUsuario, SqlDbType.VarChar, correo_usuario, false);
+                elParametro = new Parametro(RecursosBDM1.aliasCorreoUsuario, SqlDbType.VarChar, correo_usuario, false);
                 parametros.Add(elParametro);
                 DataTable dt = this.EjecutarStoredProcedureTuplas(
-                               RecursosBDModulo1.ValidarCorreo, parametros);
+                               RecursosBDM1.ValidarCorreo, parametros);
 
                 foreach (DataRow row in dt.Rows)
                 {
 
-                    elCorreo.Add(row[RecursosBDModulo1.aliasCorreoUsuario].ToString());
+                    elCorreo.Add(row[RecursosBDM1.aliasCorreoUsuario].ToString());
                 }
                 Console.WriteLine(elCorreo.Count.ToString());
                 if (elCorreo.Count == 0)
                     return null;
                 else if (elCorreo.Count > 1)
-                    throw new Exception(RecursosBDModulo1.exceptionCorreoMasUno);
+                    throw new Exception(RecursosBDM1.exceptionCorreoMasUno);
 
                 return elCorreo[0];
 
