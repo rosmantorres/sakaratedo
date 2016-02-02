@@ -157,7 +157,7 @@ namespace templateApp.GUI.Modulo8
         {
             if (_presentador.ModificarRest() == true)
             {
-                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario2 + RecursoInterfazModulo8.strSuccess);
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionEvento2 + RecursoInterfazModulo8.strSuccess);
             }
 
         }

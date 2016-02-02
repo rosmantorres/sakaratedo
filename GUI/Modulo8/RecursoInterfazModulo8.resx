@@ -252,9 +252,9 @@
     <value>../Modulo8/interfazRestriccionesAvanceCinta.aspx?idPlan=</value>
   </data>
   <data name="volverRestriccionEvento" xml:space="preserve">
-    <value>../Modulo8/interfazRestriccionesEvento.aspx?stat=</value>
+    <value>../Modulo8/interfazRestriccionesEventos.aspx?stat=</value>
   </data>
   <data name="volverRestriccionEvento2" xml:space="preserve">
-    <value>../Modulo8/interfazRestriccionesEvento.aspx?idPlan=</value>
+    <value>../Modulo8/interfazRestriccionesEventos.aspx?idPlan=</value>
   </data>
 </root>

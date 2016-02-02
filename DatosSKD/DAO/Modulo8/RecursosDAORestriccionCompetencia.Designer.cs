@@ -394,7 +394,7 @@ namespace DatosSKD.DAO.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to status.
+        ///   Looks up a localized string similar to estatus.
         /// </summary>
         internal static string AliasStatus {
             get {

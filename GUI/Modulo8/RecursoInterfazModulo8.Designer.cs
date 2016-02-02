@@ -441,7 +441,7 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEvento.aspx?stat=.
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEventos.aspx?stat=.
         /// </summary>
         internal static string volverRestriccionEvento {
             get {
@@ -450,7 +450,7 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEvento.aspx?idPlan=.
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEventos.aspx?idPlan=.
         /// </summary>
         internal static string volverRestriccionEvento2 {
             get {

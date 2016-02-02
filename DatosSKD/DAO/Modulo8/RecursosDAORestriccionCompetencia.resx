@@ -229,7 +229,7 @@
     <value>sexo</value>
   </data>
   <data name="AliasStatus" xml:space="preserve">
-    <value>status</value>
+    <value>estatus</value>
   </data>
   <data name="AliasStatusCompetencia" xml:space="preserve">
     <value>statusCompetencia</value>
