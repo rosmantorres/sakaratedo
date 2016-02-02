@@ -30,6 +30,7 @@ namespace Interfaz_Presentadores.Modulo8
 
         public DominioSKD.Entidades.Modulo8.RestriccionCinta meterParametrosVistaEnObjeto(DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccion)
         {
+            try { 
             DominioSKD.Entidades.Modulo8.RestriccionCinta retriccionCinta = laRestriccion;
             retriccionCinta.IdRestriccionCinta = int.Parse(vista.id_restriccion);
             retriccionCinta.PuntosMinimos = int.Parse(vista.puntaje_min);
@@ -37,6 +38,12 @@ namespace Interfaz_Presentadores.Modulo8
             retriccionCinta.TiempoMinimo = int.Parse(vista.tiempo_Min);
             //generarDescripcion();
             return retriccionCinta;
+            }
+            catch (Exception ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
             
         }
 
