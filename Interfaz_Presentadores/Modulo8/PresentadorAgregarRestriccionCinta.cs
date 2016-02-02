@@ -39,16 +39,38 @@ namespace Interfaz_Presentadores.Modulo8
 
         public DominioSKD.Entidades.Modulo8.RestriccionCinta meterParametrosVistaEnObjeto(DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccion)
         {
-            DominioSKD.Entidades.Modulo8.RestriccionCinta retriccionCinta = laRestriccion;
-            retriccionCinta.Id = int.Parse(vista.comboRestCinta.SelectedValue);
-            retriccionCinta.Descripcion = generarDescripcion();
-            retriccionCinta.PuntosMinimos = int.Parse(vista.puntaje_min);
-            retriccionCinta.TiempoDocente = int.Parse(vista.horas_docen);
-            retriccionCinta.TiempoMinimo = int.Parse(vista.tiempo_Min);
-            retriccionCinta.TiempoMaximo = int.Parse(vista.tiempo_Max);
-            retriccionCinta.Status = 1;
-            //generarDescripcion();
-            return retriccionCinta;
+            try
+            {
+                DominioSKD.Entidades.Modulo8.RestriccionCinta retriccionCinta = laRestriccion;
+                retriccionCinta.Id = int.Parse(vista.comboRestCinta.SelectedValue);
+                retriccionCinta.Descripcion = generarDescripcion();
+                retriccionCinta.PuntosMinimos = int.Parse(vista.puntaje_min);
+                retriccionCinta.TiempoDocente = int.Parse(vista.horas_docen);
+                retriccionCinta.TiempoMinimo = int.Parse(vista.tiempo_Min);
+                retriccionCinta.TiempoMaximo = int.Parse(vista.tiempo_Max);
+                retriccionCinta.Status = 1;
+                return retriccionCinta;
+            }
+            catch (SqlException ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
+            catch (FormatException ex)
+            {
+                Alerta(RecursoPresentadorM8.CampoVacio);
+                return null;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Alerta(RecursoPresentadorM8.general);
+                return null;
+            }
             
         }
         
@@ -82,17 +104,13 @@ namespace Interfaz_Presentadores.Modulo8
             catch (ExcepcionesSKD.Modulo8.RestriccionRepetidaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                /*vista.alertLocalClase = RecursoPresentadorM8.alertaError;
-                vista.alertLocalRol = RecursoPresentadorM8.tipoAlerta;
-                vista.alerta = RecursoPresentadorM8.alertaHtml + ex.Mensaje
-                    + RecursoPresentadorM8.alertaHtmlFinal;*/
-                //vista.alertaAgregarFallidoOrden(ex);
-                throw ex;
+
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
@@ -146,9 +164,11 @@ namespace Interfaz_Presentadores.Modulo8
                         return resultado;
                     }
                     else
+                        Alerta(RecursoPresentadorM8.CaracterInvalido);
                         return false;
                 }
-                else 
+                else
+                    Alerta(RecursoPresentadorM8.CampoVacio);
                     return false;
             }
             
@@ -174,9 +194,7 @@ namespace Interfaz_Presentadores.Modulo8
                 return false;
             }
         }
-
-        
-                
+                        
             }
            
         }

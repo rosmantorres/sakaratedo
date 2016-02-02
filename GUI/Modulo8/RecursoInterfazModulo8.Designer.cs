@@ -342,6 +342,15 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 8.2.
+        /// </summary>
+        internal static string interfazRE {
+            get {
+                return ResourceManager.GetString("interfazRE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 8.1.
         /// </summary>
         internal static string interfazRH {
@@ -369,11 +378,20 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true.
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesAvanceCinta.aspx?stat=.
         /// </summary>
         internal static string ReturnRestCinta {
             get {
                 return ResourceManager.GetString("ReturnRestCinta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesAvanceCinta.aspx?idPlan=.
+        /// </summary>
+        internal static string ReturnRestCinta2 {
+            get {
+                return ResourceManager.GetString("ReturnRestCinta2", resourceCulture);
             }
         }
         
@@ -405,11 +423,38 @@ namespace templateApp.GUI.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to success.
+        /// </summary>
+        internal static string strSuccess {
+            get {
+                return ResourceManager.GetString("strSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to alert.
         /// </summary>
         internal static string tipoAlerta {
             get {
                 return ResourceManager.GetString("tipoAlerta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEvento.aspx?stat=.
+        /// </summary>
+        internal static string volverRestriccionEvento {
+            get {
+                return ResourceManager.GetString("volverRestriccionEvento", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEvento.aspx?idPlan=.
+        /// </summary>
+        internal static string volverRestriccionEvento2 {
+            get {
+                return ResourceManager.GetString("volverRestriccionEvento2", resourceCulture);
             }
         }
         

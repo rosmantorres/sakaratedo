@@ -19,6 +19,7 @@ namespace Interfaz_Presentadores.Modulo8
     public class PresentadorModificarRestriccionCinta
     {
         private IContratoModificarRestriccionCinta vista;
+
         ValidacionesM8 validarCampos = new ValidacionesM8();
 
         public PresentadorModificarRestriccionCinta(IContratoModificarRestriccionCinta laVista)
@@ -30,32 +31,36 @@ namespace Interfaz_Presentadores.Modulo8
 
         public DominioSKD.Entidades.Modulo8.RestriccionCinta meterParametrosVistaEnObjeto(DominioSKD.Entidades.Modulo8.RestriccionCinta laRestriccion)
         {
-            try { 
-            DominioSKD.Entidades.Modulo8.RestriccionCinta retriccionCinta = laRestriccion;
-            retriccionCinta.IdRestriccionCinta = int.Parse(vista.id_restriccion);
-            retriccionCinta.PuntosMinimos = int.Parse(vista.puntaje_min);
-            retriccionCinta.TiempoDocente = int.Parse(vista.horas_docen);
-            retriccionCinta.TiempoMinimo = int.Parse(vista.tiempo_Min);
-            //generarDescripcion();
-            return retriccionCinta;
+            try 
+            { 
+                DominioSKD.Entidades.Modulo8.RestriccionCinta retriccionCinta = laRestriccion;
+                retriccionCinta.IdRestriccionCinta = int.Parse(vista.id_restriccion);
+                retriccionCinta.PuntosMinimos = int.Parse(vista.puntaje_min);
+                retriccionCinta.TiempoDocente = int.Parse(vista.horas_docen);
+                retriccionCinta.TiempoMinimo = int.Parse(vista.tiempo_Min);
+                return retriccionCinta;
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 Alerta(ex.Message);
                 return null;
             }
+            catch (FormatException ex)
+            {
+                Alerta(RecursoPresentadorM8.CampoVacio);
+                return null;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Alerta(RecursoPresentadorM8.general);
+                return null;
+            }
             
-        }
-
-        public void generarDescripcion()
-        {
-            /* this.vista.descripcion = ("Edad Min: " + vista.edadMinima.SelectedValue.ToString()
-                                      + " Edad Max: " + vista.edadMaxima.SelectedValue.ToString()
-                                      + " Rango Min: " + vista.rangoMinimo.SelectedValue.ToString()
-                                      + " Rango Max: " + vista.rangoMaximo.SelectedValue.ToString()
-                                      + " Sexo: " + vista.sexo.SelectedValue.ToString()
-                                      + " Modalidad: " + vista.sexo.SelectedValue.ToString());*/
-
         }
 
         public Boolean ModificarRest()
@@ -97,7 +102,7 @@ namespace Interfaz_Presentadores.Modulo8
             }
             catch (FormatException ex)
             {
-                Alerta(ex.Message);
+                Alerta(RecursoPresentadorM8.ErrordeFformato);
                 return false;
             }
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
@@ -107,7 +112,7 @@ namespace Interfaz_Presentadores.Modulo8
             }
             catch (Exception ex)
             {
-                Alerta(ex.Message);
+                Alerta(RecursoPresentadorM8.general);
                 return false;
             }
         }
@@ -117,8 +122,8 @@ namespace Interfaz_Presentadores.Modulo8
             vista.alertaClase = "alert alert-danger alert-dismissible";
             vista.alertaRol = "alert";
             vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+           
         }
-
 
     }
 }

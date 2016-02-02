@@ -189,7 +189,7 @@
     <value>8.3</value>
   </data>
   <data name="ReturnRestCinta" xml:space="preserve">
-    <value>../Modulo8/interfazRestriccionesAvanceCinta.aspx?succes=true</value>
+    <value>../Modulo8/interfazRestriccionesAvanceCinta.aspx?stat=</value>
   </data>
   <data name="statrec" xml:space="preserve">
     <value>stat</value>
@@ -217,7 +217,7 @@
   </data>
   <data name="tipoAlerta" xml:space="preserve">
     <value>alert</value>
-</data>
+  </data>
   <data name="idP" xml:space="preserve">
     <value>idPlan</value>
   </data>
@@ -241,5 +241,20 @@
   </data>
   <data name="volverRestriccionHorario2" xml:space="preserve">
     <value>../Modulo8/interfazRestriccionesHorario.aspx?idPlan=</value>
+  </data>
+  <data name="strSuccess" xml:space="preserve">
+    <value>success</value>
+  </data>
+  <data name="interfazRE" xml:space="preserve">
+    <value>8.2</value>
+  </data>
+  <data name="ReturnRestCinta2" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesAvanceCinta.aspx?idPlan=</value>
+  </data>
+  <data name="volverRestriccionEvento" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesEvento.aspx?stat=</value>
+  </data>
+  <data name="volverRestriccionEvento2" xml:space="preserve">
+    <value>../Modulo8/interfazRestriccionesEvento.aspx?idPlan=</value>
   </data>
 </root>

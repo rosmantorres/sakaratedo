@@ -88,6 +88,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restriccion Agregada.
+        /// </summary>
+        internal static string AddRestSuccess {
+            get {
+                return ResourceManager.GetString("AddRestSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ../Modulo8/interfazRestriccionesEventos.aspx?success=1.
         /// </summary>
         internal static string AgregarExitoRestriccionCompetencia {
@@ -174,6 +183,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string alertaError {
             get {
                 return ResourceManager.GetString("alertaError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to alert alert-success alert-dismissible.
+        /// </summary>
+        internal static string alertaError1 {
+            get {
+                return ResourceManager.GetString("alertaError1", resourceCulture);
             }
         }
         
@@ -369,6 +387,24 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Atencion. Existe un campo vacio. .
+        /// </summary>
+        internal static string CampoVacio {
+            get {
+                return ResourceManager.GetString("CampoVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caracter Invalido.
+        /// </summary>
+        internal static string CaracterInvalido {
+            get {
+                return ResourceManager.GetString("CaracterInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to $CATEGORIA_cat&lt;br/&gt;.
         /// </summary>
         internal static string CategoriaCat {
@@ -468,6 +504,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Se Detecto un Error de Formato.
+        /// </summary>
+        internal static string ErrordeFformato {
+            get {
+                return ResourceManager.GetString("ErrordeFformato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to F.
         /// </summary>
         internal static string F {
@@ -482,6 +527,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string Femenino {
             get {
                 return ResourceManager.GetString("Femenino", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ocurrio un problema..
+        /// </summary>
+        internal static string general {
+            get {
+                return ResourceManager.GetString("general", resourceCulture);
             }
         }
         
@@ -590,6 +644,15 @@ namespace Interfaz_Presentadores.Modulo8 {
         internal static string Modalidad {
             get {
                 return ResourceManager.GetString("Modalidad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restriccion Modificada.
+        /// </summary>
+        internal static string ModRestSuccess {
+            get {
+                return ResourceManager.GetString("ModRestSuccess", resourceCulture);
             }
         }
         

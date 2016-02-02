@@ -17,26 +17,18 @@ namespace Interfaz_Presentadores.Modulo8
     public class PresentadorAgregarRestriccionCompetencia
     {
         private IContratoAgregarRestriccionCompetencia vista;
-
-        //public PresentadorAgregarRestriccionCompetencia (IContratoAgregarRestriccionCompetencia laVista)
-        //{
-        //    this.vista = laVista;
-        //}
-
+        
         public Boolean agregarRestriccionCompetencia()
         {
             Boolean resultado = false;
             try
             {
-
-
                 DominioSKD.Entidad elObjeto = meterParametrosVistaEnObjeto();
                 LogicaNegociosSKD.Fabrica.FabricaComandos fabrica = new LogicaNegociosSKD.Fabrica.FabricaComandos();
                 DominioSKD.Fabrica.FabricaEntidades fabricaEntidad = new DominioSKD.Fabrica.FabricaEntidades();
                 LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia comando =
                 (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionCompetencia)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionCompetencia();
                 DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia();
-                //comando.Parametro = elObjeto;
                 restriccionCompetencia = meterParametrosVistaEnObjeto();
                 comando.Parametro = restriccionCompetencia;
                 resultado = comando.Ejecutar();
@@ -86,7 +78,6 @@ namespace Interfaz_Presentadores.Modulo8
             return resultado;
         }
 
-
         public Boolean validarCampos()
         {
             Boolean resultado = false;
@@ -99,36 +90,53 @@ namespace Interfaz_Presentadores.Modulo8
 
             return resultado;
         }
-
-
-
-
+        
         public PresentadorAgregarRestriccionCompetencia(IContratoAgregarRestriccionCompetencia laVista)
         {
 
             this.vista = laVista;
 
         }
-
-
-
+        
         public DominioSKD.Entidades.Modulo8.RestriccionCompetencia meterParametrosVistaEnObjeto()
         {
-            DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
-            DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia();
-            restriccionCompetencia.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
-            restriccionCompetencia.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
-            restriccionCompetencia.RangoMinimo = int.Parse(vista.rangoMinimo.SelectedValue);
-            restriccionCompetencia.RangoMaximo = int.Parse(vista.rangoMaximo.SelectedValue);
-            restriccionCompetencia.Sexo = vista.sexo.SelectedValue;
-            restriccionCompetencia.Modalidad = vista.modalidad.SelectedValue;
-            generarDescripcion();
-            restriccionCompetencia.Descripcion = vista.descripcion;
-            return restriccionCompetencia;
+            try
+            {
+                DominioSKD.Fabrica.FabricaEntidades fabrica = new DominioSKD.Fabrica.FabricaEntidades();
+                DominioSKD.Entidades.Modulo8.RestriccionCompetencia restriccionCompetencia = (DominioSKD.Entidades.Modulo8.RestriccionCompetencia)DominioSKD.Fabrica.FabricaEntidades.ObtenerRestriccionCompetencia();
+                restriccionCompetencia.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
+                restriccionCompetencia.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
+                restriccionCompetencia.RangoMinimo = int.Parse(vista.rangoMinimo.SelectedValue);
+                restriccionCompetencia.RangoMaximo = int.Parse(vista.rangoMaximo.SelectedValue);
+                restriccionCompetencia.Sexo = vista.sexo.SelectedValue;
+                restriccionCompetencia.Modalidad = vista.modalidad.SelectedValue;
+                generarDescripcion();
+                restriccionCompetencia.Descripcion = vista.descripcion;
+                return restriccionCompetencia;
+            }
+            catch (SqlException ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
+            catch (FormatException ex)
+            {
+                Alerta(RecursoPresentadorM8.CampoVacio);
+                return null;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Alerta(RecursoPresentadorM8.general);
+                return null;
+            }
 
         }
         
-
         public void LlenarComboRangos()
         {
             int index;
@@ -138,13 +146,7 @@ namespace Interfaz_Presentadores.Modulo8
 
             for (index = 0; index <= 20; index++)
             {
-                //vista.rangoMinimo.Items.Add(index.ToString());
-
-                //vista.rangoMaximo.Items.Add(index.ToString());
-
                 optionsRangos.Add(index.ToString(), index);
-
-
             }
 
             vista.rangoMinimo.DataSource = optionsRangos;
@@ -192,8 +194,7 @@ namespace Interfaz_Presentadores.Modulo8
             vista.sexo.DataValueField = "value";
             vista.sexo.DataBind();
         }
-
-
+        
         public void LlenarComboModalidad()
         {
             vista.modalidad.Enabled = true;

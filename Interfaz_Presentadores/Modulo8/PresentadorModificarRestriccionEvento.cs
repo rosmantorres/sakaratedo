@@ -32,16 +32,40 @@ namespace Interfaz_Presentadores.Modulo8
             vista.alertaRol = "alert";
             vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
+
         public DominioSKD.Entidades.Modulo8.RestriccionEvento meterParametrosVistaEnObjeto1(DominioSKD.Entidades.Modulo8.RestriccionEvento laRestriccion)
         {
-            DominioSKD.Entidades.Modulo8.RestriccionEvento retriccionEvento = laRestriccion;
-            retriccionEvento.IdRestEvento = int.Parse(vista.evento.ToString());
-            retriccionEvento.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
-            retriccionEvento.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
-            retriccionEvento.Sexo = vista.sexo.SelectedValue.ToString();
-            retriccionEvento.Descripcion = vista.rangoMaximo.SelectedItem.ToString();
+            try
+            {
+                DominioSKD.Entidades.Modulo8.RestriccionEvento retriccionEvento = laRestriccion;
+                retriccionEvento.IdRestEvento = int.Parse(vista.evento.ToString());
+                retriccionEvento.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
+                retriccionEvento.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
+                retriccionEvento.Sexo = vista.sexo.SelectedValue.ToString();
+                retriccionEvento.Descripcion = vista.rangoMaximo.SelectedItem.ToString();
 
-            return retriccionEvento;
+                return retriccionEvento;
+            }
+            catch (SqlException ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
+            catch (FormatException ex)
+            {
+                Alerta(RecursoPresentadorM8.CampoVacio);
+                return null;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Alerta(RecursoPresentadorM8.general);
+                return null;
+            }
 
         }
 

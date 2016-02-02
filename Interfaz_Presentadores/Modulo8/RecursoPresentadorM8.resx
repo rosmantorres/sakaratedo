@@ -325,27 +325,18 @@
   </data>
   <data name="nombreEvento" xml:space="preserve">
     <value>Nombre del Evento:  </value>
-
-
-</data>
-  <data name="StatusRC" xml:space="preserve">
-    <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
-
-
   </data>
   <data name="StatusRC" xml:space="preserve">
     <value>&lt;a  class="btn btn-primary glyphicon glyphicon-off" href="interfazRestriccionesEventos.aspx?idPlan=</value>
   </data>
   <data name="AgregarExitoRestriccionCompetencia" xml:space="preserve">
     <value>../Modulo8/interfazRestriccionesEventos.aspx?success=1</value>
-
   </data>
   <data name="Activa" xml:space="preserve">
     <value>Activa</value>
   </data>
   <data name="Inactiva" xml:space="preserve">
     <value>Inactiva</value>
-
   </data>
   <data name="restAgregada" xml:space="preserve">
     <value>Restriccion de </value>
@@ -358,6 +349,26 @@
   </data>
   <data name="restModificada2" xml:space="preserve">
     <value>, modificada correctamente.</value>
-
+  </data>
+  <data name="CampoVacio" xml:space="preserve">
+    <value>Atencion. Existe un campo vacio. </value>
+  </data>
+  <data name="CaracterInvalido" xml:space="preserve">
+    <value>Caracter Invalido</value>
+  </data>
+  <data name="ErrordeFformato" xml:space="preserve">
+    <value>Se Detecto un Error de Formato</value>
+  </data>
+  <data name="general" xml:space="preserve">
+    <value>Ocurrio un problema.</value>
+  </data>
+  <data name="AddRestSuccess" xml:space="preserve">
+    <value>Restriccion Agregada</value>
+  </data>
+  <data name="alertaError1" xml:space="preserve">
+    <value>alert alert-success alert-dismissible</value>
+  </data>
+  <data name="ModRestSuccess" xml:space="preserve">
+    <value>Restriccion Modificada</value>
   </data>
 </root>

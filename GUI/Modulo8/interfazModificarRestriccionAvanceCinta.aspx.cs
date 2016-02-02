@@ -113,7 +113,7 @@ namespace templateApp.GUI.Modulo8
         {
             if (_presentador.ModificarRest() == true)
             {
-                Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta);
+                Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta2 + RecursoInterfazModulo8.strSuccess);
             }
 
         }

@@ -29,13 +29,34 @@ namespace Interfaz_Presentadores.Modulo8
 
         public DominioSKD.Entidades.Modulo8.RestriccionEvento meterParametrosVistaEnObjeto1(DominioSKD.Entidades.Modulo8.RestriccionEvento laRestriccion)
         {
-            DominioSKD.Entidades.Modulo8.RestriccionEvento retriccionEvento = laRestriccion;
-            retriccionEvento.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
-            retriccionEvento.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
-            retriccionEvento.Sexo = vista.sexo.ToString();
-
-            //generarDescripcion();
-            return retriccionEvento;
+            try
+            {
+                DominioSKD.Entidades.Modulo8.RestriccionEvento retriccionEvento = laRestriccion;
+                retriccionEvento.EdadMinima = int.Parse(vista.edadMinima.SelectedValue);
+                retriccionEvento.EdadMaxima = int.Parse(vista.edadMaxima.SelectedValue);
+                retriccionEvento.Sexo = vista.sexo.ToString();
+                return retriccionEvento;
+            }
+            catch (SqlException ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
+            catch (FormatException ex)
+            {
+                Alerta(RecursoPresentadorM8.CampoVacio);
+                return null;
+            }
+            catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
+            {
+                Alerta(ex.Message);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Alerta(RecursoPresentadorM8.general);
+                return null;
+            }
 
         }
 
@@ -56,32 +77,32 @@ namespace Interfaz_Presentadores.Modulo8
             catch (ExcepcionesSKD.ExceptionSKDConexionBD ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDiseñoException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDDatosException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDPLanillaException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (ExcepcionesSKD.Modulo14.BDSolicitudException ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             catch (Exception ex)
             {
                 Logger.EscribirError(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.Name, ex);
-                throw ex;
+                Alerta(ex.Message);
             }
             vista.rangoMaximo.DataSource = options;
             vista.rangoMaximo.DataTextField = RecursoPresentadorM8.value;
@@ -186,20 +207,20 @@ namespace Interfaz_Presentadores.Modulo8
         {
             
             DominioSKD.Entidades.Modulo8.RestriccionEvento laRestEvento = new DominioSKD.Entidades.Modulo8.RestriccionEvento();
-
-            laRestEvento.Descripcion = this.vista.rangoMaximo.SelectedItem.ToString();
-            laRestEvento.IdEvento = Int32.Parse(this.vista.eventos.SelectedValue);
-            laRestEvento.EdadMinima = Int32.Parse(this.vista.edadMinima.SelectedValue);
-            laRestEvento.EdadMaxima = Int32.Parse(this.vista.edadMaxima.SelectedValue);
-            laRestEvento.Sexo = this.vista.sexo.SelectedValue.ToString();
-
+            
             if (laRestEvento.EdadMaxima >= laRestEvento.EdadMinima)
             {
                 try
                 {
+                    laRestEvento.Descripcion = this.vista.rangoMaximo.SelectedItem.ToString();
+                    laRestEvento.IdEvento = Int32.Parse(this.vista.eventos.SelectedValue);
+                    laRestEvento.EdadMinima = Int32.Parse(this.vista.edadMinima.SelectedValue);
+                    laRestEvento.EdadMaxima = Int32.Parse(this.vista.edadMaxima.SelectedValue);
+                    laRestEvento.Sexo = this.vista.sexo.SelectedValue.ToString();            
                     LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionEvento _comando =
                         (LogicaNegociosSKD.Comandos.Modulo8.ComandoAgregarRestriccionEvento)LogicaNegociosSKD.Fabrica.FabricaComandos.CrearComandoAgregarRestriccionEvento(laRestEvento);
                     bool resultado = _comando.Ejecutar();
+                    return resultado;
                 }
                 catch (ExcepcionesSKD.ExceptionSKD ex)
                 {
@@ -209,7 +230,6 @@ namespace Interfaz_Presentadores.Modulo8
                         + RecursoPresentadorM8.alertaHtmlFinal;
                     return false;
                 }
-                return true;
             }
             else
             {

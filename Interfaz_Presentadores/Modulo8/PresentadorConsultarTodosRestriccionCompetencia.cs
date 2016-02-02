@@ -82,8 +82,7 @@ namespace Interfaz_Presentadores.Modulo8
                 return null;
             }
         }
-
-
+        
         public Boolean CambiarStatus(int id, int bitStatus)
         {
             try
@@ -136,6 +135,24 @@ namespace Interfaz_Presentadores.Modulo8
             vista.alertaClase = "alert alert-danger alert-dismissible";
             vista.alertaRol = "alert";
             vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
+        }
+
+        public void MostrarAgregado(String eventoAgregado)
+        {
+            vista.alertaClase = RecursoPresentadorM8.alertaError1;
+            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+            vista.alerta = RecursoPresentadorM8.alertaHtml
+                + RecursoPresentadorM8.AddRestSuccess
+                + RecursoPresentadorM8.alertaHtmlFinal;
+        }
+
+        public void MostrarModificado(String eventoAgregado)
+        {
+            vista.alertaClase = RecursoPresentadorM8.alertaError1;
+            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+            vista.alerta = RecursoPresentadorM8.alertaHtml
+                + RecursoPresentadorM8.ModRestSuccess
+                + RecursoPresentadorM8.alertaHtmlFinal;
         }
 
     }

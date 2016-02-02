@@ -28,11 +28,11 @@ namespace templateApp.GUI.Modulo8
         {
             get
             {
-                return Request.QueryString["idPlan"];
+                return Request.QueryString[RecursoInterfazModulo8.IdPlan];
             }
             set
             {
-                this.descripcion = Request.QueryString["idPlan"];
+                this.descripcion = Request.QueryString[RecursoInterfazModulo8.IdPlan];
             }
         }
         public String descripcion { get; set; }
@@ -141,10 +141,10 @@ namespace templateApp.GUI.Modulo8
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            String idEvento = Request.QueryString["idPlan"];
+            String idEvento = Request.QueryString[RecursoInterfazModulo8.IdPlan];
             if (!IsPostBack)
             {
-                ((SKD)Page.Master).IdModulo = "8";
+                ((SKD)Page.Master).IdModulo = RecursoInterfazModulo8.Mod8;
                 _presentador.LlenarComboEdades();
                 _presentador.LlenarComboModalidad();
                 _presentador.LlenarComboRangos();
@@ -155,7 +155,10 @@ namespace templateApp.GUI.Modulo8
 
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            _presentador.ModificarRest();
+            if (_presentador.ModificarRest() == true)
+            {
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionHorario2 + RecursoInterfazModulo8.strSuccess);
+            }
 
         }
     }

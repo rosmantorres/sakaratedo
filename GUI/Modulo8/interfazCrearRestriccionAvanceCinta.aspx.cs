@@ -166,18 +166,11 @@ namespace templateApp.GUI.Modulo8
         {
             if (_presentador.agregarRest() == true)
             {
-                Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta);
+                Response.Redirect(RecursoInterfazModulo8.ReturnRestCinta + RecursoInterfazModulo8.strSuccess);
             }
 
         }
-       /*public void Alerta(string msj)
-       {
-          /* _presentador.Alerta(msj);
-            alert.Attributes["class"] = "alert alert-danger alert-dismissible";
-            alert.Attributes["role"] = "alert";
-            alert.InnerHtml = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
-       }*/
-
+       
        public bool validarInput(String pword)
        {
 	      var positiveIntRegex = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z0-9]*$");

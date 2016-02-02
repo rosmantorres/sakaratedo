@@ -21,6 +21,7 @@ namespace templateApp.GUI.Modulo8
             presentador = new PresentadorAgregarRestriccionCompetencia(this);
 		}
 
+        #region Contrato
         public String id { get; set; }
         public String descripcion { get; set; }
         //ListBox competenciasRelacionadas { get; set; }
@@ -126,10 +127,8 @@ namespace templateApp.GUI.Modulo8
                 this.alerta.InnerHtml = value;
             }
         }
+        #endregion
 
-        
-        
-        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -148,11 +147,13 @@ namespace templateApp.GUI.Modulo8
             
         }
 
+
         protected void btnaceptar_Click(object sender, EventArgs e)
         {
-            
-            presentador.agregarRestriccionCompetencia();
-            
+            if (presentador.agregarRestriccionCompetencia() == true)
+            {
+                Response.Redirect(RecursoInterfazModulo8.volverRestriccionEvento + RecursoInterfazModulo8.strSuccess);
+            }                      
         }
     }
 }

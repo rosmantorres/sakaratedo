@@ -26,8 +26,6 @@ namespace Interfaz_Presentadores.Modulo8
             this.vista = vista;
         }
 
-       
-
         public void LlenarInformacion()
         {
             try
@@ -63,13 +61,15 @@ namespace Interfaz_Presentadores.Modulo8
             }
             
         }
+
         public void Alerta(string msj)
         {
             vista.alertaClase = "alert alert-danger alert-dismissible";
             vista.alertaRol = "alert";
             vista.alerta = "<div><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>" + msj + "</div>";
         }
-       public void CambiarStatus(int id, int bitStatus)
+
+        public void CambiarStatus(int id, int bitStatus)
         {
             try
             {
@@ -132,6 +132,24 @@ namespace Interfaz_Presentadores.Modulo8
                 }
 
             }
+        }
+
+        public void MostrarAgregado(String eventoAgregado)
+        {
+            vista.alertaClase = RecursoPresentadorM8.alertaError1;
+            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+            vista.alerta = RecursoPresentadorM8.alertaHtml
+                + RecursoPresentadorM8.AddRestSuccess
+                + RecursoPresentadorM8.alertaHtmlFinal;
+        }
+
+        public void MostrarModificado(String eventoAgregado)
+        {
+            vista.alertaClase = RecursoPresentadorM8.alertaError1;
+            vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
+            vista.alerta = RecursoPresentadorM8.alertaHtml
+                + RecursoPresentadorM8.ModRestSuccess
+                + RecursoPresentadorM8.alertaHtmlFinal;
         }
     }
 }

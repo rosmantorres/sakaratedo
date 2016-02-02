@@ -97,7 +97,7 @@ namespace Interfaz_Presentadores.Modulo8
 
         public void MostrarAgregado(String eventoAgregado)
         {
-            vista.alertaClase = RecursoPresentadorM8.alertaError;
+            vista.alertaClase = RecursoPresentadorM8.alertaError1;
             vista.alertaRol = RecursoPresentadorM8.tipoAlerta;
             vista.alerta = RecursoPresentadorM8.alertaHtml
                 + RecursoPresentadorM8.restAgregada + eventoAgregado + RecursoPresentadorM8.restAgregada2
