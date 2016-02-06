@@ -16,7 +16,6 @@
 
     <script type="text/javascript">
 
-        
 
         function initialize() {
             var latitude;
@@ -213,7 +212,7 @@
                             <h3>Estado:</h3>
                                     <div class="dropdown" runat="server" id="divComboCintaHasta">
                                        <asp:DropDownList ID="estadoDojo"  class="btn btn-default dropdown-toggle" runat="server" AppendDataBoundItems="True">
-                                            <asp:ListItem>Seleccionar Estado: </asp:ListItem>
+                                            <asp:ListItem>Seleccione Estado: </asp:ListItem>
                                             <asp:ListItem Value="Amazonas">Amazonas</asp:ListItem>
                                             <asp:ListItem Value="Anzoátegui">Anzoátegui</asp:ListItem>
                                             <asp:ListItem Value="Apure">Apure</asp:ListItem>
@@ -246,7 +245,7 @@
                                             ControlToValidate="ciudadDojo" 
                                             ErrorMessage="Falta Ingreso de Ciudad"
                                             EnableClientScript="True" 
-                                            InitialValue="::Seleccione Estado:" />
+                                            InitialValue="Seleccione Estado:" />
                                     </div>
                 
                         </div>
